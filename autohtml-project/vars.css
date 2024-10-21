@@ -1,0 +1,87 @@
+/* Figma Styles of your File */
+:root {
+  /* Colors */
+  --primary-1: #035951;
+  --primary-2: #107361;
+  --secundario-1: #2a505b;
+  --secundario-2: #5f8d95;
+  --resaltar: #29f2b9;
+  --resaltar-2: #c5fcec;
+  --navbarfade: linear-gradient(
+    90deg,
+    rgba(3, 89, 81, 1) 0%,
+    rgba(10, 15, 15, 1) 41.999998688697815%
+  );
+  --fade-claro: linear-gradient(
+    180deg,
+    rgba(22, 186, 140, 0.7) 0%,
+    rgba(197, 252, 236, 1) 43.00000071525574%
+  );
+  --fade-cards-tickets: linear-gradient(
+    180deg,
+    rgba(3, 89, 81, 1) 0%,
+    rgba(16, 115, 97, 1) 100%
+  );
+  --fade-cards-merch: linear-gradient(
+    180deg,
+    rgba(16, 115, 97, 1) 0%,
+    rgba(10, 15, 15, 1) 75%
+  );
+  --fade-interior-cards-info: linear-gradient(
+    180deg,
+    rgba(10, 15, 15, 1) 44.999998807907104%,
+    rgba(16, 115, 97, 1) 86.00000143051147%
+  );
+  --fondo: #0a0f0f;
+  --texto: #fffdfa;
+  --texto-alternativo: #0a0f0f;
+
+  /* Fonts */
+  --heading-1-font-family: KronaOne-Regular, sans-serif;
+  --heading-1-font-size: 30px;
+  --heading-1-line-height: normal;
+  --heading-1-font-weight: 400;
+  --heading-1-font-style: normal;
+  --heading-2-font-family: KronaOne-Regular, sans-serif;
+  --heading-2-font-size: 26px;
+  --heading-2-line-height: normal;
+  --heading-2-font-weight: 400;
+  --heading-2-font-style: normal;
+  --heading-3-font-family: KronaOne-Regular, sans-serif;
+  --heading-3-font-size: 22px;
+  --heading-3-line-height: normal;
+  --heading-3-font-weight: 400;
+  --heading-3-font-style: normal;
+  --heading-4-font-family: KronaOne-Regular, sans-serif;
+  --heading-4-font-size: 18px;
+  --heading-4-line-height: normal;
+  --heading-4-font-weight: 400;
+  --heading-4-font-style: normal;
+  --heading-5-font-family: KronaOne-Regular, sans-serif;
+  --heading-5-font-size: 16px;
+  --heading-5-line-height: normal;
+  --heading-5-font-weight: 400;
+  --heading-5-font-style: normal;
+  --body-text-1-font-family: MavenPro-Regular, sans-serif;
+  --body-text-1-font-size: 20px;
+  --body-text-1-line-height: normal;
+  --body-text-1-font-weight: 400;
+  --body-text-1-font-style: normal;
+  --body-text-2-font-family: MavenPro-Regular, sans-serif;
+  --body-text-2-font-size: 16px;
+  --body-text-2-line-height: normal;
+  --body-text-2-font-weight: 400;
+  --body-text-2-font-style: normal;
+  --body-text-3-font-family: MavenPro-Regular, sans-serif;
+  --body-text-3-font-size: 14px;
+  --body-text-3-line-height: normal;
+  --body-text-3-font-weight: 400;
+  --body-text-3-font-style: normal;
+  --body-text-4-font-family: MavenPro-Regular, sans-serif;
+  --body-text-4-font-size: 12px;
+  --body-text-4-line-height: normal;
+  --body-text-4-font-weight: 400;
+  --body-text-4-font-style: normal;
+
+  /* Effects */
+}

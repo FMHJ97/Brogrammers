@@ -1,7 +1,7 @@
 <nav class="navbar navbar-expand-md bg-primary">
     <div class="container-fluid">
         <a class="navbar-brand" href="./index.php">
-            <img src="logo.png" alt="Festival Logo"> 
+            <img src="../assets/img/Logo.svg" alt="Festival Logo"> 
         </a>
     </div>
     <div class="container-fluid justify-content-end ">
@@ -21,10 +21,12 @@
             <li class="nav-item">
                 <a class="nav-link" href="./info.php">Info</a>
             </li>
-            <li>
-                <i class="bi bi-person-circle"></i>
+            <li class="nav-item">
+                <a class="nav-link" href="./cart.php"><i class="bi bi-cart2"></i></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="./login.php"><i class="bi bi-person-circle"></i></a>
             </li>
         </ul>
-
     </div>
 </nav>

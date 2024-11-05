@@ -2,14 +2,21 @@
 // Navbar
 // 
 
+.navbar-brand{
+    img{
+    width: 110px;
+    @include media-breakpoint-up(lg) {
+        width: 167px;
+    }
+}
+
 #mainNav {
     padding-top: 1rem;
     padding-bottom: 1rem;
     font-family: $headings-font-family;
     font-weight: $headings-font-weight;
 
-    .navbar-brand {
-        color: $white;
+    
     }
 
     .navbar-nav {

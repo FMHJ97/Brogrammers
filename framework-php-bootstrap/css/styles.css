@@ -20173,34 +20173,39 @@ body {
   align-items: center;
 }
 
-#mainNav {
+.navbar-brand img {
+  width: 110px;
+}
+@media (min-width: 992px) {
+  .navbar-brand img {
+    width: 167px;
+  }
+}
+.navbar-brand #mainNav {
   padding-top: 1rem;
   padding-bottom: 1rem;
   font-family: "Montserrat", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
   font-weight: 700;
 }
-#mainNav .navbar-brand {
-  color: #fff;
-}
-#mainNav .navbar-nav {
+.navbar-brand .navbar-nav {
   margin-top: 1rem;
 }
-#mainNav .navbar-nav li.nav-item a.nav-link a.dropdown-item {
+.navbar-brand .navbar-nav li.nav-item a.nav-link a.dropdown-item {
   color: #fff;
 }
-#mainNav .navbar-nav li.nav-item a.nav-link a.dropdown-item:hover {
+.navbar-brand .navbar-nav li.nav-item a.nav-link a.dropdown-item:hover {
   color: #0d6efd;
 }
-#mainNav .navbar-nav li.nav-item a.nav-link a.dropdown-item:active, #mainNav .navbar-nav li.nav-item a.nav-link a.dropdown-item:focus {
+.navbar-brand .navbar-nav li.nav-item a.nav-link a.dropdown-item:active, .navbar-brand .navbar-nav li.nav-item a.nav-link a.dropdown-item:focus {
   color: #fff;
 }
-#mainNav .navbar-nav li.nav-item a.nav-link a.dropdown-item.active {
+.navbar-brand .navbar-nav li.nav-item a.nav-link a.dropdown-item.active {
   color: #0d6efd;
 }
-#mainNav .navbar-nav li.nav-item div.dropdown-menu a.dropdown-item:hover {
+.navbar-brand .navbar-nav li.nav-item div.dropdown-menu a.dropdown-item:hover {
   background-color: #0d6efd;
 }
-#mainNav .navbar-toggler {
+.navbar-brand .navbar-toggler {
   font-size: 80%;
   padding: 0.8rem;
 }

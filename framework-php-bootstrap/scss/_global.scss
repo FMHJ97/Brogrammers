@@ -8,8 +8,12 @@
 // https://caniuse.com/?search=scroll-padding
 
 html {
+   
     height: 100%;
     scroll-padding-top: calc(#{$navbar-height} - 1px);
+}
+body {
+    background-color: $fondo;
 }
 
 // Styling for page sections

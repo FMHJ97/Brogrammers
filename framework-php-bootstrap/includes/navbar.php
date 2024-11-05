@@ -21,6 +21,9 @@
             <li class="nav-item">
                 <a class="nav-link" href="./info.php">Info</a>
             </li>
+            <li>
+                <i class="bi bi-person-circle"></i>
+            </li>
         </ul>
 
     </div>

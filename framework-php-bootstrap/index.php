@@ -20,7 +20,6 @@
             </div>
             <div class="row">
                 <img src="" alt="Hay un video aqui">
-                <p>Aqui va el reloj</p>
             </div>
             <div class="row">
                 <button>Line up</button>

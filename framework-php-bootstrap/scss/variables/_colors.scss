@@ -4,10 +4,15 @@
 
 //- Override and add to color system
 $fondo: #0A0F0F;
+$primario1:#035951;
+$primario2:#107361;
+$secundario1:#2A505B;
+$secundario2:#5F8D95;
+$resaltar1:#29F2B9;
+$resaltar2:#C5FCEC;
+$textoBlanco:#FFFDFA;
+$textoNegro:#0A0F0F;
 
-//- Override primary color
-
-// $danger: yellow;
 // The contrast ratio to reach against white, to determine if color changes from "light" to "dark". Acceptable values for WCAG 2.0 are 3, 4.5 and 7.
 // See https://www.w3.org/TR/WCAG20/#visual-audio-contrast-contrast
 $min-contrast-ratio: 2.4;

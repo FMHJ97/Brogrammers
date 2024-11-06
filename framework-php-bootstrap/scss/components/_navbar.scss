@@ -44,3 +44,12 @@ nav {
         margin-right: 0;
     }
 }
+
+// To make the navbar responsive, we will hide the items in the navbar and show them in a dropdown menu except for the cart icon
+// The cart icon will be shown in the right side of the navbar but on the left side of the dropdown menu
+
+.navbar-nav .nav-item {
+    @include media-breakpoint-down(md) {
+        display: none;
+    }
+}

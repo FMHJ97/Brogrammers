@@ -20260,14 +20260,26 @@ nav {
 }
 
 .footer {
-  padding-top: 5rem;
-  padding-bottom: 5rem;
-  background-color: #6c757d;
-  color: #fff;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
 }
 
-.copyright {
-  background-color: rgb(84.3605150215, 91.3905579399, 97.6394849785);
+#divSocialMedia {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+}
+#divSocialMedia h4, #divSocialMedia .h4 {
+  color: #29F2B9;
+}
+#divSocialMedia a {
+  color: #FFFDFA;
+  font-size: 35px;
+}
+#divSocialMedia a:hover {
+  color: #29F2B9;
 }
 
 /*# sourceMappingURL=styles.css.map */

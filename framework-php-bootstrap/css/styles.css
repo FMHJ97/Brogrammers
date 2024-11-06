@@ -20173,72 +20173,35 @@ body {
   align-items: center;
 }
 
+nav {
+  background: linear-gradient(90deg, #035951 0%, #0A0F0F 42%);
+}
+
 .navbar-brand img {
   width: 110px;
 }
-@media (min-width: 992px) {
+@media (min-width: 768px) {
   .navbar-brand img {
     width: 167px;
   }
 }
-.navbar-brand #mainNav {
-  padding-top: 1rem;
-  padding-bottom: 1rem;
-  font-family: "Montserrat", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
-  font-weight: 700;
+
+.navbar-nav .nav-link {
+  color: #FFFDFA;
 }
-.navbar-brand .navbar-nav {
-  margin-top: 1rem;
-}
-.navbar-brand .navbar-nav li.nav-item a.nav-link a.dropdown-item {
-  color: #fff;
-}
-.navbar-brand .navbar-nav li.nav-item a.nav-link a.dropdown-item:hover {
-  color: #0d6efd;
-}
-.navbar-brand .navbar-nav li.nav-item a.nav-link a.dropdown-item:active, .navbar-brand .navbar-nav li.nav-item a.nav-link a.dropdown-item:focus {
-  color: #fff;
-}
-.navbar-brand .navbar-nav li.nav-item a.nav-link a.dropdown-item.active {
-  color: #0d6efd;
-}
-.navbar-brand .navbar-nav li.nav-item div.dropdown-menu a.dropdown-item:hover {
-  background-color: #0d6efd;
-}
-.navbar-brand .navbar-toggler {
-  font-size: 80%;
-  padding: 0.8rem;
+.navbar-nav .nav-link:hover {
+  color: #C5FCEC;
 }
 
-@media (min-width: 992px) {
-  #mainNav {
-    padding-top: 1.5rem;
-    padding-bottom: 1.5rem;
-    transition: padding-top 0.3s, padding-bottom 0.3s;
-  }
-  #mainNav .navbar-brand {
-    font-size: 1.75em;
-    transition: font-size 0.3s;
-  }
-  #mainNav .navbar-nav {
-    margin-top: 0;
-  }
-  #mainNav .navbar-nav > li.nav-item > a.nav-link.active {
-    color: #fff;
-    background: #0d6efd;
-  }
-  #mainNav .navbar-nav > li.nav-item > a.nav-link.active:active, #mainNav .navbar-nav > li.nav-item > a.nav-link.active:focus, #mainNav .navbar-nav > li.nav-item > a.nav-link.active:hover {
-    color: #fff;
-    background: #0d6efd;
-  }
-  #mainNav.navbar-shrink {
-    padding-top: 0.5rem;
-    padding-bottom: 0.5rem;
-  }
-  #mainNav.navbar-shrink .navbar-brand {
-    font-size: 1.5em;
-  }
+.navbar-nav .nav-link i {
+  font-size: 35px;
 }
+
+.navbar-nav .nav-item {
+  display: flex;
+  align-items: center;
+}
+
 .form-floating input.form-control,
 .form-floating textarea.form-control {
   font-size: 1.5rem;

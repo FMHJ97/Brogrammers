@@ -6,7 +6,7 @@
 <meta name="author" content="Brogrammers" />
 
 
-<!--<link rel="icon" type="image/x-icon" href="assets/favicon.ico" /> TODO
+<!--<link rel="icon" type="image/x-icon" href="assets/favicon.ico" /> TODO-->
 
 
 

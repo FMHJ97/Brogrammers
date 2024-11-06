@@ -21,6 +21,7 @@ nav {
 
 // Setting the text and icons color of the navbar
 .navbar-nav .nav-link {
+    font-family: $headings-font-family;
     color: $textoBlanco;
     &:hover {
         color: $resaltar2;
@@ -33,7 +34,13 @@ nav {
 }
 
 // Aligning the items in the right side of the navbar to the middle
+// Setting the separation between the items in the navbar to 50px except for the last one
 .navbar-nav .nav-item {
     display: flex;
     align-items: center;
+
+    margin-right: 50px;
+    &:last-child {
+        margin-right: 0;
+    }
 }

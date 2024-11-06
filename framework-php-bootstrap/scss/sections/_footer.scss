@@ -3,27 +3,40 @@
 // 
 
 .footer {
-    padding-top: 2rem;
-    padding-bottom: 2rem;
+    font-family: $body-font-family;
 }
 
-#divSocialMedia {
+#socialMedia {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    gap: 30px;
     // Título
-    h4 {
+    h3 {
         color: $resaltar1;
     }
     // Iconos
     a {
         color: $textoBlanco;
         font-size: 35px;
+        transition: all 0.05s ease;
     }
     a:hover {
         color: $resaltar1;
     }
 }
 
+#linksFooter {
+    a {
+        color: $textoBlanco;
+        font-size: 20px;
+        text-decoration: none;
+        transition: all 0.05s ease;
+    }
+    a:hover {
+        color: $resaltar1;
+    }
+    small {
+        color: $secundario2;
+    }
+}

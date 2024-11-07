@@ -20174,6 +20174,12 @@ nav {
   margin-right: 0;
 }
 
+@media (max-width: 767.98px) {
+  .navbar-nav .nav-item {
+    display: none;
+  }
+}
+
 .form-floating input.form-control,
 .form-floating textarea.form-control {
   font-size: 1.5rem;
@@ -20259,10 +20265,6 @@ nav {
   }
 }
 
-.footer {
-  font-family: "Maven Pro", sans-serif;
-}
-
 #socialMedia {
   display: flex;
   flex-direction: column;
@@ -20283,7 +20285,8 @@ nav {
 
 #linksFooter a {
   color: #FFFDFA;
-  font-size: 20px;
+  font-family: "Krona One", sans-serif;
+  font-size: 16px;
   text-decoration: none;
   transition: all 0.05s ease;
 }
@@ -20291,6 +20294,7 @@ nav {
   color: #29F2B9;
 }
 #linksFooter small, #linksFooter .small {
+  font-family: "Maven Pro", sans-serif;
   color: #5F8D95;
 }
 

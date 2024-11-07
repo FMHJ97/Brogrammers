@@ -1,11 +1,6 @@
 // 
 // Footer
 // 
-
-.footer {
-    font-family: $body-font-family;
-}
-
 #socialMedia {
     display: flex;
     flex-direction: column;
@@ -17,7 +12,7 @@
     }
     // Iconos
     a {
-        color: $textoBlanco;
+        color: $textoEnlace;
         font-size: 35px;
         transition: all 0.05s ease;
     }
@@ -28,8 +23,9 @@
 
 #linksFooter {
     a {
-        color: $textoBlanco;
-        font-size: 20px;
+        color: $textoEnlace;
+        font-family: $headings-font-family;
+        font-size: 16px;
         text-decoration: none;
         transition: all 0.05s ease;
     }
@@ -37,6 +33,7 @@
         color: $resaltar1;
     }
     small {
+        font-family: $body-font-family;;
         color: $secundario2;
     }
 }

@@ -1,0 +1,30 @@
+TOP PECADOS... 
+
+
+1.Inconsistencia---    	Doc_nuevo.  o docNuevo…  el primero mejor
+			Organizar los scss
+
+
+2.No usar Bootstrap... madafaka.. hay un montón de recursos.. úsalos.
+
+
+3.No usar Variables.    $color1: #FF3456;
+			$color2: #030303;
+			$primary: $color2;
+
+			$spacer: 1rem -> 16px.    esto marca el m-1, m-2.. o p-1, p-2.. etc.
+			intentar no usar margin:15px, usa rem. con m-1, m-2, etc. 
+
+
+4.No usar elementos semánticos.
+
+
+5. Complicar el código... bueeeenooooooooo…..   no poner mil divs innecesarios. 
+						no poner comentarios innecesarios
+
+
+NADA DE STYLES EN EL HEAD ---- TE REVIENTO..    
+
+DENTRO DE UN DIV PONES STYLE Y VAS AL INFIERNO DIRECTO.
+
+NADA DE PONER MIL MIERDAS EN EL CLASS.

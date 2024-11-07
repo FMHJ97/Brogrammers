@@ -10,8 +10,10 @@ $secundario1:#2A505B;
 $secundario2:#5F8D95;
 $resaltar1:#29F2B9;
 $resaltar2:#C5FCEC;
-$textoBlanco:#FFFDFA;
-$textoNegro:#0A0F0F;
+$texto1:#FFFDFA;
+$texto2:#0A0F0F;
+
+$textoEnlace: $texto1;
 
 // The contrast ratio to reach against white, to determine if color changes from "light" to "dark". Acceptable values for WCAG 2.0 are 3, 4.5 and 7.
 // See https://www.w3.org/TR/WCAG20/#visual-audio-contrast-contrast

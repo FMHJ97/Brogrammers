@@ -62,7 +62,7 @@
         </div>
         
       </div>
-      <?php // include("includes/patrocinadores.php");  ?>
+      <?php include("includes/patrocinadores.php");  ?>
     </main>
     
     <?php include("includes/footer.php"); ?>

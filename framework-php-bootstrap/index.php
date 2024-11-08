@@ -6,7 +6,7 @@
   </head>
 
 <body>
-<?php // include("includes/navbar.php"); ?>
+<?php include("includes/navbar.php"); ?>
 
     <main>
       <div class="container-fluid">

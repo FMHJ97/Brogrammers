@@ -5,7 +5,7 @@
 // Fade in Navbar
 nav {
 
-    background: linear-gradient(90deg, $primario1 0%, $fondo 42%);
+    background: $fade-navbar;
 
 }
 
@@ -33,6 +33,12 @@ nav {
     font-size: 35px;
 }
 
+// Setting the size of the cart icon in the navbar to 35px
+.cart-icon {
+    font-size: 35px;
+    color: $texto1;
+}
+
 // Aligning the items in the right side of the navbar to the middle
 // Setting the separation between the items in the navbar to 50px except for the last one
 .navbar-nav .nav-item {
@@ -42,6 +48,7 @@ nav {
     margin-right: 50px;
     &:last-child {
         margin-right: 0;
+        padding-right: 10px;
     }
 }
 

@@ -1,14 +1,39 @@
 // 
 // Footer
 // 
-
-.footer {
-    padding-top: 5rem;
-    padding-bottom: 5rem;
-    background-color: $secondary;
-    color: $white;
+#socialMedia {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    // Título
+    h3 {
+        color: $resaltar1;
+    }
+    // Iconos
+    a {
+        color: $textoEnlace;
+        font-size: 35px;
+        transition: all 0.05s ease;
+    }
+    a:hover {
+        color: $resaltar1;
+    }
 }
 
-.copyright {
-    background-color: darken($secondary, 10%);
+#linksFooter {
+    a {
+        color: $textoEnlace;
+        font-family: $headings-font-family;
+        font-size: 16px;
+        text-decoration: none;
+        transition: all 0.05s ease;
+    }
+    a:hover {
+        color: $resaltar1;
+    }
+    small {
+        font-family: $body-font-family;;
+        color: $secundario2;
+    }
 }

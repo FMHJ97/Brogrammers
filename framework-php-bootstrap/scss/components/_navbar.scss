@@ -2,88 +2,54 @@
 // Navbar
 // 
 
-#mainNav {
-    padding-top: 1rem;
-    padding-bottom: 1rem;
-    font-family: $headings-font-family;
-    font-weight: $headings-font-weight;
+// Fade in Navbar
+nav {
 
-    .navbar-brand {
-        color: $white;
-    }
+    background: linear-gradient(90deg, $primario1 0%, $fondo 42%);
 
-    .navbar-nav {
-        margin-top: 1rem;
+}
 
-        li.nav-item {
-            a.nav-link a.dropdown-item {
-                color: $white;
-
-                &:hover {
-                    color: $primary;
-                }
-
-                &:active,
-                &:focus {
-                    color: $white;
-                }
-
-                &.active {
-                    color: $primary;
-                }
-            }
-            div.dropdown-menu{
-                a.dropdown-item{
-                    &:hover {
-                        background-color: $primary;
-
-                    }
-                }
-            }
+// Logo
+.navbar-brand{
+    img{
+        width: 110px;
+        @include media-breakpoint-up(md) {
+            width: 167px;
         }
-    }
-
-    .navbar-toggler {
-        font-size: 80%;
-        padding: 0.8rem;
     }
 }
 
-
-@include media-breakpoint-up(lg) {
-    #mainNav {
-        padding-top: 1.5rem;
-        padding-bottom: 1.5rem;
-        transition: padding-top 0.3s, padding-bottom 0.3s;
-
-        .navbar-brand {
-            font-size: 1.75em;
-            transition: font-size 0.3s;
-        }
-
-        .navbar-nav {
-            margin-top: 0;
-        }
-
-        .navbar-nav>li.nav-item>a.nav-link.active {
-            color: $white;
-            background: $primary;
-
-            &:active,
-            &:focus,
-            &:hover {
-                color: $white;
-                background: $primary;
-            }
-        }
+// Setting the text and icons color of the navbar
+.navbar-nav .nav-link {
+    font-family: $headings-font-family;
+    color: $textoEnlace;
+    &:hover {
+        color: $resaltar2;
     }
+}
 
-    #mainNav.navbar-shrink {
-        padding-top: 0.5rem;
-        padding-bottom: 0.5rem;
+// Setting the size of the icons in the navbar to 35px
+.navbar-nav .nav-link i {
+    font-size: 35px;
+}
 
-        .navbar-brand {
-            font-size: 1.5em;
-        }
+// Aligning the items in the right side of the navbar to the middle
+// Setting the separation between the items in the navbar to 50px except for the last one
+.navbar-nav .nav-item {
+    display: flex;
+    align-items: center;
+
+    margin-right: 50px;
+    &:last-child {
+        margin-right: 0;
+    }
+}
+
+// To make the navbar responsive, we will hide the items in the navbar and show them in a dropdown menu except for the cart icon
+// The cart icon will be shown in the right side of the navbar but on the left side of the dropdown menu
+
+.navbar-nav .nav-item {
+    @include media-breakpoint-down(md) {
+        display: none;
     }
 }

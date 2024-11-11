@@ -19,7 +19,7 @@
 <!-- Core theme CSS (includes Bootstrap)-->
 
 <link href="css/styles.css" rel="stylesheet" />
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+Hi3o5Gc0ogp+M9A9I1H/Vi/5zF6q" crossorigin="anonymous"></script>
-<!--Include Boostrap JS for interactive components
-<script src="node_modules/bootstrap/dist/js/bootstrap.bundle.js"></script> --> 
+
+<!--Include Boostrap JS for interactive components -->
+<script src="node_modules/bootstrap/dist/js/bootstrap.bundle.js"></script> 
 

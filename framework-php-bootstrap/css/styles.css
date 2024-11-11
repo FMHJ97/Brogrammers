@@ -20078,6 +20078,9 @@ html {
 body {
   background-color: #0A0F0F;
 }
+body h1, body .h1 {
+  color: #FFFDFA;
+}
 
 .page-section {
   padding: 6rem 0;
@@ -20186,22 +20189,44 @@ nav {
   }
 }
 
-.form-floating input.form-control,
-.form-floating textarea.form-control {
-  font-size: 1.5rem;
-  border-left: 0;
-  border-right: 0;
-  border-top: 0;
-  border-radius: 0;
-  border-width: 1px;
+.authentication-form {
+  margin-top: 6em;
+  margin-bottom: 6em;
+  padding: 4em 3em 4em 3em;
+  border-radius: 10px;
+  border-style: solid;
+  border-color: #035951;
+  border-width: 5px;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0px 0px 15px 0px #035951;
+  overflow: hidden;
+  font-family: "Krona One", sans-serif;
 }
-.form-floating input.form-control:focus,
-.form-floating textarea.form-control:focus {
-  box-shadow: none;
+.authentication-form a {
+  text-decoration: none;
+  color: #29F2B9;
 }
-.form-floating label {
-  font-size: 1.5rem;
-  color: #6c757d;
+.authentication-form p, .authentication-form label {
+  color: #FFFDFA;
+}
+.authentication-form input {
+  font-family: "Maven Pro", sans-serif;
+}
+.authentication-form .form-check-input {
+  accent-color: #29F2B9;
+}
+.authentication-form button {
+  background-color: #29F2B9;
+  color: #0A0F0F;
+}
+.authentication-form #reset_pwd {
+  color: #FFFDFA;
+}
+
+.form-check-input:checked {
+  background-color: #29F2B9;
+  border-color: #29F2B9;
 }
 
 .masthead {

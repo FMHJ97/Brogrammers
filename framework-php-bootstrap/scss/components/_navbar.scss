@@ -33,10 +33,17 @@ nav {
     font-size: 35px;
 }
 
-// Setting the size of the cart icon in the navbar to 35px
+// Setting the size of the cart icon in the navbar to 35px and 27px when the screen is smaller than medium
 .cart-icon {
     font-size: 35px;
-    color: $texto1;
+    color: $textoEnlace;
+    @include media-breakpoint-down(md) {
+        font-size: 27px;
+
+        &:hover {
+            color: $resaltar2;
+        }
+    }
 }
 
 // Aligning the items in the right side of the navbar to the middle
@@ -48,15 +55,25 @@ nav {
     margin-right: 50px;
     &:last-child {
         margin-right: 0;
-        padding-right: 10px;
+        padding-right: 0px;
     }
 }
 
-// To make the navbar responsive, we will hide the items in the navbar and show them in a dropdown menu except for the cart icon
-// The cart icon will be shown in the right side of the navbar but on the left side of the dropdown menu
+// Setting the color of the menu icon to white and the size to 37px
 
-.navbar-nav .nav-item {
-    @include media-breakpoint-down(md) {
-        display: none;
-    }
+button i {
+    color: $textoEnlace;
+    font-size: 37px;    
+}
+
+// Setting the color of the menu icon to $resaltar2 when hovered
+
+button i:hover {
+    color: $resaltar2;
+}
+
+// When the burguer menu is clicked, the dropdown menu will be shown and the icon will rotate 90 degrees
+
+button i.rotate {
+    transform: rotate(90deg);
 }

@@ -20172,6 +20172,14 @@ nav {
   font-size: 35px;
   color: #FFFDFA;
 }
+@media (max-width: 767.98px) {
+  .cart-icon {
+    font-size: 27px;
+  }
+  .cart-icon:hover {
+    color: #C5FCEC;
+  }
+}
 
 .navbar-nav .nav-item {
   display: flex;
@@ -20180,13 +20188,20 @@ nav {
 }
 .navbar-nav .nav-item:last-child {
   margin-right: 0;
-  padding-right: 10px;
+  padding-right: 0px;
 }
 
-@media (max-width: 767.98px) {
-  .navbar-nav .nav-item {
-    display: none;
-  }
+button i {
+  color: #FFFDFA;
+  font-size: 37px;
+}
+
+button i:hover {
+  color: #C5FCEC;
+}
+
+button i.rotate {
+  transform: rotate(90deg);
 }
 
 .authentication-form {

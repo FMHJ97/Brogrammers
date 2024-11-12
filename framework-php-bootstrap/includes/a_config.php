@@ -6,10 +6,20 @@
 			break;
 
 		case "/login.php":
-			$CURRENT_PAGE = "Login"; 
-			$PAGE_TITLE = "Login";
+			$CURRENT_PAGE = "Iniciar Sesión"; 
+			$PAGE_TITLE = "Iniciar Sesión";
 			break;
+
+		case "/restore_password.php":
+			$CURRENT_PAGE = "Recuperar Contraseña"; 
+			$PAGE_TITLE = "Recuperar Contraseña";
+			break;			
 		
+		case "/register.php":
+			$CURRENT_PAGE = "Crear Cuenta"; 
+			$PAGE_TITLE = "Crear Cuenta";
+			break;	
+
 		default:
 			$CURRENT_PAGE = "Index";
 			$PAGE_TITLE = "GroundSound";

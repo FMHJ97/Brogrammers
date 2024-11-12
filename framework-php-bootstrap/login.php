@@ -17,8 +17,8 @@
                 <!-- Login Section Heading-->
                 <div class="row">
                     <h1>Iniciar Sesión</h1>
-                    <div class="col d-flex flex-column flex-md-row">
-                        <p>¿No tienes una cuenta?&nbsp;</p>
+                    <div class="col d-flex flex-column flex-md-row mb-3 mb-md-4">
+                        <p class="mb-0">¿No tienes una cuenta?&nbsp;</p>
                         <a href="register.php">Regístrate</a>
                     </div>
                 </div>
@@ -37,15 +37,16 @@
                             name="pswd">
                     </div>
                     <!-- Remember me checkbox-->
-                    <div class="form-check mb-3">
+                    <div class="form-check mb-5">
                         <label class="form-check-label">
                             <input class="form-check-input" type="checkbox" name="remember"> Recuérdame
                         </label>
                     </div>
-                    <!-- Login Button-->
-                    <button type="submit" class="btn">Iniciar sesión</button>
-                    <!-- Forgot Password Link-->
-                    <a id="reset_pwd" href="restore_password.php">¿Olvidó su contraseña?</a>
+                    <!-- Login Button and Forgot Password Link-->
+                    <div class="d-flex flex-column ">
+                        <button type="submit" class="btn">Iniciar sesión</button>
+                        <a id="reset_pwd" href="restore_password.php" class="ms-auto">¿Olvidó su contraseña?</a>
+                    </div>
                 </form>
             </div>
         </section>

@@ -1,0 +1,70 @@
+/* ---- grid container ---- */
+.cardContainer {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); /* Responsive grid layout */
+    gap: 10px;
+    width: 100%;
+}
+
+.gridContainer {
+    height: fit-content;
+}
+
+.grid {
+    margin: 2rem;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); /* Responsive grid columns */
+    gap: 16px; /* Spacing between items */
+}
+
+/* clearfix (optional) */
+.grid:after {
+    content: '';
+    display: block;
+    clear: both;
+}
+
+/* ---- grid-item ---- */
+.grid-item {
+    background: #D26; /* Example background color */
+    border: 2px solid #333;
+    border-color: hsla(0, 0%, 0%, 0.5);
+    border-radius: 5px;
+    overflow: hidden;
+    position: relative;
+    min-width: 20%;
+    max-width: 100%;
+}
+
+/* Variable width classes for Masonry-like behavior */
+.grid-item--width2 {
+    grid-column: span 2; /* Take up 2 columns */
+}
+
+.grid-item--width3 {
+    grid-column: span 3; /* Take up 3 columns */
+}
+
+.grid-item--width4 {
+    grid-column: span 4; /* Take up 4 columns */
+}
+
+/* Variable height classes for Masonry-like behavior */
+.grid-item--height2 {
+    height: 400px;
+}
+
+.grid-item--height3 {
+    height: 600px;
+}
+
+.grid-item--height4 {
+    height: 800px;
+}
+
+/* Optional: Make images fit inside their grid item */
+.grid-item img {
+    width: 100%;
+    height: auto;
+    display: block;
+}

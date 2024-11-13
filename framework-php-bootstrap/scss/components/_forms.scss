@@ -1,27 +1,102 @@
 // 
 // Forms
-// 
+//
+main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
 
-.form-floating {
+// Clase para los formularios Login, Register y Restore Password.
+.authentication-form {
+    margin-top: 5em;
+    margin-bottom: 5em;
+    padding: 3em 3em 3em 3em;
+    border-radius: 10px;
+    border-style: solid;
+    border-color: $primario1;
+    border-width: 5px;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0px 0px 15px 0px $primario1;
+    font-family: $headings-font-family;
 
-    input.form-control,
-    textarea.form-control {
-        font-size: 1.5rem;
-        border-left: 0;
-        border-right: 0;
-        border-top: 0;
-        border-radius: 0;
-        border-width: 1px;
-
-        &:focus {
-            box-shadow: none;
-        }
-
+    @include media-breakpoint-down(md) {
+        margin-top: 4em;
+        margin-bottom: 4em;
+        padding: 2em 1em 2em 1em;
     }
 
+    span {
+        color: $resaltar1;
+    }
+
+    a {
+        text-decoration: none;
+        color: $resaltar1;
+    }
+
+    p,
     label {
-        font-size: 1.5rem;
-        color: $gray-600;
+        color: $texto1;
     }
 
+    input {
+        font-family: $body-font-family;
+    }
+
+    .form-check-input {
+        accent-color: $resaltar1;
+    }
+
+    button {
+        background-color: $resaltar1;
+        color: $texto2;
+        border-radius: 10px;
+        font-size: 1.5rem;
+        padding: 10px;
+        display: flex;
+        width: 100%;
+        margin-bottom: 1em;
+        justify-content: center;
+        align-items: center;
+        &:hover {
+            background-color: $resaltar1;
+            box-shadow: 0px 0px 10px 0px $resaltar1;
+            transition: 0.2s ease-in-out;
+        }
+    }
+
+    #reset_pwd {
+        color: $textoEnlace;
+    }
+}
+
+.form-control {
+    border-radius: 10px;
+    border: 3px solid $primario1;
+    background-color: $fondo;
+    padding: 0.75em 0.5em 0.75em 0.5em;
+    margin-top: 0.5em;
+    margin-bottom: 2em;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    &:focus {
+        background-color: $fondo;
+        border-color: $primario2;
+        color: $resaltar2;
+        box-shadow: 0px 0px 15px 0px $primario1;
+    }
+    &::placeholder {
+        color: $resaltar2;
+    }
+}
+
+// Color de fondo del checkbox al estar seleccionado.
+.form-check-input:checked {
+    background-color: $resaltar1;
+    border-color: $resaltar1;
 }

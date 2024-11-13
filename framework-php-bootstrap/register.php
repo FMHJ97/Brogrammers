@@ -51,7 +51,7 @@
                     <!-- News checkbox-->
                     <div class="form-check mb-3">
                         <label class="form-check-label">
-                            <input class="form-check-input" type="checkbox" name="news"> Deseo recibir noticias e información sobre GroundSoundFestival.
+                            <input class="form-check-input" type="checkbox" name="news"> Deseo recibir noticias e información sobre GroundSound Festival.
                         </label>
                     </div>
                     <!-- Terms checkbox-->

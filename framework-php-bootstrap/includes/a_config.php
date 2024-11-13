@@ -2,7 +2,7 @@
 	switch ($_SERVER["SCRIPT_NAME"]) {
 		case "/index.php":
 			$CURRENT_PAGE = "Index"; 
-			//$PAGE_TITLE = "Portfolio";
+			$PAGE_TITLE = "GroundSound Festival";
 			break;
 
 		case "/login.php":
@@ -22,6 +22,6 @@
 
 		default:
 			$CURRENT_PAGE = "Index";
-			$PAGE_TITLE = "GroundSound";
+			$PAGE_TITLE = "GroundSound Festival";
 	}
 ?>

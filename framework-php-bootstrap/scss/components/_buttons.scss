@@ -19,7 +19,26 @@
     align-items: center;
 }
 
-// Custom ticket buttons 
+// Custom ticket/merch buttons
+
+.btn-category-group {
+    display: flex;
+    flex-direction: row;
+    gap: 1em;
+
+    .btn-category-item {
+        background-color: $resaltar1;
+        color: $texto2;
+        font-family: $headings-font-family;
+        border-radius: 20px;
+        padding: 10px 20px 10px 20px;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        align-items: center;
+        justify-content: center;
+    }
+}
 
 .button-ticket {
     background: $resaltar2;

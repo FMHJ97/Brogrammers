@@ -26,8 +26,11 @@
                 <!-- Merch Filter -->
                 <div class="row">
                     <!-- Buttons -->
-                    <div class="col d-flex flex-row">
-                        
+                    <div class="col btn-category-group">
+                        <button type="button" class="btn btn-category-item">Todos los productos</button>
+                        <button type="button" class="btn btn-category-item">Ropa</button>
+                        <button type="button" class="btn btn-category-item">Accesorios</button>
+                        <button type="button" class="btn btn-category-item">Música</button>
                     </div>
                     <!-- Search Bar -->
                     <div class="col d-flex">

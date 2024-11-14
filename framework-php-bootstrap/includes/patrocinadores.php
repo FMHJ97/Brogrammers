@@ -1,4 +1,4 @@
-<section class="container my-5 patro-seccion">
+<section class="container patro-seccion">
 
     <!-- AHORA METO TODO LO DE ABAJO DENTRO Y PRUEBO.-->  
     <!-- TITULO-->  

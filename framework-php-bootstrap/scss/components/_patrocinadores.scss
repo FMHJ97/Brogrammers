@@ -1,0 +1,37 @@
+.patro-seccion{
+
+    background-color: $fondo;
+    border: 2px solid white;
+    box-shadow:
+      0 0 10px rgba(255, 255, 255, 1),
+      0 0 20px rgba(255, 255, 255, 0.8),
+      0 0 35px rgba(255, 255, 255, 0.6),
+      0 0 50px rgba(255, 255, 255, 0.4);
+
+
+        
+
+      #patro-titulo {
+        text-align: center;
+        justify-content: center;
+        color: white;
+      }
+      
+      #patro-fila {
+        /*border: 1px solid red;*/
+        max-width: 800px;
+
+        .imgpatro {
+            text-align: center;
+            justify-content: center;
+             /*border: 1px solid green; */
+            padding: 15px;
+          }
+
+
+
+      }
+      
+      
+}
+

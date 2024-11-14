@@ -18,13 +18,13 @@ document.addEventListener('DOMContentLoaded', function () {
 
                     // Apply appropriate Bootstrap column classes
                     if (item.width > 500 && item.height > 500) {
-                        gridItem.className = "grid-item col-12";
+                        gridItem.className = "grid-item col-12 p-3";
                     } else if (item.height > 500) {
-                        gridItem.className = "grid-item col-md-6";
+                        gridItem.className = "grid-item col-md-6 p-3";
                     } else if (item.width > 500) {
-                        gridItem.className = "grid-item col-md-6";
+                        gridItem.className = "grid-item col-md-6 p-3";
                     } else {
-                        gridItem.className = "grid-item col-sm-6 col-lg-3";
+                        gridItem.className = "grid-item col-sm-6 col-lg-3 p-3";
                     }
 
                     const foto = document.createElement("img");

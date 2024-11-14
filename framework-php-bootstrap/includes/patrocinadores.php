@@ -1,10 +1,4 @@
-<section class="container my-5">
-
-    <div class="row">
-      <div class="col-10 my-auto">
-          
-      </div>
-    </div>
+<section class="container my-5 patro-seccion">
 
     <!-- AHORA METO TODO LO DE ABAJO DENTRO Y PRUEBO.-->  
     <!-- TITULO-->  

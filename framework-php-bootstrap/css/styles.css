@@ -20331,15 +20331,12 @@ main {
 }
 
 .grid {
-  gap: 16px; /* Spacing between items */
+  gap: 16px;
   margin: 0 auto; /* Center the grid */
 }
 
 /* Optional: Basic styles for grid items */
 .grid-item {
-  background: #D26; /* Example background color */
-  border: 2px solid #333;
-  border-color: hsla(0, 0%, 0%, 0.5);
   border-radius: 5px;
   overflow: hidden;
   position: relative;
@@ -20361,9 +20358,6 @@ main {
 
 /* ---- grid-item ---- */
 .grid-item {
-  background: #D26; /* Example background color */
-  border: 2px solid #333;
-  border-color: hsla(0, 0%, 0%, 0.5);
   border-radius: 5px;
   overflow: hidden;
   position: relative;

@@ -1,6 +1,6 @@
 <?php include("includes/a_config.php"); ?>
 <!DOCTYPE html>
-<html>
+<html >
 
 <head>
     <script src="js/media.js"></script>
@@ -11,12 +11,10 @@
 <body>
     <?php include("includes/navbar.php"); ?>
 
-    <div class="row">
-        <div class="col">
-        <div id="mediaContainer" class="grid row">
+    
+        <div id="mediaContainer" class="grid row mt-4">
 
-        </div>
-    </div>
+    
 </div>
 
 

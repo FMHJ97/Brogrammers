@@ -20400,6 +20400,8 @@ main {
 .patro-seccion {
   background-color: #0A0F0F;
   border: 2px solid white;
+  margin-bottom: 5rem;
+  margin-top: 3rem;
   box-shadow: 0 0 10px rgb(255, 255, 255), 0 0 20px rgba(255, 255, 255, 0.8), 0 0 35px rgba(255, 255, 255, 0.6), 0 0 50px rgba(255, 255, 255, 0.4);
 }
 .patro-seccion #patro-titulo {

@@ -1,21 +1,27 @@
-/* ---- grid container ---- */
-.cardContainer {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); /* Responsive grid layout */
-    gap: 10px;
-    width: 100%;
-}
 
-.gridContainer {
-    height: fit-content;
-}
 
 .grid {
-    margin: 2rem;
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); /* Responsive grid columns */
     gap: 16px; /* Spacing between items */
+    margin: 0 auto; /* Center the grid */
 }
+
+/* Optional: Basic styles for grid items */
+.grid-item {
+    background: #D26; /* Example background color */
+    border: 2px solid #333;
+    border-color: hsla(0, 0%, 0%, 0.5);
+    border-radius: 5px;
+    overflow: hidden;
+    position: relative;
+}
+
+/* Make images fit inside their grid item */
+.grid-item img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
 
 /* clearfix (optional) */
 .grid:after {
@@ -62,9 +68,3 @@
     height: 800px;
 }
 
-/* Optional: Make images fit inside their grid item */
-.grid-item img {
-    width: 100%;
-    height: auto;
-    display: block;
-}

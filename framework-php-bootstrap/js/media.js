@@ -1,52 +1,53 @@
 document.addEventListener('DOMContentLoaded', function () {
-    // Initialize Masonry grid
-    var grid = document.querySelector('.grid'); // Get the grid element
+    var grid = document.querySelector('.grid');
     var masonry = new Masonry(grid, {
-        itemSelector: '.grid-item', // Class for individual grid items
-        columnWidth: '.grid-item',  // Define the column width
-        percentPosition: true       // Ensure positions are relative to the container
+        itemSelector: '.grid-item',
+        columnWidth: '.grid-item',
+        percentPosition: true
     });
 
     function loadImages() {
         fetch('media-url.json')
             .then((response) => response.json())
             .then((json) => {
+                let imagesLoaded = 0;
+                const totalImages = json.length;
+
                 json.forEach((item) => {
                     const gridItem = document.createElement("div");
-                    gridItem.className = "grid-item"; // Apply the grid item class
 
-                    const card = document.createElement("div");
-                    card.className = "card"; // Card class for styling (optional)
+                    // Apply appropriate Bootstrap column classes
+                    if (item.width > 500 && item.height > 500) {
+                        gridItem.className = "grid-item col-12";
+                    } else if (item.height > 500) {
+                        gridItem.className = "grid-item col-md-6";
+                    } else if (item.width > 500) {
+                        gridItem.className = "grid-item col-md-6";
+                    } else {
+                        gridItem.className = "grid-item col-sm-6 col-lg-3";
+                    }
 
                     const foto = document.createElement("img");
-                    foto.src = item.url; // Set image URL
-
-                    // Wait for the image to load before checking its size
+                    foto.src = item.url;
+                    foto.className = "img-fluid";
+                    
+                    // When the image is loaded, check if all images are loaded
                     foto.onload = function () {
-                        console.log("Image loaded: " + foto.naturalWidth + "x" + foto.naturalHeight);
-
-                        // Optionally, perform any actions based on image dimensions
-                        if (foto.naturalWidth > 500 && foto.naturalHeight > 500) { 
-                            foto.className = "grid-item--height4 grid-item--width4"; // Larger images
-                        } else if (foto.naturalHeight > 500) {
-                            foto.className = "grid-item--height4"; // Taller images
-                        } else if (foto.naturalWidth > 500) {
-                            foto.className = "grid-item--width4"; // Wider images
-                        } 
-
-                        // Append the image to the grid item (not the card)
-                        gridItem.appendChild(foto);
-
-                        // Append the card to the grid container
-                        document.getElementById("mediaContainer").appendChild(gridItem);
-
-                        // Trigger Masonry layout refresh after new item is added
-                        masonry.appended(gridItem); // Notify Masonry of the new item
+                        imagesLoaded++;
+                        if (imagesLoaded === totalImages) {
+                            // Trigger Masonry layout after all images have loaded
+                            masonry.layout();
+                        }
                     };
+
+                    gridItem.appendChild(foto);
+                    document.getElementById("mediaContainer").appendChild(gridItem);
+
+                    // Notify Masonry of the new item
+                    masonry.appended(gridItem);
                 });
             });
     }
 
-    // Call the function to load images
     loadImages();
 });

@@ -13,9 +13,11 @@
 
     <div class="row">
         <div class="col">
-            <div id="mediaContainer" class="grid"></div>
+        <div id="mediaContainer" class="grid row">
+
         </div>
     </div>
+</div>
 
 
 

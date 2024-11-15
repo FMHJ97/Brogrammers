@@ -19,6 +19,15 @@ nav {
     }
 }
 
+// Aligning the items of the collapse button to the right when in mobile
+.navbar-nav {
+    @include media-breakpoint-down(md) {
+        display: flex;
+        align-items: end;
+    }   
+
+}
+
 // Setting the text and icons color of the navbar
 .navbar-nav .nav-link {
     font-family: $headings-font-family;
@@ -56,6 +65,11 @@ nav {
     &:last-child {
         margin-right: 0;
         padding-right: 0px;
+    }
+
+    // When in mobile, the margin-right will be 10px
+    @include media-breakpoint-down(md) {
+        margin-right: 0px;
     }
 }
 

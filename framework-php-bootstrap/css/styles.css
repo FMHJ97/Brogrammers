@@ -20266,7 +20266,7 @@ main {
 .authentication-form {
   margin-top: 5em;
   margin-bottom: 5em;
-  padding: 3em;
+  padding: 3em 3em 3em 3em;
   border-radius: 10px;
   border-style: solid;
   border-color: #035951;
@@ -20349,12 +20349,15 @@ main {
 }
 
 .grid {
-  gap: 16px;
+  gap: 16px; /* Spacing between items */
   margin: 0 auto; /* Center the grid */
 }
 
 /* Optional: Basic styles for grid items */
 .grid-item {
+  background: #D26; /* Example background color */
+  border: 2px solid #333;
+  border-color: hsla(0, 0%, 0%, 0.5);
   border-radius: 5px;
   overflow: hidden;
   position: relative;
@@ -20376,6 +20379,9 @@ main {
 
 /* ---- grid-item ---- */
 .grid-item {
+  background: #D26; /* Example background color */
+  border: 2px solid #333;
+  border-color: hsla(0, 0%, 0%, 0.5);
   border-radius: 5px;
   overflow: hidden;
   position: relative;
@@ -20407,6 +20413,29 @@ main {
 
 .grid-item--height4 {
   height: 800px;
+}
+
+.patro-seccion {
+  background-color: #0A0F0F;
+  border: 2px solid white;
+  margin-bottom: 5rem;
+  margin-top: 3rem;
+  box-shadow: 0 0 10px rgb(255, 255, 255), 0 0 20px rgba(255, 255, 255, 0.8), 0 0 35px rgba(255, 255, 255, 0.6), 0 0 50px rgba(255, 255, 255, 0.4);
+}
+.patro-seccion #patro-titulo {
+  text-align: center;
+  justify-content: center;
+  color: white;
+}
+.patro-seccion #patro-fila {
+  /*border: 1px solid red;*/
+  max-width: 800px;
+}
+.patro-seccion #patro-fila .imgpatro {
+  text-align: center;
+  justify-content: center;
+  /*border: 1px solid green; */
+  padding: 15px;
 }
 
 .masthead {

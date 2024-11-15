@@ -20195,6 +20195,10 @@ body h2, body .h2 {
   font-family: "Krona One", sans-serif;
 }
 
+button {
+  border: 0;
+}
+
 nav {
   background: linear-gradient(90deg, #035951 0%, #0A0F0F 42%);
   box-shadow: -5px -5px 30px 0px #035951;
@@ -20387,6 +20391,14 @@ main {
 }
 .ticket-card .button-ticket {
   align-self: center;
+}
+.ticket-card .ticket-img {
+  position: relative;
+  overflow: hidden;
+  border-radius: 10px;
+  object-fit: cover;
+  height: 500px;
+  width: 100%;
 }
 
 .grid {

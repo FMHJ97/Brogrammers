@@ -55,3 +55,8 @@
     color: $texto2;
     font-family: $headings-font-family;
 }
+
+// Removing standard button border
+button {
+    border: 0;
+}

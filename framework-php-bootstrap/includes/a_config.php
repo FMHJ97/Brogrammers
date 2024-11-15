@@ -10,6 +10,11 @@
 			$PAGE_TITLE = "Iniciar Sesión";
 			break;
 
+		case "/tickets.php":
+			$CURRENT_PAGE = "Tickets"; 
+			$PAGE_TITLE = "Tickets";
+			break;
+
 		case "/restore_password.php":
 			$CURRENT_PAGE = "Recuperar Contraseña"; 
 			$PAGE_TITLE = "Recuperar Contraseña";

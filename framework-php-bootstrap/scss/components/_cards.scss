@@ -1,4 +1,39 @@
 
+//Tickets cards
+.ticket-card {
+    background: $fade-tickets-cards;
+    border-radius: 10px;
+    padding: 15px;
+    width: 100%;
+    color: $texto1;
+
+    .ticket-body {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .ticket-title {
+        font-family: $headings-font-family;
+        font-size: 1.5rem;
+    }
+
+    .ticket-text {
+        font-family: $body-font-family;
+        font-size: 1rem;
+    }
+
+    .ticket-price {
+        font-family: $headings-font-family;
+        font-size: 1.5rem;
+    }
+
+    .button-ticket {
+        align-self: center;
+    }
+
+}
+
 
 .grid {
     gap: 16px;

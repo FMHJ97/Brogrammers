@@ -20188,10 +20188,11 @@ body h2, body .h2 {
   gap: 0px;
   align-items: center;
   justify-content: center;
-  flex-shrink: 0;
   position: relative;
   box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
-  overflow: hidden;
+  text-decoration: none;
+  color: #0A0F0F;
+  font-family: "Krona One", sans-serif;
 }
 
 nav {
@@ -20358,6 +20359,34 @@ main {
 .form-check-input:checked {
   background-color: #29F2B9;
   border-color: #29F2B9;
+}
+
+.ticket-card {
+  background: linear-gradient(0deg, #035951 0%, #107361 100%);
+  border-radius: 10px;
+  padding: 15px;
+  width: 100%;
+  color: #FFFDFA;
+}
+.ticket-card .ticket-body {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.ticket-card .ticket-title {
+  font-family: "Krona One", sans-serif;
+  font-size: 1.5rem;
+}
+.ticket-card .ticket-text {
+  font-family: "Maven Pro", sans-serif;
+  font-size: 1rem;
+}
+.ticket-card .ticket-price {
+  font-family: "Krona One", sans-serif;
+  font-size: 1.5rem;
+}
+.ticket-card .button-ticket {
+  align-self: center;
 }
 
 .grid {

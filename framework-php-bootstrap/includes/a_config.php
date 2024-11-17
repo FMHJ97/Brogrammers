@@ -18,6 +18,11 @@
 		case "/restore_password.php":
 			$CURRENT_PAGE = "Recuperar Contraseña"; 
 			$PAGE_TITLE = "Recuperar Contraseña";
+			break;	
+
+		case "/gallery.php":
+			$CURRENT_PAGE = "Gallery"; 
+			$PAGE_TITLE = "Gallery";
 			break;			
 		
 		case "/register.php":

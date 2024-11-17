@@ -27,9 +27,8 @@
     gap: 1em;
 
     .btn-category-item {
-        background-color: $resaltar1;
-        color: $texto2;
         font-family: $headings-font-family;
+        font-weight: $headings-font-weight;
         border-radius: 20px;
         padding: 10px 20px 10px 20px;
         display: flex;
@@ -37,6 +36,18 @@
         gap: 10px;
         align-items: center;
         justify-content: center;
+        white-space: nowrap;
+
+        &.selected {
+            background-color: $resaltar1;
+            color: $texto2;
+        }
+
+        &:not(.selected) {
+            border: 2px solid $resaltar1;
+            background-color: $fondo;
+            color: $resaltar1;
+        }
     }
 }
 

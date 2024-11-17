@@ -1,0 +1,15 @@
+// Search Bar
+
+.search-bar {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    i {
+        font-size: 25px;
+        color: $resaltar2;
+    }
+    input {
+        border: 0;
+    }
+}

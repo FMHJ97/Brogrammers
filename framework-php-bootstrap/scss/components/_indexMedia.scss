@@ -47,5 +47,45 @@
     text-shadow: 2px 2px 5px $resaltar1;
     line-height: 1; /* Adjust line height if needed */
   }
-  
+  .festival {
+    font-size: 18vw;  /* Scalable font size */
+    font-family: $logo-font-custom;
+    color: $texto1;
+    text-shadow: 
+      5px 5px 20px rgba($texto1, 0.3),   /* Bottom-right shadow */
+      -5px 5px 20px rgba($texto1, 0.3),  /* Bottom-left shadow */
+      5px -5px 20px rgba($texto1, 0.3),  /* Top-right shadow */
+      -5px -5px 20px rgba($texto1, 0.3); /* Top-left shadow */
+    line-height: 1;
+    letter-spacing: 0.2em;  /* Spread the letters */
+    white-space: nowrap;    /* Prevent wrapping */
+    text-align: center;     /* Center the text within its parent */
+    width: 100%;            /* Make the text fill the width */
+    overflow: hidden;       /* Prevent overflow if it gets too wide */
+    display: flex;          /* Enable flexbox to help with centering */
+    justify-content: center;/* Centers horizontally */
+    align-items: center;    /* Centers vertically */
+  }
 
+  .festival-location {
+    background-color: $resaltar1;
+    color: $texto1;
+    font-size: 36px;
+    font-family: $headings-font-family;
+    font-weight: $headings-font-weight;
+    padding-inline: 1rem;
+  }
+  .festival-date {
+    color: $resaltar1;
+    font-family: $headings-font-family;
+    font-weight: $headings-font-weight;
+    font-size: 36px;
+  }
+  
+  
+  
+  
+  
+  
+  
+  

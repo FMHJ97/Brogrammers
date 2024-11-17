@@ -20172,9 +20172,8 @@ body h2, body .h2 {
   gap: 1em;
 }
 .btn-category-group .btn-category-item {
-  background-color: #29F2B9;
-  color: #0A0F0F;
   font-family: "Krona One", sans-serif;
+  font-weight: 400;
   border-radius: 20px;
   padding: 10px 20px 10px 20px;
   display: flex;
@@ -20182,6 +20181,16 @@ body h2, body .h2 {
   gap: 10px;
   align-items: center;
   justify-content: center;
+  white-space: nowrap;
+}
+.btn-category-group .btn-category-item.selected {
+  background-color: #29F2B9;
+  color: #0A0F0F;
+}
+.btn-category-group .btn-category-item:not(.selected) {
+  border: 2px solid #29F2B9;
+  background-color: #0A0F0F;
+  color: #29F2B9;
 }
 
 .button-ticket, .btn-index {

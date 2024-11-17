@@ -27,13 +27,15 @@
                 <div class="row">
                     <!-- Buttons -->
                     <div class="col btn-category-group">
-                        <button type="button" class="btn btn-category-item">Todos los productos</button>
+                        <button type="button" class="btn btn-category-item selected">Todos los productos</button>
                         <button type="button" class="btn btn-category-item">Ropa</button>
                         <button type="button" class="btn btn-category-item">Accesorios</button>
                         <button type="button" class="btn btn-category-item">Música</button>
                     </div>
                     <!-- Search Bar -->
-                    <div class="col d-flex">
+                    <div class="col search-bar">
+                        <i class="bi bi-search"></i>
+                        <input type="text" class="form-control" placeholder="Buscar productos...">
                     </div>
                 </div>
                 <!-- Merch Order by -->
@@ -46,6 +48,19 @@
 
     <!-- Footer -->
     <?php include("includes/footer.php"); ?>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const buttons = document.querySelectorAll('.btn-category-item');
+
+            buttons.forEach(button => {
+                button.addEventListener('click', function() {
+                    buttons.forEach(btn => btn.classList.remove('selected'));
+                    this.classList.add('selected');
+                });
+            });
+        });
+    </script>
 
 </body>
 

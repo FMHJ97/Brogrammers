@@ -76,7 +76,7 @@
 
 
       <div class="row my-3 py-3">
-        <button type="button" class="btn-index ">BUY YOUR TICKETS NOW</button>
+        <a href="tickets.php" class="btn-index ">BUY YOUR TICKETS NOW</a>
       </div>
       <!--Carrusel-->
       <div id="carouselExampleInterval" class="carousel slide" data-bs-ride="carousel">
@@ -119,7 +119,7 @@
 
 
       <div class="row my-3 py-3">
-        <button type="button" class="btn-index ">BUY YOUR TICKETS NOW</button>
+        <a href="tickets.php" class="btn-index ">BUY YOUR TICKETS NOW</a>
       </div>
 
     </div>

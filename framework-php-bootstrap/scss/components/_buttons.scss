@@ -56,6 +56,18 @@
     font-family: $headings-font-family;
 }
 
+.btn-index {
+    @extend .button-ticket;
+    box-shadow: none;
+    width: auto; 
+    max-width: fit-content; 
+    padding: 10px 20px; 
+    justify-self: center;
+    align-self: center;
+    margin:auto;
+    font-size: 30px;
+}
+
 // Removing standard button border
 button {
     border: 0;

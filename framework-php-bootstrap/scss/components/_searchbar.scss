@@ -1,15 +1,42 @@
-// Search Bar
-
 .search-bar {
     display: flex;
-    flex-direction: row;
-    justify-content: center;
     align-items: center;
-    i {
-        font-size: 25px;
-        color: $resaltar2;
+    gap: 0.5em;
+
+    .form-control-search {
+        flex: 1;
+        border: 2px solid $resaltar1;
+        border-radius: 20px;
+        padding: 0.6em 1em; // Ajuste para igualar altura
+        font-size: 0.9rem;
+        transition: border-color 0.3s;
+
+        &:focus {
+            border-color: darken($resaltar1, 10%);
+            outline: none;
+        }
     }
-    input {
-        border: 0;
+
+    .btn-search {
+        background: $resaltar1;
+        color: $texto2;
+        border: none;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 2.5em; // Altura y anchura iguales
+        height: 2.5em; // Para mantener botón circular
+        font-size: 1rem;
+        transition: background 0.3s;
+
+        i {
+            color: $texto2;
+            font-size: 1.2rem; // Tamaño del icono ajustado
+        }
+
+        &:hover {
+            background: darken($resaltar1, 10%);
+        }
     }
 }

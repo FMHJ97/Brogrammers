@@ -24,18 +24,24 @@
         <section class="page-section">
             <div class="container">
                 <!-- Merch Filter -->
-                <div class="row">
+                <div class="row align-items-center gap-3 merch-filter">
                     <!-- Buttons -->
-                    <div class="col btn-category-group">
+                    <div class="col-auto btn-category-group">
                         <button type="button" class="btn btn-category-item selected">Todos los productos</button>
                         <button type="button" class="btn btn-category-item">Ropa</button>
                         <button type="button" class="btn btn-category-item">Accesorios</button>
                         <button type="button" class="btn btn-category-item">Música</button>
                     </div>
                     <!-- Search Bar -->
-                    <div class="col search-bar">
-                        <i class="bi bi-search"></i>
-                        <input type="text" class="form-control" placeholder="Buscar productos...">
+                    <div class="col-auto ms-auto">
+                        <form action="#">
+                            <div class="input-group search-bar">
+                                <input type="text" class="form-control-search" placeholder="Buscar productos..." name="search">
+                                <button class="btn btn-search" type="submit">
+                                    <i class="bi bi-search"></i>
+                                </button>
+                            </div>
+                        </form>
                     </div>
                 </div>
                 <!-- Merch Order by -->

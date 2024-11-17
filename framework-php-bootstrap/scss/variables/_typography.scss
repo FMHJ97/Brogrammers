@@ -11,3 +11,13 @@ $headings-font-weight: 400;
 // Our body text font-family is Maven Pro Regular and the sizes we use are 20px, 16px, 14px and 12px
 $body-font-family: 'Maven Pro', sans-serif;
 $body-font-weight: 400;
+
+//our logo uses Post No Bills Colombo ExtraBold
+$font-path: '../assets/fonts/postnobillscolombo/';
+$logo-font-custom: 'PostNoBillsColombo';
+
+@font-face {
+    font-family: $logo-font-custom;
+    src: url(#{$font-path}PostNoBillsColombo-ExtraBold.ttf) format('truetype');
+    font-style: normal;
+}

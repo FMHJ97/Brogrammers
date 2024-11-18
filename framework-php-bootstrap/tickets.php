@@ -13,8 +13,8 @@
     <main>
         <section class="page-section">
 
-            <div class="container mb-4">
-                <h1 class="text-center">GroundSound Festival Tickets</h1>
+            <div class="container mb-4 page-section-heading">
+                <h1 class="text-center ">GroundSound Festival Tickets</h1>
                 <h2 class="text-center">Consulta el precio de las entradas a nuestro festival</h2>
             </div>
 
@@ -30,7 +30,7 @@
                                 <h3 class="ticket-title text-center">Tickets Festival</h3>
                                 <p class="ticket-text">Encuentra tus entradas para el GroundSound Festival</p>
                                 <p class="ticket-price text-center">Desde 25€</p>
-                                <a href="cart.php" class="button-ticket">Comprar</a>
+                                <a href="ticketing.php" class="button-ticket">Comprar</a>
                             </div>
                         </div>
                     </div>
@@ -68,7 +68,7 @@
                         <div class="ticket-card">
                             <div class="ticket-body">
                                 <img src="assets/img/mapaFestival.jpg" class="ticket-img" alt="Mapa del festival">
-                                <button class="button-ticket">Ver Mapa</button>
+                                <button class="button-ticket" id="map">Ver Mapa</button>
                             </div>
                         </div>
                     </div>

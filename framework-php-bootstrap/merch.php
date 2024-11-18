@@ -3,7 +3,6 @@
 <html>
 
 <head>
-    <script src="js/scripts.js"></script>
     <?php include("includes/head_tags.php"); ?>
 </head>
 
@@ -25,16 +24,16 @@
         <section class="page-section">
             <div class="container">
                 <!-- Merch Filter -->
-                <div class="row gap-5 merch-filter">
+                <div class="row align-items-center gap-3 merch-filter">
                     <!-- Buttons -->
-                    <div class="col btn-category-group">
+                    <div class="col-auto btn-category-group">
                         <button type="button" class="btn btn-category-item selected">Todos los productos</button>
                         <button type="button" class="btn btn-category-item">Ropa</button>
                         <button type="button" class="btn btn-category-item">Accesorios</button>
                         <button type="button" class="btn btn-category-item">Música</button>
                     </div>
                     <!-- Search Bar -->
-                    <div class="col">
+                    <div class="col-auto ms-auto">
                         <form action="#">
                             <div class="input-group search-bar">
                                 <input type="text" class="form-control-search" placeholder="Buscar productos..."
@@ -47,6 +46,7 @@
                     </div>
                 </div>
                 <!-- Merch Order by -->
+<<<<<<< HEAD
                 <div class="row mt-3">
                     <div class="dropdown dropend dropdown-order-by">
                         <i class="bi bi-filter"></i>
@@ -60,6 +60,10 @@
                             <li><a class="dropdown-item" href="#" onclick="updateDropdownText(this)">Precio (ascendente)</a></li>
                         </ul>
                     </div>
+=======
+                <div class="row">
+                
+>>>>>>> da20e2a5d0babbc7694c23af79fd5b1fe2fbb46a
                 </div>
             </div>
         </section>
@@ -67,6 +71,19 @@
 
     <!-- Footer -->
     <?php include("includes/footer.php"); ?>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const buttons = document.querySelectorAll('.btn-category-item');
+
+            buttons.forEach(button => {
+                button.addEventListener('click', function() {
+                    buttons.forEach(btn => btn.classList.remove('selected'));
+                    this.classList.add('selected');
+                });
+            });
+        });
+    </script>
 
 </body>
 

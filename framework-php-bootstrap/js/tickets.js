@@ -22,4 +22,24 @@ document.addEventListener('click', function() {
         });
     });
 
+    // The same as before but for camping and parking
+
+    const campingPrices = document.getElementById('rowCamping');
+    const parkingPrices = document.getElementById('rowParking');
+
+    buttons.forEach(button => {
+        button.addEventListener('click', function() {
+            buttons.forEach(btn => btn.classList.remove('selected'));
+            this.classList.add('selected');
+        
+            if (button.id === 'btnCamping') {
+                campingPrices.classList.remove('d-none');
+                parkingPrices.classList.add('d-none');
+            } else if (this.id === 'btnParking') {
+                campingPrices.classList.add('d-none');
+                parkingPrices.classList.remove('d-none');
+            }
+        });
+    });
+
 });

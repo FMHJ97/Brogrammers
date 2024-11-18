@@ -42,7 +42,7 @@
                                 <h3 class="ticket-title text-center">Parking</h3>
                                 <p class="ticket-text">Encuentra tu sitio para guardar tu vehículo mientras disfrutas</p>
                                 <p class="ticket-price text-center">Desde 75€</p>
-                                <a href="cart.php" class="button-ticket">Comprar</a>
+                                <a href="parking_camping.php" class="button-ticket">Comprar</a>
                             </div>
                         </div>
                     </div>
@@ -54,7 +54,7 @@
                                 <h3 class="ticket-title text-center">Camping</h3>
                                 <p class="ticket-text">Reserva tu parcela de camping para descansar en el mismo festival</p>
                                 <p class="ticket-price text-center">Desde 89€</p>
-                                <a href="cart.php" class="button-ticket">Comprar</a>
+                                <a href="parking_camping.php" class="button-ticket">Comprar</a>
                             </div>
                         </div>
                     </div>

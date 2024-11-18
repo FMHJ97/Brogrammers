@@ -3,6 +3,7 @@
 <html>
 
 <head>
+    <script src="js/scripts.js"></script>
     <?php include("includes/head_tags.php"); ?>
 </head>
 
@@ -24,16 +25,16 @@
         <section class="page-section">
             <div class="container">
                 <!-- Merch Filter -->
-                <div class="row align-items-center gap-3 merch-filter">
+                <div class="row gap-5 merch-filter">
                     <!-- Buttons -->
-                    <div class="col-auto btn-category-group">
+                    <div class="col btn-category-group">
                         <button type="button" class="btn btn-category-item selected">Todos los productos</button>
                         <button type="button" class="btn btn-category-item">Ropa</button>
                         <button type="button" class="btn btn-category-item">Accesorios</button>
                         <button type="button" class="btn btn-category-item">Música</button>
                     </div>
                     <!-- Search Bar -->
-                    <div class="col-auto ms-auto">
+                    <div class="col">
                         <form action="#">
                             <div class="input-group search-bar">
                                 <input type="text" class="form-control-search" placeholder="Buscar productos..." name="search">
@@ -46,7 +47,7 @@
                 </div>
                 <!-- Merch Order by -->
                 <div class="row">
-                
+
                 </div>
             </div>
         </section>
@@ -54,19 +55,6 @@
 
     <!-- Footer -->
     <?php include("includes/footer.php"); ?>
-
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            const buttons = document.querySelectorAll('.btn-category-item');
-
-            buttons.forEach(button => {
-                button.addEventListener('click', function() {
-                    buttons.forEach(btn => btn.classList.remove('selected'));
-                    this.classList.add('selected');
-                });
-            });
-        });
-    </script>
 
 </body>
 

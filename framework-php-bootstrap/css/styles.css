@@ -20172,7 +20172,8 @@ body h2, body .h2 {
 }
 .btn-category-group .btn-category-item {
   font-family: "Krona One", sans-serif;
-  font-size: 0.95rem;
+  font-size: 1rem;
+  border: 2px solid #29F2B9;
   border-radius: 20px;
   padding: 0.5em 1.2em;
   display: flex;
@@ -20184,12 +20185,10 @@ body h2, body .h2 {
 .btn-category-group .btn-category-item.selected {
   background: #29F2B9;
   color: #0A0F0F;
-  border: none;
 }
 .btn-category-group .btn-category-item:not(.selected) {
   background: #0A0F0F;
   color: #29F2B9;
-  border: 2px solid #29F2B9;
 }
 .btn-category-group .btn-category-item:not(.selected):hover {
   background: #29F2B9;
@@ -20492,37 +20491,29 @@ main {
 
 .search-bar {
   display: flex;
-  align-items: center;
   gap: 0.5em;
 }
 .search-bar .form-control-search {
-  flex: 1;
-  border: 2px solid #29F2B9;
+  border: 2px outset #29F2B9;
+  padding: 0.5em 1em;
   border-radius: 20px;
-  padding: 0.6em 1em;
-  font-size: 0.9rem;
+  font-size: 1rem;
   transition: border-color 0.3s;
 }
 .search-bar .form-control-search:focus {
   border-color: rgb(13.2863436123, 218.7136563877, 160.4581497797);
   outline: none;
+  box-shadow: 0px 0px 5px 0px #29F2B9;
 }
 .search-bar .btn-search {
   background: #29F2B9;
   color: #0A0F0F;
-  border: none;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 2.5em;
-  height: 2.5em;
-  font-size: 1rem;
-  transition: background 0.3s;
+  border: 1px outset #29F2B9;
+  border-radius: 20px;
 }
 .search-bar .btn-search i {
   color: #0A0F0F;
-  font-size: 1.2rem;
+  font-size: 1rem;
 }
 .search-bar .btn-search:hover {
   background: rgb(13.2863436123, 218.7136563877, 160.4581497797);

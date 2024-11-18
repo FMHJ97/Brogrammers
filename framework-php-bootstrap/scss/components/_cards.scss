@@ -1,37 +1,43 @@
 //Merch products cards
-.merch-item-card {
-  display: flex;
-  flex-direction: column;
+.card-merch-item {
+  width: 350px;
   border: 3px solid $secundario1;
   border-radius: 10px;
-  width: 100%;
-  color: $texto1;
+  text-decoration: none;
+  padding: 0;
 
-  .merch-item-body {
+  &:hover {
+    box-shadow: 0px 0px 15px 0px $secundario2;
+  }
+
+  // Image Card
+  .card-img-top {
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
+    border-radius: 10px 10px 0 0;
+  }
+
+  .card-body {
     display: flex;
     flex-direction: column;
     gap: 10px;
+    text-align: center;
     background: $fade-merch-item-cards;
+    border-radius: 0 0 7px 7px;
 
-    .merch-item-title {
+    h3 {
       font-family: $headings-font-family;
-      font-size: 1.5rem;
+      font-size: 1.3rem;
+      line-height: 2rem;
+      color: $texto1;
     }
-  
-    .merch-item-price {
+
+    span {
       font-family: $headings-font-family;
-      font-size: 1.5rem;
+      font-size: 1.3rem;
       color: $resaltar1;
     }
-  }
-
-  .card-img-top {
-    position: relative;
-    overflow: hidden;
-    width: 283px;
-    height: 342.68px;
-    position: relative;
-    object-fit: cover;
   }
 }
 

@@ -14,10 +14,7 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 });
 
-<<<<<<< HEAD
 function updateDropdownText(element) {
     var dropdownButton = document.getElementById('dropdownMenuButton');
     dropdownButton.textContent = 'Ordenar por: ' + element.textContent;
 }
-=======
->>>>>>> da20e2a5d0babbc7694c23af79fd5b1fe2fbb46a

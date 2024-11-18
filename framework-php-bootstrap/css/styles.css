@@ -20176,7 +20176,6 @@ body h2, body .h2 {
   font-size: 1.5rem;
 }
 .dropdown-order-by #dropdownMenuButton {
-  padding-left: 0;
   color: #C5FCEC;
   font-family: "Maven Pro", sans-serif;
 }
@@ -20405,6 +20404,38 @@ main {
 .form-check-input:checked {
   background-color: #29F2B9;
   border-color: #29F2B9;
+}
+
+.merch-item-card {
+  display: flex;
+  flex-direction: column;
+  border: 3px solid #2A505B;
+  border-radius: 10px;
+  width: 100%;
+  color: #FFFDFA;
+}
+.merch-item-card .merch-item-body {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  background: linear-gradient(180deg, #107361 0%, #0A0F0F 75%);
+}
+.merch-item-card .merch-item-body .merch-item-title {
+  font-family: "Krona One", sans-serif;
+  font-size: 1.5rem;
+}
+.merch-item-card .merch-item-body .merch-item-price {
+  font-family: "Krona One", sans-serif;
+  font-size: 1.5rem;
+  color: #29F2B9;
+}
+.merch-item-card .card-img-top {
+  position: relative;
+  overflow: hidden;
+  width: 283px;
+  height: 342.68px;
+  position: relative;
+  object-fit: cover;
 }
 
 .ticket-card {

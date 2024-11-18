@@ -1,109 +1,110 @@
-// 
+//
 // Buttons
-// 
+//
 
 // Custom extra large button size
 .btn-xl {
-    padding: 1rem 1.75rem;
-    font-size: 1.25rem;
+  padding: 1rem 1.75rem;
+  font-size: 1.25rem;
 }
 
 // Custom social buttons
 .btn-social {
-    border-radius: 100%;
-    display: inline-flex;
-    width: 3.25rem;
-    height: 3.25rem;
-    font-size: 1.25rem;
-    justify-content: center;
-    align-items: center;
+  border-radius: 100%;
+  display: inline-flex;
+  width: 3.25rem;
+  height: 3.25rem;
+  font-size: 1.25rem;
+  justify-content: center;
+  align-items: center;
 }
 
 // Custom Order By button
 .dropdown-order-by {
-    display: flex;
-    justify-content: start;
-    align-items: center;
+  display: flex;
+  justify-content: start;
+  align-items: center;
 
-    // Icono
-    i {
-        color: $resaltar2;
-        font-size: 1.5rem;
-    }
+  // Icono
+  i {
+    color: $resaltar2;
+    font-size: 1.5rem;
+  }
 
-    // Botón de Order-By
-    #dropdownMenuButton {
-        padding-left: 0;
-        color: $resaltar2;
-        font-family: $body-font-family;
-    }
+  // Botón de Order-By
+  #dropdownMenuButton {
+    color: $resaltar2;
+    font-family: $body-font-family;
+    
+    
+  }
 }
 
 // Custom ticket/merch buttons
 
 .btn-category-group {
+  display: flex;
+  gap: 1.2em;
+
+  .btn-category-item {
+    font-family: $headings-font-family;
+    font-size: 1rem;
+    border: 2px solid $resaltar1;
+    border-radius: 20px;
+    padding: 0.5em 1.2em;
     display: flex;
-    gap: 1.2em;
+    align-items: center;
+    justify-content: center;
+    white-space: nowrap;
+    transition: all 0.3s ease;
 
-    .btn-category-item {
-        font-family: $headings-font-family;
-        font-size: 1rem;
-        border: 2px solid $resaltar1;
-        border-radius: 20px;
-        padding: 0.5em 1.2em;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        white-space: nowrap;
-        transition: all 0.3s ease;
-
-        // Botón seleccionado
-        &.selected {
-            background: $resaltar1;
-            color: $texto2;
-        }
-
-        // Botón no seleccionado
-        &:not(.selected) {
-            background: $fondo;
-            color: $resaltar1;
-            &:hover {
-                background: $resaltar1;
-                color: $texto2;
-            }
-        }
+    // Botón seleccionado
+    &.selected {
+      background: $resaltar1;
+      color: $texto2;
     }
+
+    // Botón no seleccionado
+    &:not(.selected) {
+      background: $fondo;
+      color: $resaltar1;
+      &:hover {
+        background: $resaltar1;
+        color: $texto2;
+      }
+    }
+  }
 }
 
 .button-ticket {
-    background: $resaltar2;
-    border-radius: 20px;
-    padding: 10px 40px 10px 40px;
-    display: flex;
-    flex-direction: column;
-    gap: 0px;
-    align-items: center;
-    justify-content: center;
-    position: relative;
-    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
-    text-decoration: none;
-    color: $texto2;
-    font-family: $headings-font-family;
+  background: $resaltar2;
+  border-radius: 20px;
+  padding: 10px 40px 10px 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 0px;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+  text-decoration: none;
+  color: $texto2;
+  font-family: $headings-font-family;
 }
 
 .btn-index {
-    @extend .button-ticket;
-    box-shadow: none;
-    width: auto; 
-    max-width: fit-content; 
-    padding: 10px 20px; 
-    justify-self: center;
-    align-self: center;
-    margin:auto;
-    font-size: 30px;
+  @extend .button-ticket;
+  box-shadow: none;
+  width: auto;
+  max-width: fit-content;
+  padding: 10px 20px;
+  justify-self: center;
+  align-self: center;
+  margin: auto;
+  font-size: 30px;
 }
 
 // Removing standard button border
 button {
-    border: 0;
+  border: 0;
 }

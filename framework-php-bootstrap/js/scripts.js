@@ -13,3 +13,8 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 });
+
+function updateDropdownText(element) {
+    var dropdownButton = document.getElementById('dropdownMenuButton');
+    dropdownButton.textContent = 'Ordenar por: ' + element.textContent;
+}

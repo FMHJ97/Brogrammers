@@ -20166,6 +20166,21 @@ body h2, body .h2 {
   align-items: center;
 }
 
+.dropdown-order-by {
+  display: flex;
+  justify-content: start;
+  align-items: center;
+}
+.dropdown-order-by i {
+  color: #C5FCEC;
+  font-size: 1.5rem;
+}
+.dropdown-order-by #dropdownMenuButton {
+  padding-left: 0;
+  color: #C5FCEC;
+  font-family: "Maven Pro", sans-serif;
+}
+
 .btn-category-group {
   display: flex;
   gap: 1.2em;
@@ -20498,6 +20513,7 @@ main {
   padding: 0.5em 1em;
   border-radius: 20px;
   font-size: 1rem;
+  font-family: "Maven Pro", sans-serif;
   transition: border-color 0.3s;
 }
 .search-bar .form-control-search:focus {
@@ -20513,6 +20529,7 @@ main {
 }
 .search-bar .btn-search i {
   color: #0A0F0F;
+  padding-right: 0.4rem;
   font-size: 1rem;
 }
 .search-bar .btn-search:hover {

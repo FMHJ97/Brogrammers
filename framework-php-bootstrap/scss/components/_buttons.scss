@@ -19,6 +19,26 @@
     align-items: center;
 }
 
+// Custom Order By button
+.dropdown-order-by {
+    display: flex;
+    justify-content: start;
+    align-items: center;
+
+    // Icono
+    i {
+        color: $resaltar2;
+        font-size: 1.5rem;
+    }
+
+    // Botón de Order-By
+    #dropdownMenuButton {
+        padding-left: 0;
+        color: $resaltar2;
+        font-family: $body-font-family;
+    }
+}
+
 // Custom ticket/merch buttons
 
 .btn-category-group {

@@ -37,7 +37,8 @@
                     <div class="col">
                         <form action="#">
                             <div class="input-group search-bar">
-                                <input type="text" class="form-control-search" placeholder="Buscar productos..." name="search">
+                                <input type="text" class="form-control-search" placeholder="Buscar productos..."
+                                    name="search">
                                 <button class="btn btn-search" type="submit">
                                     <i class="bi bi-search"></i>
                                 </button>
@@ -46,8 +47,19 @@
                     </div>
                 </div>
                 <!-- Merch Order by -->
-                <div class="row">
-
+                <div class="row mt-3">
+                    <div class="dropdown dropend dropdown-order-by">
+                        <i class="bi bi-filter"></i>
+                        <button id="dropdownMenuButton" type="button" 
+                        class="btn dropdown-toggle" data-bs-toggle="dropdown">
+                            Ordenar por: Relevancia
+                        </button>
+                        <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                            <li><a class="dropdown-item" href="#" onclick="updateDropdownText(this)">Relevancia</a></li>
+                            <li><a class="dropdown-item" href="#" onclick="updateDropdownText(this)">Precio (descendente)</a></li>
+                            <li><a class="dropdown-item" href="#" onclick="updateDropdownText(this)">Precio (ascendente)</a></li>
+                        </ul>
+                    </div>
                 </div>
             </div>
         </section>

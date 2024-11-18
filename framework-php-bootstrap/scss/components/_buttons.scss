@@ -27,7 +27,8 @@
 
     .btn-category-item {
         font-family: $headings-font-family;
-        font-size: 0.95rem;
+        font-size: 1rem;
+        border: 2px solid $resaltar1;
         border-radius: 20px;
         padding: 0.5em 1.2em;
         display: flex;
@@ -40,14 +41,12 @@
         &.selected {
             background: $resaltar1;
             color: $texto2;
-            border: none;
         }
 
         // Botón no seleccionado
         &:not(.selected) {
             background: $fondo;
             color: $resaltar1;
-            border: 2px solid $resaltar1;
             &:hover {
                 background: $resaltar1;
                 color: $texto2;

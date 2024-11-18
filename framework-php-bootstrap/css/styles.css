@@ -20172,7 +20172,8 @@ body h2, body .h2 {
 }
 .btn-category-group .btn-category-item {
   font-family: "Krona One", sans-serif;
-  font-size: 0.95rem;
+  font-size: 1rem;
+  border: 2px solid #29F2B9;
   border-radius: 20px;
   padding: 0.5em 1.2em;
   display: flex;
@@ -20184,12 +20185,10 @@ body h2, body .h2 {
 .btn-category-group .btn-category-item.selected {
   background: #29F2B9;
   color: #0A0F0F;
-  border: none;
 }
 .btn-category-group .btn-category-item:not(.selected) {
   background: #0A0F0F;
   color: #29F2B9;
-  border: 2px solid #29F2B9;
 }
 .btn-category-group .btn-category-item:not(.selected):hover {
   background: #29F2B9;

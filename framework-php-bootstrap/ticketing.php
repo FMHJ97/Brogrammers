@@ -3,6 +3,7 @@
 <html>
 
 <head>
+    <script src="./js/scripts.js"></script>
     <?php include("includes/head_tags.php"); ?>
 </head>
 
@@ -19,18 +20,26 @@
             </div>
 
             <div class="container">
+
+                <!-- Row Tabs -->
+                <div class="row mb-4">
+                    <div class="col btn-category-group">
+                        <button type="button" class="btn btn-category-item">General Access</button>
+                        <button type="button" class="btn btn-category-item">VIPs</button>
+                    </div>
+                </div>
                 
                 <!-- Row Cards with prices -->
-                <div class="row">
+                <div class="row" id="rowGeneralPrices">
 
                     <!-- Ticket Card -->
                     <div class="col-md-4">
                         <div class="ticket-card mb-4">
                             <div class="ticket-body">
-                                <h3 class="ticket-title text-center">Tickets Festival</h3>
-                                <p class="ticket-text">Encuentra tus entradas para el GroundSound Festival</p>
-                                <p class="ticket-price text-center">Desde 25€</p>
-                                <a href="ticketing.php" class="button-ticket">Comprar</a>
+                                <h3 class="ticket-title text-center">1 - Day Pass</h3>
+                                <p class="ticket-text">Entrada que te permite disfrutar de un día de festival</p>
+                                <p class="ticket-price text-center">Por 25€</p>
+                                <a href="cart.php" class="button-ticket">Comprar</a>
                             </div>
                         </div>
                     </div>
@@ -39,9 +48,9 @@
                     <div class="col-md-4">
                         <div class="ticket-card mb-4">
                             <div class="ticket-body">
-                                <h3 class="ticket-title text-center">Parking</h3>
-                                <p class="ticket-text">Encuentra tu sitio para guardar tu vehículo mientras disfrutas</p>
-                                <p class="ticket-price text-center">Desde 75€</p>
+                                <h3 class="ticket-title text-center">2 - Day Pass</h3>
+                                <p class="ticket-text">Con esta entrada podrás vivir la experiencia del festival 2 días</p>
+                                <p class="ticket-price text-center">Por 50€</p>
                                 <a href="cart.php" class="button-ticket">Comprar</a>
                             </div>
                         </div>
@@ -51,9 +60,9 @@
                     <div class="col-md-4">
                         <div class="ticket-card mb-4">
                             <div class="ticket-body">
-                                <h3 class="ticket-title text-center">Camping</h3>
-                                <p class="ticket-text">Reserva tu parcela de camping para descansar en el mismo festival</p>
-                                <p class="ticket-price text-center">Desde 89€</p>
+                                <h3 class="ticket-title text-center">Weekend Pass</h3>
+                                <p class="ticket-text">Con esta entrada podrás disfrutar de todo el fin de semana de festival</p>
+                                <p class="ticket-price text-center">Por 70€</p>
                                 <a href="cart.php" class="button-ticket">Comprar</a>
                             </div>
                         </div>

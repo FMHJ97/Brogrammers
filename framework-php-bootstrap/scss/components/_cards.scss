@@ -1,111 +1,141 @@
+//Merch products cards
+.merch-item-card {
+  display: flex;
+  flex-direction: column;
+  border: 3px solid $secundario1;
+  border-radius: 10px;
+  width: 100%;
+  color: $texto1;
+
+  .merch-item-body {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    background: $fade-merch-item-cards;
+
+    .merch-item-title {
+      font-family: $headings-font-family;
+      font-size: 1.5rem;
+    }
+  
+    .merch-item-price {
+      font-family: $headings-font-family;
+      font-size: 1.5rem;
+      color: $resaltar1;
+    }
+  }
+
+  .card-img-top {
+    position: relative;
+    overflow: hidden;
+    width: 283px;
+    height: 342.68px;
+    position: relative;
+    object-fit: cover;
+  }
+}
 
 //Tickets cards
 .ticket-card {
-    background: $fade-tickets-cards;
+  background: $fade-tickets-cards;
+  border-radius: 10px;
+  padding: 15px;
+  width: 100%;
+  color: $texto1;
+
+  .ticket-body {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .ticket-title {
+    font-family: $headings-font-family;
+    font-size: 1.5rem;
+  }
+
+  .ticket-text {
+    font-family: $body-font-family;
+    font-size: 1rem;
+  }
+
+  .ticket-price {
+    font-family: $headings-font-family;
+    font-size: 1.5rem;
+  }
+
+  .button-ticket {
+    align-self: center;
+  }
+
+  .ticket-img {
+    // The img will show like if it zoomed in the center because the full img will be shown when the button is clicked
+    position: relative;
+    overflow: hidden;
     border-radius: 10px;
-    padding: 15px;
+    object-fit: cover;
+    height: 500px;
     width: 100%;
-    color: $texto1;
-
-    .ticket-body {
-        display: flex;
-        flex-direction: column;
-        gap: 10px;
-    }
-
-    .ticket-title {
-        font-family: $headings-font-family;
-        font-size: 1.5rem;
-    }
-
-    .ticket-text {
-        font-family: $body-font-family;
-        font-size: 1rem;
-    }
-
-    .ticket-price {
-        font-family: $headings-font-family;
-        font-size: 1.5rem;
-    }
-
-    .button-ticket {
-        align-self: center;
-    }
-    
-    .ticket-img {
-        // The img will show like if it zoomed in the center because the full img will be shown when the button is clicked
-        position: relative;
-        overflow: hidden;
-        border-radius: 10px;
-        object-fit: cover;
-        height: 500px;
-        width: 100%;
-
-    }
-
+  }
 }
 
-
 .grid {
-    gap: 16px;
-    margin: 0 auto; /* Center the grid */
+  gap: 16px;
+  margin: 0 auto; /* Center the grid */
 }
 
 /* Optional: Basic styles for grid items */
 .grid-item {
-    border-radius: 5px;
-    overflow: hidden;
-    position: relative;
+  border-radius: 5px;
+  overflow: hidden;
+  position: relative;
 }
 
 /* Make images fit inside their grid item */
 .grid-item img {
-    width: 100%;
-    height: auto;
-    display: block;
+  width: 100%;
+  height: auto;
+  display: block;
 }
-
 
 /* clearfix (optional) */
 .grid:after {
-    content: '';
-    display: block;
-    clear: both;
+  content: "";
+  display: block;
+  clear: both;
 }
 
 /* ---- grid-item ---- */
 .grid-item {
-    
-    border-radius: 5px;
-    overflow: hidden;
-    position: relative;
-    min-width: 20%;
-    max-width: 100%;
+  border-radius: 5px;
+  overflow: hidden;
+  position: relative;
+  min-width: 20%;
+  max-width: 100%;
 }
 
 /* Variable width classes for Masonry-like behavior */
 .grid-item--width2 {
-    grid-column: span 2; /* Take up 2 columns */
+  grid-column: span 2; /* Take up 2 columns */
 }
 
 .grid-item--width3 {
-    grid-column: span 3; /* Take up 3 columns */
+  grid-column: span 3; /* Take up 3 columns */
 }
 
 .grid-item--width4 {
-    grid-column: span 4; /* Take up 4 columns */
+  grid-column: span 4; /* Take up 4 columns */
 }
 
 /* Variable height classes for Masonry-like behavior */
 .grid-item--height2 {
-    height: 400px;
+  height: 400px;
 }
 
 .grid-item--height3 {
-    height: 600px;
+  height: 600px;
 }
 
 .grid-item--height4 {
-    height: 800px;
+  height: 800px;
 }
-

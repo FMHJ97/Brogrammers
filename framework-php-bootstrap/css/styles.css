@@ -20166,6 +20166,20 @@ body h2, body .h2 {
   align-items: center;
 }
 
+.dropdown-order-by {
+  display: flex;
+  justify-content: start;
+  align-items: center;
+}
+.dropdown-order-by i {
+  color: #C5FCEC;
+  font-size: 1.5rem;
+}
+.dropdown-order-by #dropdownMenuButton {
+  color: #C5FCEC;
+  font-family: "Maven Pro", sans-serif;
+}
+
 .btn-category-group {
   display: flex;
   gap: 1.2em;
@@ -20392,6 +20406,38 @@ main {
   border-color: #29F2B9;
 }
 
+.merch-item-card {
+  display: flex;
+  flex-direction: column;
+  border: 3px solid #2A505B;
+  border-radius: 10px;
+  width: 100%;
+  color: #FFFDFA;
+}
+.merch-item-card .merch-item-body {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  background: linear-gradient(180deg, #107361 0%, #0A0F0F 75%);
+}
+.merch-item-card .merch-item-body .merch-item-title {
+  font-family: "Krona One", sans-serif;
+  font-size: 1.5rem;
+}
+.merch-item-card .merch-item-body .merch-item-price {
+  font-family: "Krona One", sans-serif;
+  font-size: 1.5rem;
+  color: #29F2B9;
+}
+.merch-item-card .card-img-top {
+  position: relative;
+  overflow: hidden;
+  width: 283px;
+  height: 342.68px;
+  position: relative;
+  object-fit: cover;
+}
+
 .ticket-card {
   background: linear-gradient(0deg, #035951 0%, #107361 100%);
   border-radius: 10px;
@@ -20498,6 +20544,7 @@ main {
   padding: 0.5em 1em;
   border-radius: 20px;
   font-size: 1rem;
+  font-family: "Maven Pro", sans-serif;
   transition: border-color 0.3s;
 }
 .search-bar .form-control-search:focus {
@@ -20513,6 +20560,7 @@ main {
 }
 .search-bar .btn-search i {
   color: #0A0F0F;
+  padding-right: 0.4rem;
   font-size: 1rem;
 }
 .search-bar .btn-search:hover {

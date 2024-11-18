@@ -7,6 +7,7 @@
         padding: 0.5em 1em;
         border-radius: 20px;
         font-size: 1rem;
+        font-family: $body-font-family;
         transition: border-color 0.3s;
 
         &:focus {
@@ -24,6 +25,7 @@
 
         i {
             color: $texto2;
+            padding-right: 0.4rem;
             font-size: 1rem; // Tamaño del icono ajustado
         }
 

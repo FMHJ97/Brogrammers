@@ -19,7 +19,7 @@
             </div>
 
             <div class="container">
-                
+
                 <!-- Row Cards with prices -->
                 <div class="row">
 
@@ -34,13 +34,14 @@
                             </div>
                         </div>
                     </div>
-                    
+
                     <!-- Parking Card -->
                     <div class="col-md-4">
                         <div class="ticket-card mb-4">
                             <div class="ticket-body">
                                 <h3 class="ticket-title text-center">Parking</h3>
-                                <p class="ticket-text">Encuentra tu sitio para guardar tu vehículo mientras disfrutas</p>
+                                <p class="ticket-text">Encuentra tu sitio para guardar tu vehículo mientras disfrutas
+                                </p>
                                 <p class="ticket-price text-center">Desde 75€</p>
                                 <a href="parking_camping.php?tab=parking" class="button-ticket">Comprar</a>
                             </div>
@@ -52,13 +53,14 @@
                         <div class="ticket-card mb-4">
                             <div class="ticket-body">
                                 <h3 class="ticket-title text-center">Camping</h3>
-                                <p class="ticket-text">Reserva tu parcela de camping para descansar en el mismo festival</p>
+                                <p class="ticket-text">Reserva tu parcela de camping para descansar en el mismo festival
+                                </p>
                                 <p class="ticket-price text-center">Desde 89€</p>
                                 <a href="parking_camping.php?tab=camping" class="button-ticket">Comprar</a>
                             </div>
                         </div>
                     </div>
-                    
+
                 </div>
 
                 <!-- Row with map -->
@@ -68,11 +70,32 @@
                         <div class="ticket-card">
                             <div class="ticket-body">
                                 <img src="assets/img/mapaFestival.jpg" class="ticket-img" alt="Mapa del festival">
-                                <button class="button-ticket" id="map">Ver Mapa</button>
+                                <button class="button-ticket" data-bs-toggle="modal" data-bs-target="#myModal"
+                                    id="map">Ver Mapa</button>
                             </div>
                         </div>
                     </div>
-                </div>                        
+                </div>
+            </div>
+
+            <!-- Map Modal -->
+
+            <div class="modal" id="myModal">
+                <div class="modal-dialog custom-modal-dialog">
+                    <div class="modal-content">
+
+                        <!-- Modal body -->
+                        <div class="modal-body custom-modal-body">
+                            <img src="assets/img/mapaFestival.jpg" class="img-fluid" alt="Mapa del festival">
+                        </div>
+
+                        <!-- Modal footer -->
+                        <div class="modal-footer justify-content-center">
+                            <button type="button" class="button-ticket" data-bs-dismiss="modal">Close</button>
+                        </div>
+
+                    </div>
+                </div>
             </div>
 
         </section>

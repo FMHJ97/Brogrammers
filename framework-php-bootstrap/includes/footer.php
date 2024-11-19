@@ -34,9 +34,9 @@
             <!-- Terms and Contact Us Links -->
             <div id="linksFooter" class="col text-center mt-5">
                 <div class="d-flex flex-column flex-md-row justify-content-center gap-2 gap-md-5 mb-4 mb-md-2">
-                    <a href="#">Privacy Policy</a>
-                    <a href="#">Terms & Conditions</a>
-                    <a href="#">Contact Us</a>
+                    <a href="./contact.php">Privacy Policy</a>
+                    <a href="./contact.php">Terms & Conditions</a>
+                    <a href="./contact.php">Contact Us</a>
                 </div>
                 <small>Copyright © 2024 GroundSound Festival</small>
             </div>

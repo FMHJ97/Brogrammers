@@ -3,7 +3,7 @@
     <!-- AHORA METO TODO LO DE ABAJO DENTRO Y PRUEBO.-->  
     <!-- TITULO-->  
     <div class="row my-3 d-flex" id="patro-titulo">
-      <h2>PATROCINADORES</h2>
+      <h1>PATROCINADORES</h1>
     </div>
     <!-- IMAGENES PATROCINADORES-->
     <div class="row  mx-auto my-4" id="patro-fila">

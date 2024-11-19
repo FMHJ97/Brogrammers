@@ -1,6 +1,19 @@
+// Contenedor de productos
+.merch-products {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 4em;
+    margin-bottom: 3em;
+}
+
+.hide {
+    display: none;
+}
+
 .search-bar {
     display: flex;
-    gap: 0.5em;
+    justify-content: end;
 
     .form-control-search {
         border: 2px outset $resaltar1;
@@ -9,6 +22,7 @@
         font-size: 1rem;
         font-family: $body-font-family;
         transition: border-color 0.3s;
+        min-width: 350px;
 
         &:focus {
             border-color: darken($resaltar1, 10%);

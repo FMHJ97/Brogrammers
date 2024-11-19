@@ -67,6 +67,7 @@
     &:not(.selected) {
       background: $fondo;
       color: $resaltar1;
+
       &:hover {
         background: $resaltar1;
         color: $texto2;
@@ -106,4 +107,14 @@
 // Removing standard button border
 button {
   border: 0;
+}
+
+// Estilos de los botones
+
+@include media-breakpoint-down(md) {
+  .btn-category-group {
+    flex-direction: column;
+    gap: 0.5em;
+    margin-bottom: 2em;
+  }
 }

@@ -20,22 +20,22 @@
             </div>
         </section>
         <!-- Merch Filter & Order by Section -->
-        <section class="container page-section">
+        <section class="container page-section px-3 px-md-5">
             <!-- Merch Filter -->
             <div class="row">
                 <!-- Buttons -->
-                <div class="col btn-category-group px-0">
+                <div class="col btn-category-group">
                     <button type="button" id="all-items" class="btn btn-category-item selected">Todos los productos</button>
                     <button type="button" id="clothes" class="btn btn-category-item">Ropa</button>
                     <button type="button" id="accesories" class="btn btn-category-item">Accesorios</button>
                     <button type="button" id="music" class="btn btn-category-item">Música</button>
                 </div>
                 <!-- Search Bar -->
-                <div class="col px-0">
+                <div class="col">
                     <form action="#">
                         <div class="input-group search-bar">
                             <input type="text" class="form-control-search"
-                                placeholder="Buscar productos en la tienda..." name="search">
+                                placeholder="Buscar productos..." name="search">
                             <button class="btn btn-search" type="submit">
                                 <i class="bi bi-search"></i>
                             </button>
@@ -45,7 +45,7 @@
             </div>
             <!-- Merch Order by -->
             <div class="row mt-3">
-                <div class="dropdown dropend dropdown-order-by px-0">
+                <div class="dropdown dropdown-order-by">
                     <i class="bi bi-filter"></i>
                     <button id="dropdownMenuButton" type="button" class="btn dropdown-toggle" data-bs-toggle="dropdown">
                         Ordenar por: Relevancia
@@ -61,7 +61,7 @@
             </div>
         </section>
         <!-- Merch Products Section -->
-        <section class="container page-section">
+        <section class="container page-section px-3 px-md-5">
             <!-- First Row -->
             <div class="row row-cols-1 row-cols-md-3 merch-products">
                 <!-- Merch Item 1 -->

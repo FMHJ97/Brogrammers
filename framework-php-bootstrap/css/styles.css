@@ -20182,7 +20182,8 @@ body h2, body .h2 {
 
 .btn-category-group {
   display: flex;
-  gap: 1.2em;
+  flex-direction: row;
+  gap: 1em;
 }
 .btn-category-group .btn-category-item {
   font-family: "Krona One", sans-serif;
@@ -20539,9 +20540,21 @@ main {
   height: 800px;
 }
 
+.merch-products {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 4em;
+  margin-bottom: 3em;
+}
+
+.hide {
+  display: none;
+}
+
 .search-bar {
   display: flex;
-  gap: 0.5em;
+  justify-content: end;
 }
 .search-bar .form-control-search {
   border: 2px outset #29F2B9;
@@ -20550,6 +20563,7 @@ main {
   font-size: 1rem;
   font-family: "Maven Pro", sans-serif;
   transition: border-color 0.3s;
+  min-width: 350px;
 }
 .search-bar .form-control-search:focus {
   border-color: rgb(13.2863436123, 218.7136563877, 160.4581497797);

@@ -35,8 +35,6 @@
   #dropdownMenuButton {
     color: $resaltar2;
     font-family: $body-font-family;
-    
-    
   }
 }
 
@@ -44,7 +42,8 @@
 
 .btn-category-group {
   display: flex;
-  gap: 1.2em;
+  flex-direction: row;
+  gap: 1em;
 
   .btn-category-item {
     font-family: $headings-font-family;

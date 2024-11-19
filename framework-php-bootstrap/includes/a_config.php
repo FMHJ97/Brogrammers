@@ -15,6 +15,16 @@
 			$PAGE_TITLE = "Tickets";
 			break;
 
+		case "/ticketing.php":
+			$CURRENT_PAGE = "Ticketing"; 
+			$PAGE_TITLE = "Ticketing";
+			break;
+
+		case "/parking_camping.php":
+			$CURRENT_PAGE = "Parking & Camping"; 
+			$PAGE_TITLE = "Parking & Camping";
+			break;
+
 		case "/restore_password.php":
 			$CURRENT_PAGE = "Recuperar Contraseña"; 
 			$PAGE_TITLE = "Recuperar Contraseña";

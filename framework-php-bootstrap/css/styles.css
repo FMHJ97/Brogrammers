@@ -20676,6 +20676,29 @@ main {
   font-size: 36px;
 }
 
+/* Custom modal dialog to limit size */
+.custom-modal-dialog {
+  max-width: 90%; /* Maximum width of the modal */
+  max-height: 90vh; /* Maximum height to be 90% of the viewport height */
+  width: auto; /* Allow width to adjust based on the content */
+  height: auto; /* Allow height to adjust based on the content */
+}
+
+/* Center the modal body content */
+.custom-modal-body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(0deg, #035951 0%, #107361 100%); /* Background color of the modal */
+  padding: 15px; /* Same padding as cards */
+}
+
+/* Style the image */
+.custom-modal-body img {
+  object-fit: contain; /* Make sure the image scales correctly without distortion */
+  border-radius: 10px;
+}
+
 .masthead {
   padding-top: calc(1rem + 54px);
   padding-bottom: 1rem;

@@ -20243,6 +20243,13 @@ button {
   border: 0;
 }
 
+@media (max-width: 767.98px) {
+  .btn-category-group {
+    flex-direction: column;
+    gap: 0.5em;
+    margin-bottom: 2em;
+  }
+}
 nav {
   background: linear-gradient(90deg, #035951 0%, #0A0F0F 42%);
   box-shadow: -5px -5px 30px 0px #035951;
@@ -20617,10 +20624,11 @@ main {
 
 .merch-products {
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
   gap: 4em;
-  margin-bottom: 3em;
+  margin: auto;
+  margin-bottom: 2em;
 }
 
 .hide {
@@ -20629,7 +20637,8 @@ main {
 
 .search-bar {
   display: flex;
-  justify-content: end;
+  justify-content: flex-end;
+  padding-left: 10em;
 }
 .search-bar .form-control-search {
   border: 2px outset #29F2B9;
@@ -20638,7 +20647,7 @@ main {
   font-size: 1rem;
   font-family: "Maven Pro", sans-serif;
   transition: border-color 0.3s;
-  min-width: 350px;
+  flex-grow: 1 !important;
 }
 .search-bar .form-control-search:focus {
   border-color: rgb(13.2863436123, 218.7136563877, 160.4581497797);
@@ -20660,6 +20669,16 @@ main {
   background: rgb(13.2863436123, 218.7136563877, 160.4581497797);
 }
 
+@media (max-width: 767.98px) {
+  .merch-products {
+    gap: 2em;
+    justify-content: center;
+    margin-bottom: 1.5em;
+  }
+  .search-bar {
+    padding-left: 0;
+  }
+}
 .patro-seccion {
   background-color: #0A0F0F;
   border: 2px solid white;

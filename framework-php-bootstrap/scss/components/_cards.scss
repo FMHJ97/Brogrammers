@@ -145,3 +145,95 @@
 .grid-item--height4 {
   height: 800px;
 }
+
+
+
+
+
+
+.box-area {
+  border: 6px solid $primario2;
+  border-radius: 10px;
+  text-decoration: none;
+  padding: 15;
+  background: $fade-history-divs;
+
+
+
+
+  .card-img-top {
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
+    border-radius: 10px 10px 0 0;
+  }
+
+  .card-body {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    text-align: center;
+    background: $fade-merch-item-cards;
+    border-radius: 0 0 7px 7px;
+
+    h3 {
+      font-family: $headings-font-family;
+      font-size: 1.3rem;
+      line-height: 2rem;
+      color: $texto1;
+    }
+
+    span {
+      font-family: $headings-font-family;
+      font-size: 1.3rem;
+      color: $resaltar1;
+    }
+  }
+}
+
+
+.box-area-fondo {
+  box-sizing: border-box;
+  border: 6px solid $primario2;
+  border-radius: 10px;
+  text-decoration: none;
+  padding: 15;
+  width: 100%;
+
+  .bgroundTicketInfo {
+    position:relative;
+    background-image: url('../assets/img/info/festival-3466251_1280.jpg');
+    background-size:cover; 
+    background-position: center;
+    height:450px;
+    width: 100%; 
+    display: flex; /* Para alinear el texto si es necesario */
+    justify-content: center; 
+    align-items: center; 
+    color: white; 
+    text-align: center;
+
+    .button{
+      position: absolute; /* Botón se posicionará relativo al contenedor */
+      top: 50%; /* Centra verticalmente */
+      left: 50%; /* Centra horizontalmente */
+      transform: translate(-50%, -50%); /* Ajusta el punto de referencia al centro */
+      z-index: 2; /* Asegura que el botón esté sobre la imagen */
+    }
+
+
+  }
+
+  .bgroundCampingInfo {
+    background-image: url('../assets/img/info/Camping1.jpg');
+    background-size:cover; 
+    height: 450px; 
+    width: 100%; 
+    display: flex; /* Para alinear el texto si es necesario */
+    justify-content: center; 
+    align-items: center; 
+    color: white; 
+    text-align: center;
+
+  }
+}

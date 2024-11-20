@@ -123,8 +123,8 @@
                     <p> Passes may not be used for advertising, promotion (including contests and sweepstakes),
                         or other trade purposes without the express written consent of the festival. </p>
                 </div>
-                <div class="row bgroundTicketInfo d-flex">
-                    <button class="btn btn-primary">Haz clic aquí</button>
+                <div class="row bgroundTicketInfo d-flex justify-content-center align-items-center">
+                    <button class="btn buttonInfo">Haz clic aquí</button>
                 </div>
             </div>
         </section>
@@ -162,9 +162,9 @@
                     <p> Passes may not be used for advertising, promotion (including contests and sweepstakes),
                         or other trade purposes without the express written consent of the festival. </p>
                 </div>
-                <div class="row bgroundCampingInfo d-flex ">
-                    <button class="btn btn-primary">Haz clic aquí</button>
-                </div>
+                <div class="row bgroundCampingInfo d-flex justify-content-center align-items-center">
+                    <button class="btn buttonInfo">Haz clic aquí</button>
+                </div> 
             </div>
         </section>
 

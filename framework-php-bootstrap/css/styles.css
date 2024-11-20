@@ -20556,31 +20556,6 @@ main {
   padding: 15;
   background: linear-gradient(180deg, #0A0F0F 45%, #107361 86%);
 }
-.box-area .card-img-top {
-  width: 100%;
-  height: 400px;
-  object-fit: cover;
-  border-radius: 10px 10px 0 0;
-}
-.box-area .card-body {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-  text-align: center;
-  background: linear-gradient(180deg, #107361 0%, #0A0F0F 75%);
-  border-radius: 0 0 7px 7px;
-}
-.box-area .card-body h3, .box-area .card-body .h3 {
-  font-family: "Krona One", sans-serif;
-  font-size: 1.3rem;
-  line-height: 2rem;
-  color: #FFFDFA;
-}
-.box-area .card-body span {
-  font-family: "Krona One", sans-serif;
-  font-size: 1.3rem;
-  color: #29F2B9;
-}
 
 .box-area-fondo {
   box-sizing: border-box;
@@ -20591,35 +20566,38 @@ main {
   width: 100%;
 }
 .box-area-fondo .bgroundTicketInfo {
-  position: relative;
   background-image: url("../assets/img/info/festival-3466251_1280.jpg");
-  background-size: cover;
-  background-position: center;
-  height: 450px;
-  width: 100%;
-  display: flex; /* Para alinear el texto si es necesario */
-  justify-content: center;
-  align-items: center;
-  color: white;
-  text-align: center;
-}
-.box-area-fondo .bgroundTicketInfo .button {
-  position: absolute; /* Botón se posicionará relativo al contenedor */
-  top: 50%; /* Centra verticalmente */
-  left: 50%; /* Centra horizontalmente */
-  transform: translate(-50%, -50%); /* Ajusta el punto de referencia al centro */
-  z-index: 2; /* Asegura que el botón esté sobre la imagen */
 }
 .box-area-fondo .bgroundCampingInfo {
   background-image: url("../assets/img/info/Camping1.jpg");
+}
+.box-area-fondo .bgroundTicketInfo, .box-area-fondo .bgroundCampingInfo {
+  position: relative;
   background-size: cover;
+  background-position: center;
   height: 450px;
-  width: 100%;
   display: flex; /* Para alinear el texto si es necesario */
   justify-content: center;
   align-items: center;
   color: white;
   text-align: center;
+}
+.box-area-fondo .bgroundTicketInfo .buttonInfo, .box-area-fondo .bgroundCampingInfo .buttonInfo {
+  position: absolute;
+  background: #C5FCEC;
+  color: #0A0F0F;
+  font-family: "Krona One", sans-serif;
+  font-size: 1rem;
+  border: 2px solid #29F2B9;
+  border-radius: 10px;
+  padding: 0.5em 1.2em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  white-space: nowrap;
+  transition: all 0.3s ease;
+  max-width: fit-content;
+  z-index: 2;
 }
 
 .merch-products {
@@ -20786,14 +20764,10 @@ main {
 
 /* Custom modal dialog to limit size */
 .custom-modal-dialog {
-  border-radius: 10px; /* Rounded corners */
-  max-width: 60vw;
-}
-
-.custom-modal-content {
-  border: 0; /* Remove border */
-  border-radius: 10px; /* Rounded corners */
-  background: linear-gradient(0deg, #035951 0%, #107361 100%); /* Background color of the modal */
+  max-width: 90%; /* Maximum width of the modal */
+  max-height: 90vh; /* Maximum height to be 90% of the viewport height */
+  width: auto; /* Allow width to adjust based on the content */
+  height: auto; /* Allow height to adjust based on the content */
 }
 
 /* Center the modal body content */
@@ -20801,17 +20775,14 @@ main {
   display: flex;
   justify-content: center;
   align-items: center;
+  background: linear-gradient(0deg, #035951 0%, #107361 100%); /* Background color of the modal */
+  padding: 15px; /* Same padding as cards */
 }
 
 /* Style the image */
 .custom-modal-body img {
   object-fit: contain; /* Make sure the image scales correctly without distortion */
   border-radius: 10px;
-}
-
-.custom-modal-footer {
-  border: 0; /* Remove border */
-  padding-top: 0; /* Remove padding at the top */
 }
 
 .masthead {

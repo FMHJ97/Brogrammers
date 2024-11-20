@@ -1,3 +1,52 @@
+// Estilos de Merch Item //
+
+.merch-item-details {
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    gap: 2em;
+    color: $texto1;
+    font-family: $body-font-family;
+    // Parragraph
+    p {
+        font-size: 1.2rem;
+        line-height: 1.5;
+    }
+    // Merch Item Header
+    .item-heading {
+        h1 {
+            color: $texto1;
+        }
+        h2 {
+            color: $resaltar1;
+        }
+    }
+    .item-quantity {
+        display: flex;
+        gap: 1em;
+        align-items: center;
+        justify-content: start;
+        flex-grow: 0;
+        border: 2px solid $resaltar2;
+        border-radius: 5px;
+        font-family: $headings-font-family;
+        font-size: 1.2rem;
+        .btn-quantity {
+            border: none;
+            background: $fondo;
+            color: $resaltar2;
+            font-size: 1.5rem;
+        }
+        #quantity {
+            width: 2ch; /* El ancho ajustado para mostrar 2 caracteres (e.g., 99) */
+            text-align: center;
+        }
+    }
+}
+
+
+// Estilos de Merch //
+
 // Contenedor de productos
 .merch-products {
     display: flex;

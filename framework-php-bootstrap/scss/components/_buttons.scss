@@ -40,38 +40,63 @@
 
 // Custom ticket/merch buttons
 
-.btn-category-group {
+.btn-category-group,
+.btn-size-group {
   display: flex;
   flex-direction: row;
   gap: 1em;
+}
 
-  .btn-category-item {
-    font-family: $headings-font-family;
-    font-size: 1rem;
-    border: 2px solid $resaltar1;
-    border-radius: 20px;
-    padding: 0.5em 1.2em;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    white-space: nowrap;
-    transition: all 0.3s ease;
+.btn-category-item,
+.btn-item-size {
+  font-family: $headings-font-family;
+  font-size: 1rem;
+  border: 2px solid $resaltar1;
+  border-radius: 20px;
+  padding: 0.5em 1.2em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  white-space: nowrap;
+  transition: all 0.3s ease;
 
-    // Botón seleccionado
-    &.selected {
+  // Botón seleccionado
+  &.selected {
+    background: $resaltar1;
+    color: $texto2;
+  }
+
+  // Botón no seleccionado
+  &:not(.selected) {
+    background: $fondo;
+    color: $resaltar1;
+
+    &:hover {
       background: $resaltar1;
       color: $texto2;
     }
+  }
+}
 
-    // Botón no seleccionado
-    &:not(.selected) {
-      background: $fondo;
-      color: $resaltar1;
+// Botones de Talla de Merch Item
+.btn-item-size {
+  border: 2px solid $resaltar2;
+  border-radius: 5px;
 
-      &:hover {
-        background: $resaltar1;
-        color: $texto2;
-      }
+  // Botón seleccionado
+  &.selected {
+    background: $resaltar2;
+    color: $texto2;
+  }
+
+  // Botón no seleccionado
+  &:not(.selected) {
+    background: $fondo;
+    color: $resaltar2;
+
+    &:hover {
+      background: $resaltar2;
+      color: $texto2;
     }
   }
 }

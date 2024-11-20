@@ -20616,6 +20616,7 @@ main {
 .search-bar {
   display: flex;
   justify-content: flex-end;
+  padding-left: 10em;
 }
 .search-bar .form-control-search {
   border: 2px outset #29F2B9;
@@ -20624,6 +20625,7 @@ main {
   font-size: 1rem;
   font-family: "Maven Pro", sans-serif;
   transition: border-color 0.3s;
+  flex-grow: 1 !important;
 }
 .search-bar .form-control-search:focus {
   border-color: rgb(13.2863436123, 218.7136563877, 160.4581497797);
@@ -20651,8 +20653,8 @@ main {
     justify-content: center;
     margin-bottom: 1.5em;
   }
-  .form-control-search {
-    flex-grow: 1;
+  .search-bar {
+    padding-left: 0;
   }
 }
 .patro-seccion {

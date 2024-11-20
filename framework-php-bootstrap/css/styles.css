@@ -20626,7 +20626,7 @@ main {
 }
 
 /* ==========  BAND CARDS =========  */
-.col {
+.colB {
   display: flex;
   flex-direction: column; /* Hace que los elementos se apilen verticalmente */
   align-items: center; /* Centra el contenido horizontalmente */
@@ -20635,22 +20635,22 @@ main {
   padding: 10px; /* Puedes ajustar el espacio dentro de la columna */
   /* img background headliners */
 }
-.col .titleDays h3, .col .titleDays .h3 {
+.colB .titleDays h3, .colB .titleDays .h3 {
   text-align: center;
   font-size: 1.5em;
   margin-bottom: 0.5rem;
   color: #107361;
 }
-.col .cardHeadline.headB1 {
+.colB .cardHeadline.headB1 {
   background-image: url("/assets/img/lineUp/Eminem.jpg");
 }
-.col .cardHeadline.headB2 {
+.colB .cardHeadline.headB2 {
   background-image: url("/assets/img/lineUp/LosdelRio.jpg");
 }
-.col .cardHeadline.headB3 {
+.colB .cardHeadline.headB3 {
   background-image: url("/assets/img/lineUp/soundgarden.jpg");
 }
-.col .cardHeadline {
+.colB .cardHeadline {
   position: relative;
   height: 300px;
   width: 300px;
@@ -20662,7 +20662,7 @@ main {
   overflow: hidden;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
-.col .cardHeadline .artist-name {
+.colB .cardHeadline .artist-name {
   position: absolute;
   bottom: 10px;
   width: 100%;

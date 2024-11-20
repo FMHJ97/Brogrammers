@@ -118,13 +118,34 @@
                         <div class="ticket-card">
                             <div class="ticket-body">
                                 <img src="assets/img/mapaFestival.jpg" class="ticket-img" alt="Mapa del festival">
-                                <button class="button-ticket" id="map">Ver Mapa</button>
+                                <button class="button-ticket" data-bs-toggle="modal" data-bs-target="#myModal"
+                                    id="map">Ver Mapa</button>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
 
+            <!-- Map Modal -->
+
+            <div class="modal" id="myModal">
+                <div class="modal-dialog custom-modal-dialog">
+                    <div class="modal-content custom-modal-content">
+
+                        <!-- Modal body -->
+                        <div class="modal-body custom-modal-body">
+                            <img src="assets/img/mapaFestival.jpg" class="img-fluid" alt="Mapa del festival">
+                        </div>
+
+                        <!-- Modal footer -->
+                        <div class="modal-footer custom-modal-footer justify-content-center">
+                            <button type="button" class="button-ticket" data-bs-dismiss="modal">Cerrar</button>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+            
         </section>
     </main>
 

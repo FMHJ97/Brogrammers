@@ -20243,6 +20243,13 @@ button {
   border: 0;
 }
 
+@media (max-width: 767.98px) {
+  .btn-category-group {
+    flex-direction: column;
+    gap: 0.5em;
+    margin-bottom: 2em;
+  }
+}
 nav {
   background: linear-gradient(90deg, #035951 0%, #0A0F0F 42%);
   box-shadow: -5px -5px 30px 0px #035951;
@@ -20617,10 +20624,11 @@ main {
 
 .merch-products {
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
   gap: 4em;
-  margin-bottom: 3em;
+  margin: auto;
+  margin-bottom: 2em;
 }
 
 .hide {
@@ -20629,7 +20637,7 @@ main {
 
 .search-bar {
   display: flex;
-  justify-content: end;
+  justify-content: flex-end;
 }
 .search-bar .form-control-search {
   border: 2px outset #29F2B9;
@@ -20638,7 +20646,6 @@ main {
   font-size: 1rem;
   font-family: "Maven Pro", sans-serif;
   transition: border-color 0.3s;
-  min-width: 350px;
 }
 .search-bar .form-control-search:focus {
   border-color: rgb(13.2863436123, 218.7136563877, 160.4581497797);
@@ -20660,6 +20667,16 @@ main {
   background: rgb(13.2863436123, 218.7136563877, 160.4581497797);
 }
 
+@media (max-width: 767.98px) {
+  .merch-products {
+    gap: 2em;
+    justify-content: center;
+    margin-bottom: 1.5em;
+  }
+  .form-control-search {
+    flex-grow: 1;
+  }
+}
 .patro-seccion {
   background-color: #0A0F0F;
   border: 2px solid white;
@@ -20767,10 +20784,14 @@ main {
 
 /* Custom modal dialog to limit size */
 .custom-modal-dialog {
-  max-width: 90%; /* Maximum width of the modal */
-  max-height: 90vh; /* Maximum height to be 90% of the viewport height */
-  width: auto; /* Allow width to adjust based on the content */
-  height: auto; /* Allow height to adjust based on the content */
+  border-radius: 10px; /* Rounded corners */
+  max-width: 60vw;
+}
+
+.custom-modal-content {
+  border: 0; /* Remove border */
+  border-radius: 10px; /* Rounded corners */
+  background: linear-gradient(0deg, #035951 0%, #107361 100%); /* Background color of the modal */
 }
 
 /* Center the modal body content */
@@ -20778,14 +20799,17 @@ main {
   display: flex;
   justify-content: center;
   align-items: center;
-  background: linear-gradient(0deg, #035951 0%, #107361 100%); /* Background color of the modal */
-  padding: 15px; /* Same padding as cards */
 }
 
 /* Style the image */
 .custom-modal-body img {
   object-fit: contain; /* Make sure the image scales correctly without distortion */
   border-radius: 10px;
+}
+
+.custom-modal-footer {
+  border: 0; /* Remove border */
+  padding-top: 0; /* Remove padding at the top */
 }
 
 .masthead {

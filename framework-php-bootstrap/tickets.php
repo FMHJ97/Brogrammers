@@ -82,7 +82,7 @@
 
             <div class="modal" id="myModal">
                 <div class="modal-dialog custom-modal-dialog">
-                    <div class="modal-content">
+                    <div class="modal-content custom-modal-content">
 
                         <!-- Modal body -->
                         <div class="modal-body custom-modal-body">
@@ -90,8 +90,8 @@
                         </div>
 
                         <!-- Modal footer -->
-                        <div class="modal-footer justify-content-center">
-                            <button type="button" class="button-ticket" data-bs-dismiss="modal">Close</button>
+                        <div class="modal-footer custom-modal-footer justify-content-center">
+                            <button type="button" class="button-ticket" data-bs-dismiss="modal">Cerrar</button>
                         </div>
 
                     </div>

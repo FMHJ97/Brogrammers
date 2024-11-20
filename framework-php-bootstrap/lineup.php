@@ -42,50 +42,83 @@
         <!--BANDS Days -->
         <section class="page-section">
             <!--BANDS Days -->
-            <div class="container">
-                <div class="row">
+            <div class="container my-3">
+                <div class="row text-center text-white mt-5 mb-2">
                     <h2>HEADLINERS</h2>
                 </div>
-                <div class="row">
-                    <div class="col">
-                        <div class="title">
-
+                <div class="row border">
+                    <div class="col col-md-4 border">
+                        <div class="titleDays">
+                            <h3>Thursday</h3>
                         </div>
-                        <div class="card cardHeadline">
-                            <div class="artist-name">Band Name</div>
-                        </div>
-                    </div>
-                    <div class="col">
-                        <div class="title">
-
-                        </div>
-                        <div class="card cardHeadline">
-
+                        <div class="card cardHeadline headB1">
+                            <div class="artist-name">Eminemcito</div>
                         </div>
                     </div>
-                    <div class="col">
-                        <div class="title">
-
+                    <div class="col col-md-4 border">
+                        <div class="titleDays">
+                            <h3>Friday</h3>
                         </div>
-                        <div class="card cardHeadline">
-
+                        <div class="card cardHeadline headB2 ">
+                            <div class="artist-name">Lil' Eminem</div>
+                        </div>
+                    </div>
+                    <div class="col col-md-4 border">
+                        <div class="titleDays">
+                            <h3>Saturday</h3>
+                        </div>
+                        <div class="card cardHeadline headB3">
+                            <div class="artist-name">Su EmineMCIA</div>
                         </div>
                     </div>
                 </div>
             </div>
 
             <!--Rest Bands -->
-            <div class="container">
-                <div class="row">
+            <div class="container my-5">
+                <div class="row text-center text-white">
                     <h3>INCLUDING</h3>
                 </div>
-                <div class="row">
-                    <div class="card cardIncluding">
-
+                <div class="row border">
+                    <div class="card cardIncluding col-12 col-md-3 incB1">
+                        <div class="artist-name">Alice in Chains</div>
                     </div>
-
+                    <div class="card cardIncluding col-12 col-md-3 incB2">
+                        <div class="artist-name">50 cent</div>
+                    </div>
+                    <div class="card cardIncluding col-12 col-md-3 incB3">
+                        <div class="artist-name">Queen</div>
+                    </div>
+                    <div class="card cardIncluding col-12 col-md-3 incB4">
+                        <div class="artist-name">Pearl Jam</div>
+                    </div>
+                    <div class="card cardIncluding col-12 col-md-3 incB5">
+                        <div class="artist-name">Falling in Reverse</div>
+                    </div>
+                    <div class="card cardIncluding col-12 col-md-3 incB6">
+                        <div class="artist-name">Parchís</div>
+                    </div>
+                    <div class="card cardIncluding col-12 col-md-3 incB7">
+                        <div class="artist-name">Los Chichos</div>
+                    </div>
+                    <div class="card cardIncluding col-12 col-md-3 incB8">
+                        <div class="artist-name">Rush</div>
+                    </div>
+                    <div class="card cardIncluding col-12 col-md-3 incB9">
+                        <div class="artist-name">2 Pac</div>
+                    </div>
+                    <div class="card cardIncluding col-12 col-md-3 incB10">
+                        <div class="artist-name">Lola Flores</div>
+                    </div>
+                    <div class="card cardIncluding col-12 col-md-3 incB11">
+                        <div class="artist-name">Lamb of God</div>
+                    </div>
+                    <div class="card cardIncluding col-12 col-md-3 incB12">
+                        <div class="artist-name">Snoop Dog</div>
+                    </div>
                 </div>
             </div>
+
         </section>
 
 

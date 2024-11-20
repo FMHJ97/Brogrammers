@@ -20571,7 +20571,8 @@ main {
 .box-area-fondo .bgroundCampingInfo {
   background-image: url("../assets/img/info/Camping1.jpg");
 }
-.box-area-fondo .bgroundTicketInfo, .box-area-fondo .bgroundCampingInfo {
+.box-area-fondo .bgroundTicketInfo,
+.box-area-fondo .bgroundCampingInfo {
   position: relative;
   background-size: cover;
   background-position: center;
@@ -20582,7 +20583,8 @@ main {
   color: white;
   text-align: center;
 }
-.box-area-fondo .bgroundTicketInfo .buttonInfo, .box-area-fondo .bgroundCampingInfo .buttonInfo {
+.box-area-fondo .bgroundTicketInfo .buttonInfo,
+.box-area-fondo .bgroundCampingInfo .buttonInfo {
   position: absolute;
   background: #C5FCEC;
   color: #0A0F0F;
@@ -20600,23 +20602,118 @@ main {
   z-index: 2;
 }
 
-/*   BAND CARDS   */
-.title h3, .title .h3 {
-  font-size: 1.5em;
-  margin-bottom: 10px;
+/* ==========  BAND CARDS =========  */
+.col {
+  display: flex;
+  flex-direction: column; /* Hace que los elementos se apilen verticalmente */
+  align-items: center; /* Centra el contenido horizontalmente */
+  justify-content: center; /* Centra el contenido verticalmente */
+  text-align: center; /* Centra el texto dentro de la columna */
+  padding: 10px; /* Puedes ajustar el espacio dentro de la columna */
+  /* img background headliners */
 }
-
-.cardHeadline {
+.col .titleDays h3, .col .titleDays .h3 {
+  text-align: center;
+  font-size: 1.5em;
+  margin-bottom: 0.5rem;
+  color: #107361;
+}
+.col .cardHeadline.headB1 {
+  background-image: url("/assets/img/lineUp/Eminem.jpg");
+}
+.col .cardHeadline.headB2 {
+  background-image: url("/assets/img/lineUp/LosdelRio.jpg");
+}
+.col .cardHeadline.headB3 {
+  background-image: url("/assets/img/lineUp/soundgarden.jpg");
+}
+.col .cardHeadline {
   position: relative;
-  height: 200px;
-  background-image: url("https://via.placeholder.com/300");
+  height: 300px;
+  width: 300px;
   background-size: cover;
   background-position: center;
+  box-sizing: border-box;
+  border: 6px solid #107361;
   border-radius: 10px;
   overflow: hidden;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
-.cardHeadline .artist-name {
+.col .cardHeadline .artist-name {
+  position: absolute;
+  bottom: 10px;
+  width: 100%;
+  text-align: center;
+  color: white;
+  font-size: 1.2em;
+  font-weight: bold;
+  text-shadow: 0 2px 5px rgba(0, 0, 0, 0.7);
+}
+
+/* img background sideshow */
+.cardIncluding.incB1 {
+  background-image: url("/assets/img/lineUp/AliceInChains.jpg");
+}
+
+.cardIncluding.incB2 {
+  background-image: url("/assets/img/lineUp/50-cent-.jpg");
+}
+
+.cardIncluding.incB3 {
+  background-image: url("/assets/img/lineUp/queen1.jpg");
+}
+
+.cardIncluding.incB4 {
+  background-image: url("/assets/img/lineUp/pearlJam.jpg");
+}
+
+.cardIncluding.incB5 {
+  background-image: url("/assets/img/lineUp/FallingInReverse.jpg");
+}
+
+.cardIncluding.incB6 {
+  background-image: url("/assets/img/lineUp/Parchis.jpg");
+}
+
+.cardIncluding.incB7 {
+  background-image: url("/assets/img/lineUp/Loschichos.jpeg");
+}
+
+.cardIncluding.incB8 {
+  background-image: url("/assets/img/lineUp/Rush.jpg");
+}
+
+.cardIncluding.incB9 {
+  background-image: url("/assets/img/lineUp/2pac.jpg");
+}
+
+.cardIncluding.incB10 {
+  background-image: url("/assets/img/lineUp/lola-flores-biografia.jpg");
+}
+
+.cardIncluding.incB11 {
+  background-image: url("/assets/img/lineUp/LambOfGod-Cuadrada.jpeg");
+}
+
+.cardIncluding.incB12 {
+  background-image: url("/assets/img/lineUp/snoopDog.jpg");
+}
+
+.cardIncluding {
+  box-sizing: border-box;
+  position: relative;
+  height: 230px;
+  width: 230px;
+  margin: 1rem;
+  background-size: cover;
+  background-position: center;
+  box-sizing: border-box;
+  border: 6px solid #107361;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+.cardIncluding .artist-name {
   position: absolute;
   bottom: 10px;
   width: 100%;

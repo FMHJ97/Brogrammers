@@ -26,15 +26,25 @@
 
                     </div>
                 </div>
-                <!-- Merch Item Description -->
-                <div class="col">
+                <!-- Merch Item Details -->
+                <div class="col merch-item-details">
                     <!-- Merch Item Title & Price -->
                     <div class="row">
-
+                        <div class="col">
+                            <h1>Camiseta GroundSound Blanca (Black Logo)</h1>
+                            <h2>€25,00 EUR</h2>
+                        </div>
                     </div>
                     <!-- Merch Item Size -->
                     <div class="row">
-
+                        <p>Talla</p>
+                        <div class="col">
+                            <button type="button" class="btn">S</button>
+                            <button type="button" class="btn">M</button>
+                            <button type="button" class="btn">L</button>
+                            <button type="button" class="btn">XL</button>
+                            <button type="button" class="btn">2XL</button>
+                        </div>
                     </div>
                     <!-- Merch Item Quantity -->
                     <div class="row">

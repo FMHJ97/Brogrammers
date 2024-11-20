@@ -1,10 +1,11 @@
 // Contenedor de productos
 .merch-products {
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
     gap: 4em;
-    margin-bottom: 3em;
+    margin: auto;
+    margin-bottom: 2em;
 }
 
 .hide {
@@ -13,7 +14,7 @@
 
 .search-bar {
     display: flex;
-    justify-content: end;
+    justify-content: flex-end;
 
     .form-control-search {
         border: 2px outset $resaltar1;
@@ -22,7 +23,6 @@
         font-size: 1rem;
         font-family: $body-font-family;
         transition: border-color 0.3s;
-        min-width: 350px;
 
         &:focus {
             border-color: darken($resaltar1, 10%);
@@ -46,5 +46,18 @@
         &:hover {
             background: darken($resaltar1, 10%);
         }
+    }
+}
+
+// Estilos de los productos
+
+@include media-breakpoint-down(md) {
+    .merch-products {
+        gap: 2em;
+        justify-content: center;
+        margin-bottom: 1.5em;
+    }
+    .form-control-search {
+        flex-grow: 1;
     }
 }

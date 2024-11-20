@@ -5,11 +5,6 @@
 			$PAGE_TITLE = "GroundSound Festival";
 			break;
 
-		case "/login.php":
-			$CURRENT_PAGE = "Iniciar Sesión"; 
-			$PAGE_TITLE = "Iniciar Sesión";
-			break;
-
 		case "/tickets.php":
 			$CURRENT_PAGE = "Tickets"; 
 			$PAGE_TITLE = "Tickets";
@@ -25,16 +20,31 @@
 			$PAGE_TITLE = "Parking & Camping";
 			break;
 
-		case "/restore_password.php":
-			$CURRENT_PAGE = "Recuperar Contraseña"; 
-			$PAGE_TITLE = "Recuperar Contraseña";
-			break;	
+		case "/merch.php":
+			$CURRENT_PAGE = "Merch"; 
+			$PAGE_TITLE = "Merch";
+			break;
+
+		case "/merch_item.php":
+			$CURRENT_PAGE = "Merch Producto"; 
+			$PAGE_TITLE = "Merch Producto";
+			break;			
 
 		case "/gallery.php":
 			$CURRENT_PAGE = "Gallery"; 
 			$PAGE_TITLE = "Gallery";
 			break;			
+
+		case "/restore_password.php":
+			$CURRENT_PAGE = "Recuperar Contraseña"; 
+			$PAGE_TITLE = "Recuperar Contraseña";
+			break;				
 		
+		case "/login.php":
+			$CURRENT_PAGE = "Iniciar Sesión"; 
+			$PAGE_TITLE = "Iniciar Sesión";
+			break;
+
 		case "/register.php":
 			$CURRENT_PAGE = "Crear Cuenta"; 
 			$PAGE_TITLE = "Crear Cuenta";

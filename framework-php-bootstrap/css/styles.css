@@ -20091,32 +20091,34 @@ body h2, body .h2 {
 }
 
 .page-section {
-  padding: 3rem 0;
+  padding-bottom: 3rem;
 }
 .page-section .page-section-heading {
   font-size: 2rem;
   line-height: 1.75rem;
   font-family: "Krona One", sans-serif;
   text-align: center;
+  padding-top: 3rem;
+  padding-bottom: 3rem;
 }
 .page-section .page-section-heading h2, .page-section .page-section-heading .h2 {
   font-size: 1.5rem;
   line-height: 1.25rem;
 }
+
 @media (max-width: 767.98px) {
+  .page-section {
+    padding-bottom: 2rem;
+  }
   .page-section .page-section-heading {
     font-size: 1.75rem;
     line-height: 1.5rem;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
   }
   .page-section .page-section-heading h2, .page-section .page-section-heading .h2 {
     font-size: 1.25rem;
     line-height: 1rem;
-  }
-}
-
-@media (max-width: 767.98px) {
-  .page-section {
-    padding: 2rem 0;
   }
 }
 .divider-custom {

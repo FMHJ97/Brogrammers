@@ -146,6 +146,10 @@
   height: 800px;
 }
 
+
+//INFO DIVS BOXES
+
+//Box-Area with fading COLOR background
 .box-area {
   border: 6px solid $primario2;
   border-radius: 10px;
@@ -154,6 +158,7 @@
   background: $fade-history-divs;
 }
 
+//Box-Area with fading IMAGE background
 .box-area-fondo {
   box-sizing: border-box;
   border: 6px solid $primario2;
@@ -199,44 +204,38 @@
       max-width: fit-content;
       z-index: 2;
 
-
-
-      // position: absolute; /* Botón se posicionará relativo al contenedor */
-      // border-radius: 10px;
-      // max-width: fit-content;
-      // top: 50%; /* Centra verticalmente */
-      // left: 50%; /* Centra horizontalmente */
-      // transform: translate(
-      //   -50%,
-      //   -50%
-      // ); /* Ajusta el punto de referencia al centro */
-      // z-index: 2; /* Asegura que el botón esté sobre la imagen */
     }
   }
-
-  // .bgroundCampingInfo {
-  //   position: relative;
-    
-  //   background-size: cover;
-  //   background-position: center;
-  //   height: 450px;
-  //   display: flex; /* Para alinear el texto si es necesario */
-  //   justify-content: center;
-  //   align-items: center;
-  //   color: white;
-  //   text-align: center;
-
-  //   .button {
-  //     position: absolute; /* Botón se posicionará relativo al contenedor */
-  //     border-radius: 10px;
-  //     max-width: fit-content;
-  //     top: 50%; /* Centra verticalmente */
-  //     left: 50%; /* Centra horizontalmente */
-  //     transform: translate(
-  //       -50%,
-  //       -50%
-  //     ); /* Ajusta el punto de referencia al centro */
-  //     z-index: 2; /* Asegura que el botón esté sobre la imagen */
-  //   }
-  // }
 }
+
+/*   BAND CARDS   */
+.title h3 {
+  font-size: 1.5em;
+  margin-bottom: 10px;
+}
+
+.cardHeadline {
+  position: relative;
+  height: 200px;
+  background-image: url('https://via.placeholder.com/300');
+  background-size: cover;
+  background-position: center;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+
+  .artist-name {
+    position: absolute;
+    bottom: 10px;
+    width: 100%;
+    text-align: center;
+    color: white;
+    font-size: 1.2em;
+    font-weight: bold;
+    text-shadow: 0 2px 5px rgba(0, 0, 0, 0.7);
+  }
+
+}
+
+
+

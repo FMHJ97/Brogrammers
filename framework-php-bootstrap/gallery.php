@@ -1,6 +1,6 @@
 <?php include("includes/a_config.php"); ?>
 <!DOCTYPE html>
-<html >
+<html>
 
 <head>
     <script src="js/media.js"></script>
@@ -11,11 +11,22 @@
 <body>
     <?php include("includes/navbar.php"); ?>
 
-    
+    <div class="container page-section">
         <div id="mediaContainer" class="grid row mt-4">
+        </div>
+        <div class="row my-3 px-4 py-3">
+            <a href="" class="btn-gallery mx-auto my-3">↓ see more ↓</a>
+        </div>
 
-    
-</div>
+    </div>
+    <div class="container page-section">
+
+        <div class="row my-3 py-3">
+            <a href="" class="btn-index ">Send us your pics</a>
+        </div>
+
+    </div>
+
 
 
 

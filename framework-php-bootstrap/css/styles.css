@@ -20235,6 +20235,25 @@ body h2, body .h2 {
   color: #0A0F0F;
 }
 
+.btn-cart {
+  background-color: #29F2B9;
+  color: #0A0F0F;
+  border-radius: 10px;
+  font-size: 22px;
+  padding: 10px 75px 10px 75px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: "Krona One", sans-serif;
+  white-space: nowrap;
+}
+.btn-cart:hover {
+  color: #0A0F0F;
+  background-color: #29F2B9;
+  transition: all 0.3s ease;
+  scale: 1.02;
+}
+
 .button-ticket, .btn-gallery, .btn-index {
   background: #C5FCEC;
   border-radius: 20px;
@@ -21001,6 +21020,17 @@ main {
   color: #5F8D95;
 }
 
+.suggested-items-section {
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: center;
+}
+.suggested-items-section h2, .suggested-items-section .h2 {
+  color: #FFFDFA;
+  font-family: "Krona One", sans-serif;
+}
+
 .merch-item-details {
   display: flex;
   flex-direction: column;
@@ -21011,7 +21041,6 @@ main {
 }
 .merch-item-details p {
   font-size: 1.2rem;
-  line-height: 1.5;
 }
 .merch-item-details .item-heading h1, .merch-item-details .item-heading .h1 {
   color: #FFFDFA;
@@ -21021,9 +21050,10 @@ main {
 }
 .merch-item-details .item-quantity {
   display: flex;
-  gap: 1em;
   align-items: center;
   justify-content: start;
+  margin-left: 12px;
+  gap: 0.5em;
   flex-grow: 0;
   border: 2px solid #C5FCEC;
   border-radius: 5px;
@@ -21039,6 +21069,15 @@ main {
 .merch-item-details .item-quantity #quantity {
   width: 2ch; /* El ancho ajustado para mostrar 2 caracteres (e.g., 99) */
   text-align: center;
+}
+.merch-item-details .item-description {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75em;
+}
+.merch-item-details .item-description li {
+  font-size: 1.2rem;
+  margin-bottom: 0.2em;
 }
 
 .merch-products {

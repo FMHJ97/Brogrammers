@@ -101,6 +101,27 @@
   }
 }
 
+// Botón de Añadir al Carrito.
+.btn-cart {
+  background-color: $resaltar1;
+  color: $texto2;
+  border-radius: 10px;
+  font-size: 22px;
+  padding: 10px 75px 10px 75px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: $headings-font-family;
+  white-space: nowrap;
+
+  &:hover {
+    color: $texto2;
+    background-color: $resaltar1;
+    transition: all 0.3s ease;
+    scale: 1.02;
+  }
+}
+
 .button-ticket {
   background: $resaltar2;
   border-radius: 20px;

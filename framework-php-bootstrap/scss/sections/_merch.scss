@@ -1,5 +1,16 @@
 // Estilos de Merch Item //
 
+.suggested-items-section {
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: center;
+    h2 {
+        color: $texto1;
+        font-family: $headings-font-family;
+    }
+}
+
 .merch-item-details {
     display: flex;
     flex-direction: column;
@@ -10,7 +21,6 @@
     // Parragraph
     p {
         font-size: 1.2rem;
-        line-height: 1.5;
     }
     // Merch Item Header
     .item-heading {
@@ -23,9 +33,10 @@
     }
     .item-quantity {
         display: flex;
-        gap: 1em;
         align-items: center;
         justify-content: start;
+        margin-left: 12px; // Margen para ajustar el texto con el contador.
+        gap: 0.5em;
         flex-grow: 0;
         border: 2px solid $resaltar2;
         border-radius: 5px;
@@ -40,6 +51,15 @@
         #quantity {
             width: 2ch; /* El ancho ajustado para mostrar 2 caracteres (e.g., 99) */
             text-align: center;
+        }
+    }
+    .item-description {
+        display: flex;
+        flex-direction: column;
+        gap: 0.75em;
+        li {
+            font-size: 1.2rem;
+            margin-bottom: 0.2em;
         }
     }
 }

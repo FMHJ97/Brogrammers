@@ -53,7 +53,7 @@
                             <h3>Thursday</h3>
                         </div>
                         <div class="card cardHeadline headB1">
-                            <div class="artist-name">Eminemcito</div>
+                            <div class="artist-name">Eminem</div>
                         </div>
                     </div>
                     <div class="colB col-md-4 ">
@@ -61,7 +61,7 @@
                             <h3>Friday</h3>
                         </div>
                         <div class="card cardHeadline headB2 ">
-                            <div class="artist-name">Lil' Eminem</div>
+                            <div class="artist-name">Los del Río</div>
                         </div>
                     </div>
                     <div class="colB col-md-4 ">
@@ -69,7 +69,7 @@
                             <h3>Saturday</h3>
                         </div>
                         <div class="card cardHeadline headB3">
-                            <div class="artist-name">Su EmineMCIA</div>
+                            <div class="artist-name">SoundGarden</div>
                         </div>
                     </div>
                 </div>

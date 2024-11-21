@@ -20649,13 +20649,13 @@ main {
   color: #107361;
 }
 .colB .cardHeadline.headB1 {
-  background-image: url("/assets/img/lineUp/Eminem.jpg");
+  background-image: linear-gradient(to bottom, rgba(255, 153, 153, 0) 0%, rgba(255, 153, 153, 0) 50px, #0A0F0F 100%), url("/assets/img/lineUp/Eminem.jpg");
 }
 .colB .cardHeadline.headB2 {
-  background-image: url("/assets/img/lineUp/LosdelRio.jpg");
+  background-image: linear-gradient(to bottom, rgba(255, 153, 153, 0) 0%, rgba(255, 153, 153, 0) 50px, #0A0F0F 100%), url("/assets/img/lineUp/LosdelRio.jpg");
 }
 .colB .cardHeadline.headB3 {
-  background-image: url("/assets/img/lineUp/soundgarden.jpg");
+  background-image: linear-gradient(to bottom, rgba(255, 153, 153, 0) 0%, rgba(255, 153, 153, 0) 50px, #0A0F0F 100%), url("/assets/img/lineUp/soundgarden.jpg");
 }
 .colB .cardHeadline {
   position: relative;
@@ -20682,58 +20682,58 @@ main {
 
 /* img background sideshow */
 .cardIncluding.incB1 {
-  background-image: url("/assets/img/lineUp/AliceInChains.jpg");
+  background-image: linear-gradient(to bottom, rgba(255, 153, 153, 0) 0%, rgba(255, 153, 153, 0) 50px, #0A0F0F 100%), url("/assets/img/lineUp/AliceInChains.jpg");
 }
 
 .cardIncluding.incB2 {
-  background-image: url("/assets/img/lineUp/50-cent-.jpg");
+  background-image: linear-gradient(to bottom, rgba(255, 153, 153, 0) 0%, rgba(255, 153, 153, 0) 50px, #0A0F0F 100%), url("/assets/img/lineUp/50-cent-.jpg");
 }
 
 .cardIncluding.incB3 {
-  background-image: url("/assets/img/lineUp/queen1.jpg");
+  background-image: linear-gradient(to bottom, rgba(255, 153, 153, 0) 0%, rgba(255, 153, 153, 0) 50px, #0A0F0F 100%), url("/assets/img/lineUp/queen1.jpg");
 }
 
 .cardIncluding.incB4 {
-  background-image: url("/assets/img/lineUp/pearlJam.jpg");
+  background-image: linear-gradient(to bottom, rgba(255, 153, 153, 0) 0%, rgba(255, 153, 153, 0) 50px, #0A0F0F 100%), url("/assets/img/lineUp/pearlJam.jpg");
 }
 
 .cardIncluding.incB5 {
-  background-image: url("/assets/img/lineUp/FallingInReverse.jpg");
+  background-image: linear-gradient(to bottom, rgba(255, 153, 153, 0) 0%, rgba(255, 153, 153, 0) 50px, #0A0F0F 100%), url("/assets/img/lineUp/FallingInReverse.jpg");
 }
 
 .cardIncluding.incB6 {
-  background-image: url("/assets/img/lineUp/Parchis.jpg");
+  background-image: linear-gradient(to bottom, rgba(255, 153, 153, 0) 0%, rgba(255, 153, 153, 0) 50px, #0A0F0F 100%), url("/assets/img/lineUp/Parchis.jpg");
 }
 
 .cardIncluding.incB7 {
-  background-image: url("/assets/img/lineUp/Loschichos.jpeg");
+  background-image: linear-gradient(to bottom, rgba(255, 153, 153, 0) 0%, rgba(255, 153, 153, 0) 50px, #0A0F0F 100%), url("/assets/img/lineUp/Loschichos.jpeg");
 }
 
 .cardIncluding.incB8 {
-  background-image: url("/assets/img/lineUp/Rush.jpg");
+  background-image: linear-gradient(to bottom, rgba(255, 153, 153, 0) 0%, rgba(255, 153, 153, 0) 50px, #0A0F0F 100%), url("/assets/img/lineUp/Rush.jpg");
 }
 
 .cardIncluding.incB9 {
-  background-image: url("/assets/img/lineUp/2pac.jpg");
+  background-image: linear-gradient(to bottom, rgba(255, 153, 153, 0) 0%, rgba(255, 153, 153, 0) 50px, #0A0F0F 100%), url("/assets/img/lineUp/2pac.jpg");
 }
 
 .cardIncluding.incB10 {
-  background-image: url("/assets/img/lineUp/lola-flores-biografia.jpg");
+  background-image: linear-gradient(to bottom, rgba(255, 153, 153, 0) 0%, rgba(255, 153, 153, 0) 50px, #0A0F0F 100%), url("/assets/img/lineUp/lola-flores-biografia.jpg");
 }
 
 .cardIncluding.incB11 {
-  background-image: url("/assets/img/lineUp/LambOfGod-Cuadrada.jpeg");
+  background-image: linear-gradient(to bottom, rgba(255, 153, 153, 0) 0%, rgba(255, 153, 153, 0) 50px, #0A0F0F 100%), url("/assets/img/lineUp/LambOfGod-Cuadrada.jpeg");
 }
 
 .cardIncluding.incB12 {
-  background-image: url("/assets/img/lineUp/snoopDog.jpg");
+  background-image: linear-gradient(to bottom, rgba(255, 153, 153, 0) 0%, rgba(255, 153, 153, 0) 50px, #0A0F0F 100%), url("/assets/img/lineUp/snoopDog.jpg");
 }
 
 .cardIncluding {
   box-sizing: border-box;
   position: relative;
-  height: 230px;
-  width: 230px;
+  height: 250px;
+  width: 250px;
   margin: 1rem;
   background-size: cover;
   background-position: center;

@@ -22,7 +22,8 @@
             <div class="row btn-category-group justify-content-center">
                 <div class="d-flex flex-wrap justify-content-center">
                     <div class="col-12 col-md-3 mb-2 px-2">
-                        <button type="button" id="history" class="btn btn-category-item selected w-100">Full Lineup</button>
+                        <button type="button" id="history" class="btn btn-category-item selected w-100">Full
+                            Lineup</button>
                     </div>
                     <div class="col-4 col-md-3  mb-2 px-2">
                         <button type="button" id="tickets" class="btn btn-category-item w-100">Thursday</button>
@@ -46,8 +47,8 @@
                 <div class="row text-center text-white mt-5 mb-2">
                     <h2>HEADLINERS</h2>
                 </div>
-                <div class="row border">
-                    <div class="colB col-md-4 border">
+                <div class="row ">
+                    <div class="colB col-md-4 ">
                         <div class="titleDays">
                             <h3>Thursday</h3>
                         </div>
@@ -55,7 +56,7 @@
                             <div class="artist-name">Eminemcito</div>
                         </div>
                     </div>
-                    <div class="colB col-md-4 border">
+                    <div class="colB col-md-4 ">
                         <div class="titleDays">
                             <h3>Friday</h3>
                         </div>
@@ -63,7 +64,7 @@
                             <div class="artist-name">Lil' Eminem</div>
                         </div>
                     </div>
-                    <div class="colB col-md-4 border">
+                    <div class="colB col-md-4 ">
                         <div class="titleDays">
                             <h3>Saturday</h3>
                         </div>
@@ -79,46 +80,69 @@
                 <div class="row text-center text-white">
                     <h3>INCLUDING</h3>
                 </div>
-                <div class="row border">
-                    <div class="card cardIncluding col-12 col-md-3 incB1">
-                        <div class="artist-name">Alice in Chains</div>
+                <div class="row  cols-4">
+                    <div class="col-12 col-md-3 colB ">
+                        <div class="card cardIncluding incB1">
+                            <div class="artist-name">Alice in Chains</div>
+                        </div>
                     </div>
-                    <div class="card cardIncluding col-12 col-md-3 incB2">
-                        <div class="artist-name">50 cent</div>
+
+                    <div class="col-12 col-md-3 colB">
+                        <div class="card cardIncluding incB2">
+                            <div class="artist-name">50 cent</div>
+                        </div>
                     </div>
-                    <div class="card cardIncluding col-12 col-md-3 incB3">
-                        <div class="artist-name">Queen</div>
+                    <div class="col-12 col-md-3 colB ">
+                        <div class="card cardIncluding incB3">
+                            <div class="artist-name">Queen</div>
+                        </div>
                     </div>
-                    <div class="card cardIncluding col-12 col-md-3 incB4">
-                        <div class="artist-name">Pearl Jam</div>
+                    <div class="col-12 col-md-3 colB ">
+                        <div class="card cardIncluding incB4">
+                            <div class="artist-name">Pearl Jam</div>
+                        </div>
                     </div>
-                    <div class="card cardIncluding col-12 col-md-3 incB5">
-                        <div class="artist-name">Falling in Reverse</div>
+                    <div class="col-12 col-md-3 colB">
+                        <div class="card cardIncluding incB5">
+                            <div class="artist-name">Falling in Reverse</div>
+                        </div>
                     </div>
-                    <div class="card cardIncluding col-12 col-md-3 incB6">
-                        <div class="artist-name">Parchís</div>
+                    <div class="col-12 col-md-3 colB">
+                        <div class="card cardIncluding incB6">
+                            <div class="artist-name">Parchís</div>
+                        </div>
                     </div>
-                    <div class="card cardIncluding col-12 col-md-3 incB7">
-                        <div class="artist-name">Los Chichos</div>
+                    <div class="col-12 col-md-3 colB">
+                        <div class="card cardIncluding incB7">
+                            <div class="artist-name">Los Chichos</div>
+                        </div>
                     </div>
-                    <div class="card cardIncluding col-12 col-md-3 incB8">
-                        <div class="artist-name">Rush</div>
+                    <div class="col-12 col-md-3 colB">
+                        <div class="card cardIncluding incB8">
+                            <div class="artist-name">Rush</div>
+                        </div>
                     </div>
-                    <div class="card cardIncluding col-12 col-md-3 incB9">
-                        <div class="artist-name">2 Pac</div>
+                    <div class="col-12 col-md-3 colB">
+                        <div class="card cardIncluding incB9">
+                            <div class="artist-name">2 Pac</div>
+                        </div>
                     </div>
-                    <div class="card cardIncluding col-12 col-md-3 incB10">
-                        <div class="artist-name">Lola Flores</div>
+                    <div class="col-12 col-md-3 colB">
+                        <div class="card cardIncluding incB10">
+                            <div class="artist-name">Lola Flores</div>
+                        </div>
                     </div>
-                    <div class="card cardIncluding col-12 col-md-3 incB11">
-                        <div class="artist-name">Lamb of God</div>
+                    <div class="col-12 col-md-3 colB">
+                        <div class="card cardIncluding incB11">
+                            <div class="artist-name">Lamb of God</div>
+                        </div>
                     </div>
-                    <div class="card cardIncluding col-12 col-md-3 incB12">
-                        <div class="artist-name">Snoop Dog</div>
+                    <div class="col-12 col-md-3 colB">
+                        <div class="card cardIncluding incB12">
+                            <div class="artist-name">Snoop Dog</div>
+                        </div>
                     </div>
                 </div>
-            </div>
-
         </section>
 
 

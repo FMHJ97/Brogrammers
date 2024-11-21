@@ -238,8 +238,8 @@
 
   .cardHeadline {
     position: relative;
-    height: 300px;
-    width: 300px;
+    max-height: 300px;
+    max-width: 300px;
     background-size: cover;
     background-position: center;
     box-sizing: border-box;
@@ -306,8 +306,8 @@
 .cardIncluding {
   box-sizing: border-box;
   position: relative;
-  height: 230px;
-  width: 230px;
+  height: 250px;
+  width: 250px;
   margin: 1rem;
   background-size: cover;
   background-position: center;

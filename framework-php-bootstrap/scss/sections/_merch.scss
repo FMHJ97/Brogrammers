@@ -50,9 +50,14 @@
 // Contenedor de productos
 .merch-products {
     display: flex;
-    align-items: center;
+    justify-content: start;
     margin: auto;
     margin-bottom: 2em;
+    // Ajuste de columnas para ocupar el espacio disponible de manera uniforme.
+    // Hacemos uso de colummn-gap para separar los elementos.
+    column-gap: 87px; // Ajuste de separación entre columnas exacto.
+    row-gap: 4em; // Ajuste de separación entre filas exacto.
+
 }
 
 .hide {
@@ -102,8 +107,9 @@
 
 @include media-breakpoint-down(md) {
     .merch-products {
-        gap: 2em;
         justify-content: center;
+        column-gap: 0;
+        row-gap: 2em;
         margin-bottom: 1.5em;
     }
     .search-bar {

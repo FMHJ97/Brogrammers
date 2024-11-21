@@ -63,9 +63,9 @@
         <!-- Merch Products Section -->
         <section class="container page-section px-3 px-md-5">
             <!-- First Row -->
-            <div class="row merch-products">
+            <div class="row row-cols-1 row-cols-md-3 merch-products">
                 <!-- Merch Item 1 -->
-                <a href="./merch_item.php" class="col-12 col-md-4 card card-merch-item all-items clothes">
+                <a href="./merch_item.php" class="card card-merch-item all-items clothes">
                     <img class="card-img-top" src="./assets/img/merch/camiseta_1.png"
                         alt="Camiseta GroundSound Blanca (Black Logo)">
                     <div class="card-body">
@@ -74,7 +74,7 @@
                     </div>
                 </a>
                 <!-- Merch Item 2 -->
-                <a href="./merch_item.php" class="col-12 col-md-4 card card-merch-item all-items clothes">
+                <a href="./merch_item.php" class="card card-merch-item all-items clothes">
                     <img class="card-img-top" src="./assets/img/merch/camiseta_2.png"
                         alt="Camiseta GroundSound Negra (Neon Logo)">
                     <div class="card-body">
@@ -83,7 +83,7 @@
                     </div>
                 </a>
                 <!-- Merch Item 3 -->
-                <a href="./merch_item.php" class="col-12 col-md-4 card card-merch-item all-items accesories">
+                <a href="./merch_item.php" class="card card-merch-item all-items accesories">
                     <img class="card-img-top" src="./assets/img/merch/bolsa.png" alt="Mochila Saco GroundSound Negra">
                     <div class="card-body">
                         <h3 class="card-title">Mochila Saco GroundSound<br>Negra</h3>
@@ -91,7 +91,7 @@
                     </div>
                 </a>
                 <!-- Merch Item 4 -->
-                <a href="./merch_item.php" class="col-12 col-md-4 card card-merch-item all-items music">
+                <a href="./merch_item.php" class="card card-merch-item all-items music">
                     <img class="card-img-top" src="./assets/img/merch/Vinilo_SoundGarden_SuperUnknow_2LP.png"
                         alt="Sound Garden Superunknow (Vinilo 2LP)">
                     <div class="card-body">
@@ -100,7 +100,7 @@
                     </div>
                 </a>
                 <!-- Merch Item 5 -->
-                <a href="./merch_item.php" class="col-12 col-md-4 card card-merch-item all-items clothes">
+                <a href="./merch_item.php" class="card card-merch-item all-items clothes">
                     <img class="card-img-top" src="./assets/img/merch/camiseta_queen.png"
                         alt="Camiseta Queen 'Jazz' 40 Aniversario">
                     <div class="card-body">
@@ -109,7 +109,7 @@
                     </div>
                 </a>
                 <!-- Merch Item 6 -->
-                <a href="./merch_item.php" class="col-12 col-md-4 card card-merch-item all-items music">
+                <a href="./merch_item.php" class="card card-merch-item all-items music">
                     <img class="card-img-top" src="./assets/img/merch/Eminem_Vinilo.png"
                         alt="The Death of Slim Shady - Coup de Grâce (Vinilo 2LP)">
                     <div class="card-body">
@@ -118,7 +118,7 @@
                     </div>
                 </a>
                 <!-- Merch Item 7 -->
-                <a href="./merch_item.php" class="col-12 col-md-4 card card-merch-item all-items clothes">
+                <a href="./merch_item.php" class="card card-merch-item all-items clothes">
                     <img class="card-img-top" src="./assets/img/merch/camiseta_fallinginreverse.png"
                         alt='Camiseta "Floating" Falling in Reverse'>
                     <div class="card-body">
@@ -127,7 +127,7 @@
                     </div>
                 </a>
                 <!-- Merch Item 8 -->
-                <a href="./merch_item.php" class="col-12 col-md-4 card card-merch-item all-items accesories">
+                <a href="./merch_item.php" class="card card-merch-item all-items accesories">
                     <img class="card-img-top" src="./assets/img/merch/gorra.png" alt="Gorra GroundSound Golden Forrest">
                     <div class="card-body">
                         <h3 class="card-title">Gorra<br>GroundSound<br>Golden Forrest</h3>
@@ -135,7 +135,7 @@
                     </div>
                 </a>
                 <!-- Merch Item 9 -->
-                <a href="./merch_item.php" class="col-12 col-md-4 card card-merch-item all-items clothes">
+                <a href="./merch_item.php" class="card card-merch-item all-items clothes">
                     <img class="card-img-top" src="./assets/img/merch/ElFary_camiseta.png"
                         alt='Camiseta "Mandanga" El Fary'>
                     <div class="card-body">

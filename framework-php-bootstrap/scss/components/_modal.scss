@@ -3,6 +3,15 @@
     border-radius: 10px; /* Rounded corners */
     // To make it fill the visible screen
     max-width: 60vw;
+
+    // To make it fill the visible screen when in mobile view
+    @include media-breakpoint-down(md) {
+        max-width: 90vw;
+        // Center the modal
+        margin: auto;
+        // Making sure the modal is not too close to the top
+        margin-top: 10vh;
+    }
 }
 
 .custom-modal-content {

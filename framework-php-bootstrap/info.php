@@ -19,24 +19,24 @@
             </div>
         </section>
         <!--Seleccion Info -->
-        <div class="container">
-            <div class="row btn-category-group justify-content-center border border-light">
+        <section class="container">
+            <div class="row btn-category-group justify-content-center">
                 <div class="d-flex flex-wrap justify-content-center">
-                    <div class="col-lg-3 col-md-6 col-6 mb-2">
+                    <div class="col-md-3 col-6 mb-2 px-2">
                         <button type="button" id="history" class="btn btn-category-item selected w-100">Fest History</button>
                     </div>
-                    <div class="col-lg-3 col-md-6 col-6 mb-2">
+                    <div class="col-md-3 col-6 mb-2 px-2">
                         <button type="button" id="tickets" class="btn btn-category-item w-100">Tickets Info</button>
                     </div>
-                    <div class="col-lg-3 col-md-6 col-6 mb-2">
+                    <div class="col-md-3 col-6 mb-2 px-2">
                         <button type="button" id="camping" class="btn btn-category-item w-100">Camping</button>
                     </div>
-                    <div class="col-lg-3 col-md-6 col-6 mb-2">
+                    <div class="col-md-3 col-6 mb-2 px-2">
                         <button type="button" id="accessibility" class="btn btn-category-item w-100">Accessibility</button>
                     </div>
                 </div>
             </div>
-        </div>
+        </section>
 
 
 
@@ -123,8 +123,8 @@
                     <p> Passes may not be used for advertising, promotion (including contests and sweepstakes),
                         or other trade purposes without the express written consent of the festival. </p>
                 </div>
-                <div class="row bgroundTicketInfo d-flex">
-                    <button class="btn btn-primary">Haz clic aquí</button>
+                <div class="row bgroundTicketInfo d-flex justify-content-center align-items-center">
+                    <button class="btn buttonInfo">Haz clic aquí</button>
                 </div>
             </div>
         </section>
@@ -162,8 +162,8 @@
                     <p> Passes may not be used for advertising, promotion (including contests and sweepstakes),
                         or other trade purposes without the express written consent of the festival. </p>
                 </div>
-                <div class="row bgroundCampingInfo d-flex ">
-                    <button class="btn btn-primary">Haz clic aquí</button>
+                <div class="row bgroundCampingInfo d-flex justify-content-center align-items-center">
+                    <button class="btn buttonInfo">Haz clic aquí</button>
                 </div>
             </div>
         </section>

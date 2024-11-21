@@ -1,9 +1,14 @@
 /* Custom modal dialog to limit size */
 .custom-modal-dialog {
-    max-width: 90%; /* Maximum width of the modal */
-    max-height: 90vh; /* Maximum height to be 90% of the viewport height */
-    width: auto; /* Allow width to adjust based on the content */
-    height: auto; /* Allow height to adjust based on the content */
+    border-radius: 10px; /* Rounded corners */
+    // To make it fill the visible screen
+    max-width: 60vw;
+}
+
+.custom-modal-content {
+    border: 0; /* Remove border */
+    border-radius: 10px; /* Rounded corners */
+    background: $fade-tickets-cards; /* Background color of the modal */
 }
 
 /* Center the modal body content */
@@ -11,13 +16,15 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    background: $fade-tickets-cards; /* Background color of the modal */
-    padding: 15px; /* Same padding as cards */
 }
 
 /* Style the image */
 .custom-modal-body img {
-
     object-fit: contain; /* Make sure the image scales correctly without distortion */
     border-radius: 10px;
+}
+
+.custom-modal-footer {
+    border: 0; /* Remove border */
+    padding-top: 0; /* Remove padding at the top */
 }

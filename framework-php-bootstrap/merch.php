@@ -13,7 +13,7 @@
 
     <main>
         <!-- Merch Heading Section -->
-        <section class="container page-section">
+        <section class="container page-section pb-0">
             <div class="row page-section-heading">
                 <h1>GroundSound Festival Merch</h1>
                 <h2>Productos exclusivos</h2>

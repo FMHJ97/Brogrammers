@@ -47,7 +47,7 @@
                     <h2>HEADLINERS</h2>
                 </div>
                 <div class="row border">
-                    <div class="col col-md-4 border">
+                    <div class="colB col-md-4 border">
                         <div class="titleDays">
                             <h3>Thursday</h3>
                         </div>
@@ -55,7 +55,7 @@
                             <div class="artist-name">Eminemcito</div>
                         </div>
                     </div>
-                    <div class="col col-md-4 border">
+                    <div class="colB col-md-4 border">
                         <div class="titleDays">
                             <h3>Friday</h3>
                         </div>
@@ -63,7 +63,7 @@
                             <div class="artist-name">Lil' Eminem</div>
                         </div>
                     </div>
-                    <div class="col col-md-4 border">
+                    <div class="colB col-md-4 border">
                         <div class="titleDays">
                             <h3>Saturday</h3>
                         </div>

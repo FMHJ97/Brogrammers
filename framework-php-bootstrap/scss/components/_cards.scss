@@ -1,10 +1,11 @@
 //Merch products cards
 .card-merch-item {
-  width: 350px;
+  max-width: 350px;
   border: 3px solid $secundario1;
   border-radius: 10px;
   text-decoration: none;
   padding: 0;
+  transition: box-shadow 0.2s ease;
 
   &:hover {
     box-shadow: 0px 0px 15px 0px $secundario2;

@@ -15,14 +15,15 @@
         <div id="mediaContainer" class="grid row mt-4">
         </div>
         <div class="row my-3 px-4 py-3">
-            <a href="" class="btn-gallery mx-auto my-3">↓ see more ↓</a>
+            <!-- Esto en el paso de funcionalidad es posible que se cambie -->
+            <button href="" id="addImages" class="btn-gallery mx-auto my-3">↓ see more ↓</button>
         </div>
 
     </div>
     <div class="container page-section">
 
         <div class="row my-3 py-3">
-            <a href="" class="btn-index ">Send us your pics</a>
+            <button id="submitImageTODO" class="btn-index ">Send us your pics</button>
         </div>
 
     </div>

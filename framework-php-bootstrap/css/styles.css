@@ -21020,13 +21020,30 @@ main {
   color: #5F8D95;
 }
 
-.suggested-items-section {
+.item-image-section {
   display: flex;
   flex-direction: column;
-  justify-content: start;
+  justify-content: center;
   align-items: center;
+  gap: 2em;
 }
-.suggested-items-section h2, .suggested-items-section .h2 {
+.item-image-section .main-image img {
+  border-radius: 5px;
+  max-width: 400px;
+  max-height: 550px;
+}
+.item-image-section .additional-images {
+  display: flex;
+}
+.item-image-section .additional-images img {
+  max-width: 75px;
+}
+
+.suggested-items-heading {
+  display: flex;
+  flex-direction: column;
+}
+.suggested-items-heading h2, .suggested-items-heading .h2 {
   color: #FFFDFA;
   font-family: "Krona One", sans-serif;
 }
@@ -21067,7 +21084,8 @@ main {
   font-size: 1.5rem;
 }
 .merch-item-details .item-quantity #quantity {
-  width: 2ch; /* El ancho ajustado para mostrar 2 caracteres (e.g., 99) */
+  width: 2ch;
+  /* El ancho ajustado para mostrar 2 caracteres (e.g., 99) */
   text-align: center;
 }
 .merch-item-details .item-description {

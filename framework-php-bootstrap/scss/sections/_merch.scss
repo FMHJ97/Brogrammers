@@ -1,10 +1,32 @@
 // Estilos de Merch Item //
 
-.suggested-items-section {
+.item-image-section {
     display: flex;
     flex-direction: column;
-    justify-content: start;
+    justify-content: center;
     align-items: center;
+    gap: 2em;
+
+    .main-image {
+        img {
+            border-radius: 5px;
+            max-width: 400px;
+            max-height: 550px;
+        }
+    }
+
+    .additional-images {
+        display: flex;
+        img {
+            max-width: 75px;
+        }
+    }
+}
+
+.suggested-items-heading {
+    display: flex;
+    flex-direction: column;
+
     h2 {
         color: $texto1;
         font-family: $headings-font-family;
@@ -18,19 +40,23 @@
     gap: 2em;
     color: $texto1;
     font-family: $body-font-family;
+
     // Parragraph
     p {
         font-size: 1.2rem;
     }
+
     // Merch Item Header
     .item-heading {
         h1 {
             color: $texto1;
         }
+
         h2 {
             color: $resaltar1;
         }
     }
+
     .item-quantity {
         display: flex;
         align-items: center;
@@ -42,21 +68,26 @@
         border-radius: 5px;
         font-family: $headings-font-family;
         font-size: 1.2rem;
+
         .btn-quantity {
             border: none;
             background: $fondo;
             color: $resaltar2;
             font-size: 1.5rem;
         }
+
         #quantity {
-            width: 2ch; /* El ancho ajustado para mostrar 2 caracteres (e.g., 99) */
+            width: 2ch;
+            /* El ancho ajustado para mostrar 2 caracteres (e.g., 99) */
             text-align: center;
         }
     }
+
     .item-description {
         display: flex;
         flex-direction: column;
         gap: 0.75em;
+
         li {
             font-size: 1.2rem;
             margin-bottom: 0.2em;
@@ -132,6 +163,7 @@
         row-gap: 2em;
         margin-bottom: 1.5em;
     }
+
     .search-bar {
         padding-left: 0;
     }

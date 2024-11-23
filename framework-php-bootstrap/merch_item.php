@@ -13,7 +13,14 @@
 
     <main>
         <!-- Merch Item Section -->
-        <section class="container page-section my-5">
+        <section class="container page-section my-4 my-md-5 px-3 px-md-5">
+            <!-- Merch Item Title -->
+            <div class="row d-block d-md-none mb-5">
+                <div class="col item-heading">
+                    <h1>Camiseta GroundSound Blanca (Black Logo)</h1>
+                    <h2>€25,00 EUR</h2>
+                </div>
+            </div>
             <div class="row">
                 <!-- Merch Item Image -->
                 <div class="col item-image-section">
@@ -51,7 +58,7 @@
                 <!-- Merch Item Details -->
                 <div class="col merch-item-details">
                     <!-- Merch Item Title & Price -->
-                    <div class="row">
+                    <div class="row d-none d-md-block">
                         <div class="col item-heading">
                             <h1>Camiseta GroundSound Blanca (Black Logo)</h1>
                             <h2>€25,00 EUR</h2>
@@ -79,7 +86,7 @@
                     </div>
                     <!-- Merch Item Add to Cart Button -->
                     <div class="row">
-                        <div class="col py-2">
+                        <div class="col btn-cart py-3">
                             <form action="#" method="POST">
                                 <button type="submit" class="btn btn-cart">Añadir al Carrito</button>
                             </form>

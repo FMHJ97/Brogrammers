@@ -58,7 +58,7 @@
   align-items: center;
   justify-content: center;
   white-space: nowrap;
-  transition: all 0.3s ease;
+  transition: all 0.2s ease;
 
   // Botón seleccionado
   &.selected {
@@ -103,22 +103,24 @@
 
 // Botón de Añadir al Carrito.
 .btn-cart {
-  background-color: $resaltar1;
-  color: $texto2;
-  border-radius: 10px;
-  font-size: 22px;
-  padding: 10px 75px 10px 75px;
   display: flex;
   justify-content: center;
   align-items: center;
   font-family: $headings-font-family;
   white-space: nowrap;
 
-  &:hover {
-    color: $texto2;
+  button {
     background-color: $resaltar1;
-    transition: all 0.3s ease;
-    scale: 1.02;
+    color: $texto2;
+    border-radius: 10px;
+    font-size: 22px;
+    padding: 10px 75px 10px 75px;
+
+    &:hover {
+      color: $texto2;
+      background-color: $resaltar1;
+      transition: all 0.3s ease;
+    }
   }
 }
 
@@ -170,5 +172,16 @@ button {
     flex-direction: column;
     gap: 0.5em;
     margin-bottom: 2em;
+  }
+
+  .btn-size-group {
+    flex-wrap: wrap;
+  }
+
+  .btn-cart {
+    button {
+      padding: 10px 40px 10px 40px;
+      font-size: 20px;
+    }
   }
 }

@@ -1,0 +1,15 @@
+// To make the img of the article be 88px x 88px with rounded corners
+.img-article-cart {
+    width: 88px !important;
+    height: 88px !important;
+    border-radius: 10px;
+    object-fit: cover;
+
+}
+
+.article-row {
+    background-color: $primario1;
+    border-radius: 10px;
+    padding: 10px;
+}
+

@@ -50,6 +50,11 @@
 			$PAGE_TITLE = "Crear Cuenta";
 			break;	
 
+		case "/cart.php":
+			$CURRENT_PAGE = "Carrito"; 
+			$PAGE_TITLE = "Carrito";
+			break;
+
 		default:
 			$CURRENT_PAGE = "Index";
 			$PAGE_TITLE = "GroundSound Festival";

@@ -112,8 +112,8 @@
                 </div>
 
                 <!-- Row with map -->
-
-                <div class="row">
+                <?php include("includes/map.php");  ?>
+           <!-- <div class="row">
                     <div class="col-md-12">
                         <div class="ticket-card">
                             <div class="ticket-body">
@@ -123,28 +123,28 @@
                             </div>
                         </div>
                     </div>
-                </div>
+                </div>-->
             </div>
 
             <!-- Map Modal -->
-
-            <div class="modal" id="myModal">
+            <?php include("includes/mapmodal.php");  ?>
+             <!--<div class="modal" id="myModal">
                 <div class="modal-dialog custom-modal-dialog">
                     <div class="modal-content custom-modal-content">
 
                         <!-- Modal body -->
-                        <div class="modal-body custom-modal-body">
+                        <!-- <div class="modal-body custom-modal-body">
                             <img src="assets/img/mapaFestival.jpg" class="img-fluid" alt="Mapa del festival">
                         </div>
 
                         <!-- Modal footer -->
-                        <div class="modal-footer custom-modal-footer justify-content-center">
+                       <!--  <div class="modal-footer custom-modal-footer justify-content-center">
                             <button type="button" class="button-ticket" data-bs-dismiss="modal">Cerrar</button>
                         </div>
 
                     </div>
                 </div>
-            </div>
+            </div>-->
             
         </section>
     </main>

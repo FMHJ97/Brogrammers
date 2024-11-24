@@ -174,7 +174,7 @@
         <!-- ACCESSIBILITY -->
         <section id="festaccess" class="container page-section">
             <!-- Título fuera del recuadro -->
-            <div class="container page-section-heading  mb-4">
+            <div class="container page-section-heading">
                 <h2 class="text-center text-white">ACCESSIBILITY</h2>
             </div>
 
@@ -202,6 +202,17 @@
         </section>
 
 
+        <!-- MAP -->
+        <section id="festaccess" class="container page-section">
+            <!-- Título fuera del recuadro -->
+            <div class="container page-section-heading">
+                <h2 class="text-center text-white">FESTIVAL MAP</h2>
+            </div>
+
+            <?php include("includes/map.php");  ?>
+            <?php include("includes/mapmodal.php");  ?>
+            
+        </section>
 
 
         <?php include("includes/patrocinadores.php");  ?>

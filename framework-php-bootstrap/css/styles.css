@@ -20695,6 +20695,14 @@ main {
   padding: 15;
   background: linear-gradient(180deg, #0A0F0F 45%, #107361 86%);
 }
+.box-area a[href^="mailto:"] {
+  color: #C5FCEC;
+  text-decoration: none;
+}
+.box-area a[href^="mailto:"]:hover {
+  color: #29F2B9;
+  text-decoration: underline;
+}
 
 .box-area-fondo {
   box-sizing: border-box;

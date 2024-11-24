@@ -20321,6 +20321,62 @@ button {
   font-family: "Krona One", sans-serif;
 }
 
+/* ===========  INFO BIG BUTTONS ================" */
+.custom-button {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  text-decoration: none;
+  color: white;
+  font-size: 1.5rem;
+  font-weight: bold;
+  background-size: cover;
+  background-position: center;
+  border: 2px solid #fff;
+  height: 300px; /* Altura personalizada */
+  flex: 1 1 calc(50% - 1rem); /* 50% del contenedor, menos el margen */
+  max-width: calc(50% - 1rem); /* Máximo de la mitad del ancho */
+  margin: 0.5rem;
+  transition: transform 0.3s, box-shadow 0.3s;
+  border: 2px solid #29F2B9; /* Borde verde */
+  box-shadow: 10px 10px 15px rgba(41, 242, 185, 0.6);
+}
+
+.custom-button:nth-child(1) {
+  background-image: url("../assets/img/info/FestHistory1.jpg");
+}
+
+.custom-button:nth-child(2) {
+  background-image: url("../assets/img/info/festival2.jpg");
+}
+
+.custom-button:nth-child(3) {
+  background-image: url("../assets/img/info/Camping.png");
+}
+
+.custom-button:nth-child(4) {
+  background-image: url("../assets/img/info/AccessibleFestivals.jpg");
+}
+
+.custom-button:hover {
+  transform: scale(1.02);
+  box-shadow: 0 8px 12px rgba(0, 0, 0, 0.3);
+}
+
+.button-text-top {
+  font-size: 32px;
+  font-weight: bold;
+  text-shadow: 0px 0px 10px rgba(0, 0, 0, 0.923); /* Sombra negra con algo de difuso */
+}
+
+.button-text-bottom {
+  font-size: 32px;
+  margin-top: 130px;
+  text-shadow: 0px 0px 10px rgba(0, 0, 0, 0.923); /* Sombra negra con algo de difuso */
+}
+
 nav {
   background: linear-gradient(90deg, #035951 0%, #0A0F0F 42%);
   box-shadow: -5px -5px 30px 0px #035951;
@@ -20487,6 +20543,16 @@ main {
   border-color: #29F2B9;
 }
 
+.form-control-discount {
+  width: 100%;
+  margin-top: 0 !important;
+  margin-right: auto;
+  border: 2px solid #29F2B9;
+  border-radius: 25px;
+  background-color: #0A0F0F;
+  padding: 0 0px 0 5px;
+}
+
 .card-merch-item {
   max-width: 350px;
   border: 3px solid #2A505B;
@@ -20639,7 +20705,7 @@ main {
   width: 100%;
 }
 .box-area-fondo .bgroundTicketInfo {
-  background-image: url("../assets/img/info/festival-3466251_1280.jpg");
+  background-image: url("../assets/img/info/festival2.jpg");
 }
 .box-area-fondo .bgroundCampingInfo {
   background-image: url("../assets/img/info/Camping1.jpg");
@@ -20673,6 +20739,14 @@ main {
   transition: all 0.3s ease;
   max-width: fit-content;
   z-index: 2;
+}
+
+.box-area-contact {
+  border: 6px solid #FFFDFA;
+  border-radius: 10px;
+  text-decoration: none;
+  padding: 15;
+  background: linear-gradient(180deg, #0A0F0F 45%, #107361 86%);
 }
 
 /* ==========  BAND CARDS =========  */
@@ -21043,13 +21117,59 @@ main {
   color: #5F8D95;
 }
 
-.suggested-items-section {
+body .item-heading {
   display: flex;
   flex-direction: column;
-  justify-content: start;
-  align-items: center;
+  justify-content: space-between;
+  gap: 0.25em;
+  margin-top: 1em;
 }
-.suggested-items-section h2, .suggested-items-section .h2 {
+body .item-heading h1, body .item-heading .h1 {
+  color: #FFFDFA;
+}
+body .item-heading h2, body .item-heading .h2 {
+  color: #29F2B9;
+}
+
+@media (max-width: 767.98px) {
+  body .item-heading h1, body .item-heading .h1 {
+    font-size: 1.5rem;
+  }
+  body .item-heading h2, body .item-heading .h2 {
+    font-size: 1.2rem;
+  }
+}
+.item-image-section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 2em;
+}
+.item-image-section .main-image img {
+  border-radius: 5px;
+  max-width: 400px;
+}
+.item-image-section .additional-images {
+  display: flex;
+}
+.item-image-section .additional-images img {
+  max-width: 75px;
+}
+
+@media (max-width: 767.98px) {
+  .item-image-section .main-image img {
+    max-width: 300px;
+  }
+  .item-image-section .additional-images img {
+    max-width: 50px;
+  }
+}
+.suggested-items-heading {
+  display: flex;
+  flex-direction: column;
+}
+.suggested-items-heading h2, .suggested-items-heading .h2 {
   color: #FFFDFA;
   font-family: "Krona One", sans-serif;
 }
@@ -21064,6 +21184,13 @@ main {
 }
 .merch-item-details p {
   font-size: 1.2rem;
+}
+.merch-item-details .item-heading {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 0.25em;
+  margin-top: 1em;
 }
 .merch-item-details .item-heading h1, .merch-item-details .item-heading .h1 {
   color: #FFFDFA;
@@ -21090,7 +21217,8 @@ main {
   font-size: 1.5rem;
 }
 .merch-item-details .item-quantity #quantity {
-  width: 2ch; /* El ancho ajustado para mostrar 2 caracteres (e.g., 99) */
+  width: 2ch;
+  /* El ancho ajustado para mostrar 2 caracteres (e.g., 99) */
   text-align: center;
 }
 .merch-item-details .item-description {
@@ -21103,6 +21231,27 @@ main {
   margin-bottom: 0.2em;
 }
 
+@media (max-width: 767.98px) {
+  .merch-item-details {
+    margin-top: 3em;
+  }
+  .merch-item-details p {
+    font-size: 1rem;
+  }
+  .merch-item-details .item-quantity {
+    font-size: 1rem;
+    gap: 0;
+  }
+  .merch-item-details .item-quantity .btn-quantity {
+    font-size: 1.2rem;
+  }
+  .merch-item-details .item-quantity #quantity {
+    width: 1.5ch;
+  }
+  .suggested-items-heading h2, .suggested-items-heading .h2 {
+    font-size: 1.5rem;
+  }
+}
 .merch-products {
   display: flex;
   justify-content: start;
@@ -21160,6 +21309,71 @@ main {
   .search-bar {
     padding-left: 0;
   }
+}
+.img-article-cart {
+  width: 88px !important;
+  height: 88px !important;
+  border-radius: 10px;
+  object-fit: cover;
+}
+
+.article-row {
+  background-color: #035951;
+  border-radius: 10px;
+  padding: 10px;
+  margin-bottom: 10px;
+}
+.article-row:last-child {
+  margin-bottom: 0;
+}
+
+.container-article {
+  background-color: #107361;
+  padding: 20px;
+  border-radius: 15px;
+  margin-bottom: auto;
+}
+
+.container-summary {
+  background-color: #107361;
+  padding: 20px;
+  border-radius: 15px;
+  margin-bottom: auto;
+}
+
+.item-quantity {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 0;
+  border-radius: 5px;
+  font-family: "Maven Pro", sans-serif;
+  font-size: 1.2rem;
+}
+.item-quantity .btn-quantity {
+  border: none;
+  color: #C5FCEC;
+  font-size: 1.5rem;
+  padding-top: 0;
+}
+.item-quantity #quantity {
+  width: 2ch;
+  /* El ancho ajustado para mostrar 2 caracteres (e.g., 99) */
+  text-align: center;
+}
+
+.quantity-group {
+  border: 1px solid #C5FCEC;
+  border-radius: 5px;
+}
+
+.step-title {
+  font-family: "Krona One", sans-serif;
+  font-size: 1.5rem;
+  color: #5F8D95;
+}
+.step-title.active {
+  color: #FFFDFA;
 }
 
 /*# sourceMappingURL=styles.css.map */

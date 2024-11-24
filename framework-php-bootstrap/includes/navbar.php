@@ -36,7 +36,7 @@
                     <a class="nav-link" href="./gallery.php">Gallery</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="./info.php">Info</a>
+                    <a class="nav-link" href="./infogeneral.php">Info</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link cart-icon d-none d-md-block" href="./cart.php"><i class="bi bi-cart2"></i></a>

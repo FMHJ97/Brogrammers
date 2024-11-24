@@ -199,3 +199,60 @@ button {
   color: $texto2;
   font-family: $headings-font-family;
 }
+
+/* ===========  INFO BIG BUTTONS ================" */
+.custom-button {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  text-decoration: none;
+  color: white;
+  font-size: 1.5rem;
+  font-weight: bold;
+  background-size: cover;
+  background-position: center;
+  border: 2px solid #fff;
+  height: 300px; /* Altura personalizada */
+  flex: 1 1 calc(50% - 1rem); /* 50% del contenedor, menos el margen */
+  max-width: calc(50% - 1rem); /* Máximo de la mitad del ancho */
+  margin: 0.5rem;
+  transition: transform 0.3s, box-shadow 0.3s;
+
+  border: 2px solid $resaltar1; /* Borde verde */
+  box-shadow: 10px 10px 15px rgba($resaltar1, 0.6);
+}
+
+.custom-button:nth-child(1) {
+  background-image: url("../assets/img/info/FestHistory1.jpg");
+}
+
+.custom-button:nth-child(2) {
+  background-image: url("../assets/img/info/festival2.jpg");
+}
+
+.custom-button:nth-child(3) {
+  background-image: url("../assets/img/info/Camping.png");
+}
+
+.custom-button:nth-child(4) {
+  background-image: url("../assets/img/info/AccessibleFestivals.jpg");
+}
+
+.custom-button:hover {
+  transform: scale(1.02);
+  box-shadow: 0 8px 12px rgba(0, 0, 0, 0.3);
+}
+
+.button-text-top {
+  font-size: 32px;
+  font-weight: bold;
+  text-shadow: 0px 0px 10px rgba(0, 0, 0, 0.923); /* Sombra negra con algo de difuso */
+}
+
+.button-text-bottom {
+  font-size: 32px;
+  margin-top: 130px;
+  text-shadow: 0px 0px 10px rgba(0, 0, 0, 0.923); /* Sombra negra con algo de difuso */
+}

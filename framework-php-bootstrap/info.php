@@ -23,16 +23,16 @@
             <div class="row btn-category-group justify-content-center">
                 <div class="d-flex flex-wrap justify-content-center">
                     <div class="col-md-3 col-6 mb-2 px-2">
-                        <button type="button" id="history" class="btn btn-category-item selected w-100">Fest History</button>
+                        <a href="./info.php#festhistory" type="button" id="buttonhistory" class="btn btn-category-item selected w-100">Fest History</a>
                     </div>
                     <div class="col-md-3 col-6 mb-2 px-2">
-                        <button type="button" id="tickets" class="btn btn-category-item w-100">Tickets Info</button>
+                        <a href="./info.php#ticketsinfo" type="button" id="buttontickets" class="btn btn-category-item w-100">Tickets Info</a>
                     </div>
                     <div class="col-md-3 col-6 mb-2 px-2">
-                        <button type="button" id="camping" class="btn btn-category-item w-100">Camping</button>
+                        <a href="./info.php#campinginfo" type="button" id="buttoncamping" class="btn btn-category-item w-100">Camping</a>
                     </div>
                     <div class="col-md-3 col-6 mb-2 px-2">
-                        <button type="button" id="accessibility" class="btn btn-category-item w-100">Accessibility</button>
+                        <a href="./info.php#festaccess" type="button" id="buttonaccessibility" class="btn btn-category-item w-100">Accessibility</a>
                     </div>
                 </div>
             </div>
@@ -43,7 +43,7 @@
 
 
         <!-- Festival History -->
-        <section id="terms" class="container page-section">
+        <section id="festhistory" class="container page-section">
             <!-- Título fuera del recuadro -->
             <div class="container page-section-heading  mb-4">
                 <h2 class="text-center text-white">FESTIVAL HISTORY</h2>
@@ -95,7 +95,7 @@
 
 
         <!-- TICKETS INFO -->
-        <section id="terms" class="container page-section">
+        <section id="ticketsinfo" class="container page-section">
             <!-- Título fuera del recuadro -->
             <div class="container page-section-heading  mb-4">
                 <h2 class="text-center text-white">TICKETS INFO</h2>
@@ -134,7 +134,7 @@
 
 
         <!-- CAMPING/PARKING -->
-        <section id="terms" class="container page-section">
+        <section id="campinginfo" class="container page-section">
             <!-- Título fuera del recuadro -->
             <div class="container page-section-heading  mb-4">
                 <h2 class="text-center text-white">CAMPING/PARKING</h2>
@@ -172,7 +172,7 @@
 
 
         <!-- ACCESSIBILITY -->
-        <section id="terms" class="container page-section">
+        <section id="festaccess" class="container page-section">
             <!-- Título fuera del recuadro -->
             <div class="container page-section-heading  mb-4">
                 <h2 class="text-center text-white">ACCESSIBILITY</h2>

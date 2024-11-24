@@ -105,17 +105,17 @@
 
 
 
-
+        <?php include("includes/contactus.php");  ?>
 
         <!-- CONTACT US -->
-        <section id="contact" class="container page-section">
+      <!--  <section id="contact" class="container page-section">
             <!-- Título fuera del recuadro --> <!-- CONTACT US -->
-            <div class="container page-section-heading  mb-2">
+       <!--     <div class="container page-section-heading  mb-2">
                 <h1 class="text-center">CONTACT US</h1>
             </div>
 
             <!-- Recuadro blanco con contenido --> <!-- CONTACT US -->
-            <div class="container bg-white text-black shadow-sm rounded-3">
+       <!--     <div class="container bg-white text-black shadow-sm rounded-3">
                 <div class="mb-5">
                     <h4 class="pt-3">CUSTOMER SERVICE & ALL GENERAL ENQUIRIES</h4>
                     <p>Please contact <a href="mailto:info@groundsound.luc">info@groundsound.luc</a></p>
@@ -138,7 +138,7 @@
             </div>
 
 
-        </section>
+        </section>-->
 
     </main>
 

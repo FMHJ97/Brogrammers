@@ -100,3 +100,13 @@ main {
     background-color: $resaltar1;
     border-color: $resaltar1;
 }
+
+.form-control-discount {
+    width: 100%;
+    margin-top: 0 !important;
+    margin-right: auto;
+    border: 2px solid $resaltar1;
+    border-radius: 25px;
+    background-color: $fondo;
+    padding: 0 0px 0 5px;
+}

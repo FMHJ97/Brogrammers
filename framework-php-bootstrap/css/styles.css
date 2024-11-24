@@ -20307,6 +20307,20 @@ button {
     font-size: 20px;
   }
 }
+.button-apply-discount {
+  width: 100%;
+  background: #C5FCEC;
+  border-radius: 20px;
+  padding: auto;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+  text-decoration: none;
+  color: #0A0F0F;
+  font-family: "Krona One", sans-serif;
+}
+
 nav {
   background: linear-gradient(90deg, #035951 0%, #0A0F0F 42%);
   box-shadow: -5px -5px 30px 0px #035951;
@@ -20471,6 +20485,16 @@ main {
 .form-check-input:checked {
   background-color: #29F2B9;
   border-color: #29F2B9;
+}
+
+.form-control-discount {
+  width: 100%;
+  margin-top: 0 !important;
+  margin-right: auto;
+  border: 2px solid #29F2B9;
+  border-radius: 25px;
+  background-color: #0A0F0F;
+  padding: 0 0px 0 5px;
 }
 
 .card-merch-item {
@@ -21232,6 +21256,59 @@ body .item-heading h2, body .item-heading .h2 {
   background-color: #035951;
   border-radius: 10px;
   padding: 10px;
+  margin-bottom: 10px;
+}
+.article-row:last-child {
+  margin-bottom: 0;
+}
+
+.container-article {
+  background-color: #107361;
+  padding: 20px;
+  border-radius: 15px;
+  margin-bottom: auto;
+}
+
+.container-summary {
+  background-color: #107361;
+  padding: 20px;
+  border-radius: 15px;
+  margin-bottom: auto;
+}
+
+.item-quantity {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 0;
+  border-radius: 5px;
+  font-family: "Maven Pro", sans-serif;
+  font-size: 1.2rem;
+}
+.item-quantity .btn-quantity {
+  border: none;
+  color: #C5FCEC;
+  font-size: 1.5rem;
+  padding-top: 0;
+}
+.item-quantity #quantity {
+  width: 2ch;
+  /* El ancho ajustado para mostrar 2 caracteres (e.g., 99) */
+  text-align: center;
+}
+
+.quantity-group {
+  border: 1px solid #C5FCEC;
+  border-radius: 5px;
+}
+
+.step-title {
+  font-family: "Krona One", sans-serif;
+  font-size: 1.5rem;
+  color: #5F8D95;
+}
+.step-title.active {
+  color: #FFFDFA;
 }
 
 /*# sourceMappingURL=styles.css.map */

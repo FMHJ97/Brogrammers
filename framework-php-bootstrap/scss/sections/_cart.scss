@@ -11,5 +11,61 @@
     background-color: $primario1;
     border-radius: 10px;
     padding: 10px;
+    margin-bottom: 10px;
+
+    &:last-child {
+        margin-bottom: 0;
+    }
 }
 
+.container-article {
+    background-color: $primario2;
+    padding: 20px;
+    border-radius: 15px;
+    margin-bottom: auto;
+}
+
+.container-summary {
+    background-color: $primario2;
+    padding: 20px;
+    border-radius: 15px;
+    margin-bottom: auto;
+}
+
+.item-quantity {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 0;
+    border-radius: 5px;
+    font-family: $body-font-family;
+    font-size: 1.2rem;
+
+    .btn-quantity {
+        border: none;
+        color: $resaltar2;
+        font-size: 1.5rem;
+        padding-top: 0;
+    }
+
+    #quantity {
+        width: 2ch;
+        /* El ancho ajustado para mostrar 2 caracteres (e.g., 99) */
+        text-align: center;
+    }
+}
+
+.quantity-group {
+    border: 1px solid $resaltar2;
+    border-radius: 5px;
+}
+
+.step-title {
+    font-family: $headings-font-family;
+    font-size: 1.5rem;
+    color: $secundario2;
+
+    &.active {
+        color: $texto1;
+    }
+}

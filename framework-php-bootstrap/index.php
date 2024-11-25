@@ -11,7 +11,7 @@
 <body>
   <?php include("includes/navbar.php"); ?>
 
-  <main>
+  <main class="bg-none">
     <div class="container-fluid">
       <section>
         <div class="row p-0 position-relative">

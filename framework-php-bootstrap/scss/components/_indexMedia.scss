@@ -3,6 +3,7 @@
     align-items: center;
     justify-content: center;
   }
+  
 
   .time-block {
     display: flex;
@@ -81,7 +82,9 @@
     font-size: 36px;
   }
   
-  
+  .bg-none {
+    background: none !important;
+  }
   
   
   

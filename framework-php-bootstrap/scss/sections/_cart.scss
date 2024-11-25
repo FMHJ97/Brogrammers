@@ -10,7 +10,6 @@
 .article-row {
     background-color: $primario1;
     border-radius: 10px;
-    padding: 10px;
     margin-bottom: 10px;
 
     &:last-child {
@@ -41,11 +40,10 @@
     font-family: $body-font-family;
     font-size: 1.2rem;
 
-    .btn-quantity {
+    .btn-quantity-cart {
         border: none;
         color: $resaltar2;
         font-size: 1.5rem;
-        padding-top: 0;
     }
 
     #quantity {
@@ -58,6 +56,7 @@
 .quantity-group {
     border: 1px solid $resaltar2;
     border-radius: 5px;
+    padding: 0;
 }
 
 .step-title {

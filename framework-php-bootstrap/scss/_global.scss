@@ -8,18 +8,36 @@
 // https://caniuse.com/?search=scroll-padding
 
 html {
-   
+
     height: 100%;
     scroll-padding-top: calc(#{$navbar-height} - 1px);
 }
+
 body {
-    background-color: $fondo;
     h1 {
         color: $heading1;
+        font-size: $heading-font-1;
     }
     h2 {
-        color: $heading2;
+        font-size: $heading-font-2;
     }
+    h3 {
+        font-size: $heading-font-3;
+    }
+    h4 {
+        font-size: $heading-font-4;
+    }
+    h5 {
+        font-size: $heading-font-5;
+    }
+}
+
+main {
+    background: url("../assets/img/logoFondoFestival.png");
+    background-size:50vw;  
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
 }
 
 // Styling for page sections
@@ -33,7 +51,9 @@ body {
         text-align: center;
         padding-top: 3rem;
         padding-bottom: 3rem;
+
         h2 {
+            color: $heading2;
             font-size: 1.5rem;
             line-height: 1.25rem;
         }
@@ -49,10 +69,19 @@ body {
             line-height: 1.5rem;
             padding-top: 2rem;
             padding-bottom: 2rem;
+
             h2 {
                 font-size: 1.25rem;
                 line-height: 1rem;
             }
         }
+    }
+
+    main {
+        background: url("../assets/img/logoFondoFestival.png");
+        background-size:90vw;  
+        background-repeat: no-repeat;
+        background-position: center;
+        background-attachment: fixed;
     }
 }

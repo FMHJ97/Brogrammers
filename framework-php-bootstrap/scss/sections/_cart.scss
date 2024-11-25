@@ -18,13 +18,6 @@
     }
 }
 
-.container-article {
-    background-color: $primario2;
-    padding: 20px;
-    border-radius: 15px;
-    margin-bottom: auto;
-}
-
 .container-summary {
     background-color: $primario2;
     padding: 20px;
@@ -75,7 +68,9 @@
 .table-cart {
     margin-bottom: 0;
     border-radius: 15px;
+    border-spacing: 0;
     border-collapse: collapse;
+    border-style: none;
     overflow: hidden; // Making sure the border-radius is applied
 
     th:first-child {
@@ -95,8 +90,4 @@
     td:not(:first-child) {
         text-align: center;
     }
-}
-
-td {
-    padding: 10px;
 }

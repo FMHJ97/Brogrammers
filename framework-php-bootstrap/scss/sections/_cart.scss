@@ -64,14 +64,19 @@
     }
 }
 
-// Aligning the first th to the left and the rest to the right
 .table-cart {
+    --bs-table-bg: #{$primario2};
+    background-color: var(--bs-table-bg);
     margin-bottom: 0;
     border-radius: 15px;
     border-spacing: 0;
     border-collapse: collapse;
     border-style: none;
     overflow: hidden; // Making sure the border-radius is applied
+
+    th {
+        color: $texto1;
+    }
 
     th:first-child {
         text-align: left;
@@ -85,9 +90,56 @@
     td:first-child {
         display: flex;
         text-align: left;
+        align-items: center;
+
+        p {
+            margin: 0;
+            font-size: $body-font-2;
+        }
     }
 
     td:not(:first-child) {
         text-align: center;
+    }
+}
+
+.discount-text {
+    font-size: $body-font-2;
+}
+
+.item-quantity-cart {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+
+    .btn-quantity-cart {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 32px; 
+        height: 32px; 
+        color: $texto2; 
+        font-size: 1.5rem;
+        cursor: pointer;
+        transition: all 0.3s ease; 
+
+        &:hover {
+            background-color: $resaltar2; 
+            color: $texto2; 
+            border-radius: 50%; 
+            border: 2px solid $resaltar1; 
+        }
+
+        &:active {
+            transform: scale(0.9); // Pulse effect
+        }
+    }
+
+    #quantity-cart {
+        width: 2.5ch; // For better visibility
+        text-align: center;
+        font-weight: bold; 
+        color: $texto2; 
     }
 }

@@ -52,9 +52,9 @@
                                 <td>
                                     <img src="../assets/img/merch/camiseta_1.png" alt="Camiseta" class="img-article-cart">
 
-                                    <div class="align-middle">
-                                        <p class="mb-1">Camiseta GroundSound</p>
-                                        <p class="mb-1">Color - Blanco</p>
+                                    <div>
+                                        <p class="mb-0">Camiseta GroundSound</p>
+                                        <p class="mb-0">Color - Blanco</p>
                                         <p class="mb-0">Talla - L</p>
                                     </div>
 
@@ -63,10 +63,10 @@
                                 <td class="text-center align-middle">25€</td>
 
                                 <td class="align-middle">
-                                    <div class="item-quantity">
-                                        <button type="button" id="restar" class="btn btn-quantity">-</button>
-                                        <span id="quantity">1</span>
-                                        <button type="button" id="sumar" class="btn btn-quantity">+</button>
+                                    <div class="item-quantity-cart">
+                                        <button type="button" id="restar" class="btn btn-quantity-cart">-</button>
+                                        <span id="quantity-cart">1</span>
+                                        <button type="button" id="sumar" class="btn btn-quantity-cart">+</button>
                                     </div>
                                 </td>
 
@@ -82,9 +82,9 @@
                                         class="img-article-cart">
                                     <!-- To place the text in the same line as the image -->
 
-                                    <div class="align-middle">
-                                        <p class="mb-1">Camiseta GroundSound</p>
-                                        <p class="mb-1">Color - Blanco</p>
+                                    <div>
+                                        <p class="mb-0">Camiseta GroundSound</p>
+                                        <p class="mb-0">Color - Blanco</p>
                                         <p class="mb-0">Talla - L</p>
                                     </div>
 
@@ -93,10 +93,10 @@
                                 <td class="text-center align-middle">25€</td>
 
                                 <td class="align-middle">
-                                    <div class="item-quantity">
-                                        <button type="button" id="restar" class="btn btn-quantity">-</button>
-                                        <span id="quantity">1</span>
-                                        <button type="button" id="sumar" class="btn btn-quantity">+</button>
+                                    <div class="item-quantity-cart">
+                                        <button type="button" id="restar" class="btn btn-quantity-cart">-</button>
+                                        <span id="quantity-cart">1</span>
+                                        <button type="button" id="sumar" class="btn btn-quantity-cart">+</button>
                                     </div>
                                 </td>
 
@@ -112,9 +112,9 @@
                                         class="img-article-cart">
                                     <!-- To place the text in the same line as the image -->
 
-                                    <div class="align-middle">
-                                        <p class="mb-1">Camiseta GroundSound</p>
-                                        <p class="mb-1">Color - Blanco</p>
+                                    <div>
+                                        <p class="mb-0">Camiseta GroundSound</p>
+                                        <p class="mb-0">Color - Blanco</p>
                                         <p class="mb-0">Talla - L</p>
                                     </div>
 
@@ -123,10 +123,10 @@
                                 <td class="text-center align-middle">25€</td>
 
                                 <td class="align-middle">
-                                    <div class="item-quantity">
-                                        <button type="button" id="restar" class="btn btn-quantity">-</button>
-                                        <span id="quantity">1</span>
-                                        <button type="button" id="sumar" class="btn btn-quantity">+</button>
+                                    <div class="item-quantity-cart">
+                                        <button type="button" id="restar" class="btn btn-quantity-cart">-</button>
+                                        <span id="quantity-cart">1</span>
+                                        <button type="button" id="sumar" class="btn btn-quantity-cart">+</button>
                                     </div>
                                 </td>
 
@@ -142,7 +142,7 @@
 
                     <!-- Summary -->
                     <div class="col-md-4 container-summary">
-                        <div class="row">
+                        <div class="row mb-3">
                             <div class="col text-center">
                                 <h5>Resumen</h5>
                             </div>
@@ -194,7 +194,7 @@
                         </div>
 
 
-                        <p class="mb-0">¿Tienes un código de descuento?</p>
+                        <p class="mb-0 discount-text">¿Tienes un código de descuento?</p>
                         <div class="row mb-3">
 
                             <div class="col-md-7 mb-1">

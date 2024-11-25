@@ -12,18 +12,32 @@ $headings-font-weight: 400;
 $body-font-family: 'Maven Pro', sans-serif;
 $body-font-weight: 400;
 
-// Custom heading font sizes
+// Custom heading font sizes - desktop
 $heading-font-1: 30px;
 $heading-font-2: 26px;
 $heading-font-3: 22px;
 $heading-font-4: 18px;
 $heading-font-5: 16px;
 
-// Custom body font sizes
+// Custom body font sizes - mobile
+
+$heading-font-phone-1: 28px;
+$heading-font-phone-2: 24px;
+$heading-font-phone-3: 20px;
+$heading-font-phone-4: 16px;
+$heading-font-phone-5: 14px;
+
+// Custom body font sizes - desktop
 $body-font-1: 20px;
 $body-font-2: 16px;
 $body-font-3: 14px;
 $body-font-4: 12px;
+
+// Custom body font sizes - mobile
+$body-font-phone-1: 18px;
+$body-font-phone-2: 14px;
+$body-font-phone-3: 12px;
+$body-font-phone-4: 10px;
 
 //our logo uses Post No Bills Colombo ExtraBold
 $font-path: '../assets/fonts/postnobillscolombo/';

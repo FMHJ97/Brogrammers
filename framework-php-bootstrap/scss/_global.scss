@@ -13,11 +13,20 @@ html {
     scroll-padding-top: calc(#{$navbar-height} - 1px);
 }
 
+// Global body styles - Desktop
 body {
     background-color: $fondo;
+    font-family: $body-font-family;
+    font-weight: $body-font-weight;
+    color: $texto1;
+    font-size: $body-font-1;
+
+    h1, h2, h3, h4, h5, h6 {
+        font-family: $headings-font-family;
+        font-weight: $headings-font-weight;
+    }
 
     h1 {
-        color: $heading1;
         font-size: $heading-font-1;
     }
     h2 {
@@ -34,6 +43,29 @@ body {
     }
 }
 
+// Global body styles - Mobile
+@include media-breakpoint-down(md) {
+    body {
+        font-size: $body-font-phone-1;
+
+        h1 {
+            font-size: $heading-font-phone-1;
+        }
+        h2 {
+            font-size: $heading-font-phone-2;
+        }
+        h3 {
+            font-size: $heading-font-phone-3;
+        }
+        h4 {
+            font-size: $heading-font-phone-4;
+        }
+        h5 {
+            font-size: $heading-font-phone-5;
+        }
+    }
+}
+
 main {
     background: url("../assets/img/logoFondoFestival.png") no-repeat center fixed;
     background-size: 50vw;
@@ -46,17 +78,17 @@ main {
     padding-bottom: 3rem;
 
     .page-section-heading {
-        font-size: 2rem;
-        line-height: 1.75rem;
         font-family: $headings-font-family;
         text-align: center;
         padding-top: 3rem;
         padding-bottom: 3rem;
 
+        h1 {
+            color: $heading1;
+        }
+
         h2 {
             color: $heading2;
-            font-size: 1.5rem;
-            line-height: 1.25rem;
         }
     }
 }
@@ -66,15 +98,8 @@ main {
         padding-bottom: 2rem;
 
         .page-section-heading {
-            font-size: 1.75rem;
-            line-height: 1.5rem;
             padding-top: 2rem;
             padding-bottom: 2rem;
-
-            h2 {
-                font-size: 1.25rem;
-                line-height: 1rem;
-            }
         }
     }
 

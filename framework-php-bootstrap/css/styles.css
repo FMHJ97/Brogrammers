@@ -20577,6 +20577,11 @@ main {
   background-color: #0A0F0F;
   padding: 0 0px 0 5px;
 }
+.form-control-discount:focus {
+  background-color: #0A0F0F;
+  color: #29F2B9;
+  box-shadow: 0px 0px 15px 0px #C5FCEC;
+}
 
 .card-merch-item {
   max-width: 350px;
@@ -21426,13 +21431,6 @@ body .item-heading h2, body .item-heading .h2 {
   margin-bottom: 0;
 }
 
-.container-article {
-  background-color: #107361;
-  padding: 20px;
-  border-radius: 15px;
-  margin-bottom: auto;
-}
-
 .container-summary {
   background-color: #107361;
   padding: 20px;
@@ -21479,7 +21477,9 @@ body .item-heading h2, body .item-heading .h2 {
 .table-cart {
   margin-bottom: 0;
   border-radius: 15px;
+  border-spacing: 0;
   border-collapse: collapse;
+  border-style: none;
   overflow: hidden;
 }
 .table-cart th:first-child {
@@ -21494,10 +21494,6 @@ body .item-heading h2, body .item-heading .h2 {
 }
 .table-cart td:not(:first-child) {
   text-align: center;
-}
-
-td {
-  padding: 10px;
 }
 
 /*# sourceMappingURL=styles.css.map */

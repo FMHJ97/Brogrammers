@@ -10,7 +10,12 @@
 
 <body>
     <?php include("includes/navbar.php"); ?>
-
+    <main>
+    <section class="container page-section">
+        <div class="row page-section-heading">
+            <h1>GALLERY</h1>
+        </div>
+    </section>
     <div class="container page-section">
         <div id="mediaContainer" class="grid row mt-4">
         </div>
@@ -27,6 +32,8 @@
         </div>
 
     </div>
+    </main>
+   
 
 
 

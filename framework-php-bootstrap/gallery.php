@@ -10,6 +10,7 @@
 
 <body>
     <?php include("includes/navbar.php"); ?>
+    <main class="main">
     <section class="container page-section">
         <div class="row page-section-heading">
             <h1>GALLERY</h1>
@@ -31,6 +32,8 @@
         </div>
 
     </div>
+    </main>
+   
 
 
 

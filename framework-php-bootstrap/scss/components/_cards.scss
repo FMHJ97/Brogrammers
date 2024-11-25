@@ -42,6 +42,51 @@
   }
 }
 
+@include media-breakpoint-down(md) {
+  .card-merch-item {
+    max-width: 300px;
+    border: 2px solid $secundario1;
+    border-radius: 10px;
+    text-decoration: none;
+    padding: 0;
+    transition: box-shadow 0.2s ease;
+  
+    &:hover {
+      box-shadow: 0px 0px 10px 0px $secundario2;
+    }
+  
+    // Image Card
+    .card-img-top {
+      width: 100%;
+      height: 325px;
+      object-fit: cover;
+      border-radius: 10px 10px 0 0;
+    }
+  
+    .card-body {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      text-align: center;
+      background: $fade-merch-item-cards;
+      border-radius: 0 0 7px 7px;
+  
+      h3 {
+        font-family: $headings-font-family;
+        font-size: 1rem;
+        line-height: 1.5rem;
+        color: $texto1;
+      }
+  
+      span {
+        font-family: $headings-font-family;
+        font-size: 1rem;
+        color: $resaltar1;
+      }
+    }
+  }
+}
+
 //Tickets cards
 .ticket-card {
   background: $fade-tickets-cards;

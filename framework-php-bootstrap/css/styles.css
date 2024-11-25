@@ -20278,6 +20278,7 @@ body h2, body .h2 {
   padding: 10px 20px;
   justify-self: center;
   align-self: center;
+  text-align: center;
   margin: auto;
   font-size: 30px;
 }
@@ -20303,7 +20304,7 @@ button {
     flex-wrap: wrap;
   }
   .btn-cart button {
-    padding: 10px 40px 10px 40px;
+    padding: 10px 50px 10px 50px;
     font-size: 20px;
   }
 }
@@ -20590,6 +20591,44 @@ main {
   color: #29F2B9;
 }
 
+@media (max-width: 767.98px) {
+  .card-merch-item {
+    max-width: 300px;
+    border: 2px solid #2A505B;
+    border-radius: 10px;
+    text-decoration: none;
+    padding: 0;
+    transition: box-shadow 0.2s ease;
+  }
+  .card-merch-item:hover {
+    box-shadow: 0px 0px 10px 0px #5F8D95;
+  }
+  .card-merch-item .card-img-top {
+    width: 100%;
+    height: 325px;
+    object-fit: cover;
+    border-radius: 10px 10px 0 0;
+  }
+  .card-merch-item .card-body {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    text-align: center;
+    background: linear-gradient(180deg, #107361 0%, #0A0F0F 75%);
+    border-radius: 0 0 7px 7px;
+  }
+  .card-merch-item .card-body h3, .card-merch-item .card-body .h3 {
+    font-family: "Krona One", sans-serif;
+    font-size: 1rem;
+    line-height: 1.5rem;
+    color: #FFFDFA;
+  }
+  .card-merch-item .card-body span {
+    font-family: "Krona One", sans-serif;
+    font-size: 1rem;
+    color: #29F2B9;
+  }
+}
 .ticket-card {
   background: linear-gradient(0deg, #035951 0%, #107361 100%);
   border-radius: 10px;

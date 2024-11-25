@@ -33,7 +33,7 @@
     align-items: center;
   }
   .time-number {
-    font-size: 10em;
+    font-size: 20vw;
     font-weight: 800;
     font-family: $logo-font-custom;
     margin-bottom: -5px; /* Reduce or remove negative margin */
@@ -41,14 +41,14 @@
   
   .time-label {
     align-self: center;
-    font-size: 5em;
+    font-size: 10vw;
     font-family: $logo-font-custom;
     color: $resaltar2;
     text-shadow: 2px 2px 5px $resaltar1;
     line-height: 1; /* Adjust line height if needed */
   }
   .festival {
-    font-size: 18vw;  /* Scalable font size */
+    font-size: 18vw;  
     font-family: $logo-font-custom;
     color: $texto1;
     text-shadow: 
@@ -57,14 +57,13 @@
       5px -5px 20px rgba($texto1, 0.3),  /* Top-right shadow */
       -5px -5px 20px rgba($texto1, 0.3); /* Top-left shadow */
     line-height: 1;
-    letter-spacing: 0.2em;  /* Spread the letters */
-    white-space: nowrap;    /* Prevent wrapping */
-    text-align: center;     /* Center the text within its parent */
-    width: 100%;            /* Make the text fill the width */
-    overflow: hidden;       /* Prevent overflow if it gets too wide */
-    display: flex;          /* Enable flexbox to help with centering */
-    justify-content: center;/* Centers horizontally */
-    align-items: center;    /* Centers vertically */
+    white-space: nowrap;   
+    text-align: center;     
+    width: 100%; 
+    justify-content: space-between; 
+    display: flex;         
+    justify-content: center;
+    align-items: center;
   }
 
   .festival-location {

@@ -21323,6 +21323,7 @@ body .item-heading h2, body .item-heading .h2 {
   height: 88px !important;
   border-radius: 10px;
   object-fit: cover;
+  margin-right: 5px;
 }
 
 .article-row {
@@ -21348,7 +21349,7 @@ body .item-heading h2, body .item-heading .h2 {
   margin-bottom: auto;
 }
 
-.item-quantity {
+.item-quantity-cart {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -21356,13 +21357,14 @@ body .item-heading h2, body .item-heading .h2 {
   border-radius: 5px;
   font-family: "Maven Pro", sans-serif;
   font-size: 1.2rem;
+  flex-grow: 0;
 }
-.item-quantity .btn-quantity-cart {
+.item-quantity-cart .btn-quantity-cart {
   border: none;
   color: #C5FCEC;
-  font-size: 1.5rem;
+  font-size: 1.2rem;
 }
-.item-quantity #quantity {
+.item-quantity-cart #quantity {
   width: 2ch;
   /* El ancho ajustado para mostrar 2 caracteres (e.g., 99) */
   text-align: center;
@@ -21381,6 +21383,30 @@ body .item-heading h2, body .item-heading .h2 {
 }
 .step-title.active {
   color: #FFFDFA;
+}
+
+.table-cart {
+  margin-bottom: 0;
+  border-radius: 15px;
+  border-collapse: collapse;
+  overflow: hidden;
+}
+.table-cart th:first-child {
+  text-align: left;
+}
+.table-cart th:not(:first-child) {
+  text-align: right;
+}
+.table-cart td:first-child {
+  display: flex;
+  text-align: left;
+}
+.table-cart td:not(:first-child) {
+  text-align: center;
+}
+
+td {
+  padding: 10px;
 }
 
 /*# sourceMappingURL=styles.css.map */

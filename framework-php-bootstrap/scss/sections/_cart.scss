@@ -4,6 +4,7 @@
     height: 88px !important;
     border-radius: 10px;
     object-fit: cover;
+    margin-right: 5px;
 
 }
 
@@ -31,7 +32,7 @@
     margin-bottom: auto;
 }
 
-.item-quantity {
+.item-quantity-cart {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -39,11 +40,12 @@
     border-radius: 5px;
     font-family: $body-font-family;
     font-size: 1.2rem;
+    flex-grow: 0;
 
     .btn-quantity-cart {
         border: none;
         color: $resaltar2;
-        font-size: 1.5rem;
+        font-size: 1.2rem;
     }
 
     #quantity {
@@ -67,4 +69,34 @@
     &.active {
         color: $texto1;
     }
+}
+
+// Aligning the first th to the left and the rest to the right
+.table-cart {
+    margin-bottom: 0;
+    border-radius: 15px;
+    border-collapse: collapse;
+    overflow: hidden; // Making sure the border-radius is applied
+
+    th:first-child {
+        text-align: left;
+    }
+
+    // Aligning the last th to the right
+    th:not(:first-child) {
+        text-align: right;
+    }
+
+    td:first-child {
+        display: flex;
+        text-align: left;
+    }
+
+    td:not(:first-child) {
+        text-align: center;
+    }
+}
+
+td {
+    padding: 10px;
 }

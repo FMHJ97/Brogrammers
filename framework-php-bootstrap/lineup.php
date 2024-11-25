@@ -14,7 +14,7 @@
         <!-- Line Up Heading Section -->
         <section class="container page-section">
             <div class="row page-section-heading">
-                <h1>INFO</h1>
+                <h1>LINE UP</h1>
             </div>
         </section>
         <!--Festival Days Filter -->
@@ -22,8 +22,7 @@
             <div class="row btn-category-group justify-content-center">
                 <div class="d-flex flex-wrap justify-content-center">
                     <div class="col-12 col-md-3 mb-2 px-2">
-                        <button type="button" id="history" class="btn btn-category-item selected w-100">Full
-                            Lineup</button>
+                        <button type="button" id="history" class="btn btn-category-item selected w-100">Full Lineup</button>
                     </div>
                     <div class="col-4 col-md-3  mb-2 px-2">
                         <button type="button" id="tickets" class="btn btn-category-item w-100">Thursday</button>
@@ -54,9 +53,52 @@
                         <div class="titleDays">
                             <h3>Thursday</h3>
                         </div>
-                        <div class="card cardHeadline headB1">
-                            <div class="artist-name">Eminem</div>
+                        <!--  Flip Card  -->
+                        <div class="flip-card">
+                            <div class="flip-card-inner">
+                                <!-- Front -->
+                                <div class="flip-card-front card cardHeadline headB1">
+                                    <div class="artist-name">Eminem</div>
+                                </div>
+                                <!-- Back -->
+                                <div class="flip-card-back">
+                                    <div class="container back-content">
+                                        <div class="row mt-1">
+                                            <h4>Eminem</h4>
+                                        </div>
+                                        <div class="row mb-2">
+                                            <div class="col-4">
+                                                <a href="https://www.instagram.com/"><i class="bi bi-instagram"></i></a>
+                                            </div>
+                                            <!-- TikTok -->
+                                            <div class="col-4">
+                                                <a href="https://www.tiktok.com/"><i class="bi bi-tiktok"></i></a>
+                                            </div>
+                                            <div class="col-4">
+                                                <a href="https://www.x.com/"><i class="bi bi-twitter-x"></i></a>
+                                            </div>
+                                            <div class="col-4">
+                                                <a href="https://www.youtube.com/"><i class="bi bi-youtube"></i></a>
+                                            </div>
+                                            <!-- Facebook -->
+                                            <div class="col-4 ">
+                                                <a href="https://www.facebook.com/"><i class="bi bi-facebook"></i></a>
+                                            </div>
+                                            <!-- Email -->
+                                            <div class="col-4">
+                                                <a href="https://www.gmail.com/"><i class="bi bi-envelope-fill"></i></a>
+                                            </div>
+                                        </div>
+                                        <div class="row mb-1"><!-- tres formas diferentes de spotify-->
+                                            <!-- <iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/4xkOaSrkexMciUUogZKVTS?utm_source=generator&theme=0" width="100%" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>-->
+                                            <iframe style="border-radius:12px" src="https://open.spotify.com/embed/playlist/37i9dQZF1DZ06evO4gTUOY?utm_source=generator" width="100%" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+                                            <!--  <iframe src="https://open.spotify.com/embed?uri=spotify:album:2cWBwpqMsDJC1ZUwz813lo" width="250" height="280" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>   -->
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
+
                     </div>
                     <div class="colB col-md-4 ">
                         <div class="titleDays">
@@ -84,8 +126,10 @@
                 </div>
                 <div class="row  cols-4">
                     <div class="col-12 col-md-3 colB ">
-                        <div class="card cardIncluding incB1">
-                            <div class="artist-name">Alice in Chains</div>
+                        <div class="flipcard-inner">
+                            <div class="card cardIncluding incB1">
+                                <div class="artist-name">Alice in Chains</div>
+                            </div>
                         </div>
                     </div>
 

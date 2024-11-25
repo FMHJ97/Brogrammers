@@ -14,7 +14,7 @@
     <main>
         <section class="page-section">
 
-            <div class="container page-section">
+            <div class="container ">
                 <!-- Row with titles (Carrito, dirección, pago) -->
                 <div class="row d-flex text-center page-section-heading">
                     <div class="col">
@@ -32,11 +32,11 @@
 
                 <!-- Row with articles and summary -->
 
-                <div class="row">
+                <div class="row g-3">
                     <div class="col-md-8 ">
 
                         <!-- Titles -->
-                        <table class="table table-cart">
+                        <table class="table table-cart table-borderless">
                             <thead>
                                 <tr>
                                     <th scope="col">Artículo</th>
@@ -51,7 +51,7 @@
 
                                 <td>
                                     <img src="../assets/img/merch/camiseta_1.png" alt="Camiseta" class="img-article-cart">
-                                    
+
                                     <div class="align-middle">
                                         <p class="mb-1">Camiseta GroundSound</p>
                                         <p class="mb-1">Color - Blanco</p>
@@ -78,7 +78,8 @@
                             <tr>
 
                                 <td>
-                                    <img src="../assets/img/merch/camiseta_1.png" alt="Camiseta" class="img-article-cart">
+                                    <img src="../assets/img/merch/camiseta_1.png" alt="Camiseta"
+                                        class="img-article-cart">
                                     <!-- To place the text in the same line as the image -->
 
                                     <div class="align-middle">
@@ -107,7 +108,8 @@
                             <tr>
 
                                 <td>
-                                    <img src="../assets/img/merch/camiseta_1.png" alt="Camiseta" class="img-article-cart">
+                                    <img src="../assets/img/merch/camiseta_1.png" alt="Camiseta"
+                                        class="img-article-cart">
                                     <!-- To place the text in the same line as the image -->
 
                                     <div class="align-middle">
@@ -134,7 +136,7 @@
 
                         </table>
 
-                        
+
 
                     </div>
 
@@ -152,37 +154,37 @@
                                 <p>Detalles del pedido</p>
 
                                 <div class="row">
-                                    <div class="col-md-8 text-end">
+                                    <div class="col-8 text-end">
                                         <p>Precio sin IVA</p>
                                     </div>
-                                    <div class="col-md-4 text-end">
+                                    <div class="col-4 text-end">
                                         <p>50€</p>
                                     </div>
                                 </div>
 
                                 <div class="row">
-                                    <div class="col-md-8 text-end">
+                                    <div class="col-8 text-end">
                                         <p>IVA</p>
                                     </div>
-                                    <div class="col-md-4 text-end">
+                                    <div class="col-4 text-end">
                                         <p>10€</p>
                                     </div>
                                 </div>
 
                                 <div class="row">
-                                    <div class="col-md-8 text-end">
+                                    <div class="col-8 text-end">
                                         <p>Cupón de descuento</p>
                                     </div>
-                                    <div class="col-md-4 text-end">
+                                    <div class="col-4 text-end">
                                         <p>0€</p>
                                     </div>
                                 </div>
 
                                 <div class="row">
-                                    <div class="col-md-8 text-end">
+                                    <div class="col-8 text-end">
                                         <p>Gastos de envío</p>
                                     </div>
-                                    <div class="col-md-4 text-end">
+                                    <div class="col-4 text-end">
                                         <p>5€</p>
                                     </div>
                                 </div>
@@ -195,8 +197,8 @@
                         <p class="mb-0">¿Tienes un código de descuento?</p>
                         <div class="row mb-3">
 
-                            <div class="col-md-7">
-                                <input type="text" class="form-control-discount" placeholder="Introduzca su código">
+                            <div class="col-md-7 mb-1">
+                                <input type="text" class="form-control-discount" placeholder="Introduzca código">
                             </div>
 
                             <div class="col-md-5">
@@ -207,11 +209,11 @@
 
                         <div class="row">
 
-                            <div class="col-md-8">
+                            <div class="col-8">
                                 <h5>Total</h5>
                             </div>
 
-                            <div class="col-md-4">
+                            <div class="col-4 text-end">
                                 <h5>65€</h5>
                             </div>
                         </div>

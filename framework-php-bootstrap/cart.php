@@ -12,10 +12,9 @@
     <?php include("includes/navbar.php"); ?>
 
     <main>
-        <section class="page-section">
+        <section class="page-section container">
 
-            <div class="container">
-
+            <div class="container page-section">
                 <!-- Row with titles (Carrito, dirección, pago) -->
                 <div class="row d-flex text-center page-section-heading">
                     <div class="col">
@@ -34,7 +33,7 @@
                 <!-- Row with articles and summary -->
 
                 <div class="row">
-                    <div class="col-md-8 container-article">
+                    <div class="col-md-9 container-article">
 
                     <!-- Titles -->
                         <div class="row">
@@ -71,9 +70,9 @@
                             <!-- Quantity -->
                             <div class="col-2 text-center align-self-center quantity-group">
                                 <div class="item-quantity">
-                                    <button type="button" id="restar" class="btn btn-quantity">-</button>
+                                    <button type="button" id="restar" class="btn btn-quantity-cart">-</button>
                                     <span id="quantity">1</span>
-                                    <button type="button" id="sumar" class="btn btn-quantity">+</button>
+                                    <button type="button" id="sumar" class="btn btn-quantity-cart">+</button>
                                 </div>
                             </div>
 
@@ -118,7 +117,7 @@
                         
 
                     <!-- Summary -->
-                    <div class="col-md-4 container-summary">
+                    <div class="col-md-3 container-summary">
                         <div class="row">
                             <div class="col text-center">
                                 <h5>Resumen</h5>

@@ -21328,7 +21328,6 @@ body .item-heading h2, body .item-heading .h2 {
 .article-row {
   background-color: #035951;
   border-radius: 10px;
-  padding: 10px;
   margin-bottom: 10px;
 }
 .article-row:last-child {
@@ -21358,11 +21357,10 @@ body .item-heading h2, body .item-heading .h2 {
   font-family: "Maven Pro", sans-serif;
   font-size: 1.2rem;
 }
-.item-quantity .btn-quantity {
+.item-quantity .btn-quantity-cart {
   border: none;
   color: #C5FCEC;
   font-size: 1.5rem;
-  padding-top: 0;
 }
 .item-quantity #quantity {
   width: 2ch;
@@ -21373,6 +21371,7 @@ body .item-heading h2, body .item-heading .h2 {
 .quantity-group {
   border: 1px solid #C5FCEC;
   border-radius: 5px;
+  padding: 0;
 }
 
 .step-title {

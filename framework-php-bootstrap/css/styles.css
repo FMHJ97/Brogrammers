@@ -20090,6 +20090,14 @@ body h2, body .h2 {
   color: #5F8D95;
 }
 
+main {
+  background: url("../assets/img/logoFondoFestival.png");
+  background-size: 50vw;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-attachment: fixed;
+}
+
 .page-section {
   padding-bottom: 3rem;
 }
@@ -20119,6 +20127,13 @@ body h2, body .h2 {
   .page-section .page-section-heading h2, .page-section .page-section-heading .h2 {
     font-size: 1.25rem;
     line-height: 1rem;
+  }
+  main {
+    background: url("../assets/img/logoFondoFestival.png");
+    background-size: 90vw;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
   }
 }
 .divider-custom {

@@ -20202,21 +20202,6 @@ main {
   color: #fff;
 }
 
-.btn-xl {
-  padding: 1rem 1.75rem;
-  font-size: 1.25rem;
-}
-
-.btn-social {
-  border-radius: 100%;
-  display: inline-flex;
-  width: 3.25rem;
-  height: 3.25rem;
-  font-size: 1.25rem;
-  justify-content: center;
-  align-items: center;
-}
-
 .dropdown-order-by {
   display: flex;
   justify-content: start;
@@ -20228,7 +20213,6 @@ main {
 }
 .dropdown-order-by #dropdownMenuButton {
   color: #C5FCEC;
-  font-family: "Maven Pro", sans-serif;
 }
 
 .btn-category-group,
@@ -20241,10 +20225,8 @@ main {
 .btn-category-item,
 .btn-item-size {
   font-family: "Krona One", sans-serif;
-  font-size: 1rem;
   border: 2px solid #29F2B9;
   border-radius: 20px;
-  padding: 0.5em 1.2em;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -20270,6 +20252,7 @@ main {
 .btn-item-size {
   border: 2px solid #C5FCEC;
   border-radius: 5px;
+  padding: 0.5em 1em;
 }
 .btn-item-size.selected {
   background: #C5FCEC;
@@ -20329,6 +20312,7 @@ main {
   align-self: center;
   text-align: center;
   margin: auto;
+  font-family: "Krona One", sans-serif;
   font-size: 30px;
 }
 
@@ -20380,7 +20364,7 @@ button {
   text-align: center;
   text-decoration: none;
   color: white;
-  font-size: 1.5rem;
+  font-family: "Krona One", sans-serif;
   font-weight: bold;
   background-size: cover;
   background-position: center;
@@ -20416,13 +20400,12 @@ button {
 }
 
 .button-text-top {
-  font-size: 32px;
-  font-weight: bold;
+  font-size: 26px;
   text-shadow: 0px 0px 10px rgba(0, 0, 0, 0.923); /* Sombra negra con algo de difuso */
 }
 
 .button-text-bottom {
-  font-size: 32px;
+  font-size: 26px;
   margin-top: 130px;
   text-shadow: 0px 0px 10px rgba(0, 0, 0, 0.923); /* Sombra negra con algo de difuso */
 }
@@ -21242,7 +21225,7 @@ main {
   justify-content: center;
   align-items: center;
 }
-#socialMedia h3, #socialMedia .h3 {
+#socialMedia h2, #socialMedia .h2 {
   color: #29F2B9;
 }
 #socialMedia a {
@@ -21283,14 +21266,6 @@ body .item-heading h2, body .item-heading .h2 {
   color: #29F2B9;
 }
 
-@media (max-width: 767.98px) {
-  body .item-heading h1, body .item-heading .h1 {
-    font-size: 1.5rem;
-  }
-  body .item-heading h2, body .item-heading .h2 {
-    font-size: 1.2rem;
-  }
-}
 .item-image-section {
   display: flex;
   flex-direction: column;
@@ -21323,7 +21298,6 @@ body .item-heading h2, body .item-heading .h2 {
 }
 .suggested-items-heading h2, .suggested-items-heading .h2 {
   color: #FFFDFA;
-  font-family: "Krona One", sans-serif;
 }
 
 .merch-item-details {
@@ -21332,10 +21306,6 @@ body .item-heading h2, body .item-heading .h2 {
   justify-content: start;
   gap: 2em;
   color: #FFFDFA;
-  font-family: "Maven Pro", sans-serif;
-}
-.merch-item-details p {
-  font-size: 1.2rem;
 }
 .merch-item-details .item-heading {
   display: flex;
@@ -21355,18 +21325,16 @@ body .item-heading h2, body .item-heading .h2 {
   align-items: center;
   justify-content: start;
   margin-left: 12px;
-  gap: 0.5em;
+  gap: 0.25em;
   flex-grow: 0;
   border: 2px solid #C5FCEC;
   border-radius: 5px;
   font-family: "Krona One", sans-serif;
-  font-size: 1.2rem;
+  background-color: #0A0F0F;
 }
 .merch-item-details .item-quantity .btn-quantity {
   border: none;
-  background: #0A0F0F;
   color: #C5FCEC;
-  font-size: 1.5rem;
 }
 .merch-item-details .item-quantity #quantity {
   width: 2ch;
@@ -21379,7 +21347,6 @@ body .item-heading h2, body .item-heading .h2 {
   gap: 0.75em;
 }
 .merch-item-details .item-description li {
-  font-size: 1.2rem;
   margin-bottom: 0.2em;
 }
 
@@ -21387,21 +21354,11 @@ body .item-heading h2, body .item-heading .h2 {
   .merch-item-details {
     margin-top: 3em;
   }
-  .merch-item-details p {
-    font-size: 1rem;
-  }
   .merch-item-details .item-quantity {
-    font-size: 1rem;
     gap: 0;
-  }
-  .merch-item-details .item-quantity .btn-quantity {
-    font-size: 1.2rem;
   }
   .merch-item-details .item-quantity #quantity {
     width: 1.5ch;
-  }
-  .suggested-items-heading h2, .suggested-items-heading .h2 {
-    font-size: 1.5rem;
   }
 }
 .merch-products {
@@ -21426,8 +21383,6 @@ body .item-heading h2, body .item-heading .h2 {
   border: 2px outset #29F2B9;
   padding: 0.5em 1em;
   border-radius: 20px;
-  font-size: 1rem;
-  font-family: "Maven Pro", sans-serif;
   transition: border-color 0.3s;
   flex-grow: 1 !important;
 }
@@ -21445,7 +21400,7 @@ body .item-heading h2, body .item-heading .h2 {
 .search-bar .btn-search i {
   color: #0A0F0F;
   padding-right: 0.4rem;
-  font-size: 1rem;
+  font-size: 1.5rem;
 }
 .search-bar .btn-search:hover {
   background: rgb(13.2863436123, 218.7136563877, 160.4581497797);

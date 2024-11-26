@@ -21130,6 +21130,7 @@ main {
 
 .bg-none {
   background: none !important;
+  background-image: none !important;
 }
 
 /* Custom modal dialog to limit size */

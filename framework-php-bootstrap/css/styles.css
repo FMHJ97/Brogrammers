@@ -21397,7 +21397,7 @@ body .item-heading h2, body .item-heading .h2 {
 .search-bar .btn-search i {
   color: #0A0F0F;
   padding-right: 0.4rem;
-  font-size: 1rem;
+  font-size: 1.5rem;
 }
 .search-bar .btn-search:hover {
   background: rgb(13.2863436123, 218.7136563877, 160.4581497797);
@@ -21486,6 +21486,7 @@ body .item-heading h2, body .item-heading .h2 {
 }
 .table-cart th {
   color: #FFFDFA;
+  padding-top: 20px;
 }
 .table-cart th:first-child {
   text-align: left;
@@ -21514,7 +21515,7 @@ body .item-heading h2, body .item-heading .h2 {
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 1.2rem;
+  font-size: 22px;
 }
 .item-quantity-cart .btn-quantity-cart {
   display: flex;

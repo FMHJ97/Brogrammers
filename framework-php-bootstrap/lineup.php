@@ -22,7 +22,8 @@
             <div class="row btn-category-group justify-content-center">
                 <div class="d-flex flex-wrap justify-content-center">
                     <div class="col-12 col-md-3 mb-2 px-2">
-                        <button type="button" id="history" class="btn btn-category-item selected w-100">Full Lineup</button>
+                        <button type="button" id="history" class="btn btn-category-item selected w-100">Full
+                            Lineup</button>
                     </div>
                     <div class="col-4 col-md-3  mb-2 px-2">
                         <button type="button" id="tickets" class="btn btn-category-item w-100">Thursday</button>
@@ -40,13 +41,13 @@
 
 
         <!--BANDS Days -->
-        <section class="page-section">
+        <section class="container page-section">
             <!--BANDS Days -->
             <div class="container my-3">
                 <div class="row text-center text-white mt-5 mb-2">
-                    <i class="bi bi-bar-chart-fill lineup-icon-left col-4 ms-0"></i>
-                    <h2 class="col-4" >HEADLINERS</h2>
-                    <i class="bi bi-bar-chart-fill lineup-icon-right col-4 me-0"></i>
+                <!--<i class="bi bi-bar-chart-fill lineup-icon-left col-4"></i>-->
+                    <h2 class="col-12">HEADLINERS</h2>
+                    <!--<i class="bi bi-bar-chart-fill lineup-icon-right col-4"></i>-->
                 </div>
                 <div class="row ">
                     <div class="colB col-md-4 ">
@@ -91,7 +92,11 @@
                                         </div>
                                         <div class="row mb-1"><!-- tres formas diferentes de spotify-->
                                             <!-- <iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/4xkOaSrkexMciUUogZKVTS?utm_source=generator&theme=0" width="100%" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>-->
-                                            <iframe style="border-radius:12px" src="https://open.spotify.com/embed/playlist/37i9dQZF1DZ06evO4gTUOY?utm_source=generator" width="100%" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+                                            <iframe style="border-radius:12px"
+                                                src="https://open.spotify.com/embed/playlist/37i9dQZF1DZ06evO4gTUOY?utm_source=generator"
+                                                width="100%" height="152" frameBorder="0" allowfullscreen=""
+                                                allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+                                                loading="lazy"></iframe>
                                             <!--  <iframe src="https://open.spotify.com/embed?uri=spotify:album:2cWBwpqMsDJC1ZUwz813lo" width="250" height="280" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>   -->
                                         </div>
                                     </div>
@@ -126,10 +131,8 @@
                 </div>
                 <div class="row  cols-4">
                     <div class="col-12 col-md-3 colB ">
-                        <div class="flipcard-inner">
-                            <div class="card cardIncluding incB1">
-                                <div class="artist-name">Alice in Chains</div>
-                            </div>
+                        <div class="card cardIncluding incB1">
+                            <div class="artist-name">Alice in Chains</div>
                         </div>
                     </div>
 

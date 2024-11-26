@@ -20082,36 +20082,71 @@ html {
 
 body {
   background-color: #0A0F0F;
+  font-family: "Maven Pro", sans-serif;
+  font-weight: 400;
+  color: #FFFDFA;
+  font-size: 20px;
+}
+body h1, body .h1, body h2, body .h2, body h3, body .h3, body h4, body .h4, body h5, body .h5, body h6, body .h6 {
+  font-family: "Krona One", sans-serif;
+  font-weight: 400;
 }
 body h1, body .h1 {
-  color: #FFFDFA;
+  font-size: 30px;
 }
 body h2, body .h2 {
-  color: #5F8D95;
+  font-size: 26px;
+}
+body h3, body .h3 {
+  font-size: 22px;
+}
+body h4, body .h4 {
+  font-size: 18px;
+}
+body h5, body .h5 {
+  font-size: 16px;
 }
 
+@media (max-width: 767.98px) {
+  body {
+    font-size: 18px;
+  }
+  body h1, body .h1 {
+    font-size: 28px;
+  }
+  body h2, body .h2 {
+    font-size: 24px;
+  }
+  body h3, body .h3 {
+    font-size: 20px;
+  }
+  body h4, body .h4 {
+    font-size: 16px;
+  }
+  body h5, body .h5 {
+    font-size: 14px;
+  }
+}
 main {
-  background: url("../assets/img/logoFondoFestival.png");
+  background: url("../assets/img/logoFondoFestival.png") no-repeat center fixed;
   background-size: 50vw;
-  background-repeat: no-repeat;
-  background-position: center;
-  background-attachment: fixed;
+  background-blend-mode: screen;
 }
 
 .page-section {
   padding-bottom: 3rem;
 }
 .page-section .page-section-heading {
-  font-size: 2rem;
-  line-height: 1.75rem;
   font-family: "Krona One", sans-serif;
   text-align: center;
   padding-top: 3rem;
   padding-bottom: 3rem;
 }
+.page-section .page-section-heading h1, .page-section .page-section-heading .h1 {
+  color: #FFFDFA;
+}
 .page-section .page-section-heading h2, .page-section .page-section-heading .h2 {
-  font-size: 1.5rem;
-  line-height: 1.25rem;
+  color: #5F8D95;
 }
 
 @media (max-width: 767.98px) {
@@ -20119,14 +20154,8 @@ main {
     padding-bottom: 2rem;
   }
   .page-section .page-section-heading {
-    font-size: 1.75rem;
-    line-height: 1.5rem;
     padding-top: 2rem;
     padding-bottom: 2rem;
-  }
-  .page-section .page-section-heading h2, .page-section .page-section-heading .h2 {
-    font-size: 1.25rem;
-    line-height: 1rem;
   }
   main {
     background: url("../assets/img/logoFondoFestival.png");
@@ -20481,6 +20510,7 @@ main {
   border-radius: 10px;
   border-style: solid;
   border-color: #035951;
+  background-color: #0A0F0F;
   border-width: 5px;
   display: flex;
   flex-direction: column;
@@ -20567,6 +20597,14 @@ main {
   border-radius: 25px;
   background-color: #0A0F0F;
   padding: 0 0px 0 5px;
+}
+.form-control-discount:focus {
+  background-color: #0A0F0F;
+  color: #29F2B9;
+  box-shadow: 0px 0px 15px 0px #C5FCEC;
+}
+.form-control-discount::placeholder {
+  font-size: 16px;
 }
 
 .card-merch-item {
@@ -20814,11 +20852,11 @@ main {
 /* ==========  BAND CARDS =========  */
 .colB {
   display: flex;
-  flex-direction: column; /* Hace que los elementos se apilen verticalmente */
-  align-items: center; /* Centra el contenido horizontalmente */
-  justify-content: center; /* Centra el contenido verticalmente */
-  text-align: center; /* Centra el texto dentro de la columna */
-  padding: 10px; /* Puedes ajustar el espacio dentro de la columna */
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 10px;
   /* img background headliners */
 }
 .colB .titleDays h3, .colB .titleDays .h3 {
@@ -20827,16 +20865,16 @@ main {
   margin-bottom: 0.5rem;
   color: #107361;
 }
-.colB .cardHeadline.headB1 {
+.colB .cardHeadline.headB1, .colB .flip-card .headB1.flip-card-front, .flip-card .colB .headB1.flip-card-front {
   background-image: linear-gradient(to bottom, rgba(255, 153, 153, 0) 0%, rgba(255, 153, 153, 0) 50px, #0A0F0F 100%), url("/assets/img/lineUp/Eminem.jpg");
 }
-.colB .cardHeadline.headB2 {
+.colB .cardHeadline.headB2, .colB .flip-card .headB2.flip-card-front, .flip-card .colB .headB2.flip-card-front {
   background-image: linear-gradient(to bottom, rgba(255, 153, 153, 0) 0%, rgba(255, 153, 153, 0) 50px, #0A0F0F 100%), url("/assets/img/lineUp/LosdelRio.jpg");
 }
-.colB .cardHeadline.headB3 {
+.colB .cardHeadline.headB3, .colB .flip-card .headB3.flip-card-front, .flip-card .colB .headB3.flip-card-front {
   background-image: linear-gradient(to bottom, rgba(255, 153, 153, 0) 0%, rgba(255, 153, 153, 0) 50px, #0A0F0F 100%), url("/assets/img/lineUp/soundgarden.jpg");
 }
-.colB .cardHeadline {
+.colB .cardHeadline, .colB .flip-card .flip-card-front, .flip-card .colB .flip-card-front {
   position: relative;
   height: 300px;
   width: 300px;
@@ -20848,7 +20886,7 @@ main {
   overflow: hidden;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
-.colB .cardHeadline .artist-name {
+.colB .cardHeadline .artist-name, .colB .flip-card .flip-card-front .artist-name, .flip-card .colB .flip-card-front .artist-name {
   position: absolute;
   bottom: 10px;
   width: 100%;
@@ -20931,6 +20969,59 @@ main {
   font-size: 1.2em;
   font-weight: bold;
   text-shadow: 0 2px 5px rgba(0, 0, 0, 0.7);
+}
+
+.flip-card {
+  perspective: 1000px;
+  width: 300px;
+  height: 300px;
+}
+.flip-card .flip-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transform-style: preserve-3d;
+  transition: transform 0.8s;
+}
+.flip-card:hover .flip-card-inner {
+  transform: rotateY(180deg);
+}
+.flip-card .flip-card-front,
+.flip-card .flip-card-back {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  border-radius: 10px;
+}
+.flip-card .flip-card-back {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  transform: rotateY(180deg);
+  padding: 1rem;
+  border: 6px solid #107361;
+  border-radius: 10px;
+  background: linear-gradient(to bottom, rgba(10, 15, 15, 0) 23%, rgba(197, 252, 236, 0.5) 55%, #C5FCEC 100%);
+}
+.flip-card .flip-card-back .back-content {
+  align-items: center;
+}
+.flip-card .flip-card-back .back-content h4, .flip-card .flip-card-back .back-content .h4 {
+  margin-bottom: 1rem;
+  color: #FFFDFA;
+}
+.flip-card .flip-card-back .back-content p {
+  font-size: 1em;
+  color: #eee;
+}
+.flip-card .flip-card-back .back-content a {
+  font-size: 25px;
+  color: #FFFDFA;
 }
 
 .patro-seccion {
@@ -21037,6 +21128,10 @@ main {
   font-size: 36px;
 }
 
+.bg-none {
+  background: none !important;
+}
+
 /* Custom modal dialog to limit size */
 .custom-modal-dialog {
   border-radius: 10px; /* Rounded corners */
@@ -21072,6 +21167,14 @@ main {
 .custom-modal-footer {
   border: 0; /* Remove border */
   padding-top: 0; /* Remove padding at the top */
+}
+
+.lineup-icon-left {
+  transform: rotate(-90deg) scaleY(10) scaleX(2);
+}
+
+.lineup-icon-right {
+  transform: rotate(-90deg) scaleY(-1) scaleY(10) scaleX(2);
 }
 
 .masthead {
@@ -21376,6 +21479,7 @@ body .item-heading h2, body .item-heading .h2 {
   height: 88px !important;
   border-radius: 10px;
   object-fit: cover;
+  margin-right: 5px;
 }
 
 .article-row {
@@ -21387,13 +21491,6 @@ body .item-heading h2, body .item-heading .h2 {
   margin-bottom: 0;
 }
 
-.container-article {
-  background-color: #107361;
-  padding: 20px;
-  border-radius: 15px;
-  margin-bottom: auto;
-}
-
 .container-summary {
   background-color: #107361;
   padding: 20px;
@@ -21401,7 +21498,7 @@ body .item-heading h2, body .item-heading .h2 {
   margin-bottom: auto;
 }
 
-.item-quantity {
+.item-quantity-cart {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -21409,13 +21506,14 @@ body .item-heading h2, body .item-heading .h2 {
   border-radius: 5px;
   font-family: "Maven Pro", sans-serif;
   font-size: 1.2rem;
+  flex-grow: 0;
 }
-.item-quantity .btn-quantity-cart {
+.item-quantity-cart .btn-quantity-cart {
   border: none;
   color: #C5FCEC;
-  font-size: 1.5rem;
+  font-size: 1.2rem;
 }
-.item-quantity #quantity {
+.item-quantity-cart #quantity {
   width: 2ch;
   /* El ancho ajustado para mostrar 2 caracteres (e.g., 99) */
   text-align: center;
@@ -21434,6 +21532,75 @@ body .item-heading h2, body .item-heading .h2 {
 }
 .step-title.active {
   color: #FFFDFA;
+}
+
+.table-cart {
+  --bs-table-bg: #107361;
+  background-color: var(--bs-table-bg);
+  margin-bottom: 0;
+  border-radius: 15px;
+  border-spacing: 0;
+  border-collapse: collapse;
+  border-style: none;
+  overflow: hidden;
+}
+.table-cart th {
+  color: #FFFDFA;
+}
+.table-cart th:first-child {
+  text-align: left;
+}
+.table-cart th:not(:first-child) {
+  text-align: right;
+}
+.table-cart td:first-child {
+  display: flex;
+  text-align: left;
+  align-items: center;
+}
+.table-cart td:first-child p {
+  margin: 0;
+  font-size: 16px;
+}
+.table-cart td:not(:first-child) {
+  text-align: center;
+}
+
+.discount-text {
+  font-size: 16px;
+}
+
+.item-quantity-cart {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+}
+.item-quantity-cart .btn-quantity-cart {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  color: #0A0F0F;
+  font-size: 1.5rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+.item-quantity-cart .btn-quantity-cart:hover {
+  background-color: #C5FCEC;
+  color: #0A0F0F;
+  border-radius: 50%;
+  border: 2px solid #29F2B9;
+}
+.item-quantity-cart .btn-quantity-cart:active {
+  transform: scale(0.9);
+}
+.item-quantity-cart #quantity-cart {
+  width: 2.5ch;
+  text-align: center;
+  font-weight: bold;
+  color: #0A0F0F;
 }
 
 /*# sourceMappingURL=styles.css.map */

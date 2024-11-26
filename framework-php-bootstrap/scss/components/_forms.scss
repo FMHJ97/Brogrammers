@@ -16,6 +16,7 @@ main {
     border-radius: 10px;
     border-style: solid;
     border-color: $primario1;
+    background-color: $fondo;
     border-width: 5px;
     display: flex;
     flex-direction: column;
@@ -109,4 +110,14 @@ main {
     border-radius: 25px;
     background-color: $fondo;
     padding: 0 0px 0 5px;
+
+    &:focus {
+        background-color: $fondo;
+        color: $resaltar1;
+        box-shadow: 0px 0px 15px 0px $resaltar2;
+    }
+
+    &::placeholder {
+        font-size: $body-font-2;
+    }
 }

@@ -20133,6 +20133,11 @@ main {
   background-blend-mode: screen;
 }
 
+.bg-none {
+  background: none !important;
+  background-image: none !important;
+}
+
 .page-section {
   padding-bottom: 3rem;
 }
@@ -20634,13 +20639,10 @@ main {
 }
 .card-merch-item .card-body h3, .card-merch-item .card-body .h3 {
   font-family: "Krona One", sans-serif;
-  font-size: 1.3rem;
-  line-height: 2rem;
   color: #FFFDFA;
 }
 .card-merch-item .card-body span {
   font-family: "Krona One", sans-serif;
-  font-size: 1.3rem;
   color: #29F2B9;
 }
 
@@ -20672,13 +20674,10 @@ main {
   }
   .card-merch-item .card-body h3, .card-merch-item .card-body .h3 {
     font-family: "Krona One", sans-serif;
-    font-size: 1rem;
-    line-height: 1.5rem;
     color: #FFFDFA;
   }
   .card-merch-item .card-body span {
     font-family: "Krona One", sans-serif;
-    font-size: 1rem;
     color: #29F2B9;
   }
 }
@@ -20696,15 +20695,12 @@ main {
 }
 .ticket-card .ticket-title {
   font-family: "Krona One", sans-serif;
-  font-size: 1.5rem;
 }
 .ticket-card .ticket-text {
   font-family: "Maven Pro", sans-serif;
-  font-size: 1rem;
 }
 .ticket-card .ticket-price {
   font-family: "Krona One", sans-serif;
-  font-size: 1.5rem;
 }
 .ticket-card .button-ticket, .ticket-card .btn-index, .ticket-card .btn-gallery {
   align-self: center;
@@ -20828,7 +20824,6 @@ main {
   background: #C5FCEC;
   color: #0A0F0F;
   font-family: "Krona One", sans-serif;
-  font-size: 1rem;
   border: 2px solid #29F2B9;
   border-radius: 10px;
   padding: 0.5em 1.2em;
@@ -20861,7 +20856,6 @@ main {
 }
 .colB .titleDays h3, .colB .titleDays .h3 {
   text-align: center;
-  font-size: 1.5em;
   margin-bottom: 0.5rem;
   color: #107361;
 }
@@ -20892,8 +20886,7 @@ main {
   width: 100%;
   text-align: center;
   color: white;
-  font-size: 1.2em;
-  font-weight: bold;
+  font-family: "Krona One", sans-serif;
   text-shadow: 0 2px 5px rgba(0, 0, 0, 0.7);
 }
 
@@ -20966,8 +20959,7 @@ main {
   width: 100%;
   text-align: center;
   color: white;
-  font-size: 1.2em;
-  font-weight: bold;
+  font-family: "Krona One", sans-serif;
   text-shadow: 0 2px 5px rgba(0, 0, 0, 0.7);
 }
 
@@ -21016,7 +21008,6 @@ main {
   color: #FFFDFA;
 }
 .flip-card .flip-card-back .back-content p {
-  font-size: 1em;
   color: #eee;
 }
 .flip-card .flip-card-back .back-content a {
@@ -21126,10 +21117,6 @@ main {
   font-family: "Krona One", sans-serif;
   font-weight: 400;
   font-size: 36px;
-}
-
-.bg-none {
-  background: none !important;
 }
 
 /* Custom modal dialog to limit size */

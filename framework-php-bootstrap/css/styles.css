@@ -21534,7 +21534,6 @@ body .item-heading h2, body .item-heading .h2 {
 }
 .table-cart th {
   color: #FFFDFA;
-  padding-top: 20px;
 }
 .table-cart th:first-child {
   text-align: left;
@@ -21563,7 +21562,7 @@ body .item-heading h2, body .item-heading .h2 {
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 22px;
+  font-size: 1.2rem;
 }
 .item-quantity-cart .btn-quantity-cart {
   display: flex;

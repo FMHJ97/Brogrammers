@@ -179,7 +179,7 @@
                             </div>
                         </div>
 
-                        <a href="address.php" class="button-ticket">Confirmar</a>
+                        <a href="payment.php" class="button-ticket">Confirmar</a>
 
                     </div>
 

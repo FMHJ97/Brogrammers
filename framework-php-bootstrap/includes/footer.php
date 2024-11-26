@@ -3,7 +3,7 @@
         <div class="row d-flex flex-column">
             <!-- Social Media Links -->
             <div id="socialMedia" class="col gap-3">
-                <h3>Síguenos</h3>
+                <h2>Síguenos</h2>
                 <div class="row">
                     <!-- Instagram -->
                     <div class="col-4 col-md-2 mb-3 mb-md-0">

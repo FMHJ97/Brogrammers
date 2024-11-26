@@ -36,13 +36,13 @@
                     <div class="col-md-8 ">
 
                         <!-- Titles -->
-                        <table class="table table-cart table-borderless">
+                        <table class="table table-cart table-borderless table-striped">
                             <thead>
                                 <tr>
-                                    <th scope="col">Artículo</th>
-                                    <th scope="col" class="text-center">Precio</th>
-                                    <th scope="col" class="text-center">Cantidad</th>
-                                    <th scope="col">Subtotal</th>
+                                    <th><h5>Artículo</h5></th>
+                                    <th class="text-center"><h5>Precio</h5></th>
+                                    <th class="text-center"><h5>Cantidad</h5></th>
+                                    <th><h5>Subtotal</h5></th>
                                 </tr>
                             </thead>
 

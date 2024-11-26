@@ -76,6 +76,7 @@
 
     th {
         color: $texto1;
+        padding-top: 20px;
     }
 
     th:first-child {
@@ -111,7 +112,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 1.2rem;
+    font-size: $heading-font-3;
 
     .btn-quantity-cart {
         display: flex;

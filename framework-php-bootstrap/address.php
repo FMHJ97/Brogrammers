@@ -1,0 +1,197 @@
+<?php include("includes/a_config.php"); ?>
+<!DOCTYPE html>
+<html>
+
+<head>
+    <?php include("includes/head_tags.php"); ?>
+    <script src="./js/scripts.js"></script>
+</head>
+
+<body>
+    <!-- Navigation Bar -->
+    <?php include("includes/navbar.php"); ?>
+
+    <main>
+        <section class="page-section">
+
+            <div class="container ">
+                <!-- Row with titles (Carrito, dirección, pago) -->
+                <div class="row d-flex text-center page-section-heading">
+                    <div class="col">
+                        <h4 class="step-title">Carrito</h4>
+                    </div>
+
+                    <div class="col">
+                        <h4 class="step-title active">Dirección</h4>
+                    </div>
+
+                    <div class="col">
+                        <h4 class="step-title">Pago</h4>
+                    </div>
+                </div>
+
+                <!-- Row with billing and summary -->
+
+                <div class="row g-3">
+                    <div class="col-md-8 authentication-form">
+
+                        <!-- Billing form -->
+                        <div class="row">
+                            <div class="col text-start">
+                                <h5>Dirección de envío</h5>
+                            </div>
+                        </div>
+
+                        <!-- Email -->
+                        <div class="row">
+                            <div class="col">
+                                <label>Correo electrónico</label><span> *</span>
+                                <input type="email" class="form-control" placeholder="Introduzca su correo electrónico">
+                            </div>
+                        </div>
+
+                        <!-- Name and Surname -->
+                        <div class="row">
+                            <div class="col-md-6">
+                                <label>Nombre</label><span> *</span>
+                                <input type="text" class="form-control" placeholder="Introduzca su nombre">
+                            </div>
+
+                            <div class="col-md-6">
+                                <label>Apellidos</label><span> *</span>
+                                <input type="text" class="form-control" placeholder="Introduzca sus apellidos">
+                            </div>
+                        </div>
+
+                        <!-- Address -->
+                        <div class="row">
+                            <div class="col-md-6">
+                                <label>Dirección</label><span> *</span>
+                                <input type="text" class="form-control" placeholder="Introduzca su dirección">
+                            </div>
+                            <div class="col-md-6">
+                                <label>Bloque, Puerta</label><span> *</span>
+                                <input type="text" class="form-control" placeholder="Introduzca su bloque">
+                            </div>
+                        </div>
+
+                        <!-- Country and Postal Code -->
+                        <div class="row">
+                            <div class="col-md-6">
+                                <label>País</label><span> *</span>
+                                <input type="text" class="form-control" placeholder="Introduzca su país">
+                            </div>
+                            <div class="col-md-6">
+                                <label>Código Postal</label><span> *</span>
+                                <input type="text" class="form-control" placeholder="Introduzca su código postal">
+                            </div>
+                        </div>
+
+                        <!-- City and Mobile Phone -->
+                        <div class="row">
+                            <div class="col-md-6">
+                                <label>Ciudad</label><span> *</span>
+                                <input type="text" class="form-control" placeholder="Introduzca su ciudad">
+                            </div>
+                            <div class="col-md-6">
+                                <label>Teléfono móvil</label><span> *</span>
+                                <input type="text" class="form-control" placeholder="Introduzca su teléfono móvil">
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <!-- Summary -->
+                    <div class="col-md-4 container-summary">
+                        <div class="row mb-3">
+                            <div class="col text-center">
+                                <h5>Resumen</h5>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col">
+
+                                <p>Detalles del pedido</p>
+
+                                <div class="row">
+                                    <div class="col-8 text-end">
+                                        <p>Precio sin IVA</p>
+                                    </div>
+                                    <div class="col-4 text-end">
+                                        <p>50€</p>
+                                    </div>
+                                </div>
+
+                                <div class="row">
+                                    <div class="col-8 text-end">
+                                        <p>IVA</p>
+                                    </div>
+                                    <div class="col-4 text-end">
+                                        <p>10€</p>
+                                    </div>
+                                </div>
+
+                                <div class="row">
+                                    <div class="col-8 text-end">
+                                        <p>Cupón de descuento</p>
+                                    </div>
+                                    <div class="col-4 text-end">
+                                        <p>0€</p>
+                                    </div>
+                                </div>
+
+                                <div class="row">
+                                    <div class="col-8 text-end">
+                                        <p>Gastos de envío</p>
+                                    </div>
+                                    <div class="col-4 text-end">
+                                        <p>5€</p>
+                                    </div>
+                                </div>
+
+                            </div>
+
+                        </div>
+
+
+                        <p class="mb-0 discount-text">¿Tienes un código de descuento?</p>
+                        <div class="row mb-3">
+
+                            <div class="col-md-7 mb-1">
+                                <input type="text" class="form-control-discount" placeholder="Introduzca código">
+                            </div>
+
+                            <div class="col-md-5">
+                                <button type="button" class="button-apply-discount">Aplicar</button>
+                            </div>
+
+                        </div>
+
+                        <div class="row">
+
+                            <div class="col-8">
+                                <h5>Total</h5>
+                            </div>
+
+                            <div class="col-4 text-end">
+                                <h5>65€</h5>
+                            </div>
+                        </div>
+
+                        <a href="address.php" class="button-ticket">Confirmar</a>
+
+                    </div>
+
+                </div>
+            </div>
+
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <?php include("includes/footer.php"); ?>
+
+</body>
+
+</html>

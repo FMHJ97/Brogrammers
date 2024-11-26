@@ -44,9 +44,9 @@
             <!--BANDS Days -->
             <div class="container my-3">
                 <div class="row text-center text-white mt-5 mb-2">
-                    <i class="bi bi-bar-chart-fill lineup-icon-left"></i>
-                    <h2>HEADLINERS</h2>
-                    <i class="bi bi-bar-chart-fill lineup-icon-right"></i>
+                    <i class="bi bi-bar-chart-fill lineup-icon-left col-4 ms-0"></i>
+                    <h2 class="col-4" >HEADLINERS</h2>
+                    <i class="bi bi-bar-chart-fill lineup-icon-right col-4 me-0"></i>
                 </div>
                 <div class="row ">
                     <div class="colB col-md-4 ">

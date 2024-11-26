@@ -29,14 +29,11 @@
 
     h3 {
       font-family: $headings-font-family;
-      font-size: 1.3rem;
-      line-height: 2rem;
       color: $texto1;
     }
 
     span {
       font-family: $headings-font-family;
-      font-size: 1.3rem;
       color: $resaltar1;
     }
   }
@@ -73,14 +70,11 @@
 
       h3 {
         font-family: $headings-font-family;
-        font-size: 1rem;
-        line-height: 1.5rem;
         color: $texto1;
       }
 
       span {
         font-family: $headings-font-family;
-        font-size: 1rem;
         color: $resaltar1;
       }
     }
@@ -103,17 +97,14 @@
 
   .ticket-title {
     font-family: $headings-font-family;
-    font-size: 1.5rem;
   }
 
   .ticket-text {
     font-family: $body-font-family;
-    font-size: 1rem;
   }
 
   .ticket-price {
     font-family: $headings-font-family;
-    font-size: 1.5rem;
   }
 
   .button-ticket {
@@ -248,7 +239,6 @@
       background: $resaltar2;
       color: $texto2;
       font-family: $headings-font-family;
-      font-size: 1rem;
       border: 2px solid $resaltar1;
       border-radius: 10px;
       padding: 0.5em 1.2em;
@@ -284,12 +274,11 @@
 
   .titleDays h3 {
     text-align: center;
-    font-size: 1.5em;
     margin-bottom: 0.5rem;
     color: $primario2;
   }
 
-  /* img background headliners */
+  /* img background headliners */ 
   .cardHeadline.headB1 {
     //background-image: url("/assets/img/lineUp/Eminem.jpg");
     background-image: $fade-lineup, url("/assets/img/lineUp/Eminem.jpg");
@@ -321,8 +310,7 @@
       width: 100%;
       text-align: center;
       color: white;
-      font-size: 1.2em;
-      font-weight: bold;
+      font-family: $headings-font-family;
       text-shadow: 0 2px 5px rgba(0, 0, 0, 0.7);
     }
   }
@@ -401,8 +389,7 @@
     width: 100%;
     text-align: center;
     color: white;
-    font-size: 1.2em;
-    font-weight: bold;
+    font-family: $headings-font-family;
     text-shadow: 0 2px 5px rgba(0, 0, 0, 0.7);
   }
 }
@@ -451,26 +438,24 @@
     border-radius: 10px;
     background: linear-gradient(
       to bottom,
-      rgba($fondo,0%) 23%,     
-      rgba($resaltar2, 50%) 55%, 
-      $resaltar2 100%  
+      rgba($fondo, 0%) 23%,
+      rgba($resaltar2, 50%) 55%,
+      $resaltar2 100%
     );
 
     .back-content {
       align-items: center;
 
       h4 {
-        
         margin-bottom: 1rem;
         color: $texto1; // Usa tu variable de color
       }
 
       p {
-        font-size: 1em;
         color: #eee;
       }
 
-      a{
+      a {
         font-size: 25px;
         color: $texto1;
       }

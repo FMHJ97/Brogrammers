@@ -72,6 +72,12 @@ main {
     background-blend-mode: screen;
     
 }
+  
+.bg-none {
+    background: none !important;
+    background-image: none !important;
+  }
+  
 
 // Styling for page sections
 .page-section {

@@ -13,7 +13,7 @@
     <main>
         <!-- Restore Password Section-->
         <section>
-            <div class="container authentication-form">
+            <div class="container authentication-form my-5 p-5">
                 <!-- Restore Password Section Heading-->
                 <div class="row">
                     <h1>Recuperar contraseña</h1>

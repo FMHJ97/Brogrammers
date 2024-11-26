@@ -20,9 +20,12 @@
 
 .container-summary {
     background-color: $primario2;
-    padding: 20px;
     border-radius: 15px;
     margin-bottom: auto;
+
+    .col-8 {
+        font-size: $body-font-2; // Reducing the font size for better visibility
+    }
 }
 
 .item-quantity-cart {
@@ -79,6 +82,10 @@
         padding-top: 20px;
     }
 
+    td {
+        color: $texto1;
+    }
+
     th:first-child {
         text-align: left;
     }
@@ -120,7 +127,7 @@
         justify-content: center;
         width: 32px; 
         height: 32px; 
-        color: $texto2; 
+        color: $texto1; 
         font-size: 1.5rem;
         cursor: pointer;
         transition: all 0.3s ease; 
@@ -141,6 +148,6 @@
         width: 2.5ch; // For better visibility
         text-align: center;
         font-weight: bold; 
-        color: $texto2; 
+        color: $texto1; 
     }
 }

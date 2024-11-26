@@ -13,7 +13,7 @@
     <main>
         <!-- Login Section-->
         <section>
-            <div class="container authentication-form my-5">
+            <div class="container authentication-form my-5 p-5">
                 <!-- Login Section Heading-->
                 <div class="row">
                     <h1>Iniciar Sesión</h1>
@@ -44,7 +44,7 @@
                     </div>
                     <!-- Login Button and Forgot Password Link-->
                     <div class="d-flex flex-column ">
-                        <button type="submit" class="btn">Iniciar sesión</button>
+                        <button type="submit" class="btn mb-3">Iniciar sesión</button>
                         <a id="reset_pwd" href="restore_password.php" class="ms-auto">¿Olvidó su contraseña?</a>
                     </div>
                 </form>

@@ -13,7 +13,7 @@
     <main>
         <!-- Register Section-->
         <section>
-            <div class="container authentication-form">
+            <div class="container authentication-form my-5 p-5">
                 <!-- Register Section Heading-->
                 <div class="row">
                     <h1>Crear cuenta</h1>

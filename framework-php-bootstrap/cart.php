@@ -18,15 +18,15 @@
                 <!-- Row with titles (Carrito, dirección, pago) -->
                 <div class="row d-flex text-center page-section-heading">
                     <div class="col">
-                        <h4 class="step-title active">Carrito</h4>
+                        <h3 class="step-title active">Carrito</h3>
                     </div>
 
                     <div class="col">
-                        <h4 class="step-title">Dirección</h4>
+                        <h3 class="step-title">Dirección</h3>
                     </div>
 
                     <div class="col">
-                        <h4 class="step-title">Pago</h4>
+                        <h3 class="step-title">Pago</h3>
                     </div>
                 </div>
 
@@ -141,10 +141,10 @@
                     </div>
 
                     <!-- Summary -->
-                    <div class="col-md-4 container-summary">
+                    <div class="col-md-4 container-summary p-3">
                         <div class="row mb-3">
                             <div class="col text-center">
-                                <h5>Resumen</h5>
+                                <h4>Resumen</h4>
                             </div>
                         </div>
 

@@ -18,27 +18,27 @@
                 <!-- Row with titles (Carrito, dirección, pago) -->
                 <div class="row d-flex text-center page-section-heading">
                     <div class="col">
-                        <h4 class="step-title">Carrito</h4>
+                        <h3 class="step-title">Carrito</h3>
                     </div>
 
                     <div class="col">
-                        <h4 class="step-title active">Dirección</h4>
+                        <h3 class="step-title active">Dirección</h3>
                     </div>
 
                     <div class="col">
-                        <h4 class="step-title">Pago</h4>
+                        <h3 class="step-title">Pago</h3>
                     </div>
                 </div>
 
                 <!-- Row with billing and summary -->
 
-                <div class="row g-3">
-                    <div class="col-md-8 authentication-form">
+                <div class="row">
+                    <div class="col-md-7 authentication-form me-2 p-3">
 
                         <!-- Billing form -->
                         <div class="row">
                             <div class="col text-start">
-                                <h5>Dirección de envío</h5>
+                                <h4>Dirección de envío</h4>
                             </div>
                         </div>
 
@@ -102,10 +102,10 @@
                     </div>
 
                     <!-- Summary -->
-                    <div class="col-md-4 container-summary">
+                    <div class="col-md-4 container-summary p-3">
                         <div class="row mb-3">
                             <div class="col text-center">
-                                <h5>Resumen</h5>
+                                <h4>Resumen</h4>
                             </div>
                         </div>
 

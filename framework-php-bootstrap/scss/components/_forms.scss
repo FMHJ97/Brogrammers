@@ -10,8 +10,7 @@ main {
 
 // Clase para los formularios Login, Register y Restore Password.
 .authentication-form {
-    padding: 3em;
-    border-radius: 10px;
+    border-radius: 20px;
     border-style: solid;
     border-color: $primario1;
     background-color: $fondo;
@@ -22,8 +21,6 @@ main {
     font-family: $headings-font-family;
 
     @include media-breakpoint-down(md) {
-        margin-top: 4em;
-        margin-bottom: 4em;
         padding: 2em 1em 2em 1em;
     }
 
@@ -57,7 +54,6 @@ main {
         padding: 10px;
         display: flex;
         width: 100%;
-        margin-bottom: 1em;
         justify-content: center;
         align-items: center;
         &:hover {

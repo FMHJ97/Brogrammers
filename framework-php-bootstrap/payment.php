@@ -22,11 +22,11 @@
                     </div>
 
                     <div class="col">
-                        <h3 class="step-title active">Dirección</h3>
+                        <h3 class="step-title">Dirección</h3>
                     </div>
 
                     <div class="col">
-                        <h3 class="step-title">Pago</h3>
+                        <h3 class="step-title active">Pago</h3>
                     </div>
                 </div>
 
@@ -37,67 +37,63 @@
 
                         <!-- Billing form -->
                         <div class="row">
-                            <div class="col text-start">
-                                <h4>Dirección de envío</h4>
+                            <div class="col text-center">
+                                <h4>Método de pago</h4>
                             </div>
                         </div>
 
-                        <!-- Email -->
+                        <!-- Payment Method in two boxes when clicked will show the inputs for credit card or paypal -->
+                        
+                        <div class="row ">
+                            <div class="col-md-6">
+                                <div class="payment-method-box" id="credit-card-box">
+                                    <button class="btn btn-payment-method"><img src="./assets/img/visa.svg" alt="Tarjeta de crédito" class="payment-method-img img-fluid"></button>
+                                </div>
+                            </div>
+
+                            <div class="col-md-6">
+                                <div class="payment-method-box" id="paypal-box">
+                                    <button class="btn btn-payment-method"><img src="./assets/img/paypal.png" alt="Paypal" class="payment-method-img img-fluid"></button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Credit Card Inputs -->
                         <div class="row">
                             <div class="col">
-                                <label><h5>Correo electrónico</h5></label><span> *</span>
-                                <input type="email" class="form-control" placeholder="Introduzca su correo electrónico">
+                                <label><h5>Número de tarjeta</h5></label><span> *</span>
+                                <input type="text" class="form-control" placeholder="Introduzca su número de tarjeta">
                             </div>
                         </div>
 
-                        <!-- Name and Surname -->
+                        <div class="row">
+                            <div class="col">
+                                <label><h5>Nombre del titular</h5></label><span> *</span>
+                                <input type="text" class="form-control" placeholder="Introduzca el nombre del titular">
+                            </div>
+                        </div>
+
                         <div class="row">
                             <div class="col-md-6">
-                                <label><h5>Nombre</h5></label><span> *</span>
-                                <input type="text" class="form-control" placeholder="Introduzca su nombre">
+                                <label><h5>Fecha de caducidad</h5></label><span> *</span>
+                                <input type="text" class="form-control" placeholder="MM/AA">
                             </div>
-
                             <div class="col-md-6">
-                                <label><h5>Apellidos</h5></label><span> *</span>
-                                <input type="text" class="form-control" placeholder="Introduzca sus apellidos">
+                                <label><h5>CVC</h5></label><span> *</span>
+                                <input type="text" class="form-control" placeholder="Introduzca el código de seguridad">
                             </div>
                         </div>
 
-                        <!-- Address -->
+                        <!-- Paypal Inputs -->
                         <div class="row">
-                            <div class="col-md-6">
-                                <label><h5>Dirección</h5></label><span> *</span>
-                                <input type="text" class="form-control" placeholder="Introduzca su dirección">
-                            </div>
-                            <div class="col-md-6">
-                                <label><h5>Bloque, Puerta</h5></label><span> *</span>
-                                <input type="text" class="form-control" placeholder="Introduzca su bloque">
+                            <div class="col">
+                                <label><h5>Correo electrónico de Paypal</h5></label><span> *</span>
+                                <input type="email" class="form-control" placeholder="Introduzca su correo electrónico de Paypal">
                             </div>
                         </div>
 
-                        <!-- Country and Postal Code -->
-                        <div class="row">
-                            <div class="col-md-6">
-                                <label><h5>País</h5></label><span> *</span>
-                                <input type="text" class="form-control" placeholder="Introduzca su país">
-                            </div>
-                            <div class="col-md-6">
-                                <label><h5>Código Postal</h5></label><span> *</span>
-                                <input type="text" class="form-control" placeholder="Introduzca su código postal">
-                            </div>
-                        </div>
 
-                        <!-- City and Mobile Phone -->
-                        <div class="row">
-                            <div class="col-md-6">
-                                <label>Ciudad</label><span> *</span>
-                                <input type="text" class="form-control" placeholder="Introduzca su ciudad">
-                            </div>
-                            <div class="col-md-6">
-                                <label>Teléfono móvil</label><span> *</span>
-                                <input type="text" class="form-control" placeholder="Introduzca su teléfono móvil">
-                            </div>
-                        </div>
+                        
 
                     </div>
 
@@ -163,7 +159,7 @@
                             </div>
 
                             <div class="col-md-5">
-                                <button type="button" class="button-apply-discount"><h5>Aplicar</h5></button>
+                                <button type="button" class="button-apply-discount">Aplicar</button>
                             </div>
 
                         </div>

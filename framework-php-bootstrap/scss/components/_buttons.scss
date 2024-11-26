@@ -238,3 +238,14 @@ button {
   margin-top: 130px;
   text-shadow: 0px 0px 10px rgba(0, 0, 0, 0.923); /* Sombra negra con algo de difuso */
 }
+
+
+.btn-payment-method {
+  width: 100%;
+  padding: 20px;
+  border-radius: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: background-color 0.3s;
+}

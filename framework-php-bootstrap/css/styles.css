@@ -20410,6 +20410,16 @@ button {
   text-shadow: 0px 0px 10px rgba(0, 0, 0, 0.923); /* Sombra negra con algo de difuso */
 }
 
+.btn-payment-method {
+  width: 100%;
+  padding: 20px;
+  border-radius: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: background-color 0.3s;
+}
+
 nav {
   background: linear-gradient(90deg, #035951 0%, #0A0F0F 42%);
   box-shadow: -5px -5px 30px 0px #035951;
@@ -21546,6 +21556,16 @@ body .item-heading h2, body .item-heading .h2 {
   text-align: center;
   font-weight: bold;
   color: #FFFDFA;
+}
+
+.payment-method-box {
+  width: 100%;
+  text-align: center;
+}
+.payment-method-box .payment-method-img {
+  width: 50%;
+  height: 100%;
+  object-fit: contain;
 }
 
 /*# sourceMappingURL=styles.css.map */

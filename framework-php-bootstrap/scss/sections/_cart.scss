@@ -151,3 +151,15 @@
         color: $texto1; 
     }
 }
+
+.payment-method-box {
+    width: 100%;
+
+    text-align: center;
+
+    .payment-method-img {
+        width: 50%;
+        height: 100%;
+        object-fit: contain;
+    }
+}

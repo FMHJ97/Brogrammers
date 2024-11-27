@@ -20516,9 +20516,6 @@ main {
 }
 
 @media (max-width: 767.98px) {
-  .authentication-form {
-    padding: 2em 1em 2em 1em;
-  }
   button {
     font-size: 18px;
   }

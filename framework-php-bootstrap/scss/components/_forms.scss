@@ -1,12 +1,15 @@
-// 
-// Forms
-//
+// <================== Estilos - Formularios ==================>
+
+// Estilos generales de los formularios.
 main {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
 }
+
+
+// <================== Estilos - Login.php, Register.php y Restore_Password.php ==================>
 
 // Clase para los formularios Login, Register y Restore Password.
 .authentication-form {
@@ -20,28 +23,34 @@ main {
     box-shadow: 0px 0px 15px 0px $primario1;
     font-family: $headings-font-family;
 
+    // Estilo para el asterisco de los campos obligatorios.
     span {
         color: $resaltar1;
     }
 
+    // Estilo para el enlace de Regístrate.
     a {
         text-decoration: none;
         color: $resaltar1;
     }
 
+    // Estilos para los párrafos y etiquetas.
     p,
     label {
         color: $texto1;
     }
 
+    // Estilos para los inputs.
     input {
         font-family: $body-font-family;
     }
 
+    // Estilos para el checkbox.
     .form-check-input {
         accent-color: $resaltar1;
     }
 
+    // Estilo para el botón de acción.
     button {
         background-color: $resaltar1;
         color: $texto2;
@@ -52,26 +61,30 @@ main {
         width: 100%;
         justify-content: center;
         align-items: center;
+
+        // Efecto hover.
         &:hover {
             background: darken($resaltar1, 10%);
             color: $texto2;
         }
     }
 
+    // Estilo para el enlace de Restablecer contraseña.
     #reset_pwd {
         color: $textoEnlace;
     }
 }
 
+// En dispositivos móviles, el tamaño de la fuente del botón se reduce.
 @include media-breakpoint-down(md) {
-    .authentication-form {
-        padding: 2em 1em 2em 1em;
-    }
+
+    // Estilo para el botón de acción.
     button {
         font-size: $body-font-phone-1;
     }
 }
 
+// Estilos para los inputs de los formularios.
 .form-control {
     border-radius: 10px;
     border: 3px solid $primario1;
@@ -83,12 +96,16 @@ main {
     flex-direction: column;
     align-items: flex-start;
     justify-content: center;
+
+    // Efecto hover.
     &:focus {
         background-color: $fondo;
         border-color: $primario2;
         color: $resaltar2;
         box-shadow: 0px 0px 15px 0px $primario1;
     }
+
+    // Estilo para el placeholder de los inputs.
     &::placeholder {
         color: $resaltar2;
     }
@@ -99,6 +116,9 @@ main {
     background-color: $resaltar1;
     border-color: $resaltar1;
 }
+
+
+// <================== Estilos - Input Cart ==================>
 
 .form-control-discount {
     width: 100%;

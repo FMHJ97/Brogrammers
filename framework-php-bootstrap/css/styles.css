@@ -20220,7 +20220,7 @@ main {
 .btn-item-size {
   border: 2px solid #C5FCEC;
   border-radius: 5px;
-  padding: 0.5em 1em;
+  padding: 0.75em 1.25em;
 }
 .btn-item-size.selected {
   background: #C5FCEC;
@@ -20255,6 +20255,23 @@ main {
   transition: all 0.3s ease;
 }
 
+@media (max-width: 767.98px) {
+  .btn-category-group {
+    flex-direction: column;
+    gap: 0.5em;
+    margin-bottom: 2em;
+  }
+  .btn-size-group {
+    flex-wrap: wrap;
+  }
+  .btn-cart {
+    justify-content: center;
+  }
+  .btn-cart button {
+    padding: 10px 50px 10px 50px;
+    font-size: 20px;
+  }
+}
 .button-ticket, .btn-gallery, .btn-index {
   background: #C5FCEC;
   border-radius: 20px;
@@ -20295,23 +20312,6 @@ button {
   border: 0;
 }
 
-@media (max-width: 767.98px) {
-  .btn-category-group {
-    flex-direction: column;
-    gap: 0.5em;
-    margin-bottom: 2em;
-  }
-  .btn-size-group {
-    flex-wrap: wrap;
-  }
-  .btn-cart {
-    justify-content: center;
-  }
-  .btn-cart button {
-    padding: 10px 50px 10px 50px;
-    font-size: 20px;
-  }
-}
 .button-apply-discount {
   display: flex;
   width: 100%;
@@ -20339,12 +20339,16 @@ button {
   background-size: cover;
   background-position: center;
   border-radius: 25px;
-  height: 300px; /* Altura personalizada */
-  flex: 1 1 calc(50% - 1rem); /* 50% del contenedor, menos el margen */
-  max-width: calc(50% - 1rem); /* Máximo de la mitad del ancho */
+  height: 300px;
+  /* Altura personalizada */
+  flex: 1 1 calc(50% - 1rem);
+  /* 50% del contenedor, menos el margen */
+  max-width: calc(50% - 1rem);
+  /* Máximo de la mitad del ancho */
   margin: 0.5rem;
   transition: transform 0.3s, box-shadow 0.3s;
-  border: 4px solid #29F2B9; /* Borde verde */
+  border: 4px solid #29F2B9;
+  /* Borde verde */
   box-shadow: 10px 10px 15px rgba(41, 242, 185, 0.6);
 }
 
@@ -20371,13 +20375,15 @@ button {
 
 .button-text-top {
   font-size: 26px;
-  text-shadow: 0px 0px 10px rgba(0, 0, 0, 0.923); /* Sombra negra con algo de difuso */
+  text-shadow: 0px 0px 10px rgba(0, 0, 0, 0.923);
+  /* Sombra negra con algo de difuso */
 }
 
 .button-text-bottom {
   font-size: 26px;
   margin-top: 130px;
-  text-shadow: 0px 0px 10px rgba(0, 0, 0, 0.923); /* Sombra negra con algo de difuso */
+  text-shadow: 0px 0px 10px rgba(0, 0, 0, 0.923);
+  /* Sombra negra con algo de difuso */
 }
 
 .btn-payment-method {

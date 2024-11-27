@@ -196,7 +196,9 @@ button {
   font-family: $headings-font-family;
 }
 
+
 /* ===========  INFO BIG BUTTONS ================" */
+//Configuración de los 4 botones grandes de infogeneral.php
 .custom-button {
   display: flex;
   flex-direction: column;
@@ -204,59 +206,52 @@ button {
   align-items: center;
   text-align: center;
   text-decoration: none;
-  color: white;
+  color: $texto1;
   font-family: $headings-font-family;
   background-size: cover;
   background-position: center;
   border-radius: 25px;
   height: 300px;
-  /* Altura personalizada */
-  flex: 1 1 calc(50% - 1rem);
-  /* 50% del contenedor, menos el margen */
-  max-width: calc(50% - 1rem);
-  /* Máximo de la mitad del ancho */
+  width: 100%;
   margin: 0.5rem;
   transition: transform 0.3s, box-shadow 0.3s;
-
   border: 4px solid $resaltar1;
-  /* Borde verde */
   box-shadow: 10px 10px 15px rgba($resaltar1, 0.6);
 
 }
 
-.custom-button:nth-child(1) {
+//Background de cada botón.
+.infoButton1 {
   background-image: url("../assets/img/info/FestHistory1.jpg");
 }
-
-.custom-button:nth-child(2) {
+.infoButton2 {
   background-image: url("../assets/img/info/festival2.jpg");
 }
-
-.custom-button:nth-child(3) {
+.infoButton3 {
   background-image: url("../assets/img/info/Camping.png");
 }
-
-.custom-button:nth-child(4) {
+.infoButton4 {
   background-image: url("../assets/img/info/AccessibleFestivals.jpg");
 }
 
+//Efecto hover para Desktop
 .custom-button:hover {
   transform: scale(1.02);
-  box-shadow: 0 8px 12px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 8px 12px rgba($fondo, 0.3);
 }
 
+// Textos en los botones grandes
 .button-text-top {
   font-size: $heading-font-2;
-  text-shadow: 0px 0px 10px rgba(0, 0, 0, 0.923);
-  /* Sombra negra con algo de difuso */
+  text-shadow: 0px 0px 10px rgba($fondo, 0.923);
 }
-
 .button-text-bottom {
   font-size: $heading-font-2;
-  margin-top: 130px;
-  text-shadow: 0px 0px 10px rgba(0, 0, 0, 0.923);
-  /* Sombra negra con algo de difuso */
+  margin-top: 120px;
+  text-shadow: 0px 0px 10px rgba($fondo, 0.923);
 }
+
+
 
 
 .btn-payment-method {

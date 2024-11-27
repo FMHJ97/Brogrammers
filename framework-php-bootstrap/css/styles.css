@@ -20220,7 +20220,7 @@ main {
 .btn-item-size {
   border: 2px solid #C5FCEC;
   border-radius: 5px;
-  padding: 0.5em 1em;
+  padding: 0.75em 1.25em;
 }
 .btn-item-size.selected {
   background: #C5FCEC;
@@ -20255,6 +20255,23 @@ main {
   transition: all 0.3s ease;
 }
 
+@media (max-width: 767.98px) {
+  .btn-category-group {
+    flex-direction: column;
+    gap: 0.5em;
+    margin-bottom: 2em;
+  }
+  .btn-size-group {
+    flex-wrap: wrap;
+  }
+  .btn-cart {
+    justify-content: center;
+  }
+  .btn-cart button {
+    padding: 10px 50px 10px 50px;
+    font-size: 20px;
+  }
+}
 .button-ticket, .btn-gallery, .btn-index {
   background: #C5FCEC;
   border-radius: 20px;
@@ -20295,23 +20312,6 @@ button {
   border: 0;
 }
 
-@media (max-width: 767.98px) {
-  .btn-category-group {
-    flex-direction: column;
-    gap: 0.5em;
-    margin-bottom: 2em;
-  }
-  .btn-size-group {
-    flex-wrap: wrap;
-  }
-  .btn-cart {
-    justify-content: center;
-  }
-  .btn-cart button {
-    padding: 10px 50px 10px 50px;
-    font-size: 20px;
-  }
-}
 .button-apply-discount {
   display: flex;
   width: 100%;
@@ -20334,50 +20334,49 @@ button {
   align-items: center;
   text-align: center;
   text-decoration: none;
-  color: white;
+  color: #FFFDFA;
   font-family: "Krona One", sans-serif;
   background-size: cover;
   background-position: center;
   border-radius: 25px;
-  height: 300px; /* Altura personalizada */
-  flex: 1 1 calc(50% - 1rem); /* 50% del contenedor, menos el margen */
-  max-width: calc(50% - 1rem); /* Máximo de la mitad del ancho */
+  height: 300px;
+  width: 100%;
   margin: 0.5rem;
   transition: transform 0.3s, box-shadow 0.3s;
-  border: 4px solid #29F2B9; /* Borde verde */
+  border: 4px solid #29F2B9;
   box-shadow: 10px 10px 15px rgba(41, 242, 185, 0.6);
 }
 
-.custom-button:nth-child(1) {
+.infoButton1 {
   background-image: url("../assets/img/info/FestHistory1.jpg");
 }
 
-.custom-button:nth-child(2) {
+.infoButton2 {
   background-image: url("../assets/img/info/festival2.jpg");
 }
 
-.custom-button:nth-child(3) {
+.infoButton3 {
   background-image: url("../assets/img/info/Camping.png");
 }
 
-.custom-button:nth-child(4) {
+.infoButton4 {
   background-image: url("../assets/img/info/AccessibleFestivals.jpg");
 }
 
 .custom-button:hover {
   transform: scale(1.02);
-  box-shadow: 0 8px 12px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 8px 12px rgba(10, 15, 15, 0.3);
 }
 
 .button-text-top {
   font-size: 26px;
-  text-shadow: 0px 0px 10px rgba(0, 0, 0, 0.923); /* Sombra negra con algo de difuso */
+  text-shadow: 0px 0px 10px rgba(10, 15, 15, 0.923);
 }
 
 .button-text-bottom {
   font-size: 26px;
-  margin-top: 130px;
-  text-shadow: 0px 0px 10px rgba(0, 0, 0, 0.923); /* Sombra negra con algo de difuso */
+  margin-top: 120px;
+  text-shadow: 0px 0px 10px rgba(10, 15, 15, 0.923);
 }
 
 .btn-payment-method {
@@ -20516,9 +20515,6 @@ main {
 }
 
 @media (max-width: 767.98px) {
-  .authentication-form {
-    padding: 2em 1em 2em 1em;
-  }
   button {
     font-size: 18px;
   }

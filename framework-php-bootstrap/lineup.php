@@ -196,6 +196,8 @@
                     </div>
                 </div>
         </section>
+        <!-- Patrocinadores -->
+        <?php include("includes/patrocinadores.php");  ?>
     </main>
 
     <!-- Footer -->

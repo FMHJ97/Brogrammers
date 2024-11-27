@@ -20575,7 +20575,7 @@ main {
   border-radius: 10px;
   text-decoration: none;
   padding: 0;
-  transition: box-shadow 0.2s ease;
+  transition: 0.2s ease;
 }
 .card-merch-item:hover {
   box-shadow: 0px 0px 15px 0px #5F8D95;
@@ -20648,7 +20648,8 @@ main {
 
 .grid {
   gap: 16px;
-  margin: 0 auto; /* Center the grid */
+  margin: 0 auto;
+  /* Center the grid */
 }
 
 /* Optional: Basic styles for grid items */
@@ -20683,15 +20684,18 @@ main {
 
 /* Variable width classes for Masonry-like behavior */
 .grid-item--width2 {
-  grid-column: span 2; /* Take up 2 columns */
+  grid-column: span 2;
+  /* Take up 2 columns */
 }
 
 .grid-item--width3 {
-  grid-column: span 3; /* Take up 3 columns */
+  grid-column: span 3;
+  /* Take up 3 columns */
 }
 
 .grid-item--width4 {
-  grid-column: span 4; /* Take up 4 columns */
+  grid-column: span 4;
+  /* Take up 4 columns */
 }
 
 /* Variable height classes for Masonry-like behavior */
@@ -20744,7 +20748,8 @@ main {
   background-size: cover;
   background-position: center;
   height: 450px;
-  display: flex; /* Para alinear el texto si es necesario */
+  display: flex;
+  /* Para alinear el texto si es necesario */
   justify-content: center;
   align-items: center;
   color: #FFFDFA;

@@ -8,13 +8,13 @@
 </head>
 
 <body>
-    <!-- Navigation Bar -->
+    <!-- Componente NavBar -->
     <?php include("includes/navbar.php"); ?>
 
     <main>
-        <!-- Merch Item Section -->
+        <!-- Sección de Producto -->
         <section class="container page-section my-4 my-md-5 px-3 px-md-5">
-            <!-- Merch Item Title -->
+            <!-- Nombre y Precio (Oculto en dispositivos superiores a md) -->
             <div class="row d-block d-md-none mb-5">
                 <div class="col item-heading">
                     <h1>Camiseta GroundSound Blanca (Black Logo)</h1>
@@ -22,16 +22,16 @@
                 </div>
             </div>
             <div class="row">
-                <!-- Merch Item Image -->
+                <!-- Imágenes del Producto -->
                 <div class="col item-image-section">
-                    <!-- Main image -->
+                    <!-- Imagen Principal -->
                     <div class="row">
                         <div class="col main-image">
                             <img src="./assets/img/merch/camiseta_1.png" alt="Camiseta GroundSound Blanca (Black Logo)"
                                 class="img-fluid">
                         </div>
                     </div>
-                    <!-- Additional images -->
+                    <!-- Imágenes Adicionales -->
                     <div class="row">
                         <div class="col">
                             <div class="row additional-images">
@@ -55,16 +55,16 @@
                         </div>
                     </div>
                 </div>
-                <!-- Merch Item Details -->
+                <!-- Detalles del Producto -->
                 <div class="col merch-item-details">
-                    <!-- Merch Item Title & Price -->
+                    <!-- Nombre y Precio (Oculto en dispositivos móviles) -->
                     <div class="row d-none d-md-block">
                         <div class="col item-heading">
                             <h1>Camiseta GroundSound Blanca (Black Logo)</h1>
                             <h2>€25,00 EUR</h2>
                         </div>
                     </div>
-                    <!-- Merch Item Size -->
+                    <!-- Apartado Tallas (según producto) -->
                     <div class="row">
                         <p>Talla</p>
                         <div class="col btn-size-group">
@@ -75,7 +75,7 @@
                             <button type="button" class="btn btn-item-size">2XL</button>
                         </div>
                     </div>
-                    <!-- Merch Item Quantity -->
+                    <!-- Cantidad de Producto -->
                     <div class="row">
                         <p>Cantidad</p>
                         <div class="col item-quantity">
@@ -84,7 +84,7 @@
                             <button type="button" id="sumar" class="btn btn-quantity">+</button>
                         </div>
                     </div>
-                    <!-- Merch Item Add to Cart Button -->
+                    <!-- Botón Añadir al Carrito -->
                     <div class="row">
                         <div class="col btn-cart py-3">
                             <form action="#" method="POST">
@@ -92,7 +92,7 @@
                             </form>
                         </div>
                     </div>
-                    <!-- Merch Item Description -->
+                    <!-- Descripción del Producto -->
                     <div class="row">
                         <div class="col item-description">
                             <h3>Descripción</h3>
@@ -107,17 +107,17 @@
                 </div>
             </div>
         </section>
-        <!-- Suggested Products Section -->
+        <!-- Sección Productos Recomendados -->
         <section class="container page-section px-3 px-md-5">
-            <!-- Suggestions Heading -->
+            <!-- Encabezado -->
             <div class="row">
                 <div class="col suggested-items-heading pb-4">
                     <h2>También te pueden interesar</h2>
                 </div>
             </div>
-            <!-- Suggested Products -->
+            <!-- Productos Sugeridos -->
             <div class="row merch-products">
-                <!-- Merch Item 7 -->
+                <!-- Producto -->
                 <a href="./merch_item.php" class="col-12 col-md-4 card card-merch-item all-items clothes">
                     <img class="card-img-top" src="./assets/img/merch/camiseta_fallinginreverse.png"
                         alt='Camiseta "Floating" Falling in Reverse'>
@@ -126,7 +126,7 @@
                         <span>€40,00 EUR</span>
                     </div>
                 </a>
-                <!-- Merch Item 8 -->
+                <!-- Producto -->
                 <a href="./merch_item.php" class="col-12 col-md-4 card card-merch-item all-items accesories">
                     <img class="card-img-top" src="./assets/img/merch/gorra.png" alt="Gorra GroundSound Golden Forrest">
                     <div class="card-body">
@@ -134,7 +134,7 @@
                         <span>€24,50 EUR</span>
                     </div>
                 </a>
-                <!-- Merch Item 9 -->
+                <!-- Producto -->
                 <a href="./merch_item.php" class="col-12 col-md-4 card card-merch-item all-items clothes">
                     <img class="card-img-top" src="./assets/img/merch/ElFary_camiseta.png"
                         alt='Camiseta "Mandanga" El Fary'>
@@ -147,7 +147,7 @@
         </section>
     </main>
 
-    <!-- Footer -->
+    <!-- Componente Footer -->
     <?php include("includes/footer.php"); ?>
 
 </body>

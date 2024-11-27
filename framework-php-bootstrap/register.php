@@ -7,36 +7,37 @@
 </head>
 
 <body>
-    <!-- Navigation Bar -->
+    <!-- Componente NavBar -->
     <?php include("includes/navbar.php"); ?>
 
     <main>
-        <!-- Register Section-->
-        <section class="py-5">
+        <!-- Sección Crear Cuenta -->
+        <section class="py-md-5">
             <div class="container authentication-form my-5 p-5">
-                <!-- Register Section Heading-->
+                <!-- Encabezado -->
                 <div class="row">
                     <h1>Crear cuenta</h1>
                     <div class="col d-flex flex-column flex-md-row mb-3 mb-md-4">
                         <p class="mb-0">¿Ya tienes una cuenta?&nbsp;</p>
+                        <!-- Enlace a Iniciar Sesión -->
                         <a href="login.php">Inicia sesión</a>
                     </div>
                 </div>
-                <!-- Register Form-->
+                <!-- Formulario -->
                 <form action="">
-                    <!-- Full name Input-->
+                    <!-- Nombre Completo Input-->
                     <div class="mb-3 mt-3">
                         <label for="full_name">Nombre completo</label>
                         <input type="text" class="form-control" id="full_name"
                             placeholder="Introduzca su nombre completo" name="full_name">
                     </div>
-                    <!-- Email Input-->
+                    <!-- Email Input -->
                     <div class="mb-3">
                         <label for="email">Correo electrónico</label><span> *</span>
                         <input type="email" class="form-control" id="email"
                             placeholder="Introduzca su correo electrónico" name="email">
                     </div>                    
-                    <!-- Password Input-->
+                    <!-- Password Input -->
                     <div class="mb-3">
                         <label for="pwd">Contraseña</label><span> *</span>
                         <input type="password" class="form-control" id="pwd" placeholder="Introduzca su contraseña"
@@ -60,7 +61,7 @@
                             <input class="form-check-input" type="checkbox" name="terms"> Acepto los Términos de Uso.
                         </label>
                     </div>                    
-                    <!-- Register Button -->
+                    <!-- Botón Crear Cuenta -->
                     <div class="d-flex flex-column ">
                         <button type="submit" class="btn">Crear cuenta</button>
                     </div>
@@ -69,7 +70,7 @@
         </section>
     </main>
 
-    <!-- Footer -->
+    <!-- Componente Footer -->
     <?php include("includes/footer.php"); ?>
 
 </body>

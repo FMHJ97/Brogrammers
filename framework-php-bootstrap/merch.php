@@ -8,34 +8,36 @@
 </head>
 
 <body>
-    <!-- Navigation Bar -->
+    <!-- Componente Navbar -->
     <?php include("includes/navbar.php"); ?>
 
     <main>
-        <!-- Merch Heading Section -->
+        <!-- Sección de Cabecera -->
         <section class="container page-section pb-0">
             <div class="row page-section-heading">
                 <h1>GroundSound Festival Merch</h1>
                 <h2>Productos exclusivos</h2>
             </div>
         </section>
-        <!-- Merch Filter & Order by Section -->
+        <!-- Sección de Filtros y Ordenación de Merch -->
         <section class="container page-section px-3 px-md-5">
-            <!-- Merch Filter -->
+            <!-- Filtros -->
             <div class="row">
-                <!-- Buttons -->
+                <!-- Botones de Categoría -->
                 <div class="col btn-category-group">
                     <button type="button" id="all-items" class="btn btn-category-item selected">Todos los productos</button>
                     <button type="button" id="clothes" class="btn btn-category-item">Ropa</button>
                     <button type="button" id="accesories" class="btn btn-category-item">Accesorios</button>
                     <button type="button" id="music" class="btn btn-category-item">Música</button>
                 </div>
-                <!-- Search Bar -->
+                <!-- Barra de Búsqueda -->
                 <div class="col">
                     <form action="#">
                         <div class="input-group search-bar">
+                            <!-- Input de Búsqueda -->
                             <input type="text" class="form-control-search"
                                 placeholder="Buscar productos..." name="search">
+                            <!-- Botón de Búsqueda -->
                             <button class="btn btn-search" type="submit">
                                 <i class="bi bi-search"></i>
                             </button>
@@ -43,13 +45,16 @@
                     </form>
                 </div>
             </div>
-            <!-- Merch Order by -->
+            <!-- Elemento de Ordenación -->
             <div class="row mt-3">
                 <div class="dropdown dropdown-order-by">
+                    <!-- Icono de Ordenación -->
                     <i class="bi bi-filter"></i>
+                    <!-- Botón de Ordenación -->
                     <button id="dropdownMenuButton" type="button" class="btn dropdown-toggle" data-bs-toggle="dropdown">
                         Ordenar por: Relevancia
                     </button>
+                    <!-- Opciones de Ordenación -->
                     <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
                         <li><a class="dropdown-item" href="#" onclick="updateDropdownText(this)">Relevancia</a></li>
                         <li><a class="dropdown-item" href="#" onclick="updateDropdownText(this)">Precio
@@ -60,11 +65,10 @@
                 </div>
             </div>
         </section>
-        <!-- Merch Products Section -->
+        <!-- Sección de los Productos de Merch -->
         <section class="container page-section px-3 px-md-5">
-            <!-- First Row -->
             <div class="row merch-products">
-                <!-- Merch Item 1 -->
+                <!-- Producto 1 -->
                 <a href="./merch_item.php" class="col-12 col-md-4 card card-merch-item all-items clothes">
                     <img class="card-img-top" src="./assets/img/merch/camiseta_1.png"
                         alt="Camiseta GroundSound Blanca (Black Logo)">
@@ -73,7 +77,7 @@
                         <span>€25,00 EUR</span>
                     </div>
                 </a>
-                <!-- Merch Item 2 -->
+                <!-- Producto 2 -->
                 <a href="./merch_item.php" class="col-12 col-md-4 card card-merch-item all-items clothes">
                     <img class="card-img-top" src="./assets/img/merch/camiseta_2.png"
                         alt="Camiseta GroundSound Negra (Neon Logo)">
@@ -82,7 +86,7 @@
                         <span>€30,00 EUR</span>
                     </div>
                 </a>
-                <!-- Merch Item 3 -->
+                <!-- Producto 3 -->
                 <a href="./merch_item.php" class="col-12 col-md-4 card card-merch-item all-items accesories">
                     <img class="card-img-top" src="./assets/img/merch/bolsa.png" alt="Mochila Saco GroundSound Negra">
                     <div class="card-body">
@@ -90,7 +94,7 @@
                         <span>€15,00 EUR</span>
                     </div>
                 </a>
-                <!-- Merch Item 4 -->
+                <!-- Producto 4 -->
                 <a href="./merch_item.php" class="col-12 col-md-4 card card-merch-item all-items music">
                     <img class="card-img-top" src="./assets/img/merch/Vinilo_SoundGarden_SuperUnknow_2LP.png"
                         alt="Sound Garden Superunknow (Vinilo 2LP)">
@@ -99,7 +103,7 @@
                         <span>€55,00 EUR</span>
                     </div>
                 </a>
-                <!-- Merch Item 5 -->
+                <!-- Producto 5 -->
                 <a href="./merch_item.php" class="col-12 col-md-4 card card-merch-item all-items clothes">
                     <img class="card-img-top" src="./assets/img/merch/camiseta_queen.png"
                         alt="Camiseta Queen 'Jazz' 40 Aniversario">
@@ -108,7 +112,7 @@
                         <span>€32,00 EUR</span>
                     </div>
                 </a>
-                <!-- Merch Item 6 -->
+                <!-- Producto 6 -->
                 <a href="./merch_item.php" class="col-12 col-md-4 card card-merch-item all-items music">
                     <img class="card-img-top" src="./assets/img/merch/Eminem_Vinilo.png"
                         alt="The Death of Slim Shady - Coup de Grâce (Vinilo 2LP)">
@@ -117,7 +121,7 @@
                         <span>€50,00 EUR</span>
                     </div>
                 </a>
-                <!-- Merch Item 7 -->
+                <!-- Producto 7 -->
                 <a href="./merch_item.php" class="col-12 col-md-4 card card-merch-item all-items clothes">
                     <img class="card-img-top" src="./assets/img/merch/camiseta_fallinginreverse.png"
                         alt='Camiseta "Floating" Falling in Reverse'>
@@ -126,7 +130,7 @@
                         <span>€40,00 EUR</span>
                     </div>
                 </a>
-                <!-- Merch Item 8 -->
+                <!-- Producto 8 -->
                 <a href="./merch_item.php" class="col-12 col-md-4 card card-merch-item all-items accesories">
                     <img class="card-img-top" src="./assets/img/merch/gorra.png" alt="Gorra GroundSound Golden Forrest">
                     <div class="card-body">
@@ -134,7 +138,7 @@
                         <span>€24,50 EUR</span>
                     </div>
                 </a>
-                <!-- Merch Item 9 -->
+                <!-- Producto 9 -->
                 <a href="./merch_item.php" class="col-12 col-md-4 card card-merch-item all-items clothes">
                     <img class="card-img-top" src="./assets/img/merch/ElFary_camiseta.png"
                         alt='Camiseta "Mandanga" El Fary'>
@@ -148,7 +152,7 @@
 
     </main>
 
-    <!-- Footer -->
+    <!-- Componente Footer -->
     <?php include("includes/footer.php"); ?>
 
 </body>

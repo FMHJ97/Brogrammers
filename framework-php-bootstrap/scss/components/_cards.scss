@@ -26,9 +26,11 @@
     text-align: center;
     background: $fade-merch-item-cards;
     border-radius: 0 0 7px 7px;
+    color: $texto1;
 
     span {
       font-family: $headings-font-family;
+      font-size: $heading-font-4;
       color: $resaltar1;
     }
   }

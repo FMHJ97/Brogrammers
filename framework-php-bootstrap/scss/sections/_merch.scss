@@ -168,10 +168,11 @@ body {
 
     .form-control-search {
         border: 2px outset $resaltar1;
-        padding: 0.5em 1em;
+        padding: 0.5em 0.5em;
         border-radius: 20px;
         transition: border-color 0.3s;
         flex-grow: 1 !important;
+        font-size: $body-font-1;
 
         &:focus {
             border-color: darken($resaltar1, 10%);
@@ -210,5 +211,15 @@ body {
 
     .search-bar {
         padding-left: 0;
+        
+        .form-control-search {
+            font-size: $body-font-phone-1;
+        }
+
+        .btn-search {
+            i {
+                font-size: 1.25rem;
+            }
+        }
     }
 }

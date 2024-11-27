@@ -85,7 +85,7 @@
 // Botón de Añadir al Carrito.
 .btn-cart {
   display: flex;
-  justify-content: center;
+  justify-content: start;
   align-items: center;
   font-family: $headings-font-family;
   white-space: nowrap;
@@ -99,7 +99,7 @@
 
     &:hover {
       color: $texto2;
-      background-color: $resaltar1;
+      background-color: darken($color: $resaltar1, $amount: 10);
       transition: all 0.3s ease;
     }
   }
@@ -162,6 +162,8 @@ button {
   }
 
   .btn-cart {
+    justify-content: center;
+    
     button {
       padding: 10px 50px 10px 50px;
       font-size: $heading-font-phone-3;

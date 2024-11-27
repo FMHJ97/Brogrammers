@@ -37,7 +37,7 @@
                             name="pswd">
                     </div>
                     <!-- Remember me checkbox-->
-                    <div class="form-check mb-5">
+                    <div class="form-check mb-4">
                         <label class="form-check-label">
                             <input class="form-check-input" type="checkbox" name="remember"> Recuérdame
                         </label>

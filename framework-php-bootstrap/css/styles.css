@@ -20109,7 +20109,7 @@ body h5, body .h5 {
 
 @media (max-width: 767.98px) {
   body {
-    font-size: 18px;
+    font-size: 14px;
   }
   body h1, body .h1 {
     font-size: 28px;
@@ -20479,11 +20479,6 @@ main {
   box-shadow: 0px 0px 15px 0px #035951;
   font-family: "Krona One", sans-serif;
 }
-@media (max-width: 767.98px) {
-  .authentication-form {
-    padding: 2em 1em 2em 1em;
-  }
-}
 .authentication-form span {
   color: #29F2B9;
 }
@@ -20505,7 +20500,7 @@ main {
   background-color: #29F2B9;
   color: #0A0F0F;
   border-radius: 10px;
-  font-size: 1.5rem;
+  font-size: 20px;
   padding: 10px;
   display: flex;
   width: 100%;
@@ -20513,14 +20508,21 @@ main {
   align-items: center;
 }
 .authentication-form button:hover {
-  background-color: #29F2B9;
-  box-shadow: 0px 0px 10px 0px #29F2B9;
-  transition: 0.2s ease-in-out;
+  background: rgb(13.2863436123, 218.7136563877, 160.4581497797);
+  color: #0A0F0F;
 }
 .authentication-form #reset_pwd {
   color: #FFFDFA;
 }
 
+@media (max-width: 767.98px) {
+  .authentication-form {
+    padding: 2em 1em 2em 1em;
+  }
+  button {
+    font-size: 18px;
+  }
+}
 .form-control {
   border-radius: 10px;
   border: 3px solid #035951;
@@ -20564,6 +20566,7 @@ main {
 }
 .form-control-discount::placeholder {
   font-size: 16px;
+  color: #C5FCEC;
 }
 
 .card-merch-item {
@@ -20744,7 +20747,7 @@ main {
   display: flex; /* Para alinear el texto si es necesario */
   justify-content: center;
   align-items: center;
-  color: white;
+  color: #FFFDFA;
   text-align: center;
 }
 .box-area-fondo .bgroundTicketInfo .buttonInfo,
@@ -20815,7 +20818,7 @@ main {
   bottom: 10px;
   width: 100%;
   text-align: center;
-  color: white;
+  color: #FFFDFA;
   font-family: "Krona One", sans-serif;
   text-shadow: 0 2px 5px rgba(0, 0, 0, 0.7);
 }
@@ -20889,7 +20892,7 @@ main {
   bottom: 10px;
   width: 100%;
   text-align: center;
-  color: white;
+  color: #FFFDFA;
   font-family: "Krona One", sans-serif;
   text-shadow: 0 2px 5px rgba(0, 0, 0, 0.7);
 }
@@ -20940,7 +20943,7 @@ main {
   color: #FFFDFA;
 }
 .flip-card .flip-card-back .back-content p {
-  color: #eee;
+  color: #FFFDFA;
 }
 .flip-card .flip-card-back .back-content a {
   font-size: 25px;
@@ -20949,15 +20952,16 @@ main {
 
 .patro-seccion {
   background-color: #0A0F0F;
-  border: 2px solid white;
+  border: 2px solid #FFFDFA;
+  border-radius: 10px;
   margin-bottom: 5rem;
   margin-top: 3rem;
-  box-shadow: 0 0 10px rgb(255, 255, 255), 0 0 20px rgba(255, 255, 255, 0.8), 0 0 35px rgba(255, 255, 255, 0.6), 0 0 50px rgba(255, 255, 255, 0.4);
+  box-shadow: 0 0 10px #fffdfa, 0 0 20px rgba(255, 253, 250, 0.8), 0 0 35px rgba(255, 253, 250, 0.6), 0 0 50px rgba(255, 253, 250, 0.4);
 }
 .patro-seccion #patro-titulo {
   text-align: center;
   justify-content: center;
-  color: white;
+  color: #FFFDFA;
 }
 .patro-seccion #patro-fila {
   /*border: 1px solid red;*/
@@ -21038,7 +21042,7 @@ main {
 .festival-location {
   background-color: #29F2B9;
   color: #FFFDFA;
-  font-size: 36px;
+  font-size: 30px;
   font-family: "Krona One", sans-serif;
   font-weight: 400;
   padding-inline: 1rem;
@@ -21048,7 +21052,7 @@ main {
   color: #29F2B9;
   font-family: "Krona One", sans-serif;
   font-weight: 400;
-  font-size: 36px;
+  font-size: 30px;
 }
 
 /* Custom modal dialog to limit size */

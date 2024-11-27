@@ -49,7 +49,7 @@
     line-height: 1; /* Adjust line height if needed */
   }
   .festival {
-    font-size: 18vw;  
+    font-size: 18vw;
     font-family: $logo-font-custom;
     color: $texto1;
     text-shadow: 
@@ -70,7 +70,7 @@
   .festival-location {
     background-color: $resaltar1;
     color: $texto1;
-    font-size: 36px;
+    font-size: $heading-font-1;
     font-family: $headings-font-family;
     font-weight: $headings-font-weight;
     padding-inline: 1rem;
@@ -79,7 +79,7 @@
     color: $resaltar1;
     font-family: $headings-font-family;
     font-weight: $headings-font-weight;
-    font-size: 36px;
+    font-size: $heading-font-1;
   }
 
   

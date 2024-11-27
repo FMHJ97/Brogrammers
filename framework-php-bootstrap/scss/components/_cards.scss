@@ -202,7 +202,7 @@
     display: flex; /* Para alinear el texto si es necesario */
     justify-content: center;
     align-items: center;
-    color: white;
+    color: $texto1;
     text-align: center;
 
     .buttonInfo {
@@ -281,7 +281,7 @@
       bottom: 10px;
       width: 100%;
       text-align: center;
-      color: white;
+      color: $texto1;
       font-family: $headings-font-family;
       text-shadow: 0 2px 5px rgba(0, 0, 0, 0.7);
     }
@@ -361,7 +361,7 @@
     bottom: 10px;
     width: 100%;
     text-align: center;
-    color: white;
+    color: $texto1;
     font-family: $headings-font-family;
     text-shadow: 0 2px 5px rgba(0, 0, 0, 0.7);
   }
@@ -422,11 +422,11 @@
 
       h4 {
         margin-bottom: 1rem;
-        color: $texto1; // Usa tu variable de color
+        color: $texto1;
       }
 
       p {
-        color: #eee;
+        color: $texto1;
       }
 
       a {

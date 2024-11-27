@@ -20,10 +20,6 @@ main {
     box-shadow: 0px 0px 15px 0px $primario1;
     font-family: $headings-font-family;
 
-    @include media-breakpoint-down(md) {
-        padding: 2em 1em 2em 1em;
-    }
-
     span {
         color: $resaltar1;
     }
@@ -50,21 +46,29 @@ main {
         background-color: $resaltar1;
         color: $texto2;
         border-radius: 10px;
-        font-size: 1.5rem;
+        font-size: $body-font-1;
         padding: 10px;
         display: flex;
         width: 100%;
         justify-content: center;
         align-items: center;
         &:hover {
-            background-color: $resaltar1;
-            box-shadow: 0px 0px 10px 0px $resaltar1;
-            transition: 0.2s ease-in-out;
+            background: darken($resaltar1, 10%);
+            color: $texto2;
         }
     }
 
     #reset_pwd {
         color: $textoEnlace;
+    }
+}
+
+@include media-breakpoint-down(md) {
+    .authentication-form {
+        padding: 2em 1em 2em 1em;
+    }
+    button {
+        font-size: $body-font-phone-1;
     }
 }
 
@@ -113,5 +117,6 @@ main {
 
     &::placeholder {
         font-size: $body-font-2;
+        color: $resaltar2;
     }
 }

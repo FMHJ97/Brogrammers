@@ -46,7 +46,7 @@ body {
 // Global body styles - Mobile
 @include media-breakpoint-down(md) {
     body {
-        font-size: $body-font-phone-1;
+        font-size: $body-font-phone-2;
 
         h1 {
             font-size: $heading-font-phone-1;

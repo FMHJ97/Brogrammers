@@ -20313,14 +20313,14 @@ button {
   }
 }
 .button-apply-discount {
+  display: flex;
   width: 100%;
   background: #C5FCEC;
   border-radius: 20px;
   padding: auto;
   align-items: center;
   justify-content: center;
-  position: relative;
-  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+  box-shadow: 0px 4px 4px 0px rgba(10, 15, 15, 0.25);
   text-decoration: none;
   color: #0A0F0F;
   font-family: "Krona One", sans-serif;
@@ -20575,7 +20575,7 @@ main {
   border-radius: 10px;
   text-decoration: none;
   padding: 0;
-  transition: box-shadow 0.2s ease;
+  transition: 0.2s ease;
 }
 .card-merch-item:hover {
   box-shadow: 0px 0px 15px 0px #5F8D95;
@@ -20648,7 +20648,8 @@ main {
 
 .grid {
   gap: 16px;
-  margin: 0 auto; /* Center the grid */
+  margin: 0 auto;
+  /* Center the grid */
 }
 
 /* Optional: Basic styles for grid items */
@@ -20683,15 +20684,18 @@ main {
 
 /* Variable width classes for Masonry-like behavior */
 .grid-item--width2 {
-  grid-column: span 2; /* Take up 2 columns */
+  grid-column: span 2;
+  /* Take up 2 columns */
 }
 
 .grid-item--width3 {
-  grid-column: span 3; /* Take up 3 columns */
+  grid-column: span 3;
+  /* Take up 3 columns */
 }
 
 .grid-item--width4 {
-  grid-column: span 4; /* Take up 4 columns */
+  grid-column: span 4;
+  /* Take up 4 columns */
 }
 
 /* Variable height classes for Masonry-like behavior */
@@ -20744,7 +20748,8 @@ main {
   background-size: cover;
   background-position: center;
   height: 450px;
-  display: flex; /* Para alinear el texto si es necesario */
+  display: flex;
+  /* Para alinear el texto si es necesario */
   justify-content: center;
   align-items: center;
   color: #FFFDFA;
@@ -21103,51 +21108,39 @@ main {
 .footer {
   box-shadow: -5px -5px 30px 0px #035951;
 }
-
-#socialMedia {
+.footer #socialMedia {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
 }
-#socialMedia h2, #socialMedia .h2 {
+.footer #socialMedia h2, .footer #socialMedia .h2 {
   color: #29F2B9;
 }
-#socialMedia a {
+.footer #socialMedia a {
   color: #FFFDFA;
   font-size: 35px;
   transition: all 0.05s ease;
 }
-#socialMedia a:hover {
+.footer #socialMedia a:hover {
   color: #29F2B9;
 }
-
-#linksFooter a {
+.footer #linksFooter a {
   color: #FFFDFA;
   font-family: "Krona One", sans-serif;
   font-size: 16px;
   text-decoration: none;
   transition: all 0.05s ease;
 }
-#linksFooter a:hover {
+.footer #linksFooter a:hover {
   color: #29F2B9;
 }
-#linksFooter small, #linksFooter .small {
+.footer #linksFooter small, .footer #linksFooter .small {
   font-family: "Maven Pro", sans-serif;
   color: #5F8D95;
 }
 
-body .item-heading {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  gap: 0.25em;
-  margin-top: 1em;
-}
-body .item-heading h1, body .item-heading .h1 {
-  color: #FFFDFA;
-}
-body .item-heading h2, body .item-heading .h2 {
+main .item-heading h2, main .item-heading .h2 {
   color: #29F2B9;
 }
 
@@ -21162,9 +21155,6 @@ body .item-heading h2, body .item-heading .h2 {
   border-radius: 5px;
   max-width: 400px;
 }
-.item-image-section .additional-images {
-  display: flex;
-}
 .item-image-section .additional-images img {
   max-width: 75px;
 }
@@ -21177,10 +21167,6 @@ body .item-heading h2, body .item-heading .h2 {
     max-width: 50px;
   }
 }
-.suggested-items-heading {
-  display: flex;
-  flex-direction: column;
-}
 .suggested-items-heading h2, .suggested-items-heading .h2 {
   color: #FFFDFA;
 }
@@ -21191,6 +21177,7 @@ body .item-heading h2, body .item-heading .h2 {
   justify-content: start;
   gap: 2em;
   color: #FFFDFA;
+  font-size: 20px;
 }
 .merch-item-details .item-heading {
   display: flex;
@@ -21212,6 +21199,8 @@ body .item-heading h2, body .item-heading .h2 {
   margin-left: 12px;
   gap: 0.25em;
   flex-grow: 0;
+  padding-top: 5px;
+  padding-bottom: 5px;
   border: 2px solid #C5FCEC;
   border-radius: 5px;
   font-family: "Krona One", sans-serif;
@@ -21240,7 +21229,7 @@ body .item-heading h2, body .item-heading .h2 {
     margin-top: 3em;
   }
   .merch-item-details .item-quantity {
-    gap: 0;
+    gap: 0.5em;
   }
   .merch-item-details .item-quantity #quantity {
     width: 1.5ch;
@@ -21266,10 +21255,10 @@ body .item-heading h2, body .item-heading .h2 {
 }
 .search-bar .form-control-search {
   border: 2px outset #29F2B9;
-  padding: 0.5em 0.5em;
+  padding: 0.1em 0.5em;
   border-radius: 20px;
   transition: border-color 0.3s;
-  flex-grow: 1 !important;
+  flex-grow: 1;
   font-size: 20px;
 }
 .search-bar .form-control-search:focus {
@@ -21286,7 +21275,7 @@ body .item-heading h2, body .item-heading .h2 {
 .search-bar .btn-search i {
   color: #0A0F0F;
   padding-right: 0.4rem;
-  font-size: 1.5rem;
+  font-size: 1.25rem;
 }
 .search-bar .btn-search:hover {
   background: rgb(13.2863436123, 218.7136563877, 160.4581497797);

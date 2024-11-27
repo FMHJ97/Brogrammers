@@ -61,25 +61,25 @@
                         <!-- Credit Card Inputs -->
                         <div class="row">
                             <div class="col">
-                                <label><h5>Número de tarjeta</h5></label><span> *</span>
+                                <label>Número de tarjeta</label><span> *</span>
                                 <input type="text" class="form-control" placeholder="Introduzca su número de tarjeta">
                             </div>
                         </div>
 
                         <div class="row">
                             <div class="col">
-                                <label><h5>Nombre del titular</h5></label><span> *</span>
+                                <label>Nombre del titular</label><span> *</span>
                                 <input type="text" class="form-control" placeholder="Introduzca el nombre del titular">
                             </div>
                         </div>
 
                         <div class="row">
                             <div class="col-md-6">
-                                <label><h5>Fecha de caducidad</h5></label><span> *</span>
+                                <label>Fecha de caducidad</label><span> *</span>
                                 <input type="text" class="form-control" placeholder="MM/AA">
                             </div>
                             <div class="col-md-6">
-                                <label><h5>CVC</h5></label><span> *</span>
+                                <label>CVC</label><span> *</span>
                                 <input type="text" class="form-control" placeholder="Introduzca el código de seguridad">
                             </div>
                         </div>

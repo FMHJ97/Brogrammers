@@ -1,42 +1,55 @@
 // 
-// Footer
+// Componente Footer
 // 
 .footer {
-    box-shadow: -5px -5px 30px 0px $primario1;
-}
-#socialMedia {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    // Título
-    h2 {
-        color: $resaltar1;
-    }
-    // Iconos
-    a {
-        color: $textoEnlace;
-        font-size: 35px;
-        transition: all 0.05s ease;
-    }
-    a:hover {
-        color: $resaltar1;
-    }
-}
+    box-shadow: -5px -5px 30px 0px $primario1; // Sombra en la parte superior del footer.
 
-#linksFooter {
-    a {
-        color: $textoEnlace;
-        font-family: $headings-font-family;
-        font-size: $body-font-2;
-        text-decoration: none;
-        transition: all 0.05s ease;
+    // Estilos para los enlaces a las redes sociales.
+    #socialMedia {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+        // Título.
+        h2 {
+            color: $resaltar1;
+        }
+
+        // Iconos.
+        a {
+            color: $textoEnlace;
+            font-size: 35px;
+            transition: all 0.05s ease; // Efecto de transición al pasar el ratón por encima.
+        }
+
+        // Efecto hover sobre los iconos.
+        a:hover {
+            color: $resaltar1;
+        }
     }
-    a:hover {
-        color: $resaltar1;
-    }
-    small {
-        font-family: $body-font-family;
-        color: $secundario2;
+
+    // Estilos para los enlaces del footer (enlaces de interés).
+    #linksFooter {
+
+        // Lista de enlaces.
+        a {
+            color: $textoEnlace;
+            font-family: $headings-font-family;
+            font-size: $body-font-2;
+            text-decoration: none; // Quitamos el subrayado de los enlaces.
+            transition: all 0.05s ease; // Efecto de transición al pasar el ratón por encima.
+        }
+
+        // Efecto hover sobre los enlaces.
+        a:hover {
+            color: $resaltar1;
+        }
+
+        // Texto pequeño (Copyright).
+        small {
+            font-family: $body-font-family;
+            color: $secundario2;
+        }
     }
 }

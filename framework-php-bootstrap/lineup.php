@@ -40,14 +40,12 @@
 
 
 
-        <!--BANDS Days -->
+        <!--Lista de Bandas -->
         <section class="container page-section">
-            <!--BANDS Days -->
+            <!--Bandas Principales -->
             <div class="container my-3">
                 <div class="row text-center text-white mt-5 mb-2">
-                <!--<i class="bi bi-bar-chart-fill lineup-icon-left col-4"></i>-->
                     <h2 class="col-12">HEADLINERS</h2>
-                    <!--<i class="bi bi-bar-chart-fill lineup-icon-right col-4"></i>-->
                 </div>
                 <div class="row ">
                     <div class="colB col-md-4 ">
@@ -75,9 +73,11 @@
                                             <div class="col-4">
                                                 <a href="https://www.tiktok.com/"><i class="bi bi-tiktok"></i></a>
                                             </div>
+                                            <!-- Twitter - X  -->
                                             <div class="col-4">
                                                 <a href="https://www.x.com/"><i class="bi bi-twitter-x"></i></a>
                                             </div>
+                                            <!-- Youtube -->
                                             <div class="col-4">
                                                 <a href="https://www.youtube.com/"><i class="bi bi-youtube"></i></a>
                                             </div>
@@ -90,7 +90,7 @@
                                                 <a href="https://www.gmail.com/"><i class="bi bi-envelope-fill"></i></a>
                                             </div>
                                         </div>
-                                        <div class="row mb-1"><!-- tres formas diferentes de spotify-->
+                                        <div class="row mb-1"><!-- Tres formas diferentes de iframe para spotify-->
                                             <!-- <iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/4xkOaSrkexMciUUogZKVTS?utm_source=generator&theme=0" width="100%" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>-->
                                             <iframe style="border-radius:12px"
                                                 src="https://open.spotify.com/embed/playlist/37i9dQZF1DZ06evO4gTUOY?utm_source=generator"
@@ -124,7 +124,7 @@
                 </div>
             </div>
 
-            <!--Rest Bands -->
+            <!-- Bandas Secundarias -->
             <div class="container my-5">
                 <div class="row text-center text-white">
                     <h3>INCLUDING</h3>
@@ -194,7 +194,8 @@
                 </div>
         </section>
 
-
+        <!-- Patrocinadores -->
+        <?php include("includes/patrocinadores.php");  ?>                                         
 
 
     </main>

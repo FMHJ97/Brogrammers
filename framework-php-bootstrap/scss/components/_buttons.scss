@@ -251,12 +251,37 @@ button {
   text-shadow: 0px 0px 10px rgba($fondo, 0.923);
 }
 
+<<<<<<< HEAD
 
 
 
+=======
+/* Botones de método de pago */
+>>>>>>> edb2829f6b0aca7825cd7f142c9e6b2c785bad40
 .btn-payment-method {
-  border-radius: 20px;
-  justify-content: center;
-  align-items: center;
-  transition: background-color 0.3s;
+  height: 90px !important; /* Altura fija para ambos botones */
+  border-radius: 20px; /* Bordes redondeados */
+  display: flex;
+  align-items: center; /* Centrar verticalmente */
+  justify-content: center; /* Centrar horizontalmente */
+  padding: 10px;
+
+  &.selected {
+    background-color: $resaltar1 !important; /* Cambia el color al estar seleccionado */
+  }
+
+  &:not(.selected) {
+    background-color: $fondo !important; /* Color de fondo por defecto */
+    border: 3px solid $resaltar1;
+    border-radius: 20px;
+  }
+}
+
+/* Estilos de los botones de método de pago en móviles */
+@include media-breakpoint-down(md) {
+
+  .payment-method-img {
+    max-width: 50%; /* Limita el ancho para evitar desbordamiento */
+  }
+
 }

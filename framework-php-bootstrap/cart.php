@@ -218,7 +218,7 @@
                             </div>
                         </div>
 
-                        <a href="address.php" class="button-ticket">Confirmar</a>
+                        <a href="address.php" class="button-ticket">Continuar</a>
 
                     </div>
 

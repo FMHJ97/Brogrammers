@@ -19,12 +19,12 @@
                 <h1 class="text-center">PRIVACY POLICY</h1>
             </div>
 
-            <!-- Recuadro blanco con contenido --><!-- PRIVACY POLICY -->
-            <div class="container bg-white text-black shadow-sm rounded-3 ">
+            <!-- Recuadro con contenido --><!-- PRIVACY POLICY -->   
+            <div class="container bg-white text-black shadow-sm rounded-3 p-5 ">
                 <h4 class="text-center mb-4 py-3">TRATAMIENTO DE DATOS PERSONALES Y POLÍTICA DE PRIVACIDAD</h4>
                 <div class="mb-4">
                     <h5><b>1. ¿QUIÉN ES EL RESPONSABLE DEL TRATAMIENTO DE TUS DATOS?</b></h5>
-                    <p>
+                    <p>  
                         <b>Identidad:</b> GroundSound S.L.U. B06660666<br>
                         <b>Dirección postal:</b> C/ El Peso 666, Lucena 14900<br>
                         <b>Correo electrónico:</b> info@groundsound.luc
@@ -50,7 +50,7 @@
                 </div>
                 <div class="mb-4">
                     <h5><b>5. ¿A QUÉ DESTINATARIOS SE COMUNICARÁN TUS DATOS?</b></h5>
-                    <p>
+                    <p>    <!-- separo en parrafos -->
                         Los datos podrán ser tratados por diversos encargados de tratamiento con el fin de poder utilizar los servicios de la web. Dichos encargados de tratamiento se encuentran legitimados para tratar sus datos en la ejecución del contrato del encargo con cláusula de confidencialidad incluida. Los encargados de tratamiento en ningún caso podrán ceder tus datos.
                     </p>
                     <p>
@@ -85,8 +85,8 @@
                 <h1 class="text-center">TERMS AND CONDITIONS</h1>
             </div>
 
-            <!-- Recuadro blanco con contenido --><!-- TERMS AND CONDITIONS. -->
-            <div class="container bg-white text-black shadow-sm  pt-3 pb-2 rounded-3">
+            <!-- Recuadro con contenido --><!-- TERMS AND CONDITIONS. -->
+            <div class="container bg-white text-black shadow-sm  rounded-3 p-5">
                 <h4 class="text-center mb-4 py-3">TERMS Y CONDITIONS</h4>
                 <div class="mb-4">
                     <p>
@@ -104,42 +104,8 @@
 
 
 
-
+        <!-- COMPONENTE -   CONTACT US -->
         <?php include("includes/contactus.php");  ?>
-
-        <!-- CONTACT US -->
-      <!--  <section id="contact" class="container page-section">
-            <!-- Título fuera del recuadro --> <!-- CONTACT US -->
-       <!--     <div class="container page-section-heading  mb-2">
-                <h1 class="text-center">CONTACT US</h1>
-            </div>
-
-            <!-- Recuadro blanco con contenido --> <!-- CONTACT US -->
-       <!--     <div class="container bg-white text-black shadow-sm rounded-3">
-                <div class="mb-5">
-                    <h4 class="pt-3">CUSTOMER SERVICE & ALL GENERAL ENQUIRIES</h4>
-                    <p>Please contact <a href="mailto:info@groundsound.luc">info@groundsound.luc</a></p>
-                </div>
-
-                <div class="mb-4">
-                    <h5>LOST PROPERTY</h5>
-                    <p>Please contact <a href="mailto:lostandfound@groundsound.luc">lostandfound@groundsound.luc</a></p>
-                </div>
-
-                <div class="mb-4">
-                    <h5>MEDIA ENQUIRES</h5>
-                    <p>Please contact <a href="mailto:gsupstream@groundsound.luc">gsupstream@groundsound.luc</a></p>
-                </div>
-
-                <div class="mb-4 pb-2">
-                    <h5>ACCESSIBILITY ENQUIRIES</h5>
-                    <p class="mb-3">Please contact <a href="mailto:gsupstream@groundsound.luc">gsupstream@groundsound.luc</a></p>
-                </div>
-            </div>
-
-
-        </section>-->
-
     </main>
 
     <!-- Footer -->

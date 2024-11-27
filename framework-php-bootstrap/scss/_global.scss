@@ -13,7 +13,7 @@ html {
     scroll-padding-top: calc(#{$navbar-height} - 1px);
 }
 
-// Global body styles - Desktop
+// Estilos para los elementos dentro de la etiqueta body.
 body {
     background-color: $fondo;
     font-family: $body-font-family;
@@ -21,11 +21,13 @@ body {
     color: $texto1;
     font-size: $body-font-2;
 
+    // Estilos para las etiquetas heading.
     h1, h2, h3, h4, h5, h6 {
         font-family: $headings-font-family;
         font-weight: $headings-font-weight;
     }
 
+    // Asignamos el tamaño de fuente a las etiquetas heading.
     h1 {
         font-size: $heading-font-1;
     }
@@ -43,7 +45,7 @@ body {
     }
 }
 
-// Global body styles - Mobile
+// Ajustamos el tamaño de fuente de las etiquetas heading.
 @include media-breakpoint-down(md) {
     body {
         font-size: $body-font-phone-2;

@@ -22,8 +22,7 @@
             <div class="row btn-category-group justify-content-center">
                 <div class="d-flex flex-wrap justify-content-center">
                     <div class="col-12 col-md-3 mb-2 px-2">
-                        <button type="button" id="history" class="btn btn-category-item selected w-100">Full
-                            Lineup</button>
+                        <button type="button" id="history" class="btn btn-category-item selected w-100">Full Lineup</button>
                     </div>
                     <div class="col-4 col-md-3  mb-2 px-2">
                         <button type="button" id="tickets" class="btn btn-category-item w-100">Thursday</button>
@@ -40,25 +39,25 @@
 
 
 
-        <!--BANDS Days -->
+        <!--Bandas Principales -->
         <section class="container page-section">
-            <!--BANDS Days -->
             <div class="container my-3">
+                <!-- Título  de Bandas Principales -->
                 <div class="row text-center text-white mt-5 mb-2">
-                <!--<i class="bi bi-bar-chart-fill lineup-icon-left col-4"></i>-->
                     <h2 class="col-12">HEADLINERS</h2>
-                    <!--<i class="bi bi-bar-chart-fill lineup-icon-right col-4"></i>-->
                 </div>
+                <!-- Contenedor imagenes Bandas Principales -->
                 <div class="row ">
+                    <!-- BANDA 1 -->
                     <div class="colB col-md-4 ">
                         <div class="titleDays">
                             <h3>Thursday</h3>
                         </div>
-                        <!--  Flip Card  -->
+                        <!--  Flip Card  --><!-- PRUEBA DE FLIP PARA CUANDO SE HAGA LA PARTE FUNCIONAL DE LA WEB... No la tengas en cuentaaaaaa Alberto!  Que habrá código repetido de esta parte en el sass!! -->
                         <div class="flip-card">
                             <div class="flip-card-inner">
                                 <!-- Front -->
-                                <div class="flip-card-front card cardHeadline headB1">
+                                <div class="flip-card-front card cardBand bandPrincipal headB1">
                                     <div class="artist-name">Eminem</div>
                                 </div>
                                 <!-- Back -->
@@ -68,6 +67,7 @@
                                             <h4>Eminem</h4>
                                         </div>
                                         <div class="row mb-2">
+                                            <!-- Instagram -->
                                             <div class="col-4">
                                                 <a href="https://www.instagram.com/"><i class="bi bi-instagram"></i></a>
                                             </div>
@@ -75,9 +75,11 @@
                                             <div class="col-4">
                                                 <a href="https://www.tiktok.com/"><i class="bi bi-tiktok"></i></a>
                                             </div>
+                                            <!-- X -->
                                             <div class="col-4">
                                                 <a href="https://www.x.com/"><i class="bi bi-twitter-x"></i></a>
                                             </div>
+                                            <!-- Youtube -->
                                             <div class="col-4">
                                                 <a href="https://www.youtube.com/"><i class="bi bi-youtube"></i></a>
                                             </div>
@@ -90,7 +92,7 @@
                                                 <a href="https://www.gmail.com/"><i class="bi bi-envelope-fill"></i></a>
                                             </div>
                                         </div>
-                                        <div class="row mb-1"><!-- tres formas diferentes de spotify-->
+                                        <div class="row mb-1"><!-- Tres formas diferentes del iframe para spotify--><!-- Revisar cual queda mejor -->
                                             <!-- <iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/4xkOaSrkexMciUUogZKVTS?utm_source=generator&theme=0" width="100%" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>-->
                                             <iframe style="border-radius:12px"
                                                 src="https://open.spotify.com/embed/playlist/37i9dQZF1DZ06evO4gTUOY?utm_source=generator"
@@ -103,21 +105,22 @@
                                 </div>
                             </div>
                         </div>
-
                     </div>
+                    <!-- BANDA 2 -->
                     <div class="colB col-md-4 ">
                         <div class="titleDays">
                             <h3>Friday</h3>
                         </div>
-                        <div class="card cardHeadline headB2 ">
+                        <div class="card cardBand bandPrincipal headB2 ">
                             <div class="artist-name">Los del Río</div>
                         </div>
                     </div>
+                    <!-- BANDA 3 -->
                     <div class="colB col-md-4 ">
                         <div class="titleDays">
                             <h3>Saturday</h3>
                         </div>
-                        <div class="card cardHeadline headB3">
+                        <div class="card cardBand bandPrincipal headB3">
                             <div class="artist-name">SoundGarden</div>
                         </div>
                     </div>
@@ -131,72 +134,68 @@
                 </div>
                 <div class="row  cols-4">
                     <div class="col-12 col-md-3 colB ">
-                        <div class="card cardIncluding incB1">
+                        <div class="card cardBand bandSecundary incB1">
                             <div class="artist-name">Alice in Chains</div>
                         </div>
                     </div>
 
                     <div class="col-12 col-md-3 colB">
-                        <div class="card cardIncluding incB2">
+                        <div class="card cardBand bandSecundary incB2">
                             <div class="artist-name">50 cent</div>
                         </div>
                     </div>
                     <div class="col-12 col-md-3 colB ">
-                        <div class="card cardIncluding incB3">
+                        <div class="card cardBand bandSecundary incB3">
                             <div class="artist-name">Queen</div>
                         </div>
                     </div>
                     <div class="col-12 col-md-3 colB ">
-                        <div class="card cardIncluding incB4">
+                        <div class="card cardBand bandSecundary incB4">
                             <div class="artist-name">Pearl Jam</div>
                         </div>
                     </div>
                     <div class="col-12 col-md-3 colB">
-                        <div class="card cardIncluding incB5">
+                        <div class="card cardBand bandSecundary incB5">
                             <div class="artist-name">Falling in Reverse</div>
                         </div>
                     </div>
                     <div class="col-12 col-md-3 colB">
-                        <div class="card cardIncluding incB6">
+                        <div class="card cardBand bandSecundary incB6">
                             <div class="artist-name">Parchís</div>
                         </div>
                     </div>
                     <div class="col-12 col-md-3 colB">
-                        <div class="card cardIncluding incB7">
+                        <div class="card cardBand bandSecundary incB7">
                             <div class="artist-name">Los Chichos</div>
                         </div>
                     </div>
                     <div class="col-12 col-md-3 colB">
-                        <div class="card cardIncluding incB8">
+                        <div class="card cardBand bandSecundary incB8">
                             <div class="artist-name">Rush</div>
                         </div>
                     </div>
                     <div class="col-12 col-md-3 colB">
-                        <div class="card cardIncluding incB9">
+                        <div class="card cardBand bandSecundary incB9">
                             <div class="artist-name">2 Pac</div>
                         </div>
                     </div>
                     <div class="col-12 col-md-3 colB">
-                        <div class="card cardIncluding incB10">
+                        <div class="card cardBand bandSecundary incB10">
                             <div class="artist-name">Lola Flores</div>
                         </div>
                     </div>
                     <div class="col-12 col-md-3 colB">
-                        <div class="card cardIncluding incB11">
+                        <div class="card cardBand bandSecundary incB11">
                             <div class="artist-name">Lamb of God</div>
                         </div>
                     </div>
                     <div class="col-12 col-md-3 colB">
-                        <div class="card cardIncluding incB12">
+                        <div class="card cardBand bandSecundary incB12">
                             <div class="artist-name">Snoop Dog</div>
                         </div>
                     </div>
                 </div>
         </section>
-
-
-
-
     </main>
 
     <!-- Footer -->

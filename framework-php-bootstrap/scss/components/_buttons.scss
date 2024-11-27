@@ -1,34 +1,32 @@
-//
-// Buttons
-//
+// <================== Estilos - Botones en Merch.php & Merch_Item.php ==================>
 
-// Custom Order By button
+// Estilos Botón de Order-By.
 .dropdown-order-by {
   display: flex;
   justify-content: start;
   align-items: center;
 
-  // Icono
+  // Icono Ordenar por.
   i {
     color: $resaltar2;
     font-size: 1.5rem;
   }
 
-  // Botón de Order-By
+  // Botón de Order-By.
   #dropdownMenuButton {
     color: $resaltar2;
   }
 }
 
-// Custom ticket/merch buttons
-
+// Grupo de Botones de Categoría y Talla Producto.
 .btn-category-group,
 .btn-size-group {
   display: flex;
   flex-direction: row;
-  gap: 1em;
+  gap: 1em; // Espacio entre botones
 }
 
+// Estilo común en Botones de Categoría y Talla Producto.
 .btn-category-item,
 .btn-item-size {
   font-family: $headings-font-family;
@@ -37,7 +35,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  white-space: nowrap;
+  white-space: nowrap; // No se rompe el texto
   transition: all 0.2s ease;
 
   // Botón seleccionado
@@ -51,6 +49,7 @@
     background: $fondo;
     color: $resaltar1;
 
+    // Comportamiento al pasar el ratón por encima.
     &:hover {
       background: $resaltar1;
       color: $texto2;
@@ -58,11 +57,11 @@
   }
 }
 
-// Botones de Talla de Merch Item
+// Botones de Talla Producto.
 .btn-item-size {
   border: 2px solid $resaltar2;
   border-radius: 5px;
-  padding: 0.5em 1em;
+  padding: 0.75em 1.25em;
 
   // Botón seleccionado
   &.selected {
@@ -75,6 +74,7 @@
     background: $fondo;
     color: $resaltar2;
 
+    // Comportamiento al pasar el ratón por encima.
     &:hover {
       background: $resaltar2;
       color: $texto2;
@@ -90,6 +90,7 @@
   font-family: $headings-font-family;
   white-space: nowrap;
 
+  // Estilo del botón.
   button {
     background-color: $resaltar1;
     color: $texto2;
@@ -97,6 +98,7 @@
     font-size: $heading-font-3;
     padding: 10px 75px 10px 75px;
 
+    // Comportamiento al pasar el ratón por encima.
     &:hover {
       color: $texto2;
       background-color: darken($color: $resaltar1, $amount: 10);
@@ -104,6 +106,36 @@
     }
   }
 }
+
+// En dispositivos móviles, se ajustan los estilos de los botones.
+@include media-breakpoint-down(md) {
+
+  // Estilos de Grupo de Botones de Categoría.
+  .btn-category-group {
+    flex-direction: column;
+    gap: 0.5em;
+    margin-bottom: 2em;
+  }
+
+  // Estilos de Grupo de Botones de Talla Producto.
+  .btn-size-group {
+    flex-wrap: wrap;
+  }
+
+  // Estilos de Botón de Carrito.
+  .btn-cart {
+    justify-content: center;
+
+    // Estilo del botón.
+    button {
+      padding: 10px 50px 10px 50px;
+      font-size: $heading-font-phone-3;
+    }
+  }
+}
+
+
+// <================== Estilos - Botones en Tickets ==================>
 
 // Botón de Comprar en cada card de ticket
 .button-ticket {
@@ -149,29 +181,6 @@ button {
   border: 0;
 }
 
-// Estilos de los botones
-
-@include media-breakpoint-down(md) {
-  .btn-category-group {
-    flex-direction: column;
-    gap: 0.5em;
-    margin-bottom: 2em;
-  }
-
-  .btn-size-group {
-    flex-wrap: wrap;
-  }
-
-  .btn-cart {
-    justify-content: center;
-    
-    button {
-      padding: 10px 50px 10px 50px;
-      font-size: $heading-font-phone-3;
-    }
-  }
-}
-
 // Botón de Aplicar Descuento
 .button-apply-discount {
   display: flex;
@@ -200,15 +209,19 @@ button {
   background-size: cover;
   background-position: center;
   border-radius: 25px;
-  height: 300px; /* Altura personalizada */
-  flex: 1 1 calc(50% - 1rem); /* 50% del contenedor, menos el margen */
-  max-width: calc(50% - 1rem); /* Máximo de la mitad del ancho */
+  height: 300px;
+  /* Altura personalizada */
+  flex: 1 1 calc(50% - 1rem);
+  /* 50% del contenedor, menos el margen */
+  max-width: calc(50% - 1rem);
+  /* Máximo de la mitad del ancho */
   margin: 0.5rem;
   transition: transform 0.3s, box-shadow 0.3s;
 
-  border: 4px solid $resaltar1; /* Borde verde */
+  border: 4px solid $resaltar1;
+  /* Borde verde */
   box-shadow: 10px 10px 15px rgba($resaltar1, 0.6);
-  
+
 }
 
 .custom-button:nth-child(1) {
@@ -234,13 +247,15 @@ button {
 
 .button-text-top {
   font-size: $heading-font-2;
-  text-shadow: 0px 0px 10px rgba(0, 0, 0, 0.923); /* Sombra negra con algo de difuso */
+  text-shadow: 0px 0px 10px rgba(0, 0, 0, 0.923);
+  /* Sombra negra con algo de difuso */
 }
 
 .button-text-bottom {
   font-size: $heading-font-2;
   margin-top: 130px;
-  text-shadow: 0px 0px 10px rgba(0, 0, 0, 0.923); /* Sombra negra con algo de difuso */
+  text-shadow: 0px 0px 10px rgba(0, 0, 0, 0.923);
+  /* Sombra negra con algo de difuso */
 }
 
 /* Botones de método de pago */

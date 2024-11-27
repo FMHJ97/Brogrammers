@@ -32,8 +32,8 @@
 
                 <!-- Row with billing and summary -->
 
-                <div class="row">
-                    <div class="col-md-7 authentication-form me-2 mb-2 p-3">
+                <div class="row gap-2">
+                    <div class="col-md-7 authentication-form mb-2 p-3">
 
                         <!-- Billing form -->
                         <div class="row">
@@ -44,17 +44,17 @@
 
                         <!-- Payment Method in two boxes when clicked will show the inputs for credit card or paypal -->
                         
-                        <div class="row ">
+                        <div class="row mb-3 g-2">
                             <div class="col-md-6">
-                                <div class="payment-method-box" id="credit-card-box">
-                                    <button class="btn btn-payment-method"><img src="./assets/img/visa.svg" alt="Tarjeta de crédito" class="payment-method-img img-fluid"></button>
-                                </div>
+                                <button class="btn btn-payment-method selected p-5">
+                                    <img src="./assets/img/visa.svg" alt="Tarjeta de crédito" class="payment-method-img img-fluid">
+                                </button>
                             </div>
 
                             <div class="col-md-6">
-                                <div class="payment-method-box" id="paypal-box">
-                                    <button class="btn btn-payment-method"><img src="./assets/img/paypal.png" alt="Paypal" class="payment-method-img img-fluid"></button>
-                                </div>
+                                <button class="btn btn-payment-method p-5">
+                                    <img src="./assets/img/paypal.svg" alt="Paypal" class="payment-method-img img-fluid">
+                                </button>
                             </div>
                         </div>
 
@@ -85,7 +85,7 @@
                         </div>
 
                         <!-- Paypal Inputs -->
-                        <div class="row">
+                        <div class="row d-none">
                             <div class="col">
                                 <label><h5>Correo electrónico de Paypal</h5></label><span> *</span>
                                 <input type="email" class="form-control" placeholder="Introduzca su correo electrónico de Paypal">
@@ -175,7 +175,8 @@
                             </div>
                         </div>
 
-                        <a href="payment.php" class="button-ticket">Confirmar</a>
+                        <!-- Este botón debería mostrar un mensaje de confirmación de compra -->
+                        <a href="#" class="button-ticket">Confirmar pedido</a>
 
                     </div>
 

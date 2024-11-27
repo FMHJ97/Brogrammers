@@ -32,11 +32,11 @@
 
                 <!-- Row with billing and summary -->
 
-                <div class="row">
-                    <div class="col-md-7 authentication-form me-2 mb-2 p-3">
+                <div class="row gap-2">
+                    <div class="col-md-7 authentication-form mb-2 p-3">
 
                         <!-- Billing form -->
-                        <div class="row">
+                        <div class="row mb-2">
                             <div class="col text-start">
                                 <h4>Dirección de envío</h4>
                             </div>
@@ -45,7 +45,7 @@
                         <!-- Email -->
                         <div class="row">
                             <div class="col">
-                                <label><h5>Correo electrónico</h5></label><span> *</span>
+                                <label>Correo electrónico</label><span> *</span>
                                 <input type="email" class="form-control" placeholder="Introduzca su correo electrónico">
                             </div>
                         </div>
@@ -53,12 +53,12 @@
                         <!-- Name and Surname -->
                         <div class="row">
                             <div class="col-md-6">
-                                <label><h5>Nombre</h5></label><span> *</span>
+                                <label>Nombre</label><span> *</span>
                                 <input type="text" class="form-control" placeholder="Introduzca su nombre">
                             </div>
 
                             <div class="col-md-6">
-                                <label><h5>Apellidos</h5></label><span> *</span>
+                                <label>Apellidos</label><span> *</span>
                                 <input type="text" class="form-control" placeholder="Introduzca sus apellidos">
                             </div>
                         </div>
@@ -66,11 +66,11 @@
                         <!-- Address -->
                         <div class="row">
                             <div class="col-md-6">
-                                <label><h5>Dirección</h5></label><span> *</span>
+                                <label>Dirección</label><span> *</span>
                                 <input type="text" class="form-control" placeholder="Introduzca su dirección">
                             </div>
                             <div class="col-md-6">
-                                <label><h5>Bloque, Puerta</h5></label><span> *</span>
+                                <label>Bloque, Puerta</label><span> *</span>
                                 <input type="text" class="form-control" placeholder="Introduzca su bloque">
                             </div>
                         </div>
@@ -78,11 +78,11 @@
                         <!-- Country and Postal Code -->
                         <div class="row">
                             <div class="col-md-6">
-                                <label><h5>País</h5></label><span> *</span>
+                                <label>País</label><span> *</span>
                                 <input type="text" class="form-control" placeholder="Introduzca su país">
                             </div>
                             <div class="col-md-6">
-                                <label><h5>Código Postal</h5></label><span> *</span>
+                                <label>Código Postal</label><span> *</span>
                                 <input type="text" class="form-control" placeholder="Introduzca su código postal">
                             </div>
                         </div>
@@ -163,7 +163,7 @@
                             </div>
 
                             <div class="col-md-5">
-                                <button type="button" class="button-apply-discount"><h5>Aplicar</h5></button>
+                                <button type="button" class="button-apply-discount">Aplicar</button>
                             </div>
 
                         </div>

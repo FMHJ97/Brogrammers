@@ -20380,13 +20380,30 @@ button {
   text-shadow: 0px 0px 10px rgba(0, 0, 0, 0.923); /* Sombra negra con algo de difuso */
 }
 
+/* Botones de método de pago */
 .btn-payment-method {
+  height: 90px !important; /* Altura fija para ambos botones */
+  border-radius: 20px; /* Bordes redondeados */
+  display: flex;
+  align-items: center; /* Centrar verticalmente */
+  justify-content: center; /* Centrar horizontalmente */
+  padding: 10px;
+}
+.btn-payment-method.selected {
+  background-color: #29F2B9 !important; /* Cambia el color al estar seleccionado */
+}
+.btn-payment-method:not(.selected) {
+  background-color: #0A0F0F !important; /* Color de fondo por defecto */
+  border: 3px solid #29F2B9;
   border-radius: 20px;
-  justify-content: center;
-  align-items: center;
-  transition: background-color 0.3s;
 }
 
+/* Estilos de los botones de método de pago en móviles */
+@media (max-width: 767.98px) {
+  .payment-method-img {
+    max-width: 50%; /* Limita el ancho para evitar desbordamiento */
+  }
+}
 nav {
   background: linear-gradient(90deg, #035951 0%, #0A0F0F 42%);
   box-shadow: -5px -5px 30px 0px #035951;
@@ -21427,18 +21444,6 @@ main .item-heading h2, main .item-heading .h2 {
   text-align: center;
   font-weight: bold;
   color: #FFFDFA;
-}
-
-.payment-method-box {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 10px;
-  border-radius: 20px;
-  margin-bottom: 10px;
-}
-.payment-method-box .payment-method-img {
-  width: 50px;
 }
 
 /*# sourceMappingURL=styles.css.map */

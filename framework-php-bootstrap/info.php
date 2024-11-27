@@ -49,11 +49,11 @@
                 <h2 class="text-center text-white">FESTIVAL HISTORY</h2>
             </div>
 
-            <!-- Recuadro blanco con contenido -->
+            <!-- Recuadro con contenido -->
             <div class="container box-area">
                 <div class=" row mb-4 text-white d-flex justify-content-center align-items-center">
-
-                    <div class="col-lg-4 d-flex justify-content-center align-items-center">
+                    <!-- Columna Historia Festival-->
+                    <div class="col-lg-4 d-flex justify-content-center align-items-center px-3">
                         <div class="row d-flex">
                             <p class="mb-5">
                                 Este festival nace de la pasión de 4 amigos amantes de la música.
@@ -76,7 +76,7 @@
                             </p>
                         </div>
                     </div>
-
+                    <!-- Columna Mapa Localización y Foto Festival -->
                     <div class="col-lg-8">
                         <div class="row text-center pt-3">
                             <h5 class="my-0">Location</h5>
@@ -103,7 +103,7 @@
 
             <!-- Recuadro con contenido -->
             <div class="container box-area-fondo">
-                <div class=" row text-white d-flex justify-content-center align-items-center">
+                <div class=" row text-white d-flex justify-content-center align-items-center pt-4 px-3">
                     <p>Ground Sound is an all ages event, patrons of any age require a pass for entry.</p>
                     <p> All pass sales are final, no refunds or exchanges.</p>
 
@@ -124,7 +124,7 @@
                         or other trade purposes without the express written consent of the festival. </p>
                 </div>
                 <div class="row bgroundTicketInfo d-flex justify-content-center align-items-center">
-                    <button class="btn buttonInfo">Haz clic aquí</button>
+                    <a href="./tickets.php" class="btn buttonInfo">Haz click aquí</a>
                 </div>
             </div>
         </section>
@@ -142,7 +142,7 @@
 
             <!-- Recuadro con contenido -->
             <div class="container box-area-fondo">
-                <div class=" row text-white d-flex justify-content-center align-items-center">
+                <div class=" row text-white d-flex justify-content-center align-items-center pt-4 px-3">
                     <p>Ground Sound is an all ages event, patrons of any age require a pass for entry.</p>
                     <p> All pass sales are final, no refunds or exchanges.</p>
 
@@ -163,7 +163,7 @@
                         or other trade purposes without the express written consent of the festival. </p>
                 </div>
                 <div class="row bgroundCampingInfo d-flex justify-content-center align-items-center">
-                    <button class="btn buttonInfo">Haz clic aquí</button>
+                    <a href="./parking_camping.php" class="btn buttonInfo">Haz click aquí</a>
                 </div>
             </div>
         </section>
@@ -178,11 +178,9 @@
                 <h2 class="text-center text-white">ACCESSIBILITY</h2>
             </div>
 
-            <!-- Recuadro blanco con contenido -->
+            <!-- Recuadro con contenido -->
             <div class="container box-area">
-                <div class=" row text-white pt-3 ">
-
-
+                <div class=" row text-white pt-3">
                     <p class="mb-5">
                         Our festivals are committed to making the events accessible to everyone.
                         The festival is held outdoors. There are sometimes great distances between parking lots, camping, and stages.
@@ -193,14 +191,10 @@
                         An Access Center with professionally trained staff will be set up next to the info booth at the festival
                         entrance to assist at the event who can answer all questions, provide wristbands for the viewing platform,
                         and additional services listed below.
-
                     </p>
-
                 </div>
-
             </div>
         </section>
-
 
         <!-- MAP -->
         <section id="festaccess" class="container page-section">
@@ -208,13 +202,13 @@
             <div class="container page-section-heading">
                 <h2 class="text-center text-white">FESTIVAL MAP</h2>
             </div>
-
+            <!-- Mapa y su Modal -->
             <?php include("includes/map.php");  ?>
             <?php include("includes/mapmodal.php");  ?>
-            
+
         </section>
 
-
+        <!-- Patrocinadores -->
         <?php include("includes/patrocinadores.php");  ?>
     </main>
 

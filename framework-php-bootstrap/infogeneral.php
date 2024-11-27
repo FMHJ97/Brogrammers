@@ -20,9 +20,9 @@
         </section>
 
 
-        <!-- Festival History -->
+        <!-- Acceso general a Info -->
         <section id="infogeneral" class="container page-section">
-            <!-- Recuadro blanco con contenido -->
+            <!-- Recuadro qué engloba los 4 botones -->
             <div class="row mb-4 d-flex justify-content-center align-items-center">
                 <a href="./info.php#festhistory" class="custom-button col-12 col-md-6">
                     <div class="button-text-top">FESTIVAL HISTORY</div>
@@ -48,11 +48,11 @@
 
 
 
-
+        <!-- Contact us -->
         <?php include("includes/contactus.php");  ?>
 
 
-
+         <!-- Patrocinadores -->
         <?php include("includes/patrocinadores.php");  ?>
     </main>
 

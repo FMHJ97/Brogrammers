@@ -64,8 +64,8 @@
 }
 
 .table-cart {
-    --bs-table-bg: #{$primario2};
-    background-color: var(--bs-table-bg);
+    --bs-table-bg: #{$primario2}; // Cambiamos el color de fondo de la tabla
+    background-color: var(--bs-table-bg); // Usamos la variable para el color de fondo
     margin-bottom: 0;
     border-radius: 15px;
     border-spacing: 0;
@@ -73,12 +73,12 @@
     border-style: none;
     overflow: hidden; // Making sure the border-radius is applied
 
-    th {
+    th { // Color de texto de las cabeceras
         color: $texto1;
         padding-top: 20px;
     }
 
-    td {
+    td { // Color de texto de las celdas
         color: $texto1;
     }
 
@@ -86,7 +86,6 @@
         text-align: left;
     }
 
-    // Aligning the last th to the right
     th:not(:first-child) {
         text-align: right;
     }
@@ -96,7 +95,7 @@
         text-align: left;
         align-items: center;
 
-        p {
+        p { // Cambiamos el tamaño de la fuente para la primera celda
             margin: 0;
             font-size: $body-font-2;
         }
@@ -117,7 +116,7 @@
     justify-content: center;
     font-size: $heading-font-3;
 
-    .btn-quantity-cart {
+    .btn-quantity-cart { // Botones de incremento y decremento
         display: flex;
         align-items: center;
         justify-content: center;
@@ -136,26 +135,27 @@
         }
 
         &:active {
-            transform: scale(0.9); // Pulse effect
+            transform: scale(0.9); // Efecto de presionar el botón
         }
     }
 
-    #quantity-cart {
-        width: 2.5ch; // For better visibility
+    #quantity-cart { // Input de cantidad
+        width: 2.5ch; 
         text-align: center;
         font-weight: bold; 
         color: $texto1; 
     }
 }
 
-.payment-method-box {
-    width: 100%;
+.payment-method-box { // Estilo de las cajas de los métodos de pago
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    border-radius: 20px;
+    margin-bottom: 10px;
 
-    text-align: center;
-
-    .payment-method-img {
-        width: 50%;
-        height: 100%;
-        object-fit: contain;
+    .payment-method-img { // Imágenes de los métodos de pago
+        width: 50px;
     }
 }

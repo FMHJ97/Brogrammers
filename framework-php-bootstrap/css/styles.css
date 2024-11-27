@@ -20410,10 +20410,7 @@ button {
 }
 
 .btn-payment-method {
-  width: 100%;
-  padding: 20px;
   border-radius: 20px;
-  display: flex;
   justify-content: center;
   align-items: center;
   transition: background-color 0.3s;
@@ -21487,13 +21484,15 @@ body .item-heading h2, body .item-heading .h2 {
 }
 
 .payment-method-box {
-  width: 100%;
-  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+  border-radius: 20px;
+  margin-bottom: 10px;
 }
 .payment-method-box .payment-method-img {
-  width: 50%;
-  height: 100%;
-  object-fit: contain;
+  width: 50px;
 }
 
 /*# sourceMappingURL=styles.css.map */

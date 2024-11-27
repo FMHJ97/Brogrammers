@@ -33,7 +33,7 @@
                 <!-- Row with billing and summary -->
 
                 <div class="row">
-                    <div class="col-md-7 authentication-form me-2 p-3">
+                    <div class="col-md-7 authentication-form me-2 mb-2 p-3">
 
                         <!-- Billing form -->
                         <div class="row">

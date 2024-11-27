@@ -7,18 +7,18 @@
 </head>
 
 <body>
-    <!-- Navigation Bar -->
+    <!-- Componente NavBar -->
     <?php include("includes/navbar.php"); ?>
 
     <main>
-        <!-- Restore Password Section-->
-        <section class="py-5">
+        <!-- Sección Recuperar Contraseña -->
+        <section class="py-md-5">
             <div class="container authentication-form my-5 p-5">
-                <!-- Restore Password Section Heading-->
+                <!-- Encabezado -->
                 <div class="row">
                     <h1>Recuperar contraseña</h1>
                 </div>
-                <!-- Restore Password Form-->
+                <!-- Formulario-->
                 <form action="">
                     <!-- Email Input-->
                     <div class="mb-5 mt-5">
@@ -26,7 +26,7 @@
                         <input type="email" class="form-control" id="email"
                             placeholder="Introduzca su correo electrónico" name="email">
                     </div>
-                    <!-- Restore Password Button -->
+                    <!-- Botón Recuperar Contraseña -->
                     <div class="d-flex flex-column ">
                         <button type="submit" class="btn">Recuperar contraseña</button>
                     </div>

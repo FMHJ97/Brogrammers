@@ -146,16 +146,3 @@
         color: $texto1; 
     }
 }
-
-.payment-method-box { // Estilo de las cajas de los métodos de pago
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 10px;
-    border-radius: 20px;
-    margin-bottom: 10px;
-
-    .payment-method-img { // Imágenes de los métodos de pago
-        width: 50px;
-    }
-}

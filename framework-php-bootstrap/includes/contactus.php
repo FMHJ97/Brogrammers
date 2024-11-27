@@ -6,7 +6,7 @@
     </div>
 
     <!-- Recuadro con contenido -->
-    <div class="container box-area">
+    <div class="container box-area contactus">
         <div class=" row px-3 pt-4">
             <h3>CUSTOMER SERVICE & ALL GENERAL ENQUIRIES</h3>
             <p class="mb-4"><strong>Please contact <a href="mailto:info@groundsound.luc">info@groundsound.luc</a></strong></p>

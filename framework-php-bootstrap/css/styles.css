@@ -20575,7 +20575,7 @@ main {
   border-radius: 10px;
   text-decoration: none;
   padding: 0;
-  transition: box-shadow 0.2s ease;
+  transition: 0.2s ease;
 }
 .card-merch-item:hover {
   box-shadow: 0px 0px 15px 0px #5F8D95;
@@ -20648,7 +20648,8 @@ main {
 
 .grid {
   gap: 16px;
-  margin: 0 auto; /* Center the grid */
+  margin: 0 auto;
+  /* Center the grid */
 }
 
 /* Optional: Basic styles for grid items */
@@ -20683,15 +20684,18 @@ main {
 
 /* Variable width classes for Masonry-like behavior */
 .grid-item--width2 {
-  grid-column: span 2; /* Take up 2 columns */
+  grid-column: span 2;
+  /* Take up 2 columns */
 }
 
 .grid-item--width3 {
-  grid-column: span 3; /* Take up 3 columns */
+  grid-column: span 3;
+  /* Take up 3 columns */
 }
 
 .grid-item--width4 {
-  grid-column: span 4; /* Take up 4 columns */
+  grid-column: span 4;
+  /* Take up 4 columns */
 }
 
 /* Variable height classes for Masonry-like behavior */
@@ -20715,6 +20719,9 @@ main {
   padding: 15;
   background: linear-gradient(180deg, #0A0F0F 45%, #107361 86%);
 }
+.box-area.contactus {
+  border: 4px solid #FFFDFA;
+}
 .box-area a[href^="mailto:"] {
   color: #C5FCEC;
   text-decoration: none;
@@ -20725,7 +20732,6 @@ main {
 }
 
 .box-area-fondo {
-  box-sizing: border-box;
   border: 6px solid #107361;
   border-radius: 10px;
   text-decoration: none;
@@ -20733,10 +20739,10 @@ main {
   width: 100%;
 }
 .box-area-fondo .bgroundTicketInfo {
-  background-image: url("../assets/img/info/festival2.jpg");
+  background-image: linear-gradient(to top, rgba(10, 15, 15, 0) 0%, rgba(10, 15, 15, 0) 50px, #0A0F0F 100%), url("../assets/img/info/festival2.jpg");
 }
 .box-area-fondo .bgroundCampingInfo {
-  background-image: url("../assets/img/info/Camping1.jpg");
+  background-image: linear-gradient(to top, rgba(10, 15, 15, 0) 0%, rgba(10, 15, 15, 0) 50px, #0A0F0F 100%), url("../assets/img/info/Camping1.jpg");
 }
 .box-area-fondo .bgroundTicketInfo,
 .box-area-fondo .bgroundCampingInfo {
@@ -20744,7 +20750,7 @@ main {
   background-size: cover;
   background-position: center;
   height: 450px;
-  display: flex; /* Para alinear el texto si es necesario */
+  display: flex;
   justify-content: center;
   align-items: center;
   color: #FFFDFA;
@@ -20753,11 +20759,11 @@ main {
 .box-area-fondo .bgroundTicketInfo .buttonInfo,
 .box-area-fondo .bgroundCampingInfo .buttonInfo {
   position: absolute;
-  background: #C5FCEC;
+  background: #FFFDFA;
   color: #0A0F0F;
   font-family: "Krona One", sans-serif;
-  border: 2px solid #29F2B9;
-  border-radius: 10px;
+  border: 2px solid #FFFDFA;
+  border-radius: 20px;
   padding: 0.5em 1.2em;
   display: flex;
   align-items: center;
@@ -20768,14 +20774,6 @@ main {
   z-index: 2;
 }
 
-.box-area-contact {
-  border: 6px solid #FFFDFA;
-  border-radius: 10px;
-  text-decoration: none;
-  padding: 15;
-  background: linear-gradient(180deg, #0A0F0F 45%, #107361 86%);
-}
-
 /* ==========  BAND CARDS =========  */
 .colB {
   display: flex;
@@ -20784,110 +20782,35 @@ main {
   justify-content: center;
   text-align: center;
   padding: 10px;
-  /* img background headliners */
 }
 .colB .titleDays h3, .colB .titleDays .h3 {
   text-align: center;
   margin-bottom: 0.5rem;
   color: #107361;
 }
-.colB .cardHeadline.headB1, .colB .flip-card .headB1.flip-card-front, .flip-card .colB .headB1.flip-card-front {
-  background-image: linear-gradient(to bottom, rgba(255, 153, 153, 0) 0%, rgba(255, 153, 153, 0) 50px, #0A0F0F 100%), url("/assets/img/lineUp/Eminem.jpg");
-}
-.colB .cardHeadline.headB2, .colB .flip-card .headB2.flip-card-front, .flip-card .colB .headB2.flip-card-front {
-  background-image: linear-gradient(to bottom, rgba(255, 153, 153, 0) 0%, rgba(255, 153, 153, 0) 50px, #0A0F0F 100%), url("/assets/img/lineUp/LosdelRio.jpg");
-}
-.colB .cardHeadline.headB3, .colB .flip-card .headB3.flip-card-front, .flip-card .colB .headB3.flip-card-front {
-  background-image: linear-gradient(to bottom, rgba(255, 153, 153, 0) 0%, rgba(255, 153, 153, 0) 50px, #0A0F0F 100%), url("/assets/img/lineUp/soundgarden.jpg");
-}
-.colB .cardHeadline, .colB .flip-card .flip-card-front, .flip-card .colB .flip-card-front {
+.colB .cardBand, .colB .flip-card .flip-card-front, .flip-card .colB .flip-card-front {
   position: relative;
+  width: 100%;
+  background-size: cover;
+  background-position: center;
+  box-sizing: border-box;
+  border: 6px solid #107361;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  /* BACKGROUND IMG Bandas PRINCIPALES con degradado $fade */
+  /* BACKGROUND IMGBandas SECUNDARIAS con degradado $fade */
+}
+.colB .cardBand.bandPrincipal, .colB .flip-card .bandPrincipal.flip-card-front, .flip-card .colB .bandPrincipal.flip-card-front {
   height: 300px;
   max-width: 300px;
-  width: 100%;
-  background-size: cover;
-  background-position: center;
-  box-sizing: border-box;
-  border: 6px solid #107361;
-  border-radius: 10px;
-  overflow: hidden;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
-.colB .cardHeadline .artist-name, .colB .flip-card .flip-card-front .artist-name, .flip-card .colB .flip-card-front .artist-name {
-  position: absolute;
-  bottom: 10px;
-  width: 100%;
-  text-align: center;
-  color: #FFFDFA;
-  font-family: "Krona One", sans-serif;
-  text-shadow: 0 2px 5px rgba(0, 0, 0, 0.7);
-}
-
-/* img background sideshow */
-.cardIncluding.incB1 {
-  background-image: linear-gradient(to bottom, rgba(255, 153, 153, 0) 0%, rgba(255, 153, 153, 0) 50px, #0A0F0F 100%), url("/assets/img/lineUp/AliceInChains.jpg");
-}
-
-.cardIncluding.incB2 {
-  background-image: linear-gradient(to bottom, rgba(255, 153, 153, 0) 0%, rgba(255, 153, 153, 0) 50px, #0A0F0F 100%), url("/assets/img/lineUp/50-cent-.jpg");
-}
-
-.cardIncluding.incB3 {
-  background-image: linear-gradient(to bottom, rgba(255, 153, 153, 0) 0%, rgba(255, 153, 153, 0) 50px, #0A0F0F 100%), url("/assets/img/lineUp/queen1.jpg");
-}
-
-.cardIncluding.incB4 {
-  background-image: linear-gradient(to bottom, rgba(255, 153, 153, 0) 0%, rgba(255, 153, 153, 0) 50px, #0A0F0F 100%), url("/assets/img/lineUp/pearlJam.jpg");
-}
-
-.cardIncluding.incB5 {
-  background-image: linear-gradient(to bottom, rgba(255, 153, 153, 0) 0%, rgba(255, 153, 153, 0) 50px, #0A0F0F 100%), url("/assets/img/lineUp/FallingInReverse.jpg");
-}
-
-.cardIncluding.incB6 {
-  background-image: linear-gradient(to bottom, rgba(255, 153, 153, 0) 0%, rgba(255, 153, 153, 0) 50px, #0A0F0F 100%), url("/assets/img/lineUp/Parchis.jpg");
-}
-
-.cardIncluding.incB7 {
-  background-image: linear-gradient(to bottom, rgba(255, 153, 153, 0) 0%, rgba(255, 153, 153, 0) 50px, #0A0F0F 100%), url("/assets/img/lineUp/Loschichos.jpeg");
-}
-
-.cardIncluding.incB8 {
-  background-image: linear-gradient(to bottom, rgba(255, 153, 153, 0) 0%, rgba(255, 153, 153, 0) 50px, #0A0F0F 100%), url("/assets/img/lineUp/Rush.jpg");
-}
-
-.cardIncluding.incB9 {
-  background-image: linear-gradient(to bottom, rgba(255, 153, 153, 0) 0%, rgba(255, 153, 153, 0) 50px, #0A0F0F 100%), url("/assets/img/lineUp/2pac.jpg");
-}
-
-.cardIncluding.incB10 {
-  background-image: linear-gradient(to bottom, rgba(255, 153, 153, 0) 0%, rgba(255, 153, 153, 0) 50px, #0A0F0F 100%), url("/assets/img/lineUp/lola-flores-biografia.jpg");
-}
-
-.cardIncluding.incB11 {
-  background-image: linear-gradient(to bottom, rgba(255, 153, 153, 0) 0%, rgba(255, 153, 153, 0) 50px, #0A0F0F 100%), url("/assets/img/lineUp/LambOfGod-Cuadrada.jpeg");
-}
-
-.cardIncluding.incB12 {
-  background-image: linear-gradient(to bottom, rgba(255, 153, 153, 0) 0%, rgba(255, 153, 153, 0) 50px, #0A0F0F 100%), url("/assets/img/lineUp/snoopDog.jpg");
-}
-
-.cardIncluding {
-  box-sizing: border-box;
-  position: relative;
+.colB .cardBand.bandSecundary, .colB .flip-card .bandSecundary.flip-card-front, .flip-card .colB .bandSecundary.flip-card-front {
   height: 250px;
   max-width: 250px;
-  width: 100%;
   margin: 1rem;
-  background-size: cover;
-  background-position: center;
-  box-sizing: border-box;
-  border: 6px solid #107361;
-  border-radius: 10px;
-  overflow: hidden;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
-.cardIncluding .artist-name {
+.colB .cardBand .artist-name, .colB .flip-card .flip-card-front .artist-name, .flip-card .colB .flip-card-front .artist-name {
   position: absolute;
   bottom: 10px;
   width: 100%;
@@ -20895,6 +20818,51 @@ main {
   color: #FFFDFA;
   font-family: "Krona One", sans-serif;
   text-shadow: 0 2px 5px rgba(0, 0, 0, 0.7);
+}
+.colB .cardBand.headB1, .colB .flip-card .headB1.flip-card-front, .flip-card .colB .headB1.flip-card-front {
+  background-image: linear-gradient(to bottom, rgba(10, 15, 15, 0) 0%, rgba(10, 15, 15, 0) 50px, #0A0F0F 100%), url("/assets/img/lineUp/Eminem.jpg");
+}
+.colB .cardBand.headB2, .colB .flip-card .headB2.flip-card-front, .flip-card .colB .headB2.flip-card-front {
+  background-image: linear-gradient(to bottom, rgba(10, 15, 15, 0) 0%, rgba(10, 15, 15, 0) 50px, #0A0F0F 100%), url("/assets/img/lineUp/LosdelRio.jpg");
+}
+.colB .cardBand.headB3, .colB .flip-card .headB3.flip-card-front, .flip-card .colB .headB3.flip-card-front {
+  background-image: linear-gradient(to bottom, rgba(10, 15, 15, 0) 0%, rgba(10, 15, 15, 0) 50px, #0A0F0F 100%), url("/assets/img/lineUp/soundgarden.jpg");
+}
+.colB .cardBand.incB1, .colB .flip-card .incB1.flip-card-front, .flip-card .colB .incB1.flip-card-front {
+  background-image: linear-gradient(to bottom, rgba(10, 15, 15, 0) 0%, rgba(10, 15, 15, 0) 50px, #0A0F0F 100%), url("/assets/img/lineUp/AliceInChains.jpg");
+}
+.colB .cardBand.incB2, .colB .flip-card .incB2.flip-card-front, .flip-card .colB .incB2.flip-card-front {
+  background-image: linear-gradient(to bottom, rgba(10, 15, 15, 0) 0%, rgba(10, 15, 15, 0) 50px, #0A0F0F 100%), url("/assets/img/lineUp/50-cent-.jpg");
+}
+.colB .cardBand.incB3, .colB .flip-card .incB3.flip-card-front, .flip-card .colB .incB3.flip-card-front {
+  background-image: linear-gradient(to bottom, rgba(10, 15, 15, 0) 0%, rgba(10, 15, 15, 0) 50px, #0A0F0F 100%), url("/assets/img/lineUp/queen1.jpg");
+}
+.colB .cardBand.incB4, .colB .flip-card .incB4.flip-card-front, .flip-card .colB .incB4.flip-card-front {
+  background-image: linear-gradient(to bottom, rgba(10, 15, 15, 0) 0%, rgba(10, 15, 15, 0) 50px, #0A0F0F 100%), url("/assets/img/lineUp/pearlJam.jpg");
+}
+.colB .cardBand.incB5, .colB .flip-card .incB5.flip-card-front, .flip-card .colB .incB5.flip-card-front {
+  background-image: linear-gradient(to bottom, rgba(10, 15, 15, 0) 0%, rgba(10, 15, 15, 0) 50px, #0A0F0F 100%), url("/assets/img/lineUp/FallingInReverse.jpg");
+}
+.colB .cardBand.incB6, .colB .flip-card .incB6.flip-card-front, .flip-card .colB .incB6.flip-card-front {
+  background-image: linear-gradient(to bottom, rgba(10, 15, 15, 0) 0%, rgba(10, 15, 15, 0) 50px, #0A0F0F 100%), url("/assets/img/lineUp/Parchis.jpg");
+}
+.colB .cardBand.incB7, .colB .flip-card .incB7.flip-card-front, .flip-card .colB .incB7.flip-card-front {
+  background-image: linear-gradient(to bottom, rgba(10, 15, 15, 0) 0%, rgba(10, 15, 15, 0) 50px, #0A0F0F 100%), url("/assets/img/lineUp/Loschichos.jpeg");
+}
+.colB .cardBand.incB8, .colB .flip-card .incB8.flip-card-front, .flip-card .colB .incB8.flip-card-front {
+  background-image: linear-gradient(to bottom, rgba(10, 15, 15, 0) 0%, rgba(10, 15, 15, 0) 50px, #0A0F0F 100%), url("/assets/img/lineUp/Rush.jpg");
+}
+.colB .cardBand.incB9, .colB .flip-card .incB9.flip-card-front, .flip-card .colB .incB9.flip-card-front {
+  background-image: linear-gradient(to bottom, rgba(10, 15, 15, 0) 0%, rgba(10, 15, 15, 0) 50px, #0A0F0F 100%), url("/assets/img/lineUp/2pac.jpg");
+}
+.colB .cardBand.incB10, .colB .flip-card .incB10.flip-card-front, .flip-card .colB .incB10.flip-card-front {
+  background-image: linear-gradient(to bottom, rgba(10, 15, 15, 0) 0%, rgba(10, 15, 15, 0) 50px, #0A0F0F 100%), url("/assets/img/lineUp/lola-flores-biografia.jpg");
+}
+.colB .cardBand.incB11, .colB .flip-card .incB11.flip-card-front, .flip-card .colB .incB11.flip-card-front {
+  background-image: linear-gradient(to bottom, rgba(10, 15, 15, 0) 0%, rgba(10, 15, 15, 0) 50px, #0A0F0F 100%), url("/assets/img/lineUp/LambOfGod-Cuadrada.jpeg");
+}
+.colB .cardBand.incB12, .colB .flip-card .incB12.flip-card-front, .flip-card .colB .incB12.flip-card-front {
+  background-image: linear-gradient(to bottom, rgba(10, 15, 15, 0) 0%, rgba(10, 15, 15, 0) 50px, #0A0F0F 100%), url("/assets/img/lineUp/snoopDog.jpg");
 }
 
 .flip-card {
@@ -20922,6 +20890,10 @@ main {
   height: 100%;
   backface-visibility: hidden;
   border-radius: 10px;
+}
+.flip-card .flip-card-front {
+  height: 300px;
+  max-width: 300px;
 }
 .flip-card .flip-card-back {
   display: flex;
@@ -21103,51 +21075,39 @@ main {
 .footer {
   box-shadow: -5px -5px 30px 0px #035951;
 }
-
-#socialMedia {
+.footer #socialMedia {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
 }
-#socialMedia h2, #socialMedia .h2 {
+.footer #socialMedia h2, .footer #socialMedia .h2 {
   color: #29F2B9;
 }
-#socialMedia a {
+.footer #socialMedia a {
   color: #FFFDFA;
   font-size: 35px;
   transition: all 0.05s ease;
 }
-#socialMedia a:hover {
+.footer #socialMedia a:hover {
   color: #29F2B9;
 }
-
-#linksFooter a {
+.footer #linksFooter a {
   color: #FFFDFA;
   font-family: "Krona One", sans-serif;
   font-size: 16px;
   text-decoration: none;
   transition: all 0.05s ease;
 }
-#linksFooter a:hover {
+.footer #linksFooter a:hover {
   color: #29F2B9;
 }
-#linksFooter small, #linksFooter .small {
+.footer #linksFooter small, .footer #linksFooter .small {
   font-family: "Maven Pro", sans-serif;
   color: #5F8D95;
 }
 
-body .item-heading {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  gap: 0.25em;
-  margin-top: 1em;
-}
-body .item-heading h1, body .item-heading .h1 {
-  color: #FFFDFA;
-}
-body .item-heading h2, body .item-heading .h2 {
+main .item-heading h2, main .item-heading .h2 {
   color: #29F2B9;
 }
 
@@ -21162,9 +21122,6 @@ body .item-heading h2, body .item-heading .h2 {
   border-radius: 5px;
   max-width: 400px;
 }
-.item-image-section .additional-images {
-  display: flex;
-}
 .item-image-section .additional-images img {
   max-width: 75px;
 }
@@ -21177,10 +21134,6 @@ body .item-heading h2, body .item-heading .h2 {
     max-width: 50px;
   }
 }
-.suggested-items-heading {
-  display: flex;
-  flex-direction: column;
-}
 .suggested-items-heading h2, .suggested-items-heading .h2 {
   color: #FFFDFA;
 }
@@ -21191,6 +21144,7 @@ body .item-heading h2, body .item-heading .h2 {
   justify-content: start;
   gap: 2em;
   color: #FFFDFA;
+  font-size: 20px;
 }
 .merch-item-details .item-heading {
   display: flex;
@@ -21212,6 +21166,8 @@ body .item-heading h2, body .item-heading .h2 {
   margin-left: 12px;
   gap: 0.25em;
   flex-grow: 0;
+  padding-top: 5px;
+  padding-bottom: 5px;
   border: 2px solid #C5FCEC;
   border-radius: 5px;
   font-family: "Krona One", sans-serif;
@@ -21240,7 +21196,7 @@ body .item-heading h2, body .item-heading .h2 {
     margin-top: 3em;
   }
   .merch-item-details .item-quantity {
-    gap: 0;
+    gap: 0.5em;
   }
   .merch-item-details .item-quantity #quantity {
     width: 1.5ch;
@@ -21266,10 +21222,10 @@ body .item-heading h2, body .item-heading .h2 {
 }
 .search-bar .form-control-search {
   border: 2px outset #29F2B9;
-  padding: 0.5em 0.5em;
+  padding: 0.1em 0.5em;
   border-radius: 20px;
   transition: border-color 0.3s;
-  flex-grow: 1 !important;
+  flex-grow: 1;
   font-size: 20px;
 }
 .search-bar .form-control-search:focus {
@@ -21286,7 +21242,7 @@ body .item-heading h2, body .item-heading .h2 {
 .search-bar .btn-search i {
   color: #0A0F0F;
   padding-right: 0.4rem;
-  font-size: 1.5rem;
+  font-size: 1.25rem;
 }
 .search-bar .btn-search:hover {
   background: rgb(13.2863436123, 218.7136563877, 160.4581497797);

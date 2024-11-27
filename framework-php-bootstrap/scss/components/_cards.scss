@@ -27,11 +27,6 @@
     background: $fade-merch-item-cards;
     border-radius: 0 0 7px 7px;
 
-    h3 {
-      font-family: $headings-font-family;
-      color: $texto1;
-    }
-
     span {
       font-family: $headings-font-family;
       color: $resaltar1;
@@ -43,10 +38,6 @@
   .card-merch-item {
     max-width: 300px;
     border: 2px solid $secundario1;
-    border-radius: 10px;
-    text-decoration: none;
-    padding: 0;
-    transition: box-shadow 0.2s ease;
 
     &:hover {
       box-shadow: 0px 0px 10px 0px $secundario2;
@@ -58,25 +49,6 @@
       height: 325px;
       object-fit: cover;
       border-radius: 10px 10px 0 0;
-    }
-
-    .card-body {
-      display: flex;
-      flex-direction: column;
-      gap: 10px;
-      text-align: center;
-      background: $fade-merch-item-cards;
-      border-radius: 0 0 7px 7px;
-
-      h3 {
-        font-family: $headings-font-family;
-        color: $texto1;
-      }
-
-      span {
-        font-family: $headings-font-family;
-        color: $resaltar1;
-      }
     }
   }
 }

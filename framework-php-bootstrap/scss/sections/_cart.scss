@@ -35,13 +35,11 @@
     border: 0;
     border-radius: 5px;
     font-family: $body-font-family;
-    font-size: 1.2rem;
     flex-grow: 0;
 
     .btn-quantity-cart {
         border: none;
         color: $resaltar2;
-        font-size: 1.2rem;
     }
 
     #quantity {
@@ -58,8 +56,6 @@
 }
 
 .step-title {
-    font-family: $headings-font-family;
-    font-size: 1.5rem;
     color: $secundario2;
 
     &.active {
@@ -128,7 +124,7 @@
         width: 32px; 
         height: 32px; 
         color: $texto1; 
-        font-size: 1.5rem;
+        font-size: $body-font-1;
         cursor: pointer;
         transition: all 0.3s ease; 
 

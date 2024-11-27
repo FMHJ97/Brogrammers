@@ -193,18 +193,18 @@ button {
   text-decoration: none;
   color: white;
   font-family: $headings-font-family;
-  font-weight: bold;
   background-size: cover;
   background-position: center;
-  border: 2px solid #fff;
+  border-radius: 25px;
   height: 300px; /* Altura personalizada */
   flex: 1 1 calc(50% - 1rem); /* 50% del contenedor, menos el margen */
   max-width: calc(50% - 1rem); /* Máximo de la mitad del ancho */
   margin: 0.5rem;
   transition: transform 0.3s, box-shadow 0.3s;
 
-  border: 2px solid $resaltar1; /* Borde verde */
+  border: 4px solid $resaltar1; /* Borde verde */
   box-shadow: 10px 10px 15px rgba($resaltar1, 0.6);
+  
 }
 
 .custom-button:nth-child(1) {

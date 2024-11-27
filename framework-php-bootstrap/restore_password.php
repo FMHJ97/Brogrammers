@@ -12,7 +12,7 @@
 
     <main>
         <!-- Restore Password Section-->
-        <section>
+        <section class="py-5">
             <div class="container authentication-form my-5 p-5">
                 <!-- Restore Password Section Heading-->
                 <div class="row">

@@ -12,7 +12,7 @@
 
     <main>
         <!-- Login Section-->
-        <section>
+        <section class="py-5">
             <div class="container authentication-form my-5 p-5">
                 <!-- Login Section Heading-->
                 <div class="row">

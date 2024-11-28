@@ -1,20 +1,20 @@
 document.addEventListener('DOMContentLoaded', function () {
-    // Function to get the value of a parameter in the URL
+    // Función para obtener el valor de un parámetro en la URL
     function getQueryParam(param) {
         const urlParams = new URLSearchParams(window.location.search);
         return urlParams.get(param);
     }
 
-    // Read the 'tab' parameter value
+    // Leer el valor del parámetro 'tab'
     const selectedTab = getQueryParam('tab');
 
-    // DOM elements for tabs and content rows
+    // Elementos del DOM para las pestañas y las filas de contenido
     const campingTab = document.getElementById('btnCamping');
     const parkingTab = document.getElementById('btnParking');
     const campingPrices = document.getElementById('rowCamping');
     const parkingPrices = document.getElementById('rowParking');
 
-    // Show the correct section based on the 'tab' parameter without relying on clicks
+    // Mostrar la sección correcta según el parámetro 'tab' sin depender de clics
     if (selectedTab === 'camping') {
         parkingTab.classList.remove('selected');
         campingTab.classList.add('selected');
@@ -27,21 +27,21 @@ document.addEventListener('DOMContentLoaded', function () {
         campingPrices.classList.add('d-none');
     }
 
-    // Remove the 'tab' parameter from the URL after loading the page
+    // Eliminar el parámetro 'tab' de la URL después de cargar la página
     history.replaceState(null, null, window.location.pathname);
 
-    // Event to handle the selection of general and VIP price tabs
+    // Evento para manejar la selección de pestañas de precios generales y VIP
     const buttons = document.querySelectorAll('.btn-category-item');
     const generalPrices = document.getElementById('rowGeneralPrices');
     const vipPrices = document.getElementById('rowVipPrices');
 
-    // Handle clicks on tab selection buttons
+    // Manejar clics en los botones de selección de pestañas
     buttons.forEach(button => {
         button.addEventListener('click', function () {
             buttons.forEach(btn => btn.classList.remove('selected'));
             this.classList.add('selected');
         
-            // Show the correct section based on the selected tab
+            // Mostrar la sección correcta según la pestaña seleccionada
             if (button.id === 'btnGeneralPrices') {
                 generalPrices.classList.remove('d-none');
                 vipPrices.classList.add('d-none');

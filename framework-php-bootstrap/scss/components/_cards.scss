@@ -90,9 +90,9 @@
     align-self: center;
   }
 
+  // Clase usada para la imagen del mapa dentro de la card.
   .ticket-img {
-    // The img will show like if it zoomed in the center because the full img will be shown when the button is clicked
-    position: relative;
+    // La imagen se mostrará como con un zoom, ya que se mostrará por completo en un modal.
     overflow: hidden;
     border-radius: 10px;
     object-fit: cover;

@@ -122,7 +122,7 @@ main {
 
 .form-control-discount {
     width: 100%;
-    margin-top: 0 !important;
+    margin-top: 0 !important; // Para sobreescribir el margen superior
     margin-right: auto;
     border: $border-2 solid $resaltar1;
     border-radius: 25px;

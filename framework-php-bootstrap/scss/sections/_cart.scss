@@ -1,4 +1,4 @@
-// To make the img of the article be 88px x 88px with rounded corners
+// Para hacer la imagen del artículo que mida 88px de ancho y de alto, y tenga esquinas redondeadas y además se ajuste al contenedor
 .img-article-cart {
     width: 88px !important;
     height: 88px !important;
@@ -24,7 +24,7 @@
     margin-bottom: auto;
 
     .col-8 {
-        font-size: $body-font-2; // Reducing the font size for better visibility
+        font-size: $body-font-2; // Reducimos el tamaño de la fuente para mejorar la legibilidad
     }
 }
 

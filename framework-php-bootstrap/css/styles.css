@@ -20473,10 +20473,6 @@ button i:hover {
   color: #C5FCEC;
 }
 
-button i.rotate {
-  transform: rotate(90deg);
-}
-
 main {
   display: flex;
   flex-direction: column;
@@ -20651,7 +20647,6 @@ main {
   align-self: center;
 }
 .ticket-card .ticket-img {
-  position: relative;
   overflow: hidden;
   border-radius: 10px;
   object-fit: cover;

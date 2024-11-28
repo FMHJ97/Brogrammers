@@ -1,10 +1,9 @@
 // 
-// Navbar
+// Barra de navegación
 // 
 
-// Fade in Navbar
+// Desvanecer la barra de navegación
 nav {
-
     background: $fade-navbar;
     box-shadow: -5px -5px 30px 0px $primario1;
 }
@@ -19,16 +18,15 @@ nav {
     }
 }
 
-// Aligning the items of the collapse button to the right when in mobile
+// Alinear los elementos del botón de colapso a la derecha cuando se está en móvil
 .navbar-nav {
     @include media-breakpoint-down(md) {
         display: flex;
         align-items: end;
     }   
-
 }
 
-// Setting the text and icons color of the navbar
+// Establecer el color del texto y los iconos de la barra de navegación
 .navbar-nav .nav-link {
     font-family: $headings-font-family;
     color: $textoEnlace;
@@ -37,12 +35,12 @@ nav {
     }
 }
 
-// Setting the size of the icons in the navbar to 35px
+// Establecer el tamaño de los iconos en la barra de navegación a 35px
 .navbar-nav .nav-link i {
     font-size: 35px;
 }
 
-// Setting the size of the cart icon in the navbar to 35px and 27px when the screen is smaller than medium
+// Establecer el tamaño del icono del carrito en la barra de navegación a 35px y 27px cuando la pantalla sea más pequeña que el tamaño medio
 .cart-icon {
     font-size: 35px;
     color: $textoEnlace;
@@ -55,8 +53,8 @@ nav {
     }
 }
 
-// Aligning the items in the right side of the navbar to the middle
-// Setting the separation between the items in the navbar to 50px except for the last one
+// Alinear los elementos en el lado derecho de la barra de navegación al centro
+// Establecer la separación entre los elementos de la barra de navegación a 50px, excepto el último
 .navbar-nav .nav-item {
     display: flex;
     align-items: center;
@@ -67,27 +65,19 @@ nav {
         padding-right: 0px;
     }
 
-    // When in mobile, the margin-right will be 10px
+    // Cuando esté en móvil, el margen derecho será de 10px
     @include media-breakpoint-down(md) {
         margin-right: 0px;
     }
 }
 
-// Setting the color of the menu icon to white and the size to 37px
-
+// Establecer el color del icono del menú a blanco y el tamaño a 37px
 button i {
     color: $textoEnlace;
     font-size: 37px;    
 }
 
-// Setting the color of the menu icon to $resaltar2 when hovered
-
+// Establecer el color del icono del menú a $resaltar2 cuando se pasa el ratón por encima
 button i:hover {
     color: $resaltar2;
-}
-
-// When the burguer menu is clicked, the dropdown menu will be shown and the icon will rotate 90 degrees
-
-button i.rotate {
-    transform: rotate(90deg);
 }

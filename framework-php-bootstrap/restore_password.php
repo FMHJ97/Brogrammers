@@ -19,7 +19,7 @@
                     <h1>Recuperar contraseña</h1>
                 </div>
                 <!-- Formulario-->
-                <form action="">
+                <form action="login.php">
                     <!-- Email Input-->
                     <div class="mb-5 mt-3 mt-md-5">
                         <label for="email">Correo electrónico</label><span> *</span>

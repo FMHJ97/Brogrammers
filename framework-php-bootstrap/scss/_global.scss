@@ -67,14 +67,13 @@ body {
         }
     }
 }
-
+// This puts the logo in the background of each page and ensures it does not move. It occupies roughly half the viewport
 main {
     background: url("../assets/img/logoFondoFestival.png") no-repeat center fixed;
     background-size: 50vw;
-    background-blend-mode: screen;
-    
+    background-blend-mode: screen; 
 }
-  
+// override for removing logo from relevant pages/components  
 .bg-none {
     background: none !important;
     background-image: none !important;
@@ -110,7 +109,7 @@ main {
             padding-bottom: 2rem;
         }
     }
-
+//For mobile, to at least have the logo slightly visible in the background
     main {
         background: url("../assets/img/logoFondoFestival.png");
         background-size:90vw;  

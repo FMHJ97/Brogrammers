@@ -1,0 +1,17 @@
+/* los estillos para los imagenes dentro de gallery.php */
+
+.grid {
+    gap: 16px;
+    margin: 0 auto;
+  }
+.grid-item {
+    border-radius: 5px;
+    overflow: hidden;
+    position: relative;
+  
+    img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+  }

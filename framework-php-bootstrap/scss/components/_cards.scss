@@ -43,6 +43,7 @@
 
 // En dispositivos móviles, ajusta las dimensiones de las tarjetas.
 @include media-breakpoint-down(md) {
+
   // Ajusta el ancho máximo de las tarjetas y el borde.
   .card-merch-item {
     max-width: 300px;
@@ -101,70 +102,11 @@
   }
 }
 
-.grid {
-  gap: 16px;
-  margin: 0 auto;
-  /* Center the grid */
-}
 
-/* Optional: Basic styles for grid items */
-.grid-item {
-  border-radius: 5px;
-  overflow: hidden;
-  position: relative;
-}
 
-/* Make images fit inside their grid item */
-.grid-item img {
-  width: 100%;
-  height: auto;
-  display: block;
-}
 
-/* clearfix (optional) */
-.grid:after {
-  content: "";
-  display: block;
-  clear: both;
-}
 
-/* ---- grid-item ---- */
-.grid-item {
-  border-radius: 5px;
-  overflow: hidden;
-  position: relative;
-  min-width: 20%;
-  max-width: 100%;
-}
 
-/* Variable width classes for Masonry-like behavior */
-.grid-item--width2 {
-  grid-column: span 2;
-  /* Take up 2 columns */
-}
-
-.grid-item--width3 {
-  grid-column: span 3;
-  /* Take up 3 columns */
-}
-
-.grid-item--width4 {
-  grid-column: span 4;
-  /* Take up 4 columns */
-}
-
-/* Variable height classes for Masonry-like behavior */
-.grid-item--height2 {
-  height: 400px;
-}
-
-.grid-item--height3 {
-  height: 600px;
-}
-
-.grid-item--height4 {
-  height: 800px;
-}
 
 /* ==========  INFO DIVS  =========  */
 
@@ -176,12 +118,13 @@
   padding: 15;
   background: $fade-history-divs;
 
-  &.contactus{   //en contact us teníamos diseñado el borde diferente para llamar la atención.  en blanco. 
-  border: $border-4 solid $texto1;
+  &.contactus {
+    //en contact us teníamos diseñado el borde diferente para llamar la atención.  en blanco. 
+    border: $border-4 solid $texto1;
   }
 
   //cambio colores por defecto de mailto y de su hover. para la sección de info que usa box-area.
-  a[href^="mailto:"] {    
+  a[href^="mailto:"] {
     color: $resaltar2;
     text-decoration: none;
 
@@ -203,6 +146,7 @@
   .bgroundTicketInfo {
     background-image: $fade-info, url("../assets/img/info/festival2.jpg");
   }
+
   .bgroundCampingInfo {
     background-image: $fade-info, url("../assets/img/info/Camping1.jpg");
   }
@@ -243,7 +187,7 @@
 /* ==========  BAND CARDS =========  */
 
 //Configuración general de las columnas donde van las cards
-.colB {   
+.colB {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -252,11 +196,12 @@
   padding: 10px;
 
   //Configuración de los Títulos de las Cards de las Bandas Principales.
-  .titleDays h3 {   
+  .titleDays h3 {
     text-align: center;
     margin-bottom: 0.5rem;
     color: $primario2;
   }
+
   //Configuración de todas las Cards
   .cardBand {
     position: relative;
@@ -297,9 +242,11 @@
     &.headB1 {
       background-image: $fade-lineup, url("/assets/img/lineUp/Eminem.jpg");
     }
+
     &.headB2 {
       background-image: $fade-lineup, url("/assets/img/lineUp/LosdelRio.jpg");
     }
+
     &.headB3 {
       background-image: $fade-lineup, url("/assets/img/lineUp/soundgarden.jpg");
     }
@@ -309,36 +256,47 @@
     &.incB1 {
       background-image: $fade-lineup, url("/assets/img/lineUp/AliceInChains.jpg");
     }
+
     &.incB2 {
       background-image: $fade-lineup, url("/assets/img/lineUp/50-cent-.jpg");
     }
+
     &.incB3 {
       background-image: $fade-lineup, url("/assets/img/lineUp/queen1.jpg");
     }
+
     &.incB4 {
       background-image: $fade-lineup, url("/assets/img/lineUp/pearlJam.jpg");
     }
+
     &.incB5 {
       background-image: $fade-lineup, url("/assets/img/lineUp/FallingInReverse.jpg");
     }
+
     &.incB6 {
       background-image: $fade-lineup, url("/assets/img/lineUp/Parchis.jpg");
     }
+
     &.incB7 {
       background-image: $fade-lineup, url("/assets/img/lineUp/Loschichos.jpeg");
     }
+
     &.incB8 {
       background-image: $fade-lineup, url("/assets/img/lineUp/Rush.jpg");
     }
+
     &.incB9 {
       background-image: $fade-lineup, url("/assets/img/lineUp/2pac.jpg");
     }
+
     &.incB10 {
       background-image: $fade-lineup, url("/assets/img/lineUp/lola-flores-biografia.jpg");
     }
+
     &.incB11 {
       background-image: $fade-lineup, url("/assets/img/lineUp/LambOfGod-Cuadrada.jpeg");
     }
+
     &.incB12 {
       background-image: $fade-lineup, url("/assets/img/lineUp/snoopDog.jpg");
     }
@@ -401,12 +359,10 @@
     padding: 1rem;
     border: $border-5 solid $primario2;
     border-radius: 10px;
-    background: linear-gradient(
-      to bottom,
-      rgba($fondo, 0%) 23%,
-      rgba($resaltar2, 50%) 55%,
-      $resaltar2 100%
-    );
+    background: linear-gradient(to bottom,
+        rgba($fondo, 0%) 23%,
+        rgba($resaltar2, 50%) 55%,
+        $resaltar2 100%);
 
     .back-content {
       align-items: center;

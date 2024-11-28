@@ -153,7 +153,7 @@
   color: $texto2;
   font-family: $headings-font-family;
 }
-
+//Los botones dentro de index.php
 .btn-index {
   @extend .button-ticket;
   box-shadow: none;
@@ -167,7 +167,7 @@
   font-family: $headings-font-family;
   font-size: $heading-font-1;
 }
-
+// Un boton opcional para poder meter imagenes en una base de datos
 .btn-gallery {
   @extend .button-ticket;
   width: 100%;

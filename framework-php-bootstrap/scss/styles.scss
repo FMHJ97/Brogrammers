@@ -15,6 +15,7 @@ $bootstrap-icons-font-src: url("../node_modules/bootstrap-icons/font/fonts/boots
 @import "./global.scss";
 
 // Components
+@import "./components/masonry.scss";
 @import "./components/buttons.scss";
 @import "./components/navbar.scss"; 
 @import "./components/forms.scss";

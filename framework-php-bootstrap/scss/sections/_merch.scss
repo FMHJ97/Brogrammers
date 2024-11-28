@@ -105,7 +105,7 @@ main {
         flex-grow: 0; // Ajuste para que el contenedor no crezca.
         padding-top: 5px;
         padding-bottom: 5px;
-        border: 2px solid $resaltar2;
+        border: $border-2 solid $resaltar2;
         border-radius: 5px;
         font-family: $headings-font-family;
         background-color: $fondo;
@@ -186,7 +186,7 @@ main {
 
     // Estilos para el campo de búsqueda.
     .form-control-search {
-        border: 2px outset $resaltar1;
+        border: $border-2 outset $resaltar1;
         padding: 0.1em 0.5em;
         border-radius: 20px;
         transition: border-color 0.3s;
@@ -205,7 +205,7 @@ main {
     .btn-search {
         background: $resaltar1;
         color: $texto2;
-        border: 1px outset $resaltar1;
+        border: $border-2 outset $resaltar1;
         border-radius: 20px;
 
         // Estilos para el icono de búsqueda.

@@ -20726,7 +20726,7 @@ main {
 
 /* ==========  INFO DIVS  =========  */
 .box-area {
-  border: 6px solid #107361;
+  border: 5px solid #107361;
   border-radius: 10px;
   text-decoration: none;
   padding: 15;
@@ -20745,7 +20745,7 @@ main {
 }
 
 .box-area-fondo {
-  border: 6px solid #107361;
+  border: 5px solid #107361;
   border-radius: 10px;
   text-decoration: none;
   padding: 15;
@@ -20807,7 +20807,7 @@ main {
   background-size: cover;
   background-position: center;
   box-sizing: border-box;
-  border: 6px solid #107361;
+  border: 5px solid #107361;
   border-radius: 10px;
   overflow: hidden;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
@@ -20916,7 +20916,7 @@ main {
   text-align: center;
   transform: rotateY(180deg);
   padding: 1rem;
-  border: 6px solid #107361;
+  border: 5px solid #107361;
   border-radius: 10px;
   background: linear-gradient(to bottom, rgba(10, 15, 15, 0) 23%, rgba(197, 252, 236, 0.5) 55%, #C5FCEC 100%);
 }
@@ -21249,7 +21249,7 @@ main .item-heading h2, main .item-heading .h2 {
 .search-bar .btn-search {
   background: #29F2B9;
   color: #0A0F0F;
-  border: 1px outset #29F2B9;
+  border: 2px outset #29F2B9;
   border-radius: 20px;
 }
 .search-bar .btn-search i {

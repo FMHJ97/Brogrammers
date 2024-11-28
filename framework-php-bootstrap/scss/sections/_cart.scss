@@ -50,7 +50,7 @@
 }
 
 .quantity-group {
-    border: 1px solid $resaltar2;
+    border: $border-1 solid $resaltar2;
     border-radius: 5px;
     padding: 0;
 }
@@ -131,7 +131,7 @@
             background-color: $resaltar2; 
             color: $texto2; 
             border-radius: 50%; 
-            border: 2px solid $resaltar1; 
+            border: $border-2 solid $resaltar1; 
         }
 
         &:active {

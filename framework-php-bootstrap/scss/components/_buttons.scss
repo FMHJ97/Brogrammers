@@ -30,7 +30,7 @@
 .btn-category-item,
 .btn-item-size {
   font-family: $headings-font-family;
-  border: 2px solid $resaltar1;
+  border: $border-2 solid $resaltar1;
   border-radius: 20px;
   display: flex;
   align-items: center;
@@ -59,7 +59,7 @@
 
 // Botones de Talla Producto.
 .btn-item-size {
-  border: 2px solid $resaltar2;
+  border: $border-2 solid $resaltar2;
   border-radius: 5px;
   padding: 0.75em 1.25em;
 
@@ -215,7 +215,7 @@ button {
   width: 100%;
   margin: 0.5rem;
   transition: transform 0.3s, box-shadow 0.3s;
-  border: 4px solid $resaltar1;
+  border: $border-4 solid $resaltar1;
   box-shadow: 10px 10px 15px rgba($resaltar1, 0.6);
 
 }
@@ -270,7 +270,7 @@ button {
 
   &:not(.selected) {
     background-color: $fondo !important; /* Color de fondo por defecto */
-    border: 3px solid $resaltar1;
+    border: $border-3 solid $resaltar1;
     border-radius: 20px;
   }
 }

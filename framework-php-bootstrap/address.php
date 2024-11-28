@@ -8,14 +8,14 @@
 </head>
 
 <body>
-    <!-- Navigation Bar -->
+    <!-- Barra de navegación -->
     <?php include("includes/navbar.php"); ?>
 
     <main>
         <section class="page-section">
 
             <div class="container ">
-                <!-- Row with titles (Carrito, dirección, pago) -->
+                <!-- Fila con títulos (Carrito, Dirección, Pago) -->
                 <div class="row d-flex text-center page-section-heading">
                     <div class="col">
                         <h3 class="step-title">Carrito</h3>
@@ -30,12 +30,11 @@
                     </div>
                 </div>
 
-                <!-- Row with billing and summary -->
-
+                <!-- Fila con formulario de facturación y resumen -->
                 <div class="row gap-2">
                     <div class="col-md-7 authentication-form mb-2 p-3">
 
-                        <!-- Billing form -->
+                        <!-- Título -->
                         <div class="row mb-2">
                             <div class="col text-start">
                                 <h4>Dirección de envío</h4>
@@ -50,7 +49,7 @@
                             </div>
                         </div>
 
-                        <!-- Name and Surname -->
+                        <!-- Nombre y Apellidos -->
                         <div class="row">
                             <div class="col-md-6">
                                 <label>Nombre</label><span> *</span>
@@ -63,7 +62,7 @@
                             </div>
                         </div>
 
-                        <!-- Address -->
+                        <!-- Dirección -->
                         <div class="row">
                             <div class="col-md-6">
                                 <label>Dirección</label><span> *</span>
@@ -75,7 +74,7 @@
                             </div>
                         </div>
 
-                        <!-- Country and Postal Code -->
+                        <!-- País y Código Postal -->
                         <div class="row">
                             <div class="col-md-6">
                                 <label>País</label><span> *</span>
@@ -87,7 +86,7 @@
                             </div>
                         </div>
 
-                        <!-- City and Mobile Phone -->
+                        <!-- Ciudad y Teléfono Móvil -->
                         <div class="row">
                             <div class="col-md-6">
                                 <label>Ciudad</label><span> *</span>
@@ -101,7 +100,7 @@
 
                     </div>
 
-                    <!-- Summary -->
+                    <!-- Resumen -->
                     <div class="col-md-4 container-summary p-3">
                         <div class="row mb-3">
                             <div class="col text-center">

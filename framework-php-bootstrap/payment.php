@@ -8,14 +8,14 @@
 </head>
 
 <body>
-    <!-- Navigation Bar -->
+    <!-- Barra de navegación -->
     <?php include("includes/navbar.php"); ?>
 
     <main>
         <section class="page-section">
 
-            <div class="container ">
-                <!-- Row with titles (Carrito, dirección, pago) -->
+            <div class="container">
+                <!-- Fila con títulos (Carrito, Dirección, Pago) -->
                 <div class="row d-flex text-center page-section-heading">
                     <div class="col">
                         <h3 class="step-title">Carrito</h3>
@@ -30,20 +30,18 @@
                     </div>
                 </div>
 
-                <!-- Row with billing and summary -->
-
+                <!-- Fila con formulario de facturación y resumen -->
                 <div class="row gap-2">
                     <div class="col-md-7 authentication-form mb-2 p-3">
 
-                        <!-- Billing form -->
+                        <!-- Formulario de pago -->
                         <div class="row">
                             <div class="col text-center">
                                 <h4>Método de pago</h4>
                             </div>
                         </div>
 
-                        <!-- Payment Method in two boxes when clicked will show the inputs for credit card or paypal -->
-                        
+                        <!-- Métodos de pago en dos botones que, al hacer clic, mostrarán los campos para tarjeta de crédito o Paypal -->
                         <div class="row mb-3 g-2">
                             <div class="col-md-6">
                                 <button class="btn btn-payment-method selected p-5">
@@ -58,7 +56,7 @@
                             </div>
                         </div>
 
-                        <!-- Credit Card Inputs -->
+                        <!-- Campos para tarjeta de crédito -->
                         <div class="row">
                             <div class="col">
                                 <label>Número de tarjeta</label><span> *</span>
@@ -84,20 +82,20 @@
                             </div>
                         </div>
 
-                        <!-- Paypal Inputs -->
+                        <!-- Campos para Paypal -->
                         <div class="row d-none">
                             <div class="col">
-                                <label><h5>Correo electrónico de Paypal</h5></label><span> *</span>
-                                <input type="email" class="form-control" placeholder="Introduzca su correo electrónico de Paypal">
+                                <label>
+                                    <h5>Correo electrónico de Paypal</h5>
+                                </label><span> *</span>
+                                <input type="email" class="form-control"
+                                    placeholder="Introduzca su correo electrónico de Paypal">
                             </div>
                         </div>
 
-
-                        
-
                     </div>
 
-                    <!-- Summary -->
+                    <!-- Resumen -->
                     <div class="col-md-4 container-summary p-3">
                         <div class="row mb-3">
                             <div class="col text-center">
@@ -150,10 +148,8 @@
 
                         </div>
 
-
                         <p class="mb-0 discount-text">¿Tienes un código de descuento?</p>
                         <div class="row mb-3">
-
                             <div class="col-md-7 mb-1">
                                 <input type="text" class="form-control-discount" placeholder="Introduzca código">
                             </div>
@@ -161,11 +157,9 @@
                             <div class="col-md-5">
                                 <button type="button" class="button-apply-discount">Aplicar</button>
                             </div>
-
                         </div>
 
                         <div class="row">
-
                             <div class="col-8">
                                 <h5>Total</h5>
                             </div>
@@ -186,7 +180,7 @@
         </section>
     </main>
 
-    <!-- Footer -->
+    <!-- Pie de página -->
     <?php include("includes/footer.php"); ?>
 
 </body>

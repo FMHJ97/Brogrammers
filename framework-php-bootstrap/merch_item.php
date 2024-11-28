@@ -87,7 +87,7 @@
                     <!-- Botón Añadir al Carrito -->
                     <div class="row">
                         <div class="col btn-cart py-3">
-                            <form action="#" method="POST">
+                            <form action="cart.php" method="POST" novalidate>
                                 <button type="submit" class="btn btn-cart">Añadir al Carrito</button>
                             </form>
                         </div>

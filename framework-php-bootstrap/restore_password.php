@@ -10,10 +10,10 @@
     <!-- Componente NavBar -->
     <?php include("includes/navbar.php"); ?>
 
-    <main>
+    <main class="px-3 px-md-0">
         <!-- Sección Recuperar Contraseña -->
-        <section class="py-md-5">
-            <div class="container authentication-form my-5 p-5">
+        <section class="py-3 py-md-5">
+            <div class="container authentication-form my-5 p-4 p-md-5">
                 <!-- Encabezado -->
                 <div class="row">
                     <h1>Recuperar contraseña</h1>
@@ -21,7 +21,7 @@
                 <!-- Formulario-->
                 <form action="">
                     <!-- Email Input-->
-                    <div class="mb-5 mt-5">
+                    <div class="mb-5 mt-3 mt-md-5">
                         <label for="email">Correo electrónico</label><span> *</span>
                         <input type="email" class="form-control" id="email"
                             placeholder="Introduzca su correo electrónico" name="email">

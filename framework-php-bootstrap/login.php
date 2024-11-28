@@ -10,10 +10,10 @@
     <!-- Componente NavBar -->
     <?php include("includes/navbar.php"); ?>
 
-    <main>
+    <main class="px-3 px-md-0">
         <!-- Sección Login-->
-        <section class="py-md-5">
-            <div class="container authentication-form my-5 p-5">
+        <section class="py-3 py-md-5">
+            <div class="container authentication-form my-5 p-4 p-md-5">
                 <!-- Encabezado -->
                 <div class="row">
                     <h1>Iniciar Sesión</h1>
@@ -24,7 +24,7 @@
                     </div>
                 </div>
                 <!-- Formulario -->
-                <form action="">
+                <form action="index.php">
                     <!-- Email Input -->
                     <div class="mb-3 mt-3">
                         <label for="email">Correo electrónico</label><span> *</span>

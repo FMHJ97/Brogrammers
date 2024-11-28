@@ -10,10 +10,10 @@
     <!-- Componente NavBar -->
     <?php include("includes/navbar.php"); ?>
 
-    <main>
+    <main class="px-3 px-md-0">
         <!-- Sección Crear Cuenta -->
-        <section class="py-md-5">
-            <div class="container authentication-form my-5 p-5">
+        <section class="py-3 py-md-5">
+            <div class="container authentication-form my-5 p-4 p-md-5">
                 <!-- Encabezado -->
                 <div class="row">
                     <h1>Crear cuenta</h1>
@@ -24,7 +24,7 @@
                     </div>
                 </div>
                 <!-- Formulario -->
-                <form action="">
+                <form action="index.php">
                     <!-- Nombre Completo Input-->
                     <div class="mb-3 mt-3">
                         <label for="full_name">Nombre completo</label>

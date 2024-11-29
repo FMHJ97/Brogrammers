@@ -38,7 +38,7 @@
                             <div class="ticket-body">
                                 <h3 class="ticket-title text-center">General Parking</h3>
                                 <p class="ticket-text">Entrada que te permite disfrutar de un día de festival</p>
-                                <p class="ticket-price text-center">Por 75€</p>
+                                <p class="ticket-price text-center">Por <span class="ticket-price-number">75€</span></p>
                                 <a href="cart.php" class="button-ticket">Comprar</a>
                             </div>
                         </div>
@@ -50,7 +50,7 @@
                             <div class="ticket-body">
                                 <h3 class="ticket-title text-center">Electric Car Parking</h3>
                                 <p class="ticket-text">Con esta entrada podrás vivir la experiencia del festival 2 días</p>
-                                <p class="ticket-price text-center">Por 90€</p>
+                                <p class="ticket-price text-center">Por <span class="ticket-price-number">90€</span></p>
                                 <a href="cart.php" class="button-ticket">Comprar</a>
                             </div>
                         </div>
@@ -62,7 +62,7 @@
                             <div class="ticket-body">
                                 <h3 class="ticket-title text-center">Premium Parking</h3>
                                 <p class="ticket-text">Con esta entrada podrás disfrutar de todo el fin de semana de festival</p>
-                                <p class="ticket-price text-center">Por 145€</p>
+                                <p class="ticket-price text-center">Por<span class="ticket-price-number"> 145€</span></p>
                                 <a href="cart.php" class="button-ticket">Comprar</a>
                             </div>
                         </div>
@@ -79,7 +79,7 @@
                             <div class="ticket-body">
                                 <h3 class="ticket-title text-center">Tent Camping</h3>
                                 <p class="ticket-text">Entrada para disfrutar de la experiencia VIP del festival un día</p>
-                                <p class="ticket-price text-center">Por 60€</p>
+                                <p class="ticket-price text-center">Por <span class="ticket-price-number">60€</span></p>
                                 <a href="cart.php" class="button-ticket">Comprar</a>
                             </div>
                         </div>
@@ -91,7 +91,7 @@
                             <div class="ticket-body">
                                 <h3 class="ticket-title text-center">RV Camping</h3>
                                 <p class="ticket-text">Para disfrutar el espectáculo desde la zona VIP 2 días</p>
-                                <p class="ticket-price text-center">Por 650€</p>
+                                <p class="ticket-price text-center">Por <span class="ticket-price-number">650€</span></p>
                                 <a href="cart.php" class="button-ticket">Comprar</a>
                             </div>
                         </div>
@@ -103,7 +103,7 @@
                             <div class="ticket-body">
                                 <h3 class="ticket-title text-center">Premium RV Camping</h3>
                                 <p class="ticket-text">A disfrutar del festival desde la zona VIP todos los días</p>
-                                <p class="ticket-price text-center">Por 800€</p>
+                                <p class="ticket-price text-center">Por <span class="ticket-price-number">800€</span></p>
                                 <a href="cart.php" class="button-ticket">Comprar</a>
                             </div>
                         </div>

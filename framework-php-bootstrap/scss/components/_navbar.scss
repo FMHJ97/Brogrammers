@@ -31,7 +31,11 @@ nav {
     font-family: $headings-font-family;
     color: $textoEnlace;
     &:hover {
-        color: $resaltar2;
+        color: $resaltar2; 
+    }
+
+    i {
+        color: $resaltar2; // *****
     }
 }
 
@@ -43,7 +47,7 @@ nav {
 // Establecer el tamaño del icono del carrito en la barra de navegación a 35px y 27px cuando la pantalla sea más pequeña que el tamaño medio
 .cart-icon {
     font-size: 35px;
-    color: $textoEnlace;
+    color: $resaltar2; // *****
     @include media-breakpoint-down(md) {
         font-size: 27px;
 
@@ -73,7 +77,7 @@ nav {
 
 // Establecer el color del icono del menú a blanco y el tamaño a 37px
 button i {
-    color: $textoEnlace;
+    color: $resaltar2; // *****
     font-size: 37px;    
 }
 

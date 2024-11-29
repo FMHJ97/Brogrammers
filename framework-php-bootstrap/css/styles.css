@@ -20145,7 +20145,7 @@ main {
   font-family: "Krona One", sans-serif;
   text-align: center;
   padding-top: 3rem;
-  padding-bottom: 3rem;
+  padding-bottom: 0.5rem;
 }
 .page-section .page-section-heading h1, .page-section .page-section-heading .h1 {
   color: #FFFDFA;

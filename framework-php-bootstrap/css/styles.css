@@ -20483,9 +20483,6 @@ nav {
 .navbar-nav .nav-link:hover {
   color: #C5FCEC;
 }
-.navbar-nav .nav-link i {
-  color: #C5FCEC;
-}
 
 .navbar-nav .nav-link i {
   font-size: 35px;
@@ -20493,7 +20490,7 @@ nav {
 
 .cart-icon {
   font-size: 35px;
-  color: #C5FCEC;
+  color: #FFFDFA;
 }
 @media (max-width: 767.98px) {
   .cart-icon {
@@ -20520,7 +20517,7 @@ nav {
 }
 
 button i {
-  color: #C5FCEC;
+  color: #FFFDFA;
   font-size: 37px;
 }
 

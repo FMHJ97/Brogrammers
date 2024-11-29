@@ -38,7 +38,7 @@
                             <div class="ticket-body">
                                 <h3 class="ticket-title text-center">1 - Day Pass</h3>
                                 <p class="ticket-text">Entrada que te permite disfrutar de un día de festival</p>
-                                <p class="ticket-price text-center">Por 25€</p>
+                                <p class="ticket-price text-center">Por <span class="ticket-price-number">25€</span></p>
                                 <a href="cart.php" class="button-ticket">Comprar</a>
                             </div>
                         </div>
@@ -50,7 +50,7 @@
                             <div class="ticket-body">
                                 <h3 class="ticket-title text-center">2 - Day Pass</h3>
                                 <p class="ticket-text">Con esta entrada podrás vivir la experiencia del festival 2 días</p>
-                                <p class="ticket-price text-center">Por 50€</p>
+                                <p class="ticket-price text-center">Por <span class="ticket-price-number">50€</span></p>
                                 <a href="cart.php" class="button-ticket">Comprar</a>
                             </div>
                         </div>
@@ -62,7 +62,7 @@
                             <div class="ticket-body">
                                 <h3 class="ticket-title text-center">Weekend Pass</h3>
                                 <p class="ticket-text">Con esta entrada podrás disfrutar de todo el fin de semana de festival</p>
-                                <p class="ticket-price text-center">Por 70€</p>
+                                <p class="ticket-price text-center">Por <span class="ticket-price-number">70€</span></p>
                                 <a href="cart.php" class="button-ticket">Comprar</a>
                             </div>
                         </div>
@@ -79,7 +79,7 @@
                             <div class="ticket-body">
                                 <h3 class="ticket-title text-center">1 - Day Pass</h3>
                                 <p class="ticket-text">Entrada para disfrutar de la experiencia VIP del festival un día</p>
-                                <p class="ticket-price text-center">Por 40€</p>
+                                <p class="ticket-price text-center">Por <span class="ticket-price-number">40€</span></p>
                                 <a href="cart.php" class="button-ticket">Comprar</a>
                             </div>
                         </div>
@@ -91,7 +91,7 @@
                             <div class="ticket-body">
                                 <h3 class="ticket-title text-center">2 - Day Pass</h3>
                                 <p class="ticket-text">Para disfrutar el espectáculo desde la zona VIP 2 días</p>
-                                <p class="ticket-price text-center">Por 80€</p>
+                                <p class="ticket-price text-center">Por <span class="ticket-price-number">80€</span></p>
                                 <a href="cart.php" class="button-ticket">Comprar</a>
                             </div>
                         </div>
@@ -103,7 +103,7 @@
                             <div class="ticket-body">
                                 <h3 class="ticket-title text-center">Weekend Pass</h3>
                                 <p class="ticket-text">A disfrutar del festival desde la zona VIP todos los días</p>
-                                <p class="ticket-price text-center">Por 110€</p>
+                                <p class="ticket-price text-center">Por <span class="ticket-price-number">110€</span></p>
                                 <a href="cart.php" class="button-ticket">Comprar</a>
                             </div>
                         </div>
@@ -113,39 +113,12 @@
 
                 <!-- Row with map -->
                 <?php include("includes/map.php");  ?>
-           <!-- <div class="row">
-                    <div class="col-md-12">
-                        <div class="ticket-card">
-                            <div class="ticket-body">
-                                <img src="assets/img/mapaFestival.jpg" class="ticket-img" alt="Mapa del festival">
-                                <button class="button-ticket" data-bs-toggle="modal" data-bs-target="#myModal"
-                                    id="map">Ver Mapa</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>-->
+          
             </div>
 
             <!-- Map Modal -->
             <?php include("includes/mapmodal.php");  ?>
-             <!--<div class="modal" id="myModal">
-                <div class="modal-dialog custom-modal-dialog">
-                    <div class="modal-content custom-modal-content">
-
-                        <!-- Modal body -->
-                        <!-- <div class="modal-body custom-modal-body">
-                            <img src="assets/img/mapaFestival.jpg" class="img-fluid" alt="Mapa del festival">
-                        </div>
-
-                        <!-- Modal footer -->
-                       <!--  <div class="modal-footer custom-modal-footer justify-content-center">
-                            <button type="button" class="button-ticket" data-bs-dismiss="modal">Cerrar</button>
-                        </div>
-
-                    </div>
-                </div>
-            </div>-->
-            
+             
         </section>
     </main>
 

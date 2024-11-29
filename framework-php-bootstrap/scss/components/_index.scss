@@ -66,10 +66,17 @@
     justify-content: center;
     align-items: center;
   }
-
+  @include media-breakpoint-down(md){
+    .festival-location {
+    font-size: $heading-font-phone-5 !important;
+    }
+    .festival-date {
+      font-size: $heading-font-phone-2 !important;
+    }
+  }
   .festival-location {
     background-color: $resaltar1;
-    color: $texto1;
+    color: $texto2;
     font-size: $heading-font-1;
     font-family: $headings-font-family;
     font-weight: $headings-font-weight;

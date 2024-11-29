@@ -154,6 +154,7 @@
   color: $texto2;
   font-family: $headings-font-family;
 }
+
 //Los botones dentro de index.php
 .btn-index {
   @extend .button-ticket;
@@ -167,7 +168,24 @@
   margin: auto;
   font-family: $headings-font-family;
   font-size: $heading-font-1;
+
+  @include media-breakpoint-down(md) {
+    width: 75%;
+    font-size: $heading-font-phone-3 !important;
+  }
 }
+
+.btn-index-lineup {
+  @extend .btn-index;
+
+  @include media-breakpoint-down(md) {
+    width: 100% !important;
+    padding-inline: 5rem;
+
+    font-size: $heading-font-phone-3 !important;
+  }
+}
+
 // Un boton opcional para poder meter imagenes en una base de datos
 .btn-gallery {
   @extend .button-ticket;
@@ -198,16 +216,16 @@ button {
 }
 
 /* ======== BUTTONS LINEUP DAYS ==========*/
-.btn-fullLineup{
-  @extend .btn-category-item;  //es igual que los de categoría item
+.btn-fullLineup {
+  @extend .btn-category-item; //es igual que los de categoría item
   width: 100%;
 }
 
-.btn-days{
-  @extend .btn-category-item;  //es igual que los de categoría item
+.btn-days {
+  @extend .btn-category-item; //es igual que los de categoría item
   width: 100%;
 
-  @include media-breakpoint-down(md){
+  @include media-breakpoint-down(md) {
     font-size: $heading-font-phone-5;
   }
 }
@@ -240,12 +258,15 @@ button {
 .infoButton1 {
   background-image: url("../assets/img/info/FestHistory1.jpg");
 }
+
 .infoButton2 {
   background-image: url("../assets/img/info/festival2.jpg");
 }
+
 .infoButton3 {
   background-image: url("../assets/img/info/Camping.png");
 }
+
 .infoButton4 {
   background-image: url("../assets/img/info/AccessibleFestivals.jpg");
 }
@@ -261,6 +282,7 @@ button {
   font-size: $heading-font-2;
   text-shadow: 0px 0px 10px rgba($fondo, 0.923);
 }
+
 .button-text-bottom {
   font-size: $heading-font-2;
   margin-top: 120px;
@@ -273,19 +295,25 @@ button {
 /* Botones de método de pago */
 
 .btn-payment-method {
-  height: 90px !important; /* Altura fija para ambos botones */
-  border-radius: 20px; /* Bordes redondeados */
+  height: 90px !important;
+  /* Altura fija para ambos botones */
+  border-radius: 20px;
+  /* Bordes redondeados */
   display: flex;
-  align-items: center; /* Centrar verticalmente */
-  justify-content: center; /* Centrar horizontalmente */
+  align-items: center;
+  /* Centrar verticalmente */
+  justify-content: center;
+  /* Centrar horizontalmente */
   padding: 10px;
 
   &.selected {
-    background-color: $resaltar1 !important; /* Cambia el color al estar seleccionado */
+    background-color: $resaltar1 !important;
+    /* Cambia el color al estar seleccionado */
   }
 
   &:not(.selected) {
-    background-color: $fondo !important; /* Color de fondo por defecto */
+    background-color: $fondo !important;
+    /* Color de fondo por defecto */
     border: $border-3 solid $resaltar1;
     border-radius: 20px;
   }
@@ -295,7 +323,8 @@ button {
 @include media-breakpoint-down(md) {
 
   .payment-method-img {
-    max-width: 50%; /* Limita el ancho para evitar desbordamiento */
+    max-width: 50%;
+    /* Limita el ancho para evitar desbordamiento */
   }
 
 }

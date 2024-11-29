@@ -29,7 +29,7 @@
                             <div class="ticket-body">
                                 <h3 class="ticket-title text-center">Tickets Festival</h3>
                                 <p class="ticket-text">Encuentra tus entradas para el GroundSound Festival</p>
-                                <p class="ticket-price text-center">Desde 25€</p>
+                                <p class="ticket-price text-center">Desde<span class="ticket-price-number"> 25€</span></p>
                                 <a href="ticketing.php" class="button-ticket">Comprar</a>
                             </div>
                         </div>
@@ -42,7 +42,7 @@
                                 <h3 class="ticket-title text-center">Parking</h3>
                                 <p class="ticket-text">Encuentra tu sitio para guardar tu vehículo mientras disfrutas
                                 </p>
-                                <p class="ticket-price text-center">Desde 75€</p>
+                                <p class="ticket-price text-center">Desde <span class="ticket-price-number">75€</span></p>
                                 <a href="parking_camping.php?tab=parking" class="button-ticket">Comprar</a>
                             </div>
                         </div>
@@ -55,7 +55,7 @@
                                 <h3 class="ticket-title text-center">Camping</h3>
                                 <p class="ticket-text">Reserva tu parcela de camping para descansar en el mismo festival
                                 </p>
-                                <p class="ticket-price text-center">Desde 89€</p>
+                                <p class="ticket-price text-center">Desde <span class="ticket-price-number">89€</span></p>
                                 <a href="parking_camping.php?tab=camping" class="button-ticket">Comprar</a>
                             </div>
                         </div>

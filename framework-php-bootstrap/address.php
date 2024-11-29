@@ -11,7 +11,7 @@
     <!-- Barra de navegación -->
     <?php include("includes/navbar.php"); ?>
 
-    <main class="px-3 px-md-0">
+    <main class="px-3 d-block px-md-0">
         <section class="page-section">
 
             <div class="container ">
@@ -114,37 +114,37 @@
                                 <p>Detalles del pedido</p>
 
                                 <div class="row">
-                                    <div class="col-8 text-end">
+                                    <div class="col text-end">
                                         <p>Precio sin IVA</p>
                                     </div>
-                                    <div class="col-4 text-end">
+                                    <div class="col text-end">
                                         <p>50€</p>
                                     </div>
                                 </div>
 
                                 <div class="row">
-                                    <div class="col-8 text-end">
+                                    <div class="col text-end">
                                         <p>IVA</p>
                                     </div>
-                                    <div class="col-4 text-end">
+                                    <div class="col text-end">
                                         <p>10€</p>
                                     </div>
                                 </div>
 
                                 <div class="row">
-                                    <div class="col-8 text-end">
+                                    <div class="col text-end">
                                         <p>Cupón de descuento</p>
                                     </div>
-                                    <div class="col-4 text-end">
+                                    <div class="col text-end">
                                         <p>0€</p>
                                     </div>
                                 </div>
 
                                 <div class="row">
-                                    <div class="col-8 text-end">
+                                    <div class="col text-end">
                                         <p>Gastos de envío</p>
                                     </div>
-                                    <div class="col-4 text-end">
+                                    <div class="col text-end">
                                         <p>5€</p>
                                     </div>
                                 </div>

@@ -11,7 +11,7 @@
     <!-- Barra de navegación -->
     <?php include("includes/navbar.php"); ?>
 
-    <main>
+    <main class="px-3 px-md-0">
         <section class="page-section">
 
             <div class="container">

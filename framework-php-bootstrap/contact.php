@@ -20,7 +20,7 @@
             </div>
 
             <!-- Recuadro con contenido --><!-- PRIVACY POLICY -->   
-            <div class="container bg-white text-black shadow-sm rounded-3 p-5 ">
+            <div class="container bg-white text-black shadow-sm rounded-3 py-5 px-3">
                 <h4 class="text-center mb-4 py-3">TRATAMIENTO DE DATOS PERSONALES Y POLÍTICA DE PRIVACIDAD</h4>
                 <div class="mb-4">
                     <h5><b>1. ¿QUIÉN ES EL RESPONSABLE DEL TRATAMIENTO DE TUS DATOS?</b></h5>
@@ -86,7 +86,7 @@
             </div>
 
             <!-- Recuadro con contenido --><!-- TERMS AND CONDITIONS. -->
-            <div class="container bg-white text-black shadow-sm  rounded-3 p-5">
+            <div class="container bg-white text-black shadow-sm  rounded-3 py-5 px-3">
                 <h4 class="text-center mb-4 py-3">TERMS Y CONDITIONS</h4>
                 <div class="mb-4">
                     <p>

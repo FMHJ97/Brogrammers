@@ -20170,6 +20170,23 @@ main {
     background-attachment: fixed;
   }
 }
+/* los estillos para los imagenes dentro de gallery.php */
+.grid {
+  gap: 16px;
+  margin: 0 auto;
+}
+
+.grid-item {
+  border-radius: 5px;
+  overflow: hidden;
+  position: relative;
+}
+.grid-item img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
 .dropdown-order-by {
   display: flex;
   justify-content: start;
@@ -20654,71 +20671,6 @@ main {
   width: 100%;
 }
 
-.grid {
-  gap: 16px;
-  margin: 0 auto;
-  /* Center the grid */
-}
-
-/* Optional: Basic styles for grid items */
-.grid-item {
-  border-radius: 5px;
-  overflow: hidden;
-  position: relative;
-}
-
-/* Make images fit inside their grid item */
-.grid-item img {
-  width: 100%;
-  height: auto;
-  display: block;
-}
-
-/* clearfix (optional) */
-.grid:after {
-  content: "";
-  display: block;
-  clear: both;
-}
-
-/* ---- grid-item ---- */
-.grid-item {
-  border-radius: 5px;
-  overflow: hidden;
-  position: relative;
-  min-width: 20%;
-  max-width: 100%;
-}
-
-/* Variable width classes for Masonry-like behavior */
-.grid-item--width2 {
-  grid-column: span 2;
-  /* Take up 2 columns */
-}
-
-.grid-item--width3 {
-  grid-column: span 3;
-  /* Take up 3 columns */
-}
-
-.grid-item--width4 {
-  grid-column: span 4;
-  /* Take up 4 columns */
-}
-
-/* Variable height classes for Masonry-like behavior */
-.grid-item--height2 {
-  height: 400px;
-}
-
-.grid-item--height3 {
-  height: 600px;
-}
-
-.grid-item--height4 {
-  height: 800px;
-}
-
 /* ==========  INFO DIVS  =========  */
 .box-area {
   border: 5px solid #107361;
@@ -20757,7 +20709,7 @@ main {
   position: relative;
   background-size: cover;
   background-position: center;
-  height: 450px;
+  height: 350px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -20773,8 +20725,10 @@ main {
   border: 2px solid #FFFDFA;
   border-radius: 20px;
   padding: 0.5em 1.2em;
+  margin-top: 4.5em;
   display: flex;
   align-items: center;
+  align-self: flex-start;
   justify-content: center;
   white-space: nowrap;
   transition: all 0.3s ease;
@@ -20802,7 +20756,7 @@ main {
   background-size: cover;
   background-position: center;
   box-sizing: border-box;
-  border: 5px solid #107361;
+  border: 3px solid #29F2B9;
   border-radius: 10px;
   overflow: hidden;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
@@ -20931,8 +20885,9 @@ main {
 }
 
 .patro-seccion {
+  flex: auto;
   background-color: #0A0F0F;
-  border: 2px solid #FFFDFA;
+  border: 4px solid #FFFDFA;
   border-radius: 10px;
   margin-bottom: 5rem;
   margin-top: 3rem;

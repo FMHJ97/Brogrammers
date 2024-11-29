@@ -36,7 +36,7 @@ nav {
 
     i {
         color: $resaltar2; // *****
-        text-shadow: 0px 0px 3px rgba($resaltar1, 0.9); // Sombra al trazo del icono
+        text-shadow: 0px 0px 8px rgba($resaltar1, 0.9); // Sombra al trazo del icono
     }
 }
 
@@ -49,6 +49,8 @@ nav {
 .cart-icon {
     font-size: 35px;
     color: $resaltar2; // *****
+    text-shadow: 0px 0px 8px rgba($resaltar1, 0.9); // Sombra al trazo del icono
+
     @include media-breakpoint-down(md) {
         font-size: 27px;
 
@@ -80,6 +82,7 @@ nav {
 button i {
     color: $resaltar2; // *****
     font-size: 37px;   
+    text-shadow: 0px 0px 8px rgba($resaltar1, 0.9); // Sombra al trazo del icono
 }
 
 // Establecer el color del icono del menú a $resaltar2 cuando se pasa el ratón por encima

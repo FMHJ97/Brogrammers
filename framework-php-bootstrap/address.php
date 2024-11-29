@@ -112,43 +112,39 @@
                             <div class="col">
 
                                 <p>Detalles del pedido</p>
-
                                 <div class="row">
-                                    <div class="col text-end">
+                                    <!-- Cada col-8 representa la columna de la izquierda y cada col-4 la de la derecha -->
+                                    <div class="col-8 text-end">
                                         <p>Precio sin IVA</p>
                                     </div>
-                                    <div class="col text-end">
+                                    <div class="col-4 text-end">
                                         <p>50€</p>
                                     </div>
                                 </div>
-
                                 <div class="row">
-                                    <div class="col text-end">
+                                    <div class="col-8 text-end">
                                         <p>IVA</p>
                                     </div>
-                                    <div class="col text-end">
+                                    <div class="col-4 text-end">
                                         <p>10€</p>
                                     </div>
                                 </div>
-
                                 <div class="row">
-                                    <div class="col text-end">
+                                    <div class="col-8 text-end">
                                         <p>Cupón de descuento</p>
                                     </div>
-                                    <div class="col text-end">
+                                    <div class="col-4 text-end">
                                         <p>0€</p>
                                     </div>
                                 </div>
-
                                 <div class="row">
-                                    <div class="col text-end">
+                                    <div class="col-8 text-end">
                                         <p>Gastos de envío</p>
                                     </div>
-                                    <div class="col text-end">
+                                    <div class="col-4 text-end">
                                         <p>5€</p>
                                     </div>
                                 </div>
-
                             </div>
 
                         </div>

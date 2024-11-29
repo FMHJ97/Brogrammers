@@ -41,9 +41,9 @@
 
         <!--Bandas Principales -->
         <section class="container page-section">
-            <div class="container my-3">
+            <div class="container mb-3">
                 <!-- Título  de Bandas Principales -->
-                <div class="row text-center text-white mt-5 mb-2">
+                <div class="row text-center mt-4 mt-md-5 mb-2">
                     <h2 class="col-12">HEADLINERS</h2>
                 </div>
                 <!-- Contenedor imagenes Bandas Principales -->

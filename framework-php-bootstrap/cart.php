@@ -20,11 +20,9 @@
                     <div class="col">
                         <h3 class="step-title active">Carrito</h3>
                     </div>
-
                     <div class="col">
                         <h3 class="step-title">Dirección</h3>
                     </div>
-
                     <div class="col">
                         <h3 class="step-title">Pago</h3>
                     </div>

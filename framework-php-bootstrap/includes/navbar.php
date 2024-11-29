@@ -3,15 +3,11 @@
         <a class="navbar-brand" href="./index.php">
             <img src="../assets/img/Logo.svg" alt="Festival Logo">
         </a>
-
-
+        
         <!-- Right side of the navbar -->
-
-
 
         <!-- The icon cart that will be displayed on mobile devices before the hamburger menu -->
         <a class="nav-link cart-icon d-md-none ms-auto" href="./cart.php"><i class="bi bi-cart2"></i></a>
-
 
         <!-- The hamburguer menu -->
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
@@ -20,7 +16,6 @@
         </button>
 
         <!-- Navbar links -->
-
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav ms-auto">
                 <li class="nav-item">
@@ -48,5 +43,4 @@
         </div>
 
     </div>
-
 </nav>

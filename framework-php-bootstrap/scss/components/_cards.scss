@@ -214,7 +214,7 @@
     border: $border-3 solid $resaltar1;
     border-radius: 35px;
     overflow: hidden;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 4px 8px rgba($fondo, 0.2);
 
     //Tamaño para las Cards Grandes (grupos principales)
     &.bandPrincipal {
@@ -237,7 +237,7 @@
       text-align: center;
       color: $texto1;
       font-family: $headings-font-family;
-      text-shadow: 0 2px 5px rgba(0, 0, 0, 0.7);
+      text-shadow: 0 2px 5px rgba($fondo, 0.7);
     }
 
     /* BACKGROUND IMG Bandas PRINCIPALES con degradado $fade */
@@ -359,8 +359,8 @@
     text-align: center;
     transform: rotateY(180deg); // Gira la parte trasera
     padding: 1rem;
-    border: $border-5 solid $primario2;
-    border-radius: 10px;
+    border: $border-3 solid $resaltar1;
+    border-radius: 35px;
     background: linear-gradient(to bottom,
         rgba($fondo, 0%) 23%,
         rgba($resaltar2, 50%) 55%,

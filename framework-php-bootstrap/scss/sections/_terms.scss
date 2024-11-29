@@ -1,0 +1,15 @@
+
+.terms{
+    background-color: $texto1;
+    border-radius: 15px;
+    color: $texto2;
+    padding: 3.5rem;
+
+}
+
+@include media-breakpoint-down(md) {
+    .terms{
+        padding:1rem;
+    }
+
+}

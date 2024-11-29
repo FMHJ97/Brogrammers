@@ -20757,7 +20757,7 @@ main {
   background-position: center;
   box-sizing: border-box;
   border: 3px solid #29F2B9;
-  border-radius: 10px;
+  border-radius: 35px;
   overflow: hidden;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   /* BACKGROUND IMG Bandas PRINCIPALES con degradado $fade */
@@ -21357,6 +21357,19 @@ main .item-heading h2, main .item-heading .h2 {
   text-align: center;
   font-weight: bold;
   color: #FFFDFA;
+}
+
+.terms {
+  background-color: #FFFDFA;
+  border-radius: 15px;
+  color: #0A0F0F;
+  padding: 3.5rem;
+}
+
+@media (max-width: 767.98px) {
+  .terms {
+    padding: 1rem;
+  }
 }
 
 /*# sourceMappingURL=styles.css.map */

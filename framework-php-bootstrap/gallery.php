@@ -31,7 +31,7 @@
         <section class="container page-section">
             <!-- Esto en el paso de funcionalidad es posible que se cambie -->
             <div class="row my-3 py-3">
-                <button id="submitImageTODO" class="btn-index ">Send us your pics</button>
+                <a id="submitImageTODO"  href="https://www.gmail.com/"  class="btn-index ">Send us your pics</a>
             </div>
         </section>
     </main>

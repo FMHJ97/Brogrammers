@@ -20483,6 +20483,9 @@ nav {
 .navbar-nav .nav-link:hover {
   color: #C5FCEC;
 }
+.navbar-nav .nav-link i {
+  color: #C5FCEC;
+}
 
 .navbar-nav .nav-link i {
   font-size: 35px;
@@ -20490,7 +20493,7 @@ nav {
 
 .cart-icon {
   font-size: 35px;
-  color: #FFFDFA;
+  color: #C5FCEC;
 }
 @media (max-width: 767.98px) {
   .cart-icon {
@@ -20517,7 +20520,7 @@ nav {
 }
 
 button i {
-  color: #FFFDFA;
+  color: #C5FCEC;
   font-size: 37px;
 }
 
@@ -20619,6 +20622,7 @@ main {
   border-radius: 25px;
   background-color: #0A0F0F;
   padding: 0 0px 0 5px;
+  color: #FFFDFA;
 }
 .form-control-discount:focus {
   background-color: #0A0F0F;

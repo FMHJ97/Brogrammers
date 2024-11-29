@@ -25,7 +25,8 @@
             <div class="row">
                 <!-- Botones de Categoría -->
                 <div class="col btn-category-group">
-                    <button type="button" id="all-items" class="btn btn-category-item selected">Todos los productos</button>
+                    <button type="button" id="all-items" class="btn btn-category-item selected">Todos los
+                        productos</button>
                     <button type="button" id="clothes" class="btn btn-category-item">Ropa</button>
                     <button type="button" id="accesories" class="btn btn-category-item">Accesorios</button>
                     <button type="button" id="music" class="btn btn-category-item">Música</button>
@@ -35,8 +36,8 @@
                     <form action="#">
                         <div class="input-group search-bar">
                             <!-- Input de Búsqueda -->
-                            <input type="text" class="form-control-search"
-                                placeholder="Buscar productos..." name="search">
+                            <input type="text" class="form-control-search" placeholder="Buscar productos..."
+                                name="search">
                             <!-- Botón de Búsqueda -->
                             <button class="btn btn-search" type="submit">
                                 <i class="bi bi-search"></i>

@@ -36,7 +36,7 @@
                         <label for="email">Correo electrónico</label><span> *</span>
                         <input type="email" class="form-control" id="email"
                             placeholder="Introduzca su correo electrónico" name="email">
-                    </div>                    
+                    </div>
                     <!-- Password Input -->
                     <div class="mb-3">
                         <label for="pwd">Contraseña</label><span> *</span>
@@ -48,11 +48,12 @@
                         <label for="pwd2">Confirmar contraseña</label><span> *</span>
                         <input type="password" class="form-control" id="pwd2" placeholder="Confirme su contraseña"
                             name="pswd2">
-                    </div>                    
+                    </div>
                     <!-- News checkbox-->
                     <div class="form-check mb-3">
                         <label class="form-check-label">
-                            <input class="form-check-input" type="checkbox" name="news"> Deseo recibir noticias e información sobre GroundSound Festival.
+                            <input class="form-check-input" type="checkbox" name="news"> Deseo recibir noticias e
+                            información sobre GroundSound Festival.
                         </label>
                     </div>
                     <!-- Terms checkbox-->
@@ -60,7 +61,7 @@
                         <label class="form-check-label">
                             <input class="form-check-input" type="checkbox" name="terms"> Acepto los Términos de Uso.
                         </label>
-                    </div>                    
+                    </div>
                     <!-- Botón Crear Cuenta -->
                     <div class="d-flex flex-column ">
                         <button type="submit" class="btn">Crear cuenta</button>

@@ -20207,7 +20207,7 @@ main {
   gap: 1em;
 }
 
-.btn-category-item,
+.btn-category-item, .btn-lineup,
 .btn-item-size {
   font-family: "Krona One", sans-serif;
   border: 2px solid #29F2B9;
@@ -20218,17 +20218,17 @@ main {
   white-space: nowrap;
   transition: all 0.2s ease;
 }
-.btn-category-item.selected,
+.btn-category-item.selected, .selected.btn-lineup,
 .btn-item-size.selected {
   background: #29F2B9;
   color: #0A0F0F;
 }
-.btn-category-item:not(.selected),
+.btn-category-item:not(.selected), .btn-lineup:not(.selected),
 .btn-item-size:not(.selected) {
   background: #0A0F0F;
   color: #29F2B9;
 }
-.btn-category-item:not(.selected):hover,
+.btn-category-item:not(.selected):hover, .btn-lineup:not(.selected):hover,
 .btn-item-size:not(.selected):hover {
   background: #29F2B9;
   color: #0A0F0F;
@@ -20341,6 +20341,13 @@ button {
   text-decoration: none;
   color: #0A0F0F;
   font-family: "Krona One", sans-serif;
+}
+
+/* ======== BUTTONS LINEUP DAYS ==========*/
+@media (max-width: 767.98px) {
+  .btn-lineup {
+    font-size: 14px;
+  }
 }
 
 /* ===========  INFO BIG BUTTONS ================" */

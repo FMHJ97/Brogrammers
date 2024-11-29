@@ -25,13 +25,13 @@
                         <button type="button" id="fullLineUp" class="btn btn-category-item selected w-100">Full Lineup</button>
                     </div>
                     <div class="col-4 col-md-3  mb-2 px-2">
-                        <button type="button" id="thursday" class="btn btn-category-item w-100">Thursday</button>
+                        <button type="button" id="thursday" class="btn btn-lineup w-100 ">Thursday</button>
                     </div>
                     <div class="col-4 col-md-3  mb-2 px-2">
-                        <button type="button" id="friday" class="btn btn-category-item w-100">Friday</button>
+                        <button type="button" id="friday" class="btn btn-lineup w-100 ">Friday</button>
                     </div>
                     <div class="col-4 col-md-3  mb-2 px-2">
-                        <button type="button" id="saturday" class="btn btn-category-item w-100">Saturday</button>
+                        <button type="button" id="saturday" class="btn btn-lineup w-100 ">Saturday</button>
                     </div>
                 </div>
             </div>

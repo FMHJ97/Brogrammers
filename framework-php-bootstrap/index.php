@@ -84,7 +84,7 @@
 
       <section>
         <div class="row my-3 py-3">
-          <a href="lineup.php" class="btn-index ">LINE UP</a>
+          <a href="lineup.php" class="btn-index-lineup ">LINE UP</a>
         </div>
       </section>
 

@@ -167,6 +167,20 @@
   margin: auto;
   font-family: $headings-font-family;
   font-size: $heading-font-1;
+  @include media-breakpoint-down(md){
+    width: 75%;
+  font-size: $heading-font-phone-2 !important;
+  }
+}
+
+.btn-index-lineup{
+  @extend .btn-index;
+  @include media-breakpoint-down(md){
+    width: 100% !important;
+    padding-inline: 5rem;
+    
+  font-size: $heading-font-phone-2 !important;
+  }
 }
 // Un boton opcional para poder meter imagenes en una base de datos
 .btn-gallery {

@@ -20145,7 +20145,7 @@ main {
   font-family: "Krona One", sans-serif;
   text-align: center;
   padding-top: 3rem;
-  padding-bottom: 3rem;
+  padding-bottom: 0.5rem;
 }
 .page-section .page-section-heading h1, .page-section .page-section-heading .h1 {
   color: #FFFDFA;
@@ -20160,7 +20160,7 @@ main {
   }
   .page-section .page-section-heading {
     padding-top: 2rem;
-    padding-bottom: 2rem;
+    padding-bottom: 0rem;
   }
   main {
     background: url("../assets/img/logoFondoFestival.png");
@@ -20170,6 +20170,23 @@ main {
     background-attachment: fixed;
   }
 }
+/* los estillos para los imagenes dentro de gallery.php */
+.grid {
+  gap: 16px;
+  margin: 0 auto;
+}
+
+.grid-item {
+  border-radius: 5px;
+  overflow: hidden;
+  position: relative;
+}
+.grid-item img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
 .dropdown-order-by {
   display: flex;
   justify-content: start;
@@ -20190,7 +20207,7 @@ main {
   gap: 1em;
 }
 
-.btn-category-item,
+.btn-category-item, .btn-days, .btn-fullLineup,
 .btn-item-size {
   font-family: "Krona One", sans-serif;
   border: 2px solid #29F2B9;
@@ -20201,17 +20218,17 @@ main {
   white-space: nowrap;
   transition: all 0.2s ease;
 }
-.btn-category-item.selected,
+.btn-category-item.selected, .selected.btn-days, .selected.btn-fullLineup,
 .btn-item-size.selected {
   background: #29F2B9;
   color: #0A0F0F;
 }
-.btn-category-item:not(.selected),
+.btn-category-item:not(.selected), .btn-days:not(.selected), .btn-fullLineup:not(.selected),
 .btn-item-size:not(.selected) {
   background: #0A0F0F;
   color: #29F2B9;
 }
-.btn-category-item:not(.selected):hover,
+.btn-category-item:not(.selected):hover, .btn-days:not(.selected):hover, .btn-fullLineup:not(.selected):hover,
 .btn-item-size:not(.selected):hover {
   background: #29F2B9;
   color: #0A0F0F;
@@ -20324,6 +20341,20 @@ button {
   text-decoration: none;
   color: #0A0F0F;
   font-family: "Krona One", sans-serif;
+}
+
+/* ======== BUTTONS LINEUP DAYS ==========*/
+.btn-fullLineup {
+  width: 100%;
+}
+
+.btn-days {
+  width: 100%;
+}
+@media (max-width: 767.98px) {
+  .btn-days {
+    font-size: 14px;
+  }
 }
 
 /* ===========  INFO BIG BUTTONS ================" */
@@ -20654,71 +20685,6 @@ main {
   width: 100%;
 }
 
-.grid {
-  gap: 16px;
-  margin: 0 auto;
-  /* Center the grid */
-}
-
-/* Optional: Basic styles for grid items */
-.grid-item {
-  border-radius: 5px;
-  overflow: hidden;
-  position: relative;
-}
-
-/* Make images fit inside their grid item */
-.grid-item img {
-  width: 100%;
-  height: auto;
-  display: block;
-}
-
-/* clearfix (optional) */
-.grid:after {
-  content: "";
-  display: block;
-  clear: both;
-}
-
-/* ---- grid-item ---- */
-.grid-item {
-  border-radius: 5px;
-  overflow: hidden;
-  position: relative;
-  min-width: 20%;
-  max-width: 100%;
-}
-
-/* Variable width classes for Masonry-like behavior */
-.grid-item--width2 {
-  grid-column: span 2;
-  /* Take up 2 columns */
-}
-
-.grid-item--width3 {
-  grid-column: span 3;
-  /* Take up 3 columns */
-}
-
-.grid-item--width4 {
-  grid-column: span 4;
-  /* Take up 4 columns */
-}
-
-/* Variable height classes for Masonry-like behavior */
-.grid-item--height2 {
-  height: 400px;
-}
-
-.grid-item--height3 {
-  height: 600px;
-}
-
-.grid-item--height4 {
-  height: 800px;
-}
-
 /* ==========  INFO DIVS  =========  */
 .box-area {
   border: 5px solid #107361;
@@ -20757,7 +20723,7 @@ main {
   position: relative;
   background-size: cover;
   background-position: center;
-  height: 450px;
+  height: 350px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -20773,8 +20739,10 @@ main {
   border: 2px solid #FFFDFA;
   border-radius: 20px;
   padding: 0.5em 1.2em;
+  margin-top: 4.5em;
   display: flex;
   align-items: center;
+  align-self: flex-start;
   justify-content: center;
   white-space: nowrap;
   transition: all 0.3s ease;
@@ -20802,10 +20770,10 @@ main {
   background-size: cover;
   background-position: center;
   box-sizing: border-box;
-  border: 5px solid #107361;
-  border-radius: 10px;
+  border: 3px solid #29F2B9;
+  border-radius: 35px;
   overflow: hidden;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 4px 8px rgba(10, 15, 15, 0.2);
   /* BACKGROUND IMG Bandas PRINCIPALES con degradado $fade */
   /* BACKGROUND IMGBandas SECUNDARIAS con degradado $fade */
 }
@@ -20825,7 +20793,7 @@ main {
   text-align: center;
   color: #FFFDFA;
   font-family: "Krona One", sans-serif;
-  text-shadow: 0 2px 5px rgba(0, 0, 0, 0.7);
+  text-shadow: 0 2px 5px rgba(10, 15, 15, 0.7);
 }
 .colB .cardBand.headB1, .colB .flip-card .headB1.flip-card-front, .flip-card .colB .headB1.flip-card-front {
   background-image: linear-gradient(to bottom, rgba(10, 15, 15, 0) 0%, rgba(10, 15, 15, 0) 50px, #0A0F0F 100%), url("/assets/img/lineUp/Eminem.jpg");
@@ -20911,8 +20879,8 @@ main {
   text-align: center;
   transform: rotateY(180deg);
   padding: 1rem;
-  border: 5px solid #107361;
-  border-radius: 10px;
+  border: 3px solid #29F2B9;
+  border-radius: 35px;
   background: linear-gradient(to bottom, rgba(10, 15, 15, 0) 23%, rgba(197, 252, 236, 0.5) 55%, #C5FCEC 100%);
 }
 .flip-card .flip-card-back .back-content {
@@ -20931,8 +20899,9 @@ main {
 }
 
 .patro-seccion {
+  flex: auto;
   background-color: #0A0F0F;
-  border: 2px solid #FFFDFA;
+  border: 4px solid #FFFDFA;
   border-radius: 10px;
   margin-bottom: 5rem;
   margin-top: 3rem;
@@ -21402,6 +21371,19 @@ main .item-heading h2, main .item-heading .h2 {
   text-align: center;
   font-weight: bold;
   color: #FFFDFA;
+}
+
+.terms {
+  background-color: #FFFDFA;
+  border-radius: 15px;
+  color: #0A0F0F;
+  padding: 3.5rem;
+}
+
+@media (max-width: 767.98px) {
+  .terms {
+    padding: 1rem;
+  }
 }
 
 /*# sourceMappingURL=styles.css.map */

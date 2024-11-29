@@ -19,12 +19,12 @@
                 <h1 class="text-center">PRIVACY POLICY</h1>
             </div>
 
-            <!-- Recuadro con contenido --><!-- PRIVACY POLICY -->   
-            <div class="container bg-white text-black shadow-sm rounded-3 p-5 ">
-                <h4 class="text-center mb-4 py-3">TRATAMIENTO DE DATOS PERSONALES Y POLÍTICA DE PRIVACIDAD</h4>
+            <!-- Recuadro con contenido --><!-- PRIVACY POLICY -->
+            <div class="container terms shadow-sm rounded-3">
+                <h4 class="text-center mb-5">TRATAMIENTO DE DATOS PERSONALES Y POLÍTICA DE PRIVACIDAD</h4>
                 <div class="mb-4">
                     <h5><b>1. ¿QUIÉN ES EL RESPONSABLE DEL TRATAMIENTO DE TUS DATOS?</b></h5>
-                    <p>  
+                    <p>
                         <b>Identidad:</b> GroundSound S.L.U. B06660666<br>
                         <b>Dirección postal:</b> C/ El Peso 666, Lucena 14900<br>
                         <b>Correo electrónico:</b> info@groundsound.luc
@@ -50,7 +50,7 @@
                 </div>
                 <div class="mb-4">
                     <h5><b>5. ¿A QUÉ DESTINATARIOS SE COMUNICARÁN TUS DATOS?</b></h5>
-                    <p>    <!-- separo en parrafos -->
+                    <p> <!-- separo en parrafos -->
                         Los datos podrán ser tratados por diversos encargados de tratamiento con el fin de poder utilizar los servicios de la web. Dichos encargados de tratamiento se encuentran legitimados para tratar sus datos en la ejecución del contrato del encargo con cláusula de confidencialidad incluida. Los encargados de tratamiento en ningún caso podrán ceder tus datos.
                     </p>
                     <p>
@@ -59,7 +59,7 @@
                         <b>Gigas Hosting S.A.:</b> Gestor de correo y hosting web. Más información.
                     </p>
                 </div>
-                <div class="mb-4 pb-2">
+                <div class="mb-3">
                     <h5><b>6. ¿CUÁLES SON TUS DERECHOS CUANDO NOS FACILITAS TUS DATOS?</b></h5>
                     <p>
                         Cualquier persona tiene derecho a obtener confirmación sobre si estamos tratando datos personales que le conciernan o no. Las personas interesadas tienen derecho a acceder a sus datos personales, así como a solicitar la rectificación de los datos inexactos o, en su caso, solicitar su supresión cuando, entre otros motivos, los datos ya no sean necesarios para los fines que fueron recogidos.
@@ -86,15 +86,49 @@
             </div>
 
             <!-- Recuadro con contenido --><!-- TERMS AND CONDITIONS. -->
-            <div class="container bg-white text-black shadow-sm  rounded-3 p-5">
+            <div class="container terms shadow-sm">
                 <h4 class="text-center mb-4 py-3">TERMS Y CONDITIONS</h4>
-                <div class="mb-4">
+                <div class="mb-3">
                     <p>
-                        In addition to Front Gate Tickets other terms and conditions, I understand and acknowledge that all ticket purchases for any Danny Wimmer Presents, LLC event are final and non-refundable for any reason.
-                        I understand that if I do not attend the Event or the Event does not happen or is canceled in whole or in part for any reason, I may not receive a refund of any portion of my ticket purchase. This includes if all or part of the event is canceled due to dangerous weather, pandemic or other reasons outside of the festivals control. Festival performers are subject to change or cancellation at any time without notice. No refund will be owed if a festival performer is changed or cancelled.
-                        At the sole discretion of Danny Wimmer Presents, LLC (“DWP”), I may receive a partial or full credit (“Credit”) that I can use towards the purchase of a ticket to another festival produced by DWP. After I receive the Credit, if any, it must be used within 365 days. Use of the Credit is subject to the availability of tickets for the other DWP and I am not guaranteed a ticket to the festival of my choice.
-                        DWP is committed to the health and safety of all patrons and staff. Enhanced safety measures will be in place based on the latest guidance from city, county and state government health officials and will follow industry standards to ensure everyone can relax and enjoy the festival. Patrons and staff will be required to follow all safety precautions for admittance. All safety measures will be published prior to the event, posted at all entrances and enforced throughout the event.
-                        An inherent risk of exposure to COVID-19 exists in any place where people gather. COVID-19 is an extremely contagious disease that can lead to severe illness and death. You assume all risks, hazards, and dangers arising from or relating in any way to the risk of contracting COVID-19 or any other communicable disease or illness, or a bacteria, virus or other pathogen capable of causing a communicable disease or illness, whether occurring before, during, or after the event, however caused or contracted, and voluntarily waive all claims and potential claims against DWP, Event Partners, and their affiliated companies relating to such risks. COVID-19 health and safety protocols (including the requirement of a negative test and/or vaccination) may be implemented at any time. The execution of said protocols are assumed by the purchaser and do not open the event to chargebacks or refunds.By attending the Festival, a public event, you acknowledge and agree that your appearance and your actions inside and outside the venue where the Festival occurs are public in nature, and that you have no expectation of privacy with regard to your actions or conduct at the Festival. As a term of your ticket purchase, you grant permission the Festival to utilize your name, image, likeness, acts, poses, plays, appearance, movements, and statements in any live or recorded audio, video, or photographic display or other transmission, exhibition, publication or reproduction made of, or at, the Festival (regardless of whether before, during or after play or performance) for any purpose, in any manner, in any medium or context now known or hereafter developed, without further authorization from, or compensation to, you or anyone acting on your behalf.
+                        Además de los otros términos y condiciones de Front Gate Tickets, entiendo y reconozco que todas las compras de 
+                        entradas para cualquier evento de Danny Wimmer Presents, LLC son definitivas y no reembolsables por ningún motivo.
+                        Entiendo que si no asisto al Evento o el Evento no tiene lugar o es cancelado total o parcialmente por cualquier 
+                        motivo, no podré recibir el reembolso de ninguna parte de mi compra de entradas. Esto incluye si todo o parte del 
+                        evento se cancela debido a condiciones meteorológicas peligrosas, pandemia u otras razones fuera del control de 
+                        los festivales. Los artistas del festival están sujetos a cambios o cancelaciones en cualquier momento sin previo 
+                        aviso. No se reembolsará ningún importe si se cambia o cancela un artista del festival.
+                    </p>
+                    <p>
+                        A discreción exclusiva de Danny Wimmer Presents, LLC («DWP»), puedo recibir un crédito parcial o total («Crédito») 
+                        que puedo utilizar para comprar una entrada para otro festival producido por DWP. Una vez recibido el crédito, si lo 
+                        hubiera, deberé utilizarlo en un plazo de 365 días. El uso del Crédito está sujeto a la disponibilidad de entradas 
+                        para el otro DWP y no se me garantiza una entrada para el festival de mi elección.
+                        DWP se compromete a velar por la salud y la seguridad de todos los asistentes y del personal. Las medidas de seguridad 
+                        reforzadas se basarán en las últimas directrices de los funcionarios de salud de la ciudad, el condado y el estado, y 
+                        seguirán las normas del sector para garantizar que todo el mundo pueda relajarse y disfrutar del festival. Se exigirá a 
+                        los asistentes y al personal que sigan todas las precauciones de seguridad para poder entrar. Todas las medidas de seguridad 
+                        se publicarán antes del evento, se colocarán en todas las entradas y se harán cumplir durante todo el evento.
+                    </p>
+                    <p>
+                        Existe un riesgo inherente de exposición a COVID-19 en cualquier lugar donde se reúna gente. COVID-19 es 
+                        una enfermedad extremadamente contagiosa que puede provocar enfermedades graves e incluso la muerte. Usted asume 
+                        todos los riesgos, peligros y riesgos derivados de o relacionados de alguna manera con el riesgo de contraer COVID-19 
+                        o cualquier otra enfermedad contagiosa o enfermedad, o una bacteria, virus u otro patógeno capaz de causar una 
+                        enfermedad contagiosa o enfermedad, ya sea que ocurra antes, durante o después del evento, sin importar cómo se cause 
+                        o contraiga, y renuncia voluntariamente a todas las reclamaciones y posibles reclamaciones contra DWP, Socios del Evento 
+                        y sus empresas afiliadas relacionadas con dichos riesgos. Los protocolos de salud y seguridad de COVID-19 (incluido el 
+                        requisito de una prueba negativa y/o vacunación) podrán aplicarse en cualquier momento. La ejecución de dichos protocolos 
+                        son asumidos por el comprador y no abren el evento a devoluciones o reembolsos.
+                    </p>
+                    <p>
+                        Al asistir al Festival, un evento público, usted reconoce y acepta que su apariencia y sus acciones dentro y fuera del lugar 
+                        donde se celebra el Festival son de naturaleza pública, y que no tiene ninguna expectativa de privacidad con respecto a sus 
+                        acciones o conducta en el Festival. Como condición para la compra de su entrada, usted autoriza al Festival a utilizar su 
+                        nombre, imagen, semejanza, actos, poses, representaciones, apariencia, movimientos y declaraciones en cualquier presentación 
+                        de audio, vídeo o fotografía, en directo o grabada, o en cualquier otra transmisión, exhibición, publicación o reproducción 
+                        que se haga del Festival o en el Festival (ya sea antes, durante o después de la representación o actuación) para cualquier 
+                        fin, de cualquier manera, en cualquier medio o contexto conocido actualmente o que se desarrolle en el futuro, sin más 
+                        autorización o compensación por su parte o por parte de cualquier persona que actúe en su nombre. 
                     </p>
                 </div>
 

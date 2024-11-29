@@ -156,7 +156,7 @@
     position: relative;
     background-size: cover;
     background-position: center;
-    height: 450px;
+    height: 350px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -171,8 +171,10 @@
       border: $border-2 solid $texto1;
       border-radius: 20px;
       padding: 0.5em 1.2em;
+      margin-top: 4.5em;
       display: flex;
       align-items: center;
+      align-self: flex-start;
       justify-content: center;
       white-space: nowrap;
       transition: all 0.3s ease;
@@ -209,10 +211,10 @@
     background-size: cover;
     background-position: center;
     box-sizing: border-box;
-    border: $border-5 solid $primario2;
-    border-radius: 10px;
+    border: $border-3 solid $resaltar1;
+    border-radius: 35px;
     overflow: hidden;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 4px 8px rgba($fondo, 0.2);
 
     //Tamaño para las Cards Grandes (grupos principales)
     &.bandPrincipal {
@@ -235,7 +237,7 @@
       text-align: center;
       color: $texto1;
       font-family: $headings-font-family;
-      text-shadow: 0 2px 5px rgba(0, 0, 0, 0.7);
+      text-shadow: 0 2px 5px rgba($fondo, 0.7);
     }
 
     /* BACKGROUND IMG Bandas PRINCIPALES con degradado $fade */
@@ -357,8 +359,8 @@
     text-align: center;
     transform: rotateY(180deg); // Gira la parte trasera
     padding: 1rem;
-    border: $border-5 solid $primario2;
-    border-radius: 10px;
+    border: $border-3 solid $resaltar1;
+    border-radius: 35px;
     background: linear-gradient(to bottom,
         rgba($fondo, 0%) 23%,
         rgba($resaltar2, 50%) 55%,

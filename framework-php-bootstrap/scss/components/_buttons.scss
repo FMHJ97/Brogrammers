@@ -105,6 +105,7 @@
       transition: all 0.3s ease;
     }
   }
+
 }
 
 // En dispositivos móviles, se ajustan los estilos de los botones.
@@ -194,6 +195,21 @@ button {
   text-decoration: none;
   color: $texto2;
   font-family: $headings-font-family;
+}
+
+/* ======== BUTTONS LINEUP DAYS ==========*/
+.btn-fullLineup{
+  @extend .btn-category-item;  //es igual que los de categoría item
+  width: 100%;
+}
+
+.btn-days{
+  @extend .btn-category-item;  //es igual que los de categoría item
+  width: 100%;
+
+  @include media-breakpoint-down(md){
+    font-size: $heading-font-phone-5;
+  }
 }
 
 

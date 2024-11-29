@@ -21,17 +21,17 @@
         <section class="container">
             <div class="row btn-category-group justify-content-center">
                 <div class="d-flex flex-wrap justify-content-center">
-                    <div class="col-12 col-md-3 mb-2 px-2">
-                        <button type="button" id="history" class="btn btn-category-item selected w-100">Full Lineup</button>
+                    <div class="col-12 col-md-3 d-flex justify-content-center mb-2 px-2">
+                        <button type="button" id="fullLineUp" class="btn btn-fullLineup selected">Full Lineup</button>
                     </div>
-                    <div class="col-4 col-md-3  mb-2 px-2">
-                        <button type="button" id="tickets" class="btn btn-category-item w-100">Thursday</button>
+                    <div class="col-4 col-md-3 mb-2 px-2 d-flex justify-content-center">
+                        <button type="button" id="thursday" class="btn btn-days ">Thursday</button>
                     </div>
-                    <div class="col-4 col-md-3  mb-2 px-2">
-                        <button type="button" id="camping" class="btn btn-category-item w-100">Friday</button>
+                    <div class="col-4 col-md-3  mb-2 px-2 d-flex justify-content-center">
+                        <button type="button" id="friday" class="btn btn-days ">Friday</button>
                     </div>
-                    <div class="col-4 col-md-3  mb-2 px-2">
-                        <button type="button" id="accessibility" class="btn btn-category-item w-100">Saturday</button>
+                    <div class="col-4 col-md-3  mb-2 px-2 d-flex justify-content-center">
+                        <button type="button" id="saturday" class="btn btn-days ">Saturday</button>
                     </div>
                 </div>
             </div>
@@ -41,9 +41,9 @@
 
         <!--Bandas Principales -->
         <section class="container page-section">
-            <div class="container my-3">
+            <div class="container mb-3">
                 <!-- Título  de Bandas Principales -->
-                <div class="row text-center text-white mt-5 mb-2">
+                <div class="row text-center mt-4 mt-md-5 mb-2">
                     <h2 class="col-12">HEADLINERS</h2>
                 </div>
                 <!-- Contenedor imagenes Bandas Principales -->

@@ -25,19 +25,17 @@
                         <button type="button" id="fullLineUp" class="btn btn-fullLineup selected">Full Lineup</button>
                     </div>
                     <div class="col-4 col-md-3 mb-2 px-2 d-flex justify-content-center">
-                        <button type="button" id="thursday" class="btn btn-days ">Thursday</button>
+                        <button type="button" id="thursday" class="btn btn-days">Thursday</button>
                     </div>
                     <div class="col-4 col-md-3  mb-2 px-2 d-flex justify-content-center">
-                        <button type="button" id="friday" class="btn btn-days ">Friday</button>
+                        <button type="button" id="friday" class="btn btn-days">Friday</button>
                     </div>
                     <div class="col-4 col-md-3  mb-2 px-2 d-flex justify-content-center">
-                        <button type="button" id="saturday" class="btn btn-days ">Saturday</button>
+                        <button type="button" id="saturday" class="btn btn-days">Saturday</button>
                     </div>
                 </div>
             </div>
         </section>
-
-
 
         <!--Bandas Principales -->
         <section class="container page-section">
@@ -47,9 +45,9 @@
                     <h2 class="col-12">HEADLINERS</h2>
                 </div>
                 <!-- Contenedor imagenes Bandas Principales -->
-                <div class="row ">
+                <div class="row">
                     <!-- BANDA 1 -->
-                    <div class="colB col-md-4 ">
+                    <div class="colB col-md-4">
                         <div class="titleDays">
                             <h3>Thursday</h3>
                         </div>
@@ -92,7 +90,8 @@
                                                 <a href="https://www.gmail.com/"><i class="bi bi-envelope-fill"></i></a>
                                             </div>
                                         </div>
-                                        <div class="row mb-1"><!-- Tres formas diferentes del iframe para spotify--><!-- Revisar cual queda mejor -->
+                                        <div class="row mb-1">
+                                            <!-- Tres formas diferentes del iframe para spotify--><!-- Revisar cual queda mejor -->
                                             <!-- <iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/4xkOaSrkexMciUUogZKVTS?utm_source=generator&theme=0" width="100%" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>-->
                                             <iframe style="border-radius:12px"
                                                 src="https://open.spotify.com/embed/playlist/37i9dQZF1DZ06evO4gTUOY?utm_source=generator"
@@ -129,10 +128,10 @@
 
             <!--Rest Bands -->
             <div class="container my-5">
-                <div class="row text-center text-white">
+                <div class="row text-center">
                     <h3>INCLUDING</h3>
                 </div>
-                <div class="row  cols-4">
+                <div class="row cols-4">
                     <div class="col-12 col-md-3 colB ">
                         <div class="card cardBand bandSecundary incB1">
                             <div class="artist-name">Alice in Chains</div>
@@ -144,12 +143,12 @@
                             <div class="artist-name">50 cent</div>
                         </div>
                     </div>
-                    <div class="col-12 col-md-3 colB ">
+                    <div class="col-12 col-md-3 colB">
                         <div class="card cardBand bandSecundary incB3">
                             <div class="artist-name">Queen</div>
                         </div>
                     </div>
-                    <div class="col-12 col-md-3 colB ">
+                    <div class="col-12 col-md-3 colB">
                         <div class="card cardBand bandSecundary incB4">
                             <div class="artist-name">Pearl Jam</div>
                         </div>

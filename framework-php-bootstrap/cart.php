@@ -32,7 +32,7 @@
 
                 <!-- Fila con artículos y resumen -->
                 <div class="row g-3">
-                    <div class="col-md-8">
+                    <div class="col-md-8 px-0 px-md-2">
                         <div class="table-responsive-md"> <!-- Hace que la tabla sea responsive -->
                             <!-- Títulos de la tabla -->
                             <table class="table table-cart table-borderless table-striped">

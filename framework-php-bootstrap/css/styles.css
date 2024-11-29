@@ -20485,6 +20485,7 @@ nav {
 }
 .navbar-nav .nav-link i {
   color: #C5FCEC;
+  text-shadow: 0px 0px 3px rgba(41, 242, 185, 0.9);
 }
 
 .navbar-nav .nav-link i {

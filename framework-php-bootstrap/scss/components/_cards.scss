@@ -108,12 +108,7 @@
 }
 
 
-
-
-
-
-
-/* ==========  INFO DIVS  =========  */
+/* ==========  INFO.PHP  DIVS  =========  */
 
 //Box-Area with fading COLOR background PARA FESTIVAL HISTORY Y CONTACT US
 .box-area {
@@ -191,9 +186,9 @@
 
 
 
-/* ==========  BAND CARDS =========  */
+/* ========== LINEUP.PHP  BAND CARDS =========  */
 
-//Configuración general de las columnas donde van las cards
+//Configuración general de las columnas donde van las cards de las bandas
 .colB {
   display: flex;
   flex-direction: column;
@@ -209,7 +204,7 @@
     color: $primario2;
   }
 
-  //Configuración de todas las Cards
+  //Configuración general de todas las Cards
   .cardBand {
     position: relative;
     width: 100%;
@@ -259,7 +254,7 @@
     }
 
 
-    /* BACKGROUND IMGBandas SECUNDARIAS con degradado $fade */
+    /* BACKGROUND IMG Bandas SECUNDARIAS con degradado $fade */
     &.incB1 {
       background-image: $fade-lineup, url("/assets/img/lineUp/AliceInChains.jpg");
     }
@@ -346,11 +341,11 @@
     width: 100%;
     height: 100%;
     backface-visibility: hidden; // Oculta la cara trasera cuando no está visible
-    border-radius: 10px; // Mantén consistencia con las esquinas redondeadas
+    border-radius: 25px; // Mantén consistencia con las esquinas redondeadas
   }
 
   .flip-card-front {
-    @extend .cardBand; // Usa tus estilos existentes para el frente
+    @extend .cardBand; // Uso los estilos ya existentes para el frente
     height: 300px;
     max-width: 300px;
 

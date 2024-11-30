@@ -216,22 +216,22 @@ button {
 }
 
 /* ======== BUTTONS LINEUP DAYS ==========*/
-.btn-fullLineup {
+.btn-fullLineup { //botón principal
   @extend .btn-category-item; //es igual que los de categoría item
   width: 100%;
 }
 
-.btn-days {
+.btn-days { //botones de cada día
   @extend .btn-category-item; //es igual que los de categoría item
   width: 100%;
 
-  @include media-breakpoint-down(md) {
+  @include media-breakpoint-down(md) {  //Añado que el tamaño de texto cambie al reducirla pantalla.
     font-size: $heading-font-phone-5;
   }
 }
 
 
-/* ===========  INFO BIG BUTTONS ================" */
+/* ===========  INFO.php BIG BUTTONS ================" */
 //Configuración de los 4 botones grandes de infogeneral.php
 .custom-button {
   display: flex;
@@ -292,7 +292,7 @@ button {
 
 
 
-/* Botones de método de pago */
+/* ====   Botones de método de pago  ==== */
 
 .btn-payment-method {
   height: 90px !important;

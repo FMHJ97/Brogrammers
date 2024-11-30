@@ -1,3 +1,5 @@
+
+//Características de la Sección en Patrocinadores.
 .patro-seccion {
   flex: auto;
   background-color: $fondo;
@@ -8,20 +10,21 @@
   box-shadow: 0 0 10px rgba($texto1, 1), 0 0 20px rgba($texto1, 0.8),
     0 0 35px rgba($texto1, 0.6), 0 0 50px rgba($texto1, 0.4);
 
+  // Título PATROCIONADORES
   #patro-titulo {
     text-align: center;
     justify-content: center;
     color: $texto1;
   }
 
+  //Controlo el tamaño máximo donde irán los divs con las imagenes.
   #patro-fila {
-    /*border: 1px solid red;*/
     max-width: 800px;
 
+    //Conf. imagenes Patrocinadores.
     .imgpatro {
       text-align: center;
       justify-content: center;
-      /*border: 1px solid green; */
       padding: 15px;
     }
   }

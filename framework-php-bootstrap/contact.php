@@ -21,8 +21,12 @@
 
             <!-- Recuadro con contenido --><!-- PRIVACY POLICY -->
             <div class="container terms shadow-sm rounded-3">
+                <!--CF2: ¿Dónde está el h2 y h3? -->
                 <h4 class="text-center mb-5">TRATAMIENTO DE DATOS PERSONALES Y POLÍTICA DE PRIVACIDAD</h4>
                 <div class="mb-4">
+                    <!--CF2: La etiqueta <b> está superobsoleta y prohibidísima, ya que significa "negrita", lo 
+                        cual debe ser un estilo. Mejor usa <strong></strong>, y luego personaliza con scss 
+                        si hace falta-->
                     <h5><b>1. ¿QUIÉN ES EL RESPONSABLE DEL TRATAMIENTO DE TUS DATOS?</b></h5>
                     <p>
                         <b>Identidad:</b> GroundSound S.L.U. B06660666<br>

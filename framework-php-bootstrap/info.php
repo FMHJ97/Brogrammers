@@ -23,6 +23,7 @@
         los contenidos según el botón presionado -->
         <section class="container">
             <div class="row btn-category-group justify-content-center">
+                <!--CF2: Justo depués de row tiene haber un col-->
                 <div class="d-flex flex-wrap justify-content-center">
                     <!-- Botón Filtrar por: Fest History -->
                     <div class="col-md-3 col-6 mb-2 px-2">
@@ -76,6 +77,7 @@
                                 poder hacer acompañamientos y
                                 la zona pasó a llamarse “El Barrio La Lata”.
                             </p>
+                            <!--CF2: Los elementos <br> están prohibidísimos, ocultan un estilo de padding o margin-->
                             <br><br>
                             <p class="mb-5">
                                 A partir de se momento comienza la leyenda...
@@ -130,6 +132,7 @@
                     <p> Passes may not be used for advertising, promotion (including contests and sweepstakes),
                         or other trade purposes without the express written consent of the festival. </p>
                 </div>
+                <!--CF2: row sin col?-->
                 <div class="row bgroundTicketInfo d-flex justify-content-center align-items-center">
                     <a href="./tickets.php" class="btn buttonInfo">Haz click aquí</a>
                 </div>

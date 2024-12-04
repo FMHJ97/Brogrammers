@@ -112,7 +112,7 @@
             <!-- Encabezado -->
             <div class="row">
                 <div class="col suggested-items-heading pb-4">
-                    <h2>También te pueden interesar</h2>
+                     <h2>También te pueden interesar</h2>
                 </div>
             </div>
             <!-- Productos Sugeridos -->
@@ -139,6 +139,7 @@
                     <img class="card-img-top" src="./assets/img/merch/ElFary_camiseta.png"
                         alt='Camiseta "Mandanga" El Fary'>
                     <div class="card-body">
+                        <!--CF2: El elemento <br> está prohibidísimo-->
                         <h3 class="card-title">Camiseta<br>"Mandanga"<br>El Fary</h3>
                         <span>23,00 EUR</span>
                     </div>

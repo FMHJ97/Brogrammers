@@ -16,6 +16,7 @@
             <div class="container authentication-form my-5 p-4 p-md-5">
                 <!-- Encabezado -->
                 <div class="row">
+                    <!--CF2: No puede haber nada entre row y col-->
                     <h1>Iniciar Sesión</h1>
                     <div class="col d-flex flex-column flex-md-row mb-3 mb-md-4">
                         <p class="mb-0">¿No tienes una cuenta?&nbsp;</p>

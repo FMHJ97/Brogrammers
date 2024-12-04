@@ -1,3 +1,5 @@
+/*CF2: Hay que poner un solo componente en cada fichero, por ejemlo, el timer en un 
+fichero llamado _timer.scss */
 #timer {
     display: flex;
     align-items: center;
@@ -33,6 +35,7 @@
     flex-direction: column;
     align-items: center;
   }
+  /*CF2: Mejor para esto usar la clase display de bootstrap, pesonalizando lo que haga falta*/
   .time-number {
     font-size: 20vw;
     font-weight: 800;
@@ -40,6 +43,7 @@
     margin-bottom: -5px; /* Reduce or remove negative margin */
   }
   
+  /*CF2: Mejor para esto usar la clase display de bootstrap, pesonalizando lo que haga falta*/
   .time-label {
     align-self: center;
     font-size: 10vw;

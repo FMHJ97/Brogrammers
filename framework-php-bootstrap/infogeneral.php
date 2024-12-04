@@ -24,6 +24,7 @@
             <!-- Recuadro qué engloba los 4 botones -->
             <div class="row mb-4 d-flex justify-content-center align-items-center">
                 <!-- Botón Festival History -->
+                <!--CF2: La clase col-12 no es necesaria -->
                 <div class="col-12 col-md-6 d-flex justify-content-center align-items-center">
                     <a href="./info.php#festhistory" class="custom-button infoButton1">
                         <div class="button-text-top">FESTIVAL HISTORY</div>

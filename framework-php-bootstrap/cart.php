@@ -36,7 +36,7 @@
                             <table class="table table-cart table-borderless table-striped">
                                 <thead>
                                     <tr>
-                                        <th>
+                                        <th><!CF2: ¿h5? ¿Dónde estan h2,h3 y h4?-->
                                             <h5>Artículo</h5>
                                         </th>
                                         <th class="text-center">

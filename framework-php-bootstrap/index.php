@@ -44,7 +44,7 @@
         </div>
       </section>
       <section>
-        <div class="row my-3 py-3">
+        <div class="row my-3 py-3"> <!--CF2: Row sin col? para qué? -->
           <a href="tickets.php" class="btn-index ">BUY YOUR TICKETS NOW</a>
         </div>
       </section>

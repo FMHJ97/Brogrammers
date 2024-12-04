@@ -5,10 +5,7 @@
 <meta name="description" content="Groundsound" />
 <meta name="author" content="Brogrammers" />
 
-
 <!--<link rel="icon" type="image/x-icon" href="assets/favicon.ico" /> TODO-->
-
-
 
 <!-- Google fonts-->
 <link rel="preconnect" href="https://fonts.googleapis.com">

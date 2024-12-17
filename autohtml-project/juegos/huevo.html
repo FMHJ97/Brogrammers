@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Catch Falling Objects</title>
+    <style>
+        body {
+            z-index: -1;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f0f0f0;
+            overflow: hidden;
+            position: relative;
+        }
+
+        canvas {
+            border: 1px solid black;
+            background-color: #e0e0e0;
+            transition: filter 0.2s ease;
+            position: absolute;
+        }
+
+        .dark-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0);
+            pointer-events: none;
+            transition: opacity 0.3s ease-in-out;
+        }
+
+        .score-board {
+            position: absolute;
+            top: 10px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 20px;
+            color: black;
+            z-index: 10;
+        }
+
+        .lives-board {
+            position: absolute;
+            top: 40px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 20px;
+            color: black;
+            z-index: 10;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="dark-overlay" id="darkOverlay"></div>
+    <canvas id="gameCanvas" width="600" height="400"></canvas>
+    <div class="score-board" id="scoreBoard">Score: 0</div>
+    <div class="lives-board" id="livesBoard">Lives: 3</div>
+
+    <script>
+        const canvas = document.getElementById("gameCanvas");
+        const ctx = canvas.getContext("2d");
+        const darkOverlay = document.getElementById("darkOverlay");
+        const scoreBoard = document.getElementById("scoreBoard");
+        const livesBoard = document.getElementById("livesBoard");
+
+        const playerWidth = 120;
+        const playerHeight = 20;
+        const playerSpeed = 5;
+
+        const objectWidth = 40;
+        const objectHeight = 80;
+        const lifeRemovingObjectWidth = 40;
+        const lifeRemovingObjectHeight = 80;
+        const bonusObjectWidth = 30;  // Bonus object width
+        const bonusObjectHeight = 80;  // Bonus object height
+
+        
+
+        let playerX = (canvas.width - playerWidth) / 2;
+        let fallingObjects = [];
+        let lifeRemovingObjects = [];
+        let bonusObjects = [];
+        let score = 0;
+        let lives = 3;
+
+        const fallingObjectImage = new Image();
+        fallingObjectImage.src = 'estrella.png';
+
+        const lifeRemovingObjectImage = new Image();
+        lifeRemovingObjectImage.src = 'cruzcampo.png';  // Image for life-removing object
+
+        const bonusObjectImage = new Image();
+        bonusObjectImage.src = 'alhambra.png';  // Image for bonus object
+
+        // Shake effect properties
+        let shakeIntensity = 0;
+        let shakeDuration = 0;
+        let lastShakeTime = 0;
+
+        // Rotation effect properties
+        let currentRotation = 0;
+        let targetRotation = 0;
+        let rotationSpeed = 0.1;
+        let rotationDirection = 1;
+
+        // Canvas horizontal position properties
+        let canvasX = 0;
+        const maxCanvasMove = 50;
+
+        // Canvas size change properties (after 1500 points)
+        let scaleFactor = 1;
+        let sizeChanged = false;
+
+        // Darkening effect properties
+        let darkeningIntensity = 0;
+        let darkeningTargetIntensity = 0.9;
+
+        // Listen for keyboard input to move the player
+        let leftPressed = false;
+        let rightPressed = false;
+
+        document.addEventListener("keydown", (event) => {
+            if (event.key === "ArrowLeft") leftPressed = true;
+            if (event.key === "ArrowRight") rightPressed = true;
+        });
+
+        document.addEventListener("keyup", (event) => {
+            if (event.key === "ArrowLeft") leftPressed = false;
+            if (event.key === "ArrowRight") rightPressed = false;
+        });
+
+        // Create a falling object with random speed
+        function createFallingObject() {
+            const x = Math.random() * (canvas.width - objectWidth);
+            const speed = Math.random() * (5 - 1) + 1;
+            fallingObjects.push({ x: x, y: -objectHeight, speed: speed });
+        }
+
+        // Create a life-removing object (rarely)
+        function createLifeRemovingObject() {
+            const x = Math.random() * (canvas.width - lifeRemovingObjectWidth);
+            lifeRemovingObjects.push({ x: x, y: -lifeRemovingObjectHeight, speed: 2 });
+        }
+
+        // Create a bonus object (rarely)
+        function createBonusObject() {
+            const x = Math.random() * (canvas.width - bonusObjectWidth);
+            bonusObjects.push({ x: x, y: -bonusObjectHeight, speed: 2 });
+        }
+
+        // Update the game logic
+        function updateGame() {
+            if (leftPressed && playerX > 0) {
+                playerX -= playerSpeed;
+            }
+            if (rightPressed && playerX < canvas.width - playerWidth) {
+                playerX += playerSpeed;
+            }
+
+            // Move falling objects
+            for (let i = 0; i < fallingObjects.length; i++) {
+                const obj = fallingObjects[i];
+                obj.y += obj.speed;
+
+                // Check for collision with player
+                if (obj.y + objectHeight >= canvas.height - playerHeight &&
+                    obj.x >= playerX && obj.x <= playerX + playerWidth) {
+                    fallingObjects.splice(i, 1); // Remove object from array
+                    score += 10; // Increase score
+                    i--; // Adjust the loop index since we removed an object
+                }
+
+                // Remove object if it goes off screen
+                if (obj.y > canvas.height) {
+                    fallingObjects.splice(i, 1);
+                    i--;
+                }
+            }
+
+            // Move life-removing objects
+            for (let i = 0; i < lifeRemovingObjects.length; i++) {
+                const obj = lifeRemovingObjects[i];
+                obj.y += obj.speed;
+
+                // Check for collision with player
+                if (obj.y + lifeRemovingObjectHeight >= canvas.height - playerHeight &&
+                    obj.x >= playerX && obj.x <= playerX + playerWidth) {
+                    lifeRemovingObjects.splice(i, 1); // Remove object from array
+                    lives -= 1; // Remove a life
+                    i--; // Adjust the loop index since we removed an object
+                }
+
+                // Remove object if it goes off screen
+                if (obj.y > canvas.height) {
+                    lifeRemovingObjects.splice(i, 1);
+                    i--;
+                }
+            }
+
+            // Move bonus objects
+            for (let i = 0; i < bonusObjects.length; i++) {
+                const obj = bonusObjects[i];
+                obj.y += obj.speed;
+                // Check for collision with player
+                if (obj.y + bonusObjectHeight >= canvas.height - playerHeight &&
+                    obj.x >= playerX && obj.x <= playerX + playerWidth) {
+                    bonusObjects.splice(i, 1); // Remove object from array
+                    score += 50; // Increase score by 100 points
+                    i--; // Adjust the loop index since we removed an object
+                }
+
+                // Remove object if it goes off screen
+                if (obj.y > canvas.height) {
+                    bonusObjects.splice(i, 1);
+                    i--;
+                }
+            }
+
+            // Randomly generate new falling objects
+            if (Math.random() < 0.05) {
+                createFallingObject();
+            }
+
+            // Rarely generate life-removing object
+            if (Math.random() < score*0.00005) {
+                createLifeRemovingObject();
+            }
+
+            // Rarely generate bonus object
+            if (Math.random() < 0.002) {
+                createBonusObject();
+            }
+
+            // Apply blur based on the score
+            if (score >= 200) {
+                applyBlurEffect();
+            }
+
+            // Trigger shake if score exceeds 500
+            if (score >= 500) {
+                triggerShakeEffect();
+            }
+
+            // Apply rotation effect if score reaches 800
+            if (score >= 800) {
+                applyRotationEffect();
+            }
+
+            // Apply horizontal canvas movement based on score after 1200 points
+            if (score >= 1200) {
+                applyCanvasMovement();
+            }
+
+            // Apply size change after 1500 points (only once)
+            if (score >= 1500 && !sizeChanged) {
+                applyCanvasSizeChange();
+                sizeChanged = true;
+            }
+
+            // Apply darkening effect after 2000 points
+            if (score >= 2000) {
+                applyDarkeningEffect();
+            }
+
+            // Update score and lives display
+            scoreBoard.textContent = "Score: " + score;
+            livesBoard.textContent = "Lives: " + lives;
+
+            // End game if lives reach 0
+            if (lives <= 0) {
+                alert("Game Over! Final Score: " + score);
+                resetGame();
+            }
+
+            // Redraw the game elements
+            drawGame();
+        }
+        function applyBlurEffect() {
+            const maxBlur = 10;
+            const blurAmount = Math.min(score / 200, maxBlur);
+            canvas.style.filter = `blur(${blurAmount}px)`;
+        }
+
+        // Trigger shake effect if score exceeds 500
+        function triggerShakeEffect() {
+            if (shakeDuration === 0 && (Date.now() - lastShakeTime > 1000)) {
+                shakeIntensity = 10;
+                shakeDuration = 20;
+                lastShakeTime = Date.now();
+            }
+
+            if (shakeDuration > 0) {
+                const shakeX = Math.random() * shakeIntensity - shakeIntensity / 2;
+                const shakeY = Math.random() * shakeIntensity - shakeIntensity / 2;
+                canvas.style.transform = `translate(${shakeX}px, ${shakeY}px)`;
+                shakeDuration--;
+            } else {
+                canvas.style.transform = '';
+            }
+        }
+
+        // Apply rotation effect based on the score
+        function applyRotationEffect() {
+            if (Math.abs(currentRotation - targetRotation) < 1) {
+                currentRotation = targetRotation;
+                targetRotation = (Math.random() * 5 + 5) * rotationDirection;
+                rotationDirection = Math.random() > 0.5 ? 1 : -1;
+                rotationSpeed = Math.random() * 0.2 + 0.05;
+            } else {
+                const rotationStep = (targetRotation - currentRotation) * rotationSpeed;
+                currentRotation += rotationStep;
+            }
+
+            canvas.style.transform += ` rotate(${currentRotation}deg)`;
+        }
+
+        // Apply horizontal movement to the canvas based on score
+        function applyCanvasMovement() {
+            const moveChance = Math.min(score / 100, 1);
+            if (Math.random() < moveChance) {
+                const moveAmount = Math.random() * maxCanvasMove * 2 - maxCanvasMove;
+                canvasX = Math.min(Math.max(canvasX + moveAmount, -maxCanvasMove), maxCanvasMove);
+            }
+            canvas.style.left = `calc(50% + ${canvasX}px)`;
+        }
+
+        // Apply canvas size change after 1500 points
+        function applyCanvasSizeChange() {
+            const scale = 1.5;
+            canvas.style.transform = `scale(${scale})`;
+            scaleFactor = scale;
+        }
+
+        // Apply darkening effect after 2000 points
+        function applyDarkeningEffect() {
+            const maxDarkness = 0.9;
+            const frequency = 0.007;
+            if (score >= 2000) {
+                const darkness = (Math.sin((score - 2000) * frequency) + 1) / 2 * maxDarkness;
+                ctx.globalAlpha = 1 - darkness;
+            } else {
+                ctx.globalAlpha = 1;
+            }
+        }
+        // Draw game elements (player, falling objects, etc.)
+        function drawGame() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+            applyDarkeningEffect();
+
+            for (let obj of fallingObjects) {
+                ctx.drawImage(fallingObjectImage, obj.x, obj.y, objectWidth, objectHeight);
+            }
+
+            for (let obj of lifeRemovingObjects) {
+                ctx.drawImage(lifeRemovingObjectImage, obj.x, obj.y, lifeRemovingObjectWidth, lifeRemovingObjectHeight);
+            }
+
+            for (let obj of bonusObjects) {
+                ctx.drawImage(bonusObjectImage, obj.x, obj.y, bonusObjectWidth, bonusObjectHeight);
+            }
+
+            ctx.fillStyle = "blue";
+            ctx.fillRect(playerX, canvas.height - playerHeight, playerWidth, playerHeight);
+
+            ctx.globalAlpha = 1;
+        }
+
+        // Reset the game
+        function resetGame() {
+            location.reload();
+        }
+
+        // Game loop
+        function gameLoop() {
+            console.log("Game loop is running");
+            updateGame();
+            requestAnimationFrame(gameLoop);
+        }
+
+        // Start the game loop
+        gameLoop();
+    </script>
+</body>
+
+</html>

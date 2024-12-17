@@ -31,8 +31,8 @@
 			break;			
 
 		case "/gallery.php":
-			$CURRENT_PAGE = "Gallery"; 
-			$PAGE_TITLE = "Gallery";
+			$CURRENT_PAGE = "Gallería"; 
+			$PAGE_TITLE = "Galería";
 			break;			
 
 		case "/restore_password.php":

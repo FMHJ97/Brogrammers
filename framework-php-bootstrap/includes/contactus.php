@@ -8,14 +8,17 @@
     <!-- Recuadro con contenido -->
     <div class="container box-area contactus">
         <div class=" row px-3 pt-4">
-            <h3>CUSTOMER SERVICE & ALL GENERAL ENQUIRIES</h3>
-            <p class="mb-4"><strong>Please contact <a href="mailto:info@groundsound.luc">info@groundsound.luc</a></strong></p>
-            <h4>LOST PROPERTY</h4>
-            <p class="mb-4">Please contact <a href="mailto:lostandfound@groundsound.luc">lostandfound@groundsound.luc</a></p>
-            <h4>MEDIA ENQUIRIES</h4>
-            <p class="mb-4">Please contact <a href="mailto:gsupstream@groundsound.luc">gsupstream@groundsound.luc</a></p>
-            <h4>ACCESSIBILITY ENQUIRIES</h4>
-            <p>Please contact <a href="mailto:accessibility@groundsound.luc">accessibility@groundsound.luc</a></p>
+            <h3>SERVICIO AL CLIENTE Y CONSULTAS GENERALES</h3>
+            <p class="mb-4"><strong>Por favor, contacta a <a href="mailto:info@groundsound.luc">info@groundsound.luc</a></strong></p>
+
+            <h4>OBJETOS PERDIDOS</h4>
+            <p class="mb-4">Por favor, contacta a <a href="mailto:lostandfound@groundsound.luc">lostandfound@groundsound.luc</a></p>
+
+            <h4>CONSULTAS DE PRENSA</h4>
+            <p class="mb-4">Por favor, contacta a <a href="mailto:gsupstream@groundsound.luc">gsupstream@groundsound.luc</a></p>
+
+            <h4>CONSULTAS SOBRE ACCESIBILIDAD</h4>
+            <p>Por favor, contacta a <a href="mailto:accessibility@groundsound.luc">accessibility@groundsound.luc</a></p>
         </div>
     </div>
 </section>

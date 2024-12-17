@@ -14,7 +14,7 @@
 
         <section class="container page-section">
             <div class="row page-section-heading">
-                <h1>GALLERY</h1>
+                <h1>GALERÍA</h1>
             </div>
         </section>
 
@@ -24,14 +24,14 @@
             </div>
             <div class="row my-3 px-4 py-3">
                 <!-- Esto en el paso de funcionalidad es posible que se cambie -->
-                <button href="" id="addImages" class="btn-gallery mx-auto my-3">↓ see more ↓</button>
+                <button href="" id="addImages" class="btn-gallery mx-auto my-3">↓ ver más ↓</button>
             </div>
         </section>
 
         <section class="container page-section">
             <!-- Esto en el paso de funcionalidad es posible que se cambie -->
             <div class="row my-3 py-3">
-                <a id="submitImageTODO"  href="https://www.gmail.com/"  class="btn-index ">Send us your pics</a>
+                <a id="submitImageTODO"  href="https://www.gmail.com/"  class="btn-index ">Envíanos tus fotos</a>
             </div>
         </section>
     </main>

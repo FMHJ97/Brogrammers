@@ -22,16 +22,16 @@
             <div class="row btn-category-group justify-content-center">
                 <div class="d-flex flex-wrap justify-content-center">
                     <div class="col-12 col-md-3 d-flex justify-content-center mb-2 px-2">
-                        <button type="button" id="fullLineUp" class="btn btn-fullLineup selected">Full Lineup</button>
+                        <button type="button" id="fullLineUp" class="btn btn-fullLineup selected">Lineup Completa</button>
                     </div>
                     <div class="col-4 col-md-3 mb-2 px-2 d-flex justify-content-center">
-                        <button type="button" id="thursday" class="btn btn-days">Thursday</button>
+                        <button type="button" id="thursday" class="btn btn-days">Jueves</button>
                     </div>
                     <div class="col-4 col-md-3  mb-2 px-2 d-flex justify-content-center">
-                        <button type="button" id="friday" class="btn btn-days">Friday</button>
+                        <button type="button" id="friday" class="btn btn-days">Viernes</button>
                     </div>
                     <div class="col-4 col-md-3  mb-2 px-2 d-flex justify-content-center">
-                        <button type="button" id="saturday" class="btn btn-days">Saturday</button>
+                        <button type="button" id="saturday" class="btn btn-days">Sábado</button>
                     </div>
                 </div>
             </div>
@@ -42,14 +42,14 @@
             <div class="container mb-3">
                 <!-- Título  de Bandas Principales -->
                 <div class="row text-center mt-4 mt-md-5 mb-2">
-                    <h2 class="col-12">HEADLINERS</h2>
+                    <h2 class="col-12">CABEZAS DE CARTEL</h2>
                 </div>
                 <!-- Contenedor imagenes Bandas Principales -->
                 <div class="row">
                     <!-- BANDA 1 -->
                     <div class="colB col-md-4">
                         <div class="titleDays">
-                            <h3>Thursday</h3>
+                            <h3>Jueves</h3>
                         </div>
                         <!--  Flip Card  --><!-- PRUEBA DE FLIP PARA CUANDO SE HAGA LA PARTE FUNCIONAL DE LA WEB... No la tengas en cuentaaaaaa Alberto!  Que habrá código repetido de esta parte en el sass!! -->
                         <div class="flip-card">
@@ -108,7 +108,7 @@
                     <!-- BANDA 2 -->
                     <div class="colB col-md-4 ">
                         <div class="titleDays">
-                            <h3>Friday</h3>
+                            <h3>Viernes</h3>
                         </div>
                         <div class="card cardBand bandPrincipal headB2 ">
                             <div class="artist-name">Los del Río</div>
@@ -117,7 +117,7 @@
                     <!-- BANDA 3 -->
                     <div class="colB col-md-4 ">
                         <div class="titleDays">
-                            <h3>Saturday</h3>
+                            <h3>Sábado</h3>
                         </div>
                         <div class="card cardBand bandPrincipal headB3">
                             <div class="artist-name">SoundGarden</div>
@@ -129,7 +129,7 @@
             <!--Rest Bands -->
             <div class="container my-5">
                 <div class="row text-center">
-                    <h3>INCLUDING</h3>
+                    <h3>INCLUYENDO</h3>
                 </div>
                 <div class="row cols-4">
                     <div class="col-12 col-md-3 colB ">

@@ -20,7 +20,7 @@
               <div class="time-block d-flex align-items-center">
                 <div class="time-item">
                   <div class="time-number" id="days">000</div>
-                  <div class="time-label">DAYS</div>
+                  <div class="time-label">DÍAS</div>
                 </div>
                 <div class="time-item">
                   <div class="time-number">:</div>
@@ -45,7 +45,7 @@
       </section>
       <section>
         <div class="row my-3 py-3"> <!--CF2: Row sin col? para qué? -->
-          <a href="tickets.php" class="btn-index ">BUY YOUR TICKETS NOW</a>
+          <a href="tickets.php" class="btn-index ">COMPRA TUS TICKETS AHORA</a>
         </div>
       </section>
 
@@ -88,7 +88,7 @@
           <div class="col d-flex flex-column justify-content-center align-items-center text-center">
             <img class="img-fluid p-3" src="../assets/img/Logo.svg" alt="Festival Logo">
             <div class="festival py-3 px-auto">FESTIVAL</div>
-            <div class="festival-date">APRIL 17-18-19, 2025</div>
+            <div class="festival-date">ABRIL 17-18-19, 2025</div>
             <div class="festival-location">
               <div>LUCENA, CÓRDOBA</div>
               <div>PRUDENCIO UZAR TOWN SQUARE</div>
@@ -99,7 +99,7 @@
       
       <section>
         <div class="row my-3 py-3">
-          <a href="tickets.php" class="btn-index ">BUY YOUR TICKETS NOW</a>
+          <a href="tickets.php" class="btn-index ">COMPRA TUS TICKETS AHORA</a>
         </div>
       </section>
 

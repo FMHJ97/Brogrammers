@@ -17,6 +17,7 @@
                 <h1>LINE UP</h1>
             </div>
         </section>
+
         <!--Festival Days Filter -->
         <section class="container">
             <div class="row btn-category-group justify-content-center">
@@ -37,164 +38,122 @@
             </div>
         </section>
 
-        <!--Bandas Principales -->
+        <!-- Bandas Principales -->
         <section class="container page-section">
             <div class="container mb-3">
-                <!-- Título  de Bandas Principales -->
                 <div class="row text-center mt-4 mt-md-5 mb-2">
                     <h2 class="col-12">CABEZAS DE CARTEL</h2>
                 </div>
-                <!-- Contenedor imagenes Bandas Principales -->
                 <div class="row">
-                    <!-- BANDA 1 -->
-                    <div class="colB col-md-4">
-                        <div class="titleDays">
-                            <h3>Jueves</h3>
-                        </div>
-                        <!--  Flip Card  --><!-- PRUEBA DE FLIP PARA CUANDO SE HAGA LA PARTE FUNCIONAL DE LA WEB... No la tengas en cuentaaaaaa Alberto!  Que habrá código repetido de esta parte en el sass!! -->
-                        <div class="flip-card">
-                            <div class="flip-card-inner">
-                                <!-- Front -->
-                                <div class="flip-card-front card cardBand bandPrincipal headB1">
-                                    <div class="artist-name">Eminem</div>
+                    <?php include("includes/artistas.php"); ?>
+                    <?php foreach ($artists as $artist) { 
+                        if ($artist["type"] == "headliner") { ?>
+                            <div class="colB col-md-4">
+                                <div class="titleDays">
+                                    <h3><?php echo $artist['day']; ?></h3>
                                 </div>
-                                <!-- Back -->
-                                <div class="flip-card-back">
-                                    <div class="container back-content">
-                                        <div class="row mt-1">
-                                            <h4>Eminem</h4>
+                                <div class="flip-card">
+                                    <div class="flip-card-inner">
+                                        <div class="flip-card-front card cardBand bandPrincipal headB1">
+                                            <div class="artist-name"><?php echo $artist['name']; ?></div>
                                         </div>
-                                        <div class="row mb-2">
-                                            <!-- Instagram -->
-                                            <div class="col-4">
-                                                <a href="https://www.instagram.com/"><i class="bi bi-instagram"></i></a>
+                                        <div class="flip-card-back">
+                                            <div class="container back-content">
+                                                <div class="row mt-1">
+                                                    <h4><?php echo $artist['name']; ?></h4>
+                                                </div>
+                                                <div class="row mb-2">
+                                                    <div class="col-4">
+                                                        <a href="<?php echo $artist['socials']['instagram']; ?>"><i class="bi bi-instagram"></i></a>
+                                                    </div>
+                                                    <div class="col-4">
+                                                        <a href="<?php echo $artist['socials']['tiktok']; ?>"><i class="bi bi-tiktok"></i></a>
+                                                    </div>
+                                                    <div class="col-4">
+                                                        <a href="<?php echo $artist['socials']['twitter']; ?>"><i class="bi bi-twitter-x"></i></a>
+                                                    </div>
+                                                    <div class="col-4">
+                                                        <a href="<?php echo $artist['socials']['youtube']; ?>"><i class="bi bi-youtube"></i></a>
+                                                    </div>
+                                                    <div class="col-4">
+                                                        <a href="<?php echo $artist['socials']['facebook']; ?>"><i class="bi bi-facebook"></i></a>
+                                                    </div>
+                                                    <div class="col-4">
+                                                        <a href="<?php echo $artist['socials']['email']; ?>"><i class="bi bi-envelope-fill"></i></a>
+                                                    </div>
+                                                </div>
+                                                <div class="row mb-1">
+                                                    <iframe style="border-radius:12px"
+                                                        src="<?php echo $artist['spotify']; ?>"
+                                                        width="100%" height="152" frameBorder="0" allowfullscreen=""
+                                                        allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+                                                        loading="lazy"></iframe>
+                                                </div>
                                             </div>
-                                            <!-- TikTok -->
-                                            <div class="col-4">
-                                                <a href="https://www.tiktok.com/"><i class="bi bi-tiktok"></i></a>
-                                            </div>
-                                            <!-- X -->
-                                            <div class="col-4">
-                                                <a href="https://www.x.com/"><i class="bi bi-twitter-x"></i></a>
-                                            </div>
-                                            <!-- Youtube -->
-                                            <div class="col-4">
-                                                <a href="https://www.youtube.com/"><i class="bi bi-youtube"></i></a>
-                                            </div>
-                                            <!-- Facebook -->
-                                            <div class="col-4 ">
-                                                <a href="https://www.facebook.com/"><i class="bi bi-facebook"></i></a>
-                                            </div>
-                                            <!-- Email -->
-                                            <div class="col-4">
-                                                <a href="https://www.gmail.com/"><i class="bi bi-envelope-fill"></i></a>
-                                            </div>
-                                        </div>
-                                        <div class="row mb-1">
-                                            <!-- Tres formas diferentes del iframe para spotify--><!-- Revisar cual queda mejor -->
-                                            <!-- <iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/4xkOaSrkexMciUUogZKVTS?utm_source=generator&theme=0" width="100%" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>-->
-                                            <iframe style="border-radius:12px"
-                                                src="https://open.spotify.com/embed/playlist/37i9dQZF1DZ06evO4gTUOY?utm_source=generator"
-                                                width="100%" height="152" frameBorder="0" allowfullscreen=""
-                                                allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
-                                                loading="lazy"></iframe>
-                                            <!--  <iframe src="https://open.spotify.com/embed?uri=spotify:album:2cWBwpqMsDJC1ZUwz813lo" width="250" height="280" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>   -->
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                    </div>
-                    <!-- BANDA 2 -->
-                    <div class="colB col-md-4 ">
-                        <div class="titleDays">
-                            <h3>Viernes</h3>
-                        </div>
-                        <div class="card cardBand bandPrincipal headB2 ">
-                            <div class="artist-name">Los del Río</div>
-                        </div>
-                    </div>
-                    <!-- BANDA 3 -->
-                    <div class="colB col-md-4 ">
-                        <div class="titleDays">
-                            <h3>Sábado</h3>
-                        </div>
-                        <div class="card cardBand bandPrincipal headB3">
-                            <div class="artist-name">SoundGarden</div>
-                        </div>
-                    </div>
+                    <?php } } ?>
                 </div>
             </div>
 
-            <!--Rest Bands -->
+            <!-- Rest Bands -->
             <div class="container my-5">
                 <div class="row text-center">
                     <h3>INCLUYENDO</h3>
                 </div>
                 <div class="row cols-4">
-                    <div class="col-12 col-md-3 colB ">
-                        <div class="card cardBand bandSecundary incB1">
-                            <div class="artist-name">Alice in Chains</div>
-                        </div>
-                    </div>
-
-                    <div class="col-12 col-md-3 colB">
-                        <div class="card cardBand bandSecundary incB2">
-                            <div class="artist-name">50 cent</div>
-                        </div>
-                    </div>
-                    <div class="col-12 col-md-3 colB">
-                        <div class="card cardBand bandSecundary incB3">
-                            <div class="artist-name">Queen</div>
-                        </div>
-                    </div>
-                    <div class="col-12 col-md-3 colB">
-                        <div class="card cardBand bandSecundary incB4">
-                            <div class="artist-name">Pearl Jam</div>
-                        </div>
-                    </div>
-                    <div class="col-12 col-md-3 colB">
-                        <div class="card cardBand bandSecundary incB5">
-                            <div class="artist-name">Falling in Reverse</div>
-                        </div>
-                    </div>
-                    <div class="col-12 col-md-3 colB">
-                        <div class="card cardBand bandSecundary incB6">
-                            <div class="artist-name">Parchís</div>
-                        </div>
-                    </div>
-                    <div class="col-12 col-md-3 colB">
-                        <div class="card cardBand bandSecundary incB7">
-                            <div class="artist-name">Los Chichos</div>
-                        </div>
-                    </div>
-                    <div class="col-12 col-md-3 colB">
-                        <div class="card cardBand bandSecundary incB8">
-                            <div class="artist-name">Rush</div>
-                        </div>
-                    </div>
-                    <div class="col-12 col-md-3 colB">
-                        <div class="card cardBand bandSecundary incB9">
-                            <div class="artist-name">2 Pac</div>
-                        </div>
-                    </div>
-                    <div class="col-12 col-md-3 colB">
-                        <div class="card cardBand bandSecundary incB10">
-                            <div class="artist-name">Lola Flores</div>
-                        </div>
-                    </div>
-                    <div class="col-12 col-md-3 colB">
-                        <div class="card cardBand bandSecundary incB11">
-                            <div class="artist-name">Lamb of God</div>
-                        </div>
-                    </div>
-                    <div class="col-12 col-md-3 colB">
-                        <div class="card cardBand bandSecundary incB12">
-                            <div class="artist-name">Snoop Dog</div>
-                        </div>
-                    </div>
+                    <?php foreach ($artists as $artist) { 
+                        if ($artist["type"] == "secondary") { ?>
+                            <div class="col-12 col-md-3 colB">
+                                <div class="flip-card">
+                                    <div class="flip-card-inner">
+                                        <div class="flip-card-front card cardBand bandSecundary incB1">
+                                            <div class="artist-name"><?php echo $artist['name']; ?></div>
+                                        </div>
+                                        <div class="flip-card-back">
+                                            <div class="container back-content">
+                                                <div class="row mt-1">
+                                                    <h4><?php echo $artist['name']; ?></h4>
+                                                </div>
+                                                <div class="row mb-2">
+                                                    <div class="col-4">
+                                                        <a href="<?php echo $artist['socials']['instagram']; ?>"><i class="bi bi-instagram"></i></a>
+                                                    </div>
+                                                    <div class="col-4">
+                                                        <a href="<?php echo $artist['socials']['tiktok']; ?>"><i class="bi bi-tiktok"></i></a>
+                                                    </div>
+                                                    <div class="col-4">
+                                                        <a href="<?php echo $artist['socials']['twitter']; ?>"><i class="bi bi-twitter-x"></i></a>
+                                                    </div>
+                                                    <div class="col-4">
+                                                        <a href="<?php echo $artist['socials']['youtube']; ?>"><i class="bi bi-youtube"></i></a>
+                                                    </div>
+                                                    <div class="col-4">
+                                                        <a href="<?php echo $artist['socials']['facebook']; ?>"><i class="bi bi-facebook"></i></a>
+                                                    </div>
+                                                    <div class="col-4">
+                                                        <a href="<?php echo $artist['socials']['email']; ?>"><i class="bi bi-envelope-fill"></i></a>
+                                                    </div>
+                                                </div>
+                                                <div class="row mb-1">
+                                                    <iframe style="border-radius:12px"
+                                                        src="<?php echo $artist['spotify']; ?>"
+                                                        width="100%" height="152" frameBorder="0" allowfullscreen=""
+                                                        allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+                                                        loading="lazy"></iframe>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                    <?php } } ?>
                 </div>
+            </div>
         </section>
+
         <!-- Patrocinadores -->
         <?php include("includes/patrocinadores.php");  ?>
     </main>

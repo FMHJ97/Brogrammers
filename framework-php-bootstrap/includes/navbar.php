@@ -28,7 +28,7 @@
                     <a class="nav-link" href="./merch.php">Merch</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="./gallery.php">Gallery</a>
+                    <a class="nav-link" href="./gallery.php">Galería</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="./infogeneral.php">Info</a>

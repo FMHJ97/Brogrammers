@@ -3,6 +3,7 @@
 <html>
 
 <head>
+    <script src="js/lineup.js"></script>
     <?php include("includes/head_tags.php"); ?>
 </head>
 
@@ -54,7 +55,7 @@
                                 </div>
                                 <div class="flip-card">
                                     <div class="flip-card-inner">
-                                        <div class="flip-card-front card cardBand bandPrincipal headB1">
+                                        <div class="flip-card-front card cardBand bandPrincipal <?php echo $artist['class']; ?>">
                                             <div class="artist-name"><?php echo $artist['name']; ?></div>
                                         </div>
                                         <div class="flip-card-back">
@@ -109,7 +110,7 @@
                             <div class="col-12 col-md-3 colB">
                                 <div class="flip-card">
                                     <div class="flip-card-inner">
-                                        <div class="flip-card-front card cardBand bandSecundary incB1">
+                                        <div class="flip-card-front card cardBand bandSecundary <?php echo $artist['class']; ?>">
                                             <div class="artist-name"><?php echo $artist['name']; ?></div>
                                         </div>
                                         <div class="flip-card-back">

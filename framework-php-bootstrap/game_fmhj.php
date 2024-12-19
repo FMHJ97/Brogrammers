@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Juego Konva - FMHJ</title>
-    <script src="../../node_modules/konva/konva.min.js"></script>
+    <script src="node_modules/konva/konva.min.js"></script>
     <style>
         body {
             margin: 0;
@@ -48,38 +48,21 @@
 
         // Creamos el fondo.
         // Primera imagen.
-        var fondo1Img = new Image();
-        fondo1Img.src = "../../assets/sprites/fmhj/fondo.png";
+        var fondoImg = new Image();
+        fondoImg.src = "assets/sprites/fmhj/fondo.png";
 
         // Añadimos la imagen al fondo.
-        var bground1 = null;
-        fondo1Img.onload = function () {
-            bground1 = new Konva.Image({
+        var bground = null;
+        fondoImg.onload = function () {
+            bground = new Konva.Image({
                 x: 0,
                 y: 0,
-                image: fondo1Img,
-                width: width/2,
+                image: fondoImg,
+                width: width,
+                height: height
             });
 
-            fondo.add(bground1);
-            stage.add(fondo);
-        };  
-
-        // Segunda imagen (a continuación de la anterior).
-        var fondo2Img = new Image();
-        fondo2Img.src = "../../assets/sprites/fmhj/fondo2.png";
-
-        // Añadimos la imagen al fondo.
-        var bground2 = null;
-        fondo2Img.onload = function () {
-            bground2 = new Konva.Image({
-                x: width/2,
-                y: 0,
-                image: fondo2Img,
-                width: width/2,
-            });
-
-            fondo.add(bground2);
+            fondo.add(bground);
             stage.add(fondo);
         };
 
@@ -88,7 +71,7 @@
 
         // Creamos el personaje.
         var personaje = new Image();
-        personaje.src = "../../assets/sprites/fmhj/idle.png";
+        personaje.src = "assets/sprites/fmhj/idle.png";
 
 
         // Animación del personaje.

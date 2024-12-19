@@ -71,7 +71,7 @@
             <div class="row merch-products">
                 <!-- Producto 1 -->
                 <a href="./merch_item.php" class="col-12 col-md-4 card card-merch-item all-items clothes">
-                    <img class="card-img-top" src="./assets/img/merch/camiseta_1.png"
+                    <img class="card-img-top" src="./assets/img/merch/camiseta_blanca_01.png"
                         alt="Camiseta GroundSound Blanca (Black Logo)">
                     <div class="card-body">
                         <h3 class="card-title">Camiseta GroundSound Blanca (Black Logo)</h3>
@@ -80,7 +80,7 @@
                 </a>
                 <!-- Producto 2 -->
                 <a href="./merch_item.php" class="col-12 col-md-4 card card-merch-item all-items clothes">
-                    <img class="card-img-top" src="./assets/img/merch/camiseta_2.png"
+                    <img class="card-img-top" src="./assets/img/merch/camiseta_negra_02.png"
                         alt="Camiseta GroundSound Negra (Neon Logo)">
                     <div class="card-body">
                         <h3 class="card-title">Camiseta GroundSound Negra (Neon Logo)</h3>
@@ -89,7 +89,7 @@
                 </a>
                 <!-- Producto 3 -->
                 <a href="./merch_item.php" class="col-12 col-md-4 card card-merch-item all-items accesories">
-                    <img class="card-img-top" src="./assets/img/merch/bolsa.png" alt="Mochila Saco GroundSound Negra">
+                    <img class="card-img-top" src="./assets/img/merch/mechero.png" alt="Mochila Saco GroundSound Negra">
                     <div class="card-body">
                         <h3 class="card-title">Mochila Saco GroundSound<br>Negra</h3>
                         <span>€15,00 EUR</span>
@@ -97,7 +97,7 @@
                 </a>
                 <!-- Producto 4 -->
                 <a href="./merch_item.php" class="col-12 col-md-4 card card-merch-item all-items music">
-                    <img class="card-img-top" src="./assets/img/merch/Vinilo_SoundGarden_SuperUnknow_2LP.png"
+                    <img class="card-img-top" src="./assets/img/merch/vinilo_groundsound_2024.png"
                         alt="Sound Garden Superunknow (Vinilo 2LP)">
                     <div class="card-body">
                         <h3 class="card-title">Sound Garden Superunknow<br>(Vinilo 2LP)</h3>
@@ -106,7 +106,7 @@
                 </a>
                 <!-- Producto 5 -->
                 <a href="./merch_item.php" class="col-12 col-md-4 card card-merch-item all-items clothes">
-                    <img class="card-img-top" src="./assets/img/merch/camiseta_queen.png"
+                    <img class="card-img-top" src="./assets/img/merch/camiseta_negra_03.png"
                         alt="Camiseta Queen 'Jazz' 40 Aniversario">
                     <div class="card-body">
                         <h3 class="card-title">Camiseta Queen<br>"Jazz"<br>40 Aniversario</h3>
@@ -115,7 +115,7 @@
                 </a>
                 <!-- Producto 6 -->
                 <a href="./merch_item.php" class="col-12 col-md-4 card card-merch-item all-items music">
-                    <img class="card-img-top" src="./assets/img/merch/Eminem_Vinilo.png"
+                    <img class="card-img-top" src="./assets/img/merch/vinilo_groundsound_2023.png"
                         alt="The Death of Slim Shady - Coup de Grâce (Vinilo 2LP)">
                     <div class="card-body">
                         <h3 class="card-title">The Death of Slim Shady - Coup de Grâce (Vinilo 2LP)</h3>
@@ -124,7 +124,7 @@
                 </a>
                 <!-- Producto 7 -->
                 <a href="./merch_item.php" class="col-12 col-md-4 card card-merch-item all-items clothes">
-                    <img class="card-img-top" src="./assets/img/merch/camiseta_fallinginreverse.png"
+                    <img class="card-img-top" src="./assets/img/merch/camiseta_blanca_02.png"
                         alt='Camiseta "Floating" Falling in Reverse'>
                     <div class="card-body">
                         <h3 class="card-title">Camiseta<br>"Floating"<br>Falling in Reverse</h3>
@@ -141,7 +141,7 @@
                 </a>
                 <!-- Producto 9 -->
                 <a href="./merch_item.php" class="col-12 col-md-4 card card-merch-item all-items clothes">
-                    <img class="card-img-top" src="./assets/img/merch/ElFary_camiseta.png"
+                    <img class="card-img-top" src="./assets/img/merch/camiseta_negra_01.png"
                         alt='Camiseta "Mandanga" El Fary'>
                     <div class="card-body">
                         <h3 class="card-title">Camiseta<br>"Mandanga"<br>El Fary</h3>

@@ -17,8 +17,8 @@
             <!-- Nombre y Precio (Oculto en dispositivos superiores a md) -->
             <div class="row d-block d-md-none mb-5">
                 <div class="col item-heading">
-                    <h1>Camiseta GroundSound Blanca (Black Logo)</h1>
-                    <h2>€25,00 EUR</h2>
+                    <h1>Camiseta GroundSound Blanca<br>(Black Logo)</h1>
+                    <h2>€14,00 EUR</h2>
                 </div>
             </div>
             <div class="row">
@@ -27,7 +27,7 @@
                     <!-- Imagen Principal -->
                     <div class="row">
                         <div class="col main-image">
-                            <img src="./assets/img/merch/camiseta_1.png" alt="Camiseta GroundSound Blanca (Black Logo)"
+                            <img src="./assets/img/merch/camiseta_blanca_01.png" alt="Camiseta GroundSound Blanca (Black Logo)"
                                 class="img-fluid">
                         </div>
                     </div>
@@ -36,19 +36,19 @@
                         <div class="col">
                             <div class="row additional-images">
                                 <div class="col-3">
-                                    <img src="./assets/img/merch/camiseta_1.png"
+                                    <img src="./assets/img/merch/camiseta_blanca_01.png"
                                         alt="Camiseta GroundSound Blanca (Black Logo)" class="img-fluid">
                                 </div>
                                 <div class="col-3">
-                                    <img src="./assets/img/merch/camiseta_1.png"
+                                    <img src="./assets/img/merch/camiseta_blanca_01.png"
                                         alt="Camiseta GroundSound Blanca (Black Logo)" class="img-fluid">
                                 </div>
                                 <div class="col-3">
-                                    <img src="./assets/img/merch/camiseta_1.png"
+                                    <img src="./assets/img/merch/camiseta_blanca_01.png"
                                         alt="Camiseta GroundSound Blanca (Black Logo)" class="img-fluid">
                                 </div>
                                 <div class="col-3">
-                                    <img src="./assets/img/merch/camiseta_1.png"
+                                    <img src="./assets/img/merch/camiseta_blanca_01.png"
                                         alt="Camiseta GroundSound Blanca (Black Logo)" class="img-fluid">
                                 </div>
                             </div>
@@ -61,7 +61,7 @@
                     <div class="row d-none d-md-block">
                         <div class="col item-heading">
                             <h1>Camiseta GroundSound Blanca (Black Logo)</h1>
-                            <h2>€25,00 EUR</h2>
+                            <h2>€14,00 EUR</h2>
                         </div>
                     </div>
                     <!-- Apartado Tallas (según producto) -->
@@ -119,29 +119,28 @@
             <div class="row merch-products">
                 <!-- Producto -->
                 <a href="./merch_item.php" class="col-12 col-md-4 card card-merch-item all-items clothes">
-                    <img class="card-img-top" src="./assets/img/merch/camiseta_fallinginreverse.png"
-                        alt='Camiseta "Floating" Falling in Reverse'>
+                    <img class="card-img-top" src="./assets/img/merch/camiseta_negra_03.png"
+                        alt="Camiseta Negra GroundSound (Trinity Logo)">
                     <div class="card-body">
-                        <h3 class="card-title">Camiseta<br>"Floating"<br>Falling in Reverse</h3>
-                        <span>€40,00 EUR</span>
+                        <h3 class="card-title">Camiseta Negra GroundSound<br>(Trinity Logo)</h3>
+                        <span>€22,00 EUR</span>
                     </div>
                 </a>
                 <!-- Producto -->
                 <a href="./merch_item.php" class="col-12 col-md-4 card card-merch-item all-items accesories">
-                    <img class="card-img-top" src="./assets/img/merch/gorra.png" alt="Gorra GroundSound Golden Forrest">
+                    <img class="card-img-top" src="./assets/img/merch/gorra.png" alt="Gorra GroundSound (Golden Dream)">
                     <div class="card-body">
-                        <h3 class="card-title">Gorra<br>GroundSound<br>Golden Forrest</h3>
-                        <span>€24,50 EUR</span>
+                        <h3 class="card-title">Gorra<br>GroundSound<br>(Golden Dream)</h3>
+                        <span>€18,50 EUR</span>
                     </div>
                 </a>
                 <!-- Producto -->
-                <a href="./merch_item.php" class="col-12 col-md-4 card card-merch-item all-items clothes">
-                    <img class="card-img-top" src="./assets/img/merch/ElFary_camiseta.png"
-                        alt='Camiseta "Mandanga" El Fary'>
+                <a href="./merch_item.php" class="col-12 col-md-4 card card-merch-item all-items music">
+                    <img class="card-img-top" src="./assets/img/merch/vinilo_groundsound_2024.png"
+                        alt="GroundSound Festival 2024 (Vinilo - Disco)">
                     <div class="card-body">
-                        <!--CF2: El elemento <br> está prohibidísimo-->
-                        <h3 class="card-title">Camiseta<br>"Mandanga"<br>El Fary</h3>
-                        <span>23,00 EUR</span>
+                        <h3 class="card-title">GroundSound Festival 2024<br>(Vinilo - Disco)</h3>
+                        <span>€32,80 EUR</span>
                     </div>
                 </a>
             </div>

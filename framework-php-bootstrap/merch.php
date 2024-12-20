@@ -74,78 +74,78 @@
                     <img class="card-img-top" src="./assets/img/merch/camiseta_blanca_01.png"
                         alt="Camiseta GroundSound Blanca (Black Logo)">
                     <div class="card-body">
-                        <h3 class="card-title">Camiseta GroundSound Blanca (Black Logo)</h3>
-                        <span>€25,00 EUR</span>
+                        <h3 class="card-title">Camiseta Blanca GroundSound<br>(Black Logo)</h3>
+                        <span>€14,00 EUR</span>
                     </div>
                 </a>
                 <!-- Producto 2 -->
                 <a href="./merch_item.php" class="col-12 col-md-4 card card-merch-item all-items clothes">
                     <img class="card-img-top" src="./assets/img/merch/camiseta_negra_02.png"
-                        alt="Camiseta GroundSound Negra (Neon Logo)">
+                        alt="Camiseta Negra GroundSound (Neon Logo)">
                     <div class="card-body">
-                        <h3 class="card-title">Camiseta GroundSound Negra (Neon Logo)</h3>
-                        <span>€30,00 EUR</span>
+                        <h3 class="card-title">Camiseta Negra GroundSound<br>(Neon Logo)</h3>
+                        <span>€16,00 EUR</span>
                     </div>
                 </a>
                 <!-- Producto 3 -->
                 <a href="./merch_item.php" class="col-12 col-md-4 card card-merch-item all-items accesories">
-                    <img class="card-img-top" src="./assets/img/merch/mechero.png" alt="Mochila Saco GroundSound Negra">
+                    <img class="card-img-top" src="./assets/img/merch/mechero.png" alt="Mechero Zippo de Gasolina (Recargable)">
                     <div class="card-body">
-                        <h3 class="card-title">Mochila Saco GroundSound<br>Negra</h3>
+                        <h3 class="card-title">Mechero Zippo de Gasolina<br>(Recargable)</h3>
                         <span>€15,00 EUR</span>
                     </div>
                 </a>
                 <!-- Producto 4 -->
                 <a href="./merch_item.php" class="col-12 col-md-4 card card-merch-item all-items music">
                     <img class="card-img-top" src="./assets/img/merch/vinilo_groundsound_2024.png"
-                        alt="Sound Garden Superunknow (Vinilo 2LP)">
+                        alt="GroundSound Festival 2024 (Vinilo - Disco)">
                     <div class="card-body">
-                        <h3 class="card-title">Sound Garden Superunknow<br>(Vinilo 2LP)</h3>
-                        <span>€55,00 EUR</span>
+                        <h3 class="card-title">GroundSound Festival 2024<br>(Vinilo - Disco)</h3>
+                        <span>€32,80 EUR</span>
                     </div>
                 </a>
                 <!-- Producto 5 -->
                 <a href="./merch_item.php" class="col-12 col-md-4 card card-merch-item all-items clothes">
                     <img class="card-img-top" src="./assets/img/merch/camiseta_negra_03.png"
-                        alt="Camiseta Queen 'Jazz' 40 Aniversario">
+                        alt="Camiseta Negra GroundSound (Trinity Logo)">
                     <div class="card-body">
-                        <h3 class="card-title">Camiseta Queen<br>"Jazz"<br>40 Aniversario</h3>
-                        <span>€32,00 EUR</span>
+                        <h3 class="card-title">Camiseta Negra GroundSound<br>(Trinity Logo)</h3>
+                        <span>€22,00 EUR</span>
                     </div>
                 </a>
                 <!-- Producto 6 -->
                 <a href="./merch_item.php" class="col-12 col-md-4 card card-merch-item all-items music">
                     <img class="card-img-top" src="./assets/img/merch/vinilo_groundsound_2023.png"
-                        alt="The Death of Slim Shady - Coup de Grâce (Vinilo 2LP)">
+                        alt="GroundSound Festival 2023 (Vinilo - Disco)">
                     <div class="card-body">
-                        <h3 class="card-title">The Death of Slim Shady - Coup de Grâce (Vinilo 2LP)</h3>
-                        <span>€50,00 EUR</span>
+                        <h3 class="card-title">GroundSound Festival 2023<br>(Vinilo - Disco)</h3>
+                        <span>€28,40 EUR</span>
                     </div>
                 </a>
                 <!-- Producto 7 -->
                 <a href="./merch_item.php" class="col-12 col-md-4 card card-merch-item all-items clothes">
                     <img class="card-img-top" src="./assets/img/merch/camiseta_blanca_02.png"
-                        alt='Camiseta "Floating" Falling in Reverse'>
+                        alt='Camiseta GroundSound Blanca (Neon Logo)'>
                     <div class="card-body">
-                        <h3 class="card-title">Camiseta<br>"Floating"<br>Falling in Reverse</h3>
-                        <span>€40,00 EUR</span>
+                        <h3 class="card-title">Camiseta GroundSound Blanca<br>(Neon Logo)</h3>
+                        <span>€12,00 EUR</span>
                     </div>
                 </a>
                 <!-- Producto 8 -->
                 <a href="./merch_item.php" class="col-12 col-md-4 card card-merch-item all-items accesories">
-                    <img class="card-img-top" src="./assets/img/merch/gorra.png" alt="Gorra GroundSound Golden Forrest">
+                    <img class="card-img-top" src="./assets/img/merch/gorra.png" alt="Gorra GroundSound (Golden Dream)">
                     <div class="card-body">
-                        <h3 class="card-title">Gorra<br>GroundSound<br>Golden Forrest</h3>
-                        <span>€24,50 EUR</span>
+                        <h3 class="card-title">Gorra<br>GroundSound<br>(Golden Dream)</h3>
+                        <span>€18,50 EUR</span>
                     </div>
                 </a>
                 <!-- Producto 9 -->
                 <a href="./merch_item.php" class="col-12 col-md-4 card card-merch-item all-items clothes">
                     <img class="card-img-top" src="./assets/img/merch/camiseta_negra_01.png"
-                        alt='Camiseta "Mandanga" El Fary'>
+                        alt='Camiseta Negra GroundSound (White Logo)'>
                     <div class="card-body">
-                        <h3 class="card-title">Camiseta<br>"Mandanga"<br>El Fary</h3>
-                        <span>23,00 EUR</span>
+                        <h3 class="card-title">Camiseta Negra GroundSound<br>(White Logo)</h3>
+                        <span>16,00 EUR</span>
                     </div>
                 </a>
             </div>

@@ -101,6 +101,12 @@
                     </p>
                 </div>
             </div>
+
+            <div class="container my-5">
+                <embed src="../assets/legal_files/privacy.pdf" type="application/pdf" width="100%"
+                    height="600px" />
+            </div>
+
         </section>
 
 

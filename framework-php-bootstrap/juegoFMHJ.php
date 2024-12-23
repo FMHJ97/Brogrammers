@@ -178,6 +178,7 @@
 
             // Función para mover el NPC hacia el personaje principal.
             function moveNPCToMainCharacter(npcSprite, mainCharacter, config, onComplete) {
+
                 // Cambiamos la animación del NPC a 'walk_left'.
                 npcSprite.animation('walk_left');
 
@@ -198,6 +199,9 @@
                         // Cambiamos la animación del NPC a 'standing'.
                         npcSprite.animation('standing');
 
+                        // Indicamos que el NPC ha dejado de moverse.
+                        npcSprite.isMoving = false;
+
                         // Ejecutamos el callback al completar el movimiento.
                         if (onComplete) onComplete();
                     }
@@ -205,6 +209,7 @@
 
                 // Iniciamos la animación.
                 anim.start();
+
             }
 
             // Función principal para manejar el NPC más cercano.
@@ -244,7 +249,9 @@
                     var npcSprite = new Konva.Sprite({
                         x: (width / 3) * 2 - (config.width / 2), // Posición inicial (ajustable según diseño).
                         y: height - height_road - (config.height), // Posición inicial (ajustable según diseño).
+                        width: config.width,
                         image: npcImage,
+                        isMoving: config.isMoving,
                         animation: 'standing',
                         animations: config.animations,
                         frameRate: config.frameRate,
@@ -276,7 +283,7 @@
                 });
 
                 // Comprobamos que el NPC más cercano está al lado del personaje principal.
-                if (closestNPC && minDistance <= 50) {
+                if (closestNPC && minDistance <= 50 && !closestNPC.isMoving) {
                     // Cambiamos la animación del NPC a 'walk_right'.
                     closestNPC.animation('walk_right');
 
@@ -313,6 +320,61 @@
                 }
             }
 
+            // Función para mover el NPC hacia la izquierda y eliminarlo al salir
+            function moveNPCAwayToLeft(npcs, mainCharacter, stageWidth) {
+                let closestNPC = null;
+                let minDistance = Infinity;
+
+                // Encontramos el NPC más cercano.
+                npcs.forEach(npc => {
+                    const distance = calculateDistance(npc, mainCharacter);
+                    if (distance < minDistance) {
+                        minDistance = distance;
+                        closestNPC = npc;
+                    }
+                });
+
+                // Comprobamos si el NPC más cercano está al lado del personaje principal.
+                if (closestNPC && minDistance <= 50 && !closestNPC.isMoving) {
+                    // Cambiamos la animación del NPC a 'walk_left'.
+                    closestNPC.animation('walk_left');
+
+                    // Velocidad de movimiento del NPC (ajustable).
+                    const speed = 2;
+
+                    // Función de movimiento.
+                    const anim = new Konva.Animation((frame) => {
+                        // Movemos el NPC hacia la izquierda.
+                        closestNPC.x(closestNPC.x() - speed);
+
+                        // Comprobamos si el NPC ha salido del stage.
+                        // Tener en cuenta que el NPC se elimina cuando su 
+                        // lado derecho (width) sale del stage.
+                        if (closestNPC.x() + closestNPC.width() < 0) {
+                            // Detenemos la animación.
+                            anim.stop();
+
+                            // Eliminamos el NPC de su capa.
+                            closestNPC.getLayer().remove(closestNPC);
+
+                            // Eliminamos el NPC del array.
+                            const index = npcs.indexOf(closestNPC);
+                            if (index !== -1) {
+                                npcs.splice(index, 1);
+                            }
+
+                            console.log('NPC eliminado.');
+                        }
+                    }, closestNPC.getLayer());
+
+                    // Iniciamos la animación.
+                    anim.start();
+                } else {
+                    console.log('El NPC más cercano no está al lado del personaje principal o ya está en movimiento.');
+                }
+            }
+
+
             // Llamada al método para manejar el NPC más cercano.
             document.addEventListener('keydown', (event) => {
                 if (event.key === 'n') { // Puedes cambiar esta tecla por cualquier otra.
@@ -320,6 +382,9 @@
                 }
                 if (event.key === 'm') { // Puedes cambiar esta tecla por cualquier otra.
                     moveNPCAway(npcs, main_character, width);
+                }
+                if (event.key === 'b') { // Puedes cambiar esta tecla por cualquier
+                    moveNPCAwayToLeft(npcs, main_character, width);
                 }
             });
 

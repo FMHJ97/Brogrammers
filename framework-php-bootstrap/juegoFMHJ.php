@@ -127,66 +127,71 @@
                 main_character.start();
             };
 
-            // Creamos la capa para los NPCs.
-            var layer_npc = new Konva.Layer();
-            stage.add(layer_npc);
-
-            // Función para crear NPCs.
-            // startX: Posición X inicial.
-            // npcCount: Número de NPCs a crear.
-            // npcConfig: Configuración de los NPCs.
-            function createNPC(startX, npcCount, npcConfig) {
-
-                // Posición X actual.
-                let currentX = startX;
-
-                // Creamos los NPCs.
-                for (let i = 0; i < npcCount; i++) {
-                    let img = new Image();
-                    img.src = npcConfig.imageSrc;
-
-                    img.onload = (function (xPos) {
-                        return function () {
-                            var npc = new Konva.Sprite({
-                                x: xPos,
-                                y: height - height_road - npcConfig.height,
-                                image: img,
-                                animation: 'standing',
-                                animations: npcConfig.animations,
-                                frameRate: npcConfig.frameRate,
-                                frameIndex: 0
-                            });
-
-                            layer_npc.add(npc);
-                            npc.start();
-                            layer_npc.draw();
-                        };
-                    })(currentX);
-
-                    currentX += npcConfig.width + 5; // Separación de 5px
-                }
-            }
-
-            // Configuración de los NPCs.
-            var npcConfig = {
-                imageSrc: "assets/games/juegoFMHJ/npc_1_idle.png",
-                width: 66, // Ancho del sprite
-                height: 133, // Altura del sprite
-                frameRate: 7, // Velocidad de animación
+            // Configuración del NPC 1.
+            var npc_1_conf = {
+                imgSrc: "assets/games/juegoFMHJ/npc_1.png",
+                frameRate: 7,
                 animations: {
-                    standing: [102, 123, 66, 133,
-                        358, 123, 66, 133,
-                        614, 123, 66, 133,
-                        870, 123, 66, 133,
-                        1126, 123, 66, 133,
-                        1382, 123, 66, 133
+                    walk_right: [81, 123, 84, 133,
+                        336, 123, 84, 133,
+                        592, 123, 84, 133,
+                        848, 123, 84, 133,
+                        1104, 123, 84, 133,
+                        1360, 123, 84, 133,
+                        1616, 123, 84, 133,
+                        1872, 123, 84, 133,
+                        2128, 123, 84, 133,
+                        2384, 123, 84, 133
+                    ],
+                    walk_left: [2480, 379, -84, 133,
+                        2224, 379, -84, 133,
+                        1968, 379, -84, 133,
+                        1712, 379, -84, 133,
+                        1456, 379, -84, 133,
+                        1200, 379, -84, 133,
+                        944, 379, -84, 133,
+                        688, 379, -84, 133,
+                        432, 379, -84, 133,
+                        176, 379, -84, 133
+                    ],
+                    standing: [100, 635, 70, 133,
+                        356, 635, 70, 133,
+                        612, 635, 70, 133,
+                        868, 635, 70, 133,
+                        1124, 635, 70, 133,
+                        1380, 635, 70, 133
                     ]
                 }
             };
 
-            // Llamamos a la función para crear NPCs.
-            createNPC((width / 3) * 2 - 33, 6, npcConfig);
-            
+            // Creamos la capa para el NPC.
+            var layerNPC = new Konva.Layer();
+            stage.add(layerNPC);
+
+            // Método para crear un NPC con su sprite y configurarlo.
+            function createNPC(config) {
+                var npcImage = new Image();
+                npcImage.src = config.imgSrc;
+
+                npcImage.onload = function () {
+                    var npcSprite = new Konva.Sprite({
+                        x: (width / 3) * 2 - 35, // Posición inicial (puedes ajustar según tu diseño).
+                        y: height - height_road - 133, // Posición inicial (puedes ajustar según tu diseño).
+                        image: npcImage,
+                        animation: 'standing',
+                        animations: config.animations,
+                        frameRate: config.frameRate,
+                        frameIndex: 0
+                    });
+
+                    layerNPC.add(npcSprite);
+
+                    npcSprite.start();
+                };
+            }
+
+            createNPC(npc_1_conf);
+
         });
 
     </script>

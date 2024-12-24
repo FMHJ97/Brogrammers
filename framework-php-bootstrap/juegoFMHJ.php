@@ -53,9 +53,9 @@
             var gameContainer = document.getElementById('gameContainer');
 
             // Variables de configuración del juego.
-            const width = 1024;
-            const height = 640;
-            const height_road = 113;
+            var width = 1024;
+            var height = 640;
+            var height_road = 113;
 
             // Creamos la escena (Stage).
             var stage = new Konva.Stage({
@@ -64,332 +64,276 @@
                 height: height
             });
 
-            // Creamos una capa para el fondo.
-            var layer_road = new Konva.Layer();
+            // Crear una capa para el botón
+            var startLayer = new Konva.Layer();
 
-            // Creamos la imagen de la carretera.
-            var road_img = new Image();
-            road_img.src = "assets/games/juegoFMHJ/fondo_road.png";
+            // Crear el botón de inicio (rectángulo)
+            var startButton = new Konva.Rect({
+                x: width / 2 - 100,
+                y: height / 2 - 30,
+                width: 200,
+                height: 60,
+                fill: 'blue',
+                cornerRadius: 10,
+                shadowBlur: 10,
+                shadowColor: 'black',
+                shadowOffset: { x: 2, y: 2 }
+            });
 
-            // Añadimos el fondo a la capa.
-            var road = null;
-            // Cargamos la imagen del fondo.
-            // Cuando la imagen se haya cargado, creamos el fondo.
-            road_img.onload = function () {
-                road = new Konva.Image({
-                    x: 0,
-                    y: height - 576,
-                    image: road_img
-                });
-                layer_road.add(road);
-                stage.add(layer_road);
-            };
+            // Crear el texto del botón
+            var startText = new Konva.Text({
+                x: width / 2 - 100,
+                y: height / 2 - 10,
+                text: 'Iniciar Juego',
+                fontSize: 28,
+                fontFamily: 'Arial',
+                fill: 'white',
+                width: 200,
+                align: 'center'
+            });
 
-            // Creamos la capa para el personaje.
-            var layer_mc = new Konva.Layer();
+            // Añadir el botón y el texto a la capa.
+            startLayer.add(startButton);
+            startLayer.add(startText);
+            stage.add(startLayer);
 
-            // Creamos el personaje.
-            var mc = new Image();
-            mc.src = "assets/games/juegoFMHJ/idle.png";
+            // Evento de click en el botón de inicio.
+            startText.on('click', () => {
+                startLayer.destroy(); // Eliminar la capa de inicio.
+                startGame(); // Iniciar el juego.
+            });
 
-            // Animación del personaje.
-            var motions_mc = {
-                standing: [93, 121, 58, 135,
-                    349, 121, 58, 135,
-                    605, 121, 58, 135,
-                    861, 121, 58, 135,
-                    1117, 121, 58, 135,
-                    1373, 121, 58, 135
-                ]
-            };
+            // Función para iniciar el juego.
+            function startGame() {
+                // Creamos todas las capas del juego.
+                var layer_buttons = new Konva.Layer();
+                var layer_npc = new Konva.Layer();
+                var layer_main = new Konva.Layer();
+                var layer_road = new Konva.Layer();
 
-            // Creamos el sprite del personaje.
-            var main_character = null;
-            // Cargamos la imagen del personaje.
-            // Cuando la imagen se haya cargado, creamos el sprite del personaje.
-            mc.onload = function () {
-                main_character = new Konva.Sprite({
-                    x: width / 3 - 29, /* Siendo 29 la mitad del ancho del personaje. */
-                    y: height - height_road - 135,
-                    image: mc,
-                    animation: 'standing',
-                    animations: motions_mc,
+                // Configuración de los NPCs.
+                var npc_conf = [{
+                    imgSrc: "assets/games/juegoFMHJ/npc_1.png",
+                    startX: width,
+                    startY: height - height_road - 133,
+                    width: 120,
+                    height: 133,
+                    isMoving: false,
                     frameRate: 7,
-                    frameIndex: 0
-                });
-
-                // Añadimos el personaje a la capa.
-                layer_mc.add(main_character);
-                // Añadimos la capa a la escena.
-                stage.add(layer_mc);
-
-                // Iniciamos la animación del personaje.
-                main_character.start();
-            };
-
-            // Configuración del NPC 1.
-            var npc_1_conf = {
-                imgSrc: "assets/games/juegoFMHJ/npc_1.png",
-                width: 120,
-                height: 133,
-                isMoving: false,
-                frameRate: 7,
-                animations: {
-                    walk_right: [70, 123, 120, 133,
-                        326, 123, 120, 133,
-                        582, 123, 120, 133,
-                        838, 123, 120, 133,
-                        1094, 123, 120, 133,
-                        1350, 123, 120, 133,
-                        1606, 123, 120, 133,
-                        1862, 123, 120, 133,
-                        2118, 123, 120, 133,
-                        2374, 123, 120, 133
-                    ],
-                    walk_left: [2370, 379, 120, 133,
-                        2114, 379, 120, 133,
-                        1858, 379, 120, 133,
-                        1602, 379, 120, 133,
-                        1346, 379, 120, 133,
-                        1090, 379, 120, 133,
-                        834, 379, 120, 133,
-                        578, 379, 120, 133,
-                        322, 379, 120, 133,
-                        66, 379, 120, 133
-                    ],
-                    standing: [70, 635, 120, 133,
-                        326, 635, 120, 133,
-                        582, 635, 120, 133,
-                        838, 635, 120, 133,
-                        1094, 635, 120, 133,
-                        1350, 635, 120, 133
-                    ]
-                }
-            };
-
-            // Creamos la capa para el NPC.
-            var layerNPC = new Konva.Layer();
-            stage.add(layerNPC);
-
-            // Función para calcular la distancia entre dos sprites.
-            function calculateDistance(sprite1, sprite2) {
-                return Math.abs(sprite1.x() - sprite2.x());
-            }
-
-            // Función para mover el NPC hacia el personaje principal.
-            function moveNPCToMainCharacter(npcSprite, mainCharacter, config, onComplete) {
-
-                // Cambiamos la animación del NPC a 'walk_left'.
-                npcSprite.animation('walk_left');
-
-                // Velocidad de movimiento del NPC (ajustable).
-                const speed = 2;
-
-                // Función de movimiento.
-                const anim = new Konva.Animation((frame) => {
-                    const distance = calculateDistance(npcSprite, mainCharacter);
-
-                    // Si la distancia es mayor que el límite, el NPC se mueve hacia el personaje principal.
-                    if (distance > 50) {
-                        npcSprite.x(npcSprite.x() - speed);
-                    } else {
-                        // Cuando el NPC alcanza al personaje principal, detiene la animación.
-                        anim.stop();
-
-                        // Cambiamos la animación del NPC a 'standing'.
-                        npcSprite.animation('standing');
-
-                        // Indicamos que el NPC ha dejado de moverse.
-                        npcSprite.isMoving = false;
-
-                        // Ejecutamos el callback al completar el movimiento.
-                        if (onComplete) onComplete();
+                    animations: {
+                        walk_right: [70, 123, 120, 133,
+                            326, 123, 120, 133,
+                            582, 123, 120, 133,
+                            838, 123, 120, 133,
+                            1094, 123, 120, 133,
+                            1350, 123, 120, 133,
+                            1606, 123, 120, 133,
+                            1862, 123, 120, 133,
+                            2118, 123, 120, 133,
+                            2374, 123, 120, 133
+                        ],
+                        walk_left: [2370, 379, 120, 133,
+                            2114, 379, 120, 133,
+                            1858, 379, 120, 133,
+                            1602, 379, 120, 133,
+                            1346, 379, 120, 133,
+                            1090, 379, 120, 133,
+                            834, 379, 120, 133,
+                            578, 379, 120, 133,
+                            322, 379, 120, 133,
+                            66, 379, 120, 133
+                        ],
+                        standing: [70, 635, 120, 133,
+                            326, 635, 120, 133,
+                            582, 635, 120, 133,
+                            838, 635, 120, 133,
+                            1094, 635, 120, 133,
+                            1350, 635, 120, 133
+                        ]
                     }
-                }, npcSprite.getLayer());
+                }];
 
-                // Iniciamos la animación.
-                anim.start();
+                // Creamos los NPCs.
+                createNPC(npc_conf[0]);
 
-            }
+                // Variables de los botones.
+                var greenButton = null;
+                var redButton = null;
 
-            // Función principal para manejar el NPC más cercano.
-            function handleClosestNPC(mainCharacter, npcs) {
-                let closestNPC = null;
-                let minDistance = Infinity;
+                // Creamos los botones de acción.
+                function createButtons(npc) {
 
-                // Encontramos el NPC más cercano.
-                npcs.forEach(npc => {
-                    const distance = calculateDistance(npc, mainCharacter);
-                    if (distance < minDistance) {
-                        minDistance = distance;
-                        closestNPC = npc;
-                    }
-                });
-
-                // Si hay un NPC cercano, lo movemos hacia el personaje principal.
-                if (closestNPC && !closestNPC.isMoving) {
-                    // Indicamos que el NPC está en movimiento.
-                    closestNPC.isMoving = true;
-                    // Movemos el NPC hacia el personaje principal.
-                    moveNPCToMainCharacter(closestNPC, mainCharacter, npc_1_conf, () => {
-                        console.log('El NPC ha llegado al personaje principal.');
+                    // Botón verde (movimiento a la izquierda).
+                    greenButton = new Konva.Rect({
+                        x: main_character.x() - 80,
+                        y: main_character.y(),
+                        width: 50,
+                        height: 50,
+                        fill: 'green',
+                        cornerRadius: 5
                     });
+
+                    // Botón rojo (movimiento a la derecha).
+                    redButton = new Konva.Rect({
+                        x: main_character.x() - 150,
+                        y: main_character.y(),
+                        width: 50,
+                        height: 50,
+                        fill: 'red',
+                        cornerRadius: 5
+                    });
+
+                    // Evento de click en el botón verde.
+                    greenButton.on('click', () => {
+                        // Borramos los botones.
+                        greenButton.destroy();
+                        redButton.destroy();
+                        // Movemos al NPC a la izquierda.
+                        moveNPCToPositionWithAnimation(npc, -npc.width(), npc.y(), 4, 'walk_left', () => {
+                            npc.destroy();
+                            createNPC(npc_conf[0]);
+                        });
+                    });
+
+                    // Evento de click en el botón rojo.
+                    redButton.on('click', () => {
+                        // Borramos los botones.
+                        greenButton.destroy();
+                        redButton.destroy();
+                        // Movemos al NPC a la derecha.
+                        moveNPCToPositionWithAnimation(npc, width, npc.y(), 4, 'walk_right', () => {
+                            npc.destroy();
+                            createNPC(npc_conf[0]);
+                        });
+                    });
+
+                    // Añadimos los botones a la capa de botones.
+                    layer_buttons.add(greenButton, redButton);
+                    stage.add(layer_buttons);
                 }
-            }
 
-            // Array para almacenar todos los NPCs creados.
-            const npcs = [];
+                // Creamos la imagen de la carretera.
+                var road_img = new Image();
+                road_img.src = "assets/games/juegoFMHJ/fondo_road.png";
 
-            // Modificamos la función createNPC para añadir los NPCs al array.
-            function createNPC(config) {
-                var npcImage = new Image();
-                npcImage.src = config.imgSrc;
+                // Añadimos el fondo a la capa.
+                var road = null;
+                // Cargamos la imagen del fondo.
+                // Cuando la imagen se haya cargado, creamos el fondo.
+                road_img.onload = function () {
+                    road = new Konva.Image({
+                        x: 0,
+                        y: height - 576,
+                        image: road_img
+                    });
+                    // Añadimos la carretera a la capa.
+                    layer_road.add(road);
 
-                npcImage.onload = function () {
-                    var npcSprite = new Konva.Sprite({
-                        x: (width / 3) * 2 - (config.width / 2), // Posición inicial (ajustable según diseño).
-                        y: height - height_road - (config.height), // Posición inicial (ajustable según diseño).
-                        width: config.width,
-                        image: npcImage,
-                        isMoving: config.isMoving,
+                    // Añadimos la capa a la escena.
+                    stage.add(layer_road);
+                };
+
+                // Creamos el personaje.
+                var mc = new Image();
+                mc.src = "assets/games/juegoFMHJ/idle.png";
+
+                // Animación del personaje.
+                var motions_mc = {
+                    standing: [93, 121, 58, 135,
+                        349, 121, 58, 135,
+                        605, 121, 58, 135,
+                        861, 121, 58, 135,
+                        1117, 121, 58, 135,
+                        1373, 121, 58, 135
+                    ]
+                };
+
+                // Creamos el sprite del personaje.
+                var main_character = null;
+                // Cargamos la imagen del personaje.
+                // Cuando la imagen se haya cargado, creamos el sprite del personaje.
+                mc.onload = function () {
+                    main_character = new Konva.Sprite({
+                        x: width / 3,
+                        y: height - height_road - 135,
+                        width: 58,
+                        image: mc,
                         animation: 'standing',
-                        animations: config.animations,
-                        frameRate: config.frameRate,
+                        animations: motions_mc,
+                        frameRate: 7,
                         frameIndex: 0
                     });
 
-                    layerNPC.add(npcSprite);
+                    // Añadimos el personaje a la capa.
+                    layer_main.add(main_character);
 
-                    // Iniciamos la animación del NPC.
-                    npcSprite.start();
+                    // Añadimos la capa a la escena.
+                    stage.add(layer_main);
 
-                    // Añadimos el NPC al array.
-                    npcs.push(npcSprite);
+                    // Iniciamos la animación del personaje.
+                    main_character.start();
+
+                    // Crear el primer NPC solo después de que el personaje principal esté listo.
+                    createNPC(npc_conf[0]);
                 };
-            }
 
-            // Función para mover el NPC hacia la derecha y eliminarlo al salir del stage.
-            function moveNPCAway(npcs, mainCharacter, stageWidth) {
-                let closestNPC = null;
-                let minDistance = Infinity;
+                // Método para que un NPC se dirija hacia una posición.
+                function moveNPCToPositionWithAnimation(npc, targetX, targetY, duration, animation, callback) {
+                    // Cambiamos la animación.
+                    npc.animation(animation);
 
-                // Encontramos el NPC más cercano.
-                npcs.forEach(npc => {
-                    const distance = calculateDistance(npc, mainCharacter);
-                    if (distance < minDistance) {
-                        minDistance = distance;
-                        closestNPC = npc;
-                    }
-                });
+                    // Movemos al NPC hacia la posición objetivo.
+                    npc.to({
+                        x: targetX,
+                        y: targetY,
+                        duration: duration,
+                        onFinish: () => {
+                            // Cambiar a la animación de estar parado cuando termine el movimiento
+                            npc.animation('standing');
+                            console.log("NPC ha llegado a la posición objetivo.");
 
-                // Comprobamos que el NPC más cercano está al lado del personaje principal.
-                if (closestNPC && minDistance <= 50 && !closestNPC.isMoving) {
-                    // Cambiamos la animación del NPC a 'walk_right'.
-                    closestNPC.animation('walk_right');
-
-                    // Velocidad de movimiento del NPC (ajustable).
-                    const speed = 2;
-
-                    // Función de movimiento.
-                    const anim = new Konva.Animation((frame) => {
-                        // Movemos el NPC hacia la derecha.
-                        closestNPC.x(closestNPC.x() + speed);
-
-                        // Comprobamos si el NPC ha salido del stage.
-                        if (closestNPC.x() > stageWidth) {
-                            // Detenemos la animación.
-                            anim.stop();
-
-                            // Eliminamos el NPC de su capa.
-                            closestNPC.getLayer().remove(closestNPC);
-
-                            // Eliminamos el NPC del array.
-                            const index = npcs.indexOf(closestNPC);
-                            if (index !== -1) {
-                                npcs.splice(index, 1);
-                            }
-
-                            console.log('NPC eliminado.');
+                            // Ejecutamos el callback si se ha pasado.
+                            if (callback) callback();
                         }
-                    }, closestNPC.getLayer());
-
-                    // Iniciamos la animación.
-                    anim.start();
-                } else {
-                    console.log('El NPC más cercano no está al lado del personaje principal.');
+                    });
                 }
-            }
 
-            // Función para mover el NPC hacia la izquierda y eliminarlo al salir
-            function moveNPCAwayToLeft(npcs, mainCharacter, stageWidth) {
-                let closestNPC = null;
-                let minDistance = Infinity;
+                // Método para crear un NPC.
+                function createNPC(config) {
 
-                // Encontramos el NPC más cercano.
-                npcs.forEach(npc => {
-                    const distance = calculateDistance(npc, mainCharacter);
-                    if (distance < minDistance) {
-                        minDistance = distance;
-                        closestNPC = npc;
+                    // Solo creamos un NPC si el personaje principal está listo.
+                    if (main_character) {
+
+                        // Cargamos la imagen del NPC.
+                        var npc_img = new Image();
+                        npc_img.src = config.imgSrc;
+
+                        // Creamos el NPC.
+                        let npc = null;
+                        npc_img.onload = () => {
+                            npc = new Konva.Sprite({
+                                x: config.startX,
+                                y: config.startY,
+                                width: config.width,
+                                image: npc_img,
+                                animation: 'standing',
+                                animations: config.animations,
+                                frameRate: config.frameRate,
+                                frameIndex: 0
+                            });
+
+                            layer_npc.add(npc);
+                            stage.add(layer_npc);
+                            npc.start();
+
+                            moveNPCToPositionWithAnimation(npc, main_character.x() + main_character.width(), npc.y(), 4, 'walk_left', () => {
+                                createButtons(npc);
+                            });
+                        };
                     }
-                });
 
-                // Comprobamos si el NPC más cercano está al lado del personaje principal.
-                if (closestNPC && minDistance <= 50 && !closestNPC.isMoving) {
-                    // Cambiamos la animación del NPC a 'walk_left'.
-                    closestNPC.animation('walk_left');
-
-                    // Velocidad de movimiento del NPC (ajustable).
-                    const speed = 2;
-
-                    // Función de movimiento.
-                    const anim = new Konva.Animation((frame) => {
-                        // Movemos el NPC hacia la izquierda.
-                        closestNPC.x(closestNPC.x() - speed);
-
-                        // Comprobamos si el NPC ha salido del stage.
-                        // Tener en cuenta que el NPC se elimina cuando su 
-                        // lado derecho (width) sale del stage.
-                        if (closestNPC.x() + closestNPC.width() < 0) {
-                            // Detenemos la animación.
-                            anim.stop();
-
-                            // Eliminamos el NPC de su capa.
-                            closestNPC.getLayer().remove(closestNPC);
-
-                            // Eliminamos el NPC del array.
-                            const index = npcs.indexOf(closestNPC);
-                            if (index !== -1) {
-                                npcs.splice(index, 1);
-                            }
-
-                            console.log('NPC eliminado.');
-                        }
-                    }, closestNPC.getLayer());
-
-                    // Iniciamos la animación.
-                    anim.start();
-                } else {
-                    console.log('El NPC más cercano no está al lado del personaje principal o ya está en movimiento.');
                 }
             }
-
-
-            // Llamada al método para manejar el NPC más cercano.
-            document.addEventListener('keydown', (event) => {
-                if (event.key === 'n') { // Puedes cambiar esta tecla por cualquier otra.
-                    handleClosestNPC(main_character, npcs);
-                }
-                if (event.key === 'm') { // Puedes cambiar esta tecla por cualquier otra.
-                    moveNPCAway(npcs, main_character, width);
-                }
-                if (event.key === 'b') { // Puedes cambiar esta tecla por cualquier
-                    moveNPCAwayToLeft(npcs, main_character, width);
-                }
-            });
-
-            // Creamos los NPCs.
-            createNPC(npc_1_conf);
 
         });
 

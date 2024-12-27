@@ -49,6 +49,7 @@
     <script>
         // Se ejecuta cuando el documento esté completamente cargado.
         document.addEventListener('DOMContentLoaded', () => {
+
             // Obtenemos el contenedor del juego.
             var gameContainer = document.getElementById('gameContainer');
 
@@ -114,10 +115,10 @@
                 /* INICIO - DATOS TICKET */
 
                 // Datos válidos para ticket o entrada.
-                const nombre_festival = "GroundSound Festival";
+                const nombre_festival = "GroundSound Festival 2025";
                 const ubicacion = "Prudencio Uzar Town Square";
                 const lugar_festival = "Lucena, Córdoba";
-                const fecha_festival = ["2025-04-17", "2025-04-18", "2025-04-19"];
+                const fecha_festival = ["17, Abril 2025", "18, Abril 2025", "19, Abril 2025"];
                 const puerta_general = ["A", "B"];
                 const puerta_vip = ["C", "D"];
                 const precio_general = [25, 50, 70];
@@ -128,20 +129,20 @@
 
                 // Nombre del festival.
                 const t_nombre_festival = [
-                    "GroundSound Festival", "GroundSound Festival", "GroundSound Festival",
-                    "GroundSound Festival", "GroundSound Festival", "GroundSound Festival",
-                    "GroundSound Festival", "GroundSound Festival", "GroundSound Festival",
-                    "GroundSound Festival", "GroundSound Festival", "GroundSound Festival",
-                    "SoundGround Festival", "GroudSound Festival" // Incorrectos
+                    "GroundSound Festival 2025", "GroundSound Festival 2025", "GroundSound Festival 2025",
+                    "GroundSound Festival 2025", "GroundSound Festival 2025", "GroundSound Festival 2025",
+                    "GroundSound Festival 2025", "GroundSound Festival 2025", "GroundSound Festival 2025",
+                    "GroundSound Festival 2025", "GroundSound Festival 2025", "GroundSound Festival 2025",
+                    "SoundGround Festival 2025", "GroudSound Festival 2025" // Incorrectos
                 ];
 
                 // Fecha del festival.
                 const t_fecha_festival = [
-                    "2025-04-17", "2025-04-18", "2025-04-19",
-                    "2025-04-17", "2025-04-18", "2025-04-19",
-                    "2025-04-17", "2025-04-18", "2025-04-19",
-                    "2025-04-17", "2025-04-18", "2025-04-19",
-                    "2025-04-16", "2025-05-19" // Incorrectos
+                    "17, Abril 2025", "18, Abril 2025", "19, Abril 2025",
+                    "17, Abril 2025", "18, Abril 2025", "19, Abril 2025",
+                    "17, Abril 2025", "18, Abril 2025", "19, Abril 2025",
+                    "17, Abril 2025", "18, Abril 2025", "19, Abril 2025",
+                    "17, Abril 202S", "19, Abril 2023" // Incorrectos
                 ];
 
                 // Lugar del festival.
@@ -296,7 +297,7 @@
                 }
 
                 // Creamos todas las capas del juego.
-                var layer_buttons = new Konva.Layer();
+                var layer_action = new Konva.Layer();
                 var layer_npc = new Konva.Layer();
                 var layer_main = new Konva.Layer();
                 var layer_road = new Konva.Layer();
@@ -378,6 +379,10 @@
                         // Borramos los botones.
                         greenButton.destroy();
                         redButton.destroy();
+
+                        // Limpiamos la imagen del ticket y los datos del mismo.
+                        clearTicketAndData(layer_action);
+
                         // Movemos al NPC a la izquierda.
                         moveNPCToPositionWithAnimation(npc, -npc.width(), npc.y(), 4, 'walk_left', () => {
                             // Borramos el NPC.
@@ -409,6 +414,10 @@
                         // Borramos los botones.
                         greenButton.destroy();
                         redButton.destroy();
+
+                        // Limpiamos la imagen del ticket y los datos del mismo.
+                        clearTicketAndData(layer_action);
+
                         // Movemos al NPC a la derecha.
                         moveNPCToPositionWithAnimation(npc, width, npc.y(), 4, 'walk_right', () => {
                             // Borramos el NPC.
@@ -436,8 +445,8 @@
                     });
 
                     // Añadimos los botones a la capa de botones.
-                    layer_buttons.add(greenButton, redButton);
-                    stage.add(layer_buttons);
+                    layer_action.add(greenButton, redButton);
+                    stage.add(layer_action);
                 }
 
                 // Creamos la imagen de la carretera.
@@ -566,6 +575,9 @@
                                 // Generamos un ticket aleatorio.
                                 generated_ticket = generarTicketAleatorio();
 
+                                // Mostramos el ticket en pantalla.
+                                getImageTicket();
+
                                 // Mostramos el ticket en la consola.
                                 console.log(generated_ticket);
                             });
@@ -573,6 +585,144 @@
                     }
 
                 }
+
+                // Función para mostrar el ticket.
+                function getImageTicket() {
+                    // Creamos la imagen del ticket.
+                    var ticket_img = new Image();
+                    ticket_img.src = "assets/games/juegoFMHJ/ticket_1.png";
+
+                    // Añadimos el ticket a la capa.
+                    let new_ticket = null;
+                    // Cargamos la imagen del ticket.
+                    // Cuando la imagen se haya cargado, creamos el ticket.
+                    ticket_img.onload = function () {
+                        new_ticket = new Konva.Image({
+                            x: width - 700 - 50,
+                            y: height / 2 - 250,
+                            image: ticket_img
+                        });
+
+                        // Añadimos el ticket a la capa.
+                        layer_action.add(new_ticket);
+
+                        // Insertamos los datos del ticket.
+                        insertDataTicket(generated_ticket, new_ticket, layer_action);
+
+                        // Añadimos la capa a la escena.
+                        stage.add(layer_action);
+                    };
+
+                }
+
+                // Función para mostrar los datos del ticker por pantalla.
+                function insertDataTicket(datos_ticket, new_ticket, layer) {
+
+                    // Cargamos la fuente personalizada.
+                    var font = new FontFace('PostNoBillsColombo', 'url(../assets/fonts/postnobillscolombo/PostNoBillsColombo-ExtraBold.ttf)');
+
+                    // Cuando la fuente se haya cargado, la añadimos a la lista de fuentes.
+                    // Después, mostramos los datos del ticket sobre la imagen.
+                    font.load().then(() => {
+                        document.fonts.add(font);
+
+                        // Mostramos los datos del ticket sobre la imagen.
+
+                        // Código del ticket.
+                        let codigo_ticket = new Konva.Text({
+                            x: new_ticket.x() + 175,
+                            y: new_ticket.y() + 205,
+                            text: datos_ticket.codigo,
+                            fontSize: 16,
+                            fontFamily: 'PostNoBillsColombo',
+                            fill: '#0A0F0F',
+                            letterSpacing: 2
+                        });
+
+                        // Nombre del festival.
+                        let nombre_festival = new Konva.Text({
+                            x: new_ticket.x() + 156,
+                            y: new_ticket.y() + 75,
+                            text: datos_ticket.nombre_festival,
+                            fontSize: 20,
+                            fontFamily: 'PostNoBillsColombo',
+                            fill: '#0A0F0F',
+                            letterSpacing: 2
+                        });
+
+                        // Fecha del festival.
+                        let fecha_festival = new Konva.Text({
+                            x: new_ticket.x() + 150,
+                            y: new_ticket.y() + 104,
+                            text: datos_ticket.fecha_festival,
+                            fontSize: 16,
+                            fontFamily: 'PostNoBillsColombo',
+                            fill: '#0A0F0F',
+                            letterSpacing: 2
+                        });
+
+                        // Puerta del festival.
+                        let puerta_festival = new Konva.Text({
+                            x: new_ticket.x() + 393,
+                            y: new_ticket.y() + 103,
+                            text: datos_ticket.puerta,
+                            fontSize: 16,
+                            fontFamily: 'PostNoBillsColombo',
+                            fill: '#0A0F0F'
+                        });
+
+                        // Ubicación del festival.
+                        let ubicacion_festival = new Konva.Text({
+                            x: new_ticket.x() + 133,
+                            y: new_ticket.y() + 127,
+                            text: datos_ticket.ubicacion,
+                            fontSize: 14,
+                            fontFamily: 'PostNoBillsColombo',
+                            fill: '#0A0F0F',
+                            letterSpacing: 1
+                        });
+
+                        // Lugar del festival.
+                        let lugar_festival = new Konva.Text({
+                            x: new_ticket.x() + 323,
+                            y: new_ticket.y() + 127,
+                            text: "(" + datos_ticket.lugar_festival + ")",
+                            fontSize: 14,
+                            fontFamily: 'PostNoBillsColombo',
+                            fill: '#0A0F0F',
+                            letterSpacing: 1
+                        });
+
+                        // Precio del ticket.
+                        let precio_ticket = new Konva.Text({
+                            x: new_ticket.x() + 370,
+                            y: new_ticket.y() + 189,
+                            text: datos_ticket.precio + ".00 €",
+                            fontSize: 18,
+                            fontFamily: 'PostNoBillsColombo',
+                            fill: '#0A0F0F'
+                        });
+
+                        layer.add(codigo_ticket);
+                        layer.add(nombre_festival);
+                        layer.add(fecha_festival);
+                        layer.add(puerta_festival);
+                        layer.add(ubicacion_festival);
+                        layer.add(lugar_festival);
+                        layer.add(precio_ticket);
+
+                    });
+
+                }
+
+                // Función para limpiar el ticket y los datos del ticket de la capa.
+                function clearTicketAndData(layer) {
+                    layer.find('Image, Text').forEach((element) => {
+                        element.destroy();
+                    });
+                    layer.batchDraw(); // Redibuja la capa para reflejar los cambios
+                }
+
             }
 
         });

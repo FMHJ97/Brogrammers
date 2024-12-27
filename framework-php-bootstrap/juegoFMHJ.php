@@ -105,6 +105,196 @@
 
             // Función para iniciar el juego.
             function startGame() {
+
+                // Variables del juego.
+
+                var generated_ticket = null; // Ticket generado aleatoriamente.
+                var errores_ticket = []; // Guarda los errores del ticket para mostrarlos.
+
+                /* INICIO - DATOS TICKET */
+
+                // Datos válidos para ticket o entrada.
+                const nombre_festival = "GroundSound Festival";
+                const ubicacion = "Prudencio Uzar Town Square";
+                const lugar_festival = "Lucena, Córdoba";
+                const fecha_festival = ["2025-04-17", "2025-04-18", "2025-04-19"];
+                const puerta_general = ["A", "B"];
+                const puerta_vip = ["C", "D"];
+                const precio_general = [25, 50, 70];
+                const precio_vip = [40, 80, 110];
+                const patron_codigo = /^[A-Z]{2}[0-9]{7}[A-Z]{1}$/;
+
+                // Datos para el ticket de entrada de NPC.
+
+                // Nombre del festival.
+                const t_nombre_festival = [
+                    "GroundSound Festival", "GroundSound Festival", "GroundSound Festival",
+                    "GroundSound Festival", "GroundSound Festival", "GroundSound Festival",
+                    "GroundSound Festival", "GroundSound Festival", "GroundSound Festival",
+                    "GroundSound Festival", "GroundSound Festival", "GroundSound Festival",
+                    "SoundGround Festival", "GroudSound Festival" // Incorrectos
+                ];
+
+                // Fecha del festival.
+                const t_fecha_festival = [
+                    "2025-04-17", "2025-04-18", "2025-04-19",
+                    "2025-04-17", "2025-04-18", "2025-04-19",
+                    "2025-04-17", "2025-04-18", "2025-04-19",
+                    "2025-04-17", "2025-04-18", "2025-04-19",
+                    "2025-04-16", "2025-05-19" // Incorrectos
+                ];
+
+                // Lugar del festival.
+                const t_lugar_festival = [
+                    "Lucena, Córdoba", "Lucena, Córdoba", "Lucena, Córdoba",
+                    "Lucena, Córdoba", "Lucena, Córdoba", "Lucena, Córdoba", "Lucena, Córdoba",
+                    "Lucena, Córdoda", "Lusena, Córdoba" // Incorrectos
+                ];
+
+                // Código del ticket.
+                const t_codigo_ticket = [
+                    "AB1234567Q", // Correcto
+                    "XY9876543W", // Correcto
+                    "AB1334567E", // Correcto
+                    "XY9476543R", // Correcto
+                    "AB1534567T", // Correcto
+                    "XY9676543A", // Correcto
+                    "AB1734567S", // Correcto
+                    "XY9176543D", // Correcto
+                    "NM1534567F", // Correcto
+                    "MN9676543Z", // Correcto
+                    "FG1734567X", // Correcto
+                    "RE9176543C", // Correcto
+                    "OO12345670", // Incorrecto
+                    "AB123A5678A", // Incorrecto
+                    "OG917GS43C", // Incorrecto
+                    "A1234567C", // Incorrecto
+                    "aB1234567L", // Incorrecto
+                ];
+
+                // Tipo de entrada.
+                const t_tipo_entrada = ["General", "VIP"];
+
+                // Precio Ticket.
+
+                // Precio Ticket (VIP).
+                const t_precio = [25, 50, 70, 40, 80, 110];
+
+                // Puerta (General).
+                const t_puerta = ["A", "B", "C", "D"];
+
+                // Ubicación del festival.
+                const t_ubicaciones = [
+                    "Prudencio Uzar Town Square", // Correcto
+                    "Prudencio Uzar Town Square", // Correcto
+                    "Prudencio Uzar Town Square", // Correcto
+                    "Prudencio Uzar Town Square", // Correcto
+                    "Prudencio Uzar Town Square", // Correcto
+                    "Prudencio Usar Town Square", // Incorrecto
+                    "Prudencio Uzar Tow Square", // Incorrecto
+                ];
+
+                /* FIN - DATOS TICKET */
+
+                // Creamos la clase Ticket.
+                class Ticket {
+                    constructor(codigo, tipo_entrada, nombre_festival, lugar_festival, ubicacion, fecha_festival, puerta, precio) {
+                        this.codigo = codigo;
+                        this.tipo_entrada = tipo_entrada;
+                        this.nombre_festival = nombre_festival;
+                        this.lugar_festival = lugar_festival;
+                        this.ubicacion = ubicacion;
+                        this.fecha_festival = fecha_festival;
+                        this.puerta = puerta;
+                        this.precio = precio;
+                    }
+                }
+
+                // Función para generar un dato aleatorio para el ticket.
+                function generarDatoAleatorio(datos) {
+                    return datos[Math.floor(Math.random() * datos.length)];
+                }
+
+                // Función para generar un ticket aleatorio.
+                function generarTicketAleatorio() {
+                    return new Ticket(
+                        generarDatoAleatorio(t_codigo_ticket),
+                        generarDatoAleatorio(t_tipo_entrada),
+                        generarDatoAleatorio(t_nombre_festival),
+                        generarDatoAleatorio(t_lugar_festival),
+                        generarDatoAleatorio(t_ubicaciones),
+                        generarDatoAleatorio(t_fecha_festival),
+                        generarDatoAleatorio(t_puerta),
+                        generarDatoAleatorio(t_precio)
+                    );
+                }
+
+                // Función para validar un ticket.
+                function validarTicket(ticket) {
+
+                    // Damos por hecho que el ticket es válido.
+                    let isValid = true;
+
+                    // Validamos el nombre del festival.
+                    if (ticket.nombre_festival !== nombre_festival) {
+                        isValid = false;
+                        errores_ticket.push("El nombre del festival no es correcto.");
+                    }
+
+                    // Validamos la ubicación del festival.
+                    if (ticket.ubicacion !== ubicacion) {
+                        isValid = false;
+                        errores_ticket.push("La ubicación del festival no es correcta.");
+                    }
+
+                    // Validamos el lugar del festival.
+                    if (ticket.lugar_festival !== lugar_festival) {
+                        isValid = false;
+                        errores_ticket.push("El lugar del festival no es correcto.");
+                    }
+
+                    // Validamos la fecha del festival.
+                    if (!fecha_festival.includes(ticket.fecha_festival)) {
+                        isValid = false;
+                        errores_ticket.push("La fecha del festival no es correcta.");
+                    }
+
+                    // Validamos el código del ticket.
+                    if (!patron_codigo.test(ticket.codigo)) {
+                        isValid = false;
+                        errores_ticket.push("El código del ticket no es correcto.");
+                    }
+
+                    // Comprobamos el tipo de entrada.
+                    if (ticket.tipo_entrada === "General") {
+                        // Validamos la puerta.
+                        if (!puerta_general.includes(ticket.puerta)) {
+                            isValid = false;
+                            errores_ticket.push("La puerta no es correcta.");
+                        }
+
+                        // Validamos el precio.
+                        if (!precio_general.includes(ticket.precio)) {
+                            isValid = false;
+                            errores_ticket.push("El precio no es correcto.");
+                        }
+                    } else if (ticket.tipo_entrada === "VIP") {
+                        // Validamos la puerta.
+                        if (!puerta_vip.includes(ticket.puerta)) {
+                            isValid = false;
+                            errores_ticket.push("La puerta no es correcta.");
+                        }
+
+                        // Validamos el precio.
+                        if (!precio_vip.includes(ticket.precio)) {
+                            isValid = false;
+                            errores_ticket.push("El precio no es correcto.");
+                        }
+                    }
+
+                    return isValid;
+                }
+
                 // Creamos todas las capas del juego.
                 var layer_buttons = new Konva.Layer();
                 var layer_npc = new Konva.Layer();
@@ -190,8 +380,27 @@
                         redButton.destroy();
                         // Movemos al NPC a la izquierda.
                         moveNPCToPositionWithAnimation(npc, -npc.width(), npc.y(), 4, 'walk_left', () => {
+                            // Borramos el NPC.
                             npc.destroy();
-                            createNPC(npc_conf[0]);
+
+                            // Validamos el ticket.
+                            if (validarTicket(generated_ticket)) {
+                                // Mostramos un mensaje en la consola.
+                                console.log("El ticket es válido.");
+
+                                // Limpiamos las variables de errores y ticket.
+                                errores_ticket = [];
+                                generated_ticket = null;
+
+                                // Creamos un nuevo NPC.
+                                createNPC(npc_conf[0]);
+                            } else {
+                                // Mostramos un mensaje en la consola.
+                                console.log("El ticket no es válido.");
+
+                                // Mostramos los errores en la consola.
+                                console.log(errores_ticket);
+                            }
                         });
                     });
 
@@ -202,8 +411,27 @@
                         redButton.destroy();
                         // Movemos al NPC a la derecha.
                         moveNPCToPositionWithAnimation(npc, width, npc.y(), 4, 'walk_right', () => {
+                            // Borramos el NPC.
                             npc.destroy();
-                            createNPC(npc_conf[0]);
+
+                            // Validamos el ticket.
+                            if (!validarTicket(generated_ticket)) {
+                                // Mostramos un mensaje en la consola.
+                                console.log("El ticket NO es válido.");
+
+                                // Limpiamos las variables de errores y ticket.
+                                errores_ticket = [];
+                                generated_ticket = null;
+
+                                // Creamos un nuevo NPC.
+                                createNPC(npc_conf[0]);
+                            } else {
+                                // Mostramos un mensaje en la consola.
+                                console.log("El ticket ES válido.");
+
+                                // Mostramos los errores en la consola.
+                                console.log(errores_ticket);
+                            }
                         });
                     });
 
@@ -322,12 +550,24 @@
                                 frameIndex: 0
                             });
 
+                            // Añadimos el NPC a la capa.
                             layer_npc.add(npc);
+                            // Añadimos la capa a la escena.
                             stage.add(layer_npc);
+                            // Iniciamos la animación del NPC.
                             npc.start();
 
+                            // Movemos al NPC hacia la izquierda.
                             moveNPCToPositionWithAnimation(npc, main_character.x() + main_character.width(), npc.y(), 4, 'walk_left', () => {
+
+                                // Creamos los botones de acción.
                                 createButtons(npc);
+
+                                // Generamos un ticket aleatorio.
+                                generated_ticket = generarTicketAleatorio();
+
+                                // Mostramos el ticket en la consola.
+                                console.log(generated_ticket);
                             });
                         };
                     }

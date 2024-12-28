@@ -56,7 +56,7 @@
             // Variables de configuración del juego.
             var width = 1024;
             var height = 640;
-            var height_road = 113;
+            var altura_personajes = 40;
 
             // Creamos la escena (Stage).
             var stage = new Konva.Stage({
@@ -298,14 +298,15 @@
                 // Creamos todas las capas del juego.
                 var layer_action = new Konva.Layer();
                 var layer_npc = new Konva.Layer();
-                var layer_main = new Konva.Layer();
-                var layer_road = new Konva.Layer();
+                var layer_background = new Konva.Layer();
+                var layer_signal = new Konva.Layer();
+                var layer_hud = new Konva.Layer();
 
                 // Configuración de los NPCs.
                 var npc_conf = [{
                     imgSrc: "assets/games/juegoFMHJ/npc_1.png",
                     startX: width,
-                    startY: height - height_road - 133,
+                    startY: height - altura_personajes - 133,
                     width: 120,
                     height: 133,
                     isMoving: false,
@@ -449,69 +450,79 @@
                 }
 
                 // Creamos la imagen de la carretera.
-                var road_img = new Image();
-                road_img.src = "assets/games/juegoFMHJ/fondo_road.png";
+                var fondo_img = new Image();
+                fondo_img.src = "assets/games/juegoFMHJ/fondo.png";
 
                 // Añadimos el fondo a la capa.
-                var road = null;
+                var fondo = null;
                 // Cargamos la imagen del fondo.
                 // Cuando la imagen se haya cargado, creamos el fondo.
-                road_img.onload = function () {
-                    road = new Konva.Image({
+                fondo_img.onload = function () {
+                    fondo = new Konva.Image({
                         x: 0,
-                        y: height - 576,
-                        image: road_img
+                        y: 0,
+                        image: fondo_img
                     });
                     // Añadimos la carretera a la capa.
-                    layer_road.add(road);
+                    layer_background.add(fondo);
 
                     // Añadimos la capa a la escena.
-                    stage.add(layer_road);
-                };
+                    stage.add(layer_background);
 
-                // Creamos el personaje.
-                var mc = new Image();
-                mc.src = "assets/games/juegoFMHJ/idle.png";
+                    // Creamos el personaje principal.
+                    createMC();
 
-                // Animación del personaje.
-                var motions_mc = {
-                    standing: [93, 121, 58, 135,
-                        349, 121, 58, 135,
-                        605, 121, 58, 135,
-                        861, 121, 58, 135,
-                        1117, 121, 58, 135,
-                        1373, 121, 58, 135
-                    ]
+                    // Creamos la señal de entrada.
+                    createSignal();
                 };
 
                 // Creamos el sprite del personaje.
                 var main_character = null;
-                // Cargamos la imagen del personaje.
-                // Cuando la imagen se haya cargado, creamos el sprite del personaje.
-                mc.onload = function () {
-                    main_character = new Konva.Sprite({
-                        x: width / 3,
-                        y: height - height_road - 135,
-                        width: 58,
-                        image: mc,
-                        animation: 'standing',
-                        animations: motions_mc,
-                        frameRate: 7,
-                        frameIndex: 0
-                    });
 
-                    // Añadimos el personaje a la capa.
-                    layer_main.add(main_character);
+                // Función para cargar la imagen del personaje.
+                function createMC() {
+                    // Creamos el personaje.
+                    var mc = new Image();
+                    mc.src = "assets/games/juegoFMHJ/idle.png";
 
-                    // Añadimos la capa a la escena.
-                    stage.add(layer_main);
+                    // Animación del personaje.
+                    var motions_mc = {
+                        standing: [93, 121, 58, 135,
+                            349, 121, 58, 135,
+                            605, 121, 58, 135,
+                            861, 121, 58, 135,
+                            1117, 121, 58, 135,
+                            1373, 121, 58, 135
+                        ]
+                    };
 
-                    // Iniciamos la animación del personaje.
-                    main_character.start();
+                    // Cargamos la imagen del personaje.
+                    // Cuando la imagen se haya cargado, creamos el sprite del personaje.
+                    mc.onload = function () {
+                        main_character = new Konva.Sprite({
+                            x: width / 3,
+                            y: height - altura_personajes - 135, // 135 es la altura del personaje.
+                            width: 58,
+                            image: mc,
+                            animation: 'standing',
+                            animations: motions_mc,
+                            frameRate: 7,
+                            frameIndex: 0
+                        });
 
-                    // Crear el primer NPC solo después de que el personaje principal esté listo.
-                    createNPC(npc_conf[0]);
-                };
+                        // Añadimos el personaje a la capa.
+                        layer_npc.add(main_character);
+
+                        // Añadimos la capa a la escena.
+                        stage.add(layer_npc);
+
+                        // Iniciamos la animación del personaje.
+                        main_character.start();
+
+                        // Crear el primer NPC solo después de que el personaje principal esté listo.
+                        createNPC(npc_conf[0]);
+                    };
+                }
 
                 // Método para que un NPC se dirija hacia una posición.
                 function moveNPCToPositionWithAnimation(npc, targetX, targetY, duration, animation, callback) {
@@ -565,6 +576,10 @@
                             // Iniciamos la animación del NPC.
                             npc.start();
 
+                            // Añadimos la capa de señal a la escena.
+                            // De esta manera, la señal estará por encima de los personajes.
+                            stage.add(layer_signal);
+
                             // Movemos al NPC hacia la izquierda.
                             moveNPCToPositionWithAnimation(npc, main_character.x() + main_character.width(), npc.y(), 4, 'walk_left', () => {
 
@@ -579,7 +594,9 @@
 
                                 // Mostramos el ticket en la consola.
                                 console.log(generated_ticket);
+
                             });
+
                         };
                     }
 
@@ -732,6 +749,28 @@
                         element.destroy();
                     });
                     layer.batchDraw(); // Redibuja la capa para reflejar los cambios
+                }
+
+                // Creamos la señal de entrada.
+                var signal = null;
+
+                // Función para crear la señal de entrada.
+                function createSignal() {
+                    // Creamos la imagen de la señal de entrada.
+                    var signal_img = new Image();
+                    signal_img.src = "assets/games/juegoFMHJ/signal.png";
+
+                    // Cargamos la imagen del fondo.
+                    // Cuando la imagen se haya cargado, creamos el fondo.
+                    signal_img.onload = function () {
+                        signal = new Konva.Image({
+                            x: signal_img.width / 2,
+                            y: height - signal_img.height,
+                            image: signal_img
+                        });
+                        // Añadimos la carretera a la capa.
+                        layer_signal.add(signal);
+                    };
                 }
 
             }

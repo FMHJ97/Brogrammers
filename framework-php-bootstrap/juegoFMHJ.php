@@ -74,10 +74,10 @@
                 y: height / 2 - 30,
                 width: 200,
                 height: 60,
-                fill: 'blue',
+                fill: '#29F2B9',
                 cornerRadius: 10,
                 shadowBlur: 10,
-                shadowColor: 'black',
+                shadowColor: '#0A0F0F',
                 shadowOffset: { x: 2, y: 2 }
             });
 
@@ -88,7 +88,8 @@
                 text: 'Iniciar Juego',
                 fontSize: 28,
                 fontFamily: 'Arial',
-                fill: 'white',
+                fontStyle: 'bold',
+                fill: '0A0F0F',
                 width: 200,
                 align: 'center'
             });
@@ -120,7 +121,7 @@
                 const lugar_festival = "Lucena, Córdoba";
                 const fecha_festival = ["17, Abril 2025", "18, Abril 2025", "19, Abril 2025"];
                 const puerta_general = ["A", "B"];
-                const puerta_vip = ["C", "D"];
+                const puerta_vip = "C";
                 const precio_general = [25, 50, 70];
                 const precio_vip = [40, 80, 110];
                 const patron_codigo = /^[A-Z]{2}[0-9]{7}[A-Z]{1}$/;
@@ -177,12 +178,10 @@
                 const t_tipo_entrada = ["General", "VIP"];
 
                 // Precio Ticket.
-
-                // Precio Ticket (VIP).
-                const t_precio = [25, 50, 70, 40, 80, 110];
+                const t_precio = [25, 40, 70, 110];
 
                 // Puerta (General).
-                const t_puerta = ["A", "B", "C", "D"];
+                const t_puerta = ["A", "B", "C"];
 
                 // Ubicación del festival.
                 const t_ubicaciones = [
@@ -281,7 +280,7 @@
                         }
                     } else if (ticket.tipo_entrada === "VIP") {
                         // Validamos la puerta.
-                        if (!puerta_vip.includes(ticket.puerta)) {
+                        if (puerta_vip !== ticket.puerta) {
                             isValid = false;
                             errores_ticket.push("La puerta no es correcta.");
                         }
@@ -590,7 +589,19 @@
                 function getImageTicket() {
                     // Creamos la imagen del ticket.
                     var ticket_img = new Image();
-                    ticket_img.src = "assets/games/juegoFMHJ/ticket_1.png";
+
+                    // Ruta de la imagen del ticket.
+                    let ruta = "";
+
+                    // Cargamos la imagen del ticket según el tipo de entrada.
+                    if (generated_ticket.tipo_entrada === "General") {
+                        ruta = "assets/games/juegoFMHJ/ticket_general.png";
+                    } else if (generated_ticket.tipo_entrada === "VIP") {
+                        ruta = "assets/games/juegoFMHJ/ticket_vip.png";
+                    }
+
+                    // Asignamos la ruta de la imagen del ticket.
+                    ticket_img.src = ruta;
 
                     // Añadimos el ticket a la capa.
                     let new_ticket = null;
@@ -698,7 +709,7 @@
                             x: new_ticket.x() + 370,
                             y: new_ticket.y() + 189,
                             text: datos_ticket.precio + ".00 €",
-                            fontSize: 18,
+                            fontSize: 20,
                             fontFamily: 'PostNoBillsColombo',
                             fill: '#0A0F0F'
                         });

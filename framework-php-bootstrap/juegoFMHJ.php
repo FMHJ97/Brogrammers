@@ -122,8 +122,8 @@
                 const fecha_festival = ["17, Abril 2025", "18, Abril 2025", "19, Abril 2025"];
                 const puerta_general = ["A", "B"];
                 const puerta_vip = "C";
-                const precio_general = [25, 50, 70];
-                const precio_vip = [40, 80, 110];
+                const precio_general = [25, 70];
+                const precio_vip = [40, 110];
                 const patron_codigo = /^[A-Z]{2}[0-9]{7}[A-Z]{1}$/;
 
                 // Datos para el ticket de entrada de NPC.
@@ -131,25 +131,21 @@
                 // Nombre del festival.
                 const t_nombre_festival = [
                     "GroundSound Festival 2025", "GroundSound Festival 2025", "GroundSound Festival 2025",
-                    "GroundSound Festival 2025", "GroundSound Festival 2025", "GroundSound Festival 2025",
-                    "GroundSound Festival 2025", "GroundSound Festival 2025", "GroundSound Festival 2025",
-                    "GroundSound Festival 2025", "GroundSound Festival 2025", "GroundSound Festival 2025",
+                    "GroundSound Festival 2025",
                     "SoundGround Festival 2025", "GroudSound Festival 2025" // Incorrectos
                 ];
 
                 // Fecha del festival.
                 const t_fecha_festival = [
                     "17, Abril 2025", "18, Abril 2025", "19, Abril 2025",
-                    "17, Abril 2025", "18, Abril 2025", "19, Abril 2025",
-                    "17, Abril 2025", "18, Abril 2025", "19, Abril 2025",
-                    "17, Abril 2025", "18, Abril 2025", "19, Abril 2025",
-                    "17, Abril 202S", "19, Abril 2023" // Incorrectos
+                    "17, Abril 2025",
+                    "17, Abril 202S", "19, Abri1 2025" // Incorrectos
                 ];
 
                 // Lugar del festival.
                 const t_lugar_festival = [
                     "Lucena, Córdoba", "Lucena, Córdoba", "Lucena, Córdoba",
-                    "Lucena, Córdoba", "Lucena, Córdoba", "Lucena, Córdoba", "Lucena, Córdoba",
+                    "Lucena, Córdoba",
                     "Lucena, Córdoda", "Lusena, Córdoba" // Incorrectos
                 ];
 
@@ -163,15 +159,10 @@
                     "XY9676543A", // Correcto
                     "AB1734567S", // Correcto
                     "XY9176543D", // Correcto
-                    "NM1534567F", // Correcto
-                    "MN9676543Z", // Correcto
-                    "FG1734567X", // Correcto
-                    "RE9176543C", // Correcto
                     "OO12345670", // Incorrecto
                     "AB123A5678A", // Incorrecto
                     "OG917GS43C", // Incorrecto
-                    "A1234567C", // Incorrecto
-                    "aB1234567L", // Incorrecto
+                    "A1234567C" // Incorrecto
                 ];
 
                 // Tipo de entrada.
@@ -185,6 +176,7 @@
 
                 // Ubicación del festival.
                 const t_ubicaciones = [
+                    "Prudencio Uzar Town Square", // Correcto
                     "Prudencio Uzar Town Square", // Correcto
                     "Prudencio Uzar Town Square", // Correcto
                     "Prudencio Uzar Town Square", // Correcto
@@ -309,7 +301,6 @@
                     startY: height - altura_personajes - 133,
                     width: 120,
                     height: 133,
-                    isMoving: false,
                     frameRate: 7,
                     animations: {
                         walk_right: [70, 123, 120, 133,
@@ -342,10 +333,83 @@
                             1350, 635, 120, 133
                         ]
                     }
+                }, {
+                    imgSrc: "assets/games/juegoFMHJ/npc_2.png",
+                    startX: width,
+                    startY: height - altura_personajes - 130,
+                    width: 95,
+                    height: 130,
+                    frameRate: 7,
+                    animations: {
+                        walk_right: [90, 126, 95, 130,
+                            346, 126, 95, 130,
+                            602, 126, 95, 130,
+                            858, 126, 95, 130,
+                            1114, 126, 95, 130,
+                            1370, 126, 95, 130,
+                            1626, 126, 95, 130,
+                            1882, 126, 95, 130
+                        ],
+                        walk_left: [1863, 382, 95, 130,
+                            1607, 382, 95, 130,
+                            1351, 382, 95, 130,
+                            1095, 382, 95, 130,
+                            839, 382, 95, 130,
+                            583, 382, 95, 130,
+                            327, 382, 95, 130,
+                            71, 382, 95, 130
+                        ],
+                        standing: [90, 638, 95, 130,
+                            346, 638, 95, 130,
+                            602, 638, 95, 130,
+                            858, 638, 95, 130,
+                            1114, 638, 95, 130,
+                            1370, 638, 95, 130,
+                            1626, 638, 95, 130
+                        ]
+                    }
+                }, {
+                    imgSrc: "assets/games/juegoFMHJ/npc_3.png",
+                    startX: width,
+                    startY: height - altura_personajes - 148,
+                    width: 120,
+                    height: 148,
+                    frameRate: 7,
+                    animations: {
+                        walk_right: [70, 108, 120, 148,
+                            326, 108, 120, 148,
+                            582, 108, 120, 148,
+                            838, 108, 120, 148,
+                            1094, 108, 120, 148,
+                            1350, 108, 120, 148,
+                            1606, 108, 120, 148,
+                            1862, 108, 120, 148,
+                            2118, 108, 120, 148,
+                            2374, 108, 120, 148
+                        ],
+                        walk_left: [2370, 364, 120, 148,
+                            2114, 364, 120, 148,
+                            1858, 364, 120, 148,
+                            1602, 364, 120, 148,
+                            1346, 364, 120, 148,
+                            1090, 364, 120, 148,
+                            834, 364, 120, 148,
+                            578, 364, 120, 148,
+                            322, 364, 120, 148,
+                            66, 364, 120, 148
+                        ],
+                        standing: [70, 620, 120, 148,
+                            324, 620, 120, 148,
+                            582, 620, 120, 148,
+                            838, 620, 120, 148,
+                            1094, 620, 120, 148,
+                            1350, 620, 120, 148
+                        ]
+                    }
                 }];
 
                 // Creamos los NPCs.
-                createNPC(npc_conf[0]);
+                createNPC(getRandomNPC(npc_conf));
 
                 // Variables de los botones.
                 var greenButton = null;
@@ -398,7 +462,7 @@
                                 generated_ticket = null;
 
                                 // Creamos un nuevo NPC.
-                                createNPC(npc_conf[0]);
+                                createNPC(getRandomNPC(npc_conf));
                             } else {
                                 // Mostramos un mensaje en la consola.
                                 console.log("El ticket no es válido.");
@@ -433,7 +497,7 @@
                                 generated_ticket = null;
 
                                 // Creamos un nuevo NPC.
-                                createNPC(npc_conf[0]);
+                                createNPC(getRandomNPC(npc_conf));
                             } else {
                                 // Mostramos un mensaje en la consola.
                                 console.log("El ticket ES válido.");
@@ -520,7 +584,7 @@
                         main_character.start();
 
                         // Crear el primer NPC solo después de que el personaje principal esté listo.
-                        createNPC(npc_conf[0]);
+                        createNPC(getRandomNPC(npc_conf));
                     };
                 }
 
@@ -546,26 +610,26 @@
                 }
 
                 // Método para crear un NPC.
-                function createNPC(config) {
+                function createNPC(npc_conf) {
 
                     // Solo creamos un NPC si el personaje principal está listo.
                     if (main_character) {
 
                         // Cargamos la imagen del NPC.
                         var npc_img = new Image();
-                        npc_img.src = config.imgSrc;
+                        npc_img.src = npc_conf.imgSrc;
 
                         // Creamos el NPC.
                         let npc = null;
                         npc_img.onload = () => {
                             npc = new Konva.Sprite({
-                                x: config.startX,
-                                y: config.startY,
-                                width: config.width,
+                                x: npc_conf.startX,
+                                y: npc_conf.startY,
+                                width: npc_conf.width,
                                 image: npc_img,
                                 animation: 'standing',
-                                animations: config.animations,
-                                frameRate: config.frameRate,
+                                animations: npc_conf.animations,
+                                frameRate: npc_conf.frameRate,
                                 frameIndex: 0
                             });
 
@@ -771,6 +835,11 @@
                         // Añadimos la carretera a la capa.
                         layer_signal.add(signal);
                     };
+                }
+
+                // Función para obtener un NPC al azar.
+                function getRandomNPC(config) {
+                    return config[Math.floor(Math.random() * config.length)];
                 }
 
             }

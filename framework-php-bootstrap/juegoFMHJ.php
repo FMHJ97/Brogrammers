@@ -25,12 +25,16 @@
             </div>
         </section>
 
-        <!-- Sección de Instrucciones del Juego -->
+        <!-- Sección de Introducción -->
         <section class="container page-section">
             <div class="row">
                 <div class="col-12">
-                    <h3>Instrucciones del Juego</h3>
-                    <p>El juego consiste en...</p>
+                    <h3>Objetivo del Juego</h3>
+                    <p>Eres el encargado de controlar el acceso al festival más esperado del año. Tu tarea es revisar
+                        los tickets de los NPCs (personajes no jugables) y decidir si son válidos o no. ¡Pon a prueba
+                        tus habilidades de observación y asegúrate de que todo esté en orden para que los verdaderos
+                        fans puedan disfrutar del evento!
+                    </p>
                 </div>
             </div>
         </section>
@@ -40,6 +44,49 @@
             <div class="row">
                 <div class="col-12 d-flex justify-content-center">
                     <div id="gameContainer"></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sección de Instrucciones del Juego -->
+        <section class="container page-section">
+            <div class="row">
+                <div class="col-12">
+                    <h3>Cómo Jugar</h3>
+                    <ol>
+                        <li>Cada NPC presentará un ticket con diferentes datos.</li>
+                        <li>Debes revisar el ticket y decidir si es válido o no.</li>
+                        <li>Aspectos a revisar:
+                            <ul>
+                                <li><strong>Nombre del festival:</strong> Debe coincidir con <span style="color: #29F2B9;">GroundSound Festival 2025</span>.</li>
+                                <li><strong>Ubicación:</strong> Debe ser <span style="color: #29F2B9;">Prudencio Uzar Town Square</span>.</li>
+                                <li><strong>Lugar del festival:</strong> Debe ser <span style="color: #29F2B9;">Lucena, Córdoba</span>.</li>
+                                <li><strong>Fecha del festival:</strong> Solo son válidas las fechas del <span style="color: #29F2B9;">17, 18 y 19 de Abril de 2025</span>.</li>
+                                <li><strong>Código del ticket:</strong> Debe seguir el patrón 2 letras + 7 números + 1 letra.</li>
+                                <li><strong>Tipo de ticket:</strong> Puede ser <span style="color: #29F2B9;">General</span> (Ticket negro) o <span style="color: #29F2B9;">VIP</span> (Ticket verde).</li>
+                                <li><strong>Puerta entrada:</strong>
+                                    <ul>
+                                        <li><u>General</u>: Debe tener asignada una de las <span style="color: #29F2B9;">puertas A</span> o <span style="color: #29F2B9;">D</span>.</li>
+                                        <li><u>VIP</u>: Debe tener asignada una de las <span style="color: #29F2B9;">puertas B</span> o <span style="color: #29F2B9;">C</span>.</li>
+                                    </ul>
+                                </li>
+                                <li><strong>Precio del Ticket:</strong>
+                                    <ul>
+                                        <li><u>General</u>: El precio debe ser <span style="color: #29F2B9;">25€</span> o <span style="color: #29F2B9;">40€</span>.</li>
+                                        <li><u>VIP</u>: El precio debe ser <span style="color: #29F2B9;">50€</span> o <span style="color: #29F2B9;">70€</span>.</li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>
+                    </ol>
+                </div>
+                <div class="col-12">
+                    <h3>Condiciones de Derrota</h3>
+                    <ul>
+                        <li>Si un ticket es inválido y lo aceptas, <span style="color: crimson;">perderás</span>.</li>
+                        <li>Si un ticket es válido y lo rechazas, <span style="color: crimson;">perderás</span>.</li>
+                        <li>No tomar una decisión antes de que se acabe el tiempo asignado.</li>
+                    </ul>
                 </div>
             </div>
         </section>
@@ -120,33 +167,35 @@
                 const ubicacion = "Prudencio Uzar Town Square";
                 const lugar_festival = "Lucena, Córdoba";
                 const fecha_festival = ["17, Abril 2025", "18, Abril 2025", "19, Abril 2025"];
-                const puerta_general = ["A", "B"];
-                const puerta_vip = "C";
-                const precio_general = [25, 70];
-                const precio_vip = [40, 110];
+                const puerta_general = ["A", "D"];
+                const puerta_vip = ["B", "C"];
+                const precio_general = [25, 40];
+                const precio_vip = [50, 70];
                 const patron_codigo = /^[A-Z]{2}[0-9]{7}[A-Z]{1}$/;
 
                 // Datos para el ticket de entrada de NPC.
 
                 // Nombre del festival.
                 const t_nombre_festival = [
-                    "GroundSound Festival 2025", "GroundSound Festival 2025", "GroundSound Festival 2025",
-                    "GroundSound Festival 2025",
+                    "GroundSound Festival 2025", "GroundSound Festival 2025",
+                    "GroundSound Festival 2025", "GroundSound Festival 2025",
+                    "GroundSound Festival 2025", "GroundSound Festival 2025",
                     "SoundGround Festival 2025", "GroudSound Festival 2025" // Incorrectos
                 ];
 
                 // Fecha del festival.
                 const t_fecha_festival = [
                     "17, Abril 2025", "18, Abril 2025", "19, Abril 2025",
-                    "17, Abril 2025",
-                    "17, Abril 202S", "19, Abri1 2025" // Incorrectos
+                    "17, Abril 2025", "18, Abril 2025", "19, Abril 2025",
+                    "17, Abril 202S" // Incorrectos
                 ];
 
                 // Lugar del festival.
                 const t_lugar_festival = [
-                    "Lucena, Córdoba", "Lucena, Córdoba", "Lucena, Córdoba",
-                    "Lucena, Córdoba",
-                    "Lucena, Córdoda", "Lusena, Córdoba" // Incorrectos
+                    "Lucena, Córdoba", "Lucena, Córdoba",
+                    "Lucena, Córdoba", "Lucena, Córdoba",
+                    "Lucena, Córdoba", "Lucena, Córdoba",
+                    "Lucena, Córdoda" // Incorrectos
                 ];
 
                 // Código del ticket.
@@ -159,8 +208,6 @@
                     "XY9676543A", // Correcto
                     "AB1734567S", // Correcto
                     "XY9176543D", // Correcto
-                    "OO12345670", // Incorrecto
-                    "AB123A5678A", // Incorrecto
                     "OG917GS43C", // Incorrecto
                     "A1234567C" // Incorrecto
                 ];
@@ -168,11 +215,17 @@
                 // Tipo de entrada.
                 const t_tipo_entrada = ["General", "VIP"];
 
-                // Precio Ticket.
-                const t_precio = [25, 40, 70, 110];
+                // Precio Ticket (General).
+                const t_precio_general = [25, 40, 25, 40, 30];
+
+                // Precio Ticket (VIP).
+                const t_precio_vip = [50, 70, 50, 70, 40];
 
                 // Puerta (General).
-                const t_puerta = ["A", "B", "C"];
+                const t_puerta_general = ["A", "D", "A", "D", "B"];
+
+                // Puerta (VIP).
+                const t_puerta_vip = ["B", "C", "B", "C", "A"];
 
                 // Ubicación del festival.
                 const t_ubicaciones = [
@@ -180,10 +233,7 @@
                     "Prudencio Uzar Town Square", // Correcto
                     "Prudencio Uzar Town Square", // Correcto
                     "Prudencio Uzar Town Square", // Correcto
-                    "Prudencio Uzar Town Square", // Correcto
-                    "Prudencio Uzar Town Square", // Correcto
-                    "Prudencio Usar Town Square", // Incorrecto
-                    "Prudencio Uzar Tow Square", // Incorrecto
+                    "Prudencio Usar Town Square" // Incorrecto
                 ];
 
                 /* FIN - DATOS TICKET */
@@ -209,16 +259,30 @@
 
                 // Función para generar un ticket aleatorio.
                 function generarTicketAleatorio() {
-                    return new Ticket(
-                        generarDatoAleatorio(t_codigo_ticket),
-                        generarDatoAleatorio(t_tipo_entrada),
-                        generarDatoAleatorio(t_nombre_festival),
-                        generarDatoAleatorio(t_lugar_festival),
-                        generarDatoAleatorio(t_ubicaciones),
-                        generarDatoAleatorio(t_fecha_festival),
-                        generarDatoAleatorio(t_puerta),
-                        generarDatoAleatorio(t_precio)
-                    );
+                    let codigo = generarDatoAleatorio(t_codigo_ticket);
+                    let nombre_festival = generarDatoAleatorio(t_nombre_festival);
+                    let fecha_festival = generarDatoAleatorio(t_fecha_festival);
+                    let lugar_festival = generarDatoAleatorio(t_lugar_festival);
+                    let ubicacion = generarDatoAleatorio(t_ubicaciones);
+
+                    // Generamos un tipo de entrada aleatorio.
+                    let tipo_entrada = generarDatoAleatorio(t_tipo_entrada);
+
+                    // Generamos la puerta y el precio según el tipo de entrada.
+                    let puerta = "";
+                    let precio = 0;
+
+                    if (tipo_entrada === "General") {
+                        puerta = generarDatoAleatorio(t_puerta_general);
+                        precio = generarDatoAleatorio(t_precio_general);
+                    } else if (tipo_entrada === "VIP") {
+                        puerta = generarDatoAleatorio(t_puerta_vip);
+                        precio = generarDatoAleatorio(t_precio_vip);
+                    }
+
+                    // Creamos el ticket.
+                    return new Ticket(codigo, tipo_entrada, nombre_festival, lugar_festival, ubicacion, fecha_festival, puerta, precio);
+
                 }
 
                 // Función para validar un ticket.
@@ -230,31 +294,31 @@
                     // Validamos el nombre del festival.
                     if (ticket.nombre_festival !== nombre_festival) {
                         isValid = false;
-                        errores_ticket.push("El nombre del festival no es correcto.");
+                        errores_ticket.push(`El nombre del festival no es correcto (${ticket.nombre_festival}).`);
                     }
 
                     // Validamos la ubicación del festival.
                     if (ticket.ubicacion !== ubicacion) {
                         isValid = false;
-                        errores_ticket.push("La ubicación del festival no es correcta.");
+                        errores_ticket.push(`El nombre de la ubicación no es correcto (${ticket.ubicacion}).`);
                     }
 
                     // Validamos el lugar del festival.
                     if (ticket.lugar_festival !== lugar_festival) {
                         isValid = false;
-                        errores_ticket.push("El lugar del festival no es correcto.");
+                        errores_ticket.push(`El lugar del festival no es correcto (${ticket.lugar_festival}).`);
                     }
 
                     // Validamos la fecha del festival.
                     if (!fecha_festival.includes(ticket.fecha_festival)) {
                         isValid = false;
-                        errores_ticket.push("La fecha del festival no es correcta.");
+                        errores_ticket.push(`La fecha del festival no es correcta (${ticket.fecha_festival}).`);
                     }
 
                     // Validamos el código del ticket.
                     if (!patron_codigo.test(ticket.codigo)) {
                         isValid = false;
-                        errores_ticket.push("El código del ticket no es correcto.");
+                        errores_ticket.push(`El código del ticket no es correcto (${ticket.codigo}).`);
                     }
 
                     // Comprobamos el tipo de entrada.
@@ -262,25 +326,25 @@
                         // Validamos la puerta.
                         if (!puerta_general.includes(ticket.puerta)) {
                             isValid = false;
-                            errores_ticket.push("La puerta no es correcta.");
+                            errores_ticket.push(`La puerta no es correcta (${ticket.puerta}).`);
                         }
 
                         // Validamos el precio.
                         if (!precio_general.includes(ticket.precio)) {
                             isValid = false;
-                            errores_ticket.push("El precio no es correcto.");
+                            errores_ticket.push(`El precio no es correcto (${ticket.precio}).`);
                         }
                     } else if (ticket.tipo_entrada === "VIP") {
                         // Validamos la puerta.
-                        if (puerta_vip !== ticket.puerta) {
+                        if (!puerta_vip.includes(ticket.puerta)) {
                             isValid = false;
-                            errores_ticket.push("La puerta no es correcta.");
+                            errores_ticket.push(`La puerta no es correcta (${ticket.puerta}).`);
                         }
 
                         // Validamos el precio.
                         if (!precio_vip.includes(ticket.precio)) {
                             isValid = false;
-                            errores_ticket.push("El precio no es correcto.");
+                            errores_ticket.push(`El precio no es correcto (${ticket.precio}).`);
                         }
                     }
 
@@ -417,101 +481,97 @@
 
                 // Creamos los botones de acción.
                 function createButtons(npc) {
+                    // Creamos el botón verde (imagen).
+                    var greenButtonImg = new Image();
+                    greenButtonImg.src = "assets/games/juegoFMHJ/btn_green.png";
 
-                    // Botón verde (movimiento a la izquierda).
-                    greenButton = new Konva.Rect({
-                        x: main_character.x() - 80,
-                        y: main_character.y(),
-                        width: 50,
-                        height: 50,
-                        fill: 'green',
-                        cornerRadius: 5
-                    });
+                    // Creamos el botón rojo (imagen).
+                    var redButtonImg = new Image();
+                    redButtonImg.src = "assets/games/juegoFMHJ/btn_red.png";
 
-                    // Botón rojo (movimiento a la derecha).
-                    redButton = new Konva.Rect({
-                        x: main_character.x() - 150,
-                        y: main_character.y(),
-                        width: 50,
-                        height: 50,
-                        fill: 'red',
-                        cornerRadius: 5
-                    });
-
-                    // Evento de click en el botón verde.
-                    greenButton.on('click', () => {
-                        // Borramos los botones.
-                        greenButton.destroy();
-                        redButton.destroy();
-
-                        // Limpiamos la imagen del ticket y los datos del mismo.
-                        clearTicketAndData(layer_action);
-
-                        // Movemos al NPC a la izquierda.
-                        moveNPCToPositionWithAnimation(npc, -npc.width(), npc.y(), 4, 'walk_left', () => {
-                            // Borramos el NPC.
-                            npc.destroy();
-
-                            // Validamos el ticket.
-                            if (validarTicket(generated_ticket)) {
-                                // Mostramos un mensaje en la consola.
-                                console.log("El ticket es válido.");
-
-                                // Limpiamos las variables de errores y ticket.
-                                errores_ticket = [];
-                                generated_ticket = null;
-
-                                // Creamos un nuevo NPC.
-                                createNPC(getRandomNPC(npc_conf));
-                            } else {
-                                // Mostramos un mensaje en la consola.
-                                console.log("El ticket no es válido.");
-
-                                // Mostramos los errores en la consola.
-                                console.log(errores_ticket);
-                            }
+                    // Manejamos el evento onload para ambas imágenes.
+                    greenButtonImg.onload = function () {
+                        greenButton = new Konva.Image({
+                            x: main_character.x() - 50,
+                            y: main_character.y() - 75,
+                            width: 50,
+                            height: 50,
+                            image: greenButtonImg
                         });
-                    });
 
-                    // Evento de click en el botón rojo.
-                    redButton.on('click', () => {
-                        // Borramos los botones.
-                        greenButton.destroy();
-                        redButton.destroy();
+                        // Evento de click en el botón verde.
+                        greenButton.on('click', () => {
+                            // Borramos los botones.
+                            greenButton.destroy();
+                            redButton.destroy();
 
-                        // Limpiamos la imagen del ticket y los datos del mismo.
-                        clearTicketAndData(layer_action);
+                            // Limpiamos la imagen del ticket y los datos del mismo.
+                            clearTicketAndData(layer_action);
 
-                        // Movemos al NPC a la derecha.
-                        moveNPCToPositionWithAnimation(npc, width, npc.y(), 4, 'walk_right', () => {
-                            // Borramos el NPC.
-                            npc.destroy();
+                            // Movemos al NPC a la izquierda.
+                            moveNPCToPositionWithAnimation(npc, -npc.width(), npc.y(), 4, 'walk_left', () => {
+                                // Borramos el NPC.
+                                npc.destroy();
 
-                            // Validamos el ticket.
-                            if (!validarTicket(generated_ticket)) {
-                                // Mostramos un mensaje en la consola.
-                                console.log("El ticket NO es válido.");
-
-                                // Limpiamos las variables de errores y ticket.
-                                errores_ticket = [];
-                                generated_ticket = null;
-
-                                // Creamos un nuevo NPC.
-                                createNPC(getRandomNPC(npc_conf));
-                            } else {
-                                // Mostramos un mensaje en la consola.
-                                console.log("El ticket ES válido.");
-
-                                // Mostramos los errores en la consola.
-                                console.log(errores_ticket);
-                            }
+                                // Validamos el ticket.
+                                if (validarTicket(generated_ticket)) {
+                                    console.log("El ticket es válido.");
+                                    errores_ticket = [];
+                                    generated_ticket = null;
+                                    createNPC(getRandomNPC(npc_conf));
+                                } else {
+                                    console.log("El ticket no es válido.");
+                                    console.log(errores_ticket);
+                                }
+                            });
                         });
-                    });
 
-                    // Añadimos los botones a la capa de botones.
-                    layer_action.add(greenButton, redButton);
-                    stage.add(layer_action);
+                        // Añadimos el botón verde a la capa.
+                        layer_action.add(greenButton);
+                        stage.add(layer_action);
+                    };
+
+                    redButtonImg.onload = function () {
+                        redButton = new Konva.Image({
+                            x: main_character.x() + main_character.width(),
+                            y: main_character.y() - 75,
+                            width: 50,
+                            height: 50,
+                            image: redButtonImg
+                        });
+
+                        // Evento de click en el botón rojo.
+                        redButton.on('click', () => {
+                            // Borramos los botones.
+                            greenButton.destroy();
+                            redButton.destroy();
+
+                            // Limpiamos la imagen del ticket y los datos del mismo.
+                            clearTicketAndData(layer_action);
+
+                            // Movemos al NPC a la derecha.
+                            moveNPCToPositionWithAnimation(npc, width, npc.y(), 4, 'walk_right', () => {
+                                // Borramos el NPC.
+                                npc.destroy();
+
+                                if (!validarTicket(generated_ticket)) {
+                                    console.log("El ticket NO es válido.");
+                                    errores_ticket = [];
+                                    generated_ticket = null;
+                                    createNPC(getRandomNPC(npc_conf));
+                                } else {
+                                    console.log("El ticket ES válido.");
+                                    console.log(errores_ticket);
+                                }
+                            });
+                        });
+
+                        // Añadimos el botón rojo a la capa.
+                        layer_action.add(redButton);
+                        stage.add(layer_action);
+                    };
                 }
+
 
                 // Creamos la imagen de la carretera.
                 var fondo_img = new Image();

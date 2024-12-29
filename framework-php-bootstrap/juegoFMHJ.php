@@ -58,22 +58,36 @@
                         <li>Debes revisar el ticket y decidir si es válido o no.</li>
                         <li>Aspectos a revisar:
                             <ul>
-                                <li><strong>Nombre del festival:</strong> Debe coincidir con <span style="color: #29F2B9;">GroundSound Festival 2025</span>.</li>
-                                <li><strong>Ubicación:</strong> Debe ser <span style="color: #29F2B9;">Prudencio Uzar Town Square</span>.</li>
-                                <li><strong>Lugar del festival:</strong> Debe ser <span style="color: #29F2B9;">Lucena, Córdoba</span>.</li>
-                                <li><strong>Fecha del festival:</strong> Solo son válidas las fechas del <span style="color: #29F2B9;">17, 18 y 19 de Abril de 2025</span>.</li>
-                                <li><strong>Código del ticket:</strong> Debe seguir el patrón 2 letras + 7 números + 1 letra.</li>
-                                <li><strong>Tipo de ticket:</strong> Puede ser <span style="color: #29F2B9;">General</span> (Ticket negro) o <span style="color: #29F2B9;">VIP</span> (Ticket verde).</li>
+                                <li><strong>Nombre del festival:</strong> Debe coincidir con <span
+                                        style="color: #29F2B9;">GroundSound Festival 2025</span>.</li>
+                                <li><strong>Ubicación:</strong> Debe ser <span style="color: #29F2B9;">Prudencio Uzar
+                                        Town Square</span>.</li>
+                                <li><strong>Lugar del festival:</strong> Debe ser <span style="color: #29F2B9;">Lucena,
+                                        Córdoba</span>.</li>
+                                <li><strong>Fecha del festival:</strong> Solo son válidas las fechas del <span
+                                        style="color: #29F2B9;">17, 18 y 19 de Abril de 2025</span>.</li>
+                                <li><strong>Código del ticket:</strong> Debe seguir el patrón 2 letras + 7 números + 1
+                                    letra.</li>
+                                <li><strong>Tipo de ticket:</strong> Puede ser <span
+                                        style="color: #29F2B9;">General</span> (Ticket negro) o <span
+                                        style="color: #29F2B9;">VIP</span> (Ticket verde).</li>
                                 <li><strong>Puerta entrada:</strong>
                                     <ul>
-                                        <li><u>General</u>: Debe tener asignada una de las <span style="color: #29F2B9;">puertas A</span> o <span style="color: #29F2B9;">D</span>.</li>
-                                        <li><u>VIP</u>: Debe tener asignada una de las <span style="color: #29F2B9;">puertas B</span> o <span style="color: #29F2B9;">C</span>.</li>
+                                        <li><u>General</u>: Debe tener asignada una de las <span
+                                                style="color: #29F2B9;">puertas A</span> o <span
+                                                style="color: #29F2B9;">D</span>.</li>
+                                        <li><u>VIP</u>: Debe tener asignada una de las <span
+                                                style="color: #29F2B9;">puertas B</span> o <span
+                                                style="color: #29F2B9;">C</span>.</li>
                                     </ul>
                                 </li>
                                 <li><strong>Precio del Ticket:</strong>
                                     <ul>
-                                        <li><u>General</u>: El precio debe ser <span style="color: #29F2B9;">25€</span> o <span style="color: #29F2B9;">40€</span>.</li>
-                                        <li><u>VIP</u>: El precio debe ser <span style="color: #29F2B9;">50€</span> o <span style="color: #29F2B9;">70€</span>.</li>
+                                        <li><u>General</u>: El precio debe ser <span style="color: #29F2B9;">25€</span>
+                                            o <span style="color: #29F2B9;">40€</span>.</li>
+                                        <li><u>VIP</u>: El precio debe ser <span style="color: #29F2B9;">50€</span> o
+                                            <span style="color: #29F2B9;">70€</span>.
+                                        </li>
                                     </ul>
                                 </li>
                             </ul>
@@ -318,7 +332,7 @@
                     // Validamos el código del ticket.
                     if (!patron_codigo.test(ticket.codigo)) {
                         isValid = false;
-                        errores_ticket.push(`El código del ticket no es correcto (${ticket.codigo}).`);
+                        errores_ticket.push(`El código del ticket NO CUMPLE el patrón (${ticket.codigo}).`);
                     }
 
                     // Comprobamos el tipo de entrada.
@@ -326,25 +340,25 @@
                         // Validamos la puerta.
                         if (!puerta_general.includes(ticket.puerta)) {
                             isValid = false;
-                            errores_ticket.push(`La puerta no es correcta (${ticket.puerta}).`);
+                            errores_ticket.push(`Para los tickets generales, la Puerta ${ticket.puerta} NO es correcta.`);
                         }
 
                         // Validamos el precio.
                         if (!precio_general.includes(ticket.precio)) {
                             isValid = false;
-                            errores_ticket.push(`El precio no es correcto (${ticket.precio}).`);
+                            errores_ticket.push(`Para los tickets generales, el precio ${ticket.precio}€ NO es correcto.`);
                         }
                     } else if (ticket.tipo_entrada === "VIP") {
                         // Validamos la puerta.
                         if (!puerta_vip.includes(ticket.puerta)) {
                             isValid = false;
-                            errores_ticket.push(`La puerta no es correcta (${ticket.puerta}).`);
+                            errores_ticket.push(`Para los tickets VIP, la Puerta ${ticket.puerta} NO es correcta.`);
                         }
 
                         // Validamos el precio.
                         if (!precio_vip.includes(ticket.precio)) {
                             isValid = false;
-                            errores_ticket.push(`El precio no es correcto (${ticket.precio}).`);
+                            errores_ticket.push(`Para los tickets VIP, el precio ${ticket.precio}€ NO es correcto.`);
                         }
                     }
 
@@ -505,6 +519,9 @@
                             greenButton.destroy();
                             redButton.destroy();
 
+                            // Paramos el temporizador.
+                            stopTemporizador();
+
                             // Limpiamos la imagen del ticket y los datos del mismo.
                             clearTicketAndData(layer_action);
 
@@ -516,12 +533,24 @@
                                 // Validamos el ticket.
                                 if (validarTicket(generated_ticket)) {
                                     console.log("El ticket es válido.");
-                                    errores_ticket = [];
-                                    generated_ticket = null;
+
+                                    // Aumentamos el contador de validaciones realizadas.
+                                    incrementContadorValidaciones();
+
+                                    // Creamos un nuevo NPC.
                                     createNPC(getRandomNPC(npc_conf));
+
+                                    errores_ticket = []; // Limpiamos los errores.
+                                    generated_ticket = null; // Limpiamos el ticket.
                                 } else {
                                     console.log("El ticket no es válido.");
                                     console.log(errores_ticket);
+
+                                    // Terminamos el juego.
+                                    endGame();
+
+                                    errores_ticket = []; // Limpiamos los errores.
+                                    generated_ticket = null; // Limpiamos el ticket.
                                 }
                             });
                         });
@@ -546,6 +575,9 @@
                             greenButton.destroy();
                             redButton.destroy();
 
+                            // Paramos el temporizador.
+                            stopTemporizador();
+
                             // Limpiamos la imagen del ticket y los datos del mismo.
                             clearTicketAndData(layer_action);
 
@@ -556,12 +588,28 @@
 
                                 if (!validarTicket(generated_ticket)) {
                                     console.log("El ticket NO es válido.");
-                                    errores_ticket = [];
-                                    generated_ticket = null;
+
+                                    // Aumentamos el contador de validaciones realizadas.
+                                    incrementContadorValidaciones();
+
+                                    // Creamos un nuevo NPC.
                                     createNPC(getRandomNPC(npc_conf));
+
+                                    errores_ticket = []; // Limpiamos los errores.
+                                    generated_ticket = null; // Limpiamos el ticket.
                                 } else {
+
+                                    // Agregamos al array de errores.
+                                    errores_ticket.push("El ticket ES VÁLIDO.");
+
                                     console.log("El ticket ES válido.");
                                     console.log(errores_ticket);
+
+                                    // Terminamos el juego.
+                                    endGame();
+
+                                    errores_ticket = []; // Limpiamos los errores.
+                                    generated_ticket = null; // Limpiamos el ticket.
                                 }
                             });
                         });
@@ -598,6 +646,9 @@
 
                     // Creamos la señal de entrada.
                     createSignal();
+
+                    // Creamos el HUD del juego.
+                    createHUD();
                 };
 
                 // Creamos el sprite del personaje.
@@ -718,6 +769,9 @@
 
                                 // Mostramos el ticket en la consola.
                                 console.log(generated_ticket);
+
+                                // Iniciamos el temporizador.
+                                startTemporizador();
 
                             });
 
@@ -900,6 +954,185 @@
                 // Función para obtener un NPC al azar.
                 function getRandomNPC(config) {
                     return config[Math.floor(Math.random() * config.length)];
+                }
+
+                // Variables para el HUD del juego.
+                var contador_validaciones = 0;
+                var temporizador = null; // Temporizador del juego.
+                var game_over = false; // Indica si el juego ha terminado.
+                var contador_text = null; // Texto del contador de validaciones.
+                var temporizador_text = null; // Texto del temporizador.
+
+                // Creamos los textos del contador y del temporizador.
+                function createHUD() {
+
+                    // Creamos el fondo para el contador y el temporizador.
+                    var fondo_contador = new Konva.Rect({
+                        x: 20,
+                        y: 20,
+                        width: 240,
+                        height: 25,
+                        fill: 'gold'
+                    });
+
+                    // Creamos el contador de validaciones.
+                    contador_text = new Konva.Text({
+                        x: 35,
+                        y: 25,
+                        text: 'Validaciones realizadas: 0',
+                        fontSize: 16,
+                        fontFamily: 'Arial',
+                        fill: 'black',
+                        fontStyle: 'bold'
+                    });
+
+                    // Creamos el fondo para el contador y el temporizador.
+                    var fondo_temporizador = new Konva.Rect({
+                        x: 20,
+                        y: 60,
+                        width: 190,
+                        height: 25,
+                        fill: 'crimson'
+                    });
+
+                    // Creamos el temporizador.
+                    temporizador_text = new Konva.Text({
+                        x: 35,
+                        y: 65,
+                        text: 'Tiempo restante: 10s',
+                        fontSize: 16,
+                        fontFamily: 'Arial',
+                        fill: 'white',
+                        fontStyle: 'bold'
+                    });
+
+                    // Añadimos los textos a la capa.
+                    layer_hud.add(fondo_contador);
+                    layer_hud.add(contador_text);
+                    layer_hud.add(fondo_temporizador);
+                    layer_hud.add(temporizador_text);
+
+                    // Añadimos la capa al escenario.
+                    stage.add(layer_hud);
+                }
+
+                // Función para implementar el temporizador.
+                function startTemporizador() {
+                    let tiempo = 10;
+
+                    // Actualiza el texto del temporizador.
+                    updateTemporizadorText(tiempo);
+
+                    // Función de cuenta regresiva. Se ejecuta cada segundo.
+                    function countdown() {
+                        // Si el tiempo restante es mayor que 0 y
+                        // el juego no ha terminado.
+                        if (tiempo > 0 && !game_over) {
+                            // Reducimos el tiempo restante en 1 segundo.
+                            temporizador = setTimeout(() => {
+                                tiempo--;
+                                updateTemporizadorText(tiempo);
+                                countdown();
+                            }, 1000);
+                        } else if (tiempo === 0) {
+                            game_over = true;
+                            endGame(); // Llama a Game Over si el tiempo se agota.
+                        }
+                    }
+
+                    countdown(); // Inicia la cuenta regresiva.
+                }
+
+                // Actualiza el texto del temporizador.
+                function updateTemporizadorText(seconds) {
+                    temporizador_text.text(`Tiempo restante: ${seconds}s`);
+                    // Redibuja la capa para reflejar los cambios.
+                    layer_hud.batchDraw();
+                }
+
+                // Función para incrementar el contador de validaciones.
+                function incrementContadorValidaciones() {
+                    if (!game_over) {
+                        contador_validaciones++;
+                        updateContadorValidaciones();
+                    }
+                }
+
+                // Actualiza el texto del contador de validaciones.
+                function updateContadorValidaciones() {
+                    contador_text.text(`Validaciones realizadas: ${contador_validaciones}`);
+                    // Redibuja la capa para reflejar los cambios.
+                    layer_hud.batchDraw();
+                }
+
+                // Función para finalizar el juego.
+                function endGame() {
+                    // Indicamos que el juego ha terminado.
+                    game_over = true;
+
+                    // Fondo para el mensaje de Game Over.
+                    var fondo_game_over = new Konva.Rect({
+                        x: 100,
+                        y: 100,
+                        width: width - 200,
+                        height: height - 200,
+                        fill: 'black',
+                        stroke: 'red',
+                        strokeWidth: 5,
+                        cornerRadius: 10
+                    });
+
+                    // Mostramos un mensaje de Game Over.
+                    var mensaje_game_over = new Konva.Text({
+                        x: 165,
+                        y: 160,
+                        text: 'Game Over',
+                        fontSize: 128,
+                        fontFamily: 'Arial',
+                        fontStyle: 'bold',
+                        fill: 'white',
+                        align: 'center'
+                    });
+
+                    // Añadimos el fondo a la capa.
+                    layer_hud.add(fondo_game_over);
+
+                    // Añadimos el mensaje de Game Over a la capa.
+                    layer_hud.add(mensaje_game_over);
+
+                    var errores_text = new Konva.Text({
+                        x: 160,
+                        y: 300,
+                        text: (errores_ticket.length > 0) ? errores_ticket.join('\n') : 'Se ha agotado el tiempo!',
+                        fontSize: 28,
+                        fontFamily: 'Arial',
+                        fill: 'white',
+                        width: width - 300,
+                        align: 'center'
+                    });
+
+                    // Añadimos los errores a la capa.
+                    layer_hud.add(errores_text);
+
+                    // Eliminamos la capa de acción.
+                    layer_action.destroy();
+
+                    // Movemos la capa de HUD al frente.
+                    layer_hud.moveToTop();
+
+                    // Redibujamos la capa para reflejar los cambios.
+                    layer_hud.batchDraw();
+                }
+
+                // Función para detener el temporizador.
+                function stopTemporizador() {
+                    if (temporizador) {
+                        clearTimeout(temporizador); // Detiene el temporizador.
+                        temporizador = null; // Reinicia el temporizador.
+
+                        // Actualiza el texto del temporizador.
+                        updateTemporizadorText(10);
+                    }
                 }
 
             }

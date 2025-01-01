@@ -37,6 +37,7 @@
                     <a href="./contact.php#privacy">Política de Privacidad</a>
                     <a href="./contact.php#terms">Términos & Condiciones</a>
                     <a href="./contact.php#contact">Contáctanos</a>
+                    <a href="./about_us.php">Sobre nosotros</a>
                 </div>
                 <!-- Apartado Derechos de Autor -->
                 <small>Copyright © 2024 GroundSound Festival</small>

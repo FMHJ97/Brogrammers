@@ -216,16 +216,19 @@ button {
 }
 
 /* ======== BUTTONS LINEUP DAYS ==========*/
-.btn-fullLineup { //botón principal
+.btn-fullLineup {
+  //botón principal
   @extend .btn-category-item; //es igual que los de categoría item
   width: 100%;
 }
 
-.btn-days { //botones de cada día
+.btn-days {
+  //botones de cada día
   @extend .btn-category-item; //es igual que los de categoría item
   width: 100%;
 
-  @include media-breakpoint-down(md) {  //Añado que el tamaño de texto cambie al reducirla pantalla.
+  @include media-breakpoint-down(md) {
+    //Añado que el tamaño de texto cambie al reducirla pantalla.
     font-size: $heading-font-phone-5;
   }
 }
@@ -327,4 +330,28 @@ button {
     /* Limita el ancho para evitar desbordamiento */
   }
 
+}
+
+
+/* ====   Botón para Abrir Videojuego en About Us  ==== */
+.about-us-btn {
+  padding: 0.5rem 1rem;
+  background-color: $resaltar1;
+  font-family: $headings-font-family;
+  font-weight: $headings-font-weight;
+  font-size: $body-font-2;
+  color: $texto2;
+  border-radius: 5px;
+  transition: all 0.2s ease;
+
+  &:hover {
+    background-color: darken($color: $resaltar1, $amount: 10);
+    color: $texto2;
+  }
+}
+
+@include media-breakpoint-down(md) {
+  .about-us-btn {
+    display: none;
+  }
 }

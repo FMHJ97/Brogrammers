@@ -23,60 +23,130 @@
         <!-- Miembros -->
         <section class="container page-section">
             <!-- Primera Fila -->
-            <div class="row">
+            <div class="row mb-5 py-md-4">
 
                 <!-- Primer Miembro -->
-                <div class="col-md-6 about-us-member">
+                <div class="col-md-6 px-4 mb-5 mb-md-0">
 
                     <!-- Imagen e Información -->
                     <div class="row">
                         <!-- Imagen del Miembro -->
-                        <div class="col-md-4 about-us-img">
+                        <div class="col-md-4 about-us-img mb-4">
                             <img src="assets/img/dummy/dummy_user.jpg" alt="Miembro del Equipo 1" class="img-fluid">
                         </div>
                         <!-- Información del Miembro -->
-                        <div class="col-md-8 about-us-info">
-                            <h3>Francisco Manuel Hernández (aka FMHJ)</h3>
-                            <p>Desarrollador Web Full Stack y amante de los videojuegos. Con más de 5 años de
-                                experiencia en
-                                programación, ha decidido unir sus dos pasiones para crear un proyecto innovador y
-                                divertido.</p>
-                            <p>¡No dudes en contactarle para saber más sobre su trabajo!</p>
+                        <div class="col-md-8">
+                            <div class="row gap-3">
+                                <div class="col-md-12 about-us-info">
+                                    <h3>Francisco Manuel Hernández (aka FMHJ)</h3>
+                                    <p>Desarrollador Web Full Stack y amante de los videojuegos. Con más de 5 años de
+                                        experiencia en
+                                        programación, ha decidido unir sus dos pasiones para crear un proyecto innovador
+                                        y
+                                        divertido.</p>
+                                    <p>¡No dudes en contactarle para saber más sobre su trabajo!</p>
+                                </div>
+                                <div class="col-md-12 d-flex justify-content-center">
+                                    <a href="juegoFMHJ.php" target="_blank" class="btn about-us-btn">Iniciar Juego</a>
+                                </div>
+                            </div>
                         </div>
                     </div>
 
-                    <!-- Enlace del Videjuego -->
-                    <div class="row">
-                        <div class="col-md-12 about-us-btn">
-                            <a href="juegoFMHJ.php" target="_blank" class="btn btn-primary">Iniciar Juego</a>
-                        </div>
-                    </div>
                 </div>
 
                 <!-- Segundo Miembro -->
-                <div class="col-md-6">
+                <div class="col-md-6 px-4">
+
                     <!-- Imagen e Información -->
                     <div class="row">
                         <!-- Imagen del Miembro -->
-                        <div class="col-md-4">
-                            <img src="img/team_member_1.jpg" alt="Miembro del Equipo 1" class="img-fluid">
+                        <div class="col-md-4 about-us-img mb-4">
+                            <img src="assets/img/dummy/dummy_user.jpg" alt="Miembro del Equipo 1" class="img-fluid">
                         </div>
                         <!-- Información del Miembro -->
                         <div class="col-md-8">
-                            <h3>Francisco Manuel Hernández (aka FMHJ)</h3>
-                            <p>Desarrollador Web Full Stack y amante de los videojuegos. Con más de 5 años de
-                                experiencia en
-                                programación, ha decidido unir sus dos pasiones para crear un proyecto innovador y
-                                divertido.
-                                ¡No dudes en contactarle para saber más sobre su trabajo!</p>
+                            <div class="row gap-3">
+                                <div class="col-md-12 about-us-info">
+                                    <h3>Francisco Manuel Hernández (aka FMHJ)</h3>
+                                    <p>Desarrollador Web Full Stack y amante de los videojuegos. Con más de 5 años de
+                                        experiencia en
+                                        programación, ha decidido unir sus dos pasiones para crear un proyecto innovador
+                                        y
+                                        divertido.</p>
+                                    <p>¡No dudes en contactarle para saber más sobre su trabajo!</p>
+                                </div>
+                                <div class="col-md-12 d-flex justify-content-center">
+                                    <a href="juegoFMHJ.php" target="_blank" class="btn about-us-btn">Iniciar Juego</a>
+                                </div>
+                            </div>
                         </div>
                     </div>
-                    <!-- Enlace del Videjuego -->
+
+                </div>
+            </div>
+
+            <!-- Segunda Fila -->
+            <div class="row my-5">
+
+                <!-- Tercer Miembro -->
+                <div class="col-md-6 px-4 mb-5 mb-md-0">
+
+                    <!-- Imagen e Información -->
                     <div class="row">
-                        <div class="col-md-12">
-                            <a href="juegoFMHJ.php" target="_blank" class="btn btn-primary">Iniciar Juego</a>
+                        <!-- Imagen del Miembro -->
+                        <div class="col-md-4 about-us-img mb-4">
+                            <img src="assets/img/dummy/dummy_user.jpg" alt="Miembro del Equipo 1" class="img-fluid">
+                        </div>
+                        <!-- Información del Miembro -->
+                        <div class="col-md-8">
+                            <div class="row gap-3">
+                                <div class="col-md-12 about-us-info">
+                                    <h3>Francisco Manuel Hernández (aka FMHJ)</h3>
+                                    <p>Desarrollador Web Full Stack y amante de los videojuegos. Con más de 5 años de
+                                        experiencia en
+                                        programación, ha decidido unir sus dos pasiones para crear un proyecto innovador
+                                        y
+                                        divertido.</p>
+                                    <p>¡No dudes en contactarle para saber más sobre su trabajo!</p>
+                                </div>
+                                <div class="col-md-12 d-flex justify-content-center">
+                                    <a href="juegoFMHJ.php" target="_blank" class="btn about-us-btn">Iniciar Juego</a>
+                                </div>
+                            </div>
                         </div>
                     </div>
+
+                </div>
+
+                <!-- Cuarto Miembro -->
+                <div class="col-md-6 px-4">
+
+                    <!-- Imagen e Información -->
+                    <div class="row">
+                        <!-- Imagen del Miembro -->
+                        <div class="col-md-4 about-us-img mb-4">
+                            <img src="assets/img/dummy/dummy_user.jpg" alt="Miembro del Equipo 1" class="img-fluid">
+                        </div>
+                        <!-- Información del Miembro -->
+                        <div class="col-md-8">
+                            <div class="row gap-3">
+                                <div class="col-md-12 about-us-info">
+                                    <h3>Francisco Manuel Hernández (aka FMHJ)</h3>
+                                    <p>Desarrollador Web Full Stack y amante de los videojuegos. Con más de 5 años de
+                                        experiencia en
+                                        programación, ha decidido unir sus dos pasiones para crear un proyecto innovador
+                                        y
+                                        divertido.</p>
+                                    <p>¡No dudes en contactarle para saber más sobre su trabajo!</p>
+                                </div>
+                                <div class="col-md-12 d-flex justify-content-center">
+                                    <a href="juegoFMHJ.php" target="_blank" class="btn about-us-btn">Iniciar Juego</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
                 </div>
             </div>
         </section>

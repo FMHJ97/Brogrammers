@@ -1,0 +1,39 @@
+.about-us-member {
+
+    .about-us-img img{
+        border: $border-4 solid $primario1;
+        border-radius: 10px;
+    }
+
+    .about-us-info {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        h3 {
+            color: $resaltar2;
+            margin-bottom: 1rem;
+        }
+        p:last-child {
+            margin-bottom: 0;
+        }
+    }
+
+    .about-us-btn {
+        margin-top: 1rem;
+        display: flex;
+        justify-content: center;
+        a {
+            padding: 0.5rem 1rem;
+            background-color: $resaltar1;
+            color: $texto2;
+            width: 50%;
+            border-radius: 5px;
+            transition: all 0.3s ease;
+            &:hover {
+                background-color: darken($color: $resaltar1, $amount: 15);
+            }
+        }
+    }
+
+}

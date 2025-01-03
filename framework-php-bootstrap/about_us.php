@@ -38,7 +38,7 @@
                         <div class="col-md-8">
                             <div class="row gap-3">
                                 <div class="col-md-12 about-us-info">
-                                    <h3>Francisco Manuel Hernández (aka FMHJ)</h3>
+                                    <h3>Francisco Manuel Hernández</h3>
                                     <p>Desarrollador Web Full Stack y amante de los videojuegos. Con más de 5 años de
                                         experiencia en
                                         programación, ha decidido unir sus dos pasiones para crear un proyecto innovador
@@ -68,7 +68,7 @@
                         <div class="col-md-8">
                             <div class="row gap-3">
                                 <div class="col-md-12 about-us-info">
-                                    <h3>Francisco Manuel Hernández (aka FMHJ)</h3>
+                                    <h3>Taylor Horne</h3>
                                     <p>Desarrollador Web Full Stack y amante de los videojuegos. Con más de 5 años de
                                         experiencia en
                                         programación, ha decidido unir sus dos pasiones para crear un proyecto innovador
@@ -102,7 +102,7 @@
                         <div class="col-md-8">
                             <div class="row gap-3">
                                 <div class="col-md-12 about-us-info">
-                                    <h3>Francisco Manuel Hernández (aka FMHJ)</h3>
+                                    <h3>José Manuel Ponferrada</h3>
                                     <p>Desarrollador Web Full Stack y amante de los videojuegos. Con más de 5 años de
                                         experiencia en
                                         programación, ha decidido unir sus dos pasiones para crear un proyecto innovador
@@ -132,7 +132,7 @@
                         <div class="col-md-8">
                             <div class="row gap-3">
                                 <div class="col-md-12 about-us-info">
-                                    <h3>Francisco Manuel Hernández (aka FMHJ)</h3>
+                                    <h3>Francisco Ruiz</h3>
                                     <p>Desarrollador Web Full Stack y amante de los videojuegos. Con más de 5 años de
                                         experiencia en
                                         programación, ha decidido unir sus dos pasiones para crear un proyecto innovador

@@ -33,9 +33,11 @@
             </div>
             <!-- Apartado Contacto y Condiciones -->
             <div id="linksFooter" class="col text-center mt-5">
-                <div class="d-flex flex-column flex-md-row justify-content-center gap-2 gap-md-5 mb-4 mb-md-2">
-                    <a href="./contact.php#privacy">Política de Privacidad</a>
-                    <a href="./contact.php#terms">Términos & Condiciones</a>
+                <div class="d-flex flex-column flex-md-row justify-content-center gap-2 gap-md-4 mb-4 mb-md-2">
+                    <a href="./assets/legal_files/legal.pdf" target="_blank">Aviso Legal</a>
+                    <a href="./assets/legal_files/privacy.pdf" target="_blank">Privacidad</a>
+                    <a href="./assets/legal_files/sales.pdf" target="_blank">Venta</a>
+                    <a href="./assets/legal_files/cookies.pdf" target="_blank">Cookies</a>
                     <a href="./contact.php#contact">Contáctanos</a>
                     <a href="./about_us.php">Sobre nosotros</a>
                 </div>

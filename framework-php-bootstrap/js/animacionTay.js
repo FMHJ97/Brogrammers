@@ -85,6 +85,16 @@ var game = (function () {
             text: 'Score: 0',
         });
 
+        imageNodes.livesText = new Konva.Text({
+            x: 10,
+            y: 40, // Position below the score
+            fontSize: 20,
+            fontFamily: 'Arial',
+            fill: 'white',
+            text: 'Lives: ' + lives,
+        });
+        layer.add(imageNodes.livesText);
+
         layer.add(imageNodes.scoreText);
 
         imageNodes.player = new Konva.Image({
@@ -173,6 +183,7 @@ var game = (function () {
 
     function updateScore() {
         imageNodes.scoreText.text('Score: ' + score);
+        imageNodes.livesText.text('Lives: ' + lives); // Update lives display
         layer.batchDraw();
     }
 

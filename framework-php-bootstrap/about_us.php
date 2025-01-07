@@ -77,7 +77,7 @@
                                     <p>¡No dudes en contactarle para saber más sobre su trabajo!</p>
                                 </div>
                                 <div class="col-md-12 d-flex justify-content-center">
-                                    <a href="juegoFMHJ.php" target="_blank" class="btn about-us-btn">Iniciar Juego</a>
+                                    <a href="juegoTaylor.php" target="_blank" class="btn about-us-btn">Iniciar Juego</a>
                                 </div>
                             </div>
                         </div>

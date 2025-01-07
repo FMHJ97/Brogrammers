@@ -117,7 +117,7 @@ var game = (function () {
 
                 if (
                     obj.img.y() + objectHeight >= playerY + 20 &&
-                    obj.img.x() + objectWidth >= playerX &&
+                    obj.img.x() + objectWidth >= playerX +20 &&
                     obj.img.x() <= playerX + playerWidth
                 ) {
                     if (obj.img.image().src.includes('alhambra.png')) {
@@ -140,7 +140,7 @@ var game = (function () {
 
                 if (
                     obj.img.y() + objectHeight >= playerY + 20 &&
-                    obj.img.x() + objectWidth >= playerX &&
+                    obj.img.x() + objectWidth >= playerX +20 &&
                     obj.img.x() <= playerX + playerWidth
                 ) {
                     obj.img.remove();

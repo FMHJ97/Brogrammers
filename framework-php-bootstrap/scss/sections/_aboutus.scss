@@ -1,0 +1,23 @@
+.about-us-img img {
+    border: $border-4 solid $primario1;
+    border-radius: 10px;
+}
+
+.about-us-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: start;
+
+    h3 {
+        color: $resaltar2;
+        margin-bottom: 1rem;
+    }
+
+    p {
+        font-size: $body-font-2;
+    }
+    p:last-child {
+        margin-bottom: 0;
+    }
+}

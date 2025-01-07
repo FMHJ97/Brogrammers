@@ -32,6 +32,18 @@
     // Estilos para los enlaces del footer (enlaces de interés).
     #linksFooter {
 
+        // Separador entre los enlaces.
+        .footer_dot {
+            font-size: $body-font-1;
+            color: $textoEnlace;
+        }
+
+        @include media-breakpoint-down(md) {
+            .footer_dot {
+                display: none;
+            }
+        }
+
         // Lista de enlaces.
         a {
             color: $textoEnlace;

@@ -55,6 +55,16 @@
 			$PAGE_TITLE = "Carrito";
 			break;
 
+		case "/juegoFMHJ.php":
+			$CURRENT_PAGE = "Videojuego FMHJ"; 
+			$PAGE_TITLE = "Videojuego FMHJ";
+			break;
+
+		case "/about_us.php":
+			$CURRENT_PAGE = "Sobre Nosotros"; 
+			$PAGE_TITLE = "Sobre Nosotros";
+			break;			
+
 		default:
 			$CURRENT_PAGE = "Index";
 			$PAGE_TITLE = "GroundSound Festival";

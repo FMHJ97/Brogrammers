@@ -5,6 +5,38 @@
 <head>
     <?php include("includes/head_tags.php"); ?>
     <script src="./js/scripts.js"></script>
+    <style>
+        .table {
+            width: 100%;
+            border-collapse: collapse;
+            table-layout: fixed;
+        }
+
+        .table th,
+        .table td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+            word-wrap: break-word;
+        }
+
+        .table th {
+            background-color: #f2f2f2;
+            font-weight: bold;
+            vertical-align: middle;
+        }
+
+        .table td {
+            vertical-align: top;
+        }
+
+        .table a {
+            color: #007bff;
+            text-decoration: none;
+            word-wrap: break-word;
+        }
+    </style>
+
 </head>
 
 <body>
@@ -308,28 +340,160 @@
                             este
                             Aviso Legal y Condiciones Generales de Uso.
                         </p>
+                        <!-- Tabla Licencia sobre Recursos Multimedia Propios -->
+                        <h3>5.1. Licencia sobre Recursos Multimedia Propios</h3>
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th>Recurso Multimedia</th>
+                                    <th>Licencia</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Imagen 1</td>
+                                    <td>CC BY-SA 4.0</td>
+                                </tr>
+                                <tr>
+                                    <td>Imagen 2</td>
+                                    <td>CC BY-SA 4.0</td>
+                                </tr>
+                                <tr>
+                                    <td>Imagen 3</td>
+                                    <td>CC BY-SA 4.0</td>
+                                </tr>
+                                <tr>
+                                    <td>Imagen 4</td>
+                                    <td>CC BY-SA 4.0</td>
+                                </tr>
+                                <tr>
+                                    <td>Imagen 5</td>
+                                    <td>CC BY-SA 4.0</td>
+                                </tr>
+                                <tr>
+                                    <td>Imagen 6</td>
+                                    <td>CC BY-SA 4.0</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <!-- Tabla Licencia sobre Recursos Externos -->
+                        <h3>5.2. Licencia sobre Recursos Externos</h3>
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th>Página donde aparece el recurso</th>
+                                    <th>Nombre del recursos o recursos</th>
+                                    <th>Fuente de procedencia</th>
+                                    <th>Términos de licencia del recurso utilizado (CC)</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td rowspan="7">Página Merch y/o Merch Item</td>
+                                    <td>camiseta_blanca_01.png</td>
+                                    <td rowspan="2">
+                                        https://unsplash.com/es/fotos/hombre-con-camisetas-blancas-de-cuello-redondo-WWesmHEgXDs
+                                    </td>
+                                    <td rowspan="7">Unsplash le concede una licencia de derechos de autor irrevocable,
+                                        no exclusiva
+                                        y mundial para descargar, copiar, modificar, distribuir, ejecutar y utilizar
+                                        Imágenes de Unsplash de forma gratuita, incluso con fines comerciales, sin
+                                        necesidad de autorización el permiso o atribución del fotógrafo o de Unsplash,
+                                        pero esta licencia no incluye el derecho a compilar Imágenes de Unsplash para
+                                        replicar un servicio similar o de la competencia.
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>camiseta_blanca_02.png</td>
+                                </tr>
+                                <tr>
+                                    <td>camiseta_negra_01.png</td>
+                                    <td rowspan="3">
+                                        https://unsplash.com/es/fotos/hombre-con-camiseta-negra-de-cuello-redondo-y-gafas-de-sol-de-pie-cerca-de-una-pared-blanca-kkj9iKxsdhY
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>camiseta_negra_02.png</td>
+                                </tr>
+                                <tr>
+                                    <td>camiseta_negra_03.png</td>
+                                </tr>
+                                <tr>
+                                    <td>mechero.png</td>
+                                    <td>https://unsplash.com/es/fotos/una-foto-en-blanco-y-negro-de-un-encendedor-wb13SIsQqGk
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>gorra.png</td>
+                                    <td>https://unsplash.com/es/fotos/gorra-azul-qpTKvwp4zx0</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <!-- Tabla Licencia sobre Contenido generado por IA -->
+                        <h3>5.3. Licencia sobre Contenido generado por IA</h3>
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th>Contenido generado</th>
+                                    <th>Licencia</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Texto 1</td>
+                                    <td>CC BY-SA 4.0</td>
+                                </tr>
+                                <tr>
+                                    <td>Texto 2</td>
+                                    <td>CC BY-SA 4.0</td>
+                                </tr>
+                                <tr>
+                                    <td>Texto 3</td>
+                                    <td>CC BY-SA 4.0</td>
+                                </tr>
+                                <tr>
+                                    <td>Texto 4</td>
+                                    <td>CC BY-SA 4.0</td>
+                                </tr>
+                                <tr>
+                                    <td>Texto 5</td>
+                                    <td>CC BY-SA 4.0</td>
+                                </tr>
+                                <tr>
+                                    <td>Texto 6</td>
+                                    <td>CC BY-SA 4.0</td>
+                                </tr>
+                            </tbody>
+                        </table>
                     </div>
                     <div>
                         <h2>6. Acciones Legales, Legislación Aplicable y Jurisdicción</h2>
-                        <p>GroundSound Festival se reserva la facultad de presentar las acciones civiles o penales que
+                        <p>GroundSound Festival se reserva la facultad de presentar las acciones civiles
+                            o penales que
                             considere
-                            necesarias por la utilización indebida del Sitio Web y Contenidos, o por el incumplimiento
+                            necesarias por la utilización indebida del Sitio Web y Contenidos, o por el
+                            incumplimiento
                             de
                             las presentes
                             Condiciones.
                         </p>
-                        <p>La relación entre el Usuario y GroundSound Festival se regirá por la normativa vigente y de
+                        <p>La relación entre el Usuario y GroundSound Festival se regirá por la
+                            normativa vigente y de
                             aplicación en
-                            el territorio español. De surgir cualquier controversia en relación con la interpretación
+                            el territorio español. De surgir cualquier controversia en relación con la
+                            interpretación
                             y/o a
                             la aplicación
-                            de estas Condiciones las partes someterán sus conflictos a la jurisdicción ordinaria
+                            de estas Condiciones las partes someterán sus conflictos a la jurisdicción
+                            ordinaria
                             sometiéndose a los
                             jueces y tribunales que correspondan conforme a derecho.
                         </p>
-                        <p>Este documento de Aviso Legal y Condiciones Generales de uso del sitio web ha sido creado
+                        <p>Este documento de Aviso Legal y Condiciones Generales de uso del sitio web ha
+                            sido creado
                             mediante el
-                            generador de plantilla de aviso legal y condiciones de uso online el día 16/12/2024.
+                            generador de plantilla de aviso legal y condiciones de uso online el día
+                            16/12/2024.
                         </p>
                     </div>
                 </div>

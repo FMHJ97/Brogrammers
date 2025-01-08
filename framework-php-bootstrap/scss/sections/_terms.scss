@@ -3,12 +3,24 @@
     border-radius: 15px;
     color: $texto2;
     padding: 2.5rem;
+    margin-bottom: 2em;
+    h3 {
+        margin-top: 1.5rem;
+    }
 }
 
 //modifico padding al minimizar a móvil
 @include media-breakpoint-down(md) {
     .terms{
-        padding:1rem;
+        padding: 1rem;
+        margin-left: 0.5em;
+        margin-right: 0.5em;
+        h2 {
+            font-size: $heading-font-phone-2;
+        }
+        h3 {
+            font-size: $heading-font-phone-3;
+        }
     }
 
 }

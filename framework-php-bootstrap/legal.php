@@ -68,14 +68,14 @@
                             GROUNDSOUND S.L., provista de NIF: B-06660666 e inscrita en: Registro Mercantil de Córdoba
                             con
                             los
-                            siguientes datos registrales: Tomo 3, Página 7, Hoja 279, cuyo representante es: , y cuyos
+                            siguientes datos registrales: Tomo 3, Página 7, Hoja 279, y cuyos
                             datos
                             de
                             contacto son:
                         </p>
-                        <p>Dirección: C/ El Peso 666, Lucena 14900 (Córdoba)</p>
-                        <p>Teléfono de contacto: 957525818</p>
-                        <p>Email de contacto: groundsoundfestival@gmail.com</p>
+                        <p><strong>Dirección:</strong> C/ El Peso 666, Lucena 14900 (Córdoba)</p>
+                        <p><strong>Teléfono de contacto:</strong> 957525818</p>
+                        <p><strong>Email de contacto:</strong> groundsoundfestival@gmail.com</p>
                     </div>
                     <div>
                         <h2>2. Términos y Condiciones Generales de Uso</h2>
@@ -340,42 +340,9 @@
                             este
                             Aviso Legal y Condiciones Generales de Uso.
                         </p>
-                        <!-- Tabla Licencia sobre Recursos Multimedia Propios -->
+                        <!-- Licencia sobre Recursos Multimedia Propios -->
                         <h3>5.1. Licencia sobre Recursos Multimedia Propios</h3>
-                        <table class="table">
-                            <thead>
-                                <tr>
-                                    <th>Recurso Multimedia</th>
-                                    <th>Licencia</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td>Imagen 1</td>
-                                    <td>CC BY-SA 4.0</td>
-                                </tr>
-                                <tr>
-                                    <td>Imagen 2</td>
-                                    <td>CC BY-SA 4.0</td>
-                                </tr>
-                                <tr>
-                                    <td>Imagen 3</td>
-                                    <td>CC BY-SA 4.0</td>
-                                </tr>
-                                <tr>
-                                    <td>Imagen 4</td>
-                                    <td>CC BY-SA 4.0</td>
-                                </tr>
-                                <tr>
-                                    <td>Imagen 5</td>
-                                    <td>CC BY-SA 4.0</td>
-                                </tr>
-                                <tr>
-                                    <td>Imagen 6</td>
-                                    <td>CC BY-SA 4.0</td>
-                                </tr>
-                            </tbody>
-                        </table>
+                        
                         <!-- Tabla Licencia sobre Recursos Externos -->
                         <h3>5.2. Licencia sobre Recursos Externos</h3>
                         <table class="table">

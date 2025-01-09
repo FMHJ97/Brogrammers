@@ -1,67 +1,75 @@
-// 
+//
 // Componente Footer
-// 
+//
 .footer {
-    box-shadow: -5px -5px 30px 0px $primario1; // Sombra en la parte superior del footer.
+  box-shadow: -5px -5px 30px 0px $primario1; // Sombra en la parte superior del footer.
 
-    // Estilos para los enlaces a las redes sociales.
-    #socialMedia {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
+  // Estilos para los enlaces a las redes sociales.
+  #socialMedia {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 
-        // Título.
-        h2 {
-            color: $resaltar1;
-        }
-
-        // Iconos.
-        a {
-            color: $textoEnlace;
-            font-size: 35px;
-            transition: all 0.05s ease; // Efecto de transición al pasar el ratón por encima.
-        }
-
-        // Efecto hover sobre los iconos.
-        a:hover {
-            color: $resaltar1;
-        }
+    // Título.
+    h2 {
+      color: $resaltar1;
     }
 
-    // Estilos para los enlaces del footer (enlaces de interés).
-    #linksFooter {
-
-        // Separador entre los enlaces.
-        .footer_dot {
-            font-size: $body-font-1;
-            color: $textoEnlace;
-        }
-
-        @include media-breakpoint-down(md) {
-            .footer_dot {
-                display: none;
-            }
-        }
-
-        // Lista de enlaces.
-        a {
-            color: $textoEnlace;
-            font-family: $headings-font-family;
-            font-size: $body-font-2;
-            text-decoration: none; // Quitamos el subrayado de los enlaces.
-            transition: all 0.05s ease; // Efecto de transición al pasar el ratón por encima.
-        }
-
-        // Efecto hover sobre los enlaces.
-        a:hover {
-            color: $resaltar1;
-        }
-
-        // Texto pequeño (Copyright).
-        small {
-            font-family: $body-font-family;
-            color: $secundario2;
-        }
+    // Iconos.
+    a {
+      color: $textoEnlace;
+      font-size: 35px;
+      transition: all 0.05s ease; // Efecto de transición al pasar el ratón por encima.
     }
+
+    // Efecto hover sobre los iconos.
+    a:hover {
+      color: $resaltar1;
+    }
+  }
+
+  // Estilos para los enlaces del footer (enlaces de interés).
+  #linksFooter {
+    // Separador entre los enlaces.
+    .footer_dot {
+      font-size: $body-font-1;
+      color: $textoEnlace;
+    }
+
+    @include media-breakpoint-down(md) {
+      .footer_dot {
+        display: none;
+      }
+    }
+
+    // Lista de enlaces.
+    a {
+      color: $textoEnlace;
+      font-family: $headings-font-family;
+      font-size: $body-font-2;
+      text-decoration: none; // Quitamos el subrayado de los enlaces.
+      transition: all 0.05s ease; // Efecto de transición al pasar el ratón por encima.
+    }
+
+    // Efecto hover sobre los enlaces.
+    a:hover {
+      color: $resaltar1;
+    }
+
+    // Texto pequeño (Copyright).
+    .author-rights {
+      font-family: $body-font-family;
+      color: $secundario2;
+
+      a {
+        color: $secundario2;
+        font-size: $body-font-3;
+
+        &:hover {
+          color: $resaltar2;
+        }
+      }
+    }
+  }
 }

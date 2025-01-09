@@ -5,6 +5,11 @@
 			$PAGE_TITLE = "GroundSound Festival";
 			break;
 
+		case "/legal.php":
+			$CURRENT_PAGE = "Términos Legales"; 
+			$PAGE_TITLE = "Términos Legales";
+			break;
+
 		case "/tickets.php":
 			$CURRENT_PAGE = "Tickets"; 
 			$PAGE_TITLE = "Tickets";

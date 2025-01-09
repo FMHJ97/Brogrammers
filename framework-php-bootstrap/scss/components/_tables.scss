@@ -1,0 +1,31 @@
+.legal-table {
+  width: 100%;
+  border-collapse: collapse;
+
+  th,
+  td {
+    border: $border-2 solid $texto2;
+    padding: 0.5em;
+    text-align: left;
+    word-wrap: break-word;
+  }
+
+  th {
+    background-color: $secundario1;
+    color: $texto1;
+    font-weight: bold;
+    vertical-align: middle;
+  }
+
+  td {
+    background-color: $fondo2;
+    color: $texto2;
+    vertical-align: top;
+  }
+
+  a {
+    color: $primario1;
+    text-decoration: none;
+    word-wrap: break-word;
+  }
+}

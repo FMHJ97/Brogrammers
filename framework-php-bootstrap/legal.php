@@ -5,38 +5,6 @@
 <head>
     <?php include("includes/head_tags.php"); ?>
     <script src="./js/scripts.js"></script>
-    <style>
-        .table {
-            width: 100%;
-            border-collapse: collapse;
-            table-layout: fixed;
-        }
-
-        .table th,
-        .table td {
-            border: 1px solid #ddd;
-            padding: 8px;
-            text-align: left;
-            word-wrap: break-word;
-        }
-
-        .table th {
-            background-color: #f2f2f2;
-            font-weight: bold;
-            vertical-align: middle;
-        }
-
-        .table td {
-            vertical-align: top;
-        }
-
-        .table a {
-            color: #007bff;
-            text-decoration: none;
-            word-wrap: break-word;
-        }
-    </style>
-
 </head>
 
 <body>
@@ -338,79 +306,90 @@
 
                         <!-- Tabla Licencia sobre Recursos Externos -->
                         <h3>5.2. Licencia sobre Recursos Externos</h3>
-                        <table class="table">
-                            <thead>
-                                <tr>
-                                    <th>Página donde aparece el recurso</th>
-                                    <th>Nombre del recursos o recursos</th>
-                                    <th>Fuente de procedencia</th>
-                                    <th>Términos de licencia del recurso utilizado (CC)</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td rowspan="7">Página Merch y/o Merch Item</td>
-                                    <td>camiseta_blanca_01.png</td>
-                                    <td rowspan="2">
-                                        https://unsplash.com/es/fotos/hombre-con-camisetas-blancas-de-cuello-redondo-WWesmHEgXDs
-                                    </td>
-                                    <td rowspan="7">Unsplash le concede una licencia de derechos de autor irrevocable,
-                                        no exclusiva
-                                        y mundial para descargar, copiar, modificar, distribuir, ejecutar y utilizar
-                                        Imágenes de Unsplash de forma gratuita, incluso con fines comerciales, sin
-                                        necesidad de autorización el permiso o atribución del fotógrafo o de Unsplash,
-                                        pero esta licencia no incluye el derecho a compilar Imágenes de Unsplash para
-                                        replicar un servicio similar o de la competencia.<br>
-                                        <a href="https://unsplash.com/es/licencia" target="_blank">Licencia Unsplash</a>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>camiseta_blanca_02.png</td>
-                                </tr>
-                                <tr>
-                                    <td>camiseta_negra_01.png</td>
-                                    <td rowspan="3">
-                                        https://unsplash.com/es/fotos/hombre-con-camiseta-negra-de-cuello-redondo-y-gafas-de-sol-de-pie-cerca-de-una-pared-blanca-kkj9iKxsdhY
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>camiseta_negra_02.png</td>
-                                </tr>
-                                <tr>
-                                    <td>camiseta_negra_03.png</td>
-                                </tr>
-                                <tr>
-                                    <td>mechero.png</td>
-                                    <td>https://unsplash.com/es/fotos/una-foto-en-blanco-y-negro-de-un-encendedor-wb13SIsQqGk
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>gorra.png</td>
-                                    <td>https://unsplash.com/es/fotos/gorra-azul-qpTKvwp4zx0</td>
-                                </tr>
-                            </tbody>
-                        </table>
+                        <div class="table-responsive">
+                            <table class="table legal-table">
+                                <thead>
+                                    <tr>
+                                        <th>Autor</th>
+                                        <th>Página donde aparece el recurso</th>
+                                        <th>Nombre del recursos o recursos</th>
+                                        <th>Fuente de procedencia</th>
+                                        <th>Términos de licencia del recurso utilizado (CC)</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td rowspan="7">Francisco Hernández</td>
+                                        <td rowspan="7">Página Merch y/o Merch Item</td>
+                                        <td>camiseta_blanca_01.png</td>
+                                        <td rowspan="2">
+                                            https://unsplash.com/es/fotos/hombre-con-camisetas-blancas-de-cuello-redondo-WWesmHEgXDs
+                                        </td>
+                                        <td rowspan="7">Unsplash le concede una licencia de derechos de autor
+                                            irrevocable,
+                                            no exclusiva
+                                            y mundial para descargar, copiar, modificar, distribuir, ejecutar y utilizar
+                                            Imágenes de Unsplash de forma gratuita, incluso con fines comerciales, sin
+                                            necesidad de autorización el permiso o atribución del fotógrafo o de
+                                            Unsplash,
+                                            pero esta licencia no incluye el derecho a compilar Imágenes de Unsplash
+                                            para
+                                            replicar un servicio similar o de la competencia.<br>
+                                            <a href="https://unsplash.com/es/licencia" target="_blank">Licencia
+                                                Unsplash</a>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>camiseta_blanca_02.png</td>
+                                    </tr>
+                                    <tr>
+                                        <td>camiseta_negra_01.png</td>
+                                        <td rowspan="3">
+                                            https://unsplash.com/es/fotos/hombre-con-camiseta-negra-de-cuello-redondo-y-gafas-de-sol-de-pie-cerca-de-una-pared-blanca-kkj9iKxsdhY
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>camiseta_negra_02.png</td>
+                                    </tr>
+                                    <tr>
+                                        <td>camiseta_negra_03.png</td>
+                                    </tr>
+                                    <tr>
+                                        <td>mechero.png</td>
+                                        <td>https://unsplash.com/es/fotos/una-foto-en-blanco-y-negro-de-un-encendedor-wb13SIsQqGk
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>gorra.png</td>
+                                        <td>https://unsplash.com/es/fotos/gorra-azul-qpTKvwp4zx0</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
                         <!-- Tabla Licencia sobre Contenido generado por IA -->
                         <h3>5.3. Licencia sobre Contenido generado por IA</h3>
-                        <table class="table">
-                            <thead>
-                                <tr>
-                                    <th>Página donde aparece el recurso</th>
-                                    <th>Contenido generado</th>
-                                    <th>Información</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td rowspan="2">Página Merch y/o Merch Item</td>
-                                    <td>vinilo_groundsound_2023.png</td>
-                                    <td rowspan="2">No están sujetos a la normativa sobre propiedad intelectual.</td>
-                                </tr>
-                                <tr>
-                                    <td>vinilo_groundsound_2024.png</td>
-                                </tr>
-                            </tbody>
-                        </table>
+                        <div class="table-responsive">
+                            <table class="table mb-4 legal-table">
+                                <thead>
+                                    <tr>
+                                        <th>Página donde aparece el recurso</th>
+                                        <th>Contenido generado</th>
+                                        <th>Información</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td rowspan="2">Página Merch y/o Merch Item</td>
+                                        <td>vinilo_groundsound_2023.png</td>
+                                        <td rowspan="2">No están sujetos a la normativa sobre propiedad intelectual.
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>vinilo_groundsound_2024.png</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
                     </div>
                     <div>
                         <h2>6. Acciones Legales, Legislación Aplicable y Jurisdicción</h2>

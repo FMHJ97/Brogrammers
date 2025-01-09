@@ -1,29 +1,31 @@
-// 
+//
 // Styles
-// 
+//
 
 // Import custom variables and override default Bootstrap variables
 @import "./variables.scss";
 
 // Import Bootstrap
 @import "../node_modules/bootstrap/scss/bootstrap";
-$bootstrap-icons-font-src: url("../node_modules/bootstrap-icons/font/fonts/bootstrap-icons.woff2") format("woff2"), url("../node_modules/bootstrap-icons/font/fonts/bootstrap-icons.woff") format("woff");
+$bootstrap-icons-font-src: url("../node_modules/bootstrap-icons/font/fonts/bootstrap-icons.woff2")
+    format("woff2"),
+  url("../node_modules/bootstrap-icons/font/fonts/bootstrap-icons.woff")
+    format("woff");
 @import "../node_modules/bootstrap-icons/font/bootstrap-icons.scss";
 
-
-// Import custom styles 
+// Import custom styles
 @import "./global.scss";
 
 // Components
 @import "./components/masonry.scss";
 @import "./components/buttons.scss";
-@import "./components/navbar.scss"; 
+@import "./components/navbar.scss";
 @import "./components/forms.scss";
 @import "./components/cards.scss";
 @import "./components/patrocinadores.scss";
 @import "./components/index.scss";
 @import "./components/modal.scss";
-
+@import "./components/tables.scss";
 
 // Sections
 @import "./sections/footer.scss";

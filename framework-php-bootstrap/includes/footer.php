@@ -40,7 +40,7 @@
                     <span class="footer_dot"><i class="bi bi-dot"></i></span>
                     <a href="./venta.php">Venta</a>
                     <span class="footer_dot"><i class="bi bi-dot"></i></span>
-                    <a href="./cookies">Cookies</a>
+                    <a href="./cookies.php">Cookies</a>
                     <span class="footer_dot"><i class="bi bi-dot"></i></span>
                     <a href="./infogeneral.php#contact">Contáctanos</a>
                     <span class="footer_dot"><i class="bi bi-dot"></i></span>

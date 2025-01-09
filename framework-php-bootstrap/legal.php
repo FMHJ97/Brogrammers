@@ -293,56 +293,49 @@
                     </div>
                     <div>
                         <h2>5. Propiedad Intelectual e Industrial</h2>
-                        <p>GroundSound Festival por sí o como parte cesionaria, es titular de todos los derechos de
-                            propiedad
-                            intelectual e industrial del Sitio Web, así como de los elementos contenidos en el mismo (a
-                            título
-                            enunciativo y no exhaustivo, imágenes, sonido, audio, vídeo, software o textos, marcas o
-                            logotipos,
-                            combinaciones de colores, estructura y diseño, selección de materiales usados, programas de
-                            ordenador
-                            necesarios para su funcionamiento, acceso y uso, etc.). Serán, por consiguiente, obras
-                            protegidas como
-                            propiedad intelectual por el ordenamiento jurídico español, siéndoles aplicables tanto la
-                            normativa
-                            española y comunitaria en este campo, como los tratados internacionales relativos a la
-                            materia y
-                            suscritos
-                            por España.
-                        </p>
-                        <p>Todos los derechos reservados. En virtud de lo dispuesto en la Ley de Propiedad Intelectual,
-                            quedan
-                            expresamente prohibidas la reproducción, la distribución y la comunicación pública, incluida
-                            su
-                            modalidad
-                            de puesta a disposición, de la totalidad o parte de los contenidos de esta página web, con
-                            fines
-                            comerciales, en cualquier soporte y por cualquier medio técnico, sin la autorización de
-                            GroundSound
-                            Festival.
-                        </p>
-                        <p>El Usuario se compromete a respetar los derechos de propiedad intelectual e industrial de
-                            GroundSound
-                            Festival. Podrá visualizar los elementos del Sitio Web o incluso imprimirlos, copiarlos y
-                            almacenarlos en el
-                            disco duro de su ordenador o en cualquier otro soporte físico siempre y cuando sea,
-                            exclusivamente, para
-                            su uso personal. El Usuario, sin embargo, no podrá suprimir, alterar, o manipular cualquier
-                            dispositivo de
-                            protección o sistema de seguridad que estuviera instalado en el Sitio Web.
-                        </p>
-                        <p>En caso de que el Usuario o tercero considere que cualquiera de los Contenidos del Sitio Web
-                            suponga una
-                            violación de los derechos de protección de la propiedad intelectual, deberá comunicarlo
-                            inmediatamente a
-                            GroundSound Festival a través de los datos de contacto del apartado de INFORMACIÓN GENERAL
-                            de
-                            este
-                            Aviso Legal y Condiciones Generales de Uso.
-                        </p>
                         <!-- Licencia sobre Recursos Multimedia Propios -->
                         <h3>5.1. Licencia sobre Recursos Multimedia Propios</h3>
-                        
+                        <p><strong>GroundSound Festival</strong>, por sí o como parte cesionaria, es titular de todos
+                            los derechos de
+                            propiedad intelectual e industrial del Sitio Web, así como de los elementos contenidos en el
+                            mismo (a título enunciativo y no exhaustivo, imágenes, sonido, audio, vídeo, software o
+                            textos, marcas o logotipos, combinaciones de colores, estructura y diseño, selección de
+                            materiales usados, programas de ordenador necesarios para su funcionamiento, acceso y uso,
+                            etc.). Estos contenidos están protegidos por la normativa española, comunitaria y los
+                            tratados internacionales relativos a la materia suscritos por España, y se distribuyen bajo
+                            la licencia <strong>Creative Commons Attribution-NonCommercial-NoDerivatives 4.0
+                                International (CC
+                                BY-NC-ND 4.0)</strong>.</p>
+                        <p>Esto significa que:</p>
+                        <ul>
+                            <li><strong>Atribución (BY):</strong> Los usuarios deben dar crédito a GroundSound Festival
+                                como creador del
+                                contenido.</li>
+                            <li><strong>Uso no comercial (NC):</strong> Los contenidos solo pueden ser utilizados para
+                                fines no
+                                comerciales.</li>
+                            <li><strong>Sin obras derivadas (ND):</strong> No se permite la modificación, transformación
+                                o adaptación de
+                                los contenidos.</li>
+                        </ul>
+                        <p><strong>Todos los derechos reservados salvo lo dispuesto por la licencia CC BY-NC-ND
+                                4.0</strong>. Queda
+                            permitida la copia y distribución del material en cualquier medio o formato, siempre que se
+                            mantenga en su forma original y exclusivamente para usos no comerciales. Cualquier uso que
+                            no se ajuste a estos términos requerirá autorización expresa de GroundSound Festival.</p>
+                        <p>El Usuario se compromete a respetar los derechos de propiedad intelectual e industrial de
+                            GroundSound Festival. Podrá visualizar los elementos del Sitio Web o incluso imprimirlos,
+                            copiarlos y almacenarlos en el disco duro de su ordenador o en cualquier otro soporte
+                            físico, siempre y cuando sea exclusivamente para su uso personal y no comercial, y se
+                            mantenga la atribución al creador.</p>
+                        <p>El Usuario no podrá suprimir, alterar ni manipular cualquier dispositivo de protección o
+                            sistema de seguridad que estuviera instalado en el Sitio Web.</p>
+                        <p>En caso de que el Usuario o un tercero considere que cualquiera de los Contenidos del Sitio
+                            Web infringe los derechos de protección de la propiedad intelectual o no cumple con los
+                            términos de la licencia CC BY-NC-ND 4.0, deberá comunicarlo inmediatamente a GroundSound
+                            Festival a través de los datos de contacto indicados en el apartado de INFORMACIÓN GENERAL
+                            de este Aviso Legal y Condiciones Generales de Uso.</p>
+
                         <!-- Tabla Licencia sobre Recursos Externos -->
                         <h3>5.2. Licencia sobre Recursos Externos</h3>
                         <table class="table">
@@ -367,7 +360,8 @@
                                         Imágenes de Unsplash de forma gratuita, incluso con fines comerciales, sin
                                         necesidad de autorización el permiso o atribución del fotógrafo o de Unsplash,
                                         pero esta licencia no incluye el derecho a compilar Imágenes de Unsplash para
-                                        replicar un servicio similar o de la competencia.
+                                        replicar un servicio similar o de la competencia.<br>
+                                        <a href="https://unsplash.com/es/licencia" target="_blank">Licencia Unsplash</a>
                                     </td>
                                 </tr>
                                 <tr>
@@ -401,34 +395,19 @@
                         <table class="table">
                             <thead>
                                 <tr>
+                                    <th>Página donde aparece el recurso</th>
                                     <th>Contenido generado</th>
-                                    <th>Licencia</th>
+                                    <th>Información</th>
                                 </tr>
                             </thead>
                             <tbody>
                                 <tr>
-                                    <td>Texto 1</td>
-                                    <td>CC BY-SA 4.0</td>
+                                    <td rowspan="2">Página Merch y/o Merch Item</td>
+                                    <td>vinilo_groundsound_2023.png</td>
+                                    <td rowspan="2">No están sujetos a la normativa sobre propiedad intelectual.</td>
                                 </tr>
                                 <tr>
-                                    <td>Texto 2</td>
-                                    <td>CC BY-SA 4.0</td>
-                                </tr>
-                                <tr>
-                                    <td>Texto 3</td>
-                                    <td>CC BY-SA 4.0</td>
-                                </tr>
-                                <tr>
-                                    <td>Texto 4</td>
-                                    <td>CC BY-SA 4.0</td>
-                                </tr>
-                                <tr>
-                                    <td>Texto 5</td>
-                                    <td>CC BY-SA 4.0</td>
-                                </tr>
-                                <tr>
-                                    <td>Texto 6</td>
-                                    <td>CC BY-SA 4.0</td>
+                                    <td>vinilo_groundsound_2024.png</td>
                                 </tr>
                             </tbody>
                         </table>

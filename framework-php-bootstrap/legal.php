@@ -319,7 +319,7 @@
                                 </thead>
                                 <tbody>
                                     <tr>
-                                        <td rowspan="7">Francisco Hernández</td>
+                                        <td rowspan="7">Francisco Manuel Hernández</td>
                                         <td rowspan="7">Página Merch y/o Merch Item</td>
                                         <td>camiseta_blanca_01.png</td>
                                         <td rowspan="2">
@@ -372,6 +372,7 @@
                             <table class="table mb-4 legal-table">
                                 <thead>
                                     <tr>
+                                        <th>Autor</th>
                                         <th>Página donde aparece el recurso</th>
                                         <th>Contenido generado</th>
                                         <th>Información</th>
@@ -379,6 +380,7 @@
                                 </thead>
                                 <tbody>
                                     <tr>
+                                        <td rowspan="2">Francisco Manuel Hernández</td>
                                         <td rowspan="2">Página Merch y/o Merch Item</td>
                                         <td>vinilo_groundsound_2023.png</td>
                                         <td rowspan="2">No están sujetos a la normativa sobre propiedad intelectual.

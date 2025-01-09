@@ -10,6 +10,21 @@
 			$PAGE_TITLE = "Términos Legales";
 			break;
 
+		case "/privacy.php":
+			$CURRENT_PAGE = "Política de Privacidad"; 
+			$PAGE_TITLE = "Política de Privacidad";
+			break;
+			
+		case "/venta.php":
+			$CURRENT_PAGE = "Política de Venta"; 
+			$PAGE_TITLE = "Política de Venta";
+			break;
+
+		case "/cookies.php":
+			$CURRENT_PAGE = "Cookies"; 
+			$PAGE_TITLE = "Cookies";
+			break;
+
 		case "/tickets.php":
 			$CURRENT_PAGE = "Tickets"; 
 			$PAGE_TITLE = "Tickets";

@@ -36,11 +36,11 @@
                 <div class="gap-2 mb-4 d-flex flex-column flex-md-row justify-content-center mb-md-2">
                     <a href="./legal.php">Términos Legales</a>
                     <span class="footer_dot"><i class="bi bi-dot"></i></span>
-                    <a href="./assets/legal_files/privacy.pdf" target="_blank">Privacidad</a>
+                    <a href="./privacy.php">Privacidad</a>
                     <span class="footer_dot"><i class="bi bi-dot"></i></span>
-                    <a href="./assets/legal_files/sales.pdf" target="_blank">Venta</a>
+                    <a href="./venta.php">Venta</a>
                     <span class="footer_dot"><i class="bi bi-dot"></i></span>
-                    <a href="./assets/legal_files/cookies.pdf" target="_blank">Cookies</a>
+                    <a href="./cookies">Cookies</a>
                     <span class="footer_dot"><i class="bi bi-dot"></i></span>
                     <a href="./infogeneral.php#contact">Contáctanos</a>
                     <span class="footer_dot"><i class="bi bi-dot"></i></span>

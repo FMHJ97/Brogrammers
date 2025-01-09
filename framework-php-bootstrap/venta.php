@@ -1,0 +1,467 @@
+<?php include("includes/a_config.php"); ?>
+<!DOCTYPE html>
+<html>
+
+<head>
+    <?php include("includes/head_tags.php"); ?>
+    <script src="./js/scripts.js"></script>
+    <style>
+        .table {
+            width: 100%;
+            border-collapse: collapse;
+            table-layout: fixed;
+        }
+
+        .table th,
+        .table td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+            word-wrap: break-word;
+        }
+
+        .table th {
+            background-color: #f2f2f2;
+            font-weight: bold;
+            vertical-align: middle;
+        }
+
+        .table td {
+            vertical-align: top;
+        }
+
+        .table a {
+            color: #007bff;
+            text-decoration: none;
+            word-wrap: break-word;
+        }
+    </style>
+
+</head>
+
+<body>
+    <!-- Navigation Bar -->
+    <?php include("includes/navbar.php"); ?>
+
+    <main>
+
+        <section class="container page-section">
+            <div class="row page-section-heading">
+                <h1>Términos Legales</h1>
+            </div>
+        </section>
+
+        <!-- TERMS AND CONDITIONS. -->
+        <section class="container page-section">
+            <div class="row terms">
+                <div class="col">
+                    <div>
+                        <h2>1. Información General</h2>
+                        <p>En cumplimiento con el deber de información dispuesto en la Ley 34/2002 de Servicios de la
+                            Sociedad de
+                            la Información y el Comercio Electrónico (LSSI-CE) de 11 de julio, se facilitan a
+                            continuación
+                            los siguientes
+                            datos de información general de este sitio web:
+                        </p>
+                        <p>La titularidad de este sitio web, www.groundsound.com, (en adelante, Sitio Web) la ostenta:
+                            GROUNDSOUND S.L., provista de NIF: B-06660666 e inscrita en: Registro Mercantil de Córdoba
+                            con
+                            los
+                            siguientes datos registrales: Tomo 3, Página 7, Hoja 279, y cuyos
+                            datos
+                            de
+                            contacto son:
+                        </p>
+                        <p><strong>Dirección:</strong> C/ El Peso 666, Lucena 14900 (Córdoba)</p>
+                        <p><strong>Teléfono de contacto:</strong> 957525818</p>
+                        <p><strong>Email de contacto:</strong> groundsoundfestival@gmail.com</p>
+                        <p>Este documento (así como otros documentos que aquí se mencionen) regula las condiciones por las que se
+                        rige el uso de este Sitio Web (GroundSound) y la compra o adquisición de productos y/o servicios en el
+                        mismo (en adelante, Condiciones).
+                        </p>
+                        <p>A efectos de estas Condiciones se entiende que la actividad que GroundSound Festival desarrolla a través
+                        del Sitio Web comprende:
+                        </p>
+                        <p>Comercialización y distribución de entradas para el festival, prendas de ropa relacionadas con el festival y
+                        los artistas partícipes, y artículos variados.
+                        </p>
+                        <p>Además de leer las presentes Condiciones, antes de acceder, navegar y/o usar esta página web, el Usuario
+                        ha de haber leído el Aviso Legal y las Condiciones Generales de Uso, incluyendo, la política de cookies, y la
+                        política de privacidad y de protección de datos de GroundSound Festival. Al utilizar este Sitio Web o al
+                        hacer y/o solicitar la adquisición de un producto y/o servicio a través del mismo el Usuario consiente
+                        quedar vinculado por estas Condiciones y por todo lo anteriormente mencionado, por lo que si no está de
+                        acuerdo con todo ello, no debe usar este Sitio Web.
+                        </p>
+                        <p>Asimismo, se informa que estas Condiciones podrían ser modificadas. El Usuario es responsable de
+                        consultarlas cada vez que acceda, navegue y/o use el Sitio Web ya que serán aplicables aquellas que se
+                        encuentren vigentes en el momento en que se solicite la adquisición de productos y/o servicios.
+                        </p>
+                        <p>Para todas las preguntas que el Usuario pueda tener en relación con las Condiciones puede ponerse en
+                        contacto con el titular utilizando los datos de contacto facilitados más arriba o, en su caso, utilizando el
+                        formulario de contacto.
+                        </p>
+                    </div>
+                    <div>
+                        <h2>2. El Usuario</h2>
+                        <p>El acceso, la navegación y uso del Sitio Web, confiere la condición de usuario (en adelante referido,
+                        indistintamente, individualmente como Usuario o conjuntamente como Usuarios), por lo que se aceptan,
+                        desde que se inicia la navegación por el Sitio Web, todas las Condiciones aquí establecidas, así como sus
+                        ulteriores modificaciones, sin perjuicio de la aplicación de la correspondiente normativa legal de obligado
+                        cumplimiento según el caso.
+                        </p>
+                        <p>El Usuario asume su responsabilidad de un uso correcto del Sitio Web. Esta responsabilidad se extenderá
+                        a:
+                        </p>
+                        <ul>
+                            <li>Hacer uso de este Sitio Web únicamente para realizar consultas y compras o adquisiciones
+                            legalmente válidas.</li>
+                            <li>No realizar ninguna compra falsa o fraudulenta. Si razonablemente se pudiera considerar que se ha
+                            hecho una compra de esta índole, podría ser anulada y se informaría a las autoridades pertinentes.</li>
+                            <li>Facilitar datos de contacto veraces y lícitos, por ejemplo, dirección de correo electrónico, dirección
+                            postal y/u otros datos (ver Aviso Legal y Condiciones Generales de Uso).</li>
+                        </ul>
+                        <p>La utilización de alguno de los Contenidos o Servicios del Sitio Web podrá hacerse mediante
+                            la suscripción
+                            o registro previo del Usuario.
+                        </p>
+                        <h3>2.2. El Usuario</h3>
+                        <p>El acceso, la navegación y uso del Sitio Web, confiere la condición de Usuario, por lo que
+                            se aceptan,
+                            desde que se inicia la navegación por el Sitio Web, todas las Condiciones aquí establecidas,
+                            así como sus
+                            ulteriores modificaciones, sin perjuicio de la aplicación de la correspondiente normativa
+                            legal de obligado
+                            cumplimiento según el caso. Dada la relevancia de lo anterior, se recomienda al Usuario
+                            leerlas cada vez
+                            que visite el Sitio Web.
+                        </p>
+                        <p>El Sitio Web de GroundSound Festival proporciona gran diversidad de información, servicios y
+                            datos. El
+                            Usuario asume su responsabilidad para realizar un uso correcto del Sitio Web. Esta
+                            responsabilidad se
+                            extenderá a:
+                        </p>
+                        <ul class="list">
+                            <li>
+                                Un uso de la información, Contenidos y/o Servicios y datos ofrecidos por GroundSound
+                                Festival sin
+                                que sea contrario a lo dispuesto por las presentes Condiciones, la Ley, la moral o el
+                                orden
+                                público, o que de cualquier otro modo puedan suponer lesión de los derechos de
+                                terceros o del mismo
+                                funcionamiento del Sitio Web.
+                            </li>
+                            <li>
+                                La veracidad y licitud de las informaciones aportadas por el Usuario en los formularios
+                                extendidos
+                                por GroundSound Festival para el acceso a ciertos Contenidos o Servicios ofrecidos por
+                                el
+                                Sitio Web.
+                                En todo caso, el Usuario notificará de forma inmediata a GroundSound Festival acerca de
+                                cualquier
+                                hecho que permita el uso indebido de la información registrada en dichos formularios,
+                                tales
+                                como,
+                                pero no solo, el robo, extravío, o el acceso no autorizado a identificadores y/o
+                                contraseñas, con el fin
+                                de proceder a su inmediata cancelación.
+                            </li>
+                        </ul>
+                        <p>El mero acceso a este Sitio Web no supone entablar ningún tipo de relación de carácter
+                            comercial entre
+                            GroundSound Festival y el Usuario.
+                        </p>
+                        <p>El Usuario declara ser mayor de edad y disponer de la capacidad jurídica suficiente para
+                            vincularse por las
+                            presentes Condiciones. Por lo tanto, este Sitio Web de GroundSound Festival no se dirige a
+                            menores de
+                            edad. GroundSound Festival declina cualquier responsabilidad por el incumplimiento de este
+                            requisito.
+                        </p>
+                        <p>El Sitio Web está dirigido principalmente a Usuarios residentes en España. GroundSound
+                            Festival no
+                            asegura que el Sitio Web cumpla con legislaciones de otros países, ya sea total o
+                            parcialmente. Si el
+                            Usuario reside o tiene su domiciliado en otro lugar y decide acceder y/o navegar en el Sitio
+                            Web lo hará
+                            bajo su propia responsabilidad, deberá asegurarse de que tal acceso y navegación cumple con
+                            la
+                            legislación local que le es aplicable, no asumiendo GroundSound Festival responsabilidad
+                            alguna que se
+                            pueda derivar de dicho acceso.
+                        </p>
+                    </div>
+                    <div>
+                        <h2>3. Acceso y Navegación en el Sitio Web: Exclusión de Garantías y Responsabilidad</h2>
+                        <p>GroundSound Festival no garantiza la continuidad, disponibilidad y utilidad del Sitio Web, ni
+                            de
+                            los
+                            Contenidos o Servicios. GroundSound Festival hará todo lo posible por el buen funcionamiento
+                            del
+                            Sitio
+                            Web, sin embargo, no se responsabiliza ni garantiza que el acceso a este Sitio Web no vaya a
+                            ser
+                            ininterrumpido o que esté libre de error.
+                        </p>
+                        <p>Tampoco se responsabiliza o garantiza que el contenido o software al que pueda accederse a
+                            través de
+                            este Sitio Web, esté libre de error o cause un daño al sistema informático (software y
+                            hardware)
+                            del
+                            Usuario. En ningún caso GroundSound Festival será responsable por las pérdidas, daños o
+                            perjuicios de
+                            cualquier tipo que surjan por el acceso, navegación y el uso del Sitio Web, incluyéndose,
+                            pero
+                            no
+                            limitándose, a los ocasionados a los sistemas informáticos o los provocados por la
+                            introducción
+                            de virus.
+                        </p>
+                        <p>GroundSound Festival tampoco se hace responsable de los daños que pudiesen ocasionarse a los
+                            usuarios
+                            por un uso inadecuado de este Sitio Web. En particular, no se hace responsable en modo
+                            alguno de
+                            las
+                            caídas, interrupciones, falta o defecto de las telecomunicaciones que pudieran ocurrir.
+                        </p>
+                    </div>
+                    <div>
+                        <h2>4. Política de Enlaces</h2>
+                        <p>Se informa que el Sitio Web de GroundSound Festival pone o puede poner a disposición de los
+                            Usuarios
+                            medios de enlace (como, entre otros, links, banners, botones), directorios y motores de
+                            búsqueda
+                            que
+                            permiten a los Usuarios acceder a sitios web pertenecientes y/o gestionados por terceros.
+                        </p>
+                        <p>La instalación de estos enlaces, directorios y motores de búsqueda en el Sitio Web tiene por
+                            objeto facilitar
+                            a los Usuarios la búsqueda de y acceso a la información disponible en Internet, sin que
+                            pueda
+                            considerarse
+                            una sugerencia, recomendación o invitación para la visita de los mismos.
+                        </p>
+                        <p>GroundSound Festival no ofrece ni comercializa por sí ni por medio de terceros los productos
+                            y/o
+                            servicios
+                            disponibles en dichos sitios enlazados.
+                        </p>
+                        <p>Asimismo, tampoco garantizará la disponibilidad técnica, exactitud, veracidad, validez o
+                            legalidad de sitios
+                            ajenos a su propiedad a los que se pueda acceder por medio de los enlaces.
+                        </p>
+                        <p>GroundSound Festival en ningún caso revisará o controlará el contenido de otros sitios web,
+                            así
+                            como
+                            tampoco aprueba, examina ni hace propios los productos y servicios, contenidos, archivos y
+                            cualquier otro
+                            material existente en los referidos sitios enlazados.
+                        </p>
+                        <p>GroundSound Festival no asume ninguna responsabilidad por los daños y perjuicios que pudieran
+                            producirse por el acceso, uso, calidad o licitud de los contenidos, comunicaciones,
+                            opiniones,
+                            productos y
+                            servicios de los sitios web no gestionados por GroundSound Festival y que sean enlazados en
+                            este
+                            Sitio
+                            Web.
+                        </p>
+                        <p>El Usuario o tercero que realice un hipervínculo desde una página web de otro, distinto,
+                            sitio
+                            web al Sitio
+                            Web de GroundSound Festival deberá saber que:
+                        </p>
+                        <ul>
+                            <li>
+                                No se permite la reproducción —total o parcialmente— de ninguno de los Contenidos y/o
+                                Servicios
+                                del Sitio
+                                Web sin autorización expresa de GroundSound Festival.
+                            </li>
+                            <li>
+                                No se permite tampoco ninguna manifestación falsa, inexacta o incorrecta sobre el Sitio
+                                Web de
+                                GroundSound Festival, ni sobre los Contenidos y/o Servicios del mismo.
+                            </li>
+                            <li>
+                                A excepción del hipervínculo, el sitio web en el que se establezca dicho hiperenlace no
+                                contendrá ningún
+                                elemento, de este Sitio Web, protegido como propiedad intelectual por el ordenamiento
+                                jurídico
+                                español,
+                                salvo autorización expresa de GroundSound Festival.
+                            </li>
+                            <li>
+                                El establecimiento del hipervínculo no implicará la existencia de relaciones entre
+                                GroundSound
+                                Festival y
+                                el titular del sitio web desde el cual se realice, ni el conocimiento y aceptación de
+                                GroundSound Festival de
+                                los contenidos, servicios y/o actividades ofrecidas en dicho sitio web, y viceversa.
+                            </li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h2>5. Propiedad Intelectual e Industrial</h2>
+                        <!-- Licencia sobre Recursos Multimedia Propios -->
+                        <h3>5.1. Licencia sobre Recursos Multimedia Propios</h3>
+                        <p><strong>GroundSound Festival</strong>, por sí o como parte cesionaria, es titular de todos
+                            los derechos de
+                            propiedad intelectual e industrial del Sitio Web, así como de los elementos contenidos en el
+                            mismo (a título enunciativo y no exhaustivo, imágenes, sonido, audio, vídeo, software o
+                            textos, marcas o logotipos, combinaciones de colores, estructura y diseño, selección de
+                            materiales usados, programas de ordenador necesarios para su funcionamiento, acceso y uso,
+                            etc.). Estos contenidos están protegidos por la normativa española, comunitaria y los
+                            tratados internacionales relativos a la materia suscritos por España, y se distribuyen bajo
+                            la licencia <strong>Creative Commons Attribution-NonCommercial-NoDerivatives 4.0
+                                International (CC
+                                BY-NC-ND 4.0)</strong>.</p>
+                        <p>Esto significa que:</p>
+                        <ul>
+                            <li><strong>Atribución (BY):</strong> Los usuarios deben dar crédito a GroundSound Festival
+                                como creador del
+                                contenido.</li>
+                            <li><strong>Uso no comercial (NC):</strong> Los contenidos solo pueden ser utilizados para
+                                fines no
+                                comerciales.</li>
+                            <li><strong>Sin obras derivadas (ND):</strong> No se permite la modificación, transformación
+                                o adaptación de
+                                los contenidos.</li>
+                        </ul>
+                        <p><strong>Todos los derechos reservados salvo lo dispuesto por la licencia CC BY-NC-ND
+                                4.0</strong>. Queda
+                            permitida la copia y distribución del material en cualquier medio o formato, siempre que se
+                            mantenga en su forma original y exclusivamente para usos no comerciales. Cualquier uso que
+                            no se ajuste a estos términos requerirá autorización expresa de GroundSound Festival.</p>
+                        <p>El Usuario se compromete a respetar los derechos de propiedad intelectual e industrial de
+                            GroundSound Festival. Podrá visualizar los elementos del Sitio Web o incluso imprimirlos,
+                            copiarlos y almacenarlos en el disco duro de su ordenador o en cualquier otro soporte
+                            físico, siempre y cuando sea exclusivamente para su uso personal y no comercial, y se
+                            mantenga la atribución al creador.</p>
+                        <p>El Usuario no podrá suprimir, alterar ni manipular cualquier dispositivo de protección o
+                            sistema de seguridad que estuviera instalado en el Sitio Web.</p>
+                        <p>En caso de que el Usuario o un tercero considere que cualquiera de los Contenidos del Sitio
+                            Web infringe los derechos de protección de la propiedad intelectual o no cumple con los
+                            términos de la licencia CC BY-NC-ND 4.0, deberá comunicarlo inmediatamente a GroundSound
+                            Festival a través de los datos de contacto indicados en el apartado de INFORMACIÓN GENERAL
+                            de este Aviso Legal y Condiciones Generales de Uso.</p>
+
+                        <!-- Tabla Licencia sobre Recursos Externos -->
+                        <h3>5.2. Licencia sobre Recursos Externos</h3>
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th>Página donde aparece el recurso</th>
+                                    <th>Nombre del recursos o recursos</th>
+                                    <th>Fuente de procedencia</th>
+                                    <th>Términos de licencia del recurso utilizado (CC)</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td rowspan="7">Página Merch y/o Merch Item</td>
+                                    <td>camiseta_blanca_01.png</td>
+                                    <td rowspan="2">
+                                        https://unsplash.com/es/fotos/hombre-con-camisetas-blancas-de-cuello-redondo-WWesmHEgXDs
+                                    </td>
+                                    <td rowspan="7">Unsplash le concede una licencia de derechos de autor irrevocable,
+                                        no exclusiva
+                                        y mundial para descargar, copiar, modificar, distribuir, ejecutar y utilizar
+                                        Imágenes de Unsplash de forma gratuita, incluso con fines comerciales, sin
+                                        necesidad de autorización el permiso o atribución del fotógrafo o de Unsplash,
+                                        pero esta licencia no incluye el derecho a compilar Imágenes de Unsplash para
+                                        replicar un servicio similar o de la competencia.<br>
+                                        <a href="https://unsplash.com/es/licencia" target="_blank">Licencia Unsplash</a>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>camiseta_blanca_02.png</td>
+                                </tr>
+                                <tr>
+                                    <td>camiseta_negra_01.png</td>
+                                    <td rowspan="3">
+                                        https://unsplash.com/es/fotos/hombre-con-camiseta-negra-de-cuello-redondo-y-gafas-de-sol-de-pie-cerca-de-una-pared-blanca-kkj9iKxsdhY
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>camiseta_negra_02.png</td>
+                                </tr>
+                                <tr>
+                                    <td>camiseta_negra_03.png</td>
+                                </tr>
+                                <tr>
+                                    <td>mechero.png</td>
+                                    <td>https://unsplash.com/es/fotos/una-foto-en-blanco-y-negro-de-un-encendedor-wb13SIsQqGk
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>gorra.png</td>
+                                    <td>https://unsplash.com/es/fotos/gorra-azul-qpTKvwp4zx0</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <!-- Tabla Licencia sobre Contenido generado por IA -->
+                        <h3>5.3. Licencia sobre Contenido generado por IA</h3>
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th>Página donde aparece el recurso</th>
+                                    <th>Contenido generado</th>
+                                    <th>Información</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td rowspan="2">Página Merch y/o Merch Item</td>
+                                    <td>vinilo_groundsound_2023.png</td>
+                                    <td rowspan="2">No están sujetos a la normativa sobre propiedad intelectual.</td>
+                                </tr>
+                                <tr>
+                                    <td>vinilo_groundsound_2024.png</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                        <h2>6. Acciones Legales, Legislación Aplicable y Jurisdicción</h2>
+                        <p>GroundSound Festival se reserva la facultad de presentar las acciones civiles
+                            o penales que
+                            considere
+                            necesarias por la utilización indebida del Sitio Web y Contenidos, o por el
+                            incumplimiento
+                            de
+                            las presentes
+                            Condiciones.
+                        </p>
+                        <p>La relación entre el Usuario y GroundSound Festival se regirá por la
+                            normativa vigente y de
+                            aplicación en
+                            el territorio español. De surgir cualquier controversia en relación con la
+                            interpretación
+                            y/o a
+                            la aplicación
+                            de estas Condiciones las partes someterán sus conflictos a la jurisdicción
+                            ordinaria
+                            sometiéndose a los
+                            jueces y tribunales que correspondan conforme a derecho.
+                        </p>
+                        <p>Este documento de Aviso Legal y Condiciones Generales de uso del sitio web ha
+                            sido creado
+                            mediante el
+                            generador de plantilla de aviso legal y condiciones de uso online el día
+                            16/12/2024.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <?php include("includes/footer.php"); ?>
+
+</body>
+
+</html>

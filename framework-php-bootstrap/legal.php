@@ -375,7 +375,39 @@
                                             personales dentro del contexto del sitio, y cualquier reproducción,
                                             modificación, distribución o uso comercial requiere autorización expresa por
                                             escrito.
-                                        <a href="https://www.ocesa.com.mx/terminos-y-condiciones" target="_blank">Licencia OCESA</a></td>
+                                            <a href="https://www.ocesa.com.mx/terminos-y-condiciones" target="_blank">Licencia OCESA</a>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td rowspan="4">Taylor Horne</td>
+                                        <td rowspan="4">Media</td>
+                                        <td>1.jpg</td>
+                                        <td>https://flickr.com/photos/mixtribe/14251730514 de Mixtribe</td>
+                                        <td rowspan="4" class="long-text"> Usted es libre de:
+
+                                            Compartir — copiar y redistribuir el material en cualquier medio o formato para cualquier propósito, incluso comercialmente.
+                                            Adaptar — remezclar, transformar y construir a partir del material para cualquier propósito, incluso comercialmente.
+                                            La licenciante no puede revocar estas libertades en tanto usted siga los términos de la licencia
+
+                                            Bajo los siguientes términos:
+
+                                            Atribución — Usted debe dar crédito de manera adecuada , brindar un enlace a la licencia, e indicar si se han realizado cambios . Puede hacerlo en cualquier forma razonable, pero no de forma tal que sugiera que usted o su uso tienen el apoyo de la licenciante.
+                                            No hay restricciones adicionales — No puede aplicar términos legales ni medidas tecnológicas que restrinjan legalmente a otras a hacer cualquier uso permitido por la licencia.
+
+                                            <a href="https://creativecommons.org/licenses/by/2.0/deed.en" target="_blank">Creative Commons 2.0</a>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>2.jpg</td>
+                                        <td>https://www.flickr.com/photos/infogibraltar/20999218710 de InfoGibraltar </td>
+                                    </tr>
+                                    <tr>
+                                        <td>3.jpg</td>
+                                        <td>https://www.flickr.com/photos/musicnewsaustralia/7044697055/ de Eva Rinaldi</td>
+                                    </tr>
+                                    <tr>
+                                        <td>4.jpg</td>
+                                        <td>https://www.flickr.com/photos/149801000@N05/34735177654 de Veld Music Festival</td>
                                     </tr>
                                 </tbody>
                             </table>
@@ -406,6 +438,21 @@
                                 </tbody>
                             </table>
                         </div>
+                        <h3>5.4. Declaración de Derechos de Autor</h3>
+                        <p>
+                            Al enviar imágenes a este sitio web, GroundSound.com, usted otorga automáticamente
+                            a GroundSound.com los derechos exclusivos, perpetuos, irrevocables, transferibles
+                            y libres de regalías para usar, reproducir, modificar, distribuir, exhibir y crear
+                            obras derivadas de dichas imágenes en cualquier medio o formato, ya sea conocido o
+                            desarrollado en el futuro, para cualquier propósito, sin necesidad de previo aviso,
+                            compensación o atribución al remitente.
+                        </p>
+                        <p>
+                            Al enviar las imágenes, usted garantiza que tiene todos los derechos necesarios para
+                            otorgar esta licencia y que el contenido no infringe los derechos de terceros.
+                            GroundSound.com se reserva el derecho de rechazar o eliminar cualquier imagen a su
+                            exclusiva discreción.
+                        </p>
                     </div>
                     <div>
                         <h2>6. Acciones Legales, Legislación Aplicable y Jurisdicción</h2>

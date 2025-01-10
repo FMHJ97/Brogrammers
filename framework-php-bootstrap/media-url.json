@@ -1,10 +1,14 @@
 [
-  { "url": "assets/img/media/1.jpg" },
-  { "url": "assets/img/media/2.jpg" },
-  { "url": "assets/img/media/3.jpg" },
-  { "url": "assets/img/media/4.jpg" },
-  { "url": "assets/img/media/5.jpg" },
-  { "url": "assets/img/media/6.jpg" },
-  { "url": "assets/img/media/7.jpg" }
-
+  {
+    "url": "assets/img/media/1.jpg"
+  },
+  {
+    "url": "assets/img/media/2.jpg"
+  },
+  {
+    "url": "assets/img/media/3.jpg"
+  },
+  {
+    "url": "assets/img/media/4.jpg"
+  }
 ]

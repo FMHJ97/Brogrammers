@@ -30,3 +30,9 @@
     word-wrap: break-word;
   }
 }
+
+@include media-breakpoint-down(md) {
+  .legal-table {
+    table-layout: auto;
+  }
+}

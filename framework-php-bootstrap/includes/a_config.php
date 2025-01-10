@@ -21,8 +21,8 @@
 			break;
 
 		case "/cookies.php":
-			$CURRENT_PAGE = "Cookies"; 
-			$PAGE_TITLE = "Cookies";
+			$CURRENT_PAGE = "Política de Cookies"; 
+			$PAGE_TITLE = "Política de Cookies";
 			break;
 
 		case "/tickets.php":
@@ -78,6 +78,11 @@
 		case "/juegoFMHJ.php":
 			$CURRENT_PAGE = "Videojuego FMHJ"; 
 			$PAGE_TITLE = "Videojuego FMHJ";
+			break;
+
+		case "/juegoTaylor.php":
+			$CURRENT_PAGE = "Videojuego Taylor"; 
+			$PAGE_TITLE = "Videojuego Taylor";
 			break;
 
 		case "/about_us.php":

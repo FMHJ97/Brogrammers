@@ -23,28 +23,25 @@
         <!-- Miembros -->
         <section class="container page-section">
             <!-- Primera Fila -->
-            <div class="row mb-5 py-md-4">
+            <div class="mb-5 row py-md-4">
 
                 <!-- Primer Miembro -->
-                <div class="col-md-6 px-4 mb-5 mb-md-0">
+                <div class="px-4 mb-5 col-md-6 mb-md-0">
 
                     <!-- Imagen e Información -->
                     <div class="row">
                         <!-- Imagen del Miembro -->
-                        <div class="col-md-4 about-us-img mb-4">
+                        <div class="mb-4 col-md-4 about-us-img">
                             <img src="assets/img/dummy/dummy_user.jpg" alt="Miembro del Equipo 1" class="img-fluid">
                         </div>
                         <!-- Información del Miembro -->
                         <div class="col-md-8">
-                            <div class="row gap-3">
+                            <div class="gap-3 row">
                                 <div class="col-md-12 about-us-info">
                                     <h3>Francisco Manuel Hernández</h3>
-                                    <p>Desarrollador Web Full Stack y amante de los videojuegos. Con más de 5 años de
-                                        experiencia en
-                                        programación, ha decidido unir sus dos pasiones para crear un proyecto innovador
-                                        y
-                                        divertido.</p>
-                                    <p>¡No dudes en contactarle para saber más sobre su trabajo!</p>
+                                    <p>
+                                        Estudiante de 2º de CFGS de Desarrollo de Aplicaciones Web.
+                                    </p>
                                 </div>
                                 <div class="col-md-12 d-flex justify-content-center">
                                     <a href="juegoFMHJ.php" target="_blank" class="btn about-us-btn">Iniciar Juego</a>
@@ -56,25 +53,22 @@
                 </div>
 
                 <!-- Segundo Miembro -->
-                <div class="col-md-6 px-4">
+                <div class="px-4 col-md-6">
 
                     <!-- Imagen e Información -->
                     <div class="row">
                         <!-- Imagen del Miembro -->
-                        <div class="col-md-4 about-us-img mb-4">
+                        <div class="mb-4 col-md-4 about-us-img">
                             <img src="assets/img/dummy/dummy_user.jpg" alt="Miembro del Equipo 1" class="img-fluid">
                         </div>
                         <!-- Información del Miembro -->
                         <div class="col-md-8">
-                            <div class="row gap-3">
+                            <div class="gap-3 row">
                                 <div class="col-md-12 about-us-info">
                                     <h3>Taylor Horne</h3>
-                                    <p>Desarrollador Web Full Stack y amante de los videojuegos. Con más de 5 años de
-                                        experiencia en
-                                        programación, ha decidido unir sus dos pasiones para crear un proyecto innovador
-                                        y
-                                        divertido.</p>
-                                    <p>¡No dudes en contactarle para saber más sobre su trabajo!</p>
+                                    <p>
+                                        Estudiante de 2º de CFGS de Desarrollo de Aplicaciones Web.
+                                    </p>
                                 </div>
                                 <div class="col-md-12 d-flex justify-content-center">
                                     <a href="juegoTaylor.php" target="_blank" class="btn about-us-btn">Iniciar Juego</a>
@@ -87,28 +81,25 @@
             </div>
 
             <!-- Segunda Fila -->
-            <div class="row my-5">
+            <div class="my-5 row">
 
                 <!-- Tercer Miembro -->
-                <div class="col-md-6 px-4 mb-5 mb-md-0">
+                <div class="px-4 mb-5 col-md-6 mb-md-0">
 
                     <!-- Imagen e Información -->
                     <div class="row">
                         <!-- Imagen del Miembro -->
-                        <div class="col-md-4 about-us-img mb-4">
+                        <div class="mb-4 col-md-4 about-us-img">
                             <img src="assets/img/dummy/dummy_user.jpg" alt="Miembro del Equipo 1" class="img-fluid">
                         </div>
                         <!-- Información del Miembro -->
                         <div class="col-md-8">
-                            <div class="row gap-3">
+                            <div class="gap-3 row">
                                 <div class="col-md-12 about-us-info">
                                     <h3>José Manuel Ponferrada</h3>
-                                    <p>Desarrollador Web Full Stack y amante de los videojuegos. Con más de 5 años de
-                                        experiencia en
-                                        programación, ha decidido unir sus dos pasiones para crear un proyecto innovador
-                                        y
-                                        divertido.</p>
-                                    <p>¡No dudes en contactarle para saber más sobre su trabajo!</p>
+                                    <p>
+                                        Estudiante de 2º de CFGS de Desarrollo de Aplicaciones Web.
+                                    </p>
                                 </div>
                                 <div class="col-md-12 d-flex justify-content-center">
                                     <a href="juegoFMHJ.php" target="_blank" class="btn about-us-btn">Iniciar Juego</a>
@@ -120,25 +111,22 @@
                 </div>
 
                 <!-- Cuarto Miembro -->
-                <div class="col-md-6 px-4">
+                <div class="px-4 col-md-6">
 
                     <!-- Imagen e Información -->
                     <div class="row">
                         <!-- Imagen del Miembro -->
-                        <div class="col-md-4 about-us-img mb-4">
+                        <div class="mb-4 col-md-4 about-us-img">
                             <img src="assets/img/dummy/dummy_user.jpg" alt="Miembro del Equipo 1" class="img-fluid">
                         </div>
                         <!-- Información del Miembro -->
                         <div class="col-md-8">
-                            <div class="row gap-3">
+                            <div class="gap-3 row">
                                 <div class="col-md-12 about-us-info">
                                     <h3>Francisco Ruiz</h3>
-                                    <p>Desarrollador Web Full Stack y amante de los videojuegos. Con más de 5 años de
-                                        experiencia en
-                                        programación, ha decidido unir sus dos pasiones para crear un proyecto innovador
-                                        y
-                                        divertido.</p>
-                                    <p>¡No dudes en contactarle para saber más sobre su trabajo!</p>
+                                    <p>
+                                        Estudiante de 2º de CFGS de Desarrollo de Aplicaciones Web.
+                                    </p>
                                 </div>
                                 <div class="col-md-12 d-flex justify-content-center">
                                     <a href="juegoFMHJ.php" target="_blank" class="btn about-us-btn">Iniciar Juego</a>

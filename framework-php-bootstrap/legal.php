@@ -363,6 +363,20 @@
                                         <td>gorra.png</td>
                                         <td>https://unsplash.com/es/fotos/gorra-azul-qpTKvwp4zx0</td>
                                     </tr>
+                                    <tr>
+                                        <td>Jose Manuel Ponferrada</td>
+                                        <td>Páginas de Tickets e Info</td>
+                                        <td>mapaFestival.jpg</td>
+                                        <td>https://networksites.livenationinternational.com/networksites/bqfnrygy/hera_2024_mapa.jpg</td>
+                                        <td class="long-text">OCESA no concede una licencia para el uso de los recursos del sitio sin
+                                            autorización previa. Todo el contenido, incluidas las imágenes, está
+                                            protegido por derechos de autor y es propiedad de Operadora de Centros de
+                                            Espectáculos, S.A. de C.V. (OCESA). El uso de las imágenes se limita a fines
+                                            personales dentro del contexto del sitio, y cualquier reproducción,
+                                            modificación, distribución o uso comercial requiere autorización expresa por
+                                            escrito.
+                                        <a href="https://www.ocesa.com.mx/terminos-y-condiciones" target="_blank">Licencia OCESA</a></td>
+                                    </tr>
                                 </tbody>
                             </table>
                         </div>

@@ -5,38 +5,6 @@
 <head>
     <?php include("includes/head_tags.php"); ?>
     <script src="./js/scripts.js"></script>
-    <style>
-        .table {
-            width: 100%;
-            border-collapse: collapse;
-            table-layout: fixed;
-        }
-
-        .table th,
-        .table td {
-            border: 1px solid #ddd;
-            padding: 8px;
-            text-align: left;
-            word-wrap: break-word;
-        }
-
-        .table th {
-            background-color: #f2f2f2;
-            font-weight: bold;
-            vertical-align: middle;
-        }
-
-        .table td {
-            vertical-align: top;
-        }
-
-        .table a {
-            color: #007bff;
-            text-decoration: none;
-            word-wrap: break-word;
-        }
-    </style>
-
 </head>
 
 <body>

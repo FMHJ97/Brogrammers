@@ -319,7 +319,7 @@
                                 </thead>
                                 <tbody>
                                     <tr>
-                                        <td rowspan="7">Francisco Manuel Hernández</td>
+                                        <td rowspan="9">Francisco Manuel Hernández</td>
                                         <td rowspan="7">Página Merch y/o Merch Item</td>
                                         <td>camiseta_blanca_01.png</td>
                                         <td rowspan="2">
@@ -364,18 +364,36 @@
                                         <td>https://unsplash.com/es/fotos/gorra-azul-qpTKvwp4zx0</td>
                                     </tr>
                                     <tr>
+                                        <td rowspan="2">Sección Patrocinadores</td>
+                                        <td>estrella-galicia.png</td>
+                                        <td>https://creazilla.com/media/clipart/3493832/estrella-galicia-escudo-color-vectorial-hdjr
+                                        </td>
+                                        <td rowspan="2">Creative Commons CC0 1.0 Universal<br>
+                                            <a href="https://creativecommons.org/publicdomain/zero/1.0/" target="_blank">Licencia
+                                                CC0 1.0 Universal</a>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>redbull.png</td>
+                                        <td>https://creazilla.com/media/clipart/7826900/red-bull-gmbh-logo
+                                        </td>
+                                    </tr>
+                                    <tr>
                                         <td>Jose Manuel Ponferrada</td>
                                         <td>Páginas de Tickets e Info</td>
                                         <td>mapaFestival.jpg</td>
-                                        <td>https://networksites.livenationinternational.com/networksites/bqfnrygy/hera_2024_mapa.jpg</td>
-                                        <td class="long-text">OCESA no concede una licencia para el uso de los recursos del sitio sin
+                                        <td>https://networksites.livenationinternational.com/networksites/bqfnrygy/hera_2024_mapa.jpg
+                                        </td>
+                                        <td class="long-text">OCESA no concede una licencia para el uso de los recursos
+                                            del sitio sin
                                             autorización previa. Todo el contenido, incluidas las imágenes, está
                                             protegido por derechos de autor y es propiedad de Operadora de Centros de
                                             Espectáculos, S.A. de C.V. (OCESA). El uso de las imágenes se limita a fines
                                             personales dentro del contexto del sitio, y cualquier reproducción,
                                             modificación, distribución o uso comercial requiere autorización expresa por
                                             escrito.
-                                            <a href="https://www.ocesa.com.mx/terminos-y-condiciones" target="_blank">Licencia OCESA</a>
+                                            <a href="https://www.ocesa.com.mx/terminos-y-condiciones"
+                                                target="_blank">Licencia OCESA</a>
                                         </td>
                                     </tr>
                                     <tr>
@@ -385,29 +403,41 @@
                                         <td>https://flickr.com/photos/mixtribe/14251730514 de Mixtribe</td>
                                         <td rowspan="4" class="long-text"> Usted es libre de:
 
-                                            Compartir — copiar y redistribuir el material en cualquier medio o formato para cualquier propósito, incluso comercialmente.
-                                            Adaptar — remezclar, transformar y construir a partir del material para cualquier propósito, incluso comercialmente.
-                                            La licenciante no puede revocar estas libertades en tanto usted siga los términos de la licencia
+                                            Compartir — copiar y redistribuir el material en cualquier medio o formato
+                                            para cualquier propósito, incluso comercialmente.
+                                            Adaptar — remezclar, transformar y construir a partir del material para
+                                            cualquier propósito, incluso comercialmente.
+                                            La licenciante no puede revocar estas libertades en tanto usted siga los
+                                            términos de la licencia
 
                                             Bajo los siguientes términos:
 
-                                            Atribución — Usted debe dar crédito de manera adecuada , brindar un enlace a la licencia, e indicar si se han realizado cambios . Puede hacerlo en cualquier forma razonable, pero no de forma tal que sugiera que usted o su uso tienen el apoyo de la licenciante.
-                                            No hay restricciones adicionales — No puede aplicar términos legales ni medidas tecnológicas que restrinjan legalmente a otras a hacer cualquier uso permitido por la licencia.
+                                            Atribución — Usted debe dar crédito de manera adecuada , brindar un enlace a
+                                            la licencia, e indicar si se han realizado cambios . Puede hacerlo en
+                                            cualquier forma razonable, pero no de forma tal que sugiera que usted o su
+                                            uso tienen el apoyo de la licenciante.
+                                            No hay restricciones adicionales — No puede aplicar términos legales ni
+                                            medidas tecnológicas que restrinjan legalmente a otras a hacer cualquier uso
+                                            permitido por la licencia.
 
-                                            <a href="https://creativecommons.org/licenses/by/2.0/deed.en" target="_blank">Creative Commons 2.0</a>
+                                            <a href="https://creativecommons.org/licenses/by/2.0/deed.en"
+                                                target="_blank">Creative Commons 2.0</a>
                                         </td>
                                     </tr>
                                     <tr>
                                         <td>2.jpg</td>
-                                        <td>https://www.flickr.com/photos/infogibraltar/20999218710 de InfoGibraltar </td>
+                                        <td>https://www.flickr.com/photos/infogibraltar/20999218710 de InfoGibraltar
+                                        </td>
                                     </tr>
                                     <tr>
                                         <td>3.jpg</td>
-                                        <td>https://www.flickr.com/photos/musicnewsaustralia/7044697055/ de Eva Rinaldi</td>
+                                        <td>https://www.flickr.com/photos/musicnewsaustralia/7044697055/ de Eva Rinaldi
+                                        </td>
                                     </tr>
                                     <tr>
                                         <td>4.jpg</td>
-                                        <td>https://www.flickr.com/photos/149801000@N05/34735177654 de Veld Music Festival</td>
+                                        <td>https://www.flickr.com/photos/149801000@N05/34735177654 de Veld Music
+                                            Festival</td>
                                     </tr>
                                     <!-- Francisco Ruiz -->
                                     <tr>
@@ -415,12 +445,14 @@
                                         <td rowspan="15">LineUp</td>
                                         <td>Eminem.jpg</td>
                                         <td>
-                                            <p>https://www.goodfon.com/music/wallpaper-eminem-rapper-marshall-bruce-mathers-iii-emin3m-slim-shady-l.html.</p>
+                                            <p>https://www.goodfon.com/music/wallpaper-eminem-rapper-marshall-bruce-mathers-iii-emin3m-slim-shady-l.html.
+                                            </p>
                                             <p>Foto de Paulwalker</p>
                                         </td>
                                         <td class="long-text">
                                             <p>Bajo licencia [CC BY 4.0].</p>
-                                            <p><a href="https://creativecommons.org/licenses/by/4.0/" target="_blank">Creative Commons 4.0</a></p>
+                                            <p><a href="https://creativecommons.org/licenses/by/4.0/"
+                                                    target="_blank">Creative Commons 4.0</a></p>
                                         </td>
                                     </tr>
                                     <tr>
@@ -431,7 +463,8 @@
                                         </td>
                                         <td class="long-text">
                                             <p>Bajo licencia [CC BY 2.0].</p>
-                                            <p><a href="https://creativecommons.org/licenses/by/2.0/" target="_blank">Creative Commons 2.0</a></p>
+                                            <p><a href="https://creativecommons.org/licenses/by/2.0/"
+                                                    target="_blank">Creative Commons 2.0</a></p>
                                         </td>
                                     </tr>
                                     <tr>
@@ -442,40 +475,47 @@
                                         </td>
                                         <td class="long-text">
                                             <p>Bajo licencia [CC BY 4.0].</p>
-                                            <p><a href="https://creativecommons.org/licenses/by/4.0/" target="_blank">Creative Commons 4.0</a></p>
+                                            <p><a href="https://creativecommons.org/licenses/by/4.0/"
+                                                    target="_blank">Creative Commons 4.0</a></p>
                                         </td>
                                     </tr>
                                     <tr>
                                         <td>soundgarden.jpg</td>
                                         <td>
-                                            <p>https://commons.wikimedia.org/wiki/File:Soundgarden_(1987_Sub_Pop_promo_photo).jpg.</p>
+                                            <p>https://commons.wikimedia.org/wiki/File:Soundgarden_(1987_Sub_Pop_promo_photo).jpg.
+                                            </p>
                                             <p>Foto de Charles Peterson</p>
                                         </td>
                                         <td class="long-text">
                                             <p>Imagen de dominio público.</p>
-                                            <p><a href="https://creativecommons.org/publicdomain/mark/1.0/" target="_blank">PDM 1.0</a></p>
+                                            <p><a href="https://creativecommons.org/publicdomain/mark/1.0/"
+                                                    target="_blank">PDM 1.0</a></p>
                                         </td>
                                     </tr>
                                     <tr>
                                         <td>AliceInChains.jpg</td>
                                         <td>
-                                            <p>https://www.goodfon.com/music/wallpaper-download-1920x1080-alice-in-chains-grunge-rok.html.</p>
+                                            <p>https://www.goodfon.com/music/wallpaper-download-1920x1080-alice-in-chains-grunge-rok.html.
+                                            </p>
                                             <p>Foto de Topgun</p>
                                         </td>
                                         <td class="long-text">
                                             <p>Bajo licencia [CC BY-NC 4.0].</p>
-                                            <p><a href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">Creative Commons NC 4.0</a></p>
+                                            <p><a href="https://creativecommons.org/licenses/by-nc/4.0/"
+                                                    target="_blank">Creative Commons NC 4.0</a></p>
                                         </td>
                                     </tr>
                                     <tr>
                                         <td>50-cent-.jpg</td>
                                         <td>
-                                            <p>https://commons.wikimedia.org/wiki/File:50_cent_in_concert_(cropped).jpg.</p>
+                                            <p>https://commons.wikimedia.org/wiki/File:50_cent_in_concert_(cropped).jpg.
+                                            </p>
                                             <p>Foto de Alex Const</p>
                                         </td>
                                         <td class="long-text">
                                             <p>Bajo licencia [CC BY 2.0].</p>
-                                            <p><a href="https://creativecommons.org/licenses/by/2.0/" target="_blank">Creative Commons 2.0</a></p>
+                                            <p><a href="https://creativecommons.org/licenses/by/2.0/"
+                                                    target="_blank">Creative Commons 2.0</a></p>
                                         </td>
                                     </tr>
                                     <tr>
@@ -486,7 +526,8 @@
                                         </td>
                                         <td class="long-text">
                                             <p>Bajo licencia [CC BY 2.0].</p>
-                                            <p><a href="https://creativecommons.org/licenses/by/2.0/" target="_blank">Creative Commons 2.0</a></p>
+                                            <p><a href="https://creativecommons.org/licenses/by/2.0/"
+                                                    target="_blank">Creative Commons 2.0</a></p>
                                         </td>
                                     </tr>
                                     <tr>
@@ -497,18 +538,21 @@
                                         </td>
                                         <td class="long-text">
                                             <p>Bajo licencia [CC BY-NC-ND 2.0].</p>
-                                            <p><a href="https://creativecommons.org/licenses/by-nc-nd/2.0/" target="_blank">Creative Commons NC-ND 2.0</a></p>
+                                            <p><a href="https://creativecommons.org/licenses/by-nc-nd/2.0/"
+                                                    target="_blank">Creative Commons NC-ND 2.0</a></p>
                                         </td>
                                     </tr>
                                     <tr>
                                         <td>FallingInReverse.jpg</td>
                                         <td>
-                                            <p>https://www.goodfon.com/music/wallpaper-falling-in-reverse-gruppa.html.</p>
+                                            <p>https://www.goodfon.com/music/wallpaper-falling-in-reverse-gruppa.html.
+                                            </p>
                                             <p>Foto de Slipgirl</p>
                                         </td>
                                         <td class="long-text">
                                             <p>Bajo licencia [CC BY-NC 4.0].</p>
-                                            <p><a href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">Creative Commons NC 4.0</a></p>
+                                            <p><a href="https://creativecommons.org/licenses/by-nc/4.0/"
+                                                    target="_blank">Creative Commons NC 4.0</a></p>
                                         </td>
                                     </tr>
                                     <tr>
@@ -519,7 +563,8 @@
                                         </td>
                                         <td class="long-text">
                                             <p>Bajo licencia [CC BY-SA 3.0].</p>
-                                            <p><a href="https://creativecommons.org/licenses/by-sa/3.0/" target="_blank">Creative Commons SA 3.0</a></p>
+                                            <p><a href="https://creativecommons.org/licenses/by-sa/3.0/"
+                                                    target="_blank">Creative Commons SA 3.0</a></p>
                                         </td>
                                     </tr>
                                     <tr>
@@ -530,7 +575,8 @@
                                         </td>
                                         <td class="long-text">
                                             <p>Bajo licencia [CC BY-SA 2.0].</p>
-                                            <p><a href="https://creativecommons.org/licenses/by-sa/2.0/" target="_blank">Creative Commons SA 2.0</a></p>
+                                            <p><a href="https://creativecommons.org/licenses/by-sa/2.0/"
+                                                    target="_blank">Creative Commons SA 2.0</a></p>
                                         </td>
                                     </tr>
                                     <tr>
@@ -541,7 +587,8 @@
                                         </td>
                                         <td class="long-text">
                                             <p>Imagen de dominio público.</p>
-                                            <p><a href="https://creativecommons.org/publicdomain/mark/1.0/" target="_blank">PDM 1.0</a></p>
+                                            <p><a href="https://creativecommons.org/publicdomain/mark/1.0/"
+                                                    target="_blank">PDM 1.0</a></p>
                                         </td>
                                     </tr>
                                     <tr>
@@ -552,7 +599,8 @@
                                         </td>
                                         <td class="long-text">
                                             <p>Bajo licencia [CC BY-ND 2.0].</p>
-                                            <p><a href="https://creativecommons.org/licenses/by-nd/2.0/" target="_blank">Creative Commons ND 2.0</a></p>
+                                            <p><a href="https://creativecommons.org/licenses/by-nd/2.0/"
+                                                    target="_blank">Creative Commons ND 2.0</a></p>
                                         </td>
                                     </tr>
                                     <tr>
@@ -563,7 +611,8 @@
                                         </td>
                                         <td class="long-text">
                                             <p>Bajo licencia [CC BY-NC-ND 3.0].</p>
-                                            <p><a href="https://creativecommons.org/licenses/by-nc-nd/3.0/" target="_blank">Creative Commons NC-ND 3.0</a></p>
+                                            <p><a href="https://creativecommons.org/licenses/by-nc-nd/3.0/"
+                                                    target="_blank">Creative Commons NC-ND 3.0</a></p>
                                         </td>
                                     </tr>
                                     <tr>
@@ -574,7 +623,8 @@
                                         </td>
                                         <td class="long-text">
                                             <p>Bajo licencia [CC BY 3.0].</p>
-                                            <p><a href="https://creativecommons.org/licenses/by/3.0/" target="_blank">Creative Commons 3.0</a></p>
+                                            <p><a href="https://creativecommons.org/licenses/by/3.0/"
+                                                    target="_blank">Creative Commons 3.0</a></p>
                                         </td>
                                     </tr>
                                 </tbody>

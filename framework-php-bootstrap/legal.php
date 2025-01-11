@@ -409,6 +409,174 @@
                                         <td>4.jpg</td>
                                         <td>https://www.flickr.com/photos/149801000@N05/34735177654 de Veld Music Festival</td>
                                     </tr>
+                                    <!-- Francisco Ruiz -->
+                                    <tr>
+                                        <td rowspan="15">Francisco Ruiz</td>
+                                        <td rowspan="15">LineUp</td>
+                                        <td>Eminem.jpg</td>
+                                        <td>
+                                            <p>https://www.goodfon.com/music/wallpaper-eminem-rapper-marshall-bruce-mathers-iii-emin3m-slim-shady-l.html.</p>
+                                            <p>Foto de Paulwalker</p>
+                                        </td>
+                                        <td class="long-text">
+                                            <p>Bajo licencia [CC BY 4.0].</p>
+                                            <p><a href="https://creativecommons.org/licenses/by/4.0/" target="_blank">Creative Commons 4.0</a></p>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>2pac.jpg</td>
+                                        <td>
+                                            <p>https://www.flickr.com/photos/johnseb/4463123686.</p>
+                                            <p>Foto de John Seb Barber</p>
+                                        </td>
+                                        <td class="long-text">
+                                            <p>Bajo licencia [CC BY 2.0].</p>
+                                            <p><a href="https://creativecommons.org/licenses/by/2.0/" target="_blank">Creative Commons 2.0</a></p>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>LosdelRio.jpg</td>
+                                        <td>
+                                            <p>https://commons.wikimedia.org/wiki/File:Los_del_R%C3%ADo.jpg.</p>
+                                            <p>Foto de Paconi</p>
+                                        </td>
+                                        <td class="long-text">
+                                            <p>Bajo licencia [CC BY 4.0].</p>
+                                            <p><a href="https://creativecommons.org/licenses/by/4.0/" target="_blank">Creative Commons 4.0</a></p>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>soundgarden.jpg</td>
+                                        <td>
+                                            <p>https://commons.wikimedia.org/wiki/File:Soundgarden_(1987_Sub_Pop_promo_photo).jpg.</p>
+                                            <p>Foto de Charles Peterson</p>
+                                        </td>
+                                        <td class="long-text">
+                                            <p>Imagen de dominio público.</p>
+                                            <p><a href="https://creativecommons.org/publicdomain/mark/1.0/" target="_blank">PDM 1.0</a></p>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>AliceInChains.jpg</td>
+                                        <td>
+                                            <p>https://www.goodfon.com/music/wallpaper-download-1920x1080-alice-in-chains-grunge-rok.html.</p>
+                                            <p>Foto de Topgun</p>
+                                        </td>
+                                        <td class="long-text">
+                                            <p>Bajo licencia [CC BY-NC 4.0].</p>
+                                            <p><a href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">Creative Commons NC 4.0</a></p>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>50-cent-.jpg</td>
+                                        <td>
+                                            <p>https://commons.wikimedia.org/wiki/File:50_cent_in_concert_(cropped).jpg.</p>
+                                            <p>Foto de Alex Const</p>
+                                        </td>
+                                        <td class="long-text">
+                                            <p>Bajo licencia [CC BY 2.0].</p>
+                                            <p><a href="https://creativecommons.org/licenses/by/2.0/" target="_blank">Creative Commons 2.0</a></p>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>queen1.jpg</td>
+                                        <td>
+                                            <p>https://www.flickr.com/photos/37814055@N08/3474558151.</p>
+                                            <p>Foto de kentarotakizawa</p>
+                                        </td>
+                                        <td class="long-text">
+                                            <p>Bajo licencia [CC BY 2.0].</p>
+                                            <p><a href="https://creativecommons.org/licenses/by/2.0/" target="_blank">Creative Commons 2.0</a></p>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>pearlJam.jpg</td>
+                                        <td>
+                                            <p>https://www.flickr.com/photos/showmehowtolive/.</p>
+                                            <p>Foto de Viva la Resistance!</p>
+                                        </td>
+                                        <td class="long-text">
+                                            <p>Bajo licencia [CC BY-NC-ND 2.0].</p>
+                                            <p><a href="https://creativecommons.org/licenses/by-nc-nd/2.0/" target="_blank">Creative Commons NC-ND 2.0</a></p>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>FallingInReverse.jpg</td>
+                                        <td>
+                                            <p>https://www.goodfon.com/music/wallpaper-falling-in-reverse-gruppa.html.</p>
+                                            <p>Foto de Slipgirl</p>
+                                        </td>
+                                        <td class="long-text">
+                                            <p>Bajo licencia [CC BY-NC 4.0].</p>
+                                            <p><a href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">Creative Commons NC 4.0</a></p>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Parchis.jpg</td>
+                                        <td>
+                                            <p>https://commons.wikimedia.org/wiki/File:Parch%C3%ADs.svg.</p>
+                                            <p>Foto de Víctor Manuel Campos Ramírez</p>
+                                        </td>
+                                        <td class="long-text">
+                                            <p>Bajo licencia [CC BY-SA 3.0].</p>
+                                            <p><a href="https://creativecommons.org/licenses/by-sa/3.0/" target="_blank">Creative Commons SA 3.0</a></p>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Loschichos.jpeg</td>
+                                        <td>
+                                            <p>https://www.flickr.com/photos/108479140@N03/18736756581.</p>
+                                            <p>Foto de Jeros Chichos</p>
+                                        </td>
+                                        <td class="long-text">
+                                            <p>Bajo licencia [CC BY-SA 2.0].</p>
+                                            <p><a href="https://creativecommons.org/licenses/by-sa/2.0/" target="_blank">Creative Commons SA 2.0</a></p>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Rush.jpg</td>
+                                        <td>
+                                            <p>https://picryl.com/media/rush-in-concert-98b969.</p>
+                                            <p>Foto de Jonasz</p>
+                                        </td>
+                                        <td class="long-text">
+                                            <p>Imagen de dominio público.</p>
+                                            <p><a href="https://creativecommons.org/publicdomain/mark/1.0/" target="_blank">PDM 1.0</a></p>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>lola-flores-biografia.jpg</td>
+                                        <td>
+                                            <p>https://www.flickr.com/photos/jhilldesign/3989275302.</p>
+                                            <p>Foto de Jennifer Hill</p>
+                                        </td>
+                                        <td class="long-text">
+                                            <p>Bajo licencia [CC BY-ND 2.0].</p>
+                                            <p><a href="https://creativecommons.org/licenses/by-nd/2.0/" target="_blank">Creative Commons ND 2.0</a></p>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>LambOfGod-Cuadrada.jpeg</td>
+                                        <td>
+                                            <p>https://www.deviantart.com/mrsyn/art/Lamb-of-God-Band-Promo-51408703.</p>
+                                            <p>Foto de Patryk Pigeon</p>
+                                        </td>
+                                        <td class="long-text">
+                                            <p>Bajo licencia [CC BY-NC-ND 3.0].</p>
+                                            <p><a href="https://creativecommons.org/licenses/by-nc-nd/3.0/" target="_blank">Creative Commons NC-ND 3.0</a></p>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>snoopDog.jpg</td>
+                                        <td>
+                                            <p>https://commons.wikimedia.org/wiki/File:Snoop_dog-02.jpg.</p>
+                                            <p>Foto de Mika Väisänen</p>
+                                        </td>
+                                        <td class="long-text">
+                                            <p>Bajo licencia [CC BY 3.0].</p>
+                                            <p><a href="https://creativecommons.org/licenses/by/3.0/" target="_blank">Creative Commons 3.0</a></p>
+                                        </td>
+                                    </tr>
                                 </tbody>
                             </table>
                         </div>

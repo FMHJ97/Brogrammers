@@ -441,7 +441,7 @@
                                     </tr>
                                     <!-- Francisco Ruiz -->
                                     <tr>
-                                        <td rowspan="15">Francisco Ruiz</td>
+                                        <td rowspan="21">Francisco Ruiz</td>
                                         <td rowspan="15">LineUp</td>
                                         <td>Eminem.jpg</td>
                                         <td>
@@ -452,7 +452,7 @@
                                         <td class="long-text">
                                             <p>Bajo licencia [CC BY 4.0].</p>
                                             <p><a href="https://creativecommons.org/licenses/by/4.0/"
-                                                    target="_blank">Creative Commons 4.0</a></p>
+                                                    target="_blank">Creative Commons BY 4.0</a></p>
                                         </td>
                                     </tr>
                                     <tr>
@@ -464,7 +464,7 @@
                                         <td class="long-text">
                                             <p>Bajo licencia [CC BY 2.0].</p>
                                             <p><a href="https://creativecommons.org/licenses/by/2.0/"
-                                                    target="_blank">Creative Commons 2.0</a></p>
+                                                    target="_blank">Creative Commons BY 2.0</a></p>
                                         </td>
                                     </tr>
                                     <tr>
@@ -476,7 +476,7 @@
                                         <td class="long-text">
                                             <p>Bajo licencia [CC BY 4.0].</p>
                                             <p><a href="https://creativecommons.org/licenses/by/4.0/"
-                                                    target="_blank">Creative Commons 4.0</a></p>
+                                                    target="_blank">Creative Commons BY 4.0</a></p>
                                         </td>
                                     </tr>
                                     <tr>
@@ -502,7 +502,7 @@
                                         <td class="long-text">
                                             <p>Bajo licencia [CC BY-NC 4.0].</p>
                                             <p><a href="https://creativecommons.org/licenses/by-nc/4.0/"
-                                                    target="_blank">Creative Commons NC 4.0</a></p>
+                                                    target="_blank">Creative Commons BY-NC 4.0</a></p>
                                         </td>
                                     </tr>
                                     <tr>
@@ -515,7 +515,7 @@
                                         <td class="long-text">
                                             <p>Bajo licencia [CC BY 2.0].</p>
                                             <p><a href="https://creativecommons.org/licenses/by/2.0/"
-                                                    target="_blank">Creative Commons 2.0</a></p>
+                                                    target="_blank">Creative Commons BY 2.0</a></p>
                                         </td>
                                     </tr>
                                     <tr>
@@ -527,7 +527,7 @@
                                         <td class="long-text">
                                             <p>Bajo licencia [CC BY 2.0].</p>
                                             <p><a href="https://creativecommons.org/licenses/by/2.0/"
-                                                    target="_blank">Creative Commons 2.0</a></p>
+                                                    target="_blank">Creative Commons BY 2.0</a></p>
                                         </td>
                                     </tr>
                                     <tr>
@@ -539,7 +539,7 @@
                                         <td class="long-text">
                                             <p>Bajo licencia [CC BY-NC-ND 2.0].</p>
                                             <p><a href="https://creativecommons.org/licenses/by-nc-nd/2.0/"
-                                                    target="_blank">Creative Commons NC-ND 2.0</a></p>
+                                                    target="_blank">Creative Commons BY-NC-ND 2.0</a></p>
                                         </td>
                                     </tr>
                                     <tr>
@@ -552,7 +552,7 @@
                                         <td class="long-text">
                                             <p>Bajo licencia [CC BY-NC 4.0].</p>
                                             <p><a href="https://creativecommons.org/licenses/by-nc/4.0/"
-                                                    target="_blank">Creative Commons NC 4.0</a></p>
+                                                    target="_blank">Creative Commons BY-NC 4.0</a></p>
                                         </td>
                                     </tr>
                                     <tr>
@@ -564,7 +564,7 @@
                                         <td class="long-text">
                                             <p>Bajo licencia [CC BY-SA 3.0].</p>
                                             <p><a href="https://creativecommons.org/licenses/by-sa/3.0/"
-                                                    target="_blank">Creative Commons SA 3.0</a></p>
+                                                    target="_blank">Creative Commons BY-SA 3.0</a></p>
                                         </td>
                                     </tr>
                                     <tr>
@@ -576,7 +576,7 @@
                                         <td class="long-text">
                                             <p>Bajo licencia [CC BY-SA 2.0].</p>
                                             <p><a href="https://creativecommons.org/licenses/by-sa/2.0/"
-                                                    target="_blank">Creative Commons SA 2.0</a></p>
+                                                    target="_blank">Creative Commons BY-SA 2.0</a></p>
                                         </td>
                                     </tr>
                                     <tr>
@@ -600,7 +600,7 @@
                                         <td class="long-text">
                                             <p>Bajo licencia [CC BY-ND 2.0].</p>
                                             <p><a href="https://creativecommons.org/licenses/by-nd/2.0/"
-                                                    target="_blank">Creative Commons ND 2.0</a></p>
+                                                    target="_blank">Creative Commons BY-ND 2.0</a></p>
                                         </td>
                                     </tr>
                                     <tr>
@@ -612,7 +612,7 @@
                                         <td class="long-text">
                                             <p>Bajo licencia [CC BY-NC-ND 3.0].</p>
                                             <p><a href="https://creativecommons.org/licenses/by-nc-nd/3.0/"
-                                                    target="_blank">Creative Commons NC-ND 3.0</a></p>
+                                                    target="_blank">Creative Commons BY-NC-ND 3.0</a></p>
                                         </td>
                                     </tr>
                                     <tr>
@@ -624,7 +624,74 @@
                                         <td class="long-text">
                                             <p>Bajo licencia [CC BY 3.0].</p>
                                             <p><a href="https://creativecommons.org/licenses/by/3.0/"
-                                                    target="_blank">Creative Commons 3.0</a></p>
+                                                    target="_blank">Creative Commons BY 3.0</a></p>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td rowspan="6">Info</td>
+                                        <td>AccessibleFestivals.jpg</td>
+                                        <td>
+                                            <p>https://www.flickr.com/photos/tonyfelgueiras/7723752000</p>
+                                            <p>Foto de Tony Felgueiras</p>
+                                        </td>
+                                        <td class="long-text">
+                                            <p>Bajo licencia [CC BY-NC-ND 2.0]</p>
+                                            <p><a href="https://creativecommons.org/licenses/by-nc-nd/2.0/" target="_blank">Creative Commons BY-NC-ND 2.0</a></p>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Camping1.jpg</td>
+                                        <td>
+                                            <p>https://commons.wikimedia.org/wiki/File:Festival_nyon_camping.JPG</p>
+                                            <p>Foto by Ch-info.ch</p>
+                                        </td>
+                                        <td class="long-text">
+                                            <p>Bajo licencia [CC BY 3.0]</p>
+                                            <p><a href="https://creativecommons.org/licenses/by/3.0/" target="_blank">Creative Commons BY 3.0</a></p>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Camping.png</td>
+                                        <td>
+                                            <p>https://www.flickr.com/photos/exitfestival/51305966939</p>
+                                            <p>Foto by Exit Festival</p>
+                                        </td>
+                                        <td class="long-text">
+                                            <p>Bajo licencia [CC BY-NC-SA 2.0]</p>
+                                            <p><a href="https://creativecommons.org/licenses/by-nc-sa/2.0/" target="_blank">Creative Commons BY-NC-SA 2.0</a></p>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>festival2.jpg</td>
+                                        <td>
+                                            <p>https://www.pexels.com/es-es/foto/vista-aerea-gente-festival-fiesta-3924178/</p>
+                                            <p>Foto by Tom Fisk</p>
+                                        </td>
+                                        <td class="long-text">
+                                            <p>Bajo licencia [Public Domain]</p>
+                                            <p><a href="https://creativecommons.org/public-domain/" target="_blank">Public Domain</a></p>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>HISTORIAFESTIVAL.JPG</td>
+                                        <td>
+                                            <p>https://www.rawpixel.com/image/5924378/photo-image-public-domain-people-free</p>
+                                            <p>AI Generated</p>
+                                        </td>
+                                        <td class="long-text">
+                                            <p>Bajo licencia [CC0 1.0 Universal]</p>
+                                            <p><a href="https://creativecommons.org/publicdomain/zero/1.0/" target="_blank">CC0 1.0 Universal</a></p>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>FestHistory1.jpg</td>
+                                        <td>
+                                            <p>https://stockcake.com/i/music-festival-excitement_117334_11765</p>
+                                            <p>AI Generated</p>
+                                        </td>
+                                        <td class="long-text">
+                                            <p>Bajo licencia [CC0 1.0 Universal]</p>
+                                            <p><a href="https://creativecommons.org/publicdomain/zero/1.0/" target="_blank">CC0 1.0 Universal</a></p>
                                         </td>
                                     </tr>
                                 </tbody>

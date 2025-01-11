@@ -6,6 +6,16 @@
     background-color: $fondo2;
 }
 
+#gameContainerTetris {
+    width: 300px;
+    height: 600px;
+
+    // El fondo estará difuminado de menos a más de arriba a abajo
+    background: linear-gradient(to bottom, $primario1 0%, $fondo 100%);
+
+    border-bottom: 2px solid $resaltar1;
+}
+
 .highlight {
     color: $resaltar1;
 }

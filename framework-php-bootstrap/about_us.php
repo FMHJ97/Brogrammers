@@ -102,7 +102,7 @@
                                     </p>
                                 </div>
                                 <div class="col-md-12 d-flex justify-content-center">
-                                    <a href="juegoFMHJ.php" target="_blank" class="btn about-us-btn">Iniciar Juego</a>
+                                    <a href="juegoJMPA.php" target="_blank" class="btn about-us-btn">Iniciar Juego</a>
                                 </div>
                             </div>
                         </div>

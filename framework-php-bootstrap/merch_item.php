@@ -17,7 +17,7 @@
             <!-- Nombre y Precio (Oculto en dispositivos superiores a md) -->
             <div class="row d-block d-md-none mb-5">
                 <div class="col item-heading">
-                    <h1>Camiseta GroundSound Blanca<br>(Black Logo)</h1>
+                    <h1>Camiseta Blanca GroundSound<br>(Black Logo)</h1>
                     <h2>€14,00 EUR</h2>
                 </div>
             </div>
@@ -60,7 +60,7 @@
                     <!-- Nombre y Precio (Oculto en dispositivos móviles) -->
                     <div class="row d-none d-md-block">
                         <div class="col item-heading">
-                            <h1>Camiseta GroundSound Blanca (Black Logo)</h1>
+                            <h1>Camiseta Blanca GroundSound (Black Logo)</h1>
                             <h2>€14,00 EUR</h2>
                         </div>
                     </div>

@@ -319,7 +319,7 @@
                                 </thead>
                                 <tbody>
                                     <tr>
-                                        <td rowspan="10">Francisco Manuel Hernández</td>
+                                        <td rowspan="11">Francisco Manuel Hernández</td>
                                         <td rowspan="7">Página Merch y/o Merch Item</td>
                                         <td>camiseta_blanca_01.png</td>
                                         <td rowspan="2">
@@ -386,6 +386,17 @@
                                         <td>Creative Commons CC0 1.0 Universal<br>
                                             <a href="https://creativecommons.org/publicdomain/zero/1.0/" target="_blank">Licencia
                                                 CC0 1.0 Universal</a>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Página Sobre Nosotros</td>
+                                        <td>dummy_user.png</td>
+                                        <td>https://commons.wikimedia.org/wiki/File:Placeholder_Person.jpg<br>
+                                            <u>Creador</u>: Peppypo
+                                        </td>
+                                        <td>Creative Commons CC BY-SA 4.0<br>
+                                            <a href="https://creativecommons.org/licenses/by-sa/4.0/deed.en" target="_blank">Licencia
+                                            CC BY-SA 4.0</a>
                                         </td>
                                     </tr>
                                     <tr>

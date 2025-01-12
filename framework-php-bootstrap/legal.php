@@ -319,7 +319,7 @@
                                 </thead>
                                 <tbody>
                                     <tr>
-                                        <td rowspan="9">Francisco Manuel Hernández</td>
+                                        <td rowspan="10">Francisco Manuel Hernández</td>
                                         <td rowspan="7">Página Merch y/o Merch Item</td>
                                         <td>camiseta_blanca_01.png</td>
                                         <td rowspan="2">
@@ -376,6 +376,16 @@
                                     <tr>
                                         <td>redbull.png</td>
                                         <td>https://creazilla.com/media/clipart/7826900/red-bull-gmbh-logo
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Página Index</td>
+                                        <td>festival_1080p.mp4</td>
+                                        <td>https://www.flickr.com/photos/24490288@N04/52325551124/
+                                        </td>
+                                        <td>Creative Commons CC0 1.0 Universal<br>
+                                            <a href="https://creativecommons.org/publicdomain/zero/1.0/" target="_blank">Licencia
+                                                CC0 1.0 Universal</a>
                                         </td>
                                     </tr>
                                     <tr>

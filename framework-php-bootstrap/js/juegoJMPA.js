@@ -1,7 +1,15 @@
+document.addEventListener('DOMContentLoaded', function() {
+    showStartButton();  // Muestra el botón de inicio cuando la página se cargue
+});
+
 // Variables globales
 var stage;
 var layer;
 var tetris;
+
+let layerLimit; // Capa para la línea del límite
+let layerGame;  // Capa para las piezas del juego
+
 
 // Variables de configuración
 var config = {
@@ -34,35 +42,53 @@ var tetrominos = [
     { color: 'cyan', blocks: [[1, 1, 1, 1]] }
 ];
 
-// Vincular el evento click del botón "Iniciar"
-document.getElementById('startButton').addEventListener('click', init);
+
 
 // Inicializar el juego
 function init() {
-    // Ocultar el botón de inicio
+    // Ocultar el botón de inicio cuando el juego empieza
     document.getElementById('startButtonContainer').style.display = 'none';
 
+    // Mostrar el área de juego
     stage = new Konva.Stage({
         container: 'gameContainerTetris',
         width: config.width * config.blockSize,
         height: config.height * config.blockSize
     });
 
-    layer = new Konva.Layer();
-    stage.add(layer);
+    // Crear dos capas: una para las piezas y otra para la línea del límite
+    layerGame = new Konva.Layer();
+    stage.add(layerGame);
+
+    layerLimit = new Konva.Layer();
+    stage.add(layerLimit);
 
     tetris = new Array(config.width * config.height).fill(null);
+
+    // Dibujar la línea de límite superior a 2 bloques de distancia del borde superior
+    drawTopLimitLine();
 
     // Vincular la función onKeyDown al evento keydown
     document.addEventListener('keydown', onKeyDown);
 
-    startGame();
+    startGame(); // Comienza el juego
 }
+
+
+// Mostrar el botón de inicio si no se ha comenzado el juego
+function showStartButton() {
+    document.getElementById('startButtonContainer').style.display = 'block';
+}
+
+// Iniciar el juego
+document.getElementById('startButton').addEventListener('click', init);
 
 // Función que inicia el juego
 function startGame() {
     state.score = 0;
     state.gameOver = false;
+
+    savedTetromino = null; // Reiniciar la pieza guardada al comenzar una nueva partida
 
     state.nextTetromino = randomTetromino();
     state.tetromino = randomTetromino();
@@ -74,6 +100,10 @@ function startGame() {
     state.interval = setInterval(function () {
         moveTetromino(0, 1);
     }, config.speed);
+
+    // Ocultar el mensaje de fin del juego al iniciar
+    hideGameOverMessage();
+    hideStartButton(); // Ocultar el botón de inicio
 }
 
 // Mostrar la siguiente pieza en el contenedor
@@ -146,6 +176,7 @@ function updateSavedPiece() {
 function placeTetromino() {
     var blocks = state.tetromino.blocks;
 
+    // Colocar la pieza actual en el tablero
     for (var j = 0; j < blocks.length; j++) {
         for (var i = 0; i < blocks[j].length; i++) {
             if (blocks[j][i]) {
@@ -156,8 +187,8 @@ function placeTetromino() {
         }
     }
 
+    // Comprobar si hay líneas completas
     var lines = 0;
-
     for (var y = 0; y < config.height; y++) {
         var line = tetris.slice(y * config.width, y * config.width + config.width);
 
@@ -168,23 +199,24 @@ function placeTetromino() {
         }
     }
 
-    state.score += lines;
-
+    state.score += 100 * lines; // Añadir puntos por cada línea completada  (100 puntos por línea)
     if (lines > 0) {
         render();
-        updateScore();  // Actualiza la puntuación cada vez que se complete una línea
+        updateScore();  // Actualizar la puntuación
     }
 
-    // Actualizamos la siguiente pieza
+    // Actualizar las piezas
     state.tetromino = state.nextTetromino;
-    state.nextTetromino = randomTetromino();  // Generamos una nueva siguiente pieza
+    state.nextTetromino = randomTetromino();  // Nueva pieza siguiente
 
-    // Mostrar la siguiente pieza
     updateNextPiece();
 
+    // Comprobar si el juego terminó
     if (collides(state.tetromino, state.tetromino.x, state.tetromino.y)) {
-        gameOver();  // Llamar a gameOver si colisiona
+        gameOver();  // Terminar el juego si colisiona
     }
+
+    canHold = true; // Habilitar la opción de guardar una nueva pieza
 }
 
 
@@ -257,25 +289,32 @@ function rotateTetromino() {
 
 // Guardar o usar la pieza guardada
 function holdPiece() {
-    if (!canHold) return;
+    if (state.gameOver) return; // No se puede guardar si el juego terminó
 
+    if (!canHold) return; // Si no se puede guardar, salir
+
+    // Si no hay pieza guardada, guardar la pieza actual y obtener la siguiente
     if (!savedTetromino) {
         savedTetromino = state.tetromino;
         state.tetromino = state.nextTetromino;
-        state.nextTetromino = randomTetromino();
+        state.nextTetromino = randomTetromino(); // Obtener una nueva pieza
     } else {
+        // Si ya hay una pieza guardada, intercambiarla con la pieza actual
         [savedTetromino, state.tetromino] = [state.tetromino, savedTetromino];
     }
 
+    // Colocar la nueva pieza en la parte superior del tablero
     state.tetromino.x = Math.floor(config.width / 2 - state.tetromino.blocks[0].length / 2);
     state.tetromino.y = 0;
 
+    // Actualizar las piezas mostradas
     updateSavedPiece();
     updateNextPiece();
     render();
 
-    canHold = false;
+    canHold = false; // Deshabilitar la opción de guardar hasta que la pieza actual sea colocada
 }
+
 
 function onKeyDown(event) {
     switch (event.key) {
@@ -323,8 +362,10 @@ function collides(tetromino, x, y, blocks = tetromino.blocks) {
 
 // Renderizar el tablero
 function render() {
-    layer.destroyChildren();
+    // Limpiar la capa de las piezas del juego, pero no la capa del límite
+    layerGame.destroyChildren();
 
+    // Dibujar las piezas del tablero
     for (let y = 0; y < config.height; y++) {
         for (let x = 0; x < config.width; x++) {
             const color = tetris[y * config.width + x];
@@ -336,11 +377,12 @@ function render() {
                     height: config.blockSize,
                     fill: color
                 });
-                layer.add(block);
+                layerGame.add(block);
             }
         }
     }
 
+    // Dibujar la pieza activa del tetromino
     state.tetromino.blocks.forEach((row, j) => {
         row.forEach((block, i) => {
             if (block) {
@@ -353,12 +395,12 @@ function render() {
                     height: config.blockSize,
                     fill: state.tetromino.color
                 });
-                layer.add(blockRect);
+                layerGame.add(blockRect);
             }
         });
     });
 
-    layer.draw();
+    layerGame.draw(); // Redibujar la capa del juego
 }
 
 // Pausar el juego
@@ -420,10 +462,6 @@ function displayLeaderboard(leaderboard) {
     const leaderboardContainer = document.getElementById('leaderboard');
     leaderboardContainer.innerHTML = ''; // Limpiar contenido existente
 
-    const title = document.createElement('h3');
-    title.textContent = 'Mejores puntuaciones';
-    leaderboardContainer.appendChild(title);
-
     const list = document.createElement('ul');
 
     leaderboard.forEach(entry => {
@@ -440,7 +478,24 @@ function gameOver() {
         stopGame(); // Detener el juego
         showGameOverMessage(); // Mostrar el mensaje de fin del juego
         updateLeaderboard(); // Actualizar el leaderboard
+        showStartButton();  // Mostrar el botón para iniciar nuevamente
+
+
     }
+}
+
+function drawTopLimitLine() {
+    const topLimitLine = new Konva.Line({
+        points: [0, 2 * config.blockSize, config.width * config.blockSize, 2 * config.blockSize], // Dibujar la línea 2 bloques por debajo del borde superior
+        stroke: 'red', // Color de la línea
+        strokeWidth: 5, // Grosor de la línea
+        lineCap: 'round',
+        lineJoin: 'round'
+    });
+
+    // Agregar la línea a la capa de límite
+    layerLimit.add(topLimitLine);
+    layerLimit.draw(); // Redibujar la capa para mostrar la línea
 }
 
 
@@ -465,22 +520,39 @@ function hideGameOverMessage() {
     messageContainer.style.display = 'none';
 }
 
-// Modificar `resetGame` para ocultar el mensaje al reiniciar
+// Reiniciar el juego
 function restartGame() {
     stopGame(); // Detener el juego si estaba en progreso
+
+    // Reiniciar el estado del juego
     state = {
-        tetromino: null,
+        tetromino: randomTetromino(),  // Inicializa la pieza actual
+        nextTetromino: randomTetromino(),  // Inicializa la siguiente pieza
         interval: null,
         score: 0,
         gameOver: false
     };
-    tetris = new Array(config.width * config.height).fill(null);
-    hideGameOverMessage(); // Ocultar mensaje al reiniciar
-    startGame();
+
+    tetris = new Array(config.width * config.height).fill(null);  // Limpiar el tablero
+
+    hideGameOverMessage();  // Ocultar el mensaje de fin de juego
+    updateScore();  // Reiniciar la puntuación en pantalla
+
+    // Mostrar las piezas
+    updateNextPiece();
+    updateSavedPiece();  // Si hay una pieza guardada, actualizarla
+
+    startGame();  // Comenzar el juego
+
+    hideStartButton();  // Ocultar el botón de inicio
+}
+
+// Ocultar el botón de inicio
+function hideStartButton() {
+    document.getElementById('startButtonContainer').style.display = 'none';
 }
 
 
-
 // Inicialización
-init();
+// init();
 

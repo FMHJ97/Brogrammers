@@ -16,6 +16,49 @@
     border-bottom: 2px solid $resaltar1;
 }
 
+#nextPiece {
+    border: 3px solid $primario1;
+    /* Color de borde resaltado */
+    padding: 10px;
+    background-color: $fondo;
+    border-radius: 8px;
+    /* Bordes redondeados */
+    width: 135px;
+    height: 100px;
+}
+
+#gameOverMessage {
+    display: none;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(0, 0, 0, 0.8);
+    color: white;
+    padding: 20px;
+    border-radius: 10px;
+    font-size: 20px;
+    text-align: center;
+}
+
+#startButtonContainer {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.next-piece {
+    display: flex;
+    /* Usamos grid para controlar la matriz de la pieza */
+    width: 100%;
+    /* Ocupa el 100% del contenedor */
+    height: 100%;
+    /* Ocupa el 100% del contenedor */
+    justify-content: end;
+    /* Centramos el contenido horizontalmente */
+}
+
 .highlight {
     color: $resaltar1;
 }

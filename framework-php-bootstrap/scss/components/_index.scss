@@ -1,100 +1,180 @@
 /*CF2: Hay que poner un solo componente en cada fichero, por ejemlo, el timer en un 
 fichero llamado _timer.scss */
 #timer {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-  
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 
-  .time-block {
-    display: flex;
-    align-items: center;
-  }
 
-  .timer-container {
-    text-align: center;
-    display: flex;
-    justify-content: center;
-    color: $texto1;
-  }
+.time-block {
+  display: flex;
+  align-items: center;
+}
 
-  .timer-overlay {
-    position: absolute;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+.timer-container {
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  color: $texto1;
+}
 
-  }
+.timer-overlay {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 
-  .time-item {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-  /*CF2: Mejor para esto usar la clase display de bootstrap, pesonalizando lo que haga falta*/
-  .time-number {
-    font-size: 20vw;
-    font-weight: 800;
-    font-family: $logo-font-custom;
-    margin-bottom: -5px; /* Reduce or remove negative margin */
-  }
-  
-  /*CF2: Mejor para esto usar la clase display de bootstrap, pesonalizando lo que haga falta*/
-  .time-label {
-    align-self: center;
-    font-size: 10vw;
-    font-family: $logo-font-custom;
-    color: $resaltar2;
-    text-shadow: 2px 2px 5px $resaltar1;
-    line-height: 1; /* Adjust line height if needed */
-  }
-  .festival {
-    font-size: 18vw;
-    font-family: $logo-font-custom;
-    color: $texto1;
-    text-shadow: 
-      5px 5px 20px rgba($texto1, 0.3),   /* Bottom-right shadow */
-      -5px 5px 20px rgba($texto1, 0.3),  /* Bottom-left shadow */
-      5px -5px 20px rgba($texto1, 0.3),  /* Top-right shadow */
-      -5px -5px 20px rgba($texto1, 0.3); /* Top-left shadow */
-    line-height: 1;
-    white-space: nowrap;   
-    text-align: center;     
-    width: 100%; 
-    justify-content: space-between; 
-    display: flex;         
-    justify-content: center;
-    align-items: center;
-  }
-  @include media-breakpoint-down(md){
-    .festival-location {
-    font-size: $heading-font-phone-5 !important;
-    }
-    .festival-date {
-      font-size: $heading-font-phone-2 !important;
-    }
-  }
+}
+
+.time-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/*CF2: Mejor para esto usar la clase display de bootstrap, pesonalizando lo que haga falta*/
+.time-number {
+  font-size: 20vw;
+  font-weight: 800;
+  font-family: $logo-font-custom;
+  margin-bottom: -5px;
+  /* Reduce or remove negative margin */
+}
+
+/*CF2: Mejor para esto usar la clase display de bootstrap, pesonalizando lo que haga falta*/
+.time-label {
+  align-self: center;
+  font-size: 10vw;
+  font-family: $logo-font-custom;
+  color: $resaltar2;
+  text-shadow: 2px 2px 5px $resaltar1;
+  line-height: 1;
+  /* Adjust line height if needed */
+}
+
+.festival {
+  font-size: 18vw;
+  font-family: $logo-font-custom;
+  color: $texto1;
+  text-shadow:
+    5px 5px 20px rgba($texto1, 0.3),
+    /* Bottom-right shadow */
+    -5px 5px 20px rgba($texto1, 0.3),
+    /* Bottom-left shadow */
+    5px -5px 20px rgba($texto1, 0.3),
+    /* Top-right shadow */
+    -5px -5px 20px rgba($texto1, 0.3);
+  /* Top-left shadow */
+  line-height: 1;
+  white-space: nowrap;
+  text-align: center;
+  width: 100%;
+  justify-content: space-between;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@include media-breakpoint-down(md) {
   .festival-location {
-    background-color: $resaltar1;
-    color: $texto2;
-    font-size: $heading-font-1;
-    font-family: $headings-font-family;
-    font-weight: $headings-font-weight;
-    padding-inline: 1rem;
-  }
-  .festival-date {
-    color: $resaltar1;
-    font-family: $headings-font-family;
-    font-weight: $headings-font-weight;
-    font-size: $heading-font-1;
+    font-size: $heading-font-phone-5 !important;
   }
 
-  
-  
-  
-  
-  
+  #video-container {
+    button {
+      font-size: $body-font-phone-2;
+      padding: 1px;
+    }
+
+  }
+
+  .festival-date {
+    font-size: $heading-font-phone-2 !important;
+  }
+}
+
+.festival-location {
+  background-color: $resaltar1;
+  color: $texto2;
+  font-size: $heading-font-1;
+  font-family: $headings-font-family;
+  font-weight: $headings-font-weight;
+  padding-inline: 1rem;
+}
+
+.festival-date {
+  color: $resaltar1;
+  font-family: $headings-font-family;
+  font-weight: $headings-font-weight;
+  font-size: $heading-font-1;
+}
+
+
+#video-container {
+  width: 80%;
+  height: 60vh;
+  margin-inline: auto;
+  position: relative;
+
+
+  video {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+  }
+
+  #video-controls {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    padding: 5px;
+    opacity: 0;
+    transition: opacity 0.3s;
+    background-color: $primario1;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+
+    button {
+      font-size: $body-font-2;
+      font-size: $body-font-family;
+    }
+
+  }
+
+  &:hover #video-controls {
+    opacity: 1;
+  }
+}
+
+button {
+  background: $resaltar2;
+  border: none;
+  color: $texto2;
+  border-radius: 3px;
+  padding: 5px 10px;
+
+  &:hover {
+    cursor: pointer;
+    background: $fondo;
+    color: $texto1;
+  }
+}
+
+#volume-bar {
+  width: 80px;
+  background: $resaltar2;
+  color: $resaltar1;
+}
+
+@media (hover: none) and (pointer: coarse) {
+  #video-container #video-controls {
+    opacity: 1;
+  }
+}

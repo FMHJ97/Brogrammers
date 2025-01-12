@@ -13,7 +13,7 @@
         <section class="container page-section">
             <div class="row page-section-heading">
                 <h1>GroundSound Festival Games</h1>
-                <h2>Videojuego de FMHJ</h2>
+                <h2>Tickets, please!</h2>
             </div>
         </section>
 

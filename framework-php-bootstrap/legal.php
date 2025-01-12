@@ -403,18 +403,11 @@
                                         <td>Jose Manuel Ponferrada</td>
                                         <td>Páginas de Tickets e Info</td>
                                         <td>mapaFestival.jpg</td>
-                                        <td>https://networksites.livenationinternational.com/networksites/bqfnrygy/hera_2024_mapa.jpg
+                                        <td>https://upload.wikimedia.org/wikipedia/commons/c/cc/Medusa_Festival_Camp_Map.jpg
                                         </td>
-                                        <td class="long-text">OCESA no concede una licencia para el uso de los recursos
-                                            del sitio sin
-                                            autorización previa. Todo el contenido, incluidas las imágenes, está
-                                            protegido por derechos de autor y es propiedad de Operadora de Centros de
-                                            Espectáculos, S.A. de C.V. (OCESA). El uso de las imágenes se limita a fines
-                                            personales dentro del contexto del sitio, y cualquier reproducción,
-                                            modificación, distribución o uso comercial requiere autorización expresa por
-                                            escrito.
-                                            <a href="https://www.ocesa.com.mx/terminos-y-condiciones"
-                                                target="_blank">Licencia OCESA</a>
+                                        <td>Creative Commons Attribution-Share Alike 4.0 International license
+                                            <a href="https://commons.wikimedia.org/wiki/File:Medusa_Festival_Camp_Map.jpg"
+                                                target="_blank">Licencia Wikimedia Commons</a>
                                         </td>
                                     </tr>
                                     <tr>

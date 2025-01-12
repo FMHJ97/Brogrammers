@@ -33,7 +33,22 @@ window.onload = function () {
 
   // Sliders
   var volumeBar = document.getElementById("volume-bar");
+  
+  video.addEventListener("click", function () {
+    if (video.paused == true) {
+      // Play the video
+      video.play();
 
+      // Update the button text to 'Pause'
+      playButton.innerHTML = "Pause";
+    } else {
+      // Pause the video
+      video.pause();
+
+      // Update the button text to 'Play'
+      playButton.innerHTML = "Play";
+    }
+  });
 
   // Event listener for the play/pause button
   playButton.addEventListener("click", function () {
@@ -82,7 +97,7 @@ window.onload = function () {
     }
   });
 
-  
+
 
   // Event listener for the volume bar
   volumeBar.addEventListener("change", function () {

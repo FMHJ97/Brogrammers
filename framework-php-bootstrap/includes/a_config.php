@@ -80,6 +80,11 @@
 			$PAGE_TITLE = "Videojuego FMHJ";
 			break;
 
+		case "/juegoFranRuiz.php":
+			$CURRENT_PAGE = "Videojuego Fran Ruiz"; 
+			$PAGE_TITLE = "Videojuego Fran Ruiz";
+		break;
+
 		case "/juegoTaylor.php":
 			$CURRENT_PAGE = "Videojuego Taylor"; 
 			$PAGE_TITLE = "Videojuego Taylor";

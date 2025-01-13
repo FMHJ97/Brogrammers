@@ -3,7 +3,6 @@
 <html lang="en">
 <head>
     <?php include("includes/head_tags.php"); ?>
-    <title>GroundSound Hero</title>
     <script src="https://cdn.jsdelivr.net/npm/konva@8.4.3/konva.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/howler"></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css">

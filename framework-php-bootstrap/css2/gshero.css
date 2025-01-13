@@ -1,4 +1,6 @@
-    body {
+   /* LOS CSS DE LOS JUEGOS DEBEN IR INTEGRADOS EN LOS DE LA WEB???  LO PONGO A PARTE A ESPERA DE CONFIRMACIÓN, AUNQUE EL RESTO LO HAN PUESTO EN UN SCSS. */
+   
+   body {
       margin: 0;
       background-color: #000;
       font-family: 'Arial', sans-serif;

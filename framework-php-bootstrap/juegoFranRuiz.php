@@ -7,7 +7,6 @@
     <script src="https://cdn.jsdelivr.net/npm/howler"></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css">
     <style>
-        /* Al ser un juego le meto los estilos a parte???*/
         body {
             margin: 0;
             background-color: #000;

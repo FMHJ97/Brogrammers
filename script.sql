@@ -6,6 +6,8 @@ CREATE TABLE Ventas (
   producto int,
   usuario varchar(32),
   precio numeric,
+cantidad int,
+precio_total numeric,
   fecha datetime
 );
 
@@ -20,9 +22,13 @@ CREATE TABLE Productos (
   nombre varchar(32),
   descripcion text,
   precio float,
-  stock int
-);
+  );
 
+CREATE TABLE Stock {
+  id_producto int NOT NULL PRIMARY KEY,
+  last_update_time date,
+  cantidad int
+}
 
 CREATE TABLE Valoracion (
   id int NOT NULL PRIMARY KEY,
@@ -51,7 +57,7 @@ CREATE TABLE Contenidos (
 
 CREATE TABLE Fotos (
   id int NOT NULL PRIMARY KEY,
-  url varchar(128),
+  url_foto varchar(128),
   comentario varchar(512),
   usuario varchar(32),
   fecha_subida datetime
@@ -59,8 +65,8 @@ CREATE TABLE Fotos (
 
 
 CREATE TABLE User (
-  id int NOT NULL
-  username varchar(32) PRIMARY KEY,
+  id int NOT NULL PRIMARY KEY,
+  username varchar(32) UNIQUE,
   clave varchar(255),
   nombre varchar(32),
   apellido1 varchar(32),
@@ -70,7 +76,7 @@ CREATE TABLE User (
   pais varchar(32),
   codigo_postal varchar(32),
   telefono varchar(32),
-  rol varchar(32)
+  rol Set('admin', 'editor', 'usuario') DEFAULT 'usuario'
 );
 
 

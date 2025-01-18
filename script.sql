@@ -1,21 +1,19 @@
 create database groundsound;
 use groundsound;
 
+CREATE TABLE Foro (
+  id int NOT NULL PRIMARY KEY
+);
+
 CREATE TABLE Ventas (
   id int NOT NULL PRIMARY KEY,
   producto int,
   usuario varchar(32),
   precio numeric,
-cantidad int,
-precio_total numeric,
+  cantidad int,
+  precio_total numeric,
   fecha datetime
 );
-
-
-CREATE TABLE Foro (
-  id int NOT NULL PRIMARY KEY
-);
-
 
 CREATE TABLE Productos (
   id int NOT NULL PRIMARY KEY,
@@ -94,3 +92,4 @@ ALTER TABLE Valoracion ADD CONSTRAINT Valoracion_usuario_fk FOREIGN KEY (usuario
 ALTER TABLE Fotos ADD CONSTRAINT Fotos_usuario_fk FOREIGN KEY (usuario) REFERENCES User (username);
 ALTER TABLE Mensajes ADD CONSTRAINT Mensajes_usuario_fk FOREIGN KEY (usuario) REFERENCES User (username);
 ALTER TABLE Ventas ADD CONSTRAINT Ventas_usuario_fk FOREIGN KEY (usuario) REFERENCES User (username);
+ALTER TABLE Stock ADD CONSTRAINT Stock_id_producto_fk FOREIGN KEY (id_producto) REFERENCES Productos (id);

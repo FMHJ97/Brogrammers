@@ -15,8 +15,9 @@ class Usuario {
     private $telefono;
     private $img_perfil;
     private $rol;
+    private $newsletter;
 
-    public function __construct($id,$u,$cl,$n,$a1,$a2,$co,$p,$cp,$t,$i,$r) {
+    public function __construct($id,$u,$cl,$n,$a1,$a2,$co,$p,$cp,$t,$i,$r,$nl) {
         $this->id = $id;
         $this->username = $u;
         $this->clave = $cl;
@@ -29,6 +30,7 @@ class Usuario {
         $this->telefono = $t;
         $this->img_perfil = $i;
         $this->rol = $r;
+        $this->newsletter = $nl;
     }
 
     public function __get(string $name): mixed {

@@ -1,78 +1,40 @@
 CREATE DATABASE groundsound;
 USE groundsound;
 
-CREATE TABLE Foro (
-  id INT NOT NULL PRIMARY KEY
-);
-
-CREATE TABLE Hilo (
-  id INT NOT NULL PRIMARY KEY,
-  id_foro INT,
-  CONSTRAINT Hilo_id_foro_fk FOREIGN KEY (id_foro) REFERENCES Foro (id)
-);
-
-CREATE TABLE Mensajes (
-  id INT NOT NULL PRIMARY KEY,
-  id_hilo INT,
-  usuario VARCHAR(32),
-  comentario VARCHAR(512),
-  CONSTRAINT Mensajes_id_hilo_fk FOREIGN KEY (id_hilo) REFERENCES Hilo (id),
-  CONSTRAINT Mensajes_usuario_fk FOREIGN KEY (usuario) REFERENCES User (username)
-);
-
 CREATE TABLE Ventas (
   id INT NOT NULL PRIMARY KEY,
-  producto INT,
-  usuario VARCHAR(32),
+  id_producto INT,
+  id_usuario INT,
   precio NUMERIC,
   cantidad INT,
   precio_total NUMERIC,
-  fecha DATETIME,
-  CONSTRAINT Ventas_producto_fk FOREIGN KEY (producto) REFERENCES Productos (id),
-  CONSTRAINT Ventas_usuario_fk FOREIGN KEY (usuario) REFERENCES User (username)
+  fecha DATETIME
 );
 
 CREATE TABLE Productos (
   id INT NOT NULL PRIMARY KEY,
-  nombre VARCHAR(32),
-  descripcion TEXT,
-  precio FLOAT
-);
-
-CREATE TABLE Stock (
-  id_producto INT NOT NULL PRIMARY KEY,
-  last_update_time DATE,
-  cantidad INT,
-  CONSTRAINT Stock_id_producto_fk FOREIGN KEY (id_producto) REFERENCES Productos (id)
+  nombre VARCHAR(32) UNIQUE,
+  descripcion VARCHAR(512),
+  precio FLOAT,
+  stock INT
 );
 
 CREATE TABLE Valoracion (
   id INT NOT NULL PRIMARY KEY,
-  usuario VARCHAR(32),
-  contenido INT,
+  id_producto INT,
+  id_usuario INT,
   valoracion INT,
   comentario VARCHAR(512),
-  CONSTRAINT Valoracion_contenido_fk FOREIGN KEY (contenido) REFERENCES Contenidos (id),
-  CONSTRAINT Valoracion_usuario_fk FOREIGN KEY (usuario) REFERENCES User (username)
-);
-
-CREATE TABLE Contenidos (
-  id INT NOT NULL PRIMARY KEY,
-  titulo VARCHAR(32),
-  fecha_pub DATETIME,
-  texto TEXT
 );
 
 CREATE TABLE Fotos (
   id INT NOT NULL PRIMARY KEY,
-  url_foto VARCHAR(128),
-  comentario VARCHAR(512),
-  usuario VARCHAR(32),
+  id_usuario INT,
+  foto blob,
   fecha_subida DATETIME,
-  CONSTRAINT Fotos_usuario_fk FOREIGN KEY (usuario) REFERENCES User (username)
 );
 
-CREATE TABLE User (
+CREATE TABLE Usuario (
   id INT NOT NULL PRIMARY KEY,
   username VARCHAR(32) UNIQUE,
   clave VARCHAR(255),
@@ -84,5 +46,11 @@ CREATE TABLE User (
   pais VARCHAR(32),
   codigo_postal VARCHAR(32),
   telefono VARCHAR(32),
+  img_perfil blob,
   rol ENUM('admin', 'editor', 'usuario') DEFAULT 'usuario'
 );
+
+alter table ventas add CONSTRAINT Ventas_producto_fk FOREIGN KEY (id_producto) REFERENCES Productos (id);
+alter table ventas add CONSTRAINT Ventas_usuario_fk FOREIGN KEY (id_usuario) REFERENCES Usuario (id);
+alter table fotos add CONSTRAINT Fotos_usuario_fk FOREIGN KEY (id_usuario) REFERENCES Usuario (id);
+alter table valoracion add CONSTRAINT Valoracion_usuario_fk FOREIGN KEY (id_usuario) REFERENCES Usuario (id);

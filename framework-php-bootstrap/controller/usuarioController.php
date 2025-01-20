@@ -12,14 +12,13 @@ class UserController
             $conex = new Conexion();
             $conex->beginTransaction();
             $pass = password_hash($usuario->clave, PASSWORD_DEFAULT);
-            $result = $conex->prepare("insert into usuario (username,clave,nombre,apellido1,apellido2,correo_electronico,fecha_nac,pais,codigo_postal,telefono,img_perfil,rol,newsletter) values (?,?,?,?,?,?,?,?,?,?,?,?,?)");
-            $result->bindParam(1,$usuario->username);
+            $result = $conex->prepare("insert into usuario (clave,nombre,apellido1,apellido2,correo_electronico,fecha_nac,pais,codigo_postal,telefono,img_perfil,rol,newsletter) values (?,?,?,?,?,?,?,?,?,?,?,?,?)");
             $result->bindParam(2,$pass);
             $result->bindParam(3,$usuario->nombre);
             $result->bindParam(4,$usuario->apellido1);
             if ($usuario->apellido2 !=null) {
                 $result->bindParam(5,$usuario->apellido2);
-            } else $result->bindParam(5,"");
+            } else $result->bindParam(5,"");    
             $result->bindParam(6,$usuario->correo);
             $result->bindParam(7,$usuario->fecha_nac);
             $result->bindParam(8,$usuario->pais);
@@ -53,7 +52,7 @@ class UserController
             $result = $conex->query("select * from usuario where username = '$value'");
             if ($result->num_rows) {
                 $fila = $result->fetch_object();
-                $user = new Usuario($fila->id, $fila->username, $fila->clave, $fila->nombre, $fila->apellido1, $fila->apellido2, $fila->correo_electronico, $fila->fecha_nac, $fila->pais, $fila->codigo_postal, $fila->telefono, $fila->img_perfil, $fila->rol,$fila->newsletter);
+                $user = new Usuario($fila->id, $fila->clave, $fila->nombre, $fila->apellido1, $fila->apellido2, $fila->correo_electronico, $fila->fecha_nac, $fila->pais, $fila->codigo_postal, $fila->telefono, $fila->img_perfil, $fila->rol,$fila->newsletter);
             } else {
                 $user = false;
             }

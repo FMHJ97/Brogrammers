@@ -37,18 +37,18 @@ CREATE TABLE Fotos (
 
 CREATE TABLE Usuario (
   id INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
-  username VARCHAR(32) UNIQUE,
   clave VARCHAR(255),
   nombre VARCHAR(32),
   apellido1 VARCHAR(32),
   apellido2 VARCHAR(32),
-  correo_electronico VARCHAR(64),
+  correo_electronico VARCHAR(64) UNIQUE,
   fecha_nac DATE,
   pais VARCHAR(32),
   codigo_postal VARCHAR(32),
   telefono VARCHAR(32),
   img_perfil blob,
-  rol ENUM('admin', 'editor', 'usuario') DEFAULT 'usuario'
+  rol ENUM('admin', 'editor', 'usuario') DEFAULT 'usuario',
+  newsletter TINYINT DEFAULT FALSE
 );
 
 alter table ventas add CONSTRAINT Ventas_producto_fk FOREIGN KEY (id_producto) REFERENCES Productos (id);

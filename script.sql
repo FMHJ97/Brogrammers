@@ -5,9 +5,9 @@ CREATE TABLE Ventas (
   id INT NOT NULL PRIMARY KEY,
   id_producto INT,
   id_usuario INT,
-  precio NUMERIC,
+  precio decuimal(10,2),
   cantidad INT,
-  precio_total NUMERIC,
+  precio_total decimal(10,2),
   fecha DATETIME
 );
 
@@ -16,7 +16,7 @@ CREATE TABLE Productos (
   nombre VARCHAR(32) UNIQUE,
   descripcion VARCHAR(512),
   detalles VARCHAR(512),
-  precio FLOAT,
+  precio decimal(10,2),
   stock INT
 );
 

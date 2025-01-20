@@ -18,3 +18,21 @@ Una vez hecho esto, ya podemos compilar los ficheros scss con el comando:
 
 sass -w scss:css
 
+
+
+
+
+
+
+
+Para cargar blob con PhP:::
+
+<?php 
+ $sql="select * from users";
+ $res=$con->query($sql);
+ if($res->num_rows>0){
+   while($row=$res->fetch_assoc()){
+	echo "<img src='data:image;base64,".base64_encode($row["image"])."' style='height:180px;width:200px;margin-left:22px;'>";
+   }
+ }
+?>

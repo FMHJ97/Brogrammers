@@ -15,6 +15,7 @@ CREATE TABLE Productos (
   id INT NOT NULL PRIMARY KEY,
   nombre VARCHAR(32) UNIQUE,
   descripcion VARCHAR(512),
+  detalles VARCHAR(512),
   precio FLOAT,
   stock INT
 );

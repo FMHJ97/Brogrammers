@@ -5,7 +5,7 @@ CREATE TABLE Ventas (
   id INT NOT NULL PRIMARY KEY,
   id_producto INT,
   id_usuario INT,
-  precio decuimal(10,2),
+  precio decimal(10,2),
   cantidad INT,
   precio_total decimal(10,2),
   fecha DATETIME

@@ -1,95 +1,88 @@
-create database groundsound;
-use groundsound;
+CREATE DATABASE groundsound;
+USE groundsound;
 
 CREATE TABLE Foro (
-  id int NOT NULL PRIMARY KEY
+  id INT NOT NULL PRIMARY KEY
+);
+
+CREATE TABLE Hilo (
+  id INT NOT NULL PRIMARY KEY,
+  id_foro INT,
+  CONSTRAINT Hilo_id_foro_fk FOREIGN KEY (id_foro) REFERENCES Foro (id)
+);
+
+CREATE TABLE Mensajes (
+  id INT NOT NULL PRIMARY KEY,
+  id_hilo INT,
+  usuario VARCHAR(32),
+  comentario VARCHAR(512),
+  CONSTRAINT Mensajes_id_hilo_fk FOREIGN KEY (id_hilo) REFERENCES Hilo (id),
+  CONSTRAINT Mensajes_usuario_fk FOREIGN KEY (usuario) REFERENCES User (username)
 );
 
 CREATE TABLE Ventas (
-  id int NOT NULL PRIMARY KEY,
-  producto int,
-  usuario varchar(32),
-  precio numeric,
-  cantidad int,
-  precio_total numeric,
-  fecha datetime
+  id INT NOT NULL PRIMARY KEY,
+  producto INT,
+  usuario VARCHAR(32),
+  precio NUMERIC,
+  cantidad INT,
+  precio_total NUMERIC,
+  fecha DATETIME,
+  CONSTRAINT Ventas_producto_fk FOREIGN KEY (producto) REFERENCES Productos (id),
+  CONSTRAINT Ventas_usuario_fk FOREIGN KEY (usuario) REFERENCES User (username)
 );
 
 CREATE TABLE Productos (
-  id int NOT NULL PRIMARY KEY,
-  nombre varchar(32),
-  descripcion text,
-  precio float,
-  );
+  id INT NOT NULL PRIMARY KEY,
+  nombre VARCHAR(32),
+  descripcion TEXT,
+  precio FLOAT
+);
 
-CREATE TABLE Stock {
-  id_producto int NOT NULL PRIMARY KEY,
-  last_update_time date,
-  cantidad int
-}
+CREATE TABLE Stock (
+  id_producto INT NOT NULL PRIMARY KEY,
+  last_update_time DATE,
+  cantidad INT,
+  CONSTRAINT Stock_id_producto_fk FOREIGN KEY (id_producto) REFERENCES Productos (id)
+);
 
 CREATE TABLE Valoracion (
-  id int NOT NULL PRIMARY KEY,
-  usuario varchar(32),
-  contenido int,
-  valoracion int,
-  comentario varchar(512)
+  id INT NOT NULL PRIMARY KEY,
+  usuario VARCHAR(32),
+  contenido INT,
+  valoracion INT,
+  comentario VARCHAR(512),
+  CONSTRAINT Valoracion_contenido_fk FOREIGN KEY (contenido) REFERENCES Contenidos (id),
+  CONSTRAINT Valoracion_usuario_fk FOREIGN KEY (usuario) REFERENCES User (username)
 );
-
-
-CREATE TABLE Mensajes (
-  id int NOT NULL PRIMARY KEY,
-  id_hilo int,
-  usuario varchar(32),
-  comentario varchar(512)
-);
-
 
 CREATE TABLE Contenidos (
-  id int NOT NULL PRIMARY KEY,
-  titulo varchar(32),
-  fecha_pub datetime,
-  texto text
+  id INT NOT NULL PRIMARY KEY,
+  titulo VARCHAR(32),
+  fecha_pub DATETIME,
+  texto TEXT
 );
-
 
 CREATE TABLE Fotos (
-  id int NOT NULL PRIMARY KEY,
-  url_foto varchar(128),
-  comentario varchar(512),
-  usuario varchar(32),
-  fecha_subida datetime
+  id INT NOT NULL PRIMARY KEY,
+  url_foto VARCHAR(128),
+  comentario VARCHAR(512),
+  usuario VARCHAR(32),
+  fecha_subida DATETIME,
+  CONSTRAINT Fotos_usuario_fk FOREIGN KEY (usuario) REFERENCES User (username)
 );
-
 
 CREATE TABLE User (
-  id int NOT NULL PRIMARY KEY,
-  username varchar(32) UNIQUE,
-  clave varchar(255),
-  nombre varchar(32),
-  apellido1 varchar(32),
-  apellido2 varchar(32),
-  correo_electronico varchar(64),
-  fecha_nac date,
-  pais varchar(32),
-  codigo_postal varchar(32),
-  telefono varchar(32),
-  rol Set('admin', 'editor', 'usuario') DEFAULT 'usuario'
+  id INT NOT NULL PRIMARY KEY,
+  username VARCHAR(32) UNIQUE,
+  clave VARCHAR(255),
+  nombre VARCHAR(32),
+  apellido1 VARCHAR(32),
+  apellido2 VARCHAR(32),
+  correo_electronico VARCHAR(64),
+  fecha_nac DATE,
+  pais VARCHAR(32),
+  codigo_postal VARCHAR(32),
+  telefono VARCHAR(32),
+  rol ENUM('admin', 'editor', 'usuario') DEFAULT 'usuario'
 );
-
-
-CREATE TABLE Hilo (
-  id int NOT NULL PRIMARY KEY,
-  id_foro int
-);
-
-
-ALTER TABLE Hilo ADD CONSTRAINT Hilo_id_foro_fk FOREIGN KEY (id_foro) REFERENCES Foro (id);
-ALTER TABLE Mensajes ADD CONSTRAINT Mensajes_id_hilo_fk FOREIGN KEY (id_hilo) REFERENCES Hilo (id);
-ALTER TABLE Valoracion ADD CONSTRAINT Valoracion_contenido_fk FOREIGN KEY (contenido) REFERENCES Contenidos (id);
-ALTER TABLE Ventas ADD CONSTRAINT Ventas_producto_fk FOREIGN KEY (producto) REFERENCES Productos (id);
-ALTER TABLE Valoracion ADD CONSTRAINT Valoracion_usuario_fk FOREIGN KEY (usuario) REFERENCES User (username);
-ALTER TABLE Fotos ADD CONSTRAINT Fotos_usuario_fk FOREIGN KEY (usuario) REFERENCES User (username);
-ALTER TABLE Mensajes ADD CONSTRAINT Mensajes_usuario_fk FOREIGN KEY (usuario) REFERENCES User (username);
-ALTER TABLE Ventas ADD CONSTRAINT Ventas_usuario_fk FOREIGN KEY (usuario) REFERENCES User (username);
-ALTER TABLE Stock ADD CONSTRAINT Stock_id_producto_fk FOREIGN KEY (id_producto) REFERENCES Productos (id);

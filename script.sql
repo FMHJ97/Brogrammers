@@ -2,7 +2,7 @@ CREATE DATABASE groundsound;
 USE groundsound;
 
 CREATE TABLE Ventas (
-  id INT NOT NULL PRIMARY KEY,
+  id INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
   id_producto INT,
   id_usuario INT,
   precio decimal(10,2),
@@ -12,7 +12,7 @@ CREATE TABLE Ventas (
 );
 
 CREATE TABLE Productos (
-  id INT NOT NULL PRIMARY KEY,
+  id INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
   nombre VARCHAR(32) UNIQUE,
   descripcion VARCHAR(512),
   detalles VARCHAR(512),
@@ -21,7 +21,7 @@ CREATE TABLE Productos (
 );
 
 CREATE TABLE Valoracion (
-  id INT NOT NULL PRIMARY KEY,
+  id INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
   id_producto INT,
   id_usuario INT,
   valoracion INT,
@@ -29,14 +29,14 @@ CREATE TABLE Valoracion (
 );
 
 CREATE TABLE Fotos (
-  id INT NOT NULL PRIMARY KEY,
+  id INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
   id_usuario INT,
   foto blob,
   fecha_subida DATETIME
 );
 
 CREATE TABLE Usuario (
-  id INT NOT NULL PRIMARY KEY,
+  id INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
   username VARCHAR(32) UNIQUE,
   clave VARCHAR(255),
   nombre VARCHAR(32),
@@ -56,3 +56,7 @@ alter table ventas add CONSTRAINT Ventas_usuario_fk FOREIGN KEY (id_usuario) REF
 alter table fotos add CONSTRAINT Fotos_usuario_fk FOREIGN KEY (id_usuario) REFERENCES Usuario (id);
 alter table valoracion add CONSTRAINT Valoracion_usuario_fk FOREIGN KEY (id_usuario) REFERENCES Usuario (id);
 alter table valoracion add constraint valoracion_producto_fk FOREIGN KEY (id_producto) REFERENCES Productos (id);
+
+-- Usuario de prueba 
+insert into Usuario (username, clave, nombre, apellido1, apellido2, correo_electronico, fecha_nac, pais, codigo_postal, telefono, rol) 
+values ('pepe', '1234', 'Pepe', 'García', 'Pérez', 'pepe@gmail.com', '1990-01-01', 'España', '28001', '666666666', 'admin');

@@ -24,14 +24,14 @@ CREATE TABLE Valoracion (
   id_producto INT,
   id_usuario INT,
   valoracion INT,
-  comentario VARCHAR(512),
+  comentario VARCHAR(512)
 );
 
 CREATE TABLE Fotos (
   id INT NOT NULL PRIMARY KEY,
   id_usuario INT,
   foto blob,
-  fecha_subida DATETIME,
+  fecha_subida DATETIME
 );
 
 CREATE TABLE Usuario (
@@ -54,3 +54,4 @@ alter table ventas add CONSTRAINT Ventas_producto_fk FOREIGN KEY (id_producto) R
 alter table ventas add CONSTRAINT Ventas_usuario_fk FOREIGN KEY (id_usuario) REFERENCES Usuario (id);
 alter table fotos add CONSTRAINT Fotos_usuario_fk FOREIGN KEY (id_usuario) REFERENCES Usuario (id);
 alter table valoracion add CONSTRAINT Valoracion_usuario_fk FOREIGN KEY (id_usuario) REFERENCES Usuario (id);
+alter table valoracion add constraint valoracion_producto_fk FOREIGN KEY (id_producto) REFERENCES Productos (id);

@@ -67,12 +67,6 @@
                         <input type="text" class="form-control" id="phone" placeholder="Introduzca su tel&eacute;fono"
                             name="phone">
                     </div>
-                    <!-- Usuario Input-->
-                    <div class="mt-3 mb-3">
-                        <label for="user">Usuario</label><span> *</span>
-                        <input type="text" class="form-control" id="user" placeholder="Introduzca su usuario"
-                            name="user">
-                    </div>
                     <!-- Email Input -->
                     <div class="mb-3">
                         <label for="email">Correo electr&oacute;nico</label><span> *</span>
@@ -101,7 +95,8 @@
                     <!-- Terms checkbox-->
                     <div class="mb-5 form-check">
                         <label class="form-check-label">
-                            <input class="form-check-input" type="checkbox" name="terms"> Acepto los Términos de Uso.
+                            <input class="form-check-input" type="checkbox" name="terms"> Acepto los <a
+                                href="legal.php">Términos de Uso</a>.
                         </label>
                     </div>
                     <!-- Botón Crear Cuenta -->

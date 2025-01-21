@@ -1,7 +1,7 @@
 <?php
 
 require_once '../model/usuario.php';
-//ADD CONNECTION.php
+require_once '../controller/conexion.php';
 
 class UserController
 {
@@ -30,14 +30,11 @@ class UserController
             $result->execute();
             if ($result->rowCount()) {
                 $conex->commit();
-                $conex->close();
                 return true;
             } else {
-                $conex->close();
                 return false;
             }
 
-            return $filas;
         } catch (Exception $ex) {
             echo "you fucked up<br>";
             die("ERROR en la BD" . $ex->getMessage());
@@ -50,8 +47,8 @@ class UserController
             $conex = new Conexion();
 
             $result = $conex->query("select * from usuario where username = '$value'");
-            if ($result->num_rows) {
-                $fila = $result->fetch_object();
+            if ($result->rowCount()) {
+                $fila = $result->fetch();
                 $user = new Usuario($fila->id, $fila->clave, $fila->nombre, $fila->apellido1, $fila->apellido2, $fila->correo_electronico, $fila->fecha_nac, $fila->pais, $fila->codigo_postal, $fila->telefono, $fila->img_perfil, $fila->rol,$fila->newsletter);
             } else {
                 $user = false;

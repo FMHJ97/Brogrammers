@@ -2,142 +2,152 @@
 
 // Estilos generales de los formularios.
 main {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
-
 
 // <================== Estilos - Login.php, Register.php y Restore_Password.php ==================>
 
 // Clase para los formularios Login, Register y Restore Password.
 .authentication-form {
-    border-radius: 20px;
-    border-style: solid;
-    border-color: $primario1;
-    background-color: $fondo;
-    border-width: $border-5;
+  border-radius: 20px;
+  border-style: solid;
+  border-color: $primario1;
+  background-color: $fondo;
+  border-width: $border-5;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0px 0px 15px 0px $primario1;
+  font-family: $headings-font-family;
+
+  // Estilo para el asterisco de los campos obligatorios.
+  span {
+    color: $resaltar1;
+  }
+
+  // Estilo para el enlace de Regístrate.
+  a {
+    text-decoration: none;
+    color: $resaltar1;
+  }
+
+  // Estilos para los párrafos y etiquetas.
+  p,
+  label {
+    color: $texto1;
+  }
+
+  // Estilos para los inputs.
+  input {
+    font-family: $body-font-family;
+  }
+
+  // Estilos para el checkbox.
+  .form-check-input {
+    accent-color: $resaltar1;
+
+    // Estilo para el icono del checkbox.
+    &:checked {
+      background-color: $primario1;
+      border-color: $resaltar1;
+    }
+  }
+
+  // Estilo para el botón de acción.
+  button {
+    background-color: $resaltar1;
+    color: $texto2;
+    border-radius: 10px;
+    font-size: $body-font-1;
+    padding: 10px;
     display: flex;
-    flex-direction: column;
-    box-shadow: 0px 0px 15px 0px $primario1;
-    font-family: $headings-font-family;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
 
-    // Estilo para el asterisco de los campos obligatorios.
-    span {
-        color: $resaltar1;
+    // Efecto hover.
+    &:hover {
+      background: darken($resaltar1, 10%);
+      color: $texto2;
     }
+  }
 
-    // Estilo para el enlace de Regístrate.
-    a {
-        text-decoration: none;
-        color: $resaltar1;
-    }
+  // Estilo para el enlace de Restablecer contraseña.
+  #reset_pwd {
+    color: $textoEnlace;
+  }
 
-    // Estilos para los párrafos y etiquetas.
-    p,
-    label {
-        color: $texto1;
-    }
+  // Estilo para la ayuda de la contraseña.
+  .form-help {
+    color: $secundario1;
+  }
 
-    // Estilos para los inputs.
-    input {
-        font-family: $body-font-family;
-    }
-
-    // Estilos para el checkbox.
-    .form-check-input {
-        accent-color: $resaltar1;
-    }
-
-    // Estilo para el botón de acción.
-    button {
-        background-color: $resaltar1;
-        color: $texto2;
-        border-radius: 10px;
-        font-size: $body-font-1;
-        padding: 10px;
-        display: flex;
-        width: 100%;
-        justify-content: center;
-        align-items: center;
-
-        // Efecto hover.
-        &:hover {
-            background: darken($resaltar1, 10%);
-            color: $texto2;
-        }
-    }
-
-    // Estilo para el enlace de Restablecer contraseña.
-    #reset_pwd {
-        color: $textoEnlace;
-    }
 }
 
 // En dispositivos móviles, el tamaño de la fuente del botón se reduce.
 @include media-breakpoint-down(md) {
-
-    // Estilo para el botón de acción.
-    button {
-        font-size: $body-font-phone-1;
-    }
+  // Estilo para el botón de acción.
+  button {
+    font-size: $body-font-phone-1;
+  }
 }
 
 // Estilos para los inputs de los formularios.
 .form-control {
-    border-radius: 10px;
-    border: $border-3 solid $primario1;
+  border-radius: 10px;
+  border: $border-3 solid $primario1;
+  background-color: $fondo;
+  padding: 0.75em 0.5em 0.75em 0.5em;
+  margin-top: 0.5em;
+  margin-bottom: 2em;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  color: $resaltar2;
+
+  // Efecto hover.
+  &:focus {
     background-color: $fondo;
-    padding: 0.75em 0.5em 0.75em 0.5em;
-    margin-top: 0.5em;
-    margin-bottom: 2em;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    justify-content: center;
+    border-color: $primario2;
+    color: $resaltar2;
+    box-shadow: 0px 0px 15px 0px $primario1;
+  }
 
-    // Efecto hover.
-    &:focus {
-        background-color: $fondo;
-        border-color: $primario2;
-        color: $resaltar2;
-        box-shadow: 0px 0px 15px 0px $primario1;
-    }
-
-    // Estilo para el placeholder de los inputs.
-    &::placeholder {
-        color: $resaltar2;
-    }
+  // Estilo para el placeholder de los inputs.
+  &::placeholder {
+    color: darken($color: $resaltar2, $amount: 50);
+  }
 }
 
 // Color de fondo del checkbox al estar seleccionado.
 .form-check-input:checked {
-    background-color: $resaltar1;
-    border-color: $resaltar1;
+  background-color: $resaltar1;
+  border-color: $resaltar1;
 }
-
 
 // <================== Estilos - Input Cart ==================>
 
 .form-control-discount {
-    width: 100%;
-    margin-top: 0 !important; // Para sobreescribir el margen superior
-    margin-right: auto;
-    border: $border-2 solid $resaltar1;
-    border-radius: 25px;
+  width: 100%;
+  margin-top: 0 !important; // Para sobreescribir el margen superior
+  margin-right: auto;
+  border: $border-2 solid $resaltar1;
+  border-radius: 25px;
+  background-color: $fondo;
+  padding: 0 0px 0 5px;
+  color: $texto1;
+
+  &:focus {
     background-color: $fondo;
-    padding: 0 0px 0 5px;
-    color: $texto1;
+    color: $resaltar1;
+    box-shadow: 0px 0px 15px 0px $resaltar2;
+  }
 
-    &:focus {
-        background-color: $fondo;
-        color: $resaltar1;
-        box-shadow: 0px 0px 15px 0px $resaltar2;
-    }
-
-    &::placeholder {
-        font-size: $body-font-2;
-        color: $resaltar2;
-    }
+  &::placeholder {
+    font-size: $body-font-2;
+    color: $resaltar2;
+  }
 }

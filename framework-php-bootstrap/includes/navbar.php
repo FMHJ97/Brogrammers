@@ -53,7 +53,7 @@
                 <div class="modal-body custom-modal-body-login">
                     <div class="authentication-form">
                         <!-- Encabezado -->
-                        <h1 class="fs-4">Iniciar Sesión</h1>
+                        <h1>Iniciar Sesión</h1>
                         <div class="d-flex flex-column flex-md-row justify-content-center mb-4">
                             <p class="mb-0">¿No tienes una cuenta?&nbsp;</p>
                             <a href="register.php">Regístrate</a>
@@ -75,14 +75,14 @@
                                     <input class="form-check-input" type="checkbox" name="remember"> Recuérdame
                                 </label>
                             </div>
-                            <button type="submit" class="btn btn-primary mb-3">Iniciar sesión</button>
+                            <button type="submit" class="btn mb-3">Iniciar sesión</button>
                             <a id="reset_pwd" href="restore_password.php">¿Olvidó su contraseña?</a>
                         </form>
                     </div>
                 </div>
                 <!-- Modal footer -->
                 <div class="modal-footer custom-modal-footer-login">
-                    <button type="button" class="button-ticket" data-bs-dismiss="modal">Cerrar</button>
+                    <button type="button" class="button-ticket" data-bs-dismiss="modal">Cancelar</button>
                 </div>
             </div>
         </div>

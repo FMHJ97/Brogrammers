@@ -45,7 +45,7 @@ class UserController
         try {
             $conex = new Conexion();
 
-            $result = $conex->query("select * from usuario where username = '$value'");
+            $result = $conex->query("select * from usuario where correo_electronico = '$value'");
             if ($result->rowCount()) {
                 $fila = $result->fetch();
                 $user = new Usuario($fila->id, $fila->nombre, $fila->apellido1, $fila->apellido2, $fila->correo_electronico, $fila->clave, $fila->fecha_nac, $fila->pais, $fila->codigo_postal, $fila->telefono, $fila->img_perfil, $fila->rol);
@@ -73,8 +73,8 @@ class UserController
             $conex = new Conexion();
             $result = $conex->query("select * from usuario");
             if ($result->rowCount()) {
-                while ($fila = $result->fetch()) {
-                    $user[] = new Usuario($fila->id, $fila->nombre, $fila->apellido1, $fila->apellido2, $fila->correo_electronico, $fila->clave, $fila->fecha_nac, $fila->pais, $fila->codigo_postal, $fila->telefono, $fila->img_perfil, $fila->rol);
+                while ($fila = $result->fetchObject()) {
+                    $users[] = new Usuario($fila->id, $fila->nombre, $fila->apellido1, $fila->apellido2, $fila->correo_electronico, $fila->clave, $fila->fecha_nac, $fila->pais, $fila->codigo_postal, $fila->telefono, $fila->img_perfil, $fila->rol);
                 }
             } else {
                 $users = false;

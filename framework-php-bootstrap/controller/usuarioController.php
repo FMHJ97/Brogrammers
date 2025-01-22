@@ -84,4 +84,22 @@ class UserController
             die("ERROR en la BD" . $ex->getMessage());
         }
     }
+
+    public static function delete($id) {
+        try {
+            $conex = new Conexion();
+            $result = $conex->query("delete from usuario where id='$id'");
+            if ($result->rowCount()) {
+                return true;
+            } else
+                return false;
+        } catch (Exception $ex) {
+            die("ERROR en la BD" . $ex->getLine());
+        }
+    
+    }
+
+    public static function modify($id, ){
+        
+    }
 }

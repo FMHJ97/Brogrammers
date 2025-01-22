@@ -30,7 +30,7 @@
                         <div class="col-12 col-md-6 mb-3 mb-md-0">
                             <label for="name">Nombre</label><span> *</span>
                             <input type="text" class="form-control" id="name" placeholder="Introduzca su nombre"
-                                name="name">
+                                name="name" required>
                         </div>
                     </div>
                     <!-- Primer y Segundo apellido Input-->
@@ -39,7 +39,7 @@
                         <div class="col-12 col-md-6 mb-3 mb-md-0">
                             <label for="surname1">Primer Apellido</label><span> *</span>
                             <input type="text" class="form-control" id="surname1"
-                                placeholder="Introduzca su primer apellido" name="surname1">
+                                placeholder="Introduzca su primer apellido" name="surname1" required>
                         </div>
                         <!-- Segundo apellido -->
                         <div class="col-12 col-md-6">
@@ -54,13 +54,13 @@
                         <div class="col-12 col-md-6 mb-3 mb-md-0">
                             <label for="birth">Fecha de Nacimiento</label><span> *</span>
                             <input type="date" class="form-control" id="birth"
-                                placeholder="Introduzca su fecha de nacimiento" name="birth">
+                                placeholder="Introduzca su fecha de nacimiento" name="birth" required>
                         </div>
                         <!-- País -->
                         <div class="col-12 col-md-6">
                             <label for="country">Pa&iacute;s</label><span> *</span>
                             <input type="text" class="form-control" id="country" placeholder="Introduzca su país"
-                                name="country">
+                                name="country" required>
                         </div>
                     </div>
                     <!-- Código postal y Teléfono Input -->
@@ -69,20 +69,20 @@
                         <div class="col-12 col-md-6 mb-3 mb-md-0">
                             <label for="postal">C&oacute;digo Postal</label><span> *</span>
                             <input type="text" class="form-control" id="postal"
-                                placeholder="Introduzca su c&oacute;digo postal" name="postal">
+                                placeholder="Introduzca su c&oacute;digo postal" name="postal" required>
                         </div>
                         <!-- Teléfono -->
                         <div class="col-12 col-md-6">
                             <label for="phone">Tel&eacute;fono</label><span> *</span>
                             <input type="text" class="form-control" id="phone" placeholder="Introduzca su tel&eacute;fono"
-                                name="phone">
+                                name="phone" required>
                         </div>
                     </div>
                     <!-- Email Input -->
                     <div class="mb-3">
                         <label for="email">Correo electr&oacute;nico</label><span> *</span>
                         <input type="email" class="form-control" id="email"
-                            placeholder="Introduzca su correo electr&oacute;nico" name="email">
+                            placeholder="Introduzca su correo electr&oacute;nico" name="email" required>
                     </div>
                     <!-- Password y Confirm Password Input -->
                      <div class="row mt-3 mb-3">
@@ -90,18 +90,18 @@
                         <div class="col-12 col-md-6 mb-3 mb-md-0">
                             <label for="pwd">Contraseña</label><span> *</span>
                             <input type="password" class="form-control" id="pwd" placeholder="Introduzca su contraseña"
-                                name="pswd" required pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}">
+                                name="pswd" required pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*\W).{8,}">
                         </div>
                         <!-- Confirm Password -->
                         <div class="col-12 col-md-6">
                             <label for="pwd2">Confirmar contraseña</label><span> *</span>
                             <input type="password" class="form-control" id="pwd2" placeholder="Confirme su contraseña"
-                                name="pswd2">
+                                name="pswd2" required>
                         </div>
                     </div>
                     <div class="mb-3">
                         <small id="passwordHelp" class="form-help">La contraseña debe tener al menos 8
-                            caracteres, una mayúscula, una minúscula y un número.</small>
+                            caracteres, una mayúscula, una minúscula y un caracter no alfanumérico.</small>
                     </div>
                     <!-- News checkbox-->
                     <div class="mb-3 form-check">

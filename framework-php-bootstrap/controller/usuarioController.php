@@ -1,7 +1,7 @@
 <?php
 
-require_once '../model/usuario.php';
-require_once '../controller/conexion.php';
+require_once '../framework-php-bootstrap/model/usuario.php';
+require_once '../framework-php-bootstrap/controller/conexion.php';
 
 class UserController
 {
@@ -47,7 +47,7 @@ class UserController
 
             $result = $conex->query("select * from usuario where correo_electronico = '$value'");
             if ($result->rowCount()) {
-                $fila = $result->fetch();
+                $fila = $result->fetchObject();
                 $user = new Usuario($fila->id, $fila->nombre, $fila->apellido1, $fila->apellido2, $fila->correo_electronico, $fila->clave, $fila->fecha_nac, $fila->pais, $fila->codigo_postal, $fila->telefono, $fila->img_perfil, $fila->rol);
             } else {
                 $user = false;
@@ -61,7 +61,7 @@ class UserController
 
     public static function validate($user, $pass)
     {
-        if (password_verify($pass, $user->password)) {
+        if (password_verify($pass, $user->clave)) {
             return true;
         } else {
             return false;

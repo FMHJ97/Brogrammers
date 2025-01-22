@@ -3,7 +3,7 @@
 require_once '../model/foto.php';
 require_once '../controller/conexion.php';
 
-class UserController
+class FotoController
 {
 
     public static function insertar($foto)

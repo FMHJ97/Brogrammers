@@ -11,7 +11,7 @@ class UserController
         try {
             $conex = new Conexion();
             $conex->beginTransaction();
-            $result = $conex->prepare("insert into fotos (id_usuario,foto,fecha_subida) values (?,?,?)");
+            $result = $conex->prepare("insert into foto_galeria (id_usuario,foto,fecha_subida) values (?,?,?)");
             $result->bindParam(1,$foto->id_usuario);
             $result->bindParam(2,$foto->img);
             $result->bindParam(3,$foto->fecha_subida);
@@ -33,7 +33,7 @@ class UserController
         try {
             $conex = new Conexion();
 
-            $result = $conex->query("select * from fotos where id = '$value'");
+            $result = $conex->query("select * from foto_galeria where id = '$value'");
             if ($result->rowCount()) {
                 $fila = $result->fetch();
                 $foto = new Foto($fila->id, $fila->id_usuario, $fila->foto, $fila->fecha_subida);
@@ -50,7 +50,7 @@ class UserController
     public static function getAll() {
         try {
             $conex = new Conexion();
-            $result = $conex->query("select * from fotos");
+            $result = $conex->query("select * from foto_galeria");
             if ($result->rowCount()) {
                 while ($fila = $result->fetch()) {
                     $fotos[] = new Foto($fila->id, $fila->id_usuario, $fila->foto, $fila->fecha_subida);

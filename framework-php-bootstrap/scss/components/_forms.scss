@@ -78,6 +78,12 @@ main {
   #reset_pwd {
     color: $textoEnlace;
   }
+
+  // Estilo para la ayuda de la contraseña.
+  .form-help {
+    color: $secundario1;
+  }
+
 }
 
 // En dispositivos móviles, el tamaño de la fuente del botón se reduce.

@@ -15,9 +15,8 @@ class Usuario {
     private $telefono;
     private $img_perfil;
     private $rol;
-    private $newsletter;
 
-    public function __construct($id,$cl,$n,$a1,$a2,$co,$p,$cp,$t,$i,$r,$nl) {
+    public function __construct($id,$cl,$n,$a1,$a2,$co,$p,$cp,$t,$i,$r) {
         $this->id = $id;
         $this->clave = $cl;
         $this->nombre = $n;

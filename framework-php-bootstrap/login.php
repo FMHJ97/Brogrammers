@@ -30,7 +30,7 @@
                     <div class="mb-3 mt-3">
                         <label for="email">Correo electrónico</label><span> *</span>
                         <input type="email" class="form-control" id="email"
-                            placeholder="Introduzca su correo electrónico" name="email">
+                            placeholder="Introduzca su correo electrónico" name="email" required pattern="[^@]+@[^@]+.[a-zA-Z]{2,6}">
                     </div>
                     <!-- Password Input -->
                     <div class="mb-3">

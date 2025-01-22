@@ -13,13 +13,14 @@ class UserController
             $conex->beginTransaction();
             $pass = password_hash($usuario->clave, PASSWORD_DEFAULT);
             $result = $conex->prepare("insert into usuario (clave,nombre,apellido1,apellido2,correo_electronico,fecha_nac,pais,codigo_postal,telefono,img_perfil,rol) values (?,?,?,?,?,?,?,?,?,?,?,?)");
-            $result->bindParam(1,$pass);
-            $result->bindParam(2,$usuario->nombre);
-            $result->bindParam(3,$usuario->apellido1);
+            
+            $result->bindParam(1,$usuario->nombre);
+            $result->bindParam(2,$usuario->apellido1);
             if ($usuario->apellido2 !=null) {
-                $result->bindParam(4,$usuario->apellido2);
-            } else $result->bindParam(4,"");    
-            $result->bindParam(5,$usuario->correo);
+                $result->bindParam(3,$usuario->apellido2);
+            } else $result->bindParam(3,"");    
+            $result->bindParam(4,$usuario->correo);
+            $result->bindParam(5,$pass);
             $result->bindParam(6,$usuario->fecha_nac);
             $result->bindParam(7,$usuario->pais);
             $result->bindParam(8,$usuario->codigo_postal);
@@ -47,7 +48,7 @@ class UserController
             $result = $conex->query("select * from usuario where username = '$value'");
             if ($result->rowCount()) {
                 $fila = $result->fetch();
-                $user = new Usuario($fila->id, $fila->clave, $fila->nombre, $fila->apellido1, $fila->apellido2, $fila->correo_electronico, $fila->fecha_nac, $fila->pais, $fila->codigo_postal, $fila->telefono, $fila->img_perfil, $fila->rol);
+                $user = new Usuario($fila->id, $fila->nombre, $fila->apellido1, $fila->apellido2, $fila->correo_electronico, $fila->clave, $fila->fecha_nac, $fila->pais, $fila->codigo_postal, $fila->telefono, $fila->img_perfil, $fila->rol);
             } else {
                 $user = false;
             }
@@ -73,7 +74,7 @@ class UserController
             $result = $conex->query("select * from usuario");
             if ($result->rowCount()) {
                 while ($fila = $result->fetch()) {
-                    $users[] = new Usuario($fila->id, $fila->clave, $fila->nombre, $fila->apellido1, $fila->apellido2, $fila->correo_electronico, $fila->fecha_nac, $fila->pais, $fila->codigo_postal, $fila->telefono, $fila->img_perfil, $fila->rol);
+                    $user[] = new Usuario($fila->id, $fila->nombre, $fila->apellido1, $fila->apellido2, $fila->correo_electronico, $fila->clave, $fila->fecha_nac, $fila->pais, $fila->codigo_postal, $fila->telefono, $fila->img_perfil, $fila->rol);
                 }
             } else {
                 $users = false;

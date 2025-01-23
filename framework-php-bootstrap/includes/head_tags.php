@@ -12,7 +12,9 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
 
-<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Krona+One&family=Maven+Pro:wght@400..900&family=Quantico&display=swap" rel="stylesheet">
+<link
+    href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Krona+One&family=Maven+Pro:wght@400..900&family=Quantico&display=swap"
+    rel="stylesheet">
 <!-- Core theme CSS (includes Bootstrap)-->
 
 <link href="css/styles.css" rel="stylesheet" />

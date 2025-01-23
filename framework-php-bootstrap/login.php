@@ -5,6 +5,15 @@
 require_once '../framework-php-bootstrap/controller/usuarioController.php';
 require_once '../framework-php-bootstrap/model/usuario.php';
 
+// Propago la sesión si existe la cookie PHPSESSID.
+if (isset($_COOKIE['PHPSESSID'])) session_start();
+
+// Si existe una sesión Logueado, redirigimos a menu.
+if (isset($_SESSION['logged'])) {
+    header("Location:index.php");
+    exit();
+}
+
 /* Si pulsamos sobre el botón Iniciar Sesión. */
 if (isset($_POST['login'])) {
     // Recogemos los datos del formulario.

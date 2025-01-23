@@ -1,4 +1,14 @@
-<?php include("includes/a_config.php"); ?>
+<?php include("includes/a_config.php"); 
+
+/* Importamos los ficheros necesarios. */
+require_once '../framework-php-bootstrap/controller/usuarioController.php';
+require_once '../framework-php-bootstrap/model/usuario.php';
+
+// Propagamos la sesión.
+if (isset($_COOKIE['PHPSESSID'])) {
+    session_start();
+}
+?>
 <!DOCTYPE html>
 <html>
 
@@ -13,8 +23,8 @@
   <main class="bg-none">
     <div class="container-fluid">
       <section>
-        <div class="row p-0 position-relative">
-          <img class="img-fluid p-0 opacity-50" src="/assets/img/index/mainPhoto.jpg" alt="Hay un Imagen aqui" />
+        <div class="p-0 row position-relative">
+          <img class="p-0 opacity-50 img-fluid" src="/assets/img/index/mainPhoto.jpg" alt="Hay un Imagen aqui" />
           <div class="timer-overlay start-0">
             <div id="timer" class="timer-container">
               <div class="time-block d-flex align-items-center">
@@ -24,15 +34,15 @@
                 </div>
                 <div class="time-item">
                   <div class="time-number">:</div>
-                  <div class="time-label invisible">A</div>
+                  <div class="invisible time-label">A</div>
                 </div>
                 <div class="time-item">
                   <div class="time-number" id="hours">00</div>
-                  <div class="time-label pr-1">HRS</div>
+                  <div class="pr-1 time-label">HRS</div>
                 </div>
                 <div class="time-item">
                   <div class="time-number">:</div>
-                  <div class="time-label invisible">A</div> <!-- Use "invisible" to hide while keeping the space -->
+                  <div class="invisible time-label">A</div> <!-- Use "invisible" to hide while keeping the space -->
                 </div>
                 <div class="time-item">
                   <div class="time-number" id="minutes">00</div>
@@ -44,7 +54,7 @@
         </div>
       </section>
       <section>
-        <div class="row my-3 py-3"> <!--CF2: Row sin col? para qué? -->
+        <div class="py-3 my-3 row"> <!--CF2: Row sin col? para qué? -->
           <a href="tickets.php" class="btn-index ">COMPRA TUS TICKETS AHORA</a>
         </div>
       </section>
@@ -78,16 +88,16 @@
     </section>
 
     <section>
-      <div class="row my-3 py-3">
+      <div class="py-3 my-3 row">
         <a href="lineup.php" class="btn-index-lineup ">LINE UP</a>
       </div>
     </section>
 
     <section>
-      <div class="row my-3 py-3">
-        <div class="col d-flex flex-column justify-content-center align-items-center text-center">
-          <img class="img-fluid p-3" src="../assets/img/Logo.svg" alt="Festival Logo">
-          <div class="festival py-3 px-auto">FESTIVAL</div>
+      <div class="py-3 my-3 row">
+        <div class="text-center col d-flex flex-column justify-content-center align-items-center">
+          <img class="p-3 img-fluid" src="../assets/img/Logo.svg" alt="Festival Logo">
+          <div class="py-3 festival px-auto">FESTIVAL</div>
           <div class="festival-date">ABRIL 17-18-19, 2025</div>
           <div class="festival-location">
             <div>LUCENA, CÓRDOBA</div>
@@ -97,7 +107,7 @@
       </div>
     </section>
     <section>
-      <div class="row my-3 py-3 mx-0 px-0">
+      <div class="px-0 py-3 mx-0 my-3 row">
         <div class="col">
           <div id="video-container">
             <video id="video">
@@ -118,7 +128,7 @@
       </div>
     </section>
     <section>
-      <div class="row my-3 py-3">
+      <div class="py-3 my-3 row">
         <a href="tickets.php" class="btn-index ">COMPRA TUS TICKETS AHORA</a>
       </div>
     </section>

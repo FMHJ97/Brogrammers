@@ -39,6 +39,11 @@
                 <li class="nav-item">
                     <a class="nav-link" href="#" data-bs-toggle="modal" data-bs-target="#loginModal">
                         <i class="bi bi-person-circle"></i>
+                        <?php
+                        if (isset($_SESSION['logged'])) {
+                            echo "<span class='username'>" . $_SESSION['logged']->nombre . "</span>";
+                        }
+                        ?>
                     </a>
                 </li>
             </ul>
@@ -54,7 +59,7 @@
                     <div class="authentication-form">
                         <!-- Encabezado -->
                         <h1>Iniciar Sesión</h1>
-                        <div class="d-flex flex-column flex-md-row justify-content-center mb-4">
+                        <div class="mb-4 d-flex flex-column flex-md-row justify-content-center">
                             <p class="mb-0">¿No tienes una cuenta?&nbsp;</p>
                             <a href="register.php">Regístrate</a>
                         </div>
@@ -70,12 +75,12 @@
                                 <input type="password" class="form-control" id="pwd"
                                     placeholder="Introduzca su contraseña" name="pswd">
                             </div>
-                            <div class="form-check mb-4">
+                            <div class="mb-4 form-check">
                                 <label class="form-check-label">
                                     <input class="form-check-input" type="checkbox" name="remember"> Recuérdame
                                 </label>
                             </div>
-                            <button type="submit" class="btn mb-3">Iniciar sesión</button>
+                            <button type="submit" class="mb-3 btn">Iniciar sesión</button>
                             <a id="reset_pwd" href="restore_password.php">¿Olvidó su contraseña?</a>
                         </form>
                     </div>

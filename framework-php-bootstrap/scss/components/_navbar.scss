@@ -1,91 +1,99 @@
-// 
+//
 // Barra de navegación
-// 
+//
 
 // Desvanecer la barra de navegación
 nav {
-    background: $fade-navbar;
-    box-shadow: -5px -5px 30px 0px $primario1;
+  background: $fade-navbar;
+  box-shadow: -5px -5px 30px 0px $primario1;
 }
 
 // Logo
-.navbar-brand{
-    img{
-        width: 110px;
-        @include media-breakpoint-up(md) {
-            width: 167px;
-        }
+.navbar-brand {
+  img {
+    width: 110px;
+    @include media-breakpoint-up(md) {
+      width: 167px;
     }
+  }
 }
 
 // Alinear los elementos del botón de colapso a la derecha cuando se está en móvil
 .navbar-nav {
-    @include media-breakpoint-down(md) {
-        display: flex;
-        align-items: end;
-    }   
+  @include media-breakpoint-down(md) {
+    display: flex;
+    align-items: end;
+  }
 }
 
 // Establecer el color del texto y los iconos de la barra de navegación
 .navbar-nav .nav-link {
-    font-family: $headings-font-family;
-    color: $textoEnlace;
-    &:hover {
-        color: $resaltar2; 
-    }
+  font-family: $headings-font-family;
+  color: $textoEnlace;
+  display: flex;
+  align-items: center;
+  &:hover {
+    color: $resaltar2;
+  }
 
-    i {
-        color: $resaltar2; // *****
-        text-shadow: 0px 0px 8px rgba($resaltar1, 0.9); // Sombra al trazo del icono
-    }
+  .username {
+    padding-left: 10px;
+    color: $resaltar2;
+    text-shadow: 0px 0px 8px rgba($resaltar1, 0.9); // Sombra al trazo del icono
+  }
+
+  i {
+    color: $resaltar2; // *****
+    text-shadow: 0px 0px 8px rgba($resaltar1, 0.9); // Sombra al trazo del icono
+  }
 }
 
 // Establecer el tamaño de los iconos en la barra de navegación a 35px
 .navbar-nav .nav-link i {
-    font-size: 35px;
+  font-size: 35px;
 }
 
 // Establecer el tamaño del icono del carrito en la barra de navegación a 35px y 27px cuando la pantalla sea más pequeña que el tamaño medio
 .cart-icon {
-    font-size: 35px;
-    color: $resaltar2; // *****
-    text-shadow: 0px 0px 8px rgba($resaltar1, 0.9); // Sombra al trazo del icono
+  font-size: 35px;
+  color: $resaltar2; // *****
+  text-shadow: 0px 0px 8px rgba($resaltar1, 0.9); // Sombra al trazo del icono
 
-    @include media-breakpoint-down(md) {
-        font-size: 27px;
+  @include media-breakpoint-down(md) {
+    font-size: 27px;
 
-        &:hover {
-            color: $resaltar2;
-        }
+    &:hover {
+      color: $resaltar2;
     }
+  }
 }
 
 // Alinear los elementos en el lado derecho de la barra de navegación al centro
 // Establecer la separación entre los elementos de la barra de navegación a 50px, excepto el último
 .navbar-nav .nav-item {
-    display: flex;
-    align-items: center;
+  display: flex;
+  align-items: center;
 
-    margin-right: 50px;
-    &:last-child {
-        margin-right: 0;
-        padding-right: 0px;
-    }
+  margin-right: 50px;
+  &:last-child {
+    margin-right: 0;
+    padding-right: 0px;
+  }
 
-    // Cuando esté en móvil, el margen derecho será de 10px
-    @include media-breakpoint-down(md) {
-        margin-right: 0px;
-    }
+  // Cuando esté en móvil, el margen derecho será de 10px
+  @include media-breakpoint-down(md) {
+    margin-right: 0px;
+  }
 }
 
 // Establecer el color del icono del menú a verde y el tamaño a 37px
 button i {
-    color: $resaltar2; // *****
-    font-size: 37px;   
-    text-shadow: 0px 0px 8px rgba($resaltar1, 0.9); // Sombra al trazo del icono
+  color: $resaltar2; // *****
+  font-size: 37px;
+  text-shadow: 0px 0px 8px rgba($resaltar1, 0.9); // Sombra al trazo del icono
 }
 
 // Establecer el color del icono del menú a $resaltar2 cuando se pasa el ratón por encima
 button i:hover {
-    color: $resaltar2;
+  color: $resaltar2;
 }

@@ -1,3 +1,40 @@
+<?php
+/* Importamos los ficheros necesarios. */
+require_once '../framework-php-bootstrap/controller/usuarioController.php';
+require_once '../framework-php-bootstrap/model/usuario.php';
+
+// Propago la sesión si existe la cookie PHPSESSID.
+if (isset($_COOKIE['PHPSESSID'])) session_start();
+
+/* Si pulsamos sobre el botón Iniciar Sesión. */
+if (isset($_POST['login'])) {
+    // Recogemos los datos del formulario.
+    $email = $_POST['email'];
+    $pwd = $_POST['pwd'];
+
+    // Comprobamos si el usuario existe en la base de datos.
+    $usu = UserController::find($email);
+
+    // Si el usuario existe.
+    if ($usu) {
+        // Comprobamos si la contraseña es correcta.
+        if (UserController::validate($usu, $pwd)) {
+            // Iniciamos la sesión.
+            session_start();
+            $_SESSION['logged'] = $usu;
+            // Redirigimos al index.
+            header('Location: index.php');
+        } else {
+            // Si la contraseña no es correcta, mostramos un mensaje de error.
+            echo "<script>alert('Contraseña incorrecta.')</script>";
+        }
+    } else {
+        // Si el usuario no existe, mostramos un mensaje de error.
+        echo "<script>alert('Usuario no encontrado.')</script>";
+    }
+}
+?>
+
 <nav class="navbar navbar-expand-md">
     <div class="container-fluid">
         <a class="navbar-brand" href="./index.php">
@@ -35,28 +72,26 @@
                 </li>
                 <?php
                 if (isset($_SESSION['logged'])) {
-
                 ?>
-                <li class="nav-item">
-                    <a class="nav-link cart-icon d-none d-md-block" href="./cart.php"><i class="bi bi-cart2"></i></a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#" data-bs-toggle="modal" data-bs-target="#loginModal">
-                        <i class="bi bi-person-circle"></i>
-                        <?php
-                        echo "<span class='username'>" . $_SESSION['logged']->nombre . "</span>";
-                        ?>
-                    </a>
-                </li>
+                    <li class="nav-item">
+                        <a class="nav-link cart-icon d-none d-md-block" href="./cart.php"><i class="bi bi-cart2"></i></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#" data-bs-toggle="modal" data-bs-target="#loginModal">
+                            <i class="bi bi-person-circle"></i>
+                            <?php
+                            echo "<span class='username'>" . $_SESSION['logged']->nombre . "</span>";
+                            ?>
+                        </a>
+                    </li>
                 <?php
                 } else {
                 ?>
-                <li class="nav-item">
-                    <a class="nav-link-auth" href="./login.php">Login</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link-auth" href="./register.php">Registro</a>
-                </li>
+                    <li class="nav-item">
+                        <a class="nav-link-auth" href="#" data-bs-toggle="modal" data-bs-target="#loginModal">
+                            <i class="bi bi-person-circle"></i>
+                        </a>
+                    </li>
                 <?php
                 }
                 ?>
@@ -70,38 +105,44 @@
             <div class="modal-content custom-modal-content-login">
                 <!-- Modal body -->
                 <div class="modal-body custom-modal-body-login">
-                    <div class="authentication-form">
+                    <div class="container p-4 my-5 authentication-form p-md-5">
                         <!-- Encabezado -->
-                        <h1>Iniciar Sesión</h1>
-                        <div class="mb-4 d-flex flex-column flex-md-row">
-                            <p class="mb-0">¿No tienes una cuenta?&nbsp;</p>
-                            <a href="register.php">Regístrate</a>
+                        <div class="row">
+                            <!--CF2: No puede haber nada entre row y col-->
+                            <h1>Iniciar Sesión</h1>
+                            <div class="mb-3 col d-flex flex-column flex-md-row mb-md-4">
+                                <p class="mb-0">¿No tienes una cuenta?&nbsp;</p>
+                                <!-- Link a Registro -->
+                                <a href="register.php">Regístrate</a>
+                            </div>
                         </div>
                         <!-- Formulario -->
-                        <form action="index.php">
-                            <div class="mb-3">
+                        <form action="" method="POST">
+                            <!-- Email Input -->
+                            <div class="mt-3 mb-3">
                                 <label for="email">Correo electrónico</label><span> *</span>
                                 <input type="email" class="form-control" id="email"
-                                    placeholder="Introduzca su correo electrónico" name="email" required>
+                                    placeholder="Introduzca su correo electrónico" name="email" required pattern="[^@]+@[^@]+.[a-zA-Z]{2,6}">
                             </div>
+                            <!-- Password Input -->
                             <div class="mb-3">
                                 <label for="pwd">Contraseña</label><span> *</span>
-                                <input type="password" class="form-control" id="pwd"
-                                    placeholder="Introduzca su contraseña" name="pswd">
+                                <input type="password" class="form-control" id="pwd" placeholder="Introduzca su contraseña"
+                                    name="pwd">
                             </div>
+                            <!-- Remember me checkbox -->
                             <div class="mb-4 form-check">
                                 <label class="form-check-label">
                                     <input class="form-check-input" type="checkbox" name="remember"> Recuérdame
                                 </label>
                             </div>
-                            <button type="submit" class="mb-3 btn">Iniciar sesión</button>
-                            <a id="reset_pwd" href="restore_password.php">¿Olvidó su contraseña?</a>
+                            <!-- Botón Iniciar Sesión y Link a Recuperar Contraseña -->
+                            <div class="d-flex flex-column ">
+                                <button type="submit" class="mb-3 btn" name="login">Iniciar sesión</button>
+                                <a id="reset_pwd" href="restore_password.php" class="ms-auto">¿Olvidó su contraseña?</a>
+                            </div>
                         </form>
                     </div>
-                </div>
-                <!-- Modal footer -->
-                <div class="modal-footer custom-modal-footer-login">
-                    <button type="button" class="button-ticket" data-bs-dismiss="modal">Cancelar</button>
                 </div>
             </div>
         </div>

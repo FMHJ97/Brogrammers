@@ -46,6 +46,21 @@ class UserController
         }
     }
 
+    public static function exists($value){
+        try {
+            $conex = new Conexion();
+
+            $result = $conex->query("select * from usuario where correo_electronico = '$value'");
+            if ($result->rowCount()) {
+                return true;
+            } else {
+                return false;
+            }
+            
+        } catch (Exception $ex) {
+            die("ERROR en la BD" . $ex->getMessage());
+        }
+    }
     public static function find($value)
     {
         try {

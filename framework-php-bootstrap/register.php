@@ -1,17 +1,19 @@
 <?php include("includes/a_config.php");
-ini_set('display_errors', 1);
-error_reporting(E_ALL);
 
 session_start();
+if(isset($_SESSION["logged"])){
+    header("location: index.php");
+}
 require_once '../framework-php-bootstrap/controller/usuarioController.php';
 if (isset($_POST["submit"])) {
 
     $u = new Usuario(null, $_POST["name"], $_POST["surname1"], $_POST["surname2"], $_POST["email"], $_POST["pswd"], $_POST["birth"], $_POST["country"], $_POST["postal"], $_POST["phone"], null, "usuario");
-    var_dump($u);
-    
+    $success=true;
     if ($u = UserController::insertar($u)) {
         $_SESSION["logged"] = $u;
         header("location: index.php?register=success");
+    } else {
+        $success = false;
     }
 }
 
@@ -139,6 +141,13 @@ if (isset($_POST["submit"])) {
                     <div class="d-flex flex-column ">
                         <button type="submit" name="submit" class="btn">Crear cuenta</button>
                     </div>
+                    <?php   
+                    if(isset($_POST["submit"])){
+                        if(!$success) {
+                            echo "<p class='error'>Ha sido un errro. Por favor comuníquelo al administrador</p>";
+                        }
+                    }
+                    ?>
                    
                 </form>
             </div>

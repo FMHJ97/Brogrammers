@@ -37,3 +37,49 @@
     border: 0; /* Remove border */
     padding-top: 0; /* Remove padding at the top */
 }
+
+/* Custom modal dialog for login */
+.custom-modal-dialog-login {
+    border-radius: 10px; /* Rounded corners */
+    max-width: 50vw; /* Default size for larger screens */
+    margin: auto;
+
+    @include media-breakpoint-down(md) {
+        max-width: 80vw; /* Adjust for smaller screens */
+        margin-top: 15vh; /* Centered in mobile view */
+    }
+}
+
+.custom-modal-content-login {
+    border: 0; /* Remove border */
+    border-radius: 10px; /* Rounded corners */
+    background: transparent; /* Background color */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2); /* Add shadow for depth */
+}
+
+/* Modal body for login */
+.custom-modal-body-login {
+    padding: 2rem; /* Add padding for better spacing */
+    display: flex;
+    flex-direction: column; /* Vertical alignment */
+    justify-content: center;
+    align-items: center;
+    gap: 1rem; /* Add space between elements */
+    /* Padding everywhere except the bottom */
+    padding-bottom: 0;
+}
+
+/* Specific styles for the login form */
+.custom-modal-body-login .authentication-form {
+    width: 100%; /* Ensure full width */
+    padding: 20px;
+}
+
+/* Style for the modal footer of login */
+.custom-modal-footer-login {
+    border: 0; /* Remove border */
+    padding: 1rem; /* Adjust padding */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

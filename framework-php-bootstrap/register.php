@@ -6,15 +6,22 @@ if(isset($_SESSION["logged"])){
 }
 require_once '../framework-php-bootstrap/controller/usuarioController.php';
 if (isset($_POST["submit"])) {
-
-    $u = new Usuario(null, $_POST["name"], $_POST["surname1"], $_POST["surname2"], $_POST["email"], $_POST["pswd"], $_POST["birth"], $_POST["country"], $_POST["postal"], $_POST["phone"], null, "usuario");
     $success=true;
-    if ($u = UserController::insertar($u)) {
-        $_SESSION["logged"] = $u;
-        header("location: index.php?register=success");
-    } else {
-        $success = false;
+    $validEmail = true;
+    if (UserController::exists($_POST["email"])){
+        $validEmail=false;
     }
+    else {
+        $u = new Usuario(null, $_POST["name"], $_POST["surname1"], $_POST["surname2"], $_POST["email"], $_POST["pswd"], $_POST["birth"], $_POST["country"], $_POST["postal"], $_POST["phone"], null, "usuario");
+    
+        if ($u = UserController::insertar($u)) {
+            $_SESSION["logged"] = $u;
+            header("location: index.php?register=success");
+        } else {
+            $success = false;
+        }
+    }
+   
 }
 
 
@@ -145,6 +152,9 @@ if (isset($_POST["submit"])) {
                     if(isset($_POST["submit"])){
                         if(!$success) {
                             echo "<p class='error'>Ha sido un errro. Por favor comuníquelo al administrador</p>";
+                        }
+                        else if(!$validEmail) {
+                            echo "<p class='error'>El correo que has eligido ya existe. Por favor, elige otro.</p>";
                         }
                     }
                     ?>

@@ -27,24 +27,37 @@ nav {
 }
 
 // Establecer el color del texto y los iconos de la barra de navegación
-.navbar-nav .nav-link {
-  font-family: $headings-font-family;
-  color: $textoEnlace;
-  display: flex;
-  align-items: center;
-  &:hover {
-    color: $resaltar2;
+.navbar-nav {
+  .nav-link {
+    font-family: $headings-font-family;
+    color: $textoEnlace;
+    display: flex;
+    align-items: center;
+    &:hover {
+      color: $resaltar2;
+    }
+
+    .username {
+      padding-left: 10px;
+      color: $resaltar2;
+      text-shadow: 0px 0px 8px rgba($resaltar1, 0.9); // Sombra al trazo del icono
+    }
+
+    i {
+      color: $resaltar2; // *****
+      text-shadow: 0px 0px 8px rgba($resaltar1, 0.9); // Sombra al trazo del icono
+    }
   }
 
-  .username {
-    padding-left: 10px;
-    color: $resaltar2;
-    text-shadow: 0px 0px 8px rgba($resaltar1, 0.9); // Sombra al trazo del icono
-  }
-
-  i {
-    color: $resaltar2; // *****
-    text-shadow: 0px 0px 8px rgba($resaltar1, 0.9); // Sombra al trazo del icono
+  .nav-link-auth {
+    @extend .nav-link;
+    color: $texto2;
+    background-color: $resaltar1;
+    border-radius: 5px;
+    &:hover {
+      color: $texto2;
+      box-shadow: 0px 0px 8px rgba($resaltar2, 0.9);
+    }
   }
 }
 

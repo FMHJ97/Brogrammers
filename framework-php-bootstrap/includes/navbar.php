@@ -33,6 +33,10 @@
                 <li class="nav-item">
                     <a class="nav-link" href="./infogeneral.php">Info</a>
                 </li>
+                <?php
+                if (isset($_SESSION['logged'])) {
+
+                ?>
                 <li class="nav-item">
                     <a class="nav-link cart-icon d-none d-md-block" href="./cart.php"><i class="bi bi-cart2"></i></a>
                 </li>
@@ -40,12 +44,22 @@
                     <a class="nav-link" href="#" data-bs-toggle="modal" data-bs-target="#loginModal">
                         <i class="bi bi-person-circle"></i>
                         <?php
-                        if (isset($_SESSION['logged'])) {
-                            echo "<span class='username'>" . $_SESSION['logged']->nombre . "</span>";
-                        }
+                        echo "<span class='username'>" . $_SESSION['logged']->nombre . "</span>";
                         ?>
                     </a>
                 </li>
+                <?php
+                } else {
+                ?>
+                <li class="nav-item">
+                    <a class="nav-link-auth" href="./login.php">Login</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link-auth" href="./register.php">Registro</a>
+                </li>
+                <?php
+                }
+                ?>
             </ul>
         </div>
 

@@ -17,9 +17,7 @@ class UserController
             
             $result->bindParam(1,$usuario->nombre);
             $result->bindParam(2,$usuario->apellido1);
-            if ($usuario->apellido2 !=null) {
-                $result->bindParam(3,$usuario->apellido2);
-            } else $result->bindParam(3,"");    
+           $result->bindParam(3,$usuario->apellido2);  
             $result->bindParam(4,$usuario->correo);
             $result->bindParam(5,$pass);
             $result->bindParam(6,$usuario->fecha_nac);

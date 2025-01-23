@@ -1,21 +1,21 @@
 <?php
 
-require_once '../model/foto.php';
+require_once '../model/producto.php';
 require_once '../controller/conexion.php';
 
-class FotoController
+class ProductoController
 {
 
-    public static function insertar($foto)
+    public static function insertar($producto)
     {
         try {
             $conex = new Conexion();
             $conex->beginTransaction();
-            $result = $conex->prepare("insert into foto_galeria (id_usuario,nombre,foto,fecha_subida) values (?,?,?,?)");
-            $result->bindParam(1,$foto->id_usuario);
-            $result->bindParam(2,$foto->nombre);
-            $result->bindParam(3,$foto->img);
-            $result->bindParam(4,$foto->fecha_subida);
+            $result = $conex->prepare("insert into producto (nombre,descripcion,detalles,precio) values (?,?,?,?)");
+            $result->bindParam(1,$producto->nombre);
+            $result->bindParam(2,$producto->descripcion);
+            $result->bindParam(3,$producto->detalles);
+            $result->bindParam(4,$producto->precio);
             $result->execute();
             if ($result->rowCount()) {
                 $conex->commit();
@@ -34,15 +34,15 @@ class FotoController
         try {
             $conex = new Conexion();
 
-            $result = $conex->query("select * from foto_galeria where id = '$value'");
+            $result = $conex->query("select * from productos where id = '$value'");
             if ($result->rowCount()) {
                 $fila = $result->fetch();
-                $foto = new Foto($fila->id, $fila->id_usuario,$fila->nombre, $fila->foto, $fila->fecha_subida);
+                $producto = new Producto($fila->id, $fila->nombre,$fila->descripcion, $fila->detalles, $fila->precio);
             } else {
-                $foto = false;
+                $producto = false;
             }
 
-            return $foto;
+            return $producto;
         } catch (Exception $ex) {
             die("ERROR en la BD" . $ex->getMessage());
         }
@@ -54,12 +54,12 @@ class FotoController
             $result = $conex->query("select * from foto_galeria");
             if ($result->rowCount()) {
                 while ($fila = $result->fetch()) {
-                    $fotos[] = new Foto($fila->id, $fila->id_usuario,$fila->nombre, $fila->foto, $fila->fecha_subida);
+                    $productos[] = new Producto($fila->id, $fila->id_usuario,$fila->nombre, $fila->foto, $fila->fecha_subida);
                 }
             } else {
-                $fotos = false;
+                $productos = false;
             }
-            return $fotos;
+            return $productos;
         } catch (Exception $ex) {
             die("ERROR en la BD" . $ex->getMessage());
         }

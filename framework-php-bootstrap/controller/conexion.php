@@ -9,6 +9,8 @@ class Conexion extends PDO {
 
     public function __construct() {
         parent::__construct($this->dsn, $this->user, $this->pass, $this->opciones);
+        $this->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION); // Enable exception mode
+        $this->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_ASSOC);
     }
 
     public function __get(string $name): mixed {

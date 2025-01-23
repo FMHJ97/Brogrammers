@@ -9,10 +9,11 @@ class UserController
     public static function insertar($usuario)
     {
         try {
+            error_log("Test log entry!", 0); 
             $conex = new Conexion();
             $conex->beginTransaction();
             $pass = password_hash($usuario->clave, PASSWORD_DEFAULT);
-            $result = $conex->prepare("insert into usuario (clave,nombre,apellido1,apellido2,correo_electronico,fecha_nac,pais,codigo_postal,telefono,img_perfil,rol) values (?,?,?,?,?,?,?,?,?,?,?,?)");
+            $result = $conex->prepare("insert into usuario (nombre,apellido1,apellido2,correo_electronico,clave,fecha_nac,pais,codigo_postal,telefono,img_perfil,rol) values (?,?,?,?,?,?,?,?,?,?,?)");
             
             $result->bindParam(1,$usuario->nombre);
             $result->bindParam(2,$usuario->apellido1);
@@ -30,12 +31,19 @@ class UserController
             $result->execute();
             if ($result->rowCount()) {
                 $conex->commit();
-                return true;
+                $usuario->id=$conex->lastInsertId();
+                return $usuario;
             } else {
-                return false;
+                $conex->rollBack();
+                throw new Exception("Failed to insert the user into the database.");
+
+                return null;
             }
 
         } catch (Exception $ex) {
+            error_log("Database Error: " . $ex->getMessage());
+            $conex->rollBack();
+
             die("ERROR en la BD" . $ex->getMessage());
         }
     }

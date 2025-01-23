@@ -1,7 +1,7 @@
 <?php
 
-require_once '../model/foto.php';
-require_once '../controller/conexion.php';
+require_once '../framework-php-bootstrap/foto.php';
+require_once '../framework-php-bootstrap/conexion.php';
 
 class FotoController
 {

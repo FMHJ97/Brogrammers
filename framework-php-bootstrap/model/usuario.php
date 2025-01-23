@@ -16,13 +16,14 @@ class Usuario
     private $img_perfil;
     private $rol;
 
-    public function __construct($id, $n, $a1, $a2, $co, $cl, $p, $cp, $t, $i, $r){
+    public function __construct($id, $n, $a1, $a2, $co, $cl,$f, $p, $cp, $t, $i, $r){
         $this->id = $id;
         $this->nombre = $n;
         $this->apellido1 = $a1;
         $this->apellido2 = $a2;
         $this->correo = $co;
         $this->clave = $cl;
+        $this->fecha_nac = $f;
         $this->pais = $p;
         $this->codigo_postal = $cp;
         $this->telefono = $t;
@@ -30,8 +31,7 @@ class Usuario
         $this->rol = $r;
     }
 
-    public function __get(string $name): mixed
-    {
+    public function __get(string $name): mixed {
         return $this->$name;
     }
 

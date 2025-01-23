@@ -1,4 +1,22 @@
-<?php include("includes/a_config.php"); ?>
+<?php include("includes/a_config.php");
+ini_set('display_errors', 1);
+error_reporting(E_ALL);
+
+session_start();
+require_once '../framework-php-bootstrap/controller/usuarioController.php';
+if (isset($_POST["submit"])) {
+
+    $u = new Usuario(null, $_POST["name"], $_POST["surname1"], $_POST["surname2"], $_POST["email"], $_POST["pswd"], $_POST["birth"], $_POST["country"], $_POST["postal"], $_POST["phone"], null, "usuario");
+    var_dump($u);
+    
+    if ($u = UserController::insertar($u)) {
+        $_SESSION["logged"] = $u;
+        header("location: index.php?register=success");
+    }
+}
+
+
+?>
 <!DOCTYPE html>
 <html>
 
@@ -24,7 +42,7 @@
                     </div>
                 </div>
                 <!-- Formulario -->
-                <form action="index.php">
+                <form action="" method="post">
                     <!-- Nombre Input-->
                     <div class="row mt-3 mb-3">
                         <div class="col-12 col-md-6 mb-3 mb-md-0">
@@ -85,7 +103,7 @@
                             placeholder="Introduzca su correo electr&oacute;nico" name="email" required>
                     </div>
                     <!-- Password y Confirm Password Input -->
-                     <div class="row mt-3 mb-3">
+                    <div class="row mt-3 mb-3">
                         <!-- Password -->
                         <div class="col-12 col-md-6 mb-3 mb-md-0">
                             <label for="pwd">Contraseña</label><span> *</span>
@@ -119,8 +137,9 @@
                     </div>
                     <!-- Botón Crear Cuenta -->
                     <div class="d-flex flex-column ">
-                        <button type="submit" class="btn">Crear cuenta</button>
+                        <input type="submit" name="submit" class="btn">Crear cuenta</input>
                     </div>
+                   
                 </form>
             </div>
         </section>

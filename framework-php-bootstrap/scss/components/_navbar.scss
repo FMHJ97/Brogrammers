@@ -51,12 +51,15 @@ nav {
 
   .nav-link-auth {
     @extend .nav-link;
-    color: $texto2;
-    background-color: $resaltar1;
+    color: $textoEnlace;
+    background-color: $primario2;
+    border: $border-3 solid $resaltar1;
     border-radius: 5px;
     &:hover {
-      color: $texto2;
+      color: $textoEnlace;
       box-shadow: 0px 0px 8px rgba($resaltar2, 0.9);
+      scale: 1.025;
+      transition: all 0.15s;
     }
   }
 }

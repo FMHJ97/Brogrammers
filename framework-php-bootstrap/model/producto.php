@@ -1,19 +1,19 @@
 <?php
 
-class Foto {
+class Producto {
 
     private $id;
-    private $id_usuario;
     private $nombre;
-    private $img;
-    private $fecha_subida;
+    private $descripcion;
+    private $detalles;
+    private $precio;
 
-    public function __construct($id,$idU,$nombre,$image,$fs) {
+    public function __construct($id,$n,$des,$det,$p) {
         $this->id = $id;
-        $this->id_usuario = $idU;
-        $this->nombre = $nombre;
-        $this->img = $image;
-        $this->fecha_subida = $fs;
+        $this->nombre=$n;
+        $this->descripcion=$des;
+        $this->detalles=$det;
+        $this->precio=$p;
     }
 
     public function __get(string $name): mixed {
@@ -26,7 +26,7 @@ class Foto {
 
     public function __toString()
     {
-        return "Soy una foto";
+        return "Soy un producto";
     }
     
 }

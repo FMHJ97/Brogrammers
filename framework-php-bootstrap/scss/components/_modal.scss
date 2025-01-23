@@ -45,16 +45,14 @@
     margin: auto;
 
     @include media-breakpoint-down(md) {
-        max-width: 80vw; /* Adjust for smaller screens */
+        max-width: 90vw; /* Adjust for smaller screens */
         margin-top: 15vh; /* Centered in mobile view */
     }
 }
 
 .custom-modal-content-login {
     border: 0; /* Remove border */
-    border-radius: 10px; /* Rounded corners */
     background: transparent; /* Background color */
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2); /* Add shadow for depth */
 }
 
 /* Modal body for login */

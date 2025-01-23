@@ -73,7 +73,7 @@
                     <div class="authentication-form">
                         <!-- Encabezado -->
                         <h1>Iniciar Sesión</h1>
-                        <div class="mb-4 d-flex flex-column flex-md-row justify-content-center">
+                        <div class="mb-4 d-flex flex-column flex-md-row">
                             <p class="mb-0">¿No tienes una cuenta?&nbsp;</p>
                             <a href="register.php">Regístrate</a>
                         </div>

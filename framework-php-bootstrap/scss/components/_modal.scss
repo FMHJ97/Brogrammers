@@ -1,83 +1,83 @@
 /* Custom modal dialog to limit size */
 .custom-modal-dialog {
-    border-radius: 10px; /* Rounded corners */
-    // To make it fill the visible screen
-    max-width: 60vw;
+  border-radius: 10px; /* Rounded corners */
+  // To make it fill the visible screen
+  max-width: 60vw;
 
-    // To make it fill the visible screen when in mobile view
-    @include media-breakpoint-down(md) {
-        max-width: 90vw;
-        // Center the modal
-        margin: auto;
-        // Making sure the modal is not too close to the top
-        margin-top: 10vh;
-    }
+  // To make it fill the visible screen when in mobile view
+  @include media-breakpoint-down(md) {
+    max-width: 90vw;
+    // Center the modal
+    margin: auto;
+    // Making sure the modal is not too close to the top
+    margin-top: 10vh;
+  }
 }
 
 .custom-modal-content {
-    border: 0; /* Remove border */
-    border-radius: 10px; /* Rounded corners */
-    background: $fade-tickets-cards; /* Background color of the modal */
+  border: 0; /* Remove border */
+  border-radius: 10px; /* Rounded corners */
+  background: $fade-tickets-cards; /* Background color of the modal */
 }
 
 /* Center the modal body content */
 .custom-modal-body {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 /* Style the image */
 .custom-modal-body img {
-    object-fit: contain; /* Make sure the image scales correctly without distortion */
-    border-radius: 10px;
+  object-fit: contain; /* Make sure the image scales correctly without distortion */
+  border-radius: 10px;
 }
 
 .custom-modal-footer {
-    border: 0; /* Remove border */
-    padding-top: 0; /* Remove padding at the top */
+  border: 0; /* Remove border */
+  padding-top: 0; /* Remove padding at the top */
 }
 
 /* Custom modal dialog for login */
 .custom-modal-dialog-login {
-    border-radius: 10px; /* Rounded corners */
-    max-width: 50vw; /* Default size for larger screens */
-    margin: auto;
+  border-radius: 10px; /* Rounded corners */
+  max-width: 50vw; /* Default size for larger screens */
+  margin: auto;
 
-    @include media-breakpoint-down(md) {
-        max-width: 90vw; /* Adjust for smaller screens */
-        margin-top: 15vh; /* Centered in mobile view */
-    }
+  @include media-breakpoint-down(md) {
+    max-width: 90vw; /* Adjust for smaller screens */
+    margin-top: 15vh; /* Centered in mobile view */
+  }
 }
 
 .custom-modal-content-login {
-    border: 0; /* Remove border */
-    background: transparent; /* Background color */
+  border: 0; /* Remove border */
+  background: transparent; /* Background color */
 }
 
 /* Modal body for login */
 .custom-modal-body-login {
-    padding: 2rem; /* Add padding for better spacing */
-    display: flex;
-    flex-direction: column; /* Vertical alignment */
-    justify-content: center;
-    align-items: center;
-    gap: 1rem; /* Add space between elements */
-    /* Padding everywhere except the bottom */
-    padding-bottom: 0;
+  padding: 2rem; /* Add padding for better spacing */
+  display: flex;
+  flex-direction: column; /* Vertical alignment */
+  justify-content: center;
+  align-items: center;
+  gap: 1rem; /* Add space between elements */
+  /* Padding everywhere except the bottom */
+  padding-bottom: 0;
 }
 
 /* Specific styles for the login form */
 .custom-modal-body-login .authentication-form {
-    width: 100%; /* Ensure full width */
-    padding: 20px;
+  width: 100%; /* Ensure full width */
+  padding: 20px;
 }
 
 /* Style for the modal footer of login */
 .custom-modal-footer-login {
-    border: 0; /* Remove border */
-    padding: 1rem; /* Adjust padding */
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  border: 0; /* Remove border */
+  padding: 1rem; /* Adjust padding */
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }

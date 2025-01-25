@@ -37,12 +37,6 @@ nav {
       color: $resaltar2;
     }
 
-    .username {
-      padding-left: 10px;
-      color: $resaltar2;
-      text-shadow: 0px 0px 8px rgba($resaltar1, 0.9); // Sombra al trazo del icono
-    }
-
     i {
       color: $resaltar2; // *****
       text-shadow: 0px 0px 8px rgba($resaltar1, 0.9); // Sombra al trazo del icono
@@ -54,6 +48,34 @@ nav {
     i {
       color: $secundario2;
       text-shadow: none;
+    }
+  }
+
+  .dd-user {
+    #dropdownMenuButton {
+      font-family: $headings-font-family;
+      color: $textoEnlace;
+      color: $resaltar2;
+      text-shadow: 0px 0px 8px rgba($resaltar1, 0.9); // Sombra al trazo del icono
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      
+      // Icono de usuario.
+      i {
+        @extend .cart-icon;
+      }
+    }
+
+    .dropdown-menu {
+      background-color: lighten($color: $fondo, $amount: 5);
+      li * {
+        color: $resaltar1;
+        &:hover {
+          color: $resaltar1;  
+          background-color: lighten($color: $fondo, $amount: 10);
+        }
+      }
     }
   }
 }

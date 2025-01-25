@@ -4,10 +4,6 @@
 require_once '../framework-php-bootstrap/controller/usuarioController.php';
 require_once '../framework-php-bootstrap/model/usuario.php';
 
-// Propagamos la sesión.
-if (isset($_COOKIE['PHPSESSID'])) {
-    session_start();
-}
 ?>
 <!DOCTYPE html>
 <html>

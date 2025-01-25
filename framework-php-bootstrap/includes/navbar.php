@@ -6,6 +6,14 @@ require_once '../framework-php-bootstrap/model/usuario.php';
 // Propago la sesión si existe la cookie PHPSESSID.
 if (isset($_COOKIE['PHPSESSID'])) session_start();
 
+/* Si pulsamos sobre el botón Cerrar Sesión. */
+if (isset($_POST['logout'])) {
+    // Destruimos la sesión.
+    session_destroy();
+    // Cargamos la página actual.
+    header('Location: ' . $_SERVER['REQUEST_URI']);
+}
+
 /* Si pulsamos sobre el botón Iniciar Sesión. */
 if (isset($_POST['login'])) {
     // Recogemos los datos del formulario.
@@ -22,8 +30,8 @@ if (isset($_POST['login'])) {
             // Iniciamos la sesión.
             session_start();
             $_SESSION['logged'] = $usu;
-            // Redirigimos al index.
-            header('Location: index.php');
+            // Cargamos la página actual.
+            header('Location: ' . $_SERVER['REQUEST_URI']);
         } else {
             // Si la contraseña no es correcta, mostramos un mensaje de error.
             echo "<script>alert('Contraseña incorrecta.')</script>";
@@ -73,25 +81,36 @@ if (isset($_POST['login'])) {
                 <?php
                 if (isset($_SESSION['logged'])) {
                 ?>
-                    <li class="nav-item">
-                        <a class="nav-link cart-icon d-none d-md-block" href="./cart.php"><i class="bi bi-cart2"></i></a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#" data-bs-toggle="modal" data-bs-target="#loginModal">
+                <li class="nav-item">
+                    <a class="nav-link cart-icon d-none d-md-block" href="./cart.php"><i class="bi bi-cart2"></i></a>
+                </li>
+                <li class="nav-item">
+                    <div class="dropdown dd-user">
+                        <!-- Icono de Ordenación -->
+                        <!-- Botón de Ordenación -->
+                        <button id="dropdownMenuButton" type="button" class="btn dropdown-toggle"
+                            data-bs-toggle="dropdown">
                             <i class="bi bi-person-circle"></i>
-                            <?php
-                            echo "<span class='username'>" . $_SESSION['logged']->nombre . "</span>";
-                            ?>
-                        </a>
-                    </li>
+                            <?php echo $_SESSION['logged']->nombre; ?>
+                        </button>
+                        <!-- Opciones de Ordenación -->
+                        <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                            <li>
+                                <form action="" method="POST">
+                                    <button type="submit" class="dropdown-item" name="logout">Cerrar Sesión</button>
+                                </form>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
                 <?php
                 } else {
                 ?>
-                    <li class="nav-item">
-                        <a class="nav-link-auth" href="#" data-bs-toggle="modal" data-bs-target="#loginModal">
-                            <i class="bi bi-person-circle"></i>
-                        </a>
-                    </li>
+                <li class="nav-item">
+                    <a class="nav-link-auth" href="#" data-bs-toggle="modal" data-bs-target="#loginModal">
+                        <i class="bi bi-person-circle"></i>
+                    </a>
+                </li>
                 <?php
                 }
                 ?>
@@ -122,13 +141,14 @@ if (isset($_POST['login'])) {
                             <div class="mt-3 mb-3">
                                 <label for="email">Correo electrónico</label><span> *</span>
                                 <input type="email" class="form-control" id="email"
-                                    placeholder="Introduzca su correo electrónico" name="email" required pattern="[^@]+@[^@]+.[a-zA-Z]{2,6}">
+                                    placeholder="Introduzca su correo electrónico" name="email" required
+                                    pattern="[^@]+@[^@]+.[a-zA-Z]{2,6}">
                             </div>
                             <!-- Password Input -->
                             <div class="mb-3">
                                 <label for="pwd">Contraseña</label><span> *</span>
-                                <input type="password" class="form-control" id="pwd" placeholder="Introduzca su contraseña"
-                                    name="pwd">
+                                <input type="password" class="form-control" id="pwd"
+                                    placeholder="Introduzca su contraseña" name="pwd">
                             </div>
                             <!-- Remember me checkbox -->
                             <div class="mb-4 form-check">

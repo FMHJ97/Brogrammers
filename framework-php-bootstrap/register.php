@@ -1,19 +1,17 @@
 <?php include("includes/a_config.php");
 
-session_start();
-if(isset($_SESSION["logged"])){
+if (isset($_SESSION["logged"])) {
     header("location: index.php");
 }
 require_once '../framework-php-bootstrap/controller/usuarioController.php';
 if (isset($_POST["submit"])) {
-    $success=true;
+    $success = true;
     $validEmail = true;
-    if (UserController::exists($_POST["email"])){
-        $validEmail=false;
-    }
-    else {
+    if (UserController::exists($_POST["email"])) {
+        $validEmail = false;
+    } else {
         $u = new Usuario(null, $_POST["name"], $_POST["surname1"], $_POST["surname2"], $_POST["email"], $_POST["pswd"], $_POST["birth"], $_POST["country"], $_POST["postal"], $_POST["phone"], null, "usuario");
-    
+
         if ($u = UserController::insertar($u)) {
             $_SESSION["logged"] = $u;
             header("location: index.php?register=success");
@@ -21,7 +19,6 @@ if (isset($_POST["submit"])) {
             $success = false;
         }
     }
-   
 }
 
 
@@ -53,17 +50,17 @@ if (isset($_POST["submit"])) {
                 <!-- Formulario -->
                 <form action="" method="post">
                     <!-- Nombre Input-->
-                    <div class="row mt-3 mb-3">
-                        <div class="col-12 col-md-6 mb-3 mb-md-0">
+                    <div class="mt-3 mb-3 row">
+                        <div class="mb-3 col-12 col-md-6 mb-md-0">
                             <label for="name">Nombre</label><span> *</span>
                             <input type="text" class="form-control" id="name" placeholder="Introduzca su nombre"
                                 name="name" required>
                         </div>
                     </div>
                     <!-- Primer y Segundo apellido Input-->
-                    <div class="row mt-3 mb-3">
+                    <div class="mt-3 mb-3 row">
                         <!-- Primer apellido -->
-                        <div class="col-12 col-md-6 mb-3 mb-md-0">
+                        <div class="mb-3 col-12 col-md-6 mb-md-0">
                             <label for="surname1">Primer Apellido</label><span> *</span>
                             <input type="text" class="form-control" id="surname1"
                                 placeholder="Introduzca su primer apellido" name="surname1" required>
@@ -76,9 +73,9 @@ if (isset($_POST["submit"])) {
                         </div>
                     </div>
                     <!-- Fecha y País Input -->
-                    <div class="row mt-3 mb-3">
+                    <div class="mt-3 mb-3 row">
                         <!-- Fecha nacimiento -->
-                        <div class="col-12 col-md-6 mb-3 mb-md-0">
+                        <div class="mb-3 col-12 col-md-6 mb-md-0">
                             <label for="birth">Fecha de Nacimiento</label><span> *</span>
                             <input type="date" class="form-control" id="birth"
                                 placeholder="Introduzca su fecha de nacimiento" name="birth" required>
@@ -91,9 +88,9 @@ if (isset($_POST["submit"])) {
                         </div>
                     </div>
                     <!-- Código postal y Teléfono Input -->
-                    <div class="row mt-3 mb-3">
+                    <div class="mt-3 mb-3 row">
                         <!-- Código postal -->
-                        <div class="col-12 col-md-6 mb-3 mb-md-0">
+                        <div class="mb-3 col-12 col-md-6 mb-md-0">
                             <label for="postal">C&oacute;digo Postal</label><span> *</span>
                             <input type="text" class="form-control" id="postal"
                                 placeholder="Introduzca su c&oacute;digo postal" name="postal" required>
@@ -112,9 +109,9 @@ if (isset($_POST["submit"])) {
                             placeholder="Introduzca su correo electr&oacute;nico" name="email" required>
                     </div>
                     <!-- Password y Confirm Password Input -->
-                    <div class="row mt-3 mb-3">
+                    <div class="mt-3 mb-3 row">
                         <!-- Password -->
-                        <div class="col-12 col-md-6 mb-3 mb-md-0">
+                        <div class="mb-3 col-12 col-md-6 mb-md-0">
                             <label for="pwd">Contraseña</label><span> *</span>
                             <input type="password" class="form-control" id="pwd" placeholder="Introduzca su contraseña"
                                 name="pswd" required pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*\W).{8,}">
@@ -148,17 +145,16 @@ if (isset($_POST["submit"])) {
                     <div class="d-flex flex-column ">
                         <button type="submit" name="submit" class="btn">Crear cuenta</button>
                     </div>
-                    <?php   
-                    if(isset($_POST["submit"])){
-                        if(!$success) {
+                    <?php
+                    if (isset($_POST["submit"])) {
+                        if (!$success) {
                             echo "<p class='error'>Ha sido un errro. Por favor comuníquelo al administrador</p>";
-                        }
-                        else if(!$validEmail) {
+                        } else if (!$validEmail) {
                             echo "<p class='error'>El correo que has eligido ya existe. Por favor, elige otro.</p>";
                         }
                     }
                     ?>
-                   
+
                 </form>
             </div>
         </section>

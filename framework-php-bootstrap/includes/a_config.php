@@ -107,10 +107,10 @@ require_once 'vendor/autoload.php';
 $google_client = new Google_Client();
 
 //Set the OAuth 2.0 Client ID
-$google_client->setClientId('849911634904-h9gtp4id4vqi8fbk94aju4on4mqf4jqa.apps.googleusercontent.com');
+$google_client->setClientId('279007024087-f315mee9qtfbnb5caufe20gd5u1en74g.apps.googleusercontent.com');
 
 //Set the OAuth 2.0 Client Secret key
-$google_client->setClientSecret('nuLzdBqfMNwrmzLb0B4MbmRL');
+$google_client->setClientSecret('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');
 
 //Set the OAuth 2.0 Redirect URI
 $google_client->setRedirectUri('http://' . $_SERVER['SERVER_NAME'] . '/index.php');
@@ -118,6 +118,3 @@ $google_client->setRedirectUri('http://' . $_SERVER['SERVER_NAME'] . '/index.php
 // to get the email and profile
 $google_client->addScope('email');
 $google_client->addScope('profile');
-
-//start session on web page
-session_start();

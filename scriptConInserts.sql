@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 22-01-2025 a las 08:43:41
+-- Tiempo de generación: 27-01-2025 a las 09:38:05
 -- Versión del servidor: 10.4.32-MariaDB
 -- Versión de PHP: 8.2.12
 
@@ -103,6 +103,7 @@ CREATE TABLE `usuario` (
   `codigo_postal` text DEFAULT NULL,
   `telefono` text DEFAULT NULL,
   `img_perfil` blob DEFAULT NULL,
+  `newsletter` tinyint(1) NOT NULL DEFAULT 0,
   `rol` enum('admin','editor','usuario') DEFAULT 'usuario'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
@@ -110,8 +111,9 @@ CREATE TABLE `usuario` (
 -- Volcado de datos para la tabla `usuario`
 --
 
-INSERT INTO `usuario` (`id`, `nombre`, `apellido1`, `apellido2`, `correo_electronico`, `clave`, `fecha_nac`, `pais`, `codigo_postal`, `telefono`, `img_perfil`, `rol`) VALUES
-(1, 'Pepe', 'García', 'Pérez', 'pepe@gmail', '1234', '1990-01-01', 'España', '28001', '666666666', NULL, 'admin');
+INSERT INTO `usuario` (`id`, `nombre`, `apellido1`, `apellido2`, `correo_electronico`, `clave`, `fecha_nac`, `pais`, `codigo_postal`, `telefono`, `img_perfil`, `newsletter`, `rol`) VALUES
+(1, 'Pepe', 'García', 'Pérez', 'pepe@gmail.com', '$2y$10$9v9mR7p9hRoQIYFy0wfZQ.isHsRVHjAEFqKPcpYLktN6MSugddp6i', '1990-01-01', 'España', '28001', '666666666', NULL, 0, 'admin'),
+(2, 'Jason', 'Jason', '', 'jason@gmail.com', '$2y$10$ngsEQdGfWS.EyZo0TIiNtu9rKNd6vv4w5YDG2rMbGT9Iq8YWHxTIu', '1996-12-12', 'España', '14500', '666666666', NULL, 0, 'usuario');
 
 -- --------------------------------------------------------
 
@@ -198,7 +200,7 @@ ALTER TABLE `producto`
 -- AUTO_INCREMENT de la tabla `usuario`
 --
 ALTER TABLE `usuario`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- Restricciones para tablas volcadas

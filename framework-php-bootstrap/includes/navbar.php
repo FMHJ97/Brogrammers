@@ -3,9 +3,6 @@
 require_once '../framework-php-bootstrap/controller/usuarioController.php';
 require_once '../framework-php-bootstrap/model/usuario.php';
 
-// Propago la sesión si existe la cookie PHPSESSID.
-if (isset($_COOKIE['PHPSESSID'])) session_start();
-
 /* Si pulsamos sobre el botón Cerrar Sesión. */
 if (isset($_POST['logout'])) {
     // Destruimos la sesión.

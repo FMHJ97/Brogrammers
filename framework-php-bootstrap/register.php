@@ -1,9 +1,16 @@
 <?php include("includes/a_config.php");
 
-if (isset($_SESSION["logged"])) {
-    header("location: index.php");
-}
 require_once '../framework-php-bootstrap/controller/usuarioController.php';
+
+// Propago la sesión si existe la cookie PHPSESSID.
+if (isset($_COOKIE['PHPSESSID'])) session_start();
+
+// Si existe una sesión Logueado, redirigimos a menu.
+if (isset($_SESSION['logged'])) {
+    header("Location:index.php");
+    exit();
+}
+
 if (isset($_POST["submit"])) {
     $success = true;
     $validEmail = true;

@@ -2,9 +2,6 @@
 
 require_once '../framework-php-bootstrap/controller/usuarioController.php';
 
-// Propago la sesión si existe la cookie PHPSESSID.
-if (isset($_COOKIE['PHPSESSID'])) session_start();
-
 // Si existe una sesión Logueado, redirigimos a menu.
 if (isset($_SESSION['logged'])) {
     header("Location:index.php");
@@ -27,7 +24,6 @@ if (isset($_POST["submit"])) {
         }
     }
 }
-
 
 ?>
 <!DOCTYPE html>
@@ -130,9 +126,17 @@ if (isset($_POST["submit"])) {
                                 name="pswd2" required>
                         </div>
                     </div>
+                    <!-- Password Help -->
                     <div class="mb-3">
                         <small id="passwordHelp" class="form-help">La contraseña debe tener al menos 8
                             caracteres, una mayúscula, una minúscula y un caracter no alfanumérico.</small>
+                    </div>
+                    <!-- Captcha -->
+                    <div class="mb-3">
+                        <label for="captcha">Captcha</label><span> *</span>
+                        <img src="/includes/generatecaptcha.php" alt="Captcha" class="captcha">
+                        <input type="text" class="form-control" id="captcha" placeholder="Introduzca el captcha"
+                            name="captcha" required>
                     </div>
                     <!-- News checkbox-->
                     <div class="mb-3 form-check">

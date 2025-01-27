@@ -9,7 +9,9 @@ if (isset($_COOKIE['PHPSESSID'])) session_start();
 /* Si pulsamos sobre el botón Cerrar Sesión. */
 if (isset($_POST['logout'])) {
     // Destruimos la sesión.
+    session_unset();
     session_destroy();
+    setcookie("PHPSESSID", "", time() - 3600, "/"); // Eliminación en el cliente.
     // Cargamos la página actual.
     header('Location: ' . $_SERVER['REQUEST_URI']);
 }

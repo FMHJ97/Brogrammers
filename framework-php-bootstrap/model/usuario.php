@@ -3,6 +3,7 @@
 class Usuario
 {
 
+
     private $id;
     private $nombre;
     private $apellido1;
@@ -16,7 +17,8 @@ class Usuario
     private $img_perfil;
     private $rol;
 
-    public function __construct($id, $n, $a1, $a2, $co, $cl,$f, $p, $cp, $t, $i, $r){
+    public function __construct($id, $n, $a1, $a2, $co, $cl, $f, $p, $cp, $t, $i, $r)
+    {
         $this->id = $id;
         $this->nombre = $n;
         $this->apellido1 = $a1;
@@ -31,13 +33,21 @@ class Usuario
         $this->rol = $r;
     }
 
-    public function __get(string $name): mixed {
-        return $this->$name;
+    public function __get(string $name): mixed
+    {
+        if (property_exists($this, $name)) {
+            return $this->$name;
+        }
+        throw new Exception("Property '$name' does not exist or is inaccessible.");
     }
 
     public function __set(string $name, mixed $value): void
     {
-        $this->$name = $value;
+        if (property_exists($this, $name)) {
+            $this->$name = $value;
+        } else {
+            throw new Exception("Property '$name' does not exist or is inaccessible.");
+        }
     }
 
     public function __toString()

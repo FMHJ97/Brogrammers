@@ -93,6 +93,11 @@
 		case "/about_us.php":
 			$CURRENT_PAGE = "Sobre Nosotros"; 
 			$PAGE_TITLE = "Sobre Nosotros";
+			break;	
+
+		case "/gestion_usuarios.php":
+			$CURRENT_PAGE = "Gestion Usuarios"; 
+			$PAGE_TITLE = "Gestion Usuarios";
 			break;			
 
 		default:

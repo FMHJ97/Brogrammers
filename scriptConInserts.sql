@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 28-01-2025 a las 10:40:22
+-- Tiempo de generación: 28-01-2025 a las 19:40:00
 -- Versión del servidor: 10.4.32-MariaDB
 -- Versión de PHP: 8.2.12
 
@@ -47,34 +47,14 @@ INSERT INTO `foto_galeria` (`id`, `id_usuario`, `nombre`, `foto`, `fecha_subida`
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `foto_producto`
---
-
-CREATE TABLE `foto_producto` (
-  `id` int(11) NOT NULL,
-  `id_producto` int(11) NOT NULL,
-  `nombre` text DEFAULT NULL,
-  `foto` blob DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
---
--- Volcado de datos para la tabla `foto_producto`
---
-
-INSERT INTO `foto_producto` (`id`, `id_producto`, `nombre`, `foto`) VALUES
-(1, 1, 'Foto de prueba', NULL);
-
--- --------------------------------------------------------
-
---
 -- Estructura de tabla para la tabla `producto`
 --
 
 CREATE TABLE `producto` (
   `id` int(11) NOT NULL,
   `nombre` text DEFAULT NULL,
+  `imagen` text NOT NULL,
   `descripcion` text DEFAULT NULL,
-  `detalles` text DEFAULT NULL,
   `precio` decimal(10,2) DEFAULT NULL,
   `categoria` enum('ropa','accesorio','musica') NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
@@ -83,8 +63,16 @@ CREATE TABLE `producto` (
 -- Volcado de datos para la tabla `producto`
 --
 
-INSERT INTO `producto` (`id`, `nombre`, `descripcion`, `detalles`, `precio`, `categoria`) VALUES
-(1, 'Producto de prueba', 'Descripción de prueba', 'Detalles de prueba', 10.00, 'ropa');
+INSERT INTO `producto` (`id`, `nombre`, `imagen`, `descripcion`, `precio`, `categoria`) VALUES
+(1, 'Camiseta Blanca GroundSound (Black Logo)', 'camiseta_blanca_01.png', 'Descripción de prueba', 14.00, 'ropa'),
+(2, 'Camiseta Negra GroundSound (Neon Logo)', 'camiseta_negra_02.png', 'asd', 16.00, 'ropa'),
+(3, 'Mechero Zippo de Gasolina (Recargable)', 'mechero.png', 'asd', 15.00, 'accesorio'),
+(4, 'GroundSound Festival 2024 (Vinilo - Disco)', 'vinilo_groundsound_2024.png', 'asd', 32.80, 'musica'),
+(5, 'Camiseta Negra GroundSound (Trinity Logo)', 'camiseta_negra_03.png', 'asd', 22.00, 'ropa'),
+(6, 'GroundSound Festival 2023 (Vinilo - Disco)', 'vinilo_groundsound_2023.png', 'asd', 28.40, 'musica'),
+(7, 'Camiseta GroundSound Blanca (Neon Logo)', 'camiseta_blanca_02.png', 'asd', 12.00, 'ropa'),
+(8, 'Gorra GroundSound (Golden Dream)', 'gorra.png', 'asd', 18.50, 'accesorio'),
+(9, 'Camiseta Negra GroundSound (White Logo)', 'camiseta_negra_01.png', 'asd', 16.00, 'ropa');
 
 -- --------------------------------------------------------
 
@@ -113,7 +101,7 @@ CREATE TABLE `usuario` (
 --
 
 INSERT INTO `usuario` (`id`, `nombre`, `apellido1`, `apellido2`, `correo_electronico`, `clave`, `fecha_nac`, `pais`, `codigo_postal`, `telefono`, `img_perfil`, `newsletter`, `rol`) VALUES
-(1, 'Admin', 'Admin', 'Admin', 'admin@gmail.com', '$2y$10$j.FMwRlh82OxeI/YJtrCluuEXvBYLCLfVmQ.zSO.IbOc54GVW6Tsu', '1990-10-10', 'España', '14500', '639410944', NULL, 0, 'admin');
+(1, 'Pepe', 'García', 'Pérez', 'pepe@gmail', '$2y$10$alKKoNpJhb6PlE6kfBfUK.DEP7pJKVn8xB/.XmPoHpDapKTk2V/Qq', '1990-01-01', 'España', '28001', '666666666', NULL, 0, 'admin');
 
 -- --------------------------------------------------------
 
@@ -148,13 +136,6 @@ ALTER TABLE `foto_galeria`
   ADD KEY `fk_4` (`id_usuario`);
 
 --
--- Indices de la tabla `foto_producto`
---
-ALTER TABLE `foto_producto`
-  ADD PRIMARY KEY (`id`) USING BTREE,
-  ADD KEY `fk_3` (`id_producto`);
-
---
 -- Indices de la tabla `producto`
 --
 ALTER TABLE `producto`
@@ -185,22 +166,16 @@ ALTER TABLE `foto_galeria`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
--- AUTO_INCREMENT de la tabla `foto_producto`
---
-ALTER TABLE `foto_producto`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
-
---
 -- AUTO_INCREMENT de la tabla `producto`
 --
 ALTER TABLE `producto`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- AUTO_INCREMENT de la tabla `usuario`
 --
 ALTER TABLE `usuario`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- Restricciones para tablas volcadas
@@ -211,12 +186,6 @@ ALTER TABLE `usuario`
 --
 ALTER TABLE `foto_galeria`
   ADD CONSTRAINT `fk_4` FOREIGN KEY (`id_usuario`) REFERENCES `usuario` (`id`);
-
---
--- Filtros para la tabla `foto_producto`
---
-ALTER TABLE `foto_producto`
-  ADD CONSTRAINT `fk_3` FOREIGN KEY (`id_producto`) REFERENCES `producto` (`id`);
 
 --
 -- Filtros para la tabla `valoracion`

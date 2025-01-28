@@ -56,6 +56,6 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 function updateDropdownText(element) {
-    var dropdownButton = document.getElementById('dropdownMenuButton');
+    var dropdownButton = document.getElementById('dropdownOrderButton');
     dropdownButton.textContent = 'Ordenar por: ' + element.textContent;
 }

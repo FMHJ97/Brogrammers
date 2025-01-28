@@ -13,9 +13,9 @@
 
     <main>
         <!-- Sección de Producto -->
-        <section class="container page-section my-4 my-md-5 px-3 px-md-5">
+        <section class="container px-3 my-4 page-section my-md-5 px-md-5">
             <!-- Nombre y Precio (Oculto en dispositivos superiores a md) -->
-            <div class="row d-block d-md-none mb-5">
+            <div class="mb-5 row d-block d-md-none">
                 <div class="col item-heading">
                     <h1>Camiseta Blanca GroundSound<br>(Black Logo)</h1>
                     <h2>€14,00 EUR</h2>
@@ -86,7 +86,7 @@
                     </div>
                     <!-- Botón Añadir al Carrito -->
                     <div class="row">
-                        <div class="col btn-cart py-3">
+                        <div class="py-3 col btn-cart">
                             <form action="cart.php" method="POST" novalidate>
                                 <button type="submit" class="btn btn-cart">Añadir al Carrito</button>
                             </form>
@@ -108,10 +108,10 @@
             </div>
         </section>
         <!-- Sección Productos Recomendados -->
-        <section class="container page-section px-3 px-md-5">
+        <section class="container px-3 page-section px-md-5">
             <!-- Encabezado -->
             <div class="row">
-                <div class="col suggested-items-heading pb-4">
+                <div class="pb-4 col suggested-items-heading">
                      <h2>También te pueden interesar</h2>
                 </div>
             </div>

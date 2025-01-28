@@ -1,4 +1,12 @@
-<?php include("includes/a_config.php"); ?>
+<?php include("includes/a_config.php"); 
+
+require_once '../framework-php-bootstrap/controller/productoController.php';
+require_once '../framework-php-bootstrap/model/producto.php';
+
+// Obtenemos todos los productos disponibles de la BD.
+$productos = ProductoController::findAll();
+
+?>
 <!DOCTYPE html>
 <html>
 
@@ -20,16 +28,16 @@
             </div>
         </section>
         <!-- Sección de Filtros y Ordenación de Merch -->
-        <section class="container page-section px-3 px-md-5">
+        <section class="container px-3 page-section px-md-5">
             <!-- Filtros -->
             <div class="row">
                 <!-- Botones de Categoría -->
                 <div class="col btn-category-group">
                     <button type="button" id="all-items" class="btn btn-category-item selected">Todos los
                         productos</button>
-                    <button type="button" id="clothes" class="btn btn-category-item">Ropa</button>
-                    <button type="button" id="accesories" class="btn btn-category-item">Accesorios</button>
-                    <button type="button" id="music" class="btn btn-category-item">Música</button>
+                    <button type="button" id="ropa" class="btn btn-category-item">Ropa</button>
+                    <button type="button" id="accesorio" class="btn btn-category-item">Accesorios</button>
+                    <button type="button" id="musica" class="btn btn-category-item">Música</button>
                 </div>
                 <!-- Barra de Búsqueda -->
                 <div class="col">
@@ -47,16 +55,16 @@
                 </div>
             </div>
             <!-- Elemento de Ordenación -->
-            <div class="row mt-3">
+            <div class="mt-3 row">
                 <div class="dropdown dropdown-order-by">
                     <!-- Icono de Ordenación -->
                     <i class="bi bi-filter"></i>
                     <!-- Botón de Ordenación -->
-                    <button id="dropdownMenuButton" type="button" class="btn dropdown-toggle" data-bs-toggle="dropdown">
+                    <button id="dropdownOrderButton" type="button" class="btn dropdown-toggle" data-bs-toggle="dropdown">
                         Ordenar por: Relevancia
                     </button>
                     <!-- Opciones de Ordenación -->
-                    <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                    <ul class="dropdown-menu" aria-labelledby="dropdownOrderButton">
                         <li><a class="dropdown-item" href="#" onclick="updateDropdownText(this)">Relevancia</a></li>
                         <li><a class="dropdown-item" href="#" onclick="updateDropdownText(this)">Precio
                                 (descendente)</a></li>
@@ -67,87 +75,29 @@
             </div>
         </section>
         <!-- Sección de los Productos de Merch -->
-        <section class="container page-section px-3 px-md-5">
+        <section class="container px-3 page-section px-md-5">
             <div class="row merch-products">
-                <!-- Producto 1 -->
-                <a href="./merch_item.php" class="col-12 col-md-4 card card-merch-item all-items clothes">
-                    <img class="card-img-top" src="./assets/img/merch/camiseta_blanca_01.png"
-                        alt="Camiseta GroundSound Blanca (Black Logo)">
-                    <div class="card-body">
-                        <h3 class="card-title">Camiseta Blanca GroundSound<br>(Black Logo)</h3>
-                        <span>€14,00 EUR</span>
-                    </div>
-                </a>
-                <!-- Producto 2 -->
-                <a href="./merch_item.php" class="col-12 col-md-4 card card-merch-item all-items clothes">
-                    <img class="card-img-top" src="./assets/img/merch/camiseta_negra_02.png"
-                        alt="Camiseta Negra GroundSound (Neon Logo)">
-                    <div class="card-body">
-                        <h3 class="card-title">Camiseta Negra GroundSound<br>(Neon Logo)</h3>
-                        <span>€16,00 EUR</span>
-                    </div>
-                </a>
-                <!-- Producto 3 -->
-                <a href="./merch_item.php" class="col-12 col-md-4 card card-merch-item all-items accesories">
-                    <img class="card-img-top" src="./assets/img/merch/mechero.png" alt="Mechero Zippo de Gasolina (Recargable)">
-                    <div class="card-body">
-                        <h3 class="card-title">Mechero Zippo de Gasolina<br>(Recargable)</h3>
-                        <span>€15,00 EUR</span>
-                    </div>
-                </a>
-                <!-- Producto 4 -->
-                <a href="./merch_item.php" class="col-12 col-md-4 card card-merch-item all-items music">
-                    <img class="card-img-top" src="./assets/img/merch/vinilo_groundsound_2024.png"
-                        alt="GroundSound Festival 2024 (Vinilo - Disco)">
-                    <div class="card-body">
-                        <h3 class="card-title">GroundSound Festival 2024<br>(Vinilo - Disco)</h3>
-                        <span>€32,80 EUR</span>
-                    </div>
-                </a>
-                <!-- Producto 5 -->
-                <a href="./merch_item.php" class="col-12 col-md-4 card card-merch-item all-items clothes">
-                    <img class="card-img-top" src="./assets/img/merch/camiseta_negra_03.png"
-                        alt="Camiseta Negra GroundSound (Trinity Logo)">
-                    <div class="card-body">
-                        <h3 class="card-title">Camiseta Negra GroundSound<br>(Trinity Logo)</h3>
-                        <span>€22,00 EUR</span>
-                    </div>
-                </a>
-                <!-- Producto 6 -->
-                <a href="./merch_item.php" class="col-12 col-md-4 card card-merch-item all-items music">
-                    <img class="card-img-top" src="./assets/img/merch/vinilo_groundsound_2023.png"
-                        alt="GroundSound Festival 2023 (Vinilo - Disco)">
-                    <div class="card-body">
-                        <h3 class="card-title">GroundSound Festival 2023<br>(Vinilo - Disco)</h3>
-                        <span>€28,40 EUR</span>
-                    </div>
-                </a>
-                <!-- Producto 7 -->
-                <a href="./merch_item.php" class="col-12 col-md-4 card card-merch-item all-items clothes">
-                    <img class="card-img-top" src="./assets/img/merch/camiseta_blanca_02.png"
-                        alt='Camiseta GroundSound Blanca (Neon Logo)'>
-                    <div class="card-body">
-                        <h3 class="card-title">Camiseta GroundSound Blanca<br>(Neon Logo)</h3>
-                        <span>€12,00 EUR</span>
-                    </div>
-                </a>
-                <!-- Producto 8 -->
-                <a href="./merch_item.php" class="col-12 col-md-4 card card-merch-item all-items accesories">
-                    <img class="card-img-top" src="./assets/img/merch/gorra.png" alt="Gorra GroundSound (Golden Dream)">
-                    <div class="card-body">
-                        <h3 class="card-title">Gorra<br>GroundSound<br>(Golden Dream)</h3>
-                        <span>€18,50 EUR</span>
-                    </div>
-                </a>
-                <!-- Producto 9 -->
-                <a href="./merch_item.php" class="col-12 col-md-4 card card-merch-item all-items clothes">
-                    <img class="card-img-top" src="./assets/img/merch/camiseta_negra_01.png"
-                        alt='Camiseta Negra GroundSound (White Logo)'>
-                    <div class="card-body">
-                        <h3 class="card-title">Camiseta Negra GroundSound<br>(White Logo)</h3>
-                        <span>16,00 EUR</span>
-                    </div>
-                </a>
+                <!-- Mostramos los productos de la BD -->
+                <?php
+                if ($productos) {
+                    // Si hay productos en la BD, los mostramos.
+                    foreach ($productos as $p) {
+                        ?>
+                        <a href="./merch_item.php?id=<?php echo $p->id; ?>" class="col-12 col-md-4 card card-merch-item all-items <?php echo $p->categoria; ?>">
+                            <img class="card-img-top" src="./assets/img/merch/<?php echo $p->imagen; ?>"
+                                alt="<?php echo $p->nombre; ?>">
+                            <div class="card-body">
+                                <h3 class="card-title"><?php echo $p->nombre; ?></h3>
+                                <span>€<?php echo $p->precio; ?> EUR</span>
+                            </div>
+                        </a>
+                        <?php
+                    }
+                } else {
+                    // Si no hay productos en la BD, mostramos un mensaje de error.
+                    echo "<h2>No hay productos disponibles en este momento.</h2>";
+                }
+                ?>
             </div>
         </section>
 

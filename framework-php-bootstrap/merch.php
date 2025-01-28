@@ -6,6 +6,8 @@ require_once '../framework-php-bootstrap/model/producto.php';
 // Obtenemos todos los productos disponibles de la BD.
 $productos = ProductoController::findAll();
 
+
+
 ?>
 <!DOCTYPE html>
 <html>
@@ -65,11 +67,11 @@ $productos = ProductoController::findAll();
                     </button>
                     <!-- Opciones de Ordenación -->
                     <ul class="dropdown-menu" aria-labelledby="dropdownOrderButton">
-                        <li><a class="dropdown-item" href="#" onclick="updateDropdownText(this)">Relevancia</a></li>
-                        <li><a class="dropdown-item" href="#" onclick="updateDropdownText(this)">Precio
-                                (descendente)</a></li>
-                        <li><a class="dropdown-item" href="#" onclick="updateDropdownText(this)">Precio
-                                (ascendente)</a></li>
+                        <li><button class="dropdown-item" onclick="updateDropdownText(this)">Relevancia</button></li>
+                        <li><button id="desc" class="dropdown-item" onclick="updateDropdownText(this)">Precio
+                                (descendente)</button></li>
+                        <li><button id="asc" class="dropdown-item" onclick="updateDropdownText(this)">Precio
+                                (ascendente)</button></li>
                     </ul>
                 </div>
             </div>
@@ -83,7 +85,8 @@ $productos = ProductoController::findAll();
                     // Si hay productos en la BD, los mostramos.
                     foreach ($productos as $p) {
                         ?>
-                        <a href="./merch_item.php?id=<?php echo $p->id; ?>" class="col-12 col-md-4 card card-merch-item all-items <?php echo $p->categoria; ?>">
+                        <a href="./merch_item.php?id=<?php echo $p->id; ?>" class="col-12 col-md-4 card card-merch-item all-items <?php echo $p->categoria; ?>"
+                            data-precio="<?php echo $p->precio; ?>" data-nombre="<?php echo $p->nombre; ?>">
                             <img class="card-img-top" src="./assets/img/merch/<?php echo $p->imagen; ?>"
                                 alt="<?php echo $p->nombre; ?>">
                             <div class="card-body">

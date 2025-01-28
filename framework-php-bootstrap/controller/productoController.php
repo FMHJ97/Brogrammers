@@ -83,4 +83,27 @@ class ProductoController
         }
     }
 
+    /**
+     * Undocumented function
+     *
+     * @param [type] $category
+     * @return void
+     */
+    public static function findByCategory($category) {
+        try {
+            $conex = new Conexion();
+            $result = $conex->query("select * from producto where categoria = '$category'");
+            if ($result->rowCount()) {
+                while ($fila = $result->fetchObject()) {
+                    $productos[] = new Producto($fila->id, $fila->nombre, $fila->imagen, $fila->descripcion, $fila->precio, $fila->categoria);
+                }
+            } else {
+                $productos = false;
+            }
+            return $productos;
+        } catch (Exception $ex) {
+            die("ERROR en la BD" . $ex->getMessage());
+        }
+    }
+
 }

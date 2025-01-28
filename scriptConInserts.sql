@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 22-01-2025 a las 08:43:41
+-- Tiempo de generación: 28-01-2025 a las 10:40:22
 -- Versión del servidor: 10.4.32-MariaDB
 -- Versión de PHP: 8.2.12
 
@@ -75,15 +75,16 @@ CREATE TABLE `producto` (
   `nombre` text DEFAULT NULL,
   `descripcion` text DEFAULT NULL,
   `detalles` text DEFAULT NULL,
-  `precio` decimal(10,2) DEFAULT NULL
+  `precio` decimal(10,2) DEFAULT NULL,
+  `categoria` enum('ropa','accesorio','musica') NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Volcado de datos para la tabla `producto`
 --
 
-INSERT INTO `producto` (`id`, `nombre`, `descripcion`, `detalles`, `precio`) VALUES
-(1, 'Producto de prueba', 'Descripción de prueba', 'Detalles de prueba', 10.00);
+INSERT INTO `producto` (`id`, `nombre`, `descripcion`, `detalles`, `precio`, `categoria`) VALUES
+(1, 'Producto de prueba', 'Descripción de prueba', 'Detalles de prueba', 10.00, 'ropa');
 
 -- --------------------------------------------------------
 
@@ -103,6 +104,7 @@ CREATE TABLE `usuario` (
   `codigo_postal` text DEFAULT NULL,
   `telefono` text DEFAULT NULL,
   `img_perfil` blob DEFAULT NULL,
+  `newsletter` tinyint(1) NOT NULL DEFAULT 0,
   `rol` enum('admin','editor','usuario') DEFAULT 'usuario'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
@@ -110,8 +112,8 @@ CREATE TABLE `usuario` (
 -- Volcado de datos para la tabla `usuario`
 --
 
-INSERT INTO `usuario` (`id`, `nombre`, `apellido1`, `apellido2`, `correo_electronico`, `clave`, `fecha_nac`, `pais`, `codigo_postal`, `telefono`, `img_perfil`, `rol`) VALUES
-(1, 'Pepe', 'García', 'Pérez', 'pepe@gmail', '1234', '1990-01-01', 'España', '28001', '666666666', NULL, 'admin');
+INSERT INTO `usuario` (`id`, `nombre`, `apellido1`, `apellido2`, `correo_electronico`, `clave`, `fecha_nac`, `pais`, `codigo_postal`, `telefono`, `img_perfil`, `newsletter`, `rol`) VALUES
+(1, 'Admin', 'Admin', 'Admin', 'admin@gmail.com', '$2y$10$j.FMwRlh82OxeI/YJtrCluuEXvBYLCLfVmQ.zSO.IbOc54GVW6Tsu', '1990-10-10', 'España', '14500', '639410944', NULL, 0, 'admin');
 
 -- --------------------------------------------------------
 
@@ -198,7 +200,7 @@ ALTER TABLE `producto`
 -- AUTO_INCREMENT de la tabla `usuario`
 --
 ALTER TABLE `usuario`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- Restricciones para tablas volcadas

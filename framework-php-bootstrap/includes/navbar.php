@@ -9,7 +9,9 @@ if (isset($_COOKIE['PHPSESSID'])) session_start();
 /* Si pulsamos sobre el botón Cerrar Sesión. */
 if (isset($_POST['logout'])) {
     // Destruimos la sesión.
+    session_unset();
     session_destroy();
+    setcookie("PHPSESSID", "", time() - 3600, "/"); // Eliminación en el cliente.
     // Cargamos la página actual.
     header('Location: ' . $_SERVER['REQUEST_URI']);
 }
@@ -81,36 +83,39 @@ if (isset($_POST['login'])) {
                 <?php
                 if (isset($_SESSION['logged'])) {
                 ?>
-                <li class="nav-item">
-                    <a class="nav-link cart-icon d-none d-md-block" href="./cart.php"><i class="bi bi-cart2"></i></a>
-                </li>
-                <li class="nav-item">
-                    <div class="dropdown dd-user">
-                        <!-- Icono de Ordenación -->
-                        <!-- Botón de Ordenación -->
-                        <button id="dropdownMenuButton" type="button" class="btn dropdown-toggle"
-                            data-bs-toggle="dropdown">
-                            <i class="bi bi-person-circle"></i>
-                            <?php echo $_SESSION['logged']->nombre; ?>
-                        </button>
-                        <!-- Opciones de Ordenación -->
-                        <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                            <li>
-                                <form action="" method="POST">
-                                    <button type="submit" class="dropdown-item" name="logout">Cerrar Sesión</button>
-                                </form>
-                            </li>
-                        </ul>
-                    </div>
-                </li>
+                    <li class="nav-item">
+                        <a class="nav-link cart-icon d-none d-md-block" href="./cart.php"><i class="bi bi-cart2"></i></a>
+                    </li>
+                    <li class="nav-item">
+                        <div class="dropdown dd-user">
+                            <!-- Icono de Ordenación -->
+                            <!-- Botón de Ordenación -->
+                            <button id="dropdownMenuButton" type="button" class="btn dropdown-toggle"
+                                data-bs-toggle="dropdown">
+                                <i class="bi bi-person-circle"></i>
+                                <?php echo $_SESSION['logged']->nombre; ?>
+                            </button>
+                            <!-- Opciones de Ordenación -->
+                            <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                <li>
+                                    <a class="dropdown-item" href="#">Ver Perfil</a>
+                                </li>
+                                <li>
+                                    <form action="" method="POST">
+                                        <button type="submit" class="dropdown-item" name="logout">Cerrar Sesión</button>
+                                    </form>
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
                 <?php
                 } else {
                 ?>
-                <li class="nav-item">
-                    <a class="nav-link-auth" href="#" data-bs-toggle="modal" data-bs-target="#loginModal">
-                        <i class="bi bi-person-circle"></i>
-                    </a>
-                </li>
+                    <li class="nav-item">
+                        <a class="nav-link-auth" href="#" data-bs-toggle="modal" data-bs-target="#loginModal">
+                            <i class="bi bi-person-circle"></i>
+                        </a>
+                    </li>
                 <?php
                 }
                 ?>

@@ -89,11 +89,11 @@ if (isset($_POST['login'])) {
                         </label>
                     </div>
                     <!-- Botón Iniciar Sesión y Link a Recuperar Contraseña -->
-                    <div >
+                    <div>
                         <button type="submit" class="mb-3 btn" name="login">Iniciar sesión</button>
                         <div class="d-flex justify-content-between">
-                        <a href="login.php" id="loginGoogle"><img src="../assets/img/google-imagotipo.svg" alt="Login con Google"></a>
-                        <a id="reset_pwd" href="restore_password.php" class="align-content-end">¿Olvidó su contraseña?</a>
+                            <a href="login.php" id="loginGoogle"><img src="../assets/img/google-imagotipo.svg" alt="Login con Google"></a>
+                            <a id="reset_pwd" href="restore_password.php" class="align-content-end">¿Olvidó su contraseña?</a>
                         </div>
                     </div>
                 </form>

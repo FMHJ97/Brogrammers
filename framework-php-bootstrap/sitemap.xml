@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+   <url>
+      <loc>http://localhost:8080/index.php</loc>
+      <lastmod>2025-01-27</lastmod>
+      <changefreq>weekly</changefreq>
+      <priority>1.0</priority>
+   </url>
+   <url>
+      <loc>http://localhost:8080/lineup.php</loc>
+      <lastmod>2025-01-27</lastmod>
+      <changefreq>weekly</changefreq>
+      <priority>0.8</priority>
+   </url>
+   <url>
+      <loc>http://localhost:8080/tickets.php</loc>
+      <lastmod>2025-01-27</lastmod>
+      <changefreq>weekly</changefreq>
+      <priority>0.8</priority>
+   </url>
+   <url>
+      <loc>http://localhost:8080/merch.php</loc>
+      <lastmod>2025-01-27</lastmod>
+      <changefreq>weekly</changefreq>
+      <priority>0.7</priority>
+   </url>
+   <url>
+      <loc>http://localhost:8080/gallery.php</loc>
+      <lastmod>2025-01-27</lastmod>
+      <changefreq>weekly</changefreq>
+      <priority>0.7</priority>
+   </url>
+   <url>
+      <loc>http://localhost:8080/infogeneral.php</loc>
+      <lastmod>2025-01-27</lastmod>
+      <changefreq>weekly</changefreq>
+      <priority>0.6</priority>
+   </url>
+</urlset>
+
+
+<!-- 
+
+Me pone esto en la creación de una sitemap:
+
+- URL de la página: http://localhost:8080/index.php / pagina inicial. 
+
+
+- Última fecha de modificación: Todas tienen la fecha de creación.      
+
+AAAA-MM-DD.
+
+
+
+
+
+- Frecuencia de modificación: he puesto 1 semana
+
+always (documento que cambia cada vez que se tiene acceso a él)
+hourly (cada hora)
+daily (diariamente)
+weekly (semanalmente)
+monthly (mensualmente)
+yearly (anualmente)
+never (documentos que no van a ser modificados)
+
+
+
+- Importancia relativa respecto al resto de páginas del sitio.-> la podemos modificar según veáis el resto
+
+Su valor puede ir de 0,0 a 1,0 y la prioridad predeterminada que se asigna es de 0,5.
+
+-->

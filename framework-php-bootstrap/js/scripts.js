@@ -1,15 +1,15 @@
-src="/path/to/masonry.pkgd.min.js"
+src = "/path/to/masonry.pkgd.min.js"
 
 // Poner aquí los scripts 
 // 
 
 // Script para aumentar o reducir la cantidad de un producto.
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function () {
     const buttons = document.querySelectorAll('.btn-quantity');
     const quantity = document.querySelector('#quantity');
 
     buttons.forEach(button => {
-        button.addEventListener('click', function() {
+        button.addEventListener('click', function () {
             if (this.id === 'sumar') {
                 quantity.textContent++;
             } else if (this.id === 'restar' && quantity.textContent > 1) {
@@ -20,11 +20,11 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 // Script para seleccionar la talla de los productos.
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function () {
     const buttons = document.querySelectorAll('.btn-item-size');
 
     buttons.forEach(button => {
-        button.addEventListener('click', function() {
+        button.addEventListener('click', function () {
             buttons.forEach(btn => btn.classList.remove('selected'));
             this.classList.add('selected');
         });
@@ -72,7 +72,7 @@ document.addEventListener('DOMContentLoaded', function() {
 //             return b.getAttribute('data-precio') - a.getAttribute('data-precio');
 //         }
 //     });
-    
+
 //     // Obtenemos el contenedor de productos.
 //     var contenedor = document.querySelector('.merch-products');
 //     // Vaciando el contenedor de productos.
@@ -81,19 +81,86 @@ document.addEventListener('DOMContentLoaded', function() {
 //     products.forEach(product => contenedor.appendChild(product));
 // }
 
+// Función para actualizar los productos mostrados.
+// document.addEventListener('DOMContentLoaded', function () {
+//     const buttons = document.querySelectorAll('.btn-category-item');
+//     const dropdownButton = document.getElementById('dropdownOrderButton');
+//     const allProducts = Array.from(document.querySelectorAll('.card-merch-item'));
+//     const productContainer = document.querySelector('.merch-products');
+//     let currentCategory = 'all-items'; // Por defecto, mostrar todos los productos.
+
+//     // Función para actualizar los productos mostrados
+//     function updateProductDisplay() {
+//         const filteredProducts = allProducts.filter(product =>
+//             currentCategory === 'all-items' || product.classList.contains(currentCategory)
+//         );
+
+//         // Ordenamos los productos filtrados según el atributo 'data-precio'
+//         const sortedProducts = filteredProducts.sort((a, b) => {
+//             if (dropdownButton.dataset.order === 'asc') {
+//                 return a.getAttribute('data-precio') - b.getAttribute('data-precio');
+//             } else if (dropdownButton.dataset.order === 'desc') {
+//                 return b.getAttribute('data-precio') - a.getAttribute('data-precio');
+//             }
+//             return 0; // Sin orden específico (relevancia)
+//         });
+
+//         // Limpiamos e insertamos los productos ordenados y filtrados en el contenedor
+//         productContainer.innerHTML = '';
+//         sortedProducts.forEach(product => productContainer.appendChild(product));
+//     }
+
+//     // Evento para cambiar de categoría
+//     buttons.forEach(button => {
+//         button.addEventListener('click', function () {
+//             buttons.forEach(btn => btn.classList.remove('selected'));
+//             this.classList.add('selected');
+//             currentCategory = this.id; // Actualizamos la categoría seleccionada
+//             updateProductDisplay();
+//         });
+//     });
+
+//     // Evento para cambiar el orden de los productos
+//     function updateDropdownText(element) {
+//         dropdownButton.textContent = 'Ordenar por: ' + element.textContent;
+//         dropdownButton.dataset.order = element.id; // Guardamos el tipo de orden en un atributo de datos
+//         updateProductDisplay();
+//     }
+
+//     // Asociamos la función a los botones del dropdown
+//     document.querySelectorAll('.dropdown-item').forEach(item => {
+//         item.addEventListener('click', function () {
+//             updateDropdownText(this);
+//         });
+//     });
+
+//     // Inicializamos el estado por defecto
+//     dropdownButton.dataset.order = ''; // Sin orden por defecto
+//     updateProductDisplay();
+// });
 
 document.addEventListener('DOMContentLoaded', function () {
     const buttons = document.querySelectorAll('.btn-category-item');
     const dropdownButton = document.getElementById('dropdownOrderButton');
+    const searchInput = document.querySelector('.form-control-search');
     const allProducts = Array.from(document.querySelectorAll('.card-merch-item'));
     const productContainer = document.querySelector('.merch-products');
-    let currentCategory = 'all-items'; // Por defecto, mostrar todos los productos.
+    let currentCategory = 'all-items';
 
     // Función para actualizar los productos mostrados
     function updateProductDisplay() {
-        const filteredProducts = allProducts.filter(product => 
-            currentCategory === 'all-items' || product.classList.contains(currentCategory)
-        );
+        const searchQuery = searchInput.value.toLowerCase().trim();
+
+        // Filtramos los productos por categoría y busqueda.
+        const filteredProducts = allProducts.filter(product => {
+            // Verificamos si el producto cumple con la categoría y la busqueda.
+            // Si la categoría es 'all-items' o el producto contiene la categoría actual.
+            const matchesCategory = currentCategory === 'all-items' || product.classList.contains(currentCategory);
+            // Si el nombre del producto contiene la busqueda.
+            const matchesSearch = product.dataset.nombre.toLowerCase().includes(searchQuery);
+            // Retornamos si el producto cumple con la categoría y la busqueda.
+            return matchesCategory && matchesSearch;
+        });
 
         // Ordenamos los productos filtrados según el atributo 'data-precio'
         const sortedProducts = filteredProducts.sort((a, b) => {
@@ -133,6 +200,9 @@ document.addEventListener('DOMContentLoaded', function () {
             updateDropdownText(this);
         });
     });
+
+    // Evento para la búsqueda en tiempo real
+    searchInput.addEventListener('input', updateProductDisplay);
 
     // Inicializamos el estado por defecto
     dropdownButton.dataset.order = ''; // Sin orden por defecto

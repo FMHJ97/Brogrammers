@@ -1,12 +1,10 @@
-<?php include("includes/a_config.php"); 
+<?php include("includes/a_config.php");
 
 require_once '../framework-php-bootstrap/controller/productoController.php';
 require_once '../framework-php-bootstrap/model/producto.php';
 
 // Obtenemos todos los productos disponibles de la BD.
 $productos = ProductoController::findAll();
-
-
 
 ?>
 <!DOCTYPE html>
@@ -43,17 +41,15 @@ $productos = ProductoController::findAll();
                 </div>
                 <!-- Barra de Búsqueda -->
                 <div class="col">
-                    <form action="#">
-                        <div class="input-group search-bar">
-                            <!-- Input de Búsqueda -->
-                            <input type="text" class="form-control-search" placeholder="Buscar productos..."
-                                name="search">
-                            <!-- Botón de Búsqueda -->
-                            <button class="btn btn-search" type="submit">
-                                <i class="bi bi-search"></i>
-                            </button>
-                        </div>
-                    </form>
+                    <div class="input-group search-bar">
+                        <!-- Input de Búsqueda -->
+                        <input type="text" class="form-control-search" placeholder="Buscar productos..."
+                            name="search">
+                        <!-- Botón de Búsqueda -->
+                        <button class="btn btn-search">
+                            <i class="bi bi-search"></i>
+                        </button>
+                    </div>
                 </div>
             </div>
             <!-- Elemento de Ordenación -->
@@ -84,7 +80,7 @@ $productos = ProductoController::findAll();
                 if ($productos) {
                     // Si hay productos en la BD, los mostramos.
                     foreach ($productos as $p) {
-                        ?>
+                ?>
                         <a href="./merch_item.php?id=<?php echo $p->id; ?>" class="col-12 col-md-4 card card-merch-item all-items <?php echo $p->categoria; ?>"
                             data-precio="<?php echo $p->precio; ?>" data-nombre="<?php echo $p->nombre; ?>">
                             <img class="card-img-top" src="./assets/img/merch/<?php echo $p->imagen; ?>"
@@ -94,7 +90,7 @@ $productos = ProductoController::findAll();
                                 <span>€<?php echo $p->precio; ?> EUR</span>
                             </div>
                         </a>
-                        <?php
+                <?php
                     }
                 } else {
                     // Si no hay productos en la BD, mostramos un mensaje de error.

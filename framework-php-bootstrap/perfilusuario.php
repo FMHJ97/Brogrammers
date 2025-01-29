@@ -59,16 +59,16 @@ if (isset($_POST['login'])) {
 
 
                 <!-- Imagen e Información -->
-                <div class="row">
+                <div class="row justify-content-center text-center text-md-start mb-3">
                     <!-- Imagen del Usuario -->
-                    <div class="mb-4 col-md-4 about-us-img">
+                    <div class="mb-4 col-md-4 ">
                         <img src="assets/img/dummy/dummy_user.png" alt="Foto de perfil del usuario"
-                            class="w-100 rounded-circle" style="width: 150px;">
+                            class="img-fluid rounded-circle img-usuario">
                     </div>
                     <!-- Información del Usuario -->
-                    <div class="col-md-8">
+                    <div class="col-md-8 d-flex flex-column justify-content-center align-items-md-end">
                         <div class="gap-3 row">
-                            <div class="col-md-12 about-us-info">
+                            <div class="col-md-12">
                                 <h3>Nombre y Apellidos</h3>
                                 
                                 <!-- Hueco para el nombre y apellidos del usuario -->

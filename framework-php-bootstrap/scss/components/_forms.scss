@@ -151,3 +151,11 @@ main {
     color: $resaltar2;
   }
 }
+
+.img-usuario {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  border: $border-3 solid $primario1;
+  object-fit: cover;
+}

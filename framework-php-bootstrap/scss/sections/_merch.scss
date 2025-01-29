@@ -32,6 +32,13 @@ main {
         // Ajuste de tamaño de las imágenes adicionales.
         img {
             max-width: 75px;
+            cursor: pointer;
+
+            &:hover {
+                scale: 1.05;
+                transition: scale 0.5s;
+                box-shadow: 0px 0px 5px 0px $resaltar2;
+            }
         }
     }
 }

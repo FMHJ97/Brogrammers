@@ -1,4 +1,39 @@
-<?php include("includes/a_config.php"); ?>
+<?php include("includes/a_config.php"); 
+
+// Importamos las clases necesarias.
+require_once '../framework-php-bootstrap/controller/productoController.php';
+require_once '../framework-php-bootstrap/model/producto.php';
+
+// Obtenemos el producto seleccionado.
+$producto = ProductoController::find($_GET['id']);
+
+// Si no se ha encontrado el producto, redirigimos a la página de merch.
+if (!$producto) {
+    header("Location: merch.php");
+}
+
+// Obtenemos todos los productos disponibles de la BD.
+$productos = ProductoController::findAll();
+
+if ($productos) {
+    // Obtenemos 3 productos aleatorios para mostrar como recomendados.
+    // Dichos productos no pueden estar duplicados ni ser el producto actual.
+    $productosRecomendados = array();
+    // Recorremos todos los productos disponibles.
+    while (count($productosRecomendados) < 3) {
+        $randomProduct = $productos[array_rand($productos)];
+        // Si el producto aleatorio no está ya en el array de recomendados y
+        // no es el producto actual, lo añadimos.
+        if (!in_array($randomProduct, $productosRecomendados) && $randomProduct->id != $producto->id) {
+            $productosRecomendados[] = $randomProduct;
+        }
+    }
+
+} else {
+    $productosRecomendados = null;
+}
+
+?>
 <!DOCTYPE html>
 <html>
 
@@ -17,8 +52,8 @@
             <!-- Nombre y Precio (Oculto en dispositivos superiores a md) -->
             <div class="mb-5 row d-block d-md-none">
                 <div class="col item-heading">
-                    <h1>Camiseta Blanca GroundSound<br>(Black Logo)</h1>
-                    <h2>€14,00 EUR</h2>
+                    <h1><?php echo $producto->nombre; ?></h1>
+                    <h2>€<?php echo $producto->precio; ?> EUR</h2>
                 </div>
             </div>
             <div class="row">
@@ -27,7 +62,7 @@
                     <!-- Imagen Principal -->
                     <div class="row">
                         <div class="col main-image">
-                            <img src="./assets/img/merch/camiseta_blanca_01.png" alt="Camiseta GroundSound Blanca (Black Logo)"
+                            <img src="./assets/img/merch/<?php echo $producto->imagen; ?>" alt="<?php echo $producto->nombre; ?>"
                                 class="img-fluid">
                         </div>
                     </div>
@@ -35,22 +70,17 @@
                     <div class="row">
                         <div class="col">
                             <div class="row additional-images">
-                                <div class="col-3">
-                                    <img src="./assets/img/merch/camiseta_blanca_01.png"
-                                        alt="Camiseta GroundSound Blanca (Black Logo)" class="img-fluid">
-                                </div>
-                                <div class="col-3">
-                                    <img src="./assets/img/merch/camiseta_blanca_01.png"
-                                        alt="Camiseta GroundSound Blanca (Black Logo)" class="img-fluid">
-                                </div>
-                                <div class="col-3">
-                                    <img src="./assets/img/merch/camiseta_blanca_01.png"
-                                        alt="Camiseta GroundSound Blanca (Black Logo)" class="img-fluid">
-                                </div>
-                                <div class="col-3">
-                                    <img src="./assets/img/merch/camiseta_blanca_01.png"
-                                        alt="Camiseta GroundSound Blanca (Black Logo)" class="img-fluid">
-                                </div>
+                                <?php
+                                // Mostramos 4 imágenes adicionales del producto.
+                                for ($i = 0; $i < 4; $i++) {
+                                    ?>
+                                    <div class="col-3">
+                                        <img src="./assets/img/merch/<?php echo $producto->imagen; ?>"
+                                            alt="<?php echo $producto->nombre; ?>" class="img-fluid">
+                                    </div>
+                                    <?php
+                                }
+                                ?>
                             </div>
                         </div>
                     </div>
@@ -60,10 +90,15 @@
                     <!-- Nombre y Precio (Oculto en dispositivos móviles) -->
                     <div class="row d-none d-md-block">
                         <div class="col item-heading">
-                            <h1>Camiseta Blanca GroundSound (Black Logo)</h1>
-                            <h2>€14,00 EUR</h2>
+                            <h1><?php echo $producto->nombre; ?></h1>
+                            <h2>€<?php echo $producto->precio; ?> EUR</h2>
                         </div>
                     </div>
+                    <?php
+                    // Si el producto tiene categoria == ropa, mostramos
+                    // el apartado de tallas.
+                    if ($producto->categoria == "ropa") {
+                        ?>
                     <!-- Apartado Tallas (según producto) -->
                     <div class="row">
                         <p>Talla</p>
@@ -75,6 +110,9 @@
                             <button type="button" class="btn btn-item-size">2XL</button>
                         </div>
                     </div>
+                    <?php
+                    }
+                    ?>
                     <!-- Cantidad de Producto -->
                     <div class="row">
                         <p>Cantidad</p>
@@ -96,12 +134,7 @@
                     <div class="row">
                         <div class="col item-description">
                             <h3>Descripción</h3>
-                            <ul>
-                                <li>100% algodón</li>
-                                <li>Color: Blanco</li>
-                                <li>Estampado de GroundSound</li>
-                                <li>Fabricado en España</li>
-                            </ul>
+                            <?php echo $producto->descripcion; ?>
                         </div>
                     </div>
                 </div>
@@ -117,32 +150,27 @@
             </div>
             <!-- Productos Sugeridos -->
             <div class="row merch-products">
-                <!-- Producto -->
-                <a href="./merch_item.php" class="col-12 col-md-4 card card-merch-item all-items clothes">
-                    <img class="card-img-top" src="./assets/img/merch/camiseta_negra_03.png"
-                        alt="Camiseta Negra GroundSound (Trinity Logo)">
-                    <div class="card-body">
-                        <h3 class="card-title">Camiseta Negra GroundSound<br>(Trinity Logo)</h3>
-                        <span>€22,00 EUR</span>
-                    </div>
-                </a>
-                <!-- Producto -->
-                <a href="./merch_item.php" class="col-12 col-md-4 card card-merch-item all-items accesories">
-                    <img class="card-img-top" src="./assets/img/merch/gorra.png" alt="Gorra GroundSound (Golden Dream)">
-                    <div class="card-body">
-                        <h3 class="card-title">Gorra<br>GroundSound<br>(Golden Dream)</h3>
-                        <span>€18,50 EUR</span>
-                    </div>
-                </a>
-                <!-- Producto -->
-                <a href="./merch_item.php" class="col-12 col-md-4 card card-merch-item all-items music">
-                    <img class="card-img-top" src="./assets/img/merch/vinilo_groundsound_2024.png"
-                        alt="GroundSound Festival 2024 (Vinilo - Disco)">
-                    <div class="card-body">
-                        <h3 class="card-title">GroundSound Festival 2024<br>(Vinilo - Disco)</h3>
-                        <span>€32,80 EUR</span>
-                    </div>
-                </a>
+            <?php
+                if ($productosRecomendados != null) {
+                    // Si hay productos en la BD, los mostramos.
+                    foreach ($productosRecomendados as $p) {
+                ?>
+                        <a href="./merch_item.php?id=<?php echo $p->id; ?>" class="col-12 col-md-4 card card-merch-item all-items <?php echo $p->categoria; ?>"
+                            data-precio="<?php echo $p->precio; ?>" data-nombre="<?php echo $p->nombre; ?>">
+                            <img class="card-img-top" src="./assets/img/merch/<?php echo $p->imagen; ?>"
+                                alt="<?php echo $p->nombre; ?>">
+                            <div class="card-body">
+                                <h3 class="card-title"><?php echo $p->nombre; ?></h3>
+                                <span>€<?php echo $p->precio; ?> EUR</span>
+                            </div>
+                        </a>
+                <?php
+                    }
+                } else {
+                    // Si no hay productos en la BD, mostramos un mensaje de error.
+                    echo "<h3>No hay productos disponibles en este momento.</h3>";
+                }
+                ?>
             </div>
         </section>
     </main>

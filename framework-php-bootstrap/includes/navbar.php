@@ -98,7 +98,7 @@ if (isset($_POST['login'])) {
                             <!-- Opciones de Ordenación -->
                             <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
                                 <li>
-                                    <a class="dropdown-item" href="#">Ver Perfil</a>
+                                    <a class="dropdown-item" href="./perfilusuario.php">Ver Perfil</a>
                                 </li>
                                 <li>
                                     <form action="" method="POST">

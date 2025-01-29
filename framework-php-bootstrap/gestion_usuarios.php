@@ -53,7 +53,7 @@
                 <div class="row g-3">
                     <div class="col-md-10 mx-auto px-0 px-md-2">
 
-                        <form action="" method="post">
+                        <form class="mb-3" action="" method="post">
                             <div class="btn-category-group">
                                 <button type="input" name="todos" class="btn btn-category-item ">Todos</button>
                                 <button type="input" name="admin" class="btn btn-category-item">Admin</button>
@@ -257,15 +257,7 @@
                         </script>
 
                 </div>
-                <?php
-                if (isset($_POST["submit"])) {
-                    if (!$success) {
-                        echo "<p class='error'>Ha sido un errro. Por favor comuníquelo al administrador</p>";
-                    }
-                }
-                ?>
-
-                </form>
+                                </form>
                 </div>
             <?php
         }

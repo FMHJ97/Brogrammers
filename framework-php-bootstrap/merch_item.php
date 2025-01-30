@@ -1,4 +1,4 @@
-<?php include("includes/a_config.php"); 
+<?php include("includes/a_config.php");
 
 // Importamos las clases necesarias.
 require_once '../framework-php-bootstrap/controller/productoController.php';
@@ -28,7 +28,6 @@ if ($productos) {
             $productosRecomendados[] = $randomProduct;
         }
     }
-
 } else {
     $productosRecomendados = null;
 }
@@ -73,12 +72,12 @@ if ($productos) {
                                 <?php
                                 // Mostramos 4 imágenes adicionales del producto.
                                 for ($i = 0; $i < 4; $i++) {
-                                    ?>
+                                ?>
                                     <div class="col-3">
                                         <img src="./assets/img/merch/<?php echo $producto->imagen; ?>"
                                             alt="<?php echo $producto->nombre; ?>" class="img-fluid">
                                     </div>
-                                    <?php
+                                <?php
                                 }
                                 ?>
                             </div>
@@ -98,18 +97,18 @@ if ($productos) {
                     // Si el producto tiene categoria == ropa, mostramos
                     // el apartado de tallas.
                     if ($producto->categoria == "ropa") {
-                        ?>
-                    <!-- Apartado Tallas (según producto) -->
-                    <div class="row">
-                        <p>Talla</p>
-                        <div class="col btn-size-group">
-                            <button type="button" class="btn btn-item-size selected">S</button>
-                            <button type="button" class="btn btn-item-size">M</button>
-                            <button type="button" class="btn btn-item-size">L</button>
-                            <button type="button" class="btn btn-item-size">XL</button>
-                            <button type="button" class="btn btn-item-size">2XL</button>
+                    ?>
+                        <!-- Apartado Tallas (según producto) -->
+                        <div class="row">
+                            <p>Talla</p>
+                            <div class="col btn-size-group">
+                                <button type="button" class="btn btn-item-size selected">S</button>
+                                <button type="button" class="btn btn-item-size">M</button>
+                                <button type="button" class="btn btn-item-size">L</button>
+                                <button type="button" class="btn btn-item-size">XL</button>
+                                <button type="button" class="btn btn-item-size">2XL</button>
+                            </div>
                         </div>
-                    </div>
                     <?php
                     }
                     ?>
@@ -145,12 +144,12 @@ if ($productos) {
             <!-- Encabezado -->
             <div class="row">
                 <div class="pb-4 col suggested-items-heading">
-                     <h2>También te pueden interesar</h2>
+                    <h2>También te pueden interesar</h2>
                 </div>
             </div>
             <!-- Productos Sugeridos -->
             <div class="row merch-products">
-            <?php
+                <?php
                 if ($productosRecomendados != null) {
                     // Si hay productos en la BD, los mostramos.
                     foreach ($productosRecomendados as $p) {

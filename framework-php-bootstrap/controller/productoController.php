@@ -6,23 +6,18 @@ require_once '../framework-php-bootstrap/controller/conexion.php';
 class ProductoController
 {
 
-    /**
-     * Undocumented function
-     *
-     * @param [type] $producto
-     * @return void
-     */
+
     public static function insertar($producto)
     {
         try {
             $conex = new Conexion();
             $conex->beginTransaction();
             $result = $conex->prepare("insert into producto (nombre,imagen,descripcion,precio,categoria) values (?,?,?,?,?)");
-            $result->bindParam(1,$producto->nombre);
-            $result->bindParam(1,$producto->imagen);
-            $result->bindParam(2,$producto->descripcion);
-            $result->bindParam(4,$producto->precio);
-            $result->bindParam(5,$producto->categoria);
+            $result->bindParam(1, $producto->nombre);
+            $result->bindParam(1, $producto->imagen);
+            $result->bindParam(2, $producto->descripcion);
+            $result->bindParam(4, $producto->precio);
+            $result->bindParam(5, $producto->categoria);
             $result->execute();
             if ($result->rowCount()) {
                 $conex->commit();
@@ -30,18 +25,12 @@ class ProductoController
             } else {
                 return false;
             }
-
         } catch (Exception $ex) {
             die("ERROR en la BD" . $ex->getMessage());
         }
     }
 
-    /**
-     * Undocumented function
-     *
-     * @param [type] $value
-     * @return void
-     */
+
     public static function find($value)
     {
         try {
@@ -61,12 +50,9 @@ class ProductoController
         }
     }
 
-    /**
-     * Undocumented function
-     *
-     * @return void
-     */
-    public static function findAll() {
+
+    public static function findAll()
+    {
         try {
             $conex = new Conexion();
             $result = $conex->query("select * from producto");
@@ -82,5 +68,4 @@ class ProductoController
             die("ERROR en la BD" . $ex->getMessage());
         }
     }
-
 }

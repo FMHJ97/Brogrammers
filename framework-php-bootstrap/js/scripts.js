@@ -103,3 +103,25 @@ document.addEventListener('DOMContentLoaded', function () {
     updateProductDisplay();
 });
 
+document.addEventListener("DOMContentLoaded", function () {
+    // Seleccionamos la imagen principal
+    const mainImage = document.querySelector(".main-image img");
+
+    // Seleccionamos todas las imágenes adicionales
+    const additionalImages = document.querySelectorAll(".additional-images img");
+
+    additionalImages.forEach(image => {
+        image.addEventListener("click", function () {
+            // Eliminamos cualquier clase de filtro previa en la imagen principal
+            mainImage.classList.remove("hue-rotate-0", "hue-rotate-90", "hue-rotate-180", "hue-rotate-270");
+
+            // Obtenemos la clase de la imagen clickeada que contiene el filtro
+            const filterClass = [...this.classList].find(cls => cls.startsWith("hue-rotate-"));
+
+            // Aplicamos la misma clase a la imagen principal
+            if (filterClass) {
+                mainImage.classList.add(filterClass);
+            }
+        });
+    });
+});

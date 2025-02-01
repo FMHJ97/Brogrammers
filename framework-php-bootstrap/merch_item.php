@@ -47,7 +47,7 @@ if ($productos) {
 
     <main>
         <!-- Sección de Producto -->
-        <section class="container px-3 my-4 page-section my-md-5 px-md-5">
+        <section class="container px-3 my-4 page-section mt-md-5 px-md-5">
             <!-- Nombre y Precio (Oculto en dispositivos superiores a md) -->
             <div class="mb-5 row d-block d-md-none">
                 <div class="col item-heading">
@@ -70,12 +70,15 @@ if ($productos) {
                         <div class="col">
                             <div class="row additional-images">
                                 <?php
+                                // Array con 4 clases para los colores de las imágenes.
+                                $coloresHue = array("hue-rotate-0", "hue-rotate-90", "hue-rotate-180", "hue-rotate-270");
                                 // Mostramos 4 imágenes adicionales del producto.
                                 for ($i = 0; $i < 4; $i++) {
                                 ?>
                                     <div class="col-3">
                                         <img src="./assets/img/merch/<?php echo $producto->imagen; ?>"
-                                            alt="<?php echo $producto->nombre; ?>" class="img-fluid">
+                                            alt="<?php echo $producto->nombre; ?>" class="img-fluid
+                                            <?php echo $coloresHue[$i]; ?>">
                                     </div>
                                 <?php
                                 }
@@ -139,6 +142,45 @@ if ($productos) {
                 </div>
             </div>
         </section>
+        <!-- Sección de Comentarios -->
+        <section class="container px-3 page-section px-md-5">
+            <!-- Encabezado -->
+            <div class="row">
+                <div class="pb-4 col">
+                    <h2>Valoraciones de los clientes</h2>
+                </div>
+            </div>
+            <!-- Comentarios -->
+            <div class="row">
+                <!-- Principales Comentarios -->
+                <div class="col-6">
+                    
+                </div>
+                <!-- Formulario de Comentarios -->
+                <div class="col-6 form-comments">
+                    <h3>Deja tu valoración</h3>
+                    <!-- Formulario -->
+                    <form action="" method="POST" class="mx-3">
+                        <div class="mt-3 mb-3">
+                            <label for="stars">¿En qué estado estaba el producto?</label>
+                            <!-- Contenedor de estrellas -->
+                            <div id="stars" class="rating-stars" data-rating="1">
+                                <i class="bi bi-star-fill" data-value="1"></i>
+                                <i class="bi bi-star-fill" data-value="2"></i>
+                                <i class="bi bi-star-fill" data-value="3"></i>
+                                <i class="bi bi-star-fill" data-value="4"></i>
+                                <i class="bi bi-star-fill" data-value="5"></i>
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <label for="eq-editor">Escribe una reseña</label>
+                            <div id="eq-editor"></div>
+                        </div>
+                        <button type="submit" class="mb-3 btn btn-success" name="send">Enviar</button>
+                    </form>
+                </div>
+            </div>
+        </section>
         <!-- Sección Productos Recomendados -->
         <section class="container px-3 page-section px-md-5">
             <!-- Encabezado -->
@@ -176,6 +218,33 @@ if ($productos) {
 
     <!-- Componente Footer -->
     <?php include("includes/footer.php"); ?>
+
+    <script>
+    document.addEventListener("DOMContentLoaded", function () {
+        function setStars(rating, container) {
+            const stars = container.querySelectorAll(".bi-star-fill");
+            stars.forEach(star => {
+                const value = parseInt(star.getAttribute("data-value"));
+                star.classList.toggle("active", value <= rating);
+            });
+        }
+
+        document.querySelectorAll(".rating-stars").forEach(container => {
+            let rating = parseInt(container.getAttribute("data-rating")); // Cargar de la BD
+            setStars(rating, container);
+
+            container.addEventListener("click", function (event) {
+                if (event.target.classList.contains("bi-star-fill")) {
+                    let newRating = parseInt(event.target.getAttribute("data-value"));
+                    container.setAttribute("data-rating", newRating);
+                    setStars(newRating, container);
+
+                    console.log("Nueva valoración:", newRating); // Aquí puedes enviar a la BD con fetch/AJAX
+                }
+            });
+        });
+    });
+</script>
 
 </body>
 

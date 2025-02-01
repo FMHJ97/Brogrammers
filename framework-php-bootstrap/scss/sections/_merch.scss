@@ -41,6 +41,20 @@ main {
   }
 }
 
+// Estilos que se aplican a las imágenes adicionales.
+.hue-rotate-0 {
+  filter: hue-rotate(0deg);
+}
+.hue-rotate-90 {
+  filter: hue-rotate(90deg);
+}
+.hue-rotate-180 {
+  filter: hue-rotate(180deg);
+}
+.hue-rotate-270 {
+  filter: hue-rotate(270deg);
+}
+
 // En dispositivos móviles, se ajusta el tamaño de las imágenes.
 @include media-breakpoint-down(md) {
   // Sección de imágenes del producto.

@@ -159,3 +159,17 @@ main {
   border: $border-3 solid $primario1;
   object-fit: cover;
 }
+
+
+
+// <================== Gallery ==================>
+
+.no-input {
+  position: absolute;
+  z-index: -1;
+  top: 15px;
+  left: 20px;
+  font-size: 17px;
+  color: #b8b8b8;
+  visibility: hidden;
+}

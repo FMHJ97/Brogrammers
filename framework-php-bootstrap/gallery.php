@@ -1,4 +1,10 @@
-<?php include("includes/a_config.php"); ?>
+<?php include("includes/a_config.php");
+
+require_once '../framework-php-bootstrap/controller/fotoController.php';
+
+
+
+?>
 <!DOCTYPE html>
 <html>
 
@@ -9,7 +15,36 @@
 </head>
 
 <body>
-    <?php include("includes/navbar.php"); ?>
+    <?php include("includes/navbar.php");
+
+    if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+        if (isset($_FILES['imagen'])) {
+
+            foreach ($_FILES['imagen']['tmp_name'] as $key => $tmp_name) {
+                $allowed = array("image/jpeg", "image/gif", "image/png");
+                if (!in_array($file_type, $allowed)) {
+                } else {
+
+
+                    $fich = time() . $_SESSION["logged"]->nombre . $_SESSION["logged"]->apellido1 . "-" . $_FILES["imagen"]["name"][$key];
+
+                    $ruta = "assets/img/gallery/" . $fich;
+
+                    move_uploaded_file($_FILES["imagen"]["tmp_name"][$key], "assets/img/gallery/" . $fich);
+
+                    $fileName = "Imagen de " . $_SESSION["logged"]->nombre . " " . $_SESSION["logged"]->apellido1 . " del " . date('Y-m-d');
+
+                    $foto = new Foto(null, $_SESSION["logged"]->id, $fileName, $ruta, date('Y-m-d H:i:s'));
+
+                    FotoController::insertar($foto);
+                }
+            }
+        } else {
+            echo "No files uploaded.";
+        }
+    }
+
+    ?>
     <main>
 
         <section class="container page-section">
@@ -29,14 +64,25 @@
         </section>
 
         <section class="container page-section">
-            <!-- Esto en el paso de funcionalidad es posible que se cambie -->
-            <div class="row my-3 py-3">
-                <a id="submitImageTODO"  href="https://www.gmail.com/"  class="btn-index ">Envíanos tus fotos</a>
-            </div>
+            <form id="subirFotos" action="" method="post" enctype="multipart/form-data">
+                <div class="row my-3 py-3">
+                    <div class="button-gallery-wrap text-center">
+                        <label class="button-gallery-input" for="upload">Enviar sus fotos</label>
+                        <input id="upload" class="no-input" type="file" accept="image/*" name="imagen[]" multiple>
+                    </div>
+
+                </div>
+            </form>
         </section>
     </main>
 
-
+    <script>
+        document.getElementById('upload').addEventListener('change', function() {
+            if (this.files.length > 0) {
+                document.getElementById('subirFotos').submit();
+            }
+        });
+    </script>
 
 
 

@@ -7,20 +7,23 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 
     function loadImages() {
-        fetch('media-url.json')
+        fetch('../controller/get_images.php')  
             .then((response) => response.json())
             .then((json) => {
-                appendImages(json);
+                appendImages(json); 
+            })
+            .catch((error) => {
+                console.error('Error fetching images:', error);
             });
     }
 
     function appendImages(imageData) {
         let imagesLoaded = 0;
         const totalImages = imageData.length;
-
+    
         imageData.forEach((item) => {
             const gridItem = document.createElement("div");
-
+    
             if (item.width > 500 && item.height > 500) {
                 gridItem.className = "grid-item col-12 p-3";
             } else if (item.height > 500) {
@@ -30,11 +33,19 @@ document.addEventListener('DOMContentLoaded', function () {
             } else {
                 gridItem.className = "grid-item col-sm-6 col-lg-3 p-3";
             }
-
+    
             const foto = document.createElement("img");
-            foto.src = item.url;
+    
+            // If the image is a Blob, use createObjectURL to generate a URL
+            if (item.img instanceof Blob) {
+                const objectURL = URL.createObjectURL(item.img);
+                foto.src = objectURL;
+            } else {
+                foto.src = item.img; // Fallback for normal image URLs
+            }
+            
             foto.className = "img-fluid";
-
+    
             // Wait for the image to load
             foto.onload = function () {
                 imagesLoaded++;
@@ -42,14 +53,15 @@ document.addEventListener('DOMContentLoaded', function () {
                     masonry.layout();
                 }
             };
-
+    
             gridItem.appendChild(foto);
             document.getElementById("mediaContainer").appendChild(gridItem);
-
+    
             // Notify Masonry of the new item
             masonry.appended(gridItem);
         });
     }
+    
 
 
 

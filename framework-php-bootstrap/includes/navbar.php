@@ -82,33 +82,37 @@ if (isset($_POST['login'])) {
                     <a class="nav-link" href="./infogeneral.php">Info</a>
                 </li>
                 <?php
-                if ($_SESSION["logged"]->rol === "admin") {
+                if (isset($_SESSION["logged"])) {
+
+
+                    if ($_SESSION["logged"]->rol === "admin") {
                 ?>
 
-                    <li class="nav-item">
-                        <div class="dropdown dd-user">
-                            <!-- Icono de Ordenación -->
-                            <!-- Botón de Ordenación -->
-                            <button id="dropdownMenuButton" type="button" class="btn dropdown-toggle"
-                                data-bs-toggle="dropdown">
-                                Administración
-                            </button>
-                            <!-- Opciones de Ordenación -->
-                            <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                                <li>
-                                    <a class="dropdown-item" href="./gestion_usuarios.php">Usuarios</a>
-                                </li>
-                                <li>
-                                    <a class="dropdown-item" href="./gestion_galeria.php">Galería</a>   
-                                </li>
-                            </ul>
-                        </div>
-                    </li>
-                <?php
+                        <li class="nav-item">
+                            <div class="dropdown dd-user">
+                                <!-- Icono de Ordenación -->
+                                <!-- Botón de Ordenación -->
+                                <button id="dropdownMenuButton" type="button" class="btn dropdown-toggle"
+                                    data-bs-toggle="dropdown">
+                                    Administración
+                                </button>
+                                <!-- Opciones de Ordenación -->
+                                <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                    <li>
+                                        <a class="dropdown-item" href="./gestion_usuarios.php">Usuarios</a>
+                                    </li>
+                                    <li>
+                                        <a class="dropdown-item" href="./gestion_galeria.php">Galería</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </li>
+                    <?php
+                    }
                 }
-                
+
                 if (isset($_SESSION['logged'])) {
-                ?>
+                    ?>
                     <li class="nav-item">
                         <a class="nav-link cart-icon d-none d-md-block" href="./cart.php"><i class="bi bi-cart2"></i></a>
                     </li>

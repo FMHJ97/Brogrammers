@@ -112,10 +112,14 @@ if (isset($_POST['login'])) {
                 }
 
                 if (isset($_SESSION['logged'])) {
+                    if ($_SESSION['logged']->rol !== 'admin') {
                     ?>
-                    <li class="nav-item">
-                        <a class="nav-link cart-icon d-none d-md-block" href="./cart.php"><i class="bi bi-cart2"></i></a>
-                    </li>
+                        <li class="nav-item">
+                            <a class="nav-link cart-icon d-none d-md-block" href="./cart.php"><i class="bi bi-cart2"></i></a>
+                        </li>
+                    <?php
+                    }
+                    ?>
                     <li class="nav-item">
                         <div class="dropdown dd-user">
                             <!-- Icono de Ordenación -->
@@ -194,7 +198,7 @@ if (isset($_POST['login'])) {
                             <!-- Botón Iniciar Sesión y Link a Recuperar Contraseña -->
                             <div>
                                 <button type="submit" class="mb-3 btn" name="login">Iniciar sesión</button>
-                                <div class="d-flex justify-content-between flex-column flex-md-row gap-2 align-items-end align-items-md-center">
+                                <div class="gap-2 d-flex justify-content-between flex-column flex-md-row align-items-end align-items-md-center">
                                     <a href="login.php" id="loginGoogle"><img src="../assets/img/google-imagotipo.svg"
                                             alt="Login con Google"></a>
                                     <a id="reset_pwd" href="restore_password.php" class="">¿Olvidó su

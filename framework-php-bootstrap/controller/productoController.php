@@ -7,6 +7,7 @@ class ProductoController
 {
 
 
+
     public static function insertar($producto)
     {
         try {

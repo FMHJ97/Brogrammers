@@ -17,6 +17,7 @@ if (isset($_POST["submit"])) {
         $u = new Usuario(null, $_POST["name"], $_POST["surname1"], $_POST["surname2"], $_POST["email"], $_POST["pswd"], $_POST["birth"], $_POST["country"], $_POST["postal"], $_POST["phone"], null, "usuario");
 
         if ($u = UserController::insertar($u)) {
+            session_start();
             $_SESSION["logged"] = $u;
             header("location: index.php?register=success");
         } else {

@@ -83,7 +83,6 @@ main {
   .form-help {
     color: $secundario1;
   }
-
 }
 
 // En dispositivos móviles, el tamaño de la fuente del botón se reduce.
@@ -158,4 +157,18 @@ main {
   border-radius: 50%;
   border: $border-3 solid $primario1;
   object-fit: cover;
+}
+
+.form-comments {
+  background-color: lighten($color: $fondo, $amount: 2);
+  padding: 1.5em;
+  border: $border-1 solid $resaltar1;
+  border-radius: 10px;
+
+  button {
+    background-color: $resaltar1;
+    color: $texto2;
+    border-radius: 10px;
+    font-size: $body-font-1;
+  }
 }

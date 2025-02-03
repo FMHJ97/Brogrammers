@@ -154,31 +154,38 @@ if ($productos) {
             <div class="row">
                 <!-- Principales Comentarios -->
                 <div class="col-6">
-                    
+
                 </div>
-                <!-- Formulario de Comentarios -->
-                <div class="col-6 form-comments">
-                    <h3>Deja tu valoración</h3>
-                    <!-- Formulario -->
-                    <form action="" method="POST" class="mx-3">
-                        <div class="mt-3 mb-3">
-                            <label for="stars">¿En qué estado estaba el producto?</label>
-                            <!-- Contenedor de estrellas -->
-                            <div id="stars" class="rating-stars" data-rating="1">
-                                <i class="bi bi-star-fill" data-value="1"></i>
-                                <i class="bi bi-star-fill" data-value="2"></i>
-                                <i class="bi bi-star-fill" data-value="3"></i>
-                                <i class="bi bi-star-fill" data-value="4"></i>
-                                <i class="bi bi-star-fill" data-value="5"></i>
+                <?php
+                // Se mostrará solo a los usuarios con rol "usuario".
+                if (isset($_SESSION['logged']) && $_SESSION['logged']->rol == "usuario") {
+                ?>
+                    <!-- Formulario de Comentarios -->
+                    <div class="col-6 form-comments">
+                        <h3>Deja tu valoración</h3>
+                        <!-- Formulario -->
+                        <form action="" method="POST" class="mx-3">
+                            <div class="mt-3 mb-3">
+                                <label for="stars">¿En qué estado estaba el producto?</label>
+                                <!-- Contenedor de estrellas -->
+                                <div id="stars" class="rating-stars" data-rating="1">
+                                    <i class="bi bi-star-fill" data-value="1"></i>
+                                    <i class="bi bi-star-fill" data-value="2"></i>
+                                    <i class="bi bi-star-fill" data-value="3"></i>
+                                    <i class="bi bi-star-fill" data-value="4"></i>
+                                    <i class="bi bi-star-fill" data-value="5"></i>
+                                </div>
                             </div>
-                        </div>
-                        <div class="mb-3">
-                            <label for="eq-editor">Escribe una reseña</label>
-                            <div id="eq-editor"></div>
-                        </div>
-                        <button type="submit" class="mb-3 btn btn-success" name="send">Enviar</button>
-                    </form>
-                </div>
+                            <div class="mb-3">
+                                <label for="eq-editor">Escribe una reseña</label>
+                                <div id="eq-editor"></div>
+                            </div>
+                            <button type="submit" class="mb-3 btn btn-success" name="send">Enviar</button>
+                        </form>
+                    </div>
+                <?php
+                }
+                ?>
             </div>
         </section>
         <!-- Sección Productos Recomendados -->
@@ -218,33 +225,6 @@ if ($productos) {
 
     <!-- Componente Footer -->
     <?php include("includes/footer.php"); ?>
-
-    <script>
-    document.addEventListener("DOMContentLoaded", function () {
-        function setStars(rating, container) {
-            const stars = container.querySelectorAll(".bi-star-fill");
-            stars.forEach(star => {
-                const value = parseInt(star.getAttribute("data-value"));
-                star.classList.toggle("active", value <= rating);
-            });
-        }
-
-        document.querySelectorAll(".rating-stars").forEach(container => {
-            let rating = parseInt(container.getAttribute("data-rating")); // Cargar de la BD
-            setStars(rating, container);
-
-            container.addEventListener("click", function (event) {
-                if (event.target.classList.contains("bi-star-fill")) {
-                    let newRating = parseInt(event.target.getAttribute("data-value"));
-                    container.setAttribute("data-rating", newRating);
-                    setStars(newRating, container);
-
-                    console.log("Nueva valoración:", newRating); // Aquí puedes enviar a la BD con fetch/AJAX
-                }
-            });
-        });
-    });
-</script>
 
 </body>
 

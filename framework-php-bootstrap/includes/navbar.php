@@ -104,6 +104,9 @@ if (isset($_POST['login'])) {
                                     <li>
                                         <a class="dropdown-item" href="./gestion_galeria.php">Galería</a>
                                     </li>
+                                    <li>
+                                        <a class="dropdown-item" href="./gestion_merch.php">Merch</a>
+                                    </li>
                                 </ul>
                             </div>
                         </li>

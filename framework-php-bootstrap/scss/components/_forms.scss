@@ -160,8 +160,10 @@ main {
 }
 
 .form-comments {
-  background-color: lighten($color: $fondo, $amount: 2);
-  border: $border-1 solid $resaltar1;
+  background-color: lighten($color: $fondo, $amount: 3);
+  border: $border-2 solid $secundario1;
+  padding: 1em;
+  padding-top: 1.5em;
   border-radius: 10px;
 
   button {

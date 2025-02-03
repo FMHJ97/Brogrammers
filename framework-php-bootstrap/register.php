@@ -32,6 +32,7 @@ if (isset($_POST["submit"])) {
 
 <head>
     <?php include("includes/head_tags.php"); ?>
+    <script src="js/register.js"></script>
 </head>
 
 <body>
@@ -149,13 +150,13 @@ if (isset($_POST["submit"])) {
                     <!-- Terms checkbox-->
                     <div class="mb-5 form-check">
                         <label class="form-check-label">
-                            <input class="form-check-input" type="checkbox" name="terms"> Acepto los <a
+                            <input class="form-check-input" type="checkbox" name="terms" id="termsCheckbox"> Acepto los <a
                                 href="legal.php">Términos de Uso</a>.
                         </label>
                     </div>
                     <!-- Botón Crear Cuenta -->
                     <div class="d-flex flex-column ">
-                        <button type="submit" name="submit" class="btn">Crear cuenta</button>
+                        <button type="submit" name="submit" class="btn" id="btnCrearCuenta" disabled>Crear cuenta</button>
                     </div>
                     <?php
                     if (isset($_POST["submit"])) {

@@ -1,7 +1,10 @@
 <?php
+if (!defined('PROJECT_ROOT')) {
+    define('PROJECT_ROOT', dirname(__FILE__) . '/../'); 
+}
 
-require_once '../framework-php-bootstrap/foto.php';
-require_once '../framework-php-bootstrap/conexion.php';
+require_once PROJECT_ROOT . 'model/foto.php';  
+require_once PROJECT_ROOT . 'controller/conexion.php';
 
 class FotoController
 {
@@ -11,16 +14,23 @@ class FotoController
         try {
             $conex = new Conexion();
             $conex->beginTransaction();
+            $id_usuario=$foto->id_usuario;
+            $nombre=$foto->nombre;
+            $img = $foto->img;
+            $fecha=$foto->fecha_subida;
+
+
             $result = $conex->prepare("insert into foto_galeria (id_usuario,nombre,foto,fecha_subida) values (?,?,?,?)");
-            $result->bindParam(1,$foto->id_usuario);
-            $result->bindParam(2,$foto->nombre);
-            $result->bindParam(3,$foto->img);
-            $result->bindParam(4,$foto->fecha_subida);
+            $result->bindParam(1,$id_usuario);
+            $result->bindParam(2,$nombre);
+            $result->bindParam(3,$img);
+            $result->bindParam(4,$fecha);
             $result->execute();
             if ($result->rowCount()) {
                 $conex->commit();
                 return true;
             } else {
+                $conex->rollBack();
                 return false;
             }
 
@@ -51,19 +61,32 @@ class FotoController
     public static function getAll() {
         try {
             $conex = new Conexion();
-            $result = $conex->query("select * from foto_galeria");
+            $result = $conex->query("SELECT * FROM `foto_galeria` ORDER BY `fecha_subida` DESC");
+            
+            $fotos = [];
+            
             if ($result->rowCount()) {
-                while ($fila = $result->fetch()) {
-                    $fotos[] = new Foto($fila->id, $fila->id_usuario,$fila->nombre, $fila->foto, $fila->fecha_subida);
+                while ($fila = $result->fetchObject() ) {
+                    // Create a Foto object for each row
+                    $foto = new Foto(
+                        $fila->id,
+                        $fila->id_usuario,
+                        $fila->nombre,
+                        $fila->foto,  // Assuming 'foto' is the binary image data
+                        $fila->fecha_subida
+                    );
+    
+                    $fotos[] = $foto;  
                 }
-            } else {
-                $fotos = false;
             }
+    
             return $fotos;
+    
         } catch (Exception $ex) {
-            die("ERROR en la BD" . $ex->getMessage());
+            die("ERROR en la BD: " . $ex->getMessage());
         }
     }
+    
 
 
 }

@@ -195,6 +195,32 @@
   border-radius: 0 !important;
 }
 
+.button-gallery-wrap {
+  position: flex;
+}
+
+.button-gallery-input {
+  display: flex;
+  background: rgba($resaltar2, 0.6);
+  border-radius: 20px;
+  color: #ffffff;
+  text-align: center;
+  font-size: 20px;
+  padding: 10px 40px 10px 40px;
+  gap: 0px;
+  align-items: center;
+  justify-content: center;
+  width: 50%;
+  cursor: pointer;
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+  text-decoration: none;
+  margin: auto;
+  color: $texto2;
+  font-family: $headings-font-family;
+}
+
+
+
 // Le quitamos el borde por defecto de los botones
 button {
   border: 0;

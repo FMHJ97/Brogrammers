@@ -159,6 +159,7 @@ main {
   object-fit: cover;
 }
 
+<<<<<<< HEAD
 .form-comments {
   background-color: lighten($color: $fondo, $amount: 2);
   padding: 1.5em;
@@ -172,3 +173,18 @@ main {
     font-size: $body-font-1;
   }
 }
+=======
+
+
+// <================== Gallery ==================>
+
+.no-input {
+  position: absolute;
+  z-index: -1;
+  top: 15px;
+  left: 20px;
+  font-size: 17px;
+  color: #b8b8b8;
+  visibility: hidden;
+}
+>>>>>>> 5d7c2e27a0b790bd3b30093e0e47603049421d38

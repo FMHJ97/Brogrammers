@@ -4,7 +4,8 @@ require_once '../framework-php-bootstrap/controller/usuarioController.php';
 require_once '../framework-php-bootstrap/model/usuario.php';
 
 // Propago la sesión si existe la cookie PHPSESSID.
-if (isset($_COOKIE['PHPSESSID'])) session_start();
+if (isset($_COOKIE['PHPSESSID']))
+    session_start();
 
 /* Si pulsamos sobre el botón Cerrar Sesión. */
 if (isset($_POST['logout'])) {
@@ -82,7 +83,7 @@ if (isset($_POST['login'])) {
                 </li>
                 <?php
                 if (isset($_SESSION['logged'])) {
-                ?>
+                    ?>
                     <li class="nav-item">
                         <a class="nav-link cart-icon d-none d-md-block" href="./cart.php"><i class="bi bi-cart2"></i></a>
                     </li>
@@ -108,15 +109,15 @@ if (isset($_POST['login'])) {
                             </ul>
                         </div>
                     </li>
-                <?php
+                    <?php
                 } else {
-                ?>
+                    ?>
                     <li class="nav-item">
                         <a class="nav-link-auth" href="#" data-bs-toggle="modal" data-bs-target="#loginModal">
                             <i class="bi bi-person-circle"></i>
                         </a>
                     </li>
-                <?php
+                    <?php
                 }
                 ?>
             </ul>
@@ -162,9 +163,14 @@ if (isset($_POST['login'])) {
                                 </label>
                             </div>
                             <!-- Botón Iniciar Sesión y Link a Recuperar Contraseña -->
-                            <div class="d-flex flex-column ">
+                            <div>
                                 <button type="submit" class="mb-3 btn" name="login">Iniciar sesión</button>
-                                <a id="reset_pwd" href="restore_password.php" class="ms-auto">¿Olvidó su contraseña?</a>
+                                <div class="d-flex justify-content-between flex-column flex-md-row gap-2 align-items-end align-items-md-center">
+                                    <a href="login.php" id="loginGoogle"><img src="../assets/img/google-imagotipo.svg"
+                                            alt="Login con Google"></a>
+                                    <a id="reset_pwd" href="restore_password.php" class="">¿Olvidó su
+                                        contraseña?</a>
+                                </div>
                             </div>
                         </form>
                     </div>

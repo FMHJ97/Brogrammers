@@ -58,6 +58,21 @@ class FotoController
         }
     }
 
+    
+    public static function delete($id)
+    {
+        try {
+            $conex = new Conexion();
+            $result = $conex->query("delete from foto_galeria where id='$id'");
+            if ($result->rowCount()) {
+                return true;
+            } else
+                return false;
+        } catch (Exception $ex) {
+            die("ERROR en la BD" . $ex->getLine());
+        }
+    }
+
     public static function getAll() {
         try {
             $conex = new Conexion();

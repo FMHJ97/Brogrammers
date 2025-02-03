@@ -16,14 +16,12 @@
         $uNuevo = new Usuario(null, $_POST["name"], $_POST["surname1"], $_POST["surname2"], $_POST["email"], $_POST["pswd"], $_POST["birth"], $_POST["country"], $_POST["postal"], $_POST["phone"], null, $_POST["role"]);
         if (UserController::modificar($uNuevo)) {
             echo "<p class='success'> Usuario modificado correctamente</p>";
-        }
-        ;
+        };
     }
     if (isset($_POST["delete"])) {
         if (UserController::delete($_POST["email"])) {
             echo "<p class='success'> Usuario borrado correctamente</p>";
-        }
-        ;
+        };
     }
     $users = null;
     if (isset($_POST["todos"]) && !isset($_POST["edit"])) {
@@ -62,11 +60,11 @@
                                 <div class="col-12 col-md-auto">
                                     <div
                                         class="btn-category-group d-flex flex-wrap justify-content-center justify-content-md-start">
-                                        <button type="input" name="todos" class="btn btn-category-item">Todos</button>
-                                        <button type="input" name="admin" class="btn btn-category-item">Admin</button>
-                                        <button type="input" name="editor" class="btn btn-category-item">Editor</button>
+                                        <button type="input" name="todos" class="btn btn-category-item <?php if (isset($_POST["todos"])) echo "selected" ?>">Todos</button>
+                                        <button type="input" name="admin" class="btn btn-category-item <?php if (isset($_POST["admin"])) echo "selected" ?>">Admin</button>
+                                        <button type="input" name="editor" class="btn btn-category-item <?php if (isset($_POST["editor"])) echo "selected" ?>">Editor</button>
                                         <button type="input" name="usuario"
-                                            class="btn btn-category-item">Usuario</button>
+                                            class="btn btn-category-item <?php if (isset($_POST["usuario"])) echo "selected" ?>">Usuario</button>
                                     </div>
                                 </div>
                                 <!-- Search bar -->
@@ -74,18 +72,18 @@
                                     <div class="search-bar d-flex justify-content-center justify-content-md-end">
                                         <input type="text" class="form-control-search w-100"
                                             placeholder="Buscar usuarios" name="search" value="<?php if (isset($_POST["buscaNombre"]))
-                                                echo $_POST["search"] ?>">
-                                            <button class="btn btn-search" name="buscaNombre" type="submit">
-                                                <i class="bi bi-search"></i>
-                                            </button>
-                                        </div>
+                                                                                                    echo $_POST["search"] ?>">
+                                        <button class="btn btn-search" name="buscaNombre" type="submit">
+                                            <i class="bi bi-search"></i>
+                                        </button>
                                     </div>
                                 </div>
-                            </form>
+                            </div>
+                        </form>
 
-                            <?php
-                                            if ($users != null && !isset($_POST["edit"])) {
-                                                ?>
+                        <?php
+                        if ($users != null && !isset($_POST["edit"])) {
+                        ?>
                             <div class="table-responsive-md">
                                 <table class="table table-cart table-borderless table-striped">
                                     <thead>
@@ -129,10 +127,10 @@
                                 </table>
                             </div>
 
-                            <?php
-                                            } else if (!isset($_POST["edit"]))
-                                                echo "<p style='error'>No se ha encontrado dicho(s) usuario(s)</p>";
-                                            ?>
+                        <?php
+                        } else if (!isset($_POST["edit"]))
+                            echo "<p style='error'>No se ha encontrado dicho(s) usuario(s)</p>";
+                        ?>
                     </div>
                 </div>
 
@@ -141,7 +139,7 @@
         <?php
         if (isset($_POST["edit"])) {
             $u = UserController::find($_POST["email"]);
-            ?>
+        ?>
             <section>
                 <div class="container p-4 my-5 authentication-form p-md-5">
 
@@ -159,22 +157,22 @@
                                 <label for="role">Rol</label><span> *</span>
                                 <select name="role" id="role" class="form-control">
                                     <option value="usuario" <?php if ($u->rol == "usuario")
-                                        echo "selected" ?>>Usuario
-                                        </option>
-                                        <option value="editor" <?php if ($u->rol == "editor")
-                                        echo "selected" ?>>Editor</option>
-                                        <option value="admin" <?php if ($u->rol == "admin")
-                                        echo "selected" ?>>Admin</option>
-                                    </select>
+                                                                echo "selected" ?>>Usuario
+                                    </option>
+                                    <option value="editor" <?php if ($u->rol == "editor")
+                                                                echo "selected" ?>>Editor</option>
+                                    <option value="admin" <?php if ($u->rol == "admin")
+                                                                echo "selected" ?>>Admin</option>
+                                </select>
 
-                                </div>
                             </div>
-                            <!-- Primer y Segundo apellido Input-->
-                            <div class="mt-3 mb-3 row">
-                                <!-- Primer apellido -->
-                                <div class="mb-3 col-12 col-md-6 mb-md-0">
-                                    <label for="surname1">Primer Apellido</label><span> *</span>
-                                    <input type="text" class="form-control" id="surname1" value="<?php echo $u->apellido1 ?>"
+                        </div>
+                        <!-- Primer y Segundo apellido Input-->
+                        <div class="mt-3 mb-3 row">
+                            <!-- Primer apellido -->
+                            <div class="mb-3 col-12 col-md-6 mb-md-0">
+                                <label for="surname1">Primer Apellido</label><span> *</span>
+                                <input type="text" class="form-control" id="surname1" value="<?php echo $u->apellido1 ?>"
                                     name="surname1" required>
                             </div>
                             <!-- Segundo apellido -->
@@ -257,7 +255,7 @@
                             const button1 = document.getElementById("button1");
                             const button2 = document.getElementById("button2");
 
-                            button1.addEventListener("click", function (event) {
+                            button1.addEventListener("click", function(event) {
                                 button2.style.display = "inline";
                                 button1.style.display = "none";
 
@@ -265,7 +263,7 @@
                             });
 
                             const form = document.querySelector("form");
-                            form.addEventListener("submit", function (event) {
+                            form.addEventListener("submit", function(event) {
                                 if (button2.style.display === "none") {
                                     event.preventDefault();
                                 }
@@ -275,9 +273,9 @@
                 </div>
                 </form>
                 </div>
-                <?php
+            <?php
         }
-        ?>
+            ?>
     </main>
 
     <!-- Pie de página -->

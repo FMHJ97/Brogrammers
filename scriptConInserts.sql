@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 28-01-2025 a las 19:40:00
+-- Tiempo de generación: 30-01-2025 a las 10:29:36
 -- Versión del servidor: 10.4.32-MariaDB
 -- Versión de PHP: 8.2.12
 
@@ -64,15 +64,15 @@ CREATE TABLE `producto` (
 --
 
 INSERT INTO `producto` (`id`, `nombre`, `imagen`, `descripcion`, `precio`, `categoria`) VALUES
-(1, 'Camiseta Blanca GroundSound (Black Logo)', 'camiseta_blanca_01.png', 'Descripción de prueba', 14.00, 'ropa'),
-(2, 'Camiseta Negra GroundSound (Neon Logo)', 'camiseta_negra_02.png', 'asd', 16.00, 'ropa'),
-(3, 'Mechero Zippo de Gasolina (Recargable)', 'mechero.png', 'asd', 15.00, 'accesorio'),
-(4, 'GroundSound Festival 2024 (Vinilo - Disco)', 'vinilo_groundsound_2024.png', 'asd', 32.80, 'musica'),
-(5, 'Camiseta Negra GroundSound (Trinity Logo)', 'camiseta_negra_03.png', 'asd', 22.00, 'ropa'),
-(6, 'GroundSound Festival 2023 (Vinilo - Disco)', 'vinilo_groundsound_2023.png', 'asd', 28.40, 'musica'),
-(7, 'Camiseta GroundSound Blanca (Neon Logo)', 'camiseta_blanca_02.png', 'asd', 12.00, 'ropa'),
-(8, 'Gorra GroundSound (Golden Dream)', 'gorra.png', 'asd', 18.50, 'accesorio'),
-(9, 'Camiseta Negra GroundSound (White Logo)', 'camiseta_negra_01.png', 'asd', 16.00, 'ropa');
+(1, 'Camiseta Blanca GroundSound (Black Logo)', 'camiseta_blanca_01.png', '<p>Esta camiseta blanca con un diseño exclusivo de GroundSound es perfecta para quienes buscan estilo y comodidad.</p>\n    <ul>\n        <li>Material: 100% algodón</li>\n        <li>Color: Blanco</li>\n        <li>Disponible en varias tallas</li>\n        <li>Diseño moderno y minimalista</li>\n        <li>Ideal para cualquier ocasión</li>\n    </ul>', 14.00, 'ropa'),
+(2, 'Camiseta Negra GroundSound (Neon Logo)', 'camiseta_negra_02.png', '<p>Destaca con esta camiseta negra de GroundSound, con un logo en efecto neón que brilla con estilo y personalidad.</p>\n    <ul>\n        <li>Material: 100% algodón</li>\n        <li>Color: Negro</li>\n        <li>Logo en efecto neón vibrante</li>\n        <li>Disponible en varias tallas</li>\n        <li>Diseño cómodo y versátil</li>\n    </ul>', 16.00, 'ropa'),
+(3, 'Mechero Zippo de Gasolina (Recargable)', 'mechero.png', '<p>Un accesorio imprescindible con el logo de GroundSound, ideal para llevar siempre contigo.</p>\n    <ul>\n        <li>Diseño compacto y ligero</li>\n        <li>Recargable y duradero</li>\n        <li>Encendido seguro y eficiente</li>\n        <li>Ideal para coleccionistas y uso diario</li>\n    </ul>', 15.00, 'accesorio'),
+(4, 'GroundSound Festival 2024 (Vinilo - Disco)', 'vinilo_groundsound_2024.png', '<p>Revive la energía del festival con este vinilo exclusivo que reúne todas las canciones de los artistas que formaron parte de GroundSound Festival 2024.</p>\n    <ul>\n        <li>Formato: Vinilo 12\"</li>\n        <li>Incluye temas de todos los artistas del festival</li>\n        <li>Sonido analógico de alta fidelidad</li>\n        <li>Edición especial con portada exclusiva</li>\n        <li>Ideal para coleccionistas y amantes de la música</li>\n    </ul>', 32.80, 'musica'),
+(5, 'Camiseta Negra GroundSound (Trinity Logo)', 'camiseta_negra_03.png', '<p>Destaca con esta camiseta negra de GroundSound, con un logo exclusivo, perfecta para quienes buscan estilo y comodidad.</p>\n    <ul>\n        <li>Material: 100% algodón</li>\n        <li>Color: Negro</li>\n        <li>Disponible en varias tallas</li>\n        <li>Diseño cómodo y versátil</li>\n    </ul>', 22.00, 'ropa'),
+(6, 'GroundSound Festival 2023 (Vinilo - Disco)', 'vinilo_groundsound_2023.png', '<p>Revive la energía del festival con este vinilo exclusivo que reúne todas las canciones de los artistas que formaron parte de GroundSound Festival 2023.</p>\n    <ul>\n        <li>Formato: Vinilo 12\"</li>\n        <li>Incluye temas de todos los artistas del festival</li>\n        <li>Sonido analógico de alta fidelidad</li>\n        <li>Edición especial con portada exclusiva</li>\n        <li>Ideal para coleccionistas y amantes de la música</li>\n    </ul>', 28.40, 'musica'),
+(7, 'Camiseta GroundSound Blanca (Neon Logo)', 'camiseta_blanca_02.png', '<p>Destaca con esta camiseta blanca de GroundSound, con un logo en efecto neón que brilla con estilo y personalidad.</p>\n    <ul>\n        <li>Material: 100% algodón</li>\n        <li>Color: Blanco</li>\n        <li>Logo en efecto neón vibrante</li>\n        <li>Disponible en varias tallas</li>\n        <li>Diseño cómodo y versátil</li>\n    </ul>', 12.00, 'ropa'),
+(8, 'Gorra GroundSound (Golden Dream)', 'gorra.png', '<p>Complementa tu estilo con la gorra oficial de GroundSound, diseñada para ofrecer comodidad y un look moderno.</p>\n    <ul>\n        <li>Material: Algodón y poliéster</li>\n        <li>Ajustable para mayor comodidad</li>\n        <li>Logo bordado de alta calidad</li>\n        <li>Perfecta para el día a día</li>\n    </ul>', 18.50, 'accesorio'),
+(9, 'Camiseta Negra GroundSound (White Logo)', 'camiseta_negra_01.png', '<p>Esta camiseta negra con un diseño exclusivo de GroundSound es perfecta para quienes buscan estilo y comodidad.</p>\n    <ul>\n        <li>Material: 100% algodón</li>\n        <li>Color: Negro</li>\n        <li>Disponible en varias tallas</li>\n        <li>Diseño moderno y minimalista</li>\n        <li>Ideal para cualquier ocasión</li>\n    </ul>', 16.00, 'ropa');
 
 -- --------------------------------------------------------
 

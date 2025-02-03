@@ -1,0 +1,48 @@
+#eq-editor {
+    font-family: $body-font-family !important;
+    font-size: $body-font-2 !important;
+    color: $texto1 !important;
+    background-color: $fondo !important;
+    border: $border-1 solid $resaltar2 !important;
+    min-height: 100px;
+}
+
+/* Cambia el color de fondo de la barra de herramientas */
+.ql-toolbar {
+    background-color: lighten($color: $fondo, $amount: 10) !important;
+    border: $border-2 solid $resaltar2 !important;
+}
+
+.ql-editor.ql-blank::before {
+    color: $texto1 !important;
+    opacity: 0.6 !important;
+}
+
+.ql-snow {
+
+    .ql-stroke,
+    .ql-fill {
+        stroke: $resaltar1 !important;
+    }
+
+    .ql-active {
+        background-color: lighten($color: $fondo, $amount: 20) !important;
+    }
+
+}
+
+.rating-stars {
+    display: flex;
+    gap: 10px;
+    font-size: 1.75rem;
+    cursor: pointer;
+}
+
+.bi-star-fill {
+    color: darken($color: $resaltar2, $amount: 75);
+}
+
+.bi-star-fill.active {
+    color: $resaltar2;
+    text-shadow: 0 0 5px $resaltar1;
+}

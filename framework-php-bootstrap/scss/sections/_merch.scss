@@ -3,250 +3,261 @@
 // Estilos para el precio del producto
 // cuando se muestra en versión móvil.
 main {
-    .item-heading h2 {
-        color: $resaltar1;
-    }
+  .item-heading h2 {
+    color: $resaltar1;
+  }
 }
 
 // Estilos para la sección de imágenes del producto.
 .item-image-section {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    gap: 2em;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 2em;
 
-    // Estilos para la imagen principal del producto.
-    .main-image {
-
-        // Ajuste de tamaño de la imagen principal.
-        img {
-            border-radius: 5px;
-            max-width: 450px;
-        }
+  // Estilos para la imagen principal del producto.
+  .main-image {
+    // Ajuste de tamaño de la imagen principal.
+    img {
+      border-radius: 5px;
+      max-width: 450px;
     }
+  }
 
-    // Estilos para las imágenes adicionales del producto.
-    .additional-images {
+  // Estilos para las imágenes adicionales del producto.
+  .additional-images {
+    // Ajuste de tamaño de las imágenes adicionales.
+    img {
+      max-width: 75px;
+      cursor: pointer;
 
-        // Ajuste de tamaño de las imágenes adicionales.
-        img {
-            max-width: 75px;
-        }
+      &:hover {
+        scale: 1.05;
+        transition: scale 0.5s;
+        box-shadow: 0px 0px 5px 0px $resaltar2;
+      }
     }
+  }
+}
+
+// Estilos que se aplican a las imágenes adicionales.
+.hue-rotate-0 {
+  filter: hue-rotate(0deg);
+}
+.hue-rotate-90 {
+  filter: hue-rotate(90deg);
+}
+.hue-rotate-180 {
+  filter: hue-rotate(180deg);
+}
+.hue-rotate-270 {
+  filter: hue-rotate(270deg);
 }
 
 // En dispositivos móviles, se ajusta el tamaño de las imágenes.
 @include media-breakpoint-down(md) {
-
-    // Sección de imágenes del producto.
-    .item-image-section {
-
-        // Imagen principal.
-        .main-image {
-            img {
-                max-width: 300px;
-            }
-        }
-
-        // Imágenes adicionales.
-        .additional-images {
-            img {
-                max-width: 50px;
-            }
-        }
+  // Sección de imágenes del producto.
+  .item-image-section {
+    // Imagen principal.
+    .main-image {
+      img {
+        max-width: 300px;
+      }
     }
+
+    // Imágenes adicionales.
+    .additional-images {
+      img {
+        max-width: 50px;
+      }
+    }
+  }
 }
 
 // Estilos para el título de la sección de productos recomendados.
 .suggested-items-heading {
-
-    // Título de la sección.
-    h2 {
-        color: $texto1;
-    }
+  // Título de la sección.
+  h2 {
+    color: $texto1;
+  }
 }
 
 // Estilos para los detalles del producto mostrado.
 .merch-item-details {
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  gap: 2em;
+  color: $texto1;
+  font-size: $body-font-1;
+
+  // Estilos para el título y precio del producto.
+  .item-heading {
     display: flex;
     flex-direction: column;
+    justify-content: space-between;
+    gap: 0.25em;
+    margin-top: 1em;
+
+    // Título del producto.
+    h1 {
+      color: $texto1;
+    }
+
+    // Precio del producto.
+    h2 {
+      color: $resaltar1;
+    }
+  }
+
+  // Estilos para la cantidad de productos a comprar.
+  .item-quantity {
+    display: flex;
+    align-items: center;
     justify-content: start;
-    gap: 2em;
-    color: $texto1;
-    font-size: $body-font-1;
+    margin-left: 12px; // Margen para ajustar el texto con el contador.
+    gap: 0.25em;
+    flex-grow: 0; // Ajuste para que el contenedor no crezca.
+    padding-top: 5px;
+    padding-bottom: 5px;
+    border: $border-2 solid $resaltar2;
+    border-radius: 5px;
+    font-family: $headings-font-family;
+    background-color: $fondo;
 
-    // Estilos para el título y precio del producto.
-    .item-heading {
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-        gap: 0.25em;
-        margin-top: 1em;
-
-        // Título del producto.
-        h1 {
-            color: $texto1;
-        }
-
-        // Precio del producto.
-        h2 {
-            color: $resaltar1;
-        }
+    // Botones para incrementar y decrementar la cantidad.
+    .btn-quantity {
+      border: none;
+      color: $resaltar2;
     }
 
-    // Estilos para la cantidad de productos a comprar.
-    .item-quantity {
-        display: flex;
-        align-items: center;
-        justify-content: start;
-        margin-left: 12px; // Margen para ajustar el texto con el contador.
-        gap: 0.25em;
-        flex-grow: 0; // Ajuste para que el contenedor no crezca.
-        padding-top: 5px;
-        padding-bottom: 5px;
-        border: $border-2 solid $resaltar2;
-        border-radius: 5px;
-        font-family: $headings-font-family;
-        background-color: $fondo;
-
-        // Botones para incrementar y decrementar la cantidad.
-        .btn-quantity {
-            border: none;
-            color: $resaltar2;
-        }
-
-        // Número en el contador de cantidad.
-        #quantity {
-            width: 2ch;
-            /* El ancho ajustado para mostrar 2 caracteres (e.g., 99) */
-            text-align: center;
-        }
+    // Número en el contador de cantidad.
+    #quantity {
+      width: 2ch;
+      /* El ancho ajustado para mostrar 2 caracteres (e.g., 99) */
+      text-align: center;
     }
+  }
 
-    // Estilos para la descripción del producto.
-    .item-description {
-        display: flex;
-        flex-direction: column;
-        gap: 0.75em;
+  // Estilos para la descripción del producto.
+  .item-description {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75em;
 
-        // Elementos de la descripción.
-        li {
-            margin-bottom: 0.2em;
-        }
+    // Elementos de la descripción.
+    li {
+      margin-bottom: 0.2em;
     }
+  }
 }
 
 // En dispositivos móviles, se ajusta el tamaño de los elementos.
 @include media-breakpoint-down(md) {
+  // Sección de detalles del producto.
+  .merch-item-details {
+    margin-top: 3em;
 
-    // Sección de detalles del producto.
-    .merch-item-details {
-        margin-top: 3em;
+    // Ajuste de tamaño del contador de cantidad.
+    .item-quantity {
+      gap: 0.5em;
 
-        // Ajuste de tamaño del contador de cantidad.
-        .item-quantity {
-            gap: 0.5em;
-
-            // Ajuste de tamaño del texto (número) en el contador.
-            #quantity {
-                width: 1.5ch;
-            }
-        }
-
+      // Ajuste de tamaño del texto (número) en el contador.
+      #quantity {
+        width: 1.5ch;
+      }
     }
+  }
 }
-
 
 // <================== Estilos - Merch.php ==================>
 
 // Estilos para el contenedor de productos.
 .merch-products {
-    display: flex;
-    justify-content: start;
-    margin: auto;
-    margin-bottom: 2em;
-    // Ajuste de columnas para ocupar el espacio disponible de manera uniforme.
-    // Hacemos uso de colummn-gap para separar los elementos.
-    column-gap: 87px; // Ajuste exacto de separación entre columnas.
-    row-gap: 4em; // Ajuste de separación exacto entre filas.
-
+  display: flex;
+  justify-content: start;
+  margin: auto;
+  margin-bottom: 2em;
+  // Ajuste de columnas para ocupar el espacio disponible de manera uniforme.
+  // Hacemos uso de colummn-gap para separar los elementos.
+  column-gap: 87px; // Ajuste exacto de separación entre columnas.
+  row-gap: 4em; // Ajuste de separación exacto entre filas.
 }
 
 // Estilo para mostrar u ocultar productos según la categoría seleccionada.
 .hide {
-    display: none;
+  display: none;
 }
 
 // Estilos para la barra de búsqueda de productos.
 .search-bar {
-    display: flex;
-    justify-content: flex-end;
-    padding-left: 10em;
+  display: flex;
+  justify-content: flex-end;
+  padding-left: 10em;
 
-    // Estilos para el campo de búsqueda.
-    .form-control-search {
-        border: $border-2 outset $resaltar1;
-        padding: 0.1em 0.5em;
-        border-radius: 20px;
-        transition: border-color 0.3s;
-        flex-grow: 1;
-        font-size: $body-font-1;
+  // Estilos para el campo de búsqueda.
+  .form-control-search {
+    border: $border-2 outset $resaltar1;
+    padding: 0.1em 0.5em;
+    border-radius: 20px;
+    transition: border-color 0.3s;
+    flex-grow: 1;
+    font-size: $body-font-1;
 
-        // Estilos para el campo de búsqueda al enfocar.
-        &:focus {
-            border-color: darken($resaltar1, 10%);
-            outline: none;
-            box-shadow: 0px 0px 5px 0px $resaltar1;
-        }
+    // Estilos para el campo de búsqueda al enfocar.
+    &:focus {
+      border-color: darken($resaltar1, 10%);
+      outline: none;
+      box-shadow: 0px 0px 5px 0px $resaltar1;
+    }
+  }
+
+  // Estilos para el botón de búsqueda.
+  .btn-search {
+    background: $resaltar1;
+    color: $texto2;
+    border: $border-2 outset $resaltar1;
+    border-radius: 20px;
+
+    // Estilos para el icono de búsqueda.
+    i {
+      color: $texto2;
+      padding-right: 0.4rem;
+      font-size: 1.25rem; // Tamaño del icono ajustado
     }
 
-    // Estilos para el botón de búsqueda.
-    .btn-search {
-        background: $resaltar1;
-        color: $texto2;
-        border: $border-2 outset $resaltar1;
-        border-radius: 20px;
-
-        // Estilos para el icono de búsqueda.
-        i {
-            color: $texto2;
-            padding-right: 0.4rem;
-            font-size: 1.25rem; // Tamaño del icono ajustado
-        }
-
-        // Estilos para el botón de búsqueda al enfocar.
-        &:hover {
-            background: darken($resaltar1, 10%);
-        }
+    // Estilos para el botón de búsqueda al enfocar.
+    &:hover {
+      background: darken($resaltar1, 10%);
     }
+  }
 }
 
 // En dispositivos móviles, se ajusta el tamaño de los elementos.
 @include media-breakpoint-down(md) {
+  // Ajuste de columnas para ocupar el espacio disponible de manera uniforme.
+  .merch-products {
+    justify-content: center;
+    column-gap: 0;
+    row-gap: 2em;
+    margin-bottom: 1.5em;
+  }
 
-    // Ajuste de columnas para ocupar el espacio disponible de manera uniforme.
-    .merch-products {
-        justify-content: center;
-        column-gap: 0;
-        row-gap: 2em;
-        margin-bottom: 1.5em;
+  // Ajuste de tamaño de la barra de búsqueda.
+  .search-bar {
+    padding-left: 0;
+
+    // Ajuste de tamaño del campo de búsqueda.
+    .form-control-search {
+      font-size: $body-font-phone-1;
     }
 
-    // Ajuste de tamaño de la barra de búsqueda.
-    .search-bar {
-        padding-left: 0;
-
-        // Ajuste de tamaño del campo de búsqueda.
-        .form-control-search {
-            font-size: $body-font-phone-1;
-        }
-
-        // Ajuste de tamaño del botón de búsqueda.
-        .btn-search {
-            i {
-                font-size: 1.25rem;
-            }
-        }
+    // Ajuste de tamaño del botón de búsqueda.
+    .btn-search {
+      i {
+        font-size: 1.25rem;
+      }
     }
+  }
 }

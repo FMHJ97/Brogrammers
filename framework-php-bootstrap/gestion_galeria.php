@@ -1,3 +1,5 @@
+<img src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fstatic.vecteezy.com%2Fsystem%2Fresources%2Fpreviews%2F000%2F192%2F089%2Foriginal%2Fwebsite-under-construction-illustration-vector.jpg&f=1&nofb=1&ipt=aa0010747bb257f3441f38c2cc790471275627e0ea88975c62a99bc58c7615c8&ipo=images" style="height: 100vh; width:100vw" alt="">
+
 <?php include("includes/a_config.php"); ?>
 <!DOCTYPE html>
 <html>
@@ -57,26 +59,25 @@
                         <form class="mb-3" action="" method="post">
                             <div class="row g-2">
                                 <!-- Categorías -->
-                                <div class="col-12 col-md-auto">
-                                    <div
-                                        class="btn-category-group d-flex flex-wrap justify-content-center justify-content-md-start">
-                                        <button type="input" name="todos" class="btn btn-category-item <?php if (isset($_POST["todos"])) echo "selected" ?>">Todos</button>
-                                        <button type="input" name="admin" class="btn btn-category-item <?php if (isset($_POST["admin"])) echo "selected" ?>">Admin</button>
-                                        <button type="input" name="editor" class="btn btn-category-item <?php if (isset($_POST["editor"])) echo "selected" ?>">Editor</button>
-                                        <button type="input" name="usuario"
-                                            class="btn btn-category-item <?php if (isset($_POST["usuario"])) echo "selected" ?>">Usuario</button>
-                                    </div>
-                                </div>
+
                                 <!-- Search bar -->
                                 <div class="col-12 col-md">
-                                    <div class="search-bar d-flex justify-content-center justify-content-md-end">
-                                        <input type="text" class="form-control-search w-100"
-                                            placeholder="Buscar usuarios" name="search" value="<?php if (isset($_POST["buscaNombre"]))
-                                                                                                    echo $_POST["search"] ?>">
-                                        <button class="btn btn-search" name="buscaNombre" type="submit">
+
+                                    <div class="search-bar justify-content-center justify-content-md-end">
+                                        <label for="">Por Fecha:</label>
+                                        <input type="date" class="form-control-search w-100"
+                                            name="date">
+                                        <button class="btn btn-search" name="buscaFecha" type="submit">
+                                            <i class="bi bi-search"></i>
+                                        </button>
+                                        <label for="">Por Fecha:</label>
+                                        <input type="date" class="form-control-search w-100"
+                                            name="date">
+                                        <button class="btn btn-search" name="buscaFecha" type="submit">
                                             <i class="bi bi-search"></i>
                                         </button>
                                     </div>
+                                    
                                 </div>
                             </div>
                         </form>
@@ -88,16 +89,16 @@
                                 <table class="table table-cart table-borderless table-striped">
                                     <thead>
                                         <tr>
-                                            <th class="text-center col-4">
-                                                <h5>Nombre</h5>
-                                            </th>
-                                            <th class="text-center col-4">
-                                                <h5>Correo</h5>
+                                            <th class="text-center col-2">
+                                                <h5>Imagen</h5>
                                             </th>
                                             <th class="text-center col-2">
-                                                <h5>Rol</h5>
+                                                <h5>Usuario</h5>
                                             </th>
-                                            <th class="text-center col-2">
+                                            <th class="text-center col-4">
+                                                <h5>Fecha</h5>
+                                            </th>
+                                            <th class="text-center col-4">
                                                 <h5>Acción</h5>
                                             </th>
                                         </tr>
@@ -107,18 +108,20 @@
                                             <tr>
                                                 <form method="post">
                                                     <input type="hidden" name="email" value="<?php echo $u->correo ?>">
-                                                    <td class="text-center align-middle col-4">
-                                                        <?php echo $u->nombre . " " . $u->apellido1 . " " . $u->apellido2 ?>
-                                                    </td>
-                                                    <td class="text-center align-middle col-4">
-                                                        <?php echo $u->correo ?>
+                                                    <td class="text-center align-middle col-2">
+                                                        <img href="<?php echo $u->correo ?>" height="150px" width="150px">
                                                     </td>
                                                     <td class="text-center align-middle col-2">
                                                         <?php echo $u->rol ?>
                                                     </td>
-                                                    <td class="text-center align-middle col-2">
-                                                        <button class="btn btn-category-item mx-auto" type="submit"
+                                                    <td class="text-center align-middle col-4">
+                                                        <?php echo $u->rol ?>
+                                                    </td>
+                                                    <td class="text-center align-middle col-4">
+                                                        <button class="btn btn-category-item d-inline-block" type="submit"
                                                             name="edit">Modificar</button>
+                                                        <button class="btn btn-category-item d-inline-block" type="submit"
+                                                            name="edit">Borrar</button>
                                                     </td>
                                                 </form>
                                             </tr>

@@ -43,10 +43,9 @@ class FotoController
     {
         try {
             $conex = new Conexion();
-
-            $result = $conex->query("select * from foto_galeria where id = '$value'");
+            $result = $conex->query("select * from foto_galeria where id = $value");
             if ($result->rowCount()) {
-                $fila = $result->fetch();
+                $fila = $result->fetchObject();
                 $foto = new Foto($fila->id, $fila->id_usuario,null,$fila->nombre, $fila->foto, $fila->fecha_subida);
             } else {
                 $foto = false;
@@ -103,6 +102,91 @@ class FotoController
         }
     }
     
+    public static function getAllByUsuario($email) {
+        try {
+            $conex = new Conexion();
+            $result = $conex->query("SELECT foto_galeria.id as id,usuario.id as id_usuario,foto_galeria.nombre,foto,fecha_subida,usuario.correo_electronico FROM `foto_galeria` join usuario on usuario.id=foto_galeria.id_usuario where correo_electronico like '%$email%' ORDER BY `fecha_subida` DESC");
+            
+            $fotos = [];
+            
+            if ($result->rowCount()) {
+                while ($fila = $result->fetchObject() ) {
+                    // Create a Foto object for each row
+                    $foto = new Foto(
+                        $fila->id,
+                        $fila->id_usuario,
+                        $fila->correo_electronico,
+                        $fila->nombre,
+                        $fila->foto,  // Assuming 'foto' is the binary image data
+                        $fila->fecha_subida
+                    );
+    
+                    $fotos[] = $foto;  
+                }
+            }
+    
+            return $fotos;
+    
+        } catch (Exception $ex) {
+            die("ERROR en la BD: " . $ex->getMessage());
+        }
+    }
 
+    public static function getAllByFecha($date) {
+        try {
+            $conex = new Conexion();
+            $result = $conex->query("SELECT foto_galeria.id as id,usuario.id as id_usuario,foto_galeria.nombre,foto,fecha_subida,usuario.correo_electronico FROM `foto_galeria` join usuario on usuario.id=foto_galeria.id_usuario where fecha_subida like '%$date%' ORDER BY `fecha_subida` DESC");
+            
+            $fotos = [];
+            
+            if ($result->rowCount()) {
+                while ($fila = $result->fetchObject() ) {
+                    // Create a Foto object for each row
+                    $foto = new Foto(
+                        $fila->id,
+                        $fila->id_usuario,
+                        $fila->correo_electronico,
+                        $fila->nombre,
+                        $fila->foto,  // Assuming 'foto' is the binary image data
+                        $fila->fecha_subida
+                    );
+    
+                    $fotos[] = $foto;  
+                }
+            }
+    
+            return $fotos;
+    
+        } catch (Exception $ex) {
+            die("ERROR en la BD: " . $ex->getMessage());
+        }
+    }
+
+    public static function modificar($id, $text)
+    {
+        try {
+            $conex = new Conexion();
+            $conex->beginTransaction();
+          
+            $result = $conex->prepare("UPDATE foto_galeria SET nombre = ? WHERE id = ?");
+
+            $result->bindParam(1, $text);
+            $result->bindParam(2, $id);
+
+            $result->execute();
+            if ($result->rowCount()) {
+                $conex->commit();
+                return true;
+            } else {
+                $conex->rollBack();
+                throw new Exception("Failed to update the photo in the database.");
+            }
+        } catch (Exception $ex) {
+            error_log("Database Error: " . $ex->getMessage());
+            $conex->rollBack();
+
+            die("ERROR en la BD: " . $ex->getMessage());
+        }
+    }
 
 }

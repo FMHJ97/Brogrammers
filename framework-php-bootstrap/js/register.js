@@ -7,22 +7,21 @@ document.addEventListener("DOMContentLoaded", function() {
     });
 });
 
-const alertPlaceholder = document.getElementById('mensajeAlert')
-const appendAlert = (message, type) => {
-  const wrapper = document.createElement('div')
-  wrapper.innerHTML = [
-    `<div class="alert alert-${type} alert-dismissible" role="alert">`,
-    `   <div>${message}</div>`,
-    '   <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>',
-    '</div>'
-  ].join('')
-
-  alertPlaceholder.append(wrapper)
-}
-
+const divMensaje = document.getElementById('mensajeAlert')
 const alertTrigger = document.getElementById('btnCrearCuenta')
-if (alertTrigger) {
-  alertTrigger.addEventListener('click', () => {
-    appendAlert('No se ha podido registrar. Revise los datos introducidos!', 'danger')
-  })
+// Función para agregar alertas de Bootstrap
+const appendAlert = (message, type) => {
+    const wrapper = document.createElement('div');
+    wrapper.innerHTML = `
+        <div class="alert alert-${type} alert-dismissible fade show" role="alert">
+            <div>${message}</div>
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>`;
+        divMensaje.append(wrapper);
+};
+
+// Mostrar error si PHP ha pasado un mensaje
+const errorMessage = divMensaje.getAttribute('data-error');
+if (errorMessage) {
+    appendAlert(errorMessage, 'danger');
 }

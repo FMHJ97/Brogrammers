@@ -21,23 +21,20 @@ require_once '../framework-php-bootstrap/controller/fotoController.php';
         if (isset($_FILES['imagen'])) {
 
             foreach ($_FILES['imagen']['tmp_name'] as $key => $tmp_name) {
-                $allowed = array("image/jpeg", "image/gif", "image/png");
-                if (!in_array($file_type, $allowed)) {
-                } else {
 
 
-                    $fich = time() . $_SESSION["logged"]->nombre . $_SESSION["logged"]->apellido1 . "-" . $_FILES["imagen"]["name"][$key];
 
-                    $ruta = "assets/img/gallery/" . $fich;
+                $fich = time() . $_SESSION["logged"]->nombre . $_SESSION["logged"]->apellido1 . "-" . $_FILES["imagen"]["name"][$key];
 
-                    move_uploaded_file($_FILES["imagen"]["tmp_name"][$key], "assets/img/gallery/" . $fich);
+                $ruta = "assets/img/gallery/" . $fich;
 
-                    $fileName = "Imagen de " . $_SESSION["logged"]->nombre . " " . $_SESSION["logged"]->apellido1 . " del " . date('Y-m-d');
+                move_uploaded_file($_FILES["imagen"]["tmp_name"][$key], "assets/img/gallery/" . $fich);
 
-                    $foto = new Foto(null, $_SESSION["logged"]->id, $fileName, $ruta, date('Y-m-d H:i:s'));
+                $fileName = "Imagen de " . $_SESSION["logged"]->nombre . " " . $_SESSION["logged"]->apellido1 . " del " . date('Y-m-d');
 
-                    FotoController::insertar($foto);
-                }
+                $foto = new Foto(null, $_SESSION["logged"]->id,null, $fileName, $ruta, date('Y-m-d H:i:s'));
+
+                FotoController::insertar($foto);
             }
         } else {
             echo "No files uploaded.";

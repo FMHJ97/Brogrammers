@@ -47,7 +47,7 @@ class FotoController
             $result = $conex->query("select * from foto_galeria where id = '$value'");
             if ($result->rowCount()) {
                 $fila = $result->fetch();
-                $foto = new Foto($fila->id, $fila->id_usuario,$fila->nombre, $fila->foto, $fila->fecha_subida);
+                $foto = new Foto($fila->id, $fila->id_usuario,null,$fila->nombre, $fila->foto, $fila->fecha_subida);
             } else {
                 $foto = false;
             }
@@ -76,7 +76,7 @@ class FotoController
     public static function getAll() {
         try {
             $conex = new Conexion();
-            $result = $conex->query("SELECT * FROM `foto_galeria` ORDER BY `fecha_subida` DESC");
+            $result = $conex->query("SELECT foto_galeria.id as id,usuario.id as id_usuario,foto_galeria.nombre,foto,fecha_subida,usuario.correo_electronico FROM `foto_galeria` join usuario on usuario.id=foto_galeria.id_usuario ORDER BY `fecha_subida` DESC");
             
             $fotos = [];
             
@@ -86,6 +86,7 @@ class FotoController
                     $foto = new Foto(
                         $fila->id,
                         $fila->id_usuario,
+                        $fila->correo_electronico,
                         $fila->nombre,
                         $fila->foto,  // Assuming 'foto' is the binary image data
                         $fila->fecha_subida

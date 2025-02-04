@@ -37,19 +37,20 @@
     } else if (isset($_POST["buscaNombre"]) && !isset($_POST["edit"])) {
         $users = UserController::getAllByName($_POST["search"]);
     } else
-        $users = UserController::getAll();
+        $fotos = FotoController::getAll();
     ?>
 
 
 
     <main class="d-block px-3 px-md-0">
+
         <section class="page-section">
 
             <div class="container">
                 <!-- Fila con títulos (Carrito, Dirección, Pago) -->
-                <div class="row d-flex text-center page-section-heading">
+                <div class="row d-flex text-center page-section-heading mb-3">
                     <div class="col">
-                        <h3 class="step-title active">Usuarios</h3>
+                        <h3 class="step-title active">Imagenes</h3>
                     </div>
                 </div>
 
@@ -63,27 +64,28 @@
                                 <!-- Search bar -->
                                 <div class="col-12 col-md">
 
-                                    <div class="search-bar justify-content-center justify-content-md-end">
-                                        <label for="">Por Fecha:</label>
-                                        <input type="date" class="form-control-search w-100"
+                                    <div class="search-bar-media justify-content-center">
+
+                                        <input type="text" placeholder="Buscar por usuario" class="form-control-search w-100 no-margin"
                                             name="date">
                                         <button class="btn btn-search" name="buscaFecha" type="submit">
                                             <i class="bi bi-search"></i>
                                         </button>
-                                        <label for="">Por Fecha:</label>
+
                                         <input type="date" class="form-control-search w-100"
-                                            name="date">
+                                            name="date" placeholder="Buscar por fecha">
                                         <button class="btn btn-search" name="buscaFecha" type="submit">
                                             <i class="bi bi-search"></i>
                                         </button>
+
                                     </div>
-                                    
+
                                 </div>
                             </div>
                         </form>
 
                         <?php
-                        if ($users != null && !isset($_POST["edit"])) {
+                        if ($fotos != null && !isset($_POST["edit"])) {
                         ?>
                             <div class="table-responsive-md">
                                 <table class="table table-cart table-borderless table-striped">
@@ -104,18 +106,29 @@
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        <?php foreach ($users as $u) { ?>
+                                        <?php foreach ($fotos as $f) { ?>
                                             <tr>
                                                 <form method="post">
-                                                    <input type="hidden" name="email" value="<?php echo $u->correo ?>">
+                                                    <div class="modal fade" id="imageModal" tabindex="-1" aria-labelledby="imageModalLabel" aria-hidden="true">
+                                                        <div class="modal-dialog modal-dialog-centered">
+                                                            <div class="img-model">
+                                                                <div class="modal-body text-center">
+                                                                    <img id="modalImage" src="" class="img-fluid" alt="Imagen">
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <input type="hidden" name="id" value="<?php echo $f->id ?>">
                                                     <td class="text-center align-middle col-2">
-                                                        <img href="<?php echo $u->correo ?>" height="150px" width="150px">
+                                                        <img class="img gallery-thumbnail" src="<?php echo $f->img ?>" height="100px" width="100px"
+                                                            alt="<?php echo $f->nombre ?>" data-bs-toggle="modal" data-bs-target="#imageModal"
+                                                            onclick="showImageModal('<?php echo $f->img ?>')">
                                                     </td>
                                                     <td class="text-center align-middle col-2">
-                                                        <?php echo $u->rol ?>
+                                                        <?php echo $f->usuario ?>
                                                     </td>
                                                     <td class="text-center align-middle col-4">
-                                                        <?php echo $u->rol ?>
+                                                        <?php echo $f->fecha_subida ?>
                                                     </td>
                                                     <td class="text-center align-middle col-4">
                                                         <button class="btn btn-category-item d-inline-block" type="submit"
@@ -285,5 +298,10 @@
     <?php include("includes/footer.php"); ?>
 
 </body>
+<script>
+    function showImageModal(imageSrc) {
+        document.getElementById('modalImage').src = imageSrc;
+    }
+</script>
 
 </html>

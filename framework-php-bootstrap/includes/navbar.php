@@ -1,7 +1,9 @@
 <?php
 /* Importamos los ficheros necesarios. */
 require_once '../framework-php-bootstrap/controller/usuarioController.php';
+require_once '../framework-php-bootstrap/controller/fotoController.php';
 require_once '../framework-php-bootstrap/model/usuario.php';
+require_once '../framework-php-bootstrap/model/foto.php';
 
 // Propago la sesión si existe la cookie PHPSESSID.
 if (isset($_COOKIE['PHPSESSID']))

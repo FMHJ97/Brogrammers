@@ -136,7 +136,7 @@ if (isset($_POST["submit"])) {
                     <!-- Captcha -->
                     <div class="mb-3">
                         <label for="captcha">Captcha</label><span> *</span>
-                        <img src="/includes/genCaptcha.php" alt="CaptchaImg" class="captcha" id="img-codigo">
+                        <img src="/includes/genCaptchaMath.php" alt="CaptchaImg" class="captcha" id="img-codigo">
                         <input type="text" class="form-control" id="captcha" placeholder="Introduzca el captcha"
                             name="captcha" required>
                     </div>

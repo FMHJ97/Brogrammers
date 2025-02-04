@@ -10,15 +10,10 @@ switch ($_SERVER["SCRIPT_NAME"]) {
 		$PAGE_TITLE = "Términos Legales";
 		break;
 
-		case "/about_us.php":
-			$CURRENT_PAGE = "Sobre Nosotros"; 
-			$PAGE_TITLE = "Sobre Nosotros";
-			break;	
-
-		case "/gestion_usuarios.php":
-			$CURRENT_PAGE = "Gestion Usuarios"; 
-			$PAGE_TITLE = "Gestion Usuarios";
-			break;			
+	case "/gestion_usuarios.php":
+		$CURRENT_PAGE = "Gestion Usuarios";
+		$PAGE_TITLE = "Gestion Usuarios";
+		break;
 	case "/privacy.php":
 		$CURRENT_PAGE = "Política de Privacidad";
 		$PAGE_TITLE = "Política de Privacidad";

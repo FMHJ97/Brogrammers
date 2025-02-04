@@ -58,7 +58,7 @@ $artists = [
             "youtube" => "https://www.youtube.com/aliceinchains",
             "facebook" => "https://www.facebook.com/aliceinchains",
             "email" => "mailto:contacto@aliceinchains.com"
-        ], 
+        ],
         "class" => "incB1"
     ],
     [
@@ -227,4 +227,3 @@ $artists = [
         "class" => "incB12"
     ]
 ];
-?>

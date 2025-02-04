@@ -8,11 +8,14 @@ if (isset($_SESSION['logged'])) {
     exit();
 }
 
+$errorMessage = ""; // Variable para almacenar el mensaje de error
+
 if (isset($_POST["submit"])) {
     $success = true;
     $validEmail = true;
     if (UserController::exists($_POST["email"])) {
         $validEmail = false;
+        $errorMessage = "El correo que has elegido ya existe. Por favor, elige otro.";
     } else {
         $u = new Usuario(null, $_POST["name"], $_POST["surname1"], $_POST["surname2"], $_POST["email"], $_POST["pswd"], $_POST["birth"], $_POST["country"], $_POST["postal"], $_POST["phone"], null, "usuario");
 
@@ -22,6 +25,7 @@ if (isset($_POST["submit"])) {
             header("location: index.php?register=success");
         } else {
             $success = false;
+            $errorMessage = "Ha ocurrido un error. Por favor, comuníquelo al administrador.";
         }
     }
 }
@@ -43,16 +47,29 @@ if (isset($_POST["submit"])) {
         <!-- Sección Crear Cuenta -->
         <section class="py-3 py-md-5">
             <div class="container p-4 my-5 authentication-form p-md-5">
-                <!-- Encabezado -->
-                <div class="row">
-                    <h1>Crear cuenta</h1>
-                    <div class="mb-3 col d-flex flex-column flex-md-row mb-md-4">
-                        <p class="mb-0">¿Ya tienes una cuenta?&nbsp;</p>
-                        <!-- Enlace a Iniciar Sesión -->
-                        <a href="login.php">Inicia sesión</a>
+                <div id="mensajeAlert rounded">
+                    <?php if (!empty($errorMessage)): ?>
+                        <div class="alert alert-danger d-flex align-items-center custom-alerts" role="alert">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                class="bi bi-x-circle-fill" viewBox="0 0 16 16">
+                                <path
+                                    d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0M5.354 4.646a.5.5 0 1 0-.708.708L7.293 8l-2.647 2.646a.5.5 0 0 0 .708.708L8 8.707l2.646 2.647a.5.5 0 0 0 .708-.708L8.707 8l2.647-2.646a.5.5 0 0 0-.708-.708L8 7.293z" />
+                            </svg>
+                            <div class="ms-2">
+                                <?php echo $errorMessage; ?>
+                            </div>
+                        <?php endif; ?>
                     </div>
-                </div>
-                <!-- Formulario -->
+                    <!-- Encabezado -->
+                    <div class="row">
+                        <h1>Crear cuenta</h1>
+                        <div class="mb-3 col d-flex flex-column flex-md-row mb-md-4">
+                            <p class="mb-0">¿Ya tienes una cuenta?&nbsp;</p>
+                            <!-- Enlace a Iniciar Sesión -->
+                            <a href="login.php">Inicia sesión</a>
+                        </div>
+                    </div>
+                    <!-- Formulario -->
                 <form action="" method="post">
                     <!-- Nombre Input-->
                     <div class="mt-3 mb-3 row">
@@ -136,7 +153,7 @@ if (isset($_POST["submit"])) {
                     <!-- Captcha -->
                     <div class="mb-3">
                         <label for="captcha">Captcha</label><span> *</span>
-                        <img src="/includes/genCaptcha.php" alt="CaptchaImg" class="captcha" id="img-codigo">
+                        <img src="/includes/genCaptchaMath.php" alt="CaptchaImg" class="captcha" id="img-codigo">
                         <input type="text" class="form-control" id="captcha" placeholder="Introduzca el captcha"
                             name="captcha" required>
                     </div>
@@ -168,8 +185,8 @@ if (isset($_POST["submit"])) {
                     }
                     ?>
 
-                </form>
-            </div>
+                    </form>
+                </div>
         </section>
     </main>
 

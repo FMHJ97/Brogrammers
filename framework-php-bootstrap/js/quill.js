@@ -2,8 +2,10 @@ document.addEventListener("DOMContentLoaded", function () {
     const quill = new Quill('#eq-editor', {
         modules: {
             toolbar: [
+                [{ header: [1, 2, false] }],
                 ['bold', 'italic', 'underline'],
-                [{ list: 'ordered' }, { list: 'bullet' }]
+                [{ list: 'ordered' }, { list: 'bullet' }],
+                ['clean']
             ]
         },
         theme: 'snow',

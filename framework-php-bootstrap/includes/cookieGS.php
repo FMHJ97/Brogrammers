@@ -24,7 +24,7 @@
     <div id="cookieBanner" class="text-center alert cookiealert" role="alert">
         <img class="GSImageLogo" src="../assets/img/Logo.svg" alt="GroundSound">
         <p id="cookieText">
-            Utilizamos cookies para mejorar la experiencia del usuario en nuestra
+            Utilizamos cookies propias y de terceros para mejorar la experiencia del usuario en nuestra
             web. ¿Aceptas el uso de cookies?
         </p>
         <button id="acceptcookie" type="button" class="btn acceptcookies" aria-label="Close">

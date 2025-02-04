@@ -3,6 +3,7 @@
 class Foto implements JsonSerializable {
     private $id;
     private $id_usuario;
+    private $usuario;
     private $nombre;
     private $img;
     private $fecha_subida;
@@ -11,6 +12,7 @@ class Foto implements JsonSerializable {
         return [
             'id' => $this->id,
             'id_usuario' => $this->id_usuario,
+            'usuario' => $this->usuario,
             'nombre' => $this->nombre,
             'img' => $this->img,
             'fecha_subida' => $this->fecha_subida
@@ -18,10 +20,11 @@ class Foto implements JsonSerializable {
     }
 
 
-    public function __construct($id, $idU, $nombre, $image, $fs)
+    public function __construct($id, $idU,$usu=null, $nombre, $image, $fs)
     {
         $this->id = $id;
         $this->id_usuario = $idU;
+        $this->usuario = $usu;
         $this->nombre = $nombre;
         $this->img = $image;
         $this->fecha_subida = $fs;

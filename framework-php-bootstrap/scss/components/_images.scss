@@ -1,0 +1,56 @@
+.img-model {
+    background-color: $fondo;
+    border-radius: 10px;
+    margin-inline: auto;
+    border: 0;
+}
+
+// Estilos para el search bar
+.search-bar-media {
+    @extend .search-bar;
+
+    padding-left: 0 !important;
+
+    .form-control-search {
+        border: $border-2 outset $resaltar1;
+        padding: 0.1em 0.5em;
+        border-radius: 20px;
+        transition: border-color 0.3s;
+        flex-grow: 1;
+        font-size: $body-font-1;
+        margin-left: 10px;
+
+        // Estilos para el campo de búsqueda al enfocar.
+        &:focus {
+            border-color: darken($resaltar1, 10%);
+            outline: none;
+            box-shadow: 0px 0px 5px 0px $resaltar1;
+        }
+    }
+
+    // Estilos para el botón de búsqueda.
+    .btn-search {
+        background: $resaltar1;
+        color: $texto2;
+        border: $border-2 outset $resaltar1;
+        border-radius: 20px;
+
+        // Estilos para el icono de búsqueda.
+        i {
+            color: $texto2;
+            padding-right: 0.4rem;
+            font-size: 1.25rem; // Tamaño del icono ajustado
+        }
+
+        // Estilos para el botón de búsqueda al enfocar.
+        &:hover {
+            background: darken($resaltar1, 10%);
+        }
+    }
+
+
+}
+
+.no-margin {
+    margin:0 !important;
+}

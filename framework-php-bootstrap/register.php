@@ -43,6 +43,7 @@ if (isset($_POST["submit"])) {
         <!-- Sección Crear Cuenta -->
         <section class="py-3 py-md-5">
             <div class="container p-4 my-5 authentication-form p-md-5">
+                <div id="mensajeAlert"></div>
                 <!-- Encabezado -->
                 <div class="row">
                     <h1>Crear cuenta</h1>

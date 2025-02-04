@@ -1,4 +1,4 @@
-<?php include("includes/a_config.php"); 
+<?php include("includes/a_config.php");
 
 /* Importamos los ficheros necesarios. */
 require_once '../framework-php-bootstrap/controller/usuarioController.php';
@@ -131,6 +131,7 @@ require_once '../framework-php-bootstrap/model/usuario.php';
 
     </div>
     <?php include("includes/patrocinadores.php");  ?>
+    <?php include("includes/cookieGS.php"); ?>
   </main>
 
   <?php include("includes/footer.php"); ?>

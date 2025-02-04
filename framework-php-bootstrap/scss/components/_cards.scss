@@ -43,7 +43,6 @@
 
 // En dispositivos móviles, ajusta las dimensiones de las tarjetas.
 @include media-breakpoint-down(md) {
-
   // Ajusta el ancho máximo de las tarjetas y el borde.
   .card-merch-item {
     max-width: 300px;
@@ -107,7 +106,6 @@
   }
 }
 
-
 /* ==========  INFO.PHP  DIVS  =========  */
 
 //Box-Area with fading COLOR background PARA FESTIVAL HISTORY Y CONTACT US
@@ -119,7 +117,7 @@
   background: $fade-history-divs;
 
   &.contactus {
-    //en contact us teníamos diseñado el borde diferente para llamar la atención.  en blanco. 
+    //en contact us teníamos diseñado el borde diferente para llamar la atención.  en blanco.
     border: $border-4 solid $texto1;
   }
 
@@ -183,8 +181,6 @@
     }
   }
 }
-
-
 
 /* ========== LINEUP.PHP  BAND CARDS =========  */
 
@@ -254,10 +250,10 @@
       background-image: $fade-lineup, url("/assets/img/lineUp/soundgarden.jpg");
     }
 
-
     /* BACKGROUND IMG Bandas SECUNDARIAS con degradado $fade */
     &.incB1 {
-      background-image: $fade-lineup, url("/assets/img/lineUp/AliceInChains.jpg");
+      background-image: $fade-lineup,
+        url("/assets/img/lineUp/AliceInChains.jpg");
     }
 
     &.incB2 {
@@ -273,7 +269,8 @@
     }
 
     &.incB5 {
-      background-image: $fade-lineup, url("/assets/img/lineUp/FallingInReverse.jpg");
+      background-image: $fade-lineup,
+        url("/assets/img/lineUp/FallingInReverse.jpg");
     }
 
     &.incB6 {
@@ -293,11 +290,13 @@
     }
 
     &.incB10 {
-      background-image: $fade-lineup, url("/assets/img/lineUp/lola-flores-biografia.jpg");
+      background-image: $fade-lineup,
+        url("/assets/img/lineUp/lola-flores-biografia.jpg");
     }
 
     &.incB11 {
-      background-image: $fade-lineup, url("/assets/img/lineUp/LambOfGod-Cuadrada.jpeg");
+      background-image: $fade-lineup,
+        url("/assets/img/lineUp/LambOfGod-Cuadrada.jpeg");
     }
 
     &.incB12 {
@@ -306,15 +305,7 @@
   }
 }
 
-
-
-
-
-
-
-
-
-// ------------- PROBANDO EFECTOS DEL FLIP PARA ADAPTARLO CON HOVER O AL PULSAR EN MOVIL  --------- // 
+// ------------- PROBANDO EFECTOS DEL FLIP PARA ADAPTARLO CON HOVER O AL PULSAR EN MOVIL  --------- //
 //  -----------  SIN TERMINAR   ---  CÓDIGO REPETIDO  --- NO LO TENGAS EN CUENTA ALBERTOOOO!!  ----- //
 .flip-card {
   perspective: 1000px; // Permite el efecto 3D
@@ -349,7 +340,6 @@
     @extend .cardBand; // Uso los estilos ya existentes para el frente
     height: 300px;
     max-width: 300px;
-
   }
 
   .flip-card-back {
@@ -362,10 +352,12 @@
     padding: 1rem;
     border: $border-3 solid $resaltar1;
     border-radius: 35px;
-    background: linear-gradient(to bottom,
-        rgba($fondo, 0%) 23%,
-        rgba($resaltar2, 50%) 55%,
-        $resaltar2 100%);
+    background: linear-gradient(
+      to bottom,
+      rgba($fondo, 0%) 23%,
+      rgba($resaltar2, 50%) 55%,
+      $resaltar2 100%
+    );
 
     .back-content {
       align-items: center;

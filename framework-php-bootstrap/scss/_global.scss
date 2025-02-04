@@ -1,120 +1,123 @@
-// 
+//
 // Global
-// 
+//
 
 // Scroll padding for all scroll targets on page used with
 // native CSS smooth scrolling
-// 
+//
 // https://caniuse.com/?search=scroll-padding
 
 html {
-
-    height: 100%;
-    scroll-padding-top: calc(#{$navbar-height} - 1px); 
+  height: 100%;
+  scroll-padding-top: calc(#{$navbar-height} - 1px);
 }
 
 // Estilos para los elementos dentro de la etiqueta body.
 body {
-    background-color: $fondo;
-    font-family: $body-font-family;
-    font-weight: $body-font-weight;
-    color: $texto1;
-    font-size: $body-font-2;
-     
-    // Estilos para las etiquetas heading.
-    h1, h2, h3, h4, h5, h6 {
-        font-family: $headings-font-family;
-        font-weight: $headings-font-weight;
-    }
+  background-color: $fondo;
+  font-family: $body-font-family;
+  font-weight: $body-font-weight;
+  color: $texto1;
+  font-size: $body-font-2;
 
-    // Asignamos el tamaño de fuente a las etiquetas heading.
-    h1 {
-        font-size: $heading-font-1;
-    }
-    h2 {
-        font-size: $heading-font-2;
-    }
-    h3 {
-        font-size: $heading-font-3;
-    }
-    h4 {
-        font-size: $heading-font-4;
-    }
-    h5 {
-        font-size: $heading-font-5;
-    }
+  // Estilos para las etiquetas heading.
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: $headings-font-family;
+    font-weight: $headings-font-weight;
+  }
+
+  // Asignamos el tamaño de fuente a las etiquetas heading.
+  h1 {
+    font-size: $heading-font-1;
+  }
+  h2 {
+    font-size: $heading-font-2;
+  }
+  h3 {
+    font-size: $heading-font-3;
+  }
+  h4 {
+    font-size: $heading-font-4;
+  }
+  h5 {
+    font-size: $heading-font-5;
+  }
 }
 
 // Ajustamos el tamaño de fuente de las etiquetas heading.
 @include media-breakpoint-down(md) {
-    body {
-        font-size: $body-font-phone-2;
+  body {
+    font-size: $body-font-phone-2;
 
-        h1 {
-            font-size: $heading-font-phone-1;
-        }
-        h2 {
-            font-size: $heading-font-phone-2;
-        }
-        h3 {
-            font-size: $heading-font-phone-3;
-        }
-        h4 {
-            font-size: $heading-font-phone-4;
-        }
-        h5 {
-            font-size: $heading-font-phone-5;
-        }
+    h1 {
+      font-size: $heading-font-phone-1;
     }
+    h2 {
+      font-size: $heading-font-phone-2;
+    }
+    h3 {
+      font-size: $heading-font-phone-3;
+    }
+    h4 {
+      font-size: $heading-font-phone-4;
+    }
+    h5 {
+      font-size: $heading-font-phone-5;
+    }
+  }
 }
 // This puts the logo in the background of each page and ensures it does not move. It occupies roughly half the viewport
 main {
-    background: url("../assets/img/logoFondoFestival.png") no-repeat center fixed;
-    background-size: 50vw;
-    background-blend-mode: screen; 
+  background: url("../assets/img/logoFondoFestival.png") no-repeat center fixed;
+  background-size: 50vw;
+  background-blend-mode: screen;
 }
-// override for removing logo from relevant pages/components  
+// override for removing logo from relevant pages/components
 .bg-none {
-    background: none !important;
-    background-image: none !important;
-  }
-  
+  background: none !important;
+  background-image: none !important;
+}
 
 // Styling for page sections
 .page-section {
-    padding-bottom: 3rem;
+  padding-bottom: 3rem;
 
-    .page-section-heading {
-        font-family: $headings-font-family;
-        text-align: center;
-        padding-top: 3rem;
-        padding-bottom: 0.5rem;
+  .page-section-heading {
+    font-family: $headings-font-family;
+    text-align: center;
+    padding-top: 3rem;
+    padding-bottom: 0.5rem;
 
-        h1 {
-            color: $heading1;
-        }
-
-        h2 {
-            color: $heading2; 
-        }
+    h1 {
+      color: $heading1;
     }
+
+    h2 {
+      color: $heading2;
+    }
+  }
 }
 
 @include media-breakpoint-down(md) {
-    .page-section {
-        padding-bottom: 2rem;
+  .page-section {
+    padding-bottom: 2rem;
 
-        .page-section-heading {
-            padding-top: 2rem;
-            padding-bottom: 0rem;
-        }
+    .page-section-heading {
+      padding-top: 2rem;
+      padding-bottom: 0rem;
     }
-//For mobile, to at least have the logo slightly visible in the background
-    main {
-        background: url("../assets/img/logoFondoFestival.png");
-        background-size:90vw;  
-        background-repeat: no-repeat;
-        background-position: center;
-        background-attachment: fixed;
-    }
+  }
+  //For mobile, to at least have the logo slightly visible in the background
+  main {
+    background: url("../assets/img/logoFondoFestival.png");
+    background-size: 90vw;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+  }
 }

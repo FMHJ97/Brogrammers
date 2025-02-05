@@ -61,7 +61,7 @@ if ($productos) {
                     <!-- Imagen Principal -->
                     <div class="row">
                         <div class="col main-image">
-                            <img src="./assets/img/merch/<?php echo $producto->imagen; ?>" alt="<?php echo $producto->nombre; ?>"
+                            <img src="./<?php echo $producto->imagen; ?>" alt="<?php echo $producto->nombre; ?>"
                                 class="img-fluid">
                         </div>
                     </div>
@@ -76,7 +76,7 @@ if ($productos) {
                                 for ($i = 0; $i < 4; $i++) {
                                 ?>
                                     <div class="col-3">
-                                        <img src="./assets/img/merch/<?php echo $producto->imagen; ?>"
+                                        <img src="./<?php echo $producto->imagen; ?>"
                                             alt="<?php echo $producto->nombre; ?>" class="img-fluid
                                             <?php echo $coloresHue[$i]; ?>">
                                     </div>
@@ -205,7 +205,7 @@ if ($productos) {
                 ?>
                         <a href="./merch_item.php?id=<?php echo $p->id; ?>" class="col-12 col-md-4 card card-merch-item all-items <?php echo $p->categoria; ?>"
                             data-precio="<?php echo $p->precio; ?>" data-nombre="<?php echo $p->nombre; ?>">
-                            <img class="card-img-top" src="./assets/img/merch/<?php echo $p->imagen; ?>"
+                            <img class="card-img-top" src="./<?php echo $p->imagen; ?>"
                                 alt="<?php echo $p->nombre; ?>">
                             <div class="card-body">
                                 <h3 class="card-title"><?php echo $p->nombre; ?></h3>

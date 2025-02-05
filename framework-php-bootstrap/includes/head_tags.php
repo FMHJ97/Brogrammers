@@ -1,10 +1,7 @@
-<title><?php print $PAGE_TITLE;?></title>
+<title><?php print $PAGE_TITLE; ?></title>
 
 <meta charset="utf-8" />
-<meta
-  name="viewport"
-  content="width=device-width, initial-scale=1, shrink-to-fit=no"
-/>
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
 <meta name="description" content="Groundsound" />
 <meta name="author" content="Brogrammers" />
 
@@ -16,8 +13,7 @@
 
 <link
   href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Krona+One&family=Maven+Pro:wght@400..900&family=Quantico&display=swap"
-  rel="stylesheet"
-/>
+  rel="stylesheet" />
 <!-- Core theme CSS (includes Bootstrap)-->
 
 <link href="css/styles.css" rel="stylesheet" />
@@ -25,11 +21,6 @@
 <script src="node_modules/bootstrap/dist/js/bootstrap.bundle.js"></script>
 <script src="node_modules/konva/konva.min.js"></script>
 
-<script src="./js/quill.js"></script>
-
 <!-- Quill.js -->
 <script src="https://cdn.jsdelivr.net/npm/quill@2.0.3/dist/quill.js"></script>
-<link
-  href="https://cdn.jsdelivr.net/npm/quill@2.0.3/dist/quill.snow.css"
-  rel="stylesheet"
-/>
+<link href="https://cdn.jsdelivr.net/npm/quill@2.0.3/dist/quill.snow.css" rel="stylesheet" />

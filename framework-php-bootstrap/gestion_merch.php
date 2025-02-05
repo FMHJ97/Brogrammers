@@ -3,17 +3,6 @@
 require_once '../framework-php-bootstrap/controller/productoController.php';
 require_once '../framework-php-bootstrap/model/producto.php';
 
-// Si existe una sesión Logueado, redirigimos a menu.
-if (isset($_SESSION['logged'])) {
-    if ($_SESSION['logged']->rol !== "admin") {
-        header("Location:index.php");
-        exit();
-    }
-} else {
-    header("Location:index.php");
-    exit();
-}
-
 // Obtenemos todos los productos disponibles de la BD.
 $productos = ProductoController::findAll();
 

@@ -107,3 +107,17 @@ window.onload = function () {
 }
 
 
+document.addEventListener("DOMContentLoaded", function() {
+  const alert = document.querySelector('.alert-success');
+  if (alert) {
+      setTimeout(() => {
+          alert.remove();
+      }, 5000); // El mensaje desaparecerá después de 5 segundos
+  }
+});
+
+// Eliminamos de la url la parte de register = success para dejar la url limpia 
+// y así evitar que se muestre el mensaje de éxito de registro al recargar la página
+if (window.location.search.includes('register=success')) {
+  history.replaceState(null, null, window.location.pathname);
+}

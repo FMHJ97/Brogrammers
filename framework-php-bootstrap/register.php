@@ -15,7 +15,7 @@ if (isset($_POST["submit"])) {
     $validEmail = true;
     if (UserController::exists($_POST["email"])) {
         $validEmail = false;
-        $errorMessage = "El correo que has elegido ya existe. Por favor, elige otro.";
+        //$errorMessage = "El correo que has elegido ya existe. Por favor, elige otro.";
     } else {
         $u = new Usuario(null, $_POST["name"], $_POST["surname1"], $_POST["surname2"], $_POST["email"], $_POST["pswd"], $_POST["birth"], $_POST["country"], $_POST["postal"], $_POST["phone"], null, "usuario");
 
@@ -25,7 +25,7 @@ if (isset($_POST["submit"])) {
             header("location: index.php?register=success");
         } else {
             $success = false;
-            $errorMessage = "Ha ocurrido un error. Por favor, comuníquelo al administrador.";
+            //$errorMessage = "Ha ocurrido un error. Por favor, comuníquelo al administrador.";
         }
     }
 }
@@ -178,9 +178,9 @@ if (isset($_POST["submit"])) {
                     <?php
                     if (isset($_POST["submit"])) {
                         if (!$success) {
-                            echo "<p class='error'>Ha sido un errro. Por favor comuníquelo al administrador</p>";
+                            $errorMessage = "Ha ocurrido un error. Por favor, comuníquelo al administrador.";
                         } else if (!$validEmail) {
-                            echo "<p class='error'>El correo que has eligido ya existe. Por favor, elige otro.</p>";
+                            $errorMessage = "El correo que has elegido ya existe. Por favor, elige otro.";
                         }
                     }
                     ?>

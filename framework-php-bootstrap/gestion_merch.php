@@ -6,14 +6,24 @@ require_once '../framework-php-bootstrap/model/producto.php';
 // Obtenemos todos los productos disponibles de la BD.
 $productos = ProductoController::findAll();
 
+// Variables para mostrar mensajes de alerta.
+$alertMessage = "";
+$alertType = "";
+
 // Si pulsamos el botón de borrar producto.
 if (isset($_POST['delete'])) {
     // Obtenemos el id del producto a borrar.
     $id = $_POST['delete'];
     // Borramos el producto de la BD.
-    ProductoController::delete($id);
-    // Recargamos la página.
-    header("Location: gestion_merch.php");
+    if (ProductoController::delete($id)) {
+        $alertMessage = "Producto eliminado correctamente.";
+        $alertType = "success";
+    } else {
+        $alertMessage = "Error al eliminar el producto.";
+        $alertType = "danger";
+    }
+    // Recargamos la página enviando el mensaje de alerta.
+    header("Location: gestion_merch.php?alertMessage=" . urlencode($alertMessage) . "&alertType=" . urlencode($alertType));
     exit();
 }
 
@@ -59,14 +69,26 @@ if (isset($_POST['save'])) {
 
     // Si estamos editando un producto, actualizamos el producto en la BD.
     if (isset($id)) {
-        ProductoController::update($prod);
+        if (ProductoController::update($prod)) {
+            $alertMessage = "Producto actualizado correctamente.";
+            $alertType = "success";
+        } else {
+            $alertMessage = "Error al actualizar el producto.";
+            $alertType = "danger";
+        }
     } else {
         // Si no estamos editando un producto, insertamos un nuevo producto en la BD.
-        ProductoController::insert($prod);
+        if (ProductoController::insert($prod)) {
+            $alertMessage = "Producto insertado correctamente.";
+            $alertType = "success";
+        } else {
+            $alertMessage = "Error al insertar el producto.";
+            $alertType = "danger";
+        }
     }
 
     // Recargamos la página.
-    header("Location: gestion_merch.php");
+    header("Location: gestion_merch.php?alertMessage=" . urlencode($alertMessage) . "&alertType=" . urlencode($alertType));
     exit();
 }
 
@@ -78,6 +100,13 @@ if (isset($_POST['edit'])) {
     $producto_edit = ProductoController::find($id);
 }
 
+// Si hay un mensaje de alerta, lo mostramos.
+if (isset($_GET['alertMessage']) && isset($_GET['alertType'])) {
+    $alertMessage = urldecode($_GET['alertMessage']);
+    $alertType = urldecode($_GET['alertType']);
+}
+
+
 ?>
 
 <!DOCTYPE html>
@@ -85,12 +114,32 @@ if (isset($_POST['edit'])) {
 
 <head>
     <?php include("includes/head_tags.php"); ?>
-
+    <script src="./js/gestion.js"></script>
 </head>
 
 <body>
     <!-- Barra de navegación -->
     <?php include("includes/navbar.php"); ?>
+
+    <!-- Alerta -->
+<?php if (!empty($alertMessage)): ?>
+    <div class="alert alert-<?php echo $alertType; ?> alert-dismissible fade show custom-alert-gestion" role="alert">
+        <?php if ($alertType == "success"): ?>
+            <!-- Ícono de éxito -->
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-check-circle-fill" viewBox="0 0 16 16">
+                <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0m-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z"/>
+            </svg>
+        <?php else: ?>
+            <!-- Ícono de error -->
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-x-circle-fill" viewBox="0 0 16 16">
+                <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0M5.354 4.646a.5.5 0 1 0-.708.708L7.293 8l-2.647 2.646a.5.5 0 0 0 .708.708L8 8.707l2.646 2.647a.5.5 0 0 0 .708-.708L8.707 8l2.647-2.646a.5.5 0 0 0-.708-.708L8 7.293z"/>
+            </svg>
+        <?php endif; ?>
+        <strong><?php echo $alertMessage; ?></strong>
+        
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+<?php endif; ?>
 
     <main class="px-3 d-block px-md-0">
 

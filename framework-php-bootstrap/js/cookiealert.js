@@ -7,20 +7,22 @@
   var rejectCookie = document.getElementById("rejectcookie"); // Botón para rechazar las cookies
   var newsBanner = document.getElementById("newsBanner"); // El contenedor del banner de novedades
   var closeNewsBanner = document.getElementById("closenews"); // Botón para cerrar el banner de novedades
+  var blockWeb = document.getElementById("blockWeb"); // Contenedor de bloqueo de la web
 
-  // Si no se encuentra el contenedor de la alerta de cookies, directamente terminamos
-  //   if (!cookieAlert) {
-  //     return;
-  //   }
+
 
   // Buscamos la cookie "groundSoundCookie", si no está en el cliente decidimos mostrar el contenedor de la alerta
   if (!getCookie("groundSoundCookie")) {
     cookieAlert.classList.add("show");
+    blockWeb.classList.add("show");
+
   }
   // Si se encuentra la cookie en el cliente y además su valor es "true" decidimos pasar directamente a la página de login
   else if (getCookie("groundSoundCookie") == "true") {
     if (!getCookie("gsNews") || getCookie("gsNews") === "false") {
       newsBanner.classList.add("show");
+      document.body.classList.add("banner-visible"); // Bloquear el scroll del fondo
+
       setCookie("gsNews", false, 30); // Establecemos la cookie de novedades con valor false
     }
   }
@@ -30,11 +32,15 @@
   acceptCookies.addEventListener("click", function () {
     setCookie("groundSoundCookie", true, 365);
     setCookie("gsNews", false, 30); // Establecemos la cookie de novedades con valor false
+    
     cookieAlert.classList.remove("show");
+    blockWeb.classList.remove("show");
+
 
     // Mostrar el banner de novedades si la cookie gsNews no existe o es false
     if (!getCookie("gsNews") || getCookie("gsNews") === "false") {
       newsBanner.classList.add("show");
+      document.body.classList.add("banner-visible"); // Bloquear el scroll del fondo
     }
   });
 
@@ -42,13 +48,16 @@
   rejectCookie.addEventListener("click", function () {
     setCookie("groundSoundCookie", false, 365);
     cookieAlert.classList.remove("show");
+    blockWeb.classList.remove("show");
   });
 
   // Evento al botón de cerrar el banner de novedades
   if (closeNewsBanner) {
     closeNewsBanner.addEventListener("click", function () {
       setCookie("gsNews", true, 30); // Establecemos la cookie de novedades con valor true
+      
       newsBanner.classList.remove("show");
+      document.body.classList.remove("banner-visible"); // Desbloquear el scroll del fondo
     });
   }
 

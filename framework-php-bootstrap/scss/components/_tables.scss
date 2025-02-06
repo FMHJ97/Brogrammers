@@ -49,3 +49,14 @@
     border: $border-1 solid $secundario2;
   }
 }
+
+
+.table-about-us {
+  @extend .table-cart;
+  
+  td {
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
+}

@@ -3,7 +3,12 @@
 <html>
 
 <head>
-    <?php include("includes/head_tags.php"); ?>
+    <?php include("includes/head_tags.php");
+    require_once '../framework-php-bootstrap/controller/userScoresController.php';
+    require_once '../framework-php-bootstrap/model/userScores.php';
+
+    $scores = UserScoresController::getAll();
+    ?>
 </head>
 
 <body>
@@ -133,6 +138,198 @@
                                 </div>
                             </div>
                         </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+        <section class="container page-section">
+            <div class="row page-section-heading">
+                <h1>Récords</h1>
+            </div>
+        </section>
+
+        <!-- Miembros -->
+        <section class="container page-section">
+            <!-- Primera Fila -->
+            <div class="mb-5 row py-md-4">
+
+                <!-- Primer Miembro -->
+                <div class="px-4 mb-5 col-md-6 mb-md-0">
+
+                    <!-- Imagen e Información -->
+                    <div class="row">
+
+                        <h3>Tickets, please!</h3>
+
+
+                        <?php if ($scores != null): ?>
+                            <div class="table-responsive-md mx-auto">
+                                <table class="table table-about-us table-borderless table-striped">
+                                    <thead>
+                                        <tr>
+                                            <th class="text-center align-middle">
+                                                <h5>User</h5>
+                                            </th>
+                                            <th class="text-center align-middle">
+                                                <h5>Puntuación</h5>
+                                            </th>
+
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <?php foreach ($scores as $score): ?>
+                                            <tr>
+
+                                                <td class="text-center align-middle"><?php echo $score->nombre ?></td>
+                                                <td class="text-center align-middle"><?php echo $score->puntos ?></td>
+
+
+                                            </tr>
+                                        <?php endforeach; ?>
+                                    </tbody>
+                                </table>
+
+
+
+                            <?php endif; ?>
+                            </div>
+                    </div>
+
+                </div>
+
+                <!-- Segundo Miembro -->
+                <div class="px-4 col-md-6">
+
+                    <!-- Imagen e Información -->
+                    <div class="row">
+
+                        <h3>Cerveztival</h3>
+
+
+                        <?php if ($scores != null): ?>
+                            <div class="table-responsive-md mx-auto">
+                                <table class="table table-about-us table-borderless table-striped">
+                                    <thead>
+                                        <tr>
+                                            <th class="text-center align-middle">
+                                                <h5>User</h5>
+                                            </th>
+                                            <th class="text-center align-middle">
+                                                <h5>Puntuación</h5>
+                                            </th>
+
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <?php foreach ($scores as $score): ?>
+                                            <tr>
+
+                                                <td class="text-center align-middle"><?php echo $score->nombre ?></td>
+                                                <td class="text-center align-middle"><?php echo $score->puntos ?></td>
+
+
+                                            </tr>
+                                        <?php endforeach; ?>
+                                    </tbody>
+                                </table>
+
+
+
+                            <?php endif; ?>
+                            </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <!-- Segunda Fila -->
+            <div class="my-5 row">
+
+                <!-- Tercer Miembro -->
+                <div class="px-4 mb-5 col-md-6 mb-md-0">
+
+                    <!-- Imagen e Información -->
+                    <div class="row">
+
+                        <h3>Videojuego JMPA</h3>
+
+
+                        <?php if ($scores != null): ?>
+                            <div class="table-responsive-md mx-auto">
+                                <table class="table table-about-us table-borderless table-striped">
+                                    <thead>
+                                        <tr>
+                                            <th class="text-center align-middle">
+                                                <h5>User</h5>
+                                            </th>
+                                            <th class="text-center align-middle">
+                                                <h5>Puntuación</h5>
+                                            </th>
+
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <?php foreach ($scores as $score): ?>
+                                            <tr>
+
+                                                <td class="text-center align-middle"><?php echo $score->nombre ?></td>
+                                                <td class="text-center align-middle"><?php echo $score->puntos ?></td>
+
+
+                                            </tr>
+                                        <?php endforeach; ?>
+                                    </tbody>
+                                </table>
+
+
+
+                            <?php endif; ?>
+                            </div>
+                    </div>
+
+                </div>
+
+                <!-- Cuarto Miembro -->
+                <div class="px-4 col-md-6">
+
+                    <!-- Imagen e Información -->
+                    <div class="row">
+
+                        <h3>GroundSound Hero</h3>
+
+
+                        <?php if ($scores != null): ?>
+                            <div class="table-responsive-md mx-auto">
+                                <table class="table table-about-us table-borderless table-striped">
+                                    <thead>
+                                        <tr>
+                                            <th class="text-center align-middle">
+                                                <h5>User</h5>
+                                            </th>
+                                            <th class="text-center align-middle">
+                                                <h5>Puntuación</h5>
+                                            </th>
+
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <?php foreach ($scores as $score): ?>
+                                            <tr>
+
+                                                <td class="text-center align-middle"><?php echo $score->nombre ?></td>
+                                                <td class="text-center align-middle"><?php echo $score->puntos ?></td>
+
+
+                                            </tr>
+                                        <?php endforeach; ?>
+                                    </tbody>
+                                </table>
+
+
+
+                            <?php endif; ?>
+                            </div>
                     </div>
 
                 </div>

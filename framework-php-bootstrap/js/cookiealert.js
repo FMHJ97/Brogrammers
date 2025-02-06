@@ -15,14 +15,13 @@
   if (!getCookie("groundSoundCookie")) {
     cookieAlert.classList.add("show");
     blockWeb.classList.add("show");
-
+    document.body.classList.add("banner-visible"); // Bloquear el scroll del fondo
   }
   // Si se encuentra la cookie en el cliente y además su valor es "true" decidimos pasar directamente a la página de login
   else if (getCookie("groundSoundCookie") == "true") {
     if (!getCookie("gsNews") || getCookie("gsNews") === "false") {
       newsBanner.classList.add("show");
-      document.body.classList.add("banner-visible"); // Bloquear el scroll del fondo
-
+      
       setCookie("gsNews", false, 30); // Establecemos la cookie de novedades con valor false
     }
   }
@@ -35,12 +34,12 @@
     
     cookieAlert.classList.remove("show");
     blockWeb.classList.remove("show");
+    document.body.classList.remove("banner-visible"); // Desbloquear el scroll del fondo
 
 
     // Mostrar el banner de novedades si la cookie gsNews no existe o es false
     if (!getCookie("gsNews") || getCookie("gsNews") === "false") {
       newsBanner.classList.add("show");
-      document.body.classList.add("banner-visible"); // Bloquear el scroll del fondo
     }
   });
 
@@ -49,6 +48,7 @@
     setCookie("groundSoundCookie", false, 365);
     cookieAlert.classList.remove("show");
     blockWeb.classList.remove("show");
+    document.body.classList.remove("banner-visible"); // Desbloquear el scroll del fondo
   });
 
   // Evento al botón de cerrar el banner de novedades
@@ -57,7 +57,6 @@
       setCookie("gsNews", true, 30); // Establecemos la cookie de novedades con valor true
       
       newsBanner.classList.remove("show");
-      document.body.classList.remove("banner-visible"); // Desbloquear el scroll del fondo
     });
   }
 

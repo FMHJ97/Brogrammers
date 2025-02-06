@@ -75,7 +75,6 @@ class UserController
             return $user;
         } catch (Exception $ex) {
             header("location: dificultades.php");
-            die("ERROR en la BD" . $ex->getMessage());
            
         }
     }

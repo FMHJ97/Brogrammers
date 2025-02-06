@@ -28,13 +28,15 @@ require_once '../framework-php-bootstrap/controller/fotoController.php';
 
                 $ruta = "assets/img/gallery/" . $fich;
 
-                move_uploaded_file($_FILES["imagen"]["tmp_name"][$key], "assets/img/gallery/" . $fich);
+
 
                 $fileName = "Imagen de " . $_SESSION["logged"]->nombre . " " . $_SESSION["logged"]->apellido1 . " del " . date('Y-m-d');
 
-                $foto = new Foto(null, $_SESSION["logged"]->id,null, $fileName, $ruta, date('Y-m-d H:i:s'));
+                $foto = new Foto(null, $_SESSION["logged"]->id, null, $fileName, $ruta, date('Y-m-d H:i:s'));
 
-                FotoController::insertar($foto);
+                if (FotoController::insertar($foto)) {
+                    move_uploaded_file($_FILES["imagen"]["tmp_name"][$key], "assets/img/gallery/" . $fich);
+                } else header("location: dificultades.php");
             }
         } else {
             echo "No files uploaded.";

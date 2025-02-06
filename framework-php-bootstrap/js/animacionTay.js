@@ -260,11 +260,11 @@ var game = (function () {
     function endGame() {
         // Stop the Konva animation
         if (anim) anim.stop();
-
+    
         // Clear all object creation intervals
         clearInterval(fallingObjectIntervalId);
         clearInterval(cruzcampoIntervalId);
-
+    
         // Show "Game Over" message
         const gameOverText = new Konva.Text({
             x: stage.width() / 2 - 100,
@@ -273,13 +273,25 @@ var game = (function () {
             fontFamily: 'Arial',
             fill: 'red',
             text: `Game Over\nFinal Score: ${score}`,
-            align: 'center',
+            align: 'center'
         });
-
+    
         layer.add(gameOverText);
         layer.batchDraw();
-
+    
         console.log("Game Over - Final Score:", score); // Debugging log
+    
+        // Send score to the server after the game over text is added
+        fetch('../includes/save_score.php', {
+            method: 'POST',  // Use POST method
+            headers: {
+                'Content-Type': 'application/x-www-form-urlencoded'  // URL-encoded content type
+            },
+            body: `score=${encodeURIComponent(score)}`  // URL-encode the score to prevent special characters issues
+        })
+        .then(response => response.text())  // Parse the response text
+        .then(data => console.log('Server response:', data))  // Log the server response to console
+        .catch(error => console.error('Error:', error));  // Log any error
     }
 
     function init() {

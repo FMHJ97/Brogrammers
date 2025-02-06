@@ -4,8 +4,7 @@
 require_once '../framework-php-bootstrap/controller/usuarioController.php';
 require_once '../framework-php-bootstrap/model/usuario.php';
 
-// Verificar si hay una sesión activa.
-session_start();
+
 if (!isset($_SESSION['logged'])) {
     // Si no hay sesión, redirigir al inicio de sesión.
     header("Location: login.php");

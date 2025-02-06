@@ -185,3 +185,37 @@ main {
   color: #b8b8b8;
   visibility: hidden;
 }
+
+// <================== Gestion_merch.php ==================>
+#form-product {
+  background-color: lighten($color: $fondo, $amount: 3);
+  border: $border-2 solid $secundario1;
+  border-radius: 10px;
+  padding: 1.5em;
+
+  #btn-save {
+    background-color: $resaltar1;
+    color: $texto2;
+    border-radius: 10px;
+    font-family: $headings-font-family;
+    font-size: $heading-font-4;
+
+    &:hover {
+      background: darken($resaltar1, 10%);
+      color: $texto2;
+    }
+  }
+
+  #btn-cancel {
+    background-color: $primario1;
+    color: $texto1;
+    border-radius: 10px;
+    font-family: $headings-font-family;
+    font-size: $heading-font-5;
+
+    &:hover {
+      background: darken($primario1, 3%);
+      color: $texto1;
+    }
+  }
+}

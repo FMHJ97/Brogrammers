@@ -3,13 +3,25 @@
 <html>
 
 <head>
-    <?php include("includes/head_tags.php"); ?>
+    <?php include("includes/head_tags.php");
+
+
+    ?>
 
 </head>
 
 <body>
     <!-- Barra de navegación -->
     <?php include("includes/navbar.php");
+    if (isset($_SESSION['logged'])) {
+        if ($_SESSION['logged']->rol !== "admin") {
+            header("Location:index.php");
+            exit();
+        }
+    } else {
+        header("Location:index.php");
+        exit();
+    }
 
     if (isset($_POST["delete"])) {
         if (FotoController::delete($_POST["id"])) {
@@ -158,7 +170,7 @@
                     <!-- Formulario -->
                     <form action="" method="post">
                         <!-- Nombre Input-->
-                         <input type="hidden" name="id" value="<?php echo $_POST["id"] ?>">
+                        <input type="hidden" name="id" value="<?php echo $_POST["id"] ?>">
                         <div class="mt-3 mb-3 row">
                             <div class="mb-3 col-12 col-md-6 mb-md-0 text-center">
                                 <img class="img img-form-gestion img-fluid" src="<?php echo $f->img ?>"

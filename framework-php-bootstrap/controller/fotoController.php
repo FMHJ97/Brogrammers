@@ -31,11 +31,13 @@ class FotoController
                 return true;
             } else {
                 $conex->rollBack();
+                
                 return false;
+                
             }
 
         } catch (Exception $ex) {
-            die("ERROR en la BD" . $ex->getMessage());
+            echo "<script>window.location.href='dificultades.php'</script>";
         }
     }
 

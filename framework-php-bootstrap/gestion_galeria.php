@@ -153,7 +153,7 @@
 
                         <?php
                         } else if (!isset($_POST["edit"]))
-                            echo "<p style='error'>No se ha encontrado dicho(s) usuario(s)</p>";
+                            echo "<p style='error'>No se ha encontrado ningún imagen</p>";
                         ?>
                     </div>
                 </div>

@@ -6,24 +6,38 @@ document.addEventListener('DOMContentLoaded', function () {
         percentPosition: true
     });
 
-    function loadImages() {
-        fetch('../controller/get_images.php')  
+    let allImages = []; // Store all image data
+    let currentIndex = 0; // Track how many images have been displayed
+    const imagesPerBatch = 50; // Number of images to load per click
+
+    function fetchAllImages() {
+        fetch('../controller/get_images.php')
             .then((response) => response.json())
             .then((json) => {
-                appendImages(json); 
+                allImages = json; // Store all images in memory
+                appendImages(); // Load the first batch
             })
             .catch((error) => {
                 console.error('Error fetching images:', error);
             });
     }
 
-    function appendImages(imageData) {
+    function appendImages() {
+        const nextBatch = allImages.slice(currentIndex, currentIndex + imagesPerBatch);
+        currentIndex += nextBatch.length; // Update current index
+
+        if (nextBatch.length === 0) {
+            console.log("No more images to load.");
+            document.getElementById("addImages").style.display = "none"; // Hide button when done
+            return;
+        }
+
         let imagesLoaded = 0;
-        const totalImages = imageData.length;
-    
-        imageData.forEach((item) => {
+        const totalImages = nextBatch.length;
+
+        nextBatch.forEach((item) => {
             const gridItem = document.createElement("div");
-    
+
             if (item.width > 500 && item.height > 500) {
                 gridItem.className = "grid-item col-12 p-3";
             } else if (item.height > 500) {
@@ -33,39 +47,34 @@ document.addEventListener('DOMContentLoaded', function () {
             } else {
                 gridItem.className = "grid-item col-sm-6 col-lg-3 p-3";
             }
-    
+
             const foto = document.createElement("img");
-    
-            // If the image is a Blob, use createObjectURL to generate a URL
+
+            // If the image is a Blob, use createObjectURL
             if (item.img instanceof Blob) {
                 const objectURL = URL.createObjectURL(item.img);
                 foto.src = objectURL;
             } else {
-                foto.src = item.img; // Fallback for normal image URLs
+                foto.src = item.img;
             }
-            
+
             foto.className = "img-fluid";
-    
-            // Wait for the image to load
+
             foto.onload = function () {
                 imagesLoaded++;
                 if (imagesLoaded === totalImages) {
                     masonry.layout();
                 }
             };
-    
+
             gridItem.appendChild(foto);
             document.getElementById("mediaContainer").appendChild(gridItem);
-    
-            // Notify Masonry of the new item
+
             masonry.appended(gridItem);
         });
     }
-    
 
+    fetchAllImages(); // Load all images into memory first
 
-
-    loadImages();
-    //esto se cambia cuando usemos BBDD, por el momento es un ejemplo de la funcionalidad
-    document.getElementById("addImages").addEventListener("click", loadImages);
+    document.getElementById("addImages").addEventListener("click", appendImages);
 });

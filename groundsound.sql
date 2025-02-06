@@ -31,17 +31,23 @@ CREATE TABLE `foto_galeria` (
   `id` int(11) NOT NULL,
   `id_usuario` int(11) NOT NULL,
   `nombre` text DEFAULT NULL,
-  `foto` blob DEFAULT NULL,
+  `foto` text DEFAULT NULL,
   `fecha_subida` datetime DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
---
--- Volcado de datos para la tabla `foto_galeria`
---
 
-INSERT INTO `foto_galeria` (`id`, `id_usuario`, `nombre`, `foto`, `fecha_subida`) VALUES
-(1, 1, 'Foto de prueba', NULL, '2021-01-01 00:00:00');
 
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `records_usuario` SI LO HAGO
+--
+CREATE TABLE `records_usuario` (
+  `id` int(11) NOT NULL,
+  `id_usuario` int(11) NOT NULL,
+  `juego` int(11) NOT NULL,
+  `puntos` int(11) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 -- --------------------------------------------------------
 
 --
@@ -185,6 +191,13 @@ ALTER TABLE `usuario`
 --
 ALTER TABLE `foto_galeria`
   ADD CONSTRAINT `fk_4` FOREIGN KEY (`id_usuario`) REFERENCES `usuario` (`id`);
+
+--
+-- Filtros para la tabla `records_usuario`
+--
+ALTER TABLE `records_usuario`
+  ADD CONSTRAINT `fk_5` FOREIGN KEY (`id_usuario`) REFERENCES `usuario` (`id`);
+
 
 --
 -- Filtros para la tabla `valoracion`

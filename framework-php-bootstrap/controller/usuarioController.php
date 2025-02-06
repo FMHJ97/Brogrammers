@@ -74,7 +74,9 @@ class UserController
 
             return $user;
         } catch (Exception $ex) {
+            header("location: dificultades.php");
             die("ERROR en la BD" . $ex->getMessage());
+           
         }
     }
 
@@ -102,6 +104,7 @@ class UserController
             return $users;
         } catch (Exception $ex) {
             die("ERROR en la BD" . $ex->getMessage());
+            header("location: dificultades.php");
         }
     }
 
@@ -120,6 +123,7 @@ class UserController
             return $users;
         } catch (Exception $ex) {
             die("ERROR en la BD" . $ex->getMessage());
+            header("location: dificultades.php");
         }
     }
 
@@ -138,6 +142,7 @@ class UserController
             return $users;
         } catch (Exception $ex) {
             die("ERROR en la BD" . $ex->getMessage());
+            header("location: dificultades.php");
         }
     }
 
@@ -198,7 +203,7 @@ class UserController
             error_log("Database Error: " . $ex->getMessage());
             $conex->rollBack();
 
-            die("ERROR en la BD: " . $ex->getMessage());
+            header("location: dificultades.php");
         }
     }
 }

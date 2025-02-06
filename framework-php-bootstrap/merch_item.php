@@ -1,6 +1,8 @@
 <?php include("includes/a_config.php");
 
 // Importamos las clases necesarias.
+require_once '../framework-php-bootstrap/controller/valoracionController.php';
+require_once '../framework-php-bootstrap/model/valoracion.php';
 require_once '../framework-php-bootstrap/controller/productoController.php';
 require_once '../framework-php-bootstrap/model/producto.php';
 
@@ -13,7 +15,7 @@ if ($id <= 0) {
 }
 
 // Obtenemos el producto seleccionado.
-$producto = ProductoController::findById($id);
+$producto = ProductoController::find($id);
 
 // Si no se ha encontrado el producto, redirigimos a la página de merch.
 if (!$producto) {
@@ -40,6 +42,27 @@ if ($productos) {
 // Si hemos escrito una reseña, la guardamos en la BD.
 if (isset($_POST['send'])) {
     // Obtenemos los datos necesarios para el formulario.
+    $id_producto = $producto->id;
+    $id_usuario = $_SESSION['logged']->id;
+    $fecha = date("Y-m-d H:i:s");
+    $valoracion = $_POST['value_stars'];
+    $titulo = $_POST['review-title'];
+    $comentario = $_POST['value_review'];
+
+    // Creamos una nueva valoración.
+    $valoracion = new Valoracion();
+    $valoracion->$id_producto = $id_producto;
+    $valoracion->$id_usuario = $id_usuario;
+    $valoracion->$fecha = $fecha;
+    $valoracion->$valoracion = $valoracion;
+    $valoracion->$titulo = $titulo;
+    $valoracion->$comentario = $comentario;
+
+    // Guardamos la valoración en la BD.
+    ValoracionController::insert($valoracion);
+
+    // Recargamos la página para mostrar la nueva valoración.
+    header("Location: merch_item.php?id=$id_producto");
 }
 
 ?>
@@ -146,7 +169,7 @@ if (isset($_POST['send'])) {
                     <div class="row">
                         <div class="col item-description">
                             <h3>Descripción</h3>
-                            <?php echo html ?>
+                            <?php echo $producto->descripcion; ?>
                         </div>
                     </div>
                 </div>

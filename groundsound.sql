@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 05-02-2025 a las 20:30:00
+-- Tiempo de generación: 06-02-2025 a las 22:37:32
 -- Versión del servidor: 10.4.32-MariaDB
 -- Versión de PHP: 8.2.12
 
@@ -20,10 +20,9 @@ SET time_zone = "+00:00";
 --
 -- Base de datos: `groundsound`
 --
-
-drop database if exists groundsound;
-create database groundsound;
-use groundsound;
+drop database if exists `groundsound`;
+CREATE DATABASE IF NOT EXISTS `groundsound` DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci;
+USE `groundsound`;
 
 -- --------------------------------------------------------
 
@@ -39,19 +38,6 @@ CREATE TABLE `foto_galeria` (
   `fecha_subida` datetime DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
-
-
--- --------------------------------------------------------
-
---
--- Estructura de tabla para la tabla `records_usuario` SI LO HAGO
---
-CREATE TABLE `records_usuario` (
-  `id` int(11) NOT NULL,
-  `id_usuario` int(11) NOT NULL,
-  `juego` int(11) NOT NULL,
-  `puntos` int(11) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 -- --------------------------------------------------------
 
 --
@@ -85,6 +71,19 @@ INSERT INTO `producto` (`id`, `nombre`, `imagen`, `descripcion`, `precio`, `cate
 -- --------------------------------------------------------
 
 --
+-- Estructura de tabla para la tabla `records_usuario`
+--
+
+CREATE TABLE `records_usuario` (
+  `id` int(11) NOT NULL,
+  `id_usuario` int(11) NOT NULL,
+  `juego` int(11) NOT NULL,
+  `puntos` int(11) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+-- --------------------------------------------------------
+
+--
 -- Estructura de tabla para la tabla `usuario`
 --
 
@@ -104,14 +103,6 @@ CREATE TABLE `usuario` (
   `rol` enum('admin','editor','usuario') DEFAULT 'usuario'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
---
--- Volcado de datos para la tabla `usuario`
---
-
-INSERT INTO `usuario` (`id`, `nombre`, `apellido1`, `apellido2`, `correo_electronico`, `clave`, `fecha_nac`, `pais`, `codigo_postal`, `telefono`, `img_perfil`, `newsletter`, `rol`) VALUES
-(1, 'Pepe', 'García', 'Pérez', 'pepe@gmail', '$2y$10$alKKoNpJhb6PlE6kfBfUK.DEP7pJKVn8xB/.XmPoHpDapKTk2V/Qq', '1990-01-01', 'España', '28001', '666666666', NULL, 0, 'admin'),
-(4, 'Francisco Manuel', 'Hernández', '', 'francisco-h-j@hotmail.com', '$2y$10$NTTxH.yeBnGXGxwFVt8Df.XR9R.jCpN3UWuLCyzgjCO.3GIh3I1V2', '1997-01-05', 'España', '14500', '666666666', NULL, 0, 'admin');
-
 -- --------------------------------------------------------
 
 --
@@ -122,26 +113,14 @@ CREATE TABLE `valoracion` (
   `id_producto` int(11) NOT NULL,
   `id_usuario` int(11) NOT NULL,
   `fecha` datetime NOT NULL,
-  `valoracion` int(11) DEFAULT NULL,
+  `valoracion` int(11) NOT NULL DEFAULT 1,
+  `titulo` varchar(100) NOT NULL,
   `comentario` text DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Volcado de datos para la tabla `valoracion`
---
-
-INSERT INTO `valoracion` (`id_producto`, `id_usuario`, `fecha`, `valoracion`, `comentario`) VALUES
-(1, 1, '2021-01-01 00:00:00', 5, 'Comentario de prueba');
-
---
 -- Índices para tablas volcadas
 --
-
---
--- Indices de la tabla `records_usuario`
---
-ALTER TABLE `records_usuario`
-  ADD PRIMARY KEY (`id`);
 
 --
 -- Indices de la tabla `foto_galeria`
@@ -155,6 +134,13 @@ ALTER TABLE `foto_galeria`
 --
 ALTER TABLE `producto`
   ADD PRIMARY KEY (`id`);
+
+--
+-- Indices de la tabla `records_usuario`
+--
+ALTER TABLE `records_usuario`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `fk_5` (`id_usuario`);
 
 --
 -- Indices de la tabla `usuario`
@@ -175,12 +161,6 @@ ALTER TABLE `valoracion`
 --
 
 --
--- AUTO_INCREMENT de la tabla `records_usuario`
---
-ALTER TABLE `records_usuario`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1;
-
---
 -- AUTO_INCREMENT de la tabla `foto_galeria`
 --
 ALTER TABLE `foto_galeria`
@@ -191,6 +171,12 @@ ALTER TABLE `foto_galeria`
 --
 ALTER TABLE `producto`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
+
+--
+-- AUTO_INCREMENT de la tabla `records_usuario`
+--
+ALTER TABLE `records_usuario`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT de la tabla `usuario`
@@ -206,21 +192,20 @@ ALTER TABLE `usuario`
 -- Filtros para la tabla `foto_galeria`
 --
 ALTER TABLE `foto_galeria`
-  ADD CONSTRAINT `fk_4` FOREIGN KEY (`id_usuario`) REFERENCES `usuario` (`id`);
+  ADD CONSTRAINT `fk_4` FOREIGN KEY (`id_usuario`) REFERENCES `usuario` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
 -- Filtros para la tabla `records_usuario`
 --
 ALTER TABLE `records_usuario`
-  ADD CONSTRAINT `fk_5` FOREIGN KEY (`id_usuario`) REFERENCES `usuario` (`id`);
-
+  ADD CONSTRAINT `fk_5` FOREIGN KEY (`id_usuario`) REFERENCES `usuario` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
 -- Filtros para la tabla `valoracion`
 --
 ALTER TABLE `valoracion`
-  ADD CONSTRAINT `fk_1` FOREIGN KEY (`id_usuario`) REFERENCES `usuario` (`id`),
-  ADD CONSTRAINT `fk_2` FOREIGN KEY (`id_producto`) REFERENCES `producto` (`id`);
+  ADD CONSTRAINT `fk_1` FOREIGN KEY (`id_usuario`) REFERENCES `usuario` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `fk_2` FOREIGN KEY (`id_producto`) REFERENCES `producto` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

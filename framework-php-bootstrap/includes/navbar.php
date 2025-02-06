@@ -4,10 +4,8 @@ require_once '../framework-php-bootstrap/controller/usuarioController.php';
 require_once '../framework-php-bootstrap/controller/fotoController.php';
 require_once '../framework-php-bootstrap/model/usuario.php';
 require_once '../framework-php-bootstrap/model/foto.php';
+require_once '../framework-php-bootstrap/includes/googleconnect.php';
 
-// Propago la sesión si existe la cookie PHPSESSID.
-if (isset($_COOKIE['PHPSESSID']))
-    session_start();
 
 /* Si pulsamos sobre el botón Cerrar Sesión. */
 if (isset($_POST['logout'])) {
@@ -33,7 +31,6 @@ if (isset($_POST['login'])) {
         // Comprobamos si la contraseña es correcta.
         if (UserController::validate($usu, $pwd)) {
             // Iniciamos la sesión.
-            session_start();
             $_SESSION['logged'] = $usu;
             // Cargamos la página actual.
             header('Location: ' . $_SERVER['REQUEST_URI']);
@@ -88,7 +85,7 @@ if (isset($_POST['login'])) {
 
 
                     if ($_SESSION["logged"]->rol === "admin") {
-                ?>
+                        ?>
 
                         <li class="nav-item">
                             <div class="dropdown dd-user">
@@ -112,17 +109,17 @@ if (isset($_POST['login'])) {
                                 </ul>
                             </div>
                         </li>
-                    <?php
+                        <?php
                     }
                 }
 
                 if (isset($_SESSION['logged'])) {
                     if ($_SESSION['logged']->rol !== 'admin') {
-                    ?>
+                        ?>
                         <li class="nav-item">
                             <a class="nav-link cart-icon d-none d-md-block" href="./cart.php"><i class="bi bi-cart2"></i></a>
                         </li>
-                    <?php
+                        <?php
                     }
                     ?>
                     <li class="nav-item">
@@ -147,15 +144,15 @@ if (isset($_POST['login'])) {
                             </ul>
                         </div>
                     </li>
-                <?php
+                    <?php
                 } else {
-                ?>
+                    ?>
                     <li class="nav-item">
                         <a class="nav-link-auth" href="#" data-bs-toggle="modal" data-bs-target="#loginModal">
                             <i class="bi bi-person-circle"></i>
                         </a>
                     </li>
-                <?php
+                    <?php
                 }
                 ?>
             </ul>
@@ -203,9 +200,9 @@ if (isset($_POST['login'])) {
                             <!-- Botón Iniciar Sesión y Link a Recuperar Contraseña -->
                             <div>
                                 <button type="submit" class="mb-3 btn" name="login">Iniciar sesión</button>
-                                <div class="gap-2 d-flex justify-content-between flex-column flex-md-row align-items-end align-items-md-center">
-                                    <a href="login.php" id="loginGoogle"><img src="../assets/img/google-imagotipo.svg"
-                                            alt="Login con Google"></a>
+                                <div
+                                    class="gap-2 d-flex justify-content-between flex-column flex-md-row align-items-end align-items-md-center">
+                                    <?php echo $login_button; ?>
                                     <a id="reset_pwd" href="restore_password.php" class="">¿Olvidó su
                                         contraseña?</a>
                                 </div>

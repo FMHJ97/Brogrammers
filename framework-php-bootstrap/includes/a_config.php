@@ -103,3 +103,30 @@ switch ($_SERVER["SCRIPT_NAME"]) {
 		$CURRENT_PAGE = "Index";
 		$PAGE_TITLE = "GroundSound Festival";
 }
+
+
+
+
+//Include Google Client Library for PHP autoload file
+require_once __DIR__ . '/../vendor/autoload.php';
+
+
+//Make object of Google API Client for call Google API
+$google_client = new Google_Client();
+
+//Set the OAuth 2.0 Client ID
+$google_client->setClientId('827800119443-7mfftovmm0venurq0br2kfb1i3t5j9hj.apps.googleusercontent.com');
+
+//Set the OAuth 2.0 Client Secret key
+$google_client->setClientSecret('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');
+
+//Set the OAuth 2.0 Redirect URI
+$google_client->setRedirectUri('http://localhost:8080');
+
+
+$google_client->addScope('email');
+
+$google_client->addScope('profile');
+
+//start session on web page
+session_start();

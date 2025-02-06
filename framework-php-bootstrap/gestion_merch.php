@@ -159,7 +159,7 @@ if (isset($_GET['alertMessage']) && isset($_GET['alertType'])) {
                 <div class="col-6 table-responsive-md">
                     <h3 class="mb-4 text-center">Listado de Productos</h3>
                     <div style="max-height: 705px; overflow-y: auto;">
-                        <table class="table table-borderless table-striped table-hover">
+                        <table class="table table-productos table-borderless table-striped">
                             <thead>
                                 <tr>
                                     <th class="text-center ">Imagen</th>

@@ -1,132 +1,93 @@
-//Banner Cookie.
-
-/*#bloqueoBanner {
-  height: 100vh;
-  width: 100%;
-  position: fixed;
-  top: 0;
-  left: 0;
-  background-color: rgba(0, 0, 0, 0.5);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  z-index: 1000; // Asegura que esté por encima de todo ??'??
-}
-
-/* Estilos para el cartel de cookies */
-/*
-#cookieBanner {
-  height: 40%;
-  width: 80%;
-  position: fixed;
-  top: 0;
-  left: 10%;
-
-  background-color: #333;
-  color: #fff;
-  text-align: center;
-  padding: 2vh 2vw; //->Meto un padding relativo al tamño de la pantalla  //20px;
-  font-size: 2vh; //16px;
-  border-radius: 10px;
-  max-width: 80vw; //80%; // Limita el ancho del banner
-  width: 90%; // Ocupa el 90% del ancho en pantallas pequeñas
-  //margin-top: 20px; // Espacio desde la parte superior
-  opacity: 0;
-  animation: slideDown 1s forwards;
-  z-index: 1001; // Asegura que el banner esté por encima del fondo
-
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-/* Contenedor de los botonees */
-
-/*
-.botones-cookies {
-  display: flex;
-  justify-content: center;
-  gap: 1vw; /* Espacio entre los botones */
-/*}
-
-
-/* Animación de deslizamiento hacia arriba */
-
-/*
-@keyframes slideDown {
-  from {
-    transform: translateY(-100%);
-    opacity: 0;
-  }
-  to {
-    transform: translateY(0);
-    opacity: 1;
-  }
-}
-
-
-
-
-.cookiealert {
-  display: none; /* Por defecto */
-/*}
-
-.cookiealert.show {
-  display: block; /* Muestra el banner cuando tiene la clase "show" como lo de Rafa */
-/*}
-
-.cookiealert a {
-  color: $resaltar1;
-}
-
-.bloqueoalert {
-  display: none; /* Por defecto */
-/*}
-
-.bloqueoalert.show {
-  display: block; /* Muestra el banner cuando tiene la clase "show" como lo de Rafa */
-/*}
-
-*/
-
-.cookiealert,
+.cookieBanner,
 .newsbanner {
+  display: block;
   position: fixed;
   bottom: 0;
   left: 0;
   width: 100%;
-  margin: 0 !important;
+  //margin: 0 !important;
   z-index: 999;
   opacity: 0;
   border-radius: 0;
   transform: translateY(100%);
   transition: all 500ms ease-out;
-  color: #ecf0f1;
-  background: #212327;
+  color: $texto1;
+  //background: #212327;
+  background: $fondoCookie;
 }
 
-.cookiealert.show,
+.newsbanner {
+  height: 60vh; // Ajusta la altura según necesites
+  overflow-y: auto; // Permite el
+}
+
+.cookieBanner.show,
 .newsbanner.show {
   opacity: 1;
   transform: translateY(0%);
   transition-delay: 1000ms;
 }
 
-.cookiealert a,
-.newsbanner a {
-  text-decoration: underline;
+// body.banner-visible {
+//   overflow: hidden;
+// }
+
+.cookieBanner a {
+  font-size: 1.5em; //equivale a 15px
+  font-weight: bold;
+  text-decoration: none;
+  color: $resaltar1;
+  transition: color 0.2s ease-in-out;
 }
 
-.cookiealert .acceptcookies {
+.newsbanner a {
+  font-size: 1em;
+  font-weight: bold;
+  text-decoration: none;
+  color: $resaltar1;
+  transition: color 0.2s ease-in-out;
+}
+
+.cookieBanner a:hover,
+.newsbanner a:hover {
+  text-decoration: underline;
+  color: $resaltar2;
+}
+
+.cookieBanner .acceptcookies {
   margin-left: 10px;
   vertical-align: baseline;
 }
 
 #cookieText,
-#newsText {
-  //tamaño de la letra;
-  font-size: 2em;
+#newsTextHeader {
+  font-size: 2.5em;
 }
+
+#newsText {
+  font-size: 2em;
+  margin-right: 40px;
+}
+
+.boxNew {
+  width: 100%;
+  /* Ocupa todo el ancho disponible */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#news {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  border: 5px solid $resaltar1;
+  margin: 30px;
+  padding: 10px;
+  width: 70%;
+}
+
 
 .GSImageLogo {
   width: 20vw; //20%;
@@ -136,30 +97,117 @@
 }
 
 /* Botones */
-
 #cookieBanner button,
 #newsBanner button {
   box-sizing: border-box;
-  margin: 1vh 1vw; //10px;
-  padding: 1.5vh 3vw; //10px 20px;
+  margin: 1vh 1vw;
+  padding: 1.5vh 3vw;
   border: none;
-  cursor: pointer; //Le pongo la manita al pasar por encima
-  font-size: 2vh; //25px;
+  cursor: pointer;
+  font-size: 2vh;
   border-radius: 5px;
-  font-weight: bold;
+  font-weight: bold; //lo dejo?
+  transition: background-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out; //esto es para que el cambio de color sea suave
 }
 
 #acceptcookie {
-  //modificar para los colores de la web.. /de momento se los dejo así para verlo claro.
   background-color: $resaltar1;
   color: $texto2;
 }
+
 #rejectcookie,
 #closenews {
   background-color: $primario2;
   color: $texto1;
 }
 
-.newsbanner.show {
+#cookieBanner button:hover,
+#newsBanner button:hover {
+  box-shadow: 0px 0px 20px 5px rgba($texto1, 1);
+}
+
+#rejectcookie:hover,
+#closenews:hover {
+  background-color: lighten($primario2, 5%);
+  /* Aclara el color del botón de rechazo */
+}
+
+#acceptcookie:hover {
+  background-color: lighten($resaltar1, 10%);
+  /* Aclara el color un 10% */
+}
+
+.botones-cookies {
+  margin-bottom: 2vh;
+  /* Ajusta según lo que necesites */
+}
+
+
+.blockWeb {
+  display: none;
+  background-color: rgba(255, 255, 255, 0.2);
+  /* Blanco con 20% de opacidad */
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 998; //el principal tiene el 999, que estará por encima del bloqueo.
+  width: 100%;
+  height: 100%;
+}
+
+.blockWeb.show {
   display: block;
+}
+
+.GSImageLogoNews {
+  width: 15vw; //20%;
+  height: auto; // 20%;
+  object-fit: contain;
+  margin-bottom: 2vh;
+}
+
+
+
+
+
+
+// Estilos para las tarjetas de productos.
+.card-merch-item-News {
+  max-width: 250px;
+  border: $border-3 solid $secundario1;
+  border-radius: 10px;
+  text-decoration: none;
+  padding: 0;
+  transition: 0.2s ease; // Añade una transición suave al pasar el mouse.
+
+  // Añade una sombra suave al pasar el mouse.
+  &:hover {
+    box-shadow: 0px 0px 15px 0px $secundario2;
+  }
+
+  // Estilos para la imagen de la tarjeta.
+  .card-img-top-News {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    border-radius: 7px 7px 0 0; // Redondea solo las esquinas superiores.
+  }
+
+  // Estilos para el cuerpo de la tarjeta.
+  .card-body-News {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    text-align: center;
+    background: $fade-merch-item-cards; // Añade un color de fondo personalizado.
+    border-radius: 0 0 7px 7px; // Redondea solo las esquinas inferiores.
+    color: $texto1; // Color para el nombre del producto.
+
+  }
+
+  .card-title-News {
+    font-size: 0.8em;
+    font-weight: lighter;
+
+  }
 }

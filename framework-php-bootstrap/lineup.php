@@ -49,7 +49,7 @@
                     <?php include("includes/artistas.php"); ?>
                     <?php foreach ($artists as $artist) {
                         if ($artist["type"] == "headliner") { ?>
-                            <div class="colB col-md-4" data-day="<?php echo $artist['day']; ?>">
+                            <div class="colB col-md-4" data-headline="1" data-day="<?php echo $artist['day']; ?>">
                                 <div class="titleDays">
                                     <h3><?php echo $artist['day']; ?></h3>
                                 </div>

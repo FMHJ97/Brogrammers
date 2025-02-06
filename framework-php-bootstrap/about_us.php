@@ -7,7 +7,10 @@
     require_once '../framework-php-bootstrap/controller/userScoresController.php';
     require_once '../framework-php-bootstrap/model/userScores.php';
 
-    $scores = UserScoresController::getAll();
+    $scoresFMHJ = UserScoresController::getAllFMHJ();
+    $scoresTH = UserScoresController::getAllTH();
+    $scoresJMPA = UserScoresController::getAllJMPA();
+    $scoresFRM = UserScoresController::getAllFRM();
     ?>
 </head>
 
@@ -159,85 +162,77 @@
 
                     <!-- Imagen e Información -->
                     <div class="row">
-
                         <h3>Tickets, please!</h3>
-
-
-                        <?php if ($scores != null): ?>
-                            <div class="table-responsive-md mx-auto">
-                                <table class="table table-about-us table-borderless table-striped">
-                                    <thead>
-                                        <tr>
-                                            <th class="text-center align-middle">
-                                                <h5>User</h5>
-                                            </th>
-                                            <th class="text-center align-middle">
-                                                <h5>Puntuación</h5>
-                                            </th>
-
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        <?php foreach ($scores as $score): ?>
+                        <div class="table-responsive-md mx-auto">
+                            <table class="table table-about-us table-borderless table-striped">
+                                <thead>
+                                    <tr>
+                                        <th class="text-center align-middle">
+                                            <h5>User</h5>
+                                        </th>
+                                        <th class="text-center align-middle">
+                                            <h5>Puntuación</h5>
+                                        </th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <?php
+                                    if ($scoresFMHJ != null) {
+                                        foreach ($scoresFMHJ as $score): ?>
                                             <tr>
-
                                                 <td class="text-center align-middle"><?php echo $score->nombre ?></td>
                                                 <td class="text-center align-middle"><?php echo $score->puntos ?></td>
-
-
                                             </tr>
-                                        <?php endforeach; ?>
-                                    </tbody>
-                                </table>
-
-
-
-                            <?php endif; ?>
-                            </div>
+                                        <?php endforeach;
+                                    } else {
+                                        ?>
+                                        <tr>
+                                            <td class="text-center align-middle">¡¡Sé la primera persona en jugar!!</td>
+                                            <td class="text-center align-middle">0</td>
+                                        </tr>
+                                    <?php } ?>
+                                </tbody>
+                            </table>
+                        </div>
                     </div>
-
                 </div>
 
                 <!-- Segundo Miembro -->
                 <div class="px-4 col-md-6">
-
                     <!-- Imagen e Información -->
                     <div class="row">
-
                         <h3>Cerveztival</h3>
-
-
-                        <?php if ($scores != null): ?>
-                            <div class="table-responsive-md mx-auto">
-                                <table class="table table-about-us table-borderless table-striped">
-                                    <thead>
-                                        <tr>
-                                            <th class="text-center align-middle">
-                                                <h5>User</h5>
-                                            </th>
-                                            <th class="text-center align-middle">
-                                                <h5>Puntuación</h5>
-                                            </th>
-
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        <?php foreach ($scores as $score): ?>
+                        <div class="table-responsive-md mx-auto">
+                            <table class="table table-about-us table-borderless table-striped">
+                                <thead>
+                                    <tr>
+                                        <th class="text-center align-middle">
+                                            <h5>User</h5>
+                                        </th>
+                                        <th class="text-center align-middle">
+                                            <h5>Puntuación</h5>
+                                        </th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <?php
+                                    if ($scoresTH != null) {
+                                        foreach ($scoresTH as $score): ?>
                                             <tr>
-
                                                 <td class="text-center align-middle"><?php echo $score->nombre ?></td>
                                                 <td class="text-center align-middle"><?php echo $score->puntos ?></td>
-
-
                                             </tr>
-                                        <?php endforeach; ?>
-                                    </tbody>
-                                </table>
-
-
-
-                            <?php endif; ?>
-                            </div>
+                                        <?php endforeach;
+                                    } else {
+                                        ?>
+                                        <tr>
+                                            <td class="text-center align-middle">¡¡Sé la primera persona en jugar!!</td>
+                                            <td class="text-center align-middle">0</td>
+                                        </tr>
+                                    <?php } ?>
+                                </tbody>
+                            </table>
+                        </div>
                     </div>
 
                 </div>
@@ -254,38 +249,38 @@
 
                         <h3>Videojuego JMPA</h3>
 
+                        <div class="table-responsive-md mx-auto">
+                            <table class="table table-about-us table-borderless table-striped">
+                                <thead>
+                                    <tr>
+                                        <th class="text-center align-middle">
+                                            <h5>User</h5>
+                                        </th>
+                                        <th class="text-center align-middle">
+                                            <h5>Puntuación</h5>
+                                        </th>
 
-                        <?php if ($scores != null): ?>
-                            <div class="table-responsive-md mx-auto">
-                                <table class="table table-about-us table-borderless table-striped">
-                                    <thead>
-                                        <tr>
-                                            <th class="text-center align-middle">
-                                                <h5>User</h5>
-                                            </th>
-                                            <th class="text-center align-middle">
-                                                <h5>Puntuación</h5>
-                                            </th>
-
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        <?php foreach ($scores as $score): ?>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <?php
+                                    if ($scoresJMPA != null) {
+                                        foreach ($scoresJMPA as $score): ?>
                                             <tr>
-
                                                 <td class="text-center align-middle"><?php echo $score->nombre ?></td>
                                                 <td class="text-center align-middle"><?php echo $score->puntos ?></td>
-
-
                                             </tr>
-                                        <?php endforeach; ?>
-                                    </tbody>
-                                </table>
-
-
-
-                            <?php endif; ?>
-                            </div>
+                                        <?php endforeach;
+                                    } else {
+                                        ?>
+                                        <tr>
+                                            <td class="text-center align-middle">¡¡Sé la primera persona en jugar!!</td>
+                                            <td class="text-center align-middle">0</td>
+                                        </tr>
+                                    <?php } ?>
+                                </tbody>
+                            </table>
+                        </div>
                     </div>
 
                 </div>
@@ -298,38 +293,38 @@
 
                         <h3>GroundSound Hero</h3>
 
+                        <div class="table-responsive-md mx-auto">
+                            <table class="table table-about-us table-borderless table-striped">
+                                <thead>
+                                    <tr>
+                                        <th class="text-center align-middle">
+                                            <h5>User</h5>
+                                        </th>
+                                        <th class="text-center align-middle">
+                                            <h5>Puntuación</h5>
+                                        </th>
 
-                        <?php if ($scores != null): ?>
-                            <div class="table-responsive-md mx-auto">
-                                <table class="table table-about-us table-borderless table-striped">
-                                    <thead>
-                                        <tr>
-                                            <th class="text-center align-middle">
-                                                <h5>User</h5>
-                                            </th>
-                                            <th class="text-center align-middle">
-                                                <h5>Puntuación</h5>
-                                            </th>
-
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        <?php foreach ($scores as $score): ?>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <?php
+                                    if ($scoresFRM != null) {
+                                        foreach ($scoresFRM as $score): ?>
                                             <tr>
-
                                                 <td class="text-center align-middle"><?php echo $score->nombre ?></td>
                                                 <td class="text-center align-middle"><?php echo $score->puntos ?></td>
-
-
                                             </tr>
-                                        <?php endforeach; ?>
-                                    </tbody>
-                                </table>
-
-
-
-                            <?php endif; ?>
-                            </div>
+                                        <?php endforeach;
+                                    } else {
+                                        ?>
+                                        <tr>
+                                            <td class="text-center align-middle">¡¡Sé la primera persona en jugar!!</td>
+                                            <td class="text-center align-middle">0</td>
+                                        </tr>
+                                    <?php } ?>
+                                </tbody>
+                            </table>
+                        </div>
                     </div>
 
                 </div>

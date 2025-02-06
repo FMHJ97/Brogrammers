@@ -279,19 +279,16 @@ var game = (function () {
         layer.add(gameOverText);
         layer.batchDraw();
     
-        console.log("Game Over - Final Score:", score); // Debugging log
-    
-        // Send score to the server after the game over text is added
+   
         fetch('../includes/save_score.php', {
-            method: 'POST',  // Use POST method
+            method: 'POST',  
             headers: {
-                'Content-Type': 'application/x-www-form-urlencoded'  // URL-encoded content type
+                'Content-Type': 'application/x-www-form-urlencoded'  
             },
-            body: `score=${encodeURIComponent(score)}`  // URL-encode the score to prevent special characters issues
+            body: `score=${encodeURIComponent(score)}&game=2`  
         })
-        .then(response => response.text())  // Parse the response text
-        .then(data => console.log('Server response:', data))  // Log the server response to console
-        .catch(error => console.error('Error:', error));  // Log any error
+        .then(response => response.text())  
+        .catch(error => console.error('Error:', error));  
     }
 
     function init() {

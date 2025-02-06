@@ -1012,6 +1012,16 @@ document.addEventListener('DOMContentLoaded', () => {
 
             // Redibujamos la capa para reflejar los cambios.
             layer_hud.batchDraw();
+
+            fetch('../includes/save_score.php', {
+                method: 'POST',  
+                headers: {
+                    'Content-Type': 'application/x-www-form-urlencoded'  
+                },
+                body: `score=${encodeURIComponent(contador_validaciones)}&game=1`  
+            })
+            .then(response => response.text())  
+            .catch(error => console.error('Error:', error));  
         }
 
         // Función para detener el temporizador.

@@ -1,4 +1,4 @@
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function () {
     showStartButton();  // Muestra el botón de inicio cuando la página se cargue
 });
 
@@ -480,7 +480,15 @@ function gameOver() {
         updateLeaderboard(); // Actualizar el leaderboard
         showStartButton();  // Mostrar el botón para iniciar nuevamente
 
-
+        fetch('../includes/save_score.php', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/x-www-form-urlencoded'
+            },
+            body: `score=${encodeURIComponent(state.score)}&game=3`
+        })
+            .then(response => response.text())
+            .catch(error => console.error('Error:', error));
     }
 }
 

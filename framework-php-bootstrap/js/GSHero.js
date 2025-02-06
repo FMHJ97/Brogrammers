@@ -41,6 +41,15 @@ const music = new Howl({
   },
   onend: () => {
     addComment("The song ended.");
+    fetch('../includes/save_score.php', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/x-www-form-urlencoded'
+      },
+      body: `score=${encodeURIComponent(score)}&game=4`
+    })
+      .then(response => response.text())
+      .catch(error => console.error('Error:', error));
   },
 });
 
@@ -52,6 +61,7 @@ function play() {
 function stop() {
   music.stop();
   updateStreaks();
+
   resetGame(); // Reiniciar el juego al detener
 }
 

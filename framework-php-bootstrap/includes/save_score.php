@@ -17,13 +17,15 @@ try {
         $conex->beginTransaction();
 
         $userId = $_SESSION["logged"]->id;
+        $game = $_POST["game"];
         $score = isset($_POST['score']) ? intval($_POST['score']) : 0;
 
         // Prepare the SQL query with placeholders
-        $stmt = $conex->prepare("INSERT INTO records_usuario (id_usuario, juego, puntos) VALUES (:id_usuario, 3, :score)");
+        $stmt = $conex->prepare("INSERT INTO records_usuario (id_usuario, juego, puntos) VALUES (:id_usuario, :game, :score)");
 
         // Bind the parameters to the query
         $stmt->bindParam(':id_usuario', $userId);
+        $stmt->bindParam(':game', $game);
         $stmt->bindParam(':score', $score, PDO::PARAM_INT);
 
         // Execute the query

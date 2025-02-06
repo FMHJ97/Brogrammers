@@ -75,6 +75,6 @@ if (isset($_GET["code"])) {
 //Si no se ha hecho el login con Google correctamente mostramos un botón para logarse.
 if (!isset($_SESSION['access_token'])) {
   //Create a URL to obtain user authorization
-  $login_button = '<a href="' . $google_client->createAuthUrl() . '"><img src="images/google-imagotipo.svg" class="googlebtn"/></a>';
+  $login_button = '<a href="' . $google_client->createAuthUrl() . '"><img src="/assets/img/google-imagotipo.svg" class="googlebtn"/></a>';
 }
 ?>

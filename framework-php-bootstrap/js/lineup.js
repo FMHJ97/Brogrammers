@@ -20,6 +20,9 @@ document.addEventListener("DOMContentLoaded", function () {
       const cardDay = card.dataset.day; //Al modificar mi lineup no pusieron los días en cada tarjeta. Sí en la info de la que se obtiene. Por eso no filtraba.
       if (cardDay === day) {
         card.style.display = "flex";
+        if(card.dataset.headline === "1") {
+          card.setAttribute("style", "margin-inline: auto;");
+        }
       } else {
         card.style.display = "none";
       }

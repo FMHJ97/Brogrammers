@@ -87,6 +87,7 @@ main {
 
 // En dispositivos móviles, el tamaño de la fuente del botón se reduce.
 @include media-breakpoint-down(md) {
+
   // Estilo para el botón de acción.
   button {
     font-size: $body-font-phone-1;
@@ -162,7 +163,6 @@ main {
 .form-comments {
   background-color: lighten($color: $fondo, $amount: 3);
   border: $border-2 solid $secundario1;
-  padding: 1em;
   padding-top: 1.5em;
   border-radius: 10px;
 
@@ -192,6 +192,22 @@ main {
   border: $border-2 solid $secundario1;
   border-radius: 10px;
   padding: 1.5em;
+
+  select {
+    background-color: $fondo;
+    color: $resaltar2;
+    border: $border-3 solid $primario1;
+    border-radius: 10px;
+    padding: 0.75em 0.5em 0.75em 0.5em;
+    margin-top: 0.5em;
+
+    &:focus {
+      background-color: $fondo;
+      border-color: $primario2;
+      color: $resaltar2;
+      box-shadow: 0px 0px 15px 0px $primario1;
+    }
+  }
 
   #btn-save {
     background-color: $resaltar1;

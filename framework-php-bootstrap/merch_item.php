@@ -4,8 +4,16 @@
 require_once '../framework-php-bootstrap/controller/productoController.php';
 require_once '../framework-php-bootstrap/model/producto.php';
 
+// Comprobamos si existe un valor id en la variable GET.
+$id = isset($_GET['id']) ? (int) $_GET['id'] : 0;
+// Si el id no es válido, redirigimos a la página de merch.
+if ($id <= 0) {
+    header("Location: merch.php");
+    exit();
+}
+
 // Obtenemos el producto seleccionado.
-$producto = ProductoController::find($_GET['id']);
+$producto = ProductoController::findById($id);
 
 // Si no se ha encontrado el producto, redirigimos a la página de merch.
 if (!$producto) {
@@ -15,21 +23,23 @@ if (!$producto) {
 // Obtenemos todos los productos disponibles de la BD.
 $productos = ProductoController::findAll();
 
+// Si hay productos en la BD, mostramos hasta 3 productos recomendados.
 if ($productos) {
-    // Obtenemos 3 productos aleatorios para mostrar como recomendados.
-    // Dichos productos no pueden estar duplicados ni ser el producto actual.
-    $productosRecomendados = array();
-    // Recorremos todos los productos disponibles.
-    while (count($productosRecomendados) < 3) {
-        $randomProduct = $productos[array_rand($productos)];
-        // Si el producto aleatorio no está ya en el array de recomendados y
-        // no es el producto actual, lo añadimos.
-        if (!in_array($randomProduct, $productosRecomendados) && $randomProduct->id != $producto->id) {
-            $productosRecomendados[] = $randomProduct;
-        }
-    }
+    // Filtramos los productos para excluir el producto actual.
+    $productosRecomendados = array_filter($productos, fn($p) => $p->id !== $producto->id);
+
+    // Barajamos los productos recomendados.
+    shuffle($productosRecomendados);
+
+    // Tomamos hasta 3 productos recomendados.
+    $productosRecomendados = array_slice($productosRecomendados, 0, min(3, count($productosRecomendados)));
 } else {
     $productosRecomendados = null;
+}
+
+// Si hemos escrito una reseña, la guardamos en la BD.
+if (isset($_POST['send'])) {
+    // Obtenemos los datos necesarios para el formulario.
 }
 
 ?>
@@ -136,7 +146,7 @@ if ($productos) {
                     <div class="row">
                         <div class="col item-description">
                             <h3>Descripción</h3>
-                            <?php echo $producto->descripcion; ?>
+                            <?php echo html ?>
                         </div>
                     </div>
                 </div>
@@ -147,10 +157,10 @@ if ($productos) {
             <!-- Encabezado -->
             <div class="row">
                 <div class="pb-4 col">
-                    <h2>Valoraciones de los clientes</h2>
+                    <h2>Opiniones de los clientes</h2>
                 </div>
             </div>
-            <!-- Comentarios -->
+            <!-- Opiniones de los Clientes -->
             <div class="row">
                 <!-- Principales Comentarios -->
                 <div class="col-6">
@@ -161,11 +171,11 @@ if ($productos) {
                 if (isset($_SESSION['logged']) && $_SESSION['logged']->rol == "usuario") {
                 ?>
                     <!-- Formulario de Comentarios -->
-                    <div class="col-6 form-comments">
-                        <h3>Deja tu valoración</h3>
+                    <div class="col-6">
                         <!-- Formulario -->
-                        <form action="" method="POST" class="mx-3">
-                            <div class="mt-3 mb-3">
+                        <form action="" method="POST" class="px-4 pb-2 form-comments" id="form-review">
+                            <h3>Deja tu reseña</h3>
+                            <div class="px-4 mt-4 mb-3">
                                 <label for="stars">¿En qué estado estaba el producto?</label>
                                 <!-- Contenedor de estrellas -->
                                 <div id="stars" class="rating-stars" data-rating="1">
@@ -176,11 +186,21 @@ if ($productos) {
                                     <i class="bi bi-star-fill" data-value="5"></i>
                                 </div>
                             </div>
-                            <div class="mb-3">
-                                <label for="eq-editor">Escribe una reseña</label>
+                            <!-- Título Input-->
+                            <div class="px-4">
+                            <label for="review-title">Título de la reseña (Obligatorio)</label>
+                                    <input type="text" class="form-control" id="review-title"
+                                        placeholder="Introduzca un título para la reseña" name="review-title" required>
+                            </div>
+                            <!-- Editor de Texto -->
+                            <div class="px-4 mb-3">
+                                <label for="eq-editor">Escribe una reseña (Opcional)</label>
                                 <div id="eq-editor"></div>
                             </div>
-                            <button type="submit" class="mb-3 btn btn-success" name="send">Enviar</button>
+                            <button type="submit" class="my-3 ms-4 btn" name="send">Enviar</button>
+                            <!-- Campos Ocultos -->
+                            <input type="hidden" id="stars-input" name="value_stars">
+                            <input type="hidden" id="review-input" name="value_review">
                         </form>
                     </div>
                 <?php
@@ -225,6 +245,33 @@ if ($productos) {
 
     <!-- Componente Footer -->
     <?php include("includes/footer.php"); ?>
+
+    <script>
+        var quill = new Quill('#eq-editor', {
+            modules: {
+                toolbar: [
+                    [{
+                        header: [1, 2, false]
+                    }],
+                    ['bold', 'italic', 'underline'],
+                    [{
+                        list: 'ordered'
+                    }, {
+                        list: 'bullet'
+                    }],
+                    ['clean']
+                ]
+            },
+            theme: 'snow',
+            placeholder: 'Escriba aquí su opinión...',
+        });
+
+        // Evento para enviar el contenido del editor de texto y la valoración.
+        document.getElementById("form-review").addEventListener("submit", function() {
+            document.querySelector("#review-input").value = quill.root.innerHTML;
+            document.querySelector("#stars-input").value = document.querySelector("#stars").getAttribute("data-rating");
+        });
+    </script>
 
 </body>
 

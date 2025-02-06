@@ -21,6 +21,7 @@ SET time_zone = "+00:00";
 -- Base de datos: `groundsound`
 --
 
+drop database if exists groundsound;
 create database groundsound;
 use groundsound;
 

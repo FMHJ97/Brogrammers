@@ -238,7 +238,7 @@ if (isset($_GET['alertMessage']) && isset($_GET['alertType'])) {
                         </div>
                         <!-- Categoria Select -->
                         <div class="row">
-                            <div class="pt-4 col d-flex flex-column">
+                            <div class="py-4 col-12 col-md-6 d-flex flex-column">
                                 <label for="categoria">Categor&iacute;a</label>
                                 <select class="form-select" id="categoria" name="categoria" required>
                                     <option value="ropa" <?php if (isset($producto_edit) && $producto_edit->categoria == "ropa") echo "selected"; ?>>Ropa</option>
@@ -246,12 +246,9 @@ if (isset($_GET['alertMessage']) && isset($_GET['alertType'])) {
                                     <option value="musica" <?php if (isset($producto_edit) && $producto_edit->categoria == "musica") echo "selected"; ?>>Música</option>
                                 </select>
                             </div>
-                        </div>
-                        <!-- Precio -->
-                        <div class="row">
-                            <div class="pt-4 col d-flex flex-column">
+                            <div class="py-4 col-12 col-md-6 d-flex flex-column">
                                 <label for="precio">Precio (€)</label>
-                                <input type="number" class="form-control" id="precio" placeholder="Introduzca el precio"
+                                <input type="number" step="0.01" class="form-control" id="precio" placeholder="Introduzca el precio"
                                     name="precio" value="<?php if (isset($producto_edit)) echo $producto_edit->precio; ?>" required>
                             </div>
                         </div>
@@ -301,7 +298,7 @@ if (isset($_GET['alertMessage']) && isset($_GET['alertType'])) {
                 ]
             },
             theme: 'snow',
-            placeholder: 'Escriba aquí su valoración...',
+            placeholder: 'Escriba aquí la descripción...',
         });
 
         // Al enviar el formulario, copiar contenido de Quill al input oculto

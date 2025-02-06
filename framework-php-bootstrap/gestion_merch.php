@@ -29,7 +29,7 @@ if (isset($_POST['delete'])) {
 
 // Si pulsamos el botón de guardar producto.
 if (isset($_POST['save'])) {
-    
+
     // Obtenemos los datos del formulario.
     $nombre = $_POST['nombre'];
     $descripcion = $_POST['descripcion'];
@@ -48,9 +48,11 @@ if (isset($_POST['save'])) {
     }
 
     // Si el fichero se ha subido correctamente al servidor y es una imagen válida.
-    if (!empty($_FILES['imagen']['name']) && is_uploaded_file($_FILES['imagen']['tmp_name'])
-        && in_array($_FILES['imagen']['type'], ["image/jpeg", "image/png", "image/jpg"])) {
-        
+    if (
+        !empty($_FILES['imagen']['name']) && is_uploaded_file($_FILES['imagen']['tmp_name'])
+        && in_array($_FILES['imagen']['type'], ["image/jpeg", "image/png", "image/jpg"])
+    ) {
+
         // Generamos un nombre único para la imagen.
         $fichero = time() . "_" . $_FILES['imagen']['name'];
         // En la BD guardamos la ruta completa del fichero.
@@ -122,24 +124,24 @@ if (isset($_GET['alertMessage']) && isset($_GET['alertType'])) {
     <?php include("includes/navbar.php"); ?>
 
     <!-- Alerta -->
-<?php if (!empty($alertMessage)): ?>
-    <div class="alert alert-<?php echo $alertType; ?> alert-dismissible fade show custom-alert-gestion" role="alert">
-        <?php if ($alertType == "success"): ?>
-            <!-- Ícono de éxito -->
-            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-check-circle-fill" viewBox="0 0 16 16">
-                <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0m-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z"/>
-            </svg>
-        <?php else: ?>
-            <!-- Ícono de error -->
-            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-x-circle-fill" viewBox="0 0 16 16">
-                <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0M5.354 4.646a.5.5 0 1 0-.708.708L7.293 8l-2.647 2.646a.5.5 0 0 0 .708.708L8 8.707l2.646 2.647a.5.5 0 0 0 .708-.708L8.707 8l2.647-2.646a.5.5 0 0 0-.708-.708L8 7.293z"/>
-            </svg>
-        <?php endif; ?>
-        <strong><?php echo $alertMessage; ?></strong>
-        
-        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-    </div>
-<?php endif; ?>
+    <?php if (!empty($alertMessage)): ?>
+        <div class="alert alert-<?php echo $alertType; ?> alert-dismissible fade show custom-alert-gestion" role="alert">
+            <?php if ($alertType == "success"): ?>
+                <!-- Ícono de éxito -->
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-check-circle-fill" viewBox="0 0 16 16">
+                    <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0m-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z" />
+                </svg>
+            <?php else: ?>
+                <!-- Ícono de error -->
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-x-circle-fill" viewBox="0 0 16 16">
+                    <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0M5.354 4.646a.5.5 0 1 0-.708.708L7.293 8l-2.647 2.646a.5.5 0 0 0 .708.708L8 8.707l2.646 2.647a.5.5 0 0 0 .708-.708L8.707 8l2.647-2.646a.5.5 0 0 0-.708-.708L8 7.293z" />
+                </svg>
+            <?php endif; ?>
+            <strong><?php echo $alertMessage; ?></strong>
+
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+    <?php endif; ?>
 
     <main class="px-3 d-block px-md-0">
 
@@ -199,7 +201,7 @@ if (isset($_GET['alertMessage']) && isset($_GET['alertType'])) {
                 <div class="col-6">
                     <h3 class="mb-4 text-center">Guardar producto</h3>
                     <!-- Formulario -->
-                    <form action="" id="form-product" class="p-3" method="POST" enctype="multipart/form-data" style="background-color: lightslategray;">
+                    <form action="" id="form-product" method="POST" enctype="multipart/form-data">
                         <!-- Nombre Input-->
                         <div class="row">
                             <div class="col d-flex flex-column">
@@ -215,14 +217,14 @@ if (isset($_GET['alertMessage']) && isset($_GET['alertType'])) {
                             // Si estamos editando un producto, mostramos la imagen actual.
                             if (isset($producto_edit)) {
                             ?>
-                            <div class="col-4 d-flex flex-column">
-                                <img src="./<?php echo $producto_edit->imagen; ?>"
-                                    alt="<?php echo $producto_edit->nombre; ?>" height="150px" width="150px">
-                            </div>
+                                <div class="pb-4 col-4 d-flex flex-column">
+                                    <img src="./<?php echo $producto_edit->imagen; ?>"
+                                        alt="<?php echo $producto_edit->nombre; ?>" height="150px" width="150px">
+                                </div>
                             <?php
                             }
                             ?>
-                            <div class="col-8 d-flex flex-column">
+                            <div class="col d-flex flex-column">
                                 <label for="imagen">Imagen</label>
                                 <input type="file" class="form-control" id="imagen" name="imagen">
                             </div>
@@ -236,7 +238,7 @@ if (isset($_GET['alertMessage']) && isset($_GET['alertType'])) {
                         </div>
                         <!-- Categoria Select -->
                         <div class="row">
-                            <div class="col d-flex flex-column">
+                            <div class="pt-4 col d-flex flex-column">
                                 <label for="categoria">Categor&iacute;a</label>
                                 <select class="form-select" id="categoria" name="categoria" required>
                                     <option value="ropa" <?php if (isset($producto_edit) && $producto_edit->categoria == "ropa") echo "selected"; ?>>Ropa</option>
@@ -247,7 +249,7 @@ if (isset($_GET['alertMessage']) && isset($_GET['alertType'])) {
                         </div>
                         <!-- Precio -->
                         <div class="row">
-                            <div class="col d-flex flex-column">
+                            <div class="pt-4 col d-flex flex-column">
                                 <label for="precio">Precio (€)</label>
                                 <input type="number" class="form-control" id="precio" placeholder="Introduzca el precio"
                                     name="precio" value="<?php if (isset($producto_edit)) echo $producto_edit->precio; ?>" required>
@@ -255,11 +257,11 @@ if (isset($_GET['alertMessage']) && isset($_GET['alertType'])) {
                         </div>
                         <!-- Botón Guardar -->
                         <div class="d-flex flex-column ">
-                            <button type="submit" name="save" class="btn btn-success">Guardar producto</button>
+                            <button type="submit" id="btn-save" name="save" class="btn">Guardar producto</button>
                         </div>
                         <!-- Botón Cancelar -->
                         <div class="mt-3 d-flex flex-column">
-                            <a href="gestion_merch.php" class="btn btn-danger">Cancelar</a>
+                            <a href="gestion_merch.php" id="btn-cancel" class="btn">Cancelar</a>
                         </div>
                         <!-- Campo oculto para enviar la descripción de Quill -->
                         <input type="hidden" id="descripcion" name="descripcion">
@@ -268,7 +270,7 @@ if (isset($_GET['alertMessage']) && isset($_GET['alertType'])) {
                         // Si estamos editando un producto, añadir un campo oculto con el id del producto.
                         if (isset($producto_edit)) {
                         ?>
-                        <input type="hidden" name="id_product" value="<?php echo $producto_edit->id; ?>">
+                            <input type="hidden" name="id_product" value="<?php echo $producto_edit->id; ?>">
                         <?php
                         }
                         ?>

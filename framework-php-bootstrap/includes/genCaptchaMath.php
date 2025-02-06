@@ -1,9 +1,5 @@
 <?php
 
-if (!isset($_COOKIE['PHPSESSID'])) {
-    session_start();
-}
-
 // Genero los números aleatorios.
 $num1 = rand(1, 9);
 $num2 = rand(1, 9);

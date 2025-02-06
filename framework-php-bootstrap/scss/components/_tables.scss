@@ -36,3 +36,16 @@
     table-layout: auto;
   }
 }
+
+.table-productos {
+  th {
+    background-color: $primario1;
+    color: $texto1;
+    font-weight: bold;
+    vertical-align: middle;
+  }
+
+  img {
+    border: $border-1 solid $secundario2;
+  }
+}

@@ -5,8 +5,6 @@
 require_once '../framework-php-bootstrap/controller/usuarioController.php';
 require_once '../framework-php-bootstrap/model/usuario.php';
 
-// Propago la sesión si existe la cookie PHPSESSID.
-//if (isset($_COOKIE['PHPSESSID'])) session_start();
 
 // Si existe una sesión Logueado, redirigimos a menu.
 if (isset($_SESSION['logged'])) {
@@ -27,8 +25,6 @@ if (isset($_POST['login'])) {
     if ($usu) {
         // Comprobamos si la contraseña es correcta.
         if (UserController::validate($usu, $pwd)) {
-            // Iniciamos la sesión.
-            session_start();
             $_SESSION['logged'] = $usu;
             // Redirigimos al index.
             header('Location: index.php');
@@ -74,7 +70,8 @@ if (isset($_POST['login'])) {
                     <div class="mt-3 mb-3">
                         <label for="email">Correo electrónico</label><span> *</span>
                         <input type="email" class="form-control" id="email"
-                            placeholder="Introduzca su correo electrónico" name="email" required pattern="[^@]+@[^@]+.[a-zA-Z]{2,6}">
+                            placeholder="Introduzca su correo electrónico" name="email" required
+                            pattern="[^@]+@[^@]+.[a-zA-Z]{2,6}">
                     </div>
                     <!-- Password Input -->
                     <div class="mb-3">
@@ -92,8 +89,10 @@ if (isset($_POST['login'])) {
                     <div>
                         <button type="submit" class="mb-3 btn" name="login">Iniciar sesión</button>
                         <div class="d-flex justify-content-between">
-                            <a href="login.php" id="loginGoogle"><img src="../assets/img/google-imagotipo.svg" alt="Login con Google"></a>
-                            <a id="reset_pwd" href="restore_password.php" class="align-content-end">¿Olvidó su contraseña?</a>
+                            <a href="login.php" id="loginGoogle"><img src="../assets/img/google-imagotipo.svg"
+                                    alt="Login con Google"></a>
+                            <a id="reset_pwd" href="restore_password.php" class="align-content-end">¿Olvidó su
+                                contraseña?</a>
                         </div>
                     </div>
                 </form>

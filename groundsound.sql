@@ -137,6 +137,12 @@ INSERT INTO `valoracion` (`id_producto`, `id_usuario`, `fecha`, `valoracion`, `c
 --
 
 --
+-- Indices de la tabla `records_usuario`
+--
+ALTER TABLE `records_usuario`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indices de la tabla `foto_galeria`
 --
 ALTER TABLE `foto_galeria`
@@ -166,6 +172,12 @@ ALTER TABLE `valoracion`
 --
 -- AUTO_INCREMENT de las tablas volcadas
 --
+
+--
+-- AUTO_INCREMENT de la tabla `records_usuario`
+--
+ALTER TABLE `records_usuario`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1;
 
 --
 -- AUTO_INCREMENT de la tabla `foto_galeria`

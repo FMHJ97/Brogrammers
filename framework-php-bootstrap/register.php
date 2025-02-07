@@ -1,34 +1,106 @@
-<?php include("includes/a_config.php");
-
+<?php
+include("includes/a_config.php");
 require_once '../framework-php-bootstrap/controller/usuarioController.php';
 
-// Si existe una sesión Logueado, redirigimos a menu.
-if (isset($_SESSION['logged'])) {
-    header("Location:index.php");
-    exit();
-}
+// Lista de países válidos (puedes ampliarla)
+$paisesValidos = [
+    'España', 'Spain', 'Francia', 'France', 'Portugal', 'Alemania', 'Germany', 
+    'Italia', 'Italy', 'Andorra', 'Reino Unido', 'United Kingdom'
+];
 
+// Inicializar variables
+$success = false; // Inicializar $success como false por defecto
+$validEmail = true; // Inicializar $validEmail como true por defecto
 $errorMessage = ""; // Variable para almacenar el mensaje de error
 
 if (isset($_POST["submit"])) {
-    $success = true;
-    $validEmail = true;
-    if (UserController::exists($_POST["email"])) {
-        $validEmail = false;
-        //$errorMessage = "El correo que has elegido ya existe. Por favor, elige otro.";
-    } else {
-        $u = new Usuario(null, $_POST["name"], $_POST["surname1"], $_POST["surname2"], $_POST["email"], $_POST["pswd"], $_POST["birth"], $_POST["country"], $_POST["postal"], $_POST["phone"], null, "usuario");
+    $errores = [];
+    
+    // Validación nombre (solo letras y espacios, mínimo 2 caracteres)
+    if (empty($_POST["name"]) || !preg_match("/^[a-zA-ZáéíóúÁÉÍÓÚüÜñÑ\s]{2,}$/", $_POST["name"])) {
+        $errores[] = "Nombre inválido (solo letras y espacios, mínimo 2 caracteres)";
+    }
 
-        if ($u = UserController::insertar($u)) {
-            $_SESSION["logged"] = $u;
-            header("location: index.php?register=success");
+    // Validación primer apellido (mismo formato que nombre)
+    if (empty($_POST["surname1"]) || !preg_match("/^[a-zA-ZáéíóúÁÉÍÓÚüÜñÑ\s]{2,}$/", $_POST["surname1"])) {
+        $errores[] = "Primer apellido inválido";
+    }
+
+    // Validación fecha nacimiento (formato YYYY-MM-DD y mayor de 18 años)
+    if (empty($_POST["birth"]) || !preg_match("/^\d{4}-\d{2}-\d{2}$/", $_POST["birth"])) {
+        $errores[] = "Fecha de nacimiento inválida";
+    } else {
+        $edad = date_diff(date_create($_POST["birth"]), date_create('now'))->y;
+        if ($edad < 18) $errores[] = "Debes ser mayor de 18 años";
+    }
+
+    // Validación país (debe estar en la lista)
+    if (empty($_POST["country"]) || !in_array(ucwords(strtolower($_POST["country"])), $paisesValidos)) {
+        $errores[] = "País no válido";
+    }
+
+    // Validación código postal español (5 dígitos)
+    if (empty($_POST["postal"]) || !preg_match("/^\d{5}$/", $_POST["postal"])) {
+        $errores[] = "Código postal inválido (5 dígitos)";
+    }
+
+    // Validación teléfono español (9 dígitos, sin prefijo)
+    if (empty($_POST["phone"]) || !preg_match("/^[6789]\d{8}$/", $_POST["phone"])) {
+        $errores[] = "Teléfono inválido (9 dígitos, sin prefijo)";
+    }
+
+    // Validación email
+    if (empty($_POST["email"]) || !preg_match("/^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/", $_POST["email"])) {
+        $errores[] = "Formato de email inválido";
+    } elseif (UserController::exists($_POST["email"])) {
+        $errores[] = "El correo ya está registrado";
+    }
+
+    // Validación contraseña
+    $passwordRegex = "/^(?=.*[A-Z])(?=.*[a-z])(?=.*\d)(?=.*\W).{8,}$/";
+    if (!preg_match($passwordRegex, $_POST["pswd"])) {
+        $errores[] = "La contraseña debe tener al menos 8 caracteres, una mayúscula, una minúscula, un número y un símbolo";
+    } elseif ($_POST["pswd"] !== $_POST["pswd2"]) {
+        $errores[] = "Las contraseñas no coinciden";
+    }
+
+    // Validación términos
+    if (!isset($_POST["terms"])) {
+        $errores[] = "Debes aceptar los términos y condiciones";
+    }
+
+    // Si no hay errores, proceder con el registro
+    if (empty($errores)) {
+        $u = new Usuario(
+            null, 
+            htmlspecialchars($_POST["name"]), 
+            htmlspecialchars($_POST["surname1"]), 
+            htmlspecialchars($_POST["surname2"] ?? ''), 
+            htmlspecialchars($_POST["email"]), 
+            password_hash($_POST["pswd"], PASSWORD_DEFAULT), 
+            $_POST["birth"],
+            htmlspecialchars($_POST["country"]),
+            $_POST["postal"],
+            $_POST["phone"],
+            null, 
+            "usuario"
+        );
+
+        if ($usuario = UserController::insertar($u)) {
+            session_start();
+            $_SESSION["logged"] = $usuario;
+            header("Location: index.php?register=success");
+            exit();
         } else {
-            $success = false;
-            //$errorMessage = "Ha ocurrido un error. Por favor, comuníquelo al administrador.";
+            $errores[] = "Error al registrar el usuario";
         }
     }
-}
 
+    // Mostrar errores
+    if (!empty($errores)) {
+        $errorMessage = implode("<br>", $errores);
+    }
+}
 ?>
 <!DOCTYPE html>
 <html>

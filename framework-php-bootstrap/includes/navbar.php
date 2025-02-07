@@ -5,7 +5,6 @@ require_once '../framework-php-bootstrap/controller/fotoController.php';
 require_once '../framework-php-bootstrap/model/usuario.php';
 require_once '../framework-php-bootstrap/model/foto.php';
 require_once '../framework-php-bootstrap/includes/googleconnect.php';
-session_reset();
 
 /* Si pulsamos sobre el botón Cerrar Sesión. */
 if (isset($_POST['logout'])) {

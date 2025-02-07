@@ -1,7 +1,7 @@
 <?php
 require_once '../../framework-php-bootstrap/model/usuario.php';
 require_once '../../framework-php-bootstrap/controller/conexion.php';
-session_start();
+require_once '../../framework-php-bootstrap/includes/a_config.php';
 
 try {
     $conex = new Conexion();

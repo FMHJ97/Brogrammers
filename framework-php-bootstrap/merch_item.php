@@ -5,6 +5,28 @@ require_once '../framework-php-bootstrap/controller/valoracionController.php';
 require_once '../framework-php-bootstrap/model/valoracion.php';
 require_once '../framework-php-bootstrap/controller/productoController.php';
 require_once '../framework-php-bootstrap/model/producto.php';
+require_once '../framework-php-bootstrap/controller/usuarioController.php';
+require_once '../framework-php-bootstrap/model/usuario.php';
+
+// Si hemos escrito una reseña, la guardamos en la BD.
+if (isset($_POST['send'])) {
+    // Obtenemos los datos necesarios para el formulario.
+    $id_producto = $_POST['send'];
+    $id_usuario = $_SESSION['logged']->id; // ID del usuario logueado.
+    $fecha = date("Y-m-d H:i:s");
+    $puntuacion = $_POST['value_stars'];
+    $titulo = $_POST['review-title'];
+    $comentario = $_POST['value_review'];
+
+    // Creamos una nueva valoración.
+    $valoracion = new Valoracion($id_producto, $id_usuario, $fecha, $puntuacion, $titulo, $comentario);
+
+    // Guardamos la valoración en la BD.
+    ValoracionController::insert($valoracion);
+
+    // Recargamos la página para mostrar la nueva valoración.
+    header("Location: merch_item.php?id=$id_producto");
+}
 
 // Comprobamos si existe un valor id en la variable GET.
 $id = isset($_GET['id']) ? (int) $_GET['id'] : 0;
@@ -37,32 +59,6 @@ if ($productos) {
     $productosRecomendados = array_slice($productosRecomendados, 0, min(3, count($productosRecomendados)));
 } else {
     $productosRecomendados = null;
-}
-
-// Si hemos escrito una reseña, la guardamos en la BD.
-if (isset($_POST['send'])) {
-    // Obtenemos los datos necesarios para el formulario.
-    $id_producto = $producto->id;
-    $id_usuario = $_SESSION['logged']->id;
-    $fecha = date("Y-m-d H:i:s");
-    $valoracion = $_POST['value_stars'];
-    $titulo = $_POST['review-title'];
-    $comentario = $_POST['value_review'];
-
-    // Creamos una nueva valoración.
-    $valoracion = new Valoracion();
-    $valoracion->$id_producto = $id_producto;
-    $valoracion->$id_usuario = $id_usuario;
-    $valoracion->$fecha = $fecha;
-    $valoracion->$valoracion = $valoracion;
-    $valoracion->$titulo = $titulo;
-    $valoracion->$comentario = $comentario;
-
-    // Guardamos la valoración en la BD.
-    ValoracionController::insert($valoracion);
-
-    // Recargamos la página para mostrar la nueva valoración.
-    header("Location: merch_item.php?id=$id_producto");
 }
 
 ?>
@@ -220,7 +216,8 @@ if (isset($_POST['send'])) {
                                 <label for="eq-editor">Escribe una reseña (Opcional)</label>
                                 <div id="eq-editor"></div>
                             </div>
-                            <button type="submit" class="my-3 ms-4 btn" name="send">Enviar</button>
+                            <button type="submit" class="my-3 ms-4 btn" name="send"
+                                value="<?php echo $producto->id; ?>">Enviar</button>
                             <!-- Campos Ocultos -->
                             <input type="hidden" id="stars-input" name="value_stars">
                             <input type="hidden" id="review-input" name="value_review">

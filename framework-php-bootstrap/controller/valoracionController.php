@@ -71,7 +71,7 @@ class ValoracionController
             $id_producto = $valoracion->getIdProducto();
             $id_usuario = $valoracion->getIdUsuario();
             $fecha = $valoracion->getFecha();
-            $valoracion = $valoracion->getValoracion();
+            $puntuacion = $valoracion->getValoracion();
             $titulo = $valoracion->getTitulo();
             $comentario = $valoracion->getComentario();
             
@@ -79,7 +79,7 @@ class ValoracionController
             $result->bindParam(1, $id_producto);
             $result->bindParam(2, $id_usuario);
             $result->bindParam(3, $fecha);
-            $result->bindParam(4, $valoracion);
+            $result->bindParam(4, $puntuacion);
             $result->bindParam(5, $titulo);
             $result->bindParam(6, $comentario);
             

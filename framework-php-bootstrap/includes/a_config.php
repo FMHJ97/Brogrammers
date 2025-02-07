@@ -104,7 +104,12 @@ switch ($_SERVER["SCRIPT_NAME"]) {
 		$PAGE_TITLE = "GroundSound Festival";
 }
 
-
+require_once '../framework-php-bootstrap/controller/productoController.php';
+require_once '../framework-php-bootstrap/model/producto.php';
+require_once '../framework-php-bootstrap/controller/usuarioController.php';
+require_once '../framework-php-bootstrap/model/usuario.php';
+require_once '../framework-php-bootstrap/controller/valoracionController.php';
+require_once '../framework-php-bootstrap/model/valoracion.php';
 
 
 //Include Google Client Library for PHP autoload file

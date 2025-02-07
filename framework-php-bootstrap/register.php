@@ -76,8 +76,8 @@ if (isset($_POST["submit"])) {
             htmlspecialchars($_POST["name"]), 
             htmlspecialchars($_POST["surname1"]), 
             htmlspecialchars($_POST["surname2"] ?? ''), 
-            htmlspecialchars($_POST["email"]), 
-            password_hash($_POST["pswd"], PASSWORD_DEFAULT), 
+            htmlspecialchars($_POST["email"]),
+            $_POST['pswd'],
             $_POST["birth"],
             htmlspecialchars($_POST["country"]),
             $_POST["postal"],
@@ -87,7 +87,6 @@ if (isset($_POST["submit"])) {
         );
 
         if ($usuario = UserController::insertar($u)) {
-            session_start();
             $_SESSION["logged"] = $usuario;
             header("Location: index.php?register=success");
             exit();

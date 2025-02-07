@@ -28,8 +28,8 @@ class UserController
             $result->execute();
             if ($result->rowCount()) {
                 $conex->commit();
-                $usuario->id = $conex->lastInsertId();
-                return $usuario;
+                // Buscamos en la base de datos el usuario que acabamos de insertar
+                return $user = self::find($usuario->correo);
             } else {
                 $conex->rollBack();
                 throw new Exception("Failed to insert the user into the database.");

@@ -102,16 +102,16 @@ class ValoracionController
     {
         try {
             $conex = new Conexion();
-
-            $result = $conex->query("select * from valoracion where id_producto = '$value'");
+            $result = $conex->query("select * from valoracion where id_producto = '$id_producto'");
             if ($result->rowCount()) {
-                $fila = $result->fetchObject();
-                $productos[] = new Valoracion($fila->id_producto, $fila->id_usuario, $fila->fecha, $fila->valoracion, $fila->titulo, $fila->comentario);
+                while ($fila = $result->fetchObject()) {
+                    $valoraciones[] = new Valoracion($fila->id_producto, $fila->id_usuario, $fila->fecha, $fila->valoracion, $fila->titulo, $fila->comentario);
+                }
             } else {
-                $productos = false;
+                $valoraciones = false;
             }
 
-            return $productos;
+            return $valoraciones;
         } catch (Exception $ex) {
             die("ERROR en la BD" . $ex->getMessage());
         }

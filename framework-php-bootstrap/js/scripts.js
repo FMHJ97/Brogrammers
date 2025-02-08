@@ -103,6 +103,11 @@ document.addEventListener('DOMContentLoaded', function () {
     updateProductDisplay();
 });
 
+// <============================ SCRIPTS DE LA PÁGINA DE PRODUCTO ============================>
+
+/* 
+    Script para cambiar la imagen principal al hacer click en las imágenes adicionales.
+*/
 document.addEventListener("DOMContentLoaded", function () {
     // Seleccionamos la imagen principal
     const mainImage = document.querySelector(".main-image img");
@@ -126,6 +131,9 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 });
 
+/* 
+    Script para cambiar la puntuación de las estrellas.
+*/
 document.addEventListener("DOMContentLoaded", function () {
 
     function setStars(rating, container) {
@@ -145,9 +153,20 @@ document.addEventListener("DOMContentLoaded", function () {
                 let newRating = parseInt(event.target.getAttribute("data-value"));
                 container.setAttribute("data-rating", newRating);
                 setStars(newRating, container);
-
-                console.log("Nueva valoración:", newRating); // Aquí puedes enviar a la BD con fetch/AJAX
             }
         });
+    });
+});
+
+/* 
+    Script para mostrar y ocultar el formulario de reseñas.
+*/
+document.addEventListener("DOMContentLoaded", function () {
+    const showReview = document.querySelector("#show-review");
+    const reviewForm = document.querySelector("#form-review");
+
+    document.querySelector("#show-review button").addEventListener("click", function () {
+        showReview.classList.add("d-none");
+        reviewForm.classList.remove("d-none");
     });
 });

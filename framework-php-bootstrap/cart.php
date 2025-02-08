@@ -54,7 +54,7 @@
                                 <!-- Cada fila representa un artículo -->
                                 <tr>
                                     <td>
-                                        <img src="../assets/img/merch/camiseta_1.png" alt="Camiseta" class="img-article-cart">
+                                        <img src="../assets/img/merch/camiseta_blanca_01.png" alt="Camiseta" class="img-article-cart">
                                         <div>
                                             <p class="mb-0">Camiseta GroundSound</p>
                                             <p class="mb-0">Color - Blanco</p>
@@ -75,7 +75,7 @@
                                 <!-- Repetimos para más artículos -->
                                 <tr>
                                     <td>
-                                        <img src="../assets/img/merch/camiseta_1.png" alt="Camiseta" class="img-article-cart">
+                                        <img src="../assets/img/merch/camiseta_blanca_01.png" alt="Camiseta" class="img-article-cart">
                                         <div>
                                             <p class="mb-0">Camiseta GroundSound</p>
                                             <p class="mb-0">Color - Blanco</p>

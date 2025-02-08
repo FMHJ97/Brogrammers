@@ -4,9 +4,50 @@ require_once '../framework-php-bootstrap/controller/usuarioController.php';
 
 // Lista de países válidos (puedes ampliarla)
 $paisesValidos = [
-    'España', 'Spain', 'Francia', 'France', 'Portugal', 'Alemania', 'Germany', 
-    'Italia', 'Italy', 'Andorra', 'Reino Unido', 'United Kingdom'
+    'España',
+    'Francia',
+    'Portugal',
+    'Alemania',
+    'Italia',
+    'Andorra',
+    'Reino Unido',
+    'Estados Unidos',
+    'Canadá',
+    'México',
+    'Argentina',
+    'Brasil',
+    'Chile',
+    'Colombia',
+    'Ecuador',
+    'Perú',
+    'Uruguay',
+    'Venezuela',
+    'Bolivia',
+    'Paraguay',
+    'Panamá',
+    'Costa Rica',
+    'Cuba',
+    'Puerto Rico',
+    'República Dominicana',
+    'Guatemala',
+    'Honduras',
+    'El Salvador',
+    'Suiza',
+    'Suecia',
+    'Noruega',
+    'Finlandia',
+    'Dinamarca',
+    'Rusia',
+    'China',
+    'Japón',
+    'Corea del Sur',
+    'India',
+    'Australia',
+    'Nueva Zelanda',
+    'Sudáfrica',
+    'Egipto'
 ];
+sort($paisesValidos); // Ordenamos alfabéticamente
 
 // Inicializar variables
 $success = false; // Inicializar $success como false por defecto
@@ -15,7 +56,7 @@ $errorMessage = ""; // Variable para almacenar el mensaje de error
 
 if (isset($_POST["submit"])) {
     $errores = [];
-    
+
     // Validación nombre (solo letras y espacios, mínimo 2 caracteres)
     if (empty($_POST["name"]) || !preg_match("/^[a-zA-ZáéíóúÁÉÍÓÚüÜñÑ\s]{2,}$/", $_POST["name"])) {
         $errores[] = "Nombre inválido (solo letras y espacios, mínimo 2 caracteres)";
@@ -31,7 +72,8 @@ if (isset($_POST["submit"])) {
         $errores[] = "Fecha de nacimiento inválida";
     } else {
         $edad = date_diff(date_create($_POST["birth"]), date_create('now'))->y;
-        if ($edad < 18) $errores[] = "Debes ser mayor de 18 años";
+        if ($edad < 18)
+            $errores[] = "Debes ser mayor de 18 años";
     }
 
     // Validación país (debe estar en la lista)
@@ -72,17 +114,17 @@ if (isset($_POST["submit"])) {
     // Si no hay errores, proceder con el registro
     if (empty($errores)) {
         $u = new Usuario(
-            null, 
-            htmlspecialchars($_POST["name"]), 
-            htmlspecialchars($_POST["surname1"]), 
-            htmlspecialchars($_POST["surname2"] ?? ''), 
+            null,
+            htmlspecialchars($_POST["name"]),
+            htmlspecialchars($_POST["surname1"]),
+            htmlspecialchars($_POST["surname2"] ?? ''),
             htmlspecialchars($_POST["email"]),
             $_POST['pswd'],
             $_POST["birth"],
             htmlspecialchars($_POST["country"]),
             $_POST["postal"],
             $_POST["phone"],
-            null, 
+            null,
             "usuario"
         );
 
@@ -146,60 +188,80 @@ if (isset($_POST["submit"])) {
                             <div class="mb-3 col-12 col-md-6 mb-md-0">
                                 <label for="name">Nombre</label><span> *</span>
                                 <input type="text" class="form-control" id="name" placeholder="Introduzca su nombre"
-                                    name="name" required>
+                                    name="name" required 
+                                    value="<?php echo isset($_POST['name']) ? htmlspecialchars($_POST['name']) : ''; ?>">
                             </div>
                         </div>
+                        
                         <!-- Primer y Segundo apellido Input-->
                         <div class="mt-3 mb-3 row">
                             <!-- Primer apellido -->
                             <div class="mb-3 col-12 col-md-6 mb-md-0">
                                 <label for="surname1">Primer Apellido</label><span> *</span>
                                 <input type="text" class="form-control" id="surname1"
-                                    placeholder="Introduzca su primer apellido" name="surname1" required>
+                                    placeholder="Introduzca su primer apellido" name="surname1" required
+                                    value="<?php echo isset($_POST['surname1']) ? htmlspecialchars($_POST['surname1']) : ''; ?>">
                             </div>
                             <!-- Segundo apellido -->
                             <div class="col-12 col-md-6">
                                 <label for="surname2">Segundo Apellido</label>
                                 <input type="text" class="form-control" id="surname2"
-                                    placeholder="Introduzca su segundo apellido (opcional)" name="surname2">
+                                    placeholder="Introduzca su segundo apellido (opcional)" name="surname2"
+                                    value="<?php echo isset($_POST['surname2']) ? htmlspecialchars($_POST['surname2']) : ''; ?>">
                             </div>
                         </div>
+                        
                         <!-- Fecha y País Input -->
                         <div class="mt-3 mb-3 row">
                             <!-- Fecha nacimiento -->
                             <div class="mb-3 col-12 col-md-6 mb-md-0">
                                 <label for="birth">Fecha de Nacimiento</label><span> *</span>
                                 <input type="date" class="form-control" id="birth"
-                                    placeholder="Introduzca su fecha de nacimiento" name="birth" required>
+                                    placeholder="Introduzca su fecha de nacimiento" name="birth" required
+                                    value="<?php echo isset($_POST['birth']) ? htmlspecialchars($_POST['birth']) : ''; ?>">
                             </div>
                             <!-- País -->
                             <div class="col-12 col-md-6">
-                                <label for="country">Pa&iacute;s</label><span> *</span>
-                                <input type="text" class="form-control" id="country" placeholder="Introduzca su país"
-                                    name="country" required>
+                                <label for="country">País</label><span> *</span>
+                                <select class="form-control" id="country" name="country" required>
+                                    <option value="">Seleccione un país</option>
+                                    <?php foreach ($paisesValidos as $pais): 
+                                        $selected = (isset($_POST['country']) && $_POST['country'] === $pais) ? 'selected' : '';
+                                    ?>
+                                        <option value="<?php echo htmlspecialchars($pais); ?>" <?php echo $selected; ?>>
+                                            <?php echo htmlspecialchars($pais); ?>
+                                        </option>
+                                    <?php endforeach; ?>
+                                </select>
                             </div>
                         </div>
+                        
                         <!-- Código postal y Teléfono Input -->
                         <div class="mt-3 mb-3 row">
                             <!-- Código postal -->
                             <div class="mb-3 col-12 col-md-6 mb-md-0">
-                                <label for="postal">C&oacute;digo Postal</label><span> *</span>
+                                <label for="postal">Código Postal</label><span> *</span>
                                 <input type="text" class="form-control" id="postal"
-                                    placeholder="Introduzca su c&oacute;digo postal" name="postal" required>
+                                    placeholder="Introduzca su código postal" name="postal" required
+                                    value="<?php echo isset($_POST['postal']) ? htmlspecialchars($_POST['postal']) : ''; ?>">
                             </div>
                             <!-- Teléfono -->
                             <div class="col-12 col-md-6">
-                                <label for="phone">Tel&eacute;fono</label><span> *</span>
+                                <label for="phone">Teléfono</label><span> *</span>
                                 <input type="text" class="form-control" id="phone"
-                                    placeholder="Introduzca su tel&eacute;fono" name="phone" required>
+                                    placeholder="Introduzca su teléfono" name="phone" required
+                                    value="<?php echo isset($_POST['phone']) ? htmlspecialchars($_POST['phone']) : ''; ?>">
                             </div>
                         </div>
+                        
                         <!-- Email Input -->
                         <div class="mb-3">
-                            <label for="email">Correo electr&oacute;nico</label><span> *</span>
+                            <label for="email">Correo electrónico</label><span> *</span>
                             <input type="email" class="form-control" id="email"
-                                placeholder="Introduzca su correo electr&oacute;nico" name="email" required>
+                                placeholder="Introduzca su correo electrónico" name="email" required
+                                value="<?php echo isset($_POST['email']) ? htmlspecialchars($_POST['email']) : ''; ?>">
                         </div>
+                        
                         <!-- Password y Confirm Password Input -->
                         <div class="mt-3 mb-3 row">
                             <!-- Password -->
@@ -216,11 +278,13 @@ if (isset($_POST["submit"])) {
                                     placeholder="Confirme su contraseña" name="pswd2" required>
                             </div>
                         </div>
+                        
                         <!-- Password Help -->
                         <div class="mb-3">
                             <small id="passwordHelp" class="form-help">La contraseña debe tener al menos 8
                                 caracteres, una mayúscula, una minúscula y un caracter no alfanumérico.</small>
                         </div>
+                        
                         <!-- Captcha -->
                         <div class="mb-3">
                             <label for="captcha">Captcha</label><span> *</span>
@@ -228,35 +292,29 @@ if (isset($_POST["submit"])) {
                             <input type="text" class="form-control" id="captcha" placeholder="Introduzca el captcha"
                                 name="captcha" required>
                         </div>
+                        
                         <!-- News checkbox-->
                         <div class="mb-3 form-check">
                             <label class="form-check-label">
-                                <input class="form-check-input" type="checkbox" name="news"> Deseo recibir noticias e
-                                información sobre GroundSound Festival.
+                                <input class="form-check-input" type="checkbox" name="news" 
+                                    <?php echo (isset($_POST['news'])) ? 'checked' : ''; ?>> 
+                                Deseo recibir noticias e información sobre GroundSound Festival.
                             </label>
                         </div>
+                        
                         <!-- Terms checkbox-->
                         <div class="mb-5 form-check">
                             <label class="form-check-label">
-                                <input class="form-check-input" type="checkbox" name="terms" id="termsCheckbox"> Acepto
-                                los <a href="legal.php">Términos de Uso</a>.
+                                <input class="form-check-input" type="checkbox" name="terms" id="termsCheckbox" 
+                                    <?php echo (isset($_POST['terms'])) ? 'checked' : ''; ?>> 
+                                Acepto los <a href="legal.php">Términos de Uso</a>.
                             </label>
                         </div>
+                        
                         <!-- Botón Crear Cuenta -->
                         <div class="d-flex flex-column ">
-                            <button type="submit" name="submit" class="btn" id="btnCrearCuenta" disabled>Crear
-                                cuenta</button>
+                            <button type="submit" name="submit" class="btn" id="btnCrearCuenta" disabled>Crear cuenta</button>
                         </div>
-                        <?php
-                        if (isset($_POST["submit"])) {
-                            if (!$success) {
-                                $errorMessage = "Ha ocurrido un error. Por favor, comuníquelo al administrador.";
-                            } else if (!$validEmail) {
-                                $errorMessage = "El correo que has elegido ya existe. Por favor, elige otro.";
-                            }
-                        }
-                        ?>
-
                     </form>
                 </div>
         </section>

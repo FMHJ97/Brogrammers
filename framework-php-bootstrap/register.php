@@ -2,7 +2,7 @@
 include("includes/a_config.php");
 require_once '../framework-php-bootstrap/controller/usuarioController.php';
 
-// Lista de países válidos (puedes ampliarla)
+// Lista de países válidos 
 $paisesValidos = [
     'España',
     'Francia',

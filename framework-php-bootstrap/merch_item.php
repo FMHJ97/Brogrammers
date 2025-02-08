@@ -63,6 +63,10 @@ if ($productos) {
 
 // Obtenemos todas las valoraciones del producto.
 $reviews = ValoracionController::findByProducto($id);
+// Si hay valoraciones, las ordenamos por fecha descendente.
+if ($reviews) {
+    usort($reviews, fn($a, $b) => strtotime($b->fecha) - strtotime($a->fecha));
+}
 
 ?>
 <!DOCTYPE html>

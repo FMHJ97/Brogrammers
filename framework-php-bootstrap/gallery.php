@@ -21,28 +21,24 @@ require_once '../framework-php-bootstrap/controller/fotoController.php';
         if (isset($_FILES['imagen'])) {
 
             foreach ($_FILES['imagen']['tmp_name'] as $key => $tmp_name) {
-
-
-
                 $fich = time() . $_SESSION["logged"]->nombre . $_SESSION["logged"]->apellido1 . "-" . $_FILES["imagen"]["name"][$key];
+                $ext = strtolower(pathinfo($fich, PATHINFO_EXTENSION));
+                $allowed_exts = ["jpg", "jpeg", "png",];
+                if (in_array($ext, $allowed_exts)) {
+                    $ruta = "assets/img/gallery/" . $fich;
+                    $fileName = "Imagen de " . $_SESSION["logged"]->nombre . " " . $_SESSION["logged"]->apellido1 . " del " . date('Y-m-d');
 
-                $ruta = "assets/img/gallery/" . $fich;
+                    $foto = new Foto(null, $_SESSION["logged"]->id, null, $fileName, $ruta, date('Y-m-d H:i:s'));
 
-
-
-                $fileName = "Imagen de " . $_SESSION["logged"]->nombre . " " . $_SESSION["logged"]->apellido1 . " del " . date('Y-m-d');
-
-                $foto = new Foto(null, $_SESSION["logged"]->id, null, $fileName, $ruta, date('Y-m-d H:i:s'));
-
-                if (FotoController::insertar($foto)) {
-                    move_uploaded_file($_FILES["imagen"]["tmp_name"][$key], "assets/img/gallery/" . $fich);
-                } else header("location: dificultades.php");
+                    if (FotoController::insertar($foto)) {
+                        move_uploaded_file($_FILES["imagen"]["tmp_name"][$key], "assets/img/gallery/" . $fich);
+                    } else header("location: dificultades.php");
+                }
             }
         } else {
             echo "No files uploaded.";
         }
     }
-
     ?>
     <main>
 

@@ -90,6 +90,32 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         }
     }
 
+    // Procesar imagen subida
+    $nuevaImagen = $usuario->img_perfil; // Mantener la imagen actual por defecto
+
+    if (isset($_FILES['imagen_perfil']) && $_FILES['imagen_perfil']['error'] === UPLOAD_ERR_OK) {
+        $directorioDestino = 'assets/img/users/';
+        $nombreArchivo = uniqid() . '_' . basename($_FILES['imagen_perfil']['name']);
+        $rutaCompleta = $directorioDestino . $nombreArchivo;
+
+        // Validar tipo de archivo
+        $extensionesPermitidas = ['jpg', 'jpeg', 'png', 'gif'];
+        $extension = strtolower(pathinfo($rutaCompleta, PATHINFO_EXTENSION));
+
+        if (in_array($extension, $extensionesPermitidas)) {
+            if (move_uploaded_file($_FILES['imagen_perfil']['tmp_name'], $rutaCompleta)) {
+                $nuevaImagen = $rutaCompleta;
+
+                // Eliminar imagen anterior si no es la dummy
+                if ($usuario->img_perfil && !str_contains($usuario->img_perfil, 'dummy_user.png')) {
+                    @unlink($usuario->img_perfil);
+                }
+            }
+        } else {
+            $errores[] = "Formato de imagen no válido. Use JPG, PNG o GIF.";
+        }
+    }
+
     if (empty($errores)) {
         // Crear usuario actualizado (mantener contraseña actual si no se cambia)
         $nuevaContrasena = !empty($_POST['pwd']) ? password_hash($_POST['pwd'], PASSWORD_DEFAULT) : $usuario->clave;
@@ -105,12 +131,17 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $_POST['pais'],
             $_POST['cp'],
             $_POST['tlf'],
-            $usuario->img_perfil,
+            $nuevaImagen,
             $usuario->rol
         );
 
         if (UserController::modificar($usuarioActualizado)) {
             $_SESSION['logged'] = $usuarioActualizado;
+            // Borraremos la sesión guardando el id para volver a iniciarla y que se actualicen los datos
+            $id = $usuarioActualizado->id;
+            unset($_SESSION['logged']);
+            $_SESSION['logged'] = UserController::getById($id);
+            $usuario = $_SESSION['logged'];
             $alertMessage = "Datos actualizados correctamente";
             $alertType = "success";
         } else {
@@ -121,7 +152,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $alertMessage = implode("<br>", $errores);
         $alertType = "danger";
     }
-    
+
 }
 
 ?>
@@ -164,31 +195,32 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             <?php endif; ?>
             <!-- Primera Fila -->
             <div class="container p-4 my-5 authentication-form p-md-5">
-
-                <!-- Imagen e Información -->
-                <div class="row justify-content-center text-center text-md-start mb-3">
-                    <!-- Imagen del Usuario -->
-                    <div class="mb-4 col-md-4 ">
-                        <img src="<?php echo (!empty($usuario->img_perfil)) ? $usuario->img_perfil : 'assets/img/dummy/dummy_user.png'; ?>"
-                            alt="Foto de perfil del usuario" class="img-fluid rounded-circle img-usuario">
-                    </div>
-                    <!-- Información del Usuario -->
-                    <div class="col-md-8 d-flex flex-column justify-content-center align-items-md-end">
-                        <div class="gap-3 row">
-                            <div class="col-md-12">
-                                <h3>Nombre y Apellidos</h3>
-                                <!-- Mostrar el nombre y apellidos del usuario -->
-                                <p><?php echo htmlspecialchars($usuario->nombre . ' ' . $usuario->apellido1 . ' ' . $usuario->apellido2); ?>
-                                </p>
-                                <h3>Correo Electrónico</h3>
-                                <!-- Mostrar el correo electrónico del usuario -->
-                                <p><?php echo htmlspecialchars($usuario->correo); ?></p>
+                <form action="" method="post" enctype="multipart/form-data">
+                    <!-- Imagen e Información -->
+                    <div class="row justify-content-center text-center text-md-start mb-3">
+                        <!-- Imagen del Usuario -->
+                        <div class="mb-4 col-md-4 ">
+                            <img src="<?php echo (!empty($usuario->img_perfil)) ? $usuario->img_perfil : 'assets/img/dummy/dummy_user.png'; ?>"
+                                alt="Foto de perfil del usuario" class="img-fluid rounded-circle img-usuario">
+                        </div>
+                        <!-- Información del Usuario -->
+                        <div class="col-md-8 d-flex flex-column justify-content-center align-items-md-end">
+                            <div class="gap-3 row">
+                                <div
+                                    class="col-md-12 d-flex flex-column justify-content-center align-items-center align-items-md-end">
+                                    <h3>Nombre y Apellidos</h3>
+                                    <!-- Mostrar el nombre y apellidos del usuario -->
+                                    <p><?php echo htmlspecialchars($usuario->nombre . ' ' . $usuario->apellido1 . ' ' . $usuario->apellido2); ?>
+                                    </p>
+                                    <h3>Correo Electrónico</h3>
+                                    <!-- Mostrar el correo electrónico del usuario -->
+                                    <p><?php echo htmlspecialchars($usuario->correo); ?></p>
+                                </div>
                             </div>
                         </div>
                     </div>
-                </div>
-                <!-- Formulario de Modificación de Datos -->
-                <form action="" method="post">
+                    <!-- Formulario de Modificación de Datos -->
+                    <!-- <form action="" method="post"> -->
                     <div class="row">
                         <h3>Información Personal</h3>
                         <div class="col-md-6">

@@ -1,54 +1,92 @@
-<?php include("includes/a_config.php"); ?>
+<?php include("includes/a_config.php"); 
+
+require_once("../framework-php-bootstrap/controller/fotoController.php");
+
+// Variables para alertas
+$alertMessage = "";
+$alertType = ""; // Puede ser "success" o "danger"
+
+if (isset($_SESSION['logged'])) {
+    if ($_SESSION['logged']->rol !== "admin") {
+        header("Location:index.php");
+        exit();
+    }
+} else {
+    header("Location:index.php");
+    exit();
+}
+
+// Eliminar imagen
+if (isset($_POST["delete"])) {
+    if (FotoController::delete($_POST["id"])) {
+        unlink("$_POST[url]");
+        $alertMessage = "Imagen borrada correctamente.";
+        $alertType = "success";
+    } else {
+        $alertMessage = "Error al borrar la imagen.";
+        $alertType = "danger";
+    }
+}
+
+// Buscar imágenes por usuario
+if (isset($_POST["buscaUsuario"]) && !isset($_POST["edit"])) {
+    if ($_POST["usuario"] == "") {
+        $fotos = FotoController::getAll();
+    } else {
+        $fotos = FotoController::getAllByUsuario($_POST["usuario"]);
+    }
+} 
+// Buscar imágenes por fecha
+else if (isset($_POST["buscaFecha"]) && !isset($_POST["edit"])) {
+    $fotos = FotoController::getAllByFecha($_POST["date"]);
+} 
+// Obtener todas las imágenes
+else {
+    $fotos = FotoController::getAll();
+}
+
+// Modificar descripción de la imagen
+if (isset($_POST["confirm"])) {
+    if (FotoController::modificar($_POST["id"], $_POST["text"])) {
+        $alertMessage = "Descripción de la imagen modificada correctamente.";
+        $alertType = "success";
+    } else {
+        $alertMessage = "Error al modificar la descripción de la imagen.";
+        $alertType = "danger";
+    }
+}
+?>
+
 <!DOCTYPE html>
 <html>
 
 <head>
-    <?php include("includes/head_tags.php");
-
-
-    ?>
-
+    <?php include("includes/head_tags.php"); ?>
+    <script src="js/gestion.js"></script>
 </head>
 
 <body>
     <!-- Barra de navegación -->
-    <?php include("includes/navbar.php");
-    if (isset($_SESSION['logged'])) {
-        if ($_SESSION['logged']->rol !== "admin") {
-            header("Location:index.php");
-            exit();
-        }
-    } else {
-        header("Location:index.php");
-        exit();
-    }
+    <?php include("includes/navbar.php"); ?>
 
-    if (isset($_POST["delete"])) {
-        if (FotoController::delete($_POST["id"])) {
-            unlink("$_POST[url]");
-            echo "<p class='success'> Imagen borrado correctamente</p>";
-        };
-    }
-    if (isset($_POST["buscaUsuario"]) && !isset($_POST["edit"])) {
-        if ($_POST["usuario"] == "") {
-            $fotos = FotoController::getAll();
-        } else {
-            $fotos = FotoController::getAllByUsuario($_POST["usuario"]);
-        }
-    } else if (isset($_POST["buscaFecha"]) && !isset($_POST["edit"])) {
-        $fotos = FotoController::getAllByFecha($_POST["date"]);
-    } else
-        $fotos = FotoController::getAll();
-
-
-    if (isset($_POST["confirm"])) {
-        if (FotoController::modificar($_POST["id"], $_POST["text"])) {
-            echo "<p class='success'> Foto modificado correctamente</p>";
-        };
-    }
-    ?>
-
-
+    <!-- Mostrar alertas -->
+    <?php if (!empty($alertMessage)): ?>
+        <div class="alert alert-<?php echo $alertType; ?> alert-dismissible fade show custom-alert-gestion" role="alert">
+            <?php if ($alertType == "success"): ?>
+                <!-- Ícono de éxito -->
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-check-circle-fill" viewBox="0 0 16 16">
+                    <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0m-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z"/>
+                </svg>
+            <?php else: ?>
+                <!-- Ícono de error -->
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-x-circle-fill" viewBox="0 0 16 16">
+                    <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0M5.354 4.646a.5.5 0 1 0-.708.708L7.293 8l-2.647 2.646a.5.5 0 0 0 .708.708L8 8.707l2.646 2.647a.5.5 0 0 0 .708-.708L8.707 8l2.647-2.646a.5.5 0 0 0-.708-.708L8 7.293z"/>
+                </svg>
+            <?php endif; ?>
+            <strong><?php echo $alertMessage; ?></strong>
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+    <?php endif; ?>
 
     <main class="d-block px-3 px-md-0">
 

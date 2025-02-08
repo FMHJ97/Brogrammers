@@ -61,6 +61,9 @@ if ($productos) {
     $productosRecomendados = null;
 }
 
+// Obtenemos todas las valoraciones del producto.
+$reviews = ValoracionController::findByProducto($id);
+
 ?>
 <!DOCTYPE html>
 <html>
@@ -182,18 +185,77 @@ if ($productos) {
             <!-- Opiniones de los Clientes -->
             <div class="row">
                 <!-- Principales Comentarios -->
-                <div class="col-6">
-
+                <div class="col">
+                    <?php
+                    // Si no hay valoraciones, mostramos un mensaje.
+                    if ($reviews == null) {
+                        ?>
+                        <div>
+                            <p>No hay reseñas disponibles en este momento.</p>
+                            <p>¡Sé el primero en dejar una reseña!</p>
+                        </div>
+                        <?php
+                    } else {
+                        // Mostramos las valoraciones.
+                        foreach ($reviews as $r) {
+                        ?>
+                            <div class="review">
+                                <!-- Nombre del Usuario -->
+                                <p class="review-user">
+                                    <?php
+                                    // Obtenemos el nombre del usuario que ha realizado la valoración.
+                                    $usuario = UserController::getById($r->id_usuario);
+                                    echo $usuario->nombre . " " . $usuario->apellido1 . " " . $usuario->apellido2;
+                                    ?>
+                                </p>
+                                <!-- Valoración -->
+                                <div class="rating-review">
+                                    <?php
+                                    // Mostramos las estrellas según la valoración.
+                                    for ($i = 1; $i <= 5; $i++) {
+                                    ?>
+                                        <i class="bi bi-star-fill <?php echo $i <= $r->valoracion ? "active" : ""; ?>"></i>
+                                    <?php
+                                    }
+                                    ?>
+                                    <!-- Título -->
+                                    <strong><?php echo $r->titulo; ?></strong>
+                                </div>
+                                <!-- Fecha -->
+                                <p class="review-date">
+                                    <?php
+                                    setlocale(LC_TIME, 'es_ES.UTF-8', 'es_ES', 'Spanish_Spain', 'es');
+                                    echo "Publicado el " . date("j", strtotime($r->fecha)) . " de " . strftime("%B", strtotime($r->fecha)) . " de " . date("Y", strtotime($r->fecha));
+                                    ?>
+                                </p>
+                                <!-- Comentario -->
+                                <p>
+                                <?php
+                                // Mostramos el comentario teniendo en cuenta que es texto HTML.
+                                echo $r->comentario;
+                                ?>
+                                </p>
+                            </div>
+                        <?php
+                        }
+                    }
+                    ?>
                 </div>
                 <?php
                 // Se mostrará solo a los usuarios con rol "usuario".
                 if (isset($_SESSION['logged']) && $_SESSION['logged']->rol == "usuario") {
                 ?>
+                    <!-- Botón para Mostrar Formulario de Comentarios -->
+                    <div class="col-4 d-flex flex-column align-items-center" id="show-review">
+                        <p>Valorar este producto</p>
+                        <p>Comparte tu opinión con otros usuarios</p>
+                        <button type="button" class="btn btn-warning">Dejar reseña</button>
+                    </div>
                     <!-- Formulario de Comentarios -->
-                    <div class="col-6">
+                    <div class="col-5 d-none" id="form-review">
                         <!-- Formulario -->
-                        <form action="" method="POST" class="px-4 pb-2 form-comments" id="form-review">
-                            <h3>Deja tu reseña</h3>
+                        <form action="" method="POST" class="px-4 pb-2 form-comments">
+                            <h3>Deja tu reseña</h3>    
                             <div class="px-4 mt-4 mb-3">
                                 <label for="stars">¿En qué estado estaba el producto?</label>
                                 <!-- Contenedor de estrellas -->
@@ -270,15 +332,8 @@ if ($productos) {
         var quill = new Quill('#eq-editor', {
             modules: {
                 toolbar: [
-                    [{
-                        header: [1, 2, false]
-                    }],
                     ['bold', 'italic', 'underline'],
-                    [{
-                        list: 'ordered'
-                    }, {
-                        list: 'bullet'
-                    }],
+                    [{ list: 'ordered' }, { list: 'bullet' }],
                     ['clean']
                 ]
             },
@@ -286,12 +341,34 @@ if ($productos) {
             placeholder: 'Escriba aquí su opinión...',
         });
 
-        // Evento para enviar el contenido del editor de texto y la valoración.
+        function getCleanQuillContent() {
+            let quillContent = quill.root.innerHTML.trim(); // Obtiene el HTML limpio
+            let plainText = quill.getText().trim(); // Obtiene solo el texto sin etiquetas
+
+            // Si el comentario es completamente vacío, lo deja así.
+            if (plainText === "") {
+                return "";
+            }
+
+            // Eliminar saltos de línea excesivos (más de 2 seguidos)
+            quillContent = quillContent.replace(/(<br\s*\/?>\s*){3,}/g, "<br><br>");
+
+            // Eliminar <p><br></p> al inicio y final (espacios vacíos innecesarios)
+            quillContent = quillContent.replace(/^(<p><br><\/p>\s*)+|(\s*<p><br><\/p>)+$/g, "");
+
+            // Convertir listas desordenadas correctamente
+            quillContent = quillContent.replace(/<ol>\s*(<li data-list="bullet">[\s\S]*?<\/li>)\s*<\/ol>/g, "<ul>$1</ul>");
+
+            return quillContent;
+        }
+
+        // Evento para enviar el contenido limpio del editor de texto y la valoración
         document.getElementById("form-review").addEventListener("submit", function() {
-            document.querySelector("#review-input").value = quill.root.innerHTML;
+            document.querySelector("#review-input").value = getCleanQuillContent();
             document.querySelector("#stars-input").value = document.querySelector("#stars").getAttribute("data-rating");
         });
     </script>
+
 
 </body>
 

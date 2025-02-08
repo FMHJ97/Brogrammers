@@ -285,15 +285,8 @@ if (isset($_GET['alertMessage']) && isset($_GET['alertType'])) {
         var quill = new Quill('#eq-editor', {
             modules: {
                 toolbar: [
-                    [{
-                        header: [1, 2, false]
-                    }],
                     ['bold', 'italic', 'underline'],
-                    [{
-                        list: 'ordered'
-                    }, {
-                        list: 'bullet'
-                    }],
+                    [{ list: 'ordered' }, { list: 'bullet' }],
                     ['clean']
                 ]
             },
@@ -301,22 +294,40 @@ if (isset($_GET['alertMessage']) && isset($_GET['alertType'])) {
             placeholder: 'Escriba aquí la descripción...',
         });
 
-        // Al enviar el formulario, copiar contenido de Quill al input oculto
+        function getCleanQuillContent() {
+            let quillContent = quill.root.innerHTML.trim(); // Obtiene el HTML limpio
+            let plainText = quill.getText().trim(); // Obtiene solo el texto sin etiquetas
+
+            // Si el contenido está vacío, lo dejamos así.
+            if (plainText === "") {
+                return "";
+            }
+
+            // Eliminar saltos de línea excesivos (más de 2 seguidos)
+            quillContent = quillContent.replace(/(<br\s*\/?>\s*){3,}/g, "<br><br>");
+
+            // Eliminar <p><br></p> al inicio y final (espacios vacíos innecesarios)
+            quillContent = quillContent.replace(/^(<p><br><\/p>\s*)+|(\s*<p><br><\/p>)+$/g, "");
+
+            // Convertir listas desordenadas correctamente
+            quillContent = quillContent.replace(/<ol>\s*(<li data-list="bullet">[\s\S]*?<\/li>)\s*<\/ol>/g, "<ul>$1</ul>");
+
+            return quillContent;
+        }
+
+        // Al enviar el formulario, copiar contenido limpio de Quill al input oculto
         document.getElementById("form-product").addEventListener("submit", function() {
-            document.querySelector("#descripcion").value = quill.root.innerHTML;
+            document.querySelector("#descripcion").value = getCleanQuillContent();
         });
 
         <?php
         // Si hemos pulsado sobre el botón de editar producto.
         if (isset($producto_edit)) {
         ?>
-            // Insertamos la descripción del producto a editar en el editor Quill.
             var contenidoDesdeBD = `<?php echo addslashes($producto_edit->descripcion); ?>`;
-            // Verificamos si la variable contenidoDesdePHP está definida antes de usarla.
-            if (typeof contenidoDesdeBD !== "undefined") {
-                // Insertamos el contenido HTML en el editor Quill de forma segura.
-                // Este método permite pegar contenido con formato HTML, asegurando que 
-                // las etiquetas como <ul>, <li>, <p>, etc., se mantengan correctamente.
+
+            if (typeof contenidoDesdeBD !== "undefined" && contenidoDesdeBD.trim() !== "") {
+                // Insertamos el contenido HTML en el editor Quill manteniendo el formato
                 quill.clipboard.dangerouslyPasteHTML(contenidoDesdeBD);
             }
         <?php

@@ -59,6 +59,7 @@ class UserController
             die("ERROR en la BD" . $ex->getMessage());
         }
     }
+
     public static function find($value)
     {
         try {
@@ -202,6 +203,23 @@ class UserController
             error_log("Database Error: " . $ex->getMessage());
             $conex->rollBack();
 
+            header("location: dificultades.php");
+        }
+    }
+
+    public static function getById($id) {
+        try {
+            $conex = new Conexion();
+            $result = $conex->query("select * from usuario where id = $id");
+            if ($result->rowCount()) {
+                $fila = $result->fetchObject();
+                $user = new Usuario($fila->id, $fila->nombre, $fila->apellido1, $fila->apellido2, $fila->correo_electronico, $fila->clave, $fila->fecha_nac, $fila->pais, $fila->codigo_postal, $fila->telefono, $fila->img_perfil, $fila->rol);
+            } else {
+                $user = false;
+            }
+            return $user;
+        } catch (Exception $ex) {
+            die("ERROR en la BD" . $ex->getMessage());
             header("location: dificultades.php");
         }
     }

@@ -194,7 +194,7 @@ if ($reviews) {
                     // Si no hay valoraciones, mostramos un mensaje.
                     if ($reviews == null) {
                         ?>
-                        <div>
+                        <div id="no-reviews">
                             <p>No hay reseñas disponibles en este momento.</p>
                             <p>¡Sé el primero en dejar una reseña!</p>
                         </div>
@@ -261,10 +261,10 @@ if ($reviews) {
                 if (isset($_SESSION['logged']) && $_SESSION['logged']->rol == "usuario") {
                 ?>
                     <!-- Botón para Mostrar Formulario de Comentarios -->
-                    <div class="col-4 d-flex flex-column align-items-center" id="show-review">
+                    <div class="col-4" id="show-review">
                         <p>Valorar este producto</p>
                         <p>Comparte tu opinión con otros usuarios</p>
-                        <button type="button" class="btn btn-warning">Dejar reseña</button>
+                        <button type="button" class="px-4 btn">Dejar reseña</button>
                     </div>
                     <!-- Formulario de Comentarios -->
                     <div class="col-5 d-none ms-3" id="form-review">

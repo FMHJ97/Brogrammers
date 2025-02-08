@@ -345,4 +345,45 @@ main {
 
   }
 
+  #no-reviews {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: $body-font-1;
+    padding: 15px;
+    background: lighten($color: $fondo, $amount: 5%);
+    border-radius: 10px;
+
+    p:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+}
+
+// Estilos para el div de mostrar formulario de reseña.
+#show-review {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: $body-font-2;
+
+  p:first-child {
+    font-family: $headings-font-family;
+    font-size: $heading-font-4;
+  }
+
+  button {
+    background-color: $resaltar2;
+    color: $texto2;
+    border-radius: 10px;
+    font-family: $headings-font-family;
+    font-size: $heading-font-5;
+
+    &:hover {
+      background: darken($resaltar2, 2);
+      color: $texto2;
+    }
+  }
 }

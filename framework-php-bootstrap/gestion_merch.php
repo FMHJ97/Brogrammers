@@ -108,6 +108,12 @@ if (isset($_GET['alertMessage']) && isset($_GET['alertType'])) {
     $alertType = urldecode($_GET['alertType']);
 }
 
+// Si no hay un usuario logueado, redirigimos a la página de inicio.
+// Si el usuario logueado no es un administrador, redirigimos a la página de inicio.
+if (!isset($_SESSION["logged"]) || $_SESSION["logged"]->rol != "admin") {
+    header("Location: index.php");
+    exit();
+}
 
 ?>
 
@@ -158,11 +164,11 @@ if (isset($_GET['alertMessage']) && isset($_GET['alertType'])) {
             <div class="row">
                 <div class="col-6 table-responsive-md">
                     <h3 class="mb-4 text-center">Listado de Productos</h3>
-                    <div style="max-height: 705px; overflow-y: auto;">
+                    <div id="listado-productos" class="pe-2">
                         <table class="table table-productos table-borderless table-striped">
                             <thead>
                                 <tr>
-                                    <th class="text-center ">Imagen</th>
+                                    <th class="text-center">Imagen</th>
                                     <th class="text-center">Nombre</th>
                                     <th class="text-center">Acciones</th>
                                 </tr>

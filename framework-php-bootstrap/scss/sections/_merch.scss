@@ -18,6 +18,7 @@ main {
 
   // Estilos para la imagen principal del producto.
   .main-image {
+
     // Ajuste de tamaño de la imagen principal.
     img {
       border-radius: 5px;
@@ -27,6 +28,7 @@ main {
 
   // Estilos para las imágenes adicionales del producto.
   .additional-images {
+
     // Ajuste de tamaño de las imágenes adicionales.
     img {
       max-width: 75px;
@@ -45,20 +47,25 @@ main {
 .hue-rotate-0 {
   filter: hue-rotate(0deg);
 }
+
 .hue-rotate-90 {
   filter: hue-rotate(90deg);
 }
+
 .hue-rotate-180 {
   filter: hue-rotate(180deg);
 }
+
 .hue-rotate-270 {
   filter: hue-rotate(270deg);
 }
 
 // En dispositivos móviles, se ajusta el tamaño de las imágenes.
 @include media-breakpoint-down(md) {
+
   // Sección de imágenes del producto.
   .item-image-section {
+
     // Imagen principal.
     .main-image {
       img {
@@ -77,6 +84,7 @@ main {
 
 // Estilos para el título de la sección de productos recomendados.
 .suggested-items-heading {
+
   // Título de la sección.
   h2 {
     color: $texto1;
@@ -155,6 +163,7 @@ main {
 
 // En dispositivos móviles, se ajusta el tamaño de los elementos.
 @include media-breakpoint-down(md) {
+
   // Sección de detalles del producto.
   .merch-item-details {
     margin-top: 3em;
@@ -236,6 +245,7 @@ main {
 
 // En dispositivos móviles, se ajusta el tamaño de los elementos.
 @include media-breakpoint-down(md) {
+
   // Ajuste de columnas para ocupar el espacio disponible de manera uniforme.
   .merch-products {
     justify-content: center;
@@ -260,4 +270,79 @@ main {
       }
     }
   }
+}
+
+// <================== Estilos - Merch_Section.php ==================>
+
+// Estilos para la lista de valoraciones y reseñas.
+
+#reviews-container {
+  max-height: 700px;
+  overflow-y: auto;
+  border-radius: 5px;
+
+  // <============== BARRA DE SCROLL ==============>
+
+  /* Barra scroll Para Firefox */
+  scrollbar-width: thin;
+  scrollbar-color: $resaltar2 $fondo;
+
+  /* Para Chrome, Edge y Safari */
+  &::-webkit-scrollbar {
+    width: 8px;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background: $resaltar2;
+    border-radius: 4px;
+  }
+
+  &::-webkit-scrollbar-thumb:hover {
+    background: darken($color: $resaltar2, $amount: 10%);
+  }
+
+  &::-webkit-scrollbar-track {
+    background: $fondo;
+    border-radius: 4px;
+  }
+
+  // <============== FIN - BARRA DE SCROLL ==============>
+
+  .review-item {
+    padding: 15px;
+    background: lighten($color: $fondo, $amount: 5%);
+    border-radius: 10px;
+    // usa box-shadow para darle un efecto de elevación con variable sass
+    box-shadow: 0px 1px 3px 0px $secundario1;
+
+    .review-user {
+
+      i {
+        color: $resaltar1;
+        font-size: 1.8rem;
+      }
+
+    }
+
+    .rating-review {
+      display: flex;
+      gap: 10px;
+      font-size: $heading-font-4;
+
+      .bi-star-fill {
+        color: darken($color: $resaltar2, $amount: 75);
+      }
+
+      .bi-star-fill.active {
+        color: $resaltar2;
+        text-shadow: 0 0 5px $resaltar1;
+      }
+    }
+
+    .review-date {
+      color: $secundario2;
+    }
+
+  }
+
 }

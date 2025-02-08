@@ -1,21 +1,21 @@
 #eq-editor {
   font-family: $body-font-family !important;
   font-size: $body-font-2 !important;
-  color: $texto1 !important;
+  color: $resaltar2 !important;
   background-color: $fondo !important;
-  border: $border-1 solid $resaltar2 !important;
+  border: $border-2 solid $primario2 !important;
   min-height: 100px;
 }
 
 /* Cambia el color de fondo de la barra de herramientas */
 .ql-toolbar {
   background-color: lighten($color: $fondo, $amount: 10) !important;
-  border: $border-2 solid $resaltar2 !important;
+  border: $border-3 solid $primario2 !important;
   margin-top: 10px;
 }
 
 .ql-editor.ql-blank::before {
-  color: $texto1 !important;
+  color: $resaltar2 !important;
   opacity: 0.6 !important;
 }
 
@@ -42,7 +42,7 @@
 .rating-stars {
   display: flex;
   gap: 10px;
-  font-size: 1.75rem;
+  font-size: $heading-font-1;
   cursor: pointer;
 
   .bi-star-fill {
@@ -54,22 +54,4 @@
     text-shadow: 0 0 5px $resaltar1;
   }
 
-}
-
-// <================== Estilos - Puntuación Reseñas Usuarios ==================>
-
-.rating-review {
-  @extend .rating-stars;
-  cursor: default;
-
-  font-size: 1.1rem;
-
-  .bi-star-fill {
-    color: darken($color: $resaltar2, $amount: 75);
-  }
-
-  .bi-star-fill.active {
-    color: $resaltar2;
-    text-shadow: 0 0 5px $resaltar1;
-  }
 }

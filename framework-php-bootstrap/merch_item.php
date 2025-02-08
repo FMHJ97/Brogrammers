@@ -185,7 +185,7 @@ $reviews = ValoracionController::findByProducto($id);
             <!-- Opiniones de los Clientes -->
             <div class="row">
                 <!-- Principales Comentarios -->
-                <div class="col">
+                <div class="col d-flex flex-column" id="reviews-container">
                     <?php
                     // Si no hay valoraciones, mostramos un mensaje.
                     if ($reviews == null) {
@@ -197,17 +197,25 @@ $reviews = ValoracionController::findByProducto($id);
                         <?php
                     } else {
                         // Mostramos las valoraciones.
+                        ?>
+                        <div class="ps-4 pe-2 row d-flex flex-column">
+                        <?php
                         foreach ($reviews as $r) {
                         ?>
-                            <div class="review">
+                            <div class="mb-3 col review-item">
                                 <!-- Nombre del Usuario -->
-                                <p class="review-user">
+                                <div class="mb-1 d-flex align-items-center review-user">
                                     <?php
                                     // Obtenemos el nombre del usuario que ha realizado la valoración.
                                     $usuario = UserController::getById($r->id_usuario);
+                                    ?>
+                                    <i class="pe-3 bi bi-person-circle"></i>
+                                    <p class="mb-0">
+                                    <?php
                                     echo $usuario->nombre . " " . $usuario->apellido1 . " " . $usuario->apellido2;
                                     ?>
-                                </p>
+                                    </p>
+                                </div>
                                 <!-- Valoración -->
                                 <div class="rating-review">
                                     <?php
@@ -222,7 +230,7 @@ $reviews = ValoracionController::findByProducto($id);
                                     <strong><?php echo $r->titulo; ?></strong>
                                 </div>
                                 <!-- Fecha -->
-                                <p class="review-date">
+                                <p class="mt-1 review-date">
                                     <?php
                                     setlocale(LC_TIME, 'es_ES.UTF-8', 'es_ES', 'Spanish_Spain', 'es');
                                     echo "Publicado el " . date("j", strtotime($r->fecha)) . " de " . strftime("%B", strtotime($r->fecha)) . " de " . date("Y", strtotime($r->fecha));
@@ -238,6 +246,9 @@ $reviews = ValoracionController::findByProducto($id);
                             </div>
                         <?php
                         }
+                        ?>
+                        </div>
+                    <?php
                     }
                     ?>
                 </div>
@@ -252,7 +263,7 @@ $reviews = ValoracionController::findByProducto($id);
                         <button type="button" class="btn btn-warning">Dejar reseña</button>
                     </div>
                     <!-- Formulario de Comentarios -->
-                    <div class="col-5 d-none" id="form-review">
+                    <div class="col-5 d-none ms-3" id="form-review">
                         <!-- Formulario -->
                         <form action="" method="POST" class="px-4 pb-2 form-comments">
                             <h3>Deja tu reseña</h3>    
@@ -269,17 +280,19 @@ $reviews = ValoracionController::findByProducto($id);
                             </div>
                             <!-- Título Input-->
                             <div class="px-4">
-                            <label for="review-title">Título de la reseña (Obligatorio)</label>
-                                    <input type="text" class="form-control" id="review-title"
-                                        placeholder="Introduzca un título para la reseña" name="review-title" required>
+                                <label for="review-title">Título de la reseña (Obligatorio)</label>
+                                <input type="text" class="form-control" id="review-title"
+                                    placeholder="Introduzca un título para la reseña" name="review-title" required>
                             </div>
                             <!-- Editor de Texto -->
-                            <div class="px-4 mb-3">
+                            <div class="px-4 mb-4">
                                 <label for="eq-editor">Escribe una reseña (Opcional)</label>
                                 <div id="eq-editor"></div>
                             </div>
-                            <button type="submit" class="my-3 ms-4 btn" name="send"
-                                value="<?php echo $producto->id; ?>">Enviar</button>
+                            <div class="my-3 d-flex justify-content-center">
+                                <button type="submit" class="px-5 btn" name="send"
+                                    id="btn-send-review" value="<?php echo $producto->id; ?>">Enviar</button>
+                            </div>
                             <!-- Campos Ocultos -->
                             <input type="hidden" id="stars-input" name="value_stars">
                             <input type="hidden" id="review-input" name="value_review">

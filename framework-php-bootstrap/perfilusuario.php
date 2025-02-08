@@ -130,6 +130,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
 <head>
     <?php include("includes/head_tags.php"); ?>
+    <script src="./js/gestion.js"></script>
 </head>
 
 <body>

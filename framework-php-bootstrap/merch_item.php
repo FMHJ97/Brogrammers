@@ -8,6 +8,20 @@ require_once '../framework-php-bootstrap/model/producto.php';
 require_once '../framework-php-bootstrap/controller/usuarioController.php';
 require_once '../framework-php-bootstrap/model/usuario.php';
 
+// Si hemos pulsado el botón de eliminar una reseña, la eliminamos de la BD.
+if (isset($_POST['delete'])) {
+    // Obtenemos los datos necesarios para eliminar la valoración.
+    $id_producto = $_POST['id_producto'];
+    $id_usuario = $_POST['id_usuario'];
+    $fecha = $_POST['fecha'];
+
+    // Borramos la valoración de la BD.
+    ValoracionController::delete($id_producto, $id_usuario, $fecha);
+
+    // Recargamos la página para mostrar la valoración eliminada.
+    header("Location: merch_item.php?id=$id_producto");
+}
+
 // Si hemos escrito una reseña, la guardamos en la BD.
 if (isset($_POST['send'])) {
     // Obtenemos los datos necesarios para el formulario.
@@ -247,6 +261,42 @@ if ($reviews) {
                                 echo $r->comentario;
                                 ?>
                                 </p>
+                                <?php
+                                // Si existe un usuario logueado.
+                                if (isset($_SESSION['logged'])) {
+                                    // Si el usuario logueado tiene rol "admin" o "editor",
+                                    // mostramos el botón para eliminar la valoración.
+                                    if ($_SESSION['logged']->rol == "admin" || $_SESSION['logged']->rol == "editor") {
+                                    ?>
+                                        <form action="" method="POST" class="d-flex justify-content-end">
+                                            <button type="submit" class="btn btn-danger btn-delete-review" name="delete">Eliminar</button>
+                                            <!-- Campos ocultos para las claves primarias de la valoración -->
+                                            <input type="hidden" name="id_producto" value="<?php echo $r->id_producto; ?>">
+                                            <input type="hidden" name="id_usuario" value="<?php echo $r->id_usuario; ?>">
+                                            <input type="hidden" name="fecha" value="<?php echo $r->fecha; ?>">
+                                        </form>
+                                    <?php
+                                    }
+                                    // Si el usuario logueado tiene rol "usuario",
+                                    // mostramos el botón para eliminar su propia valoración.
+                                    // También se mostrará el botón de edición.
+                                    else if ($_SESSION['logged']->id == $r->id_usuario) {
+                                    ?>
+                                    <div class="gap-3 d-flex justify-content-end">
+                                        <!-- Botón para Editar la Valoración -->
+                                        <button type="button" class="btn btn-warning btn-edit-review">Editar</button>
+                                        <form action="" method="POST">
+                                            <button type="submit" class="btn btn-danger btn-delete-review" name="delete">Eliminar</button>
+                                            <!-- Campos ocultos para las claves primarias de la valoración -->
+                                            <input type="hidden" name="id_producto" value="<?php echo $r->id_producto; ?>">
+                                            <input type="hidden" name="id_usuario" value="<?php echo $r->id_usuario; ?>">
+                                            <input type="hidden" name="fecha" value="<?php echo $r->fecha; ?>">
+                                        </form>
+                                    </div>
+                                    <?php
+                                    }
+                                }
+                                ?>
                             </div>
                         <?php
                         }

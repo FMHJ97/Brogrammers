@@ -1,27 +1,23 @@
 <?php
 switch ($_SERVER["SCRIPT_NAME"]) {
-	case "/index.php":
-		$CURRENT_PAGE = "Index";
-		$PAGE_TITLE = "GroundSound Festival";
+	case "/about_us.php":
+		$CURRENT_PAGE = "Sobre Nosotros";
+		$PAGE_TITLE = "Sobre Nosotros";
 		break;
 
-	case "/legal.php":
-		$CURRENT_PAGE = "Términos Legales";
-		$PAGE_TITLE = "Términos Legales";
+	case "/address.php":
+		$CURRENT_PAGE = "Address";
+		$PAGE_TITLE = "Address";
 		break;
 
-	case "/gestion_usuarios.php":
-		$CURRENT_PAGE = "Gestion Usuarios";
-		$PAGE_TITLE = "Gestion Usuarios";
-		break;
-	case "/privacy.php":
-		$CURRENT_PAGE = "Política de Privacidad";
-		$PAGE_TITLE = "Política de Privacidad";
+	case "/cart.php":
+		$CURRENT_PAGE = "Carrito";
+		$PAGE_TITLE = "Carrito";
 		break;
 
-	case "/venta.php":
-		$CURRENT_PAGE = "Política de Venta";
-		$PAGE_TITLE = "Política de Venta";
+	case "/contact.php":
+		$CURRENT_PAGE = "Contact";
+		$PAGE_TITLE = "Contact";
 		break;
 
 	case "/cookies.php":
@@ -29,29 +25,9 @@ switch ($_SERVER["SCRIPT_NAME"]) {
 		$PAGE_TITLE = "Política de Cookies";
 		break;
 
-	case "/tickets.php":
-		$CURRENT_PAGE = "Tickets";
-		$PAGE_TITLE = "Tickets";
-		break;
-
-	case "/ticketing.php":
-		$CURRENT_PAGE = "Ticketing";
-		$PAGE_TITLE = "Ticketing";
-		break;
-
-	case "/parking_camping.php":
-		$CURRENT_PAGE = "Parking & Camping";
-		$PAGE_TITLE = "Parking & Camping";
-		break;
-
-	case "/merch.php":
-		$CURRENT_PAGE = "Merch";
-		$PAGE_TITLE = "Merch";
-		break;
-
-	case "/merch_item.php":
-		$CURRENT_PAGE = "Merch Producto";
-		$PAGE_TITLE = "Merch Producto";
+	case "/dificultades.php":
+		$CURRENT_PAGE = "Dificultades";
+		$PAGE_TITLE = "Dificultades";
 		break;
 
 	case "/gallery.php":
@@ -59,24 +35,34 @@ switch ($_SERVER["SCRIPT_NAME"]) {
 		$PAGE_TITLE = "Galería";
 		break;
 
-	case "/restore_password.php":
-		$CURRENT_PAGE = "Recuperar Contraseña";
-		$PAGE_TITLE = "Recuperar Contraseña";
+	case "/gestion_galeria.php":
+		$CURRENT_PAGE = "Gestion Galeria";
+		$PAGE_TITLE = "Gestion Galeria";
 		break;
 
-	case "/login.php":
-		$CURRENT_PAGE = "Iniciar Sesión";
-		$PAGE_TITLE = "Iniciar Sesión";
+	case "/gestion_merch.php":
+		$CURRENT_PAGE = "Gestion Merch";
+		$PAGE_TITLE = "Gestion Merch";
 		break;
 
-	case "/register.php":
-		$CURRENT_PAGE = "Crear Cuenta";
-		$PAGE_TITLE = "Crear Cuenta";
+	case "/gestion_usuarios.php":
+		$CURRENT_PAGE = "Gestion Usuarios";
+		$PAGE_TITLE = "Gestion Usuarios";
 		break;
 
-	case "/cart.php":
-		$CURRENT_PAGE = "Carrito";
-		$PAGE_TITLE = "Carrito";
+	case "/index.php":
+		$CURRENT_PAGE = "Index";
+		$PAGE_TITLE = "GroundSound Festival";
+		break;
+
+	case "/info.php":
+		$CURRENT_PAGE = "Info";
+		$PAGE_TITLE = "Info";
+		break;
+
+	case "/infogeneral.php":
+		$CURRENT_PAGE = "Info General";
+		$PAGE_TITLE = "Info General";
 		break;
 
 	case "/juegoFMHJ.php":
@@ -89,14 +75,84 @@ switch ($_SERVER["SCRIPT_NAME"]) {
 		$PAGE_TITLE = "Videojuego Fran Ruiz";
 		break;
 
+	case "/juegoJMPA.php":
+		$CURRENT_PAGE = "Videojuego JMPA";
+		$PAGE_TITLE = "Videojuego JMPA";
+		break;
+
 	case "/juegoTaylor.php":
 		$CURRENT_PAGE = "Videojuego Taylor";
 		$PAGE_TITLE = "Videojuego Taylor";
 		break;
 
-	case "/about_us.php":
-		$CURRENT_PAGE = "Sobre Nosotros";
-		$PAGE_TITLE = "Sobre Nosotros";
+	case "/legal.php":
+		$CURRENT_PAGE = "Términos Legales";
+		$PAGE_TITLE = "Términos Legales";
+		break;
+
+	case "/lineup.php":
+		$CURRENT_PAGE = "Lineup";
+		$PAGE_TITLE = "Lineup";
+		break;
+
+	case "/login.php":
+		$CURRENT_PAGE = "Iniciar Sesión";
+		$PAGE_TITLE = "Iniciar Sesión";
+		break;
+
+	case "/merch_item.php":
+		$CURRENT_PAGE = "Merch Producto";
+		$PAGE_TITLE = "Merch Producto";
+		break;
+
+	case "/merch.php":
+		$CURRENT_PAGE = "Merch";
+		$PAGE_TITLE = "Merch";
+		break;
+
+	case "/parking_camping.php":
+		$CURRENT_PAGE = "Parking & Camping";
+		$PAGE_TITLE = "Parking & Camping";
+		break;
+
+	case "/payment.php":
+		$CURRENT_PAGE = "Payment";
+		$PAGE_TITLE = "Payment";
+		break;
+
+	case "/perfilusuario.php":
+		$CURRENT_PAGE = "Perfil Usuario";
+		$PAGE_TITLE = "Perfil Usuario";
+		break;
+
+	case "/privacy.php":
+		$CURRENT_PAGE = "Política de Privacidad";
+		$PAGE_TITLE = "Política de Privacidad";
+		break;
+
+	case "/register.php":
+		$CURRENT_PAGE = "Crear Cuenta";
+		$PAGE_TITLE = "Crear Cuenta";
+		break;
+
+	case "/restore_password.php":
+		$CURRENT_PAGE = "Recuperar Contraseña";
+		$PAGE_TITLE = "Recuperar Contraseña";
+		break;
+
+	case "/ticketing.php":
+		$CURRENT_PAGE = "Ticketing";
+		$PAGE_TITLE = "Ticketing";
+		break;
+
+	case "/tickets.php":
+		$CURRENT_PAGE = "Tickets";
+		$PAGE_TITLE = "Tickets";
+		break;
+
+	case "/venta.php":
+		$CURRENT_PAGE = "Política de Venta";
+		$PAGE_TITLE = "Política de Venta";
 		break;
 
 	default:

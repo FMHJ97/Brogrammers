@@ -97,7 +97,7 @@ main {
 // Estilos para los inputs de los formularios.
 .form-control {
   border-radius: 10px;
-  border: $border-3 solid $primario1;
+  border: $border-3 solid $primario2;
   background-color: $fondo;
   padding: 0.75em 0.5em 0.75em 0.5em;
   margin-top: 0.5em;
@@ -118,7 +118,8 @@ main {
 
   // Estilo para el placeholder de los inputs.
   &::placeholder {
-    color: darken($color: $resaltar2, $amount: 50);
+    color: $resaltar2;
+    opacity: 0.6;
   }
 }
 
@@ -166,11 +167,17 @@ main {
   padding-top: 1.5em;
   border-radius: 10px;
 
-  button {
+  #btn-send-review {
     background-color: $resaltar1;
     color: $texto2;
     border-radius: 10px;
-    font-size: $body-font-1;
+    font-family: $headings-font-family;
+    font-size: $heading-font-4;
+
+    &:hover {
+      background: darken($resaltar1, 10%);
+      color: $texto2;
+    }
   }
 }
 

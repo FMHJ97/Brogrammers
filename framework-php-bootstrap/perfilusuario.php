@@ -107,9 +107,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 $nuevaImagen = $rutaCompleta;
 
                 // Eliminar imagen anterior si no es la dummy
-                if ($usuario->img_perfil && !str_contains($usuario->img_perfil, 'dummy_user.png')) {
-                    @unlink($usuario->img_perfil);
+                if ($usuario->img_perfil && file_exists($usuario->img_perfil) && !str_contains($usuario->img_perfil, 'dummy_user.png')) {
+                    unlink($usuario->img_perfil);
                 }
+                
             }
         } else {
             $errores[] = "Formato de imagen no válido. Use JPG, PNG o GIF.";
@@ -135,13 +136,14 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $usuario->rol
         );
 
-        if (UserController::modificar($usuarioActualizado)) {
+        if (UserController::modificar2($usuarioActualizado)) {
             $_SESSION['logged'] = $usuarioActualizado;
             // Borraremos la sesión guardando el id para volver a iniciarla y que se actualicen los datos
             $id = $usuarioActualizado->id;
             unset($_SESSION['logged']);
             $_SESSION['logged'] = UserController::getById($id);
             $usuario = $_SESSION['logged'];
+            
             $alertMessage = "Datos actualizados correctamente";
             $alertType = "success";
         } else {
@@ -162,6 +164,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 <head>
     <?php include("includes/head_tags.php"); ?>
     <script src="./js/gestion.js"></script>
+    <script src="./js/perfilusuario.js"></script>
 </head>
 
 <body>
@@ -170,6 +173,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     <main>
         <section class="py-3 py-md-5">
+            
             <!-- Mostrar alertas -->
             <?php if (!empty($alertMessage)): ?>
                 <div class="alert alert-<?php echo $alertType; ?> alert-dismissible fade show custom-alert-gestion"
@@ -200,8 +204,17 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                     <div class="row justify-content-center text-center text-md-start mb-3">
                         <!-- Imagen del Usuario -->
                         <div class="mb-4 col-md-4 ">
-                            <img src="<?php echo (!empty($usuario->img_perfil)) ? $usuario->img_perfil : 'assets/img/dummy/dummy_user.png'; ?>"
-                                alt="Foto de perfil del usuario" class="img-fluid rounded-circle img-usuario">
+                            <div class="image-container">
+                                <label for="imagenInput">
+                                    <img src="<?php echo ($usuario->img_perfil != null && file_exists($usuario->img_perfil)) ? $usuario->img_perfil : 'assets/img/dummy/dummy_user.png'; ?>" alt="Foto de perfil"
+                                        class="img-fluid rounded-circle img-usuario" id="imagenPrevisualizacion">
+                                    <div class="image-overlay" id="imageOverlay">
+                                        <span>Cambiar imagen</span>
+                                    </div>
+                                </label>
+                                <input type="file" id="imagenInput" name="imagen_perfil" accept="image/*"
+                                    style="display: none;">
+                            </div>
                         </div>
                         <!-- Información del Usuario -->
                         <div class="col-md-8 d-flex flex-column justify-content-center align-items-md-end">

@@ -35,15 +35,28 @@ if (isset($_POST['login'])) {
             header('Location: ' . $_SERVER['REQUEST_URI']);
         } else {
             // Si la contraseña no es correcta, mostramos un mensaje de error.
-            echo "<script>alert('Contraseña incorrecta.')</script>";
+            $_SESSION['alert'] = [
+                'message' => 'Usuario o contraseña incorrectos.',
+                'type' => 'danger',
+                'email' => $email
+            ];
         }
     } else {
         // Si el usuario no existe, mostramos un mensaje de error.
-        echo "<script>alert('Usuario no encontrado.')</script>";
+        $_SESSION['alert'] = [
+            'message' => 'Usuario o contraseña incorrectos.',
+            'type' => 'danger',
+            'email' => $email
+        ];
     }
+    header('Location: ' . $_SERVER['REQUEST_URI']);
+    exit();
 }
+// Recuperar y limpiar alertas
+$alert = $_SESSION['alert'] ?? null;
+unset($_SESSION['alert']);
 ?>
-
+<script src="js/gestion.js"></script>
 <nav class="navbar navbar-expand-md">
     <div class="container-fluid">
         <a class="navbar-brand" href="./index.php">
@@ -158,13 +171,30 @@ if (isset($_POST['login'])) {
         </div>
 
     </div>
+
     <!-- Login Modal -->
     <div class="modal" id="loginModal">
         <div class="modal-dialog custom-modal-dialog-login">
             <div class="modal-content custom-modal-content-login">
-                <!-- Modal body -->
                 <div class="modal-body custom-modal-body-login">
+                    <!-- Mostrar alertas -->
+                    <?php if ($alert): ?>
+
+                        <div class="alert alert-<?= $alert['type'] ?> alert-dismissible fade show d-flex align-items-center custom-alert-gestion"
+                            role="alert">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                class="bi bi-x-circle-fill" viewBox="0 0 16 16">
+                                <path
+                                    d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0M5.354 4.646a.5.5 0 1 0-.708.708L7.293 8l-2.647 2.646a.5.5 0 0 0 .708.708L8 8.707l2.646 2.647a.5.5 0 0 0 .708-.708L8.707 8l2.647-2.646a.5.5 0 0 0-.708-.708L8 7.293z" />
+                            </svg>
+                            <div class="ms-2">
+                            <?= $alert['message'] ?>
+                            </div>
+                            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                        </div>
+                    <?php endif; ?>
                     <div class="container p-4 my-5 authentication-form p-md-5">
+
                         <!-- Encabezado -->
                         <div class="row">
                             <!--CF2: No puede haber nada entre row y col-->
@@ -181,6 +211,7 @@ if (isset($_POST['login'])) {
                             <div class="mt-3 mb-3">
                                 <label for="email">Correo electrónico</label><span> *</span>
                                 <input type="email" class="form-control" id="email"
+                                    value="<?= isset($alert['email']) ? htmlspecialchars($alert['email']) : '' ?>"
                                     placeholder="Introduzca su correo electrónico" name="email" required
                                     pattern="[^@]+@[^@]+.[a-zA-Z]{2,6}">
                             </div>
@@ -213,5 +244,13 @@ if (isset($_POST['login'])) {
         </div>
     </div>
 
-
+    <script>
+        // Auto-mostrar modal si hay alerta y no estamos en la página de login
+        document.addEventListener('DOMContentLoaded', function () {
+            <?php if ($alert && !strpos($_SERVER['REQUEST_URI'], 'login.php')) : ?>
+                const loginModal = new bootstrap.Modal(document.getElementById('loginModal'));
+                loginModal.show();
+            <?php endif; ?>
+        });
+    </script>
 </nav>

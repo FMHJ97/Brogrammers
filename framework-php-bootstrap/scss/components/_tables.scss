@@ -37,6 +37,38 @@
   }
 }
 
+#listado-productos {
+  max-height: 725px;
+  overflow-y: auto;
+
+  // <============== BARRA DE SCROLL ==============>
+
+  /* Barra scroll Para Firefox */
+  scrollbar-width: thin;
+  scrollbar-color: $primario2 $fondo;
+
+  /* Para Chrome, Edge y Safari */
+  &::-webkit-scrollbar {
+    width: 8px;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background: $primario2;
+    border-radius: 4px;
+  }
+
+  &::-webkit-scrollbar-thumb:hover {
+    background: darken($color: $primario2, $amount: 10%);
+  }
+
+  &::-webkit-scrollbar-track {
+    background: $fondo;
+    border-radius: 4px;
+  }
+
+  // <============== FIN - BARRA DE SCROLL ==============>
+}
+
 .table-productos {
   th {
     background-color: $primario1;
@@ -53,7 +85,7 @@
 
 .table-about-us {
   @extend .table-cart;
-  
+
   td {
     justify-content: center;
     align-items: center;

@@ -179,6 +179,18 @@ main {
       color: $texto2;
     }
   }
+
+  #btn-cancel-review {
+    @extend #btn-send-review;
+    color: $texto1;
+    background-color: $primario1;
+    font-size: $heading-font-5;
+
+    &:hover {
+      background: darken($primario1, 3%);
+      color: $texto1;
+    }
+  }
 }
 
 // <================== Gallery ==================>

@@ -6,21 +6,30 @@ require_once '../framework-php-bootstrap/controller/conexion.php';
 class ValoracionController
 {
 
-    public static function update($id_producto, $id_usuario, $fecha)
+    public static function update($valoracion)
     {
         try {
             $conex = new Conexion();
             $conex->beginTransaction();
-
             $result = $conex->prepare("update valoracion set valoracion = ?, titulo = ?, comentario = ? where id_producto = ? and id_usuario = ? and fecha = ?");
-            $result->bindParam(1, $valoracion);
+            
+            // Asignamos primero los valores a variables
+            $id_producto = $valoracion->getIdProducto();
+            $id_usuario = $valoracion->getIdUsuario();
+            $fecha = $valoracion->getFecha();
+            $puntuacion = $valoracion->getValoracion();
+            $titulo = $valoracion->getTitulo();
+            $comentario = $valoracion->getComentario();
+            
+            // Ahora las variables son pasadas por referencia
+            $result->bindParam(1, $puntuacion);
             $result->bindParam(2, $titulo);
             $result->bindParam(3, $comentario);
             $result->bindParam(4, $id_producto);
             $result->bindParam(5, $id_usuario);
             $result->bindParam(6, $fecha);
-            $result->execute();
             
+            $result->execute();
             if ($result->rowCount()) {
                 $conex->commit();
                 return true;

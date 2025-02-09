@@ -169,4 +169,68 @@ document.addEventListener("DOMContentLoaded", function () {
         showReview.classList.add("d-none");
         reviewForm.classList.remove("d-none");
     });
+
+    document.querySelector("#btn-cancel-review").addEventListener("click", function () {
+        showReview.classList.remove("d-none");
+        reviewForm.classList.add("d-none");
+    });
+});
+
+// Script para ordenar las reseñas.
+document.addEventListener('DOMContentLoaded', function () {
+    const dropdownButton = document.getElementById('reviewOrderBy-btn');
+    const reviewContainer = document.querySelector('#reviews-container');
+
+    // Obtener todas las reseñas con sus atributos
+    function getReviews() {
+        return Array.from(document.querySelectorAll('.review-item'));
+    }
+
+    // Función para actualizar el texto del botón y ordenar las reseñas
+    function updateDropdownText(element) {
+        dropdownButton.textContent = 'Ordenar por: ' + element.textContent;
+        dropdownButton.dataset.order = element.id || 'date-desc'; // Asigna un ID o por defecto recientes
+        sortReviews(true);
+    }
+
+    // Función para ordenar las reseñas
+    function sortReviews(clearContainer = false) {
+        const order = dropdownButton.dataset.order;
+        const allReviews = getReviews();
+
+        const sortedReviews = allReviews.sort((a, b) => {
+            const dateA = new Date(a.dataset.date);
+            const dateB = new Date(b.dataset.date);
+            const ratingA = parseFloat(a.dataset.rating);
+            const ratingB = parseFloat(b.dataset.rating);
+
+            if (order === 'date-asc') {
+                return dateA - dateB; // Más antiguas primero
+            } else if (order === 'date-desc') {
+                return dateB - dateA; // Más recientes primero
+            } else if (order === 'star-asc') {
+                return ratingA - ratingB; // Menor valoración primero
+            } else if (order === 'star-desc') {
+                return ratingB - ratingA; // Mayor valoración primero
+            }
+            return 0; // Sin orden específico
+        });
+
+        // Limpiar el contenedor solo si se usa el dropdown
+        if (clearContainer) {
+            reviewContainer.innerHTML = '';
+        }
+        sortedReviews.forEach(review => reviewContainer.appendChild(review));
+    }
+
+    // Agregar eventos a los elementos del menú desplegable
+    document.querySelectorAll('.dropdown-item').forEach(item => {
+        item.addEventListener('click', function () {
+            updateDropdownText(this);
+        });
+    });
+
+    // Inicializa la ordenación por defecto
+    dropdownButton.dataset.order = 'date-desc';
+    sortReviews();
 });

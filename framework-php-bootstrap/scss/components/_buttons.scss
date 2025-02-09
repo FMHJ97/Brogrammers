@@ -6,6 +6,23 @@
   justify-content: start;
   align-items: center;
 
+  .dropdown-menu {
+    background-color: $fondo;
+    border: $border-1 solid $resaltar2;
+
+    .dropdown-item {
+      color: $resaltar2;
+      font-family: $body-font-family;
+      padding: 0.5rem 1rem;
+      transition: all 0.1s ease;
+
+      &:hover {
+        background-color: $resaltar1;
+        color: $texto2;
+      }
+    }
+  }
+
   // Icono Ordenar por.
   i {
     color: $resaltar2;
@@ -14,6 +31,39 @@
 
   // Botón de Order-By.
   #dropdownOrderButton {
+    color: $resaltar2;
+  }
+}
+
+.dropdown-order-by-2 {
+  display: flex;
+  justify-content: start;
+  align-items: center;
+
+  .dropdown-menu {
+    background-color: $fondo;
+    border: $border-1 solid $resaltar2;
+
+    .dropdown-item {
+      color: $resaltar2;
+      font-family: $body-font-family;
+      padding: 0.5rem 1rem;
+      transition: all 0.1s ease;
+
+      &:hover {
+        background-color: $resaltar1;
+        color: $texto2;
+      }
+    }
+  }
+
+  // Icono Ordenar por.
+  i {
+    color: $resaltar2;
+    font-size: 1.5rem;
+  }
+
+  #reviewOrderBy-btn {
     color: $resaltar2;
   }
 }

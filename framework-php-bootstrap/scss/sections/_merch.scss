@@ -277,7 +277,7 @@ main {
 // Estilos para la lista de valoraciones y reseñas.
 
 #reviews-container {
-  max-height: 700px;
+  max-height: 450px;
   overflow-y: auto;
   border-radius: 5px;
 
@@ -314,6 +314,7 @@ main {
     border-radius: 10px;
     // usa box-shadow para darle un efecto de elevación con variable sass
     box-shadow: 0px 1px 3px 0px $secundario1;
+    flex-grow: 0;
 
     .review-user {
 
@@ -325,7 +326,6 @@ main {
     }
 
     .rating-review {
-      display: flex;
       gap: 10px;
       font-size: $heading-font-4;
 
@@ -341,6 +341,36 @@ main {
 
     .review-date {
       color: $secundario2;
+    }
+
+    .btn-delete-review {
+      background: lighten($color: $fondo, $amount: 5%);
+      color: $texto1;
+      border-radius: 5px;
+      border: $border-2 solid $primario2;
+      font-family: $headings-font-family;
+      font-size: $heading-font-5;
+
+      &:hover {
+        scale: 1.05;
+        background: $primario2;
+        transition: all 0.3s ease;
+      }
+    }
+
+    .btn-edit-review {
+      background: lighten($color: $fondo, $amount: 5%);
+      color: $texto1;
+      border-radius: 5px;
+      border: $border-2 solid $secundario2;
+      font-family: $headings-font-family;
+      font-size: $heading-font-5;
+
+      &:hover {
+        scale: 1.05;
+        background: $secundario2;
+        transition: all 0.3s ease;
+      }
     }
 
   }
@@ -385,6 +415,8 @@ main {
     &:hover {
       background: darken($resaltar2, 2);
       color: $texto2;
+      scale: 1.05;
+      transition: all 0.2s;
     }
   }
 }

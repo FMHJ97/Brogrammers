@@ -164,35 +164,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 <head>
     <?php include("includes/head_tags.php"); ?>
     <script src="./js/gestion.js"></script>
-    <style>
-        /* Estilos para el overlay */
-        .image-container {
-            position: relative;
-            display: inline-block;
-        }
-
-        .image-overlay {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 0, 0, 0.5);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            opacity: 0;
-            transition: opacity 0.3s ease;
-            cursor: pointer;
-        }
-
-        .image-overlay span {
-            color: white;
-            text-align: center;
-            padding: 10px;
-        }
-    </style>
+    <script src="./js/perfilusuario.js"></script>
 </head>
 
 <body>
@@ -326,45 +298,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             </div>
         </section>
     </main>
-    <script>
-        // JavaScript para manejar el hover y el click
-        const imageContainer = document.querySelector('.image-container');
-        const imageOverlay = document.getElementById('imageOverlay');
-        const imagenInput = document.getElementById('imagenInput');
-
-        // Mostrar overlay al hacer hover
-        imageContainer.addEventListener('mouseenter', () => {
-            imageOverlay.style.opacity = '1';
-        });
-
-        // Ocultar overlay al quitar el hover
-        imageContainer.addEventListener('mouseleave', () => {
-            imageOverlay.style.opacity = '0';
-        });
-
-        // Click en el overlay abre el selector de archivos
-        imageOverlay.addEventListener('click', (e) => {
-            e.preventDefault();
-            imagenInput.click();
-        });
-
-        // Previsualización de imagen
-        function previsualizarImagen(event) {
-            const input = event.target;
-            if (input.files && input.files[0]) {
-                const reader = new FileReader();
-                
-                reader.onload = function(e) {
-                    document.getElementById('imagenPrevisualizacion').src = e.target.result;
-                };
-                
-                reader.readAsDataURL(input.files[0]);
-            }
-        }
-        
-        // Actualizar previsualización cuando cambia el archivo
-        imagenInput.addEventListener('change', previsualizarImagen);
-    </script>
     <!-- Footer -->
     <?php include("includes/footer.php"); ?>
 </body>

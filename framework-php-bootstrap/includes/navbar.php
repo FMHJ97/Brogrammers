@@ -188,7 +188,7 @@ unset($_SESSION['alert']);
                                     d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0M5.354 4.646a.5.5 0 1 0-.708.708L7.293 8l-2.647 2.646a.5.5 0 0 0 .708.708L8 8.707l2.646 2.647a.5.5 0 0 0 .708-.708L8.707 8l2.647-2.646a.5.5 0 0 0-.708-.708L8 7.293z" />
                             </svg>
                             <div class="ms-2">
-                            <?= $alert['message'] ?>
+                                <?= $alert['message'] ?>
                             </div>
                             <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
                         </div>
@@ -230,14 +230,19 @@ unset($_SESSION['alert']);
                             <!-- Botón Iniciar Sesión y Link a Recuperar Contraseña -->
                             <div>
                                 <button type="submit" class="mb-3 btn" name="login">Iniciar sesión</button>
-                                <div
-                                    class="gap-2 d-flex justify-content-between flex-column flex-md-row align-items-end align-items-md-center">
-                                    <?php echo $login_button; ?>
-                                    <a id="reset_pwd" href="restore_password.php" class="">¿Olvidó su
-                                        contraseña?</a>
-                                </div>
                             </div>
                         </form>
+                        <!-- Saco el botoncito fuera del form, que me la estaba liando. -->
+                        <div
+                            class="gap-2 d-flex justify-content-between flex-column flex-md-row align-items-end align-items-md-center">
+                            <?php
+                            // Guardo la página actual en la sesión antes de redirigir a Google para luego que me redirija aquí y no explote esto.
+                            $_SESSION['redirect_after_google'] = $_SERVER['REQUEST_URI'];
+                            ?>
+                            <?php echo isset($login_button) ? $login_button : ''; ?>
+                            <a id="reset_pwd" href="restore_password.php" class="">¿Olvidó su
+                                contraseña?</a>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -247,7 +252,7 @@ unset($_SESSION['alert']);
     <script>
         // Auto-mostrar modal si hay alerta y no estamos en la página de login
         document.addEventListener('DOMContentLoaded', function () {
-            <?php if ($alert && !strpos($_SERVER['REQUEST_URI'], 'login.php')) : ?>
+            <?php if ($alert && !strpos($_SERVER['REQUEST_URI'], 'login.php')): ?>
                 const loginModal = new bootstrap.Modal(document.getElementById('loginModal'));
                 loginModal.show();
             <?php endif; ?>

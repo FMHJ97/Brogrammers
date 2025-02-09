@@ -176,13 +176,13 @@ require_once __DIR__ . '/../vendor/autoload.php';
 $google_client = new Google_Client();
 
 //Set the OAuth 2.0 Client ID
-$google_client->setClientId('827800119443-7mfftovmm0venurq0br2kfb1i3t5j9hj.apps.googleusercontent.com');
+$google_client->setClientId('975033941456-e68iiht6sbmqkmkjpi70rkf5eorhvbn4.apps.googleusercontent.com');
 
 //Set the OAuth 2.0 Client Secret key
-$google_client->setClientSecret('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');
+$google_client->setClientSecret('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');
 
 //Set the OAuth 2.0 Redirect URI
-$google_client->setRedirectUri('http://localhost:8080');
+$google_client->setRedirectUri('http://localhost:8080/index.php');
 
 
 $google_client->addScope('email');

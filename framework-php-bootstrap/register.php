@@ -2,6 +2,16 @@
 include("includes/a_config.php");
 require_once '../framework-php-bootstrap/controller/usuarioController.php';
 
+
+// Confirmo si recibo datos de google en la sesión google_data
+$google_data = $_SESSION['google_data'] ?? [];
+
+// Exytraigo los datos de la sesión aquí para poder usarlos en el formulario, no los pongo directamente para confirmar que si alguno está vacío se pone vacío. (el email sdebería estar siempre)
+$name = $google_data['name'] ?? '';  //Si $google_data['name'] no existe o es null, se asigna '' (una cadena vacía) a $name.
+$surname1 = $google_data['family_name'] ?? ''; 
+$email = $google_data['email'] ?? '';
+
+
 // Lista de países válidos 
 $paisesValidos = [
     'España',
@@ -189,7 +199,8 @@ if (isset($_POST["submit"])) {
                                 <label for="name">Nombre</label><span> *</span>
                                 <input type="text" class="form-control" id="name" placeholder="Introduzca su nombre"
                                     name="name" required 
-                                    value="<?php echo isset($_POST['name']) ? htmlspecialchars($_POST['name']) : ''; ?>">
+                                    value="<?php echo isset($_POST['name']) ? htmlspecialchars($_POST['name']) : htmlspecialchars($name); ?>">
+
                             </div>
                         </div>
                         
@@ -200,7 +211,8 @@ if (isset($_POST["submit"])) {
                                 <label for="surname1">Primer Apellido</label><span> *</span>
                                 <input type="text" class="form-control" id="surname1"
                                     placeholder="Introduzca su primer apellido" name="surname1" required
-                                    value="<?php echo isset($_POST['surname1']) ? htmlspecialchars($_POST['surname1']) : ''; ?>">
+                                    value="<?php echo isset($_POST['surname1']) ? htmlspecialchars($_POST['surname1']) : htmlspecialchars($surname1); ?>">
+
                             </div>
                             <!-- Segundo apellido -->
                             <div class="col-12 col-md-6">
@@ -259,7 +271,7 @@ if (isset($_POST["submit"])) {
                             <label for="email">Correo electrónico</label><span> *</span>
                             <input type="email" class="form-control" id="email"
                                 placeholder="Introduzca su correo electrónico" name="email" required
-                                value="<?php echo isset($_POST['email']) ? htmlspecialchars($_POST['email']) : ''; ?>">
+                                value="<?php echo isset($_POST['email']) ? htmlspecialchars($_POST['email']) : htmlspecialchars($email); ?>">
                         </div>
                         
                         <!-- Password y Confirm Password Input -->
@@ -298,7 +310,7 @@ if (isset($_POST["submit"])) {
                             <label class="form-check-label">
                                 <input class="form-check-input" type="checkbox" name="news" 
                                     <?php echo (isset($_POST['news'])) ? 'checked' : ''; ?>> 
-                                Deseo recibir noticias e información sobre GroundSound Festival.
+                                Deseo recibir noticias e información sobre GroundSound Festival.c
                             </label>
                         </div>
                         
@@ -326,3 +338,9 @@ if (isset($_POST["submit"])) {
 </body>
 
 </html>
+
+<!-- Modifico estas tres lineas en el form -->
+
+<!-- value="< ?php echo isset($_POST['name']) ? htmlspecialchars($_POST['name']) : ''; ?>"> -->
+<!-- value="< ?php echo isset($_POST['surname1']) ? htmlspecialchars($_POST['surname1']) : ''; ?>"> -->
+<!-- value="< ?php echo isset($_POST['email']) ? htmlspecialchars($_POST['email']) : ''; ?>"> -->

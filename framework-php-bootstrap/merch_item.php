@@ -218,10 +218,8 @@ if ($reviews) {
                         <ul class="dropdown-menu" aria-labelledby="reviewOrderBy-btn">
                             <li><button id="date-desc" class="dropdown-item">Más recientes</button></li>
                             <li><button id="date-asc" class="dropdown-item">Más antiguas</button></li>
-                            <li><button id="star-desc" class="dropdown-item">Valoración
-                                    (descendente)</button></li>
-                            <li><button id="star-asc" class="dropdown-item">Valoración
-                                    (ascendente)</button></li>
+                            <li><button id="star-desc" class="dropdown-item">Mayor puntuación</button></li>
+                            <li><button id="star-asc" class="dropdown-item">Menor puntuación</button></li>
                         </ul>
                     </div>
                 </div>

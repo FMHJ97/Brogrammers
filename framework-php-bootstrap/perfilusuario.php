@@ -107,9 +107,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 $nuevaImagen = $rutaCompleta;
 
                 // Eliminar imagen anterior si no es la dummy
-                if ($usuario->img_perfil && !str_contains($usuario->img_perfil, 'dummy_user.png')) {
-                    @unlink($usuario->img_perfil);
+                if ($usuario->img_perfil && file_exists($usuario->img_perfil) && !str_contains($usuario->img_perfil, 'dummy_user.png')) {
+                    unlink($usuario->img_perfil);
                 }
+                
             }
         } else {
             $errores[] = "Formato de imagen no válido. Use JPG, PNG o GIF.";
@@ -135,13 +136,14 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $usuario->rol
         );
 
-        if (UserController::modificar($usuarioActualizado)) {
+        if (UserController::modificar2($usuarioActualizado)) {
             $_SESSION['logged'] = $usuarioActualizado;
             // Borraremos la sesión guardando el id para volver a iniciarla y que se actualicen los datos
             $id = $usuarioActualizado->id;
             unset($_SESSION['logged']);
             $_SESSION['logged'] = UserController::getById($id);
             $usuario = $_SESSION['logged'];
+            
             $alertMessage = "Datos actualizados correctamente";
             $alertType = "success";
         } else {
@@ -162,6 +164,35 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 <head>
     <?php include("includes/head_tags.php"); ?>
     <script src="./js/gestion.js"></script>
+    <style>
+        /* Estilos para el overlay */
+        .image-container {
+            position: relative;
+            display: inline-block;
+        }
+
+        .image-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            cursor: pointer;
+        }
+
+        .image-overlay span {
+            color: white;
+            text-align: center;
+            padding: 10px;
+        }
+    </style>
 </head>
 
 <body>
@@ -170,6 +201,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     <main>
         <section class="py-3 py-md-5">
+            
             <!-- Mostrar alertas -->
             <?php if (!empty($alertMessage)): ?>
                 <div class="alert alert-<?php echo $alertType; ?> alert-dismissible fade show custom-alert-gestion"
@@ -200,8 +232,17 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                     <div class="row justify-content-center text-center text-md-start mb-3">
                         <!-- Imagen del Usuario -->
                         <div class="mb-4 col-md-4 ">
-                            <img src="<?php echo (!empty($usuario->img_perfil)) ? $usuario->img_perfil : 'assets/img/dummy/dummy_user.png'; ?>"
-                                alt="Foto de perfil del usuario" class="img-fluid rounded-circle img-usuario">
+                            <div class="image-container">
+                                <label for="imagenInput">
+                                    <img src="<?php echo ($usuario->img_perfil != null && file_exists($usuario->img_perfil)) ? $usuario->img_perfil : 'assets/img/dummy/dummy_user.png'; ?>" alt="Foto de perfil"
+                                        class="img-fluid rounded-circle img-usuario" id="imagenPrevisualizacion">
+                                    <div class="image-overlay" id="imageOverlay">
+                                        <span>Cambiar imagen</span>
+                                    </div>
+                                </label>
+                                <input type="file" id="imagenInput" name="imagen_perfil" accept="image/*"
+                                    style="display: none;">
+                            </div>
                         </div>
                         <!-- Información del Usuario -->
                         <div class="col-md-8 d-flex flex-column justify-content-center align-items-md-end">
@@ -285,6 +326,45 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             </div>
         </section>
     </main>
+    <script>
+        // JavaScript para manejar el hover y el click
+        const imageContainer = document.querySelector('.image-container');
+        const imageOverlay = document.getElementById('imageOverlay');
+        const imagenInput = document.getElementById('imagenInput');
+
+        // Mostrar overlay al hacer hover
+        imageContainer.addEventListener('mouseenter', () => {
+            imageOverlay.style.opacity = '1';
+        });
+
+        // Ocultar overlay al quitar el hover
+        imageContainer.addEventListener('mouseleave', () => {
+            imageOverlay.style.opacity = '0';
+        });
+
+        // Click en el overlay abre el selector de archivos
+        imageOverlay.addEventListener('click', (e) => {
+            e.preventDefault();
+            imagenInput.click();
+        });
+
+        // Previsualización de imagen
+        function previsualizarImagen(event) {
+            const input = event.target;
+            if (input.files && input.files[0]) {
+                const reader = new FileReader();
+                
+                reader.onload = function(e) {
+                    document.getElementById('imagenPrevisualizacion').src = e.target.result;
+                };
+                
+                reader.readAsDataURL(input.files[0]);
+            }
+        }
+        
+        // Actualizar previsualización cuando cambia el archivo
+        imagenInput.addEventListener('change', previsualizarImagen);
+    </script>
     <!-- Footer -->
     <?php include("includes/footer.php"); ?>
 </body>

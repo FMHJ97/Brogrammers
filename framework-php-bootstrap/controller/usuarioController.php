@@ -207,6 +207,53 @@ class UserController
         }
     }
 
+    // Modificar2 a diferencia de modificar incluye la imagen de perfil del usuario
+    public static function modificar2($usuario) {
+        try {
+            $conex = new Conexion();
+            $conex->beginTransaction();
+            $result = $conex->prepare("UPDATE usuario SET nombre = ?, apellido1 = ?, apellido2 = ?, 
+                fecha_nac = ?, pais = ?, codigo_postal = ?, telefono = ?, img_perfil = ?,
+                rol = ? WHERE correo_electronico = ?");
+
+            $nombre = $usuario->nombre;
+            $apellido1 = $usuario->apellido1;
+            $apellido2 = $usuario->apellido2;
+            $fecha_nac = $usuario->fecha_nac;
+            $pais = $usuario->pais;
+            $codigo_postal = $usuario->codigo_postal;
+            $telefono = $usuario->telefono;
+            $img_perfil = $usuario->img_perfil;
+            $rol = $usuario->rol;
+            $correo = $usuario->correo;
+
+            $result->bindParam(1, $nombre);
+            $result->bindParam(2, $apellido1);
+            $result->bindParam(3, $apellido2);
+            $result->bindParam(4, $fecha_nac);
+            $result->bindParam(5, $pais);
+            $result->bindParam(6, $codigo_postal);
+            $result->bindParam(7, $telefono);
+            $result->bindParam(8, $img_perfil);
+            $result->bindParam(9, $rol);
+            $result->bindParam(10, $correo);
+
+            $result->execute();
+            if ($result->rowCount()) {
+                $conex->commit();
+                return true;
+            } else {
+                $conex->rollBack();
+                throw new Exception("Failed to update the user in the database.");
+            }
+        } catch (Exception $ex) {
+            error_log("Database Error: " . $ex->getMessage());
+            $conex->rollBack();
+
+            header("location: dificultades.php");
+        }
+    }
+
     public static function getById($id) {
         try {
             $conex = new Conexion();

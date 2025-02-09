@@ -11,12 +11,13 @@ require_once '../framework-php-bootstrap/model/usuario.php';
 // Si hemos pulsado el botón de eliminar una reseña, la eliminamos de la BD.
 if (isset($_POST['delete'])) {
     // Obtenemos los datos necesarios para eliminar la valoración.
-    $id_producto = $_POST['id_producto'];
-    $id_usuario = $_POST['id_usuario'];
-    $fecha = $_POST['fecha'];
+    $id = $_POST['delete'];
+
+    // Obtenemos el ID del producto asociado a la valoración.
+    $id_producto = ValoracionController::findById($id)->id_producto;
 
     // Borramos la valoración de la BD.
-    ValoracionController::delete($id_producto, $id_usuario, $fecha);
+    ValoracionController::delete($id);
 
     // Recargamos la página para mostrar la valoración eliminada.
     header("Location: merch_item.php?id=$id_producto");
@@ -33,7 +34,7 @@ if (isset($_POST['send'])) {
     $comentario = $_POST['value_review'];
 
     // Creamos una nueva valoración.
-    $valoracion = new Valoracion($id_producto, $id_usuario, $fecha, $puntuacion, $titulo, $comentario);
+    $valoracion = new Valoracion(null, $id_producto, $id_usuario, $fecha, $puntuacion, $titulo, $comentario);
 
     // Guardamos la valoración en la BD.
     ValoracionController::insert($valoracion);
@@ -299,11 +300,8 @@ if ($reviews) {
                                     if ($_SESSION['logged']->rol == "admin" || $_SESSION['logged']->rol == "editor") {
                                     ?>
                                         <form action="" method="POST" class="d-flex justify-content-end">
-                                            <button type="submit" class="btn btn-delete-review" name="delete">Eliminar</button>
-                                            <!-- Campos ocultos para las claves primarias de la valoración -->
-                                            <input type="hidden" name="id_producto" value="<?php echo $r->id_producto; ?>">
-                                            <input type="hidden" name="id_usuario" value="<?php echo $r->id_usuario; ?>">
-                                            <input type="hidden" name="fecha" value="<?php echo $r->fecha; ?>">
+                                            <button type="submit" class="btn btn-delete-review" name="delete"
+                                                value="<?php echo $r->id; ?>">Eliminar</button>
                                         </form>
                                     <?php
                                     }
@@ -316,11 +314,8 @@ if ($reviews) {
                                         <!-- Botón para Editar la Valoración -->
                                         <button type="button" class="btn btn-edit-review">Editar</button>
                                         <form action="" method="POST">
-                                            <button type="submit" class="btn btn-delete-review" name="delete">Eliminar</button>
-                                            <!-- Campos ocultos para las claves primarias de la valoración -->
-                                            <input type="hidden" name="id_producto" value="<?php echo $r->id_producto; ?>">
-                                            <input type="hidden" name="id_usuario" value="<?php echo $r->id_usuario; ?>">
-                                            <input type="hidden" name="fecha" value="<?php echo $r->fecha; ?>">
+                                            <button type="submit" class="btn btn-delete-review" name="delete"
+                                                value="<?php echo $r->id; ?>">Eliminar</button>
                                         </form>
                                     </div>
                                     <?php

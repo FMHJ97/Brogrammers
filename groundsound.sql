@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 06-02-2025 a las 22:37:32
+-- Tiempo de generación: 09-02-2025 a las 23:11:34
 -- Versión del servidor: 10.4.32-MariaDB
 -- Versión de PHP: 8.2.12
 
@@ -20,7 +20,6 @@ SET time_zone = "+00:00";
 --
 -- Base de datos: `groundsound`
 --
-drop database if exists `groundsound`;
 CREATE DATABASE IF NOT EXISTS `groundsound` DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci;
 USE `groundsound`;
 
@@ -103,6 +102,14 @@ CREATE TABLE `usuario` (
   `rol` enum('admin','editor','usuario') DEFAULT 'usuario'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
+--
+-- Volcado de datos para la tabla `usuario`
+--
+
+INSERT INTO `usuario` (`id`, `nombre`, `apellido1`, `apellido2`, `correo_electronico`, `clave`, `fecha_nac`, `pais`, `codigo_postal`, `telefono`, `img_perfil`, `newsletter`, `rol`) VALUES
+(10, 'Francisco Manuel', 'Hernández', '', 'francisco-h-j@hotmail.com', '$2y$10$NM8xhOUvxVOZkIb6XZ62bOhhW6T/EKMyF4uWguIilOn2/Inn.8Lna', '1997-01-05', 'España', '14500', '666666666', NULL, 0, 'usuario'),
+(12, 'Admin', 'Admin', '', 'admin@gmail.com', '$2y$10$Sgy9L6ziDqE6Vqc4Ru1Dp.ATFNCApyoYaZahJYhnzTAJzbkyFhbDm', '2000-10-10', 'España', '14500', '666666666', NULL, 0, 'admin');
+
 -- --------------------------------------------------------
 
 --
@@ -110,6 +117,7 @@ CREATE TABLE `usuario` (
 --
 
 CREATE TABLE `valoracion` (
+  `id` int(11) NOT NULL,
   `id_producto` int(11) NOT NULL,
   `id_usuario` int(11) NOT NULL,
   `fecha` datetime NOT NULL,
@@ -117,6 +125,15 @@ CREATE TABLE `valoracion` (
   `titulo` varchar(100) NOT NULL,
   `comentario` text DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Volcado de datos para la tabla `valoracion`
+--
+
+INSERT INTO `valoracion` (`id`, `id_producto`, `id_usuario`, `fecha`, `valoracion`, `titulo`, `comentario`) VALUES
+(1, 1, 10, '2025-02-08 19:37:47', 5, 'Comodidad y estilo en una sola prenda', '<p>Esta camiseta de GroundSound es simplemente perfecta. El algodón 100% se siente suave y ligero, ideal para usar todo el día sin incomodidades. Su diseño minimalista y moderno la hace muy versátil, combinando con cualquier outfit. Además, la calidad del material se nota desde el primer uso. ¡Definitivamente una prenda imprescindible para cualquier amante del buen estilo!</p>'),
+(2, 1, 10, '2025-02-09 17:04:56', 3, 'No está mal', ''),
+(5, 4, 13, '2025-02-09 23:00:20', 5, 'Una recopilación increíble!', '<p>No me arrepiento de esta compra. Lo tiene todo:</p><ul><li data-list=\"bullet\"><span class=\"ql-ui\" contenteditable=\"false\"></span>Grandes éxitos</li><li data-list=\"bullet\"><span class=\"ql-ui\" contenteditable=\"false\"></span>Canciones en vivo</li><li data-list=\"bullet\"><span class=\"ql-ui\" contenteditable=\"false\"></span>Artistas de varios géneros musicales</li></ul>');
 
 --
 -- Índices para tablas volcadas
@@ -153,8 +170,9 @@ ALTER TABLE `usuario`
 -- Indices de la tabla `valoracion`
 --
 ALTER TABLE `valoracion`
-  ADD PRIMARY KEY (`id_producto`,`id_usuario`,`fecha`),
-  ADD KEY `fk_2` (`id_usuario`);
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `fk1` (`id_producto`),
+  ADD KEY `fk2` (`id_usuario`);
 
 --
 -- AUTO_INCREMENT de las tablas volcadas
@@ -182,7 +200,13 @@ ALTER TABLE `records_usuario`
 -- AUTO_INCREMENT de la tabla `usuario`
 --
 ALTER TABLE `usuario`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+
+--
+-- AUTO_INCREMENT de la tabla `valoracion`
+--
+ALTER TABLE `valoracion`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- Restricciones para tablas volcadas
@@ -204,8 +228,8 @@ ALTER TABLE `records_usuario`
 -- Filtros para la tabla `valoracion`
 --
 ALTER TABLE `valoracion`
-  ADD CONSTRAINT `fk_1` FOREIGN KEY (`id_usuario`) REFERENCES `usuario` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
-  ADD CONSTRAINT `fk_2` FOREIGN KEY (`id_producto`) REFERENCES `producto` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
+  ADD CONSTRAINT `fk1` FOREIGN KEY (`id_producto`) REFERENCES `producto` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `fk2` FOREIGN KEY (`id_usuario`) REFERENCES `usuario` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

@@ -1,5 +1,6 @@
 <?php
 class Valoracion {
+    private $id;
     private $id_producto;
     private $id_usuario;
     private $fecha;
@@ -7,7 +8,8 @@ class Valoracion {
     private $titulo;
     private $comentario;
 
-    public function __construct($id_producto, $id_usuario, $fecha, $valoracion, $titulo, $comentario) {
+    public function __construct($id, $id_producto, $id_usuario, $fecha, $valoracion, $titulo, $comentario) {
+        $this->id = $id;
         $this->id_producto = $id_producto;
         $this->id_usuario = $id_usuario;
         $this->fecha = $fecha;
@@ -31,6 +33,14 @@ class Valoracion {
         } else {
             throw new Exception("Property '$name' does not exist or is inaccessible.");
         }
+    }
+
+    public function getId() {
+        return $this->id;
+    }
+
+    public function setId($id) {
+        $this->id = $id;
     }
 
     public function getIdProducto() {

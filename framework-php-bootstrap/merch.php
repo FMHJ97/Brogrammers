@@ -81,15 +81,14 @@ $productos = ProductoController::findAll();
                     // Si hay productos en la BD, los mostramos.
                     foreach ($productos as $p) {
                 ?>
-                        <a href="./merch_item.php?id=<?php echo $p->id; ?>" class="col-12 col-md-4 card card-merch-item all-items <?php echo $p->categoria; ?>"
-                            data-precio="<?php echo $p->precio; ?>" data-nombre="<?php echo $p->nombre; ?>">
-                            <img class="card-img-top" src="./<?php echo $p->imagen; ?>"
-                                alt="<?php echo $p->nombre; ?>">
+                        <form action="./merch_item.php" method="POST" class="col-12 col-md-4 card card-merch-item all-items <?php echo $p->categoria; ?>" data-precio="<?php echo $p->precio; ?>" data-nombre="<?php echo $p->nombre; ?>" onclick="this.submit()">
+                            <input type="hidden" name="id" value="<?php echo $p->id; ?>">
+                            <img class="card-img-top" src="./<?php echo $p->imagen; ?>" alt="<?php echo $p->nombre; ?>">
                             <div class="card-body">
                                 <h3 class="card-title"><?php echo $p->nombre; ?></h3>
                                 <span>€<?php echo $p->precio; ?> EUR</span>
                             </div>
-                        </a>
+                        </form>
                 <?php
                     }
                 } else {

@@ -29,6 +29,7 @@ if (isset($_POST['delete'])) {
 
     // Recargamos la página para mostrar la valoración eliminada.
     header("Location: merch_item.php?id=$id_producto");
+    exit();
 }
 
 // Si hemos escrito una reseña, la guardamos en la BD.
@@ -61,13 +62,19 @@ if (isset($_POST['send'])) {
     }
 
     // Recargamos la página para mostrar la nueva valoración.
-    header("Location: merch_item.php?id=$id_producto");
+    header("Location: merch_item.php");
 }
 
-// Comprobamos si existe un valor id en la variable GET.
-$id = isset($_GET['id']) ? (int) $_GET['id'] : 0;
-// Si el id no es válido, redirigimos a la página de merch.
-if ($id <= 0) {
+// Obtenemos el id del producto seleccionado.
+if (isset($_POST['id'])) {
+    // Si existe, lo guardamos en la variable de sesión.
+    $_SESSION['id_producto_actual'] = $_POST['id'];
+    $id = $_POST['id'];
+} else if (isset($_SESSION['id_producto_actual'])) {
+    // Si no existe, lo obtenemos de la variable de sesión.
+    $id = $_SESSION['id_producto_actual'];
+} else {
+    // Si no existe, redirigimos a la página de merch.
     header("Location: merch.php");
     exit();
 }
@@ -435,15 +442,14 @@ if ($reviews) {
                     // Si hay productos en la BD, los mostramos.
                     foreach ($productosRecomendados as $p) {
                 ?>
-                        <a href="./merch_item.php?id=<?php echo $p->id; ?>" class="col-12 col-md-4 card card-merch-item all-items <?php echo $p->categoria; ?>"
-                            data-precio="<?php echo $p->precio; ?>" data-nombre="<?php echo $p->nombre; ?>">
-                            <img class="card-img-top" src="./<?php echo $p->imagen; ?>"
-                                alt="<?php echo $p->nombre; ?>">
+                        <form action="./merch_item.php" method="POST" class="col-12 col-md-4 card card-merch-item all-items <?php echo $p->categoria; ?>" data-precio="<?php echo $p->precio; ?>" data-nombre="<?php echo $p->nombre; ?>" onclick="this.submit()">
+                            <input type="hidden" name="id" value="<?php echo $p->id; ?>">
+                            <img class="card-img-top" src="./<?php echo $p->imagen; ?>" alt="<?php echo $p->nombre; ?>">
                             <div class="card-body">
                                 <h3 class="card-title"><?php echo $p->nombre; ?></h3>
                                 <span>€<?php echo $p->precio; ?> EUR</span>
                             </div>
-                        </a>
+                        </form>
                 <?php
                     }
                 } else {

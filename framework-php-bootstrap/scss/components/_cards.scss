@@ -8,6 +8,7 @@
   text-decoration: none;
   padding: 0;
   transition: 0.2s ease; // Añade una transición suave al pasar el mouse.
+  cursor: pointer; // Cambia el cursor al pasar el mouse.
 
   // Añade una sombra suave al pasar el mouse.
   &:hover {

@@ -2,6 +2,7 @@ document.addEventListener("DOMContentLoaded", function () {
     // Verifica si la URL contiene los parámetros de alerta
     if (window.location.search.includes('alertMessage') || window.location.search.includes('alertType')) {
         // Limpia los parámetros de la URL sin recargar la página
+        // excepto el parámetro de id.
         history.replaceState(null, null, window.location.pathname);
     }
 

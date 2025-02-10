@@ -25,6 +25,11 @@ switch ($_SERVER["SCRIPT_NAME"]) {
 		$PAGE_TITLE = "Política de Cookies";
 		break;
 
+	case "/cookies2.php":
+		$CURRENT_PAGE = "Política de Cookies";
+		$PAGE_TITLE = "Política de Cookies";
+		break;
+
 	case "/dificultades.php":
 		$CURRENT_PAGE = "Dificultades";
 		$PAGE_TITLE = "Dificultades";

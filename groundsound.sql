@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 09-02-2025 a las 23:11:34
+-- Tiempo de generación: 10-02-2025 a las 09:01:31
 -- Versión del servidor: 10.4.32-MariaDB
 -- Versión de PHP: 8.2.12
 
@@ -132,8 +132,7 @@ CREATE TABLE `valoracion` (
 
 INSERT INTO `valoracion` (`id`, `id_producto`, `id_usuario`, `fecha`, `valoracion`, `titulo`, `comentario`) VALUES
 (1, 1, 10, '2025-02-08 19:37:47', 5, 'Comodidad y estilo en una sola prenda', '<p>Esta camiseta de GroundSound es simplemente perfecta. El algodón 100% se siente suave y ligero, ideal para usar todo el día sin incomodidades. Su diseño minimalista y moderno la hace muy versátil, combinando con cualquier outfit. Además, la calidad del material se nota desde el primer uso. ¡Definitivamente una prenda imprescindible para cualquier amante del buen estilo!</p>'),
-(2, 1, 10, '2025-02-09 17:04:56', 3, 'No está mal', ''),
-(5, 4, 13, '2025-02-09 23:00:20', 5, 'Una recopilación increíble!', '<p>No me arrepiento de esta compra. Lo tiene todo:</p><ul><li data-list=\"bullet\"><span class=\"ql-ui\" contenteditable=\"false\"></span>Grandes éxitos</li><li data-list=\"bullet\"><span class=\"ql-ui\" contenteditable=\"false\"></span>Canciones en vivo</li><li data-list=\"bullet\"><span class=\"ql-ui\" contenteditable=\"false\"></span>Artistas de varios géneros musicales</li></ul>');
+(2, 1, 10, '2025-02-09 17:04:56', 3, 'No está mal', '');
 
 --
 -- Índices para tablas volcadas

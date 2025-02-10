@@ -169,11 +169,6 @@ document.addEventListener("DOMContentLoaded", function () {
         showReview.classList.add("d-none");
         reviewForm.classList.remove("d-none");
     });
-
-    document.querySelector("#btn-cancel-review").addEventListener("click", function () {
-        showReview.classList.remove("d-none");
-        reviewForm.classList.add("d-none");
-    });
 });
 
 // Script para ordenar las reseñas.

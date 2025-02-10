@@ -42,13 +42,14 @@
 
 
 
-<div id="newsBanner" class="text-center alert newsbanner" role="alert">
+<div id="newsBanner" class="container text-center alert newsbanner" role="alert">
     <div class="header">
         <img class="GSImageLogoNews" src="../assets/img/Logo.svg" alt="GroundSound">
         <h1 id="newsTextHeader">
             ¡Novedades!
         </h1>
         <h2> Aquí tienes las últimas actualizaciones.</h2>
+        <button id="closeNewsX" class="close-news-btn" aria-label="Close">✖</button>
     </div>
     <div class="boxNew" id="boxNew">
         <div class="news " id="news">

@@ -1,7 +1,7 @@
 window.onload = function () {
 
 
-  const targetDate = new Date("February 28, 2025 00:00:00").getTime();
+  const targetDate = new Date("April 17, 2025 00:00:00").getTime();
 
   function updateCountdown() {
     const now = new Date().getTime(); // Current time in milliseconds

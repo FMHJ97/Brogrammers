@@ -12,19 +12,19 @@ class ValoracionController
             $conex = new Conexion();
             $conex->beginTransaction();
             $result = $conex->prepare("update valoracion set valoracion = ?, titulo = ?, comentario = ? where id = ?");
-            
+
             // Asignamos primero los valores a variables
             $puntuacion = $valoracion->getValoracion();
             $titulo = $valoracion->getTitulo();
             $comentario = $valoracion->getComentario();
             $id = $valoracion->getId();
-            
+
             // Ahora las variables son pasadas por referencia
             $result->bindParam(1, $puntuacion);
             $result->bindParam(2, $titulo);
             $result->bindParam(3, $comentario);
             $result->bindParam(4, $id);
-            
+
             $result->execute();
             if ($result->rowCount()) {
                 $conex->commit();
@@ -35,7 +35,7 @@ class ValoracionController
         } catch (Exception $ex) {
             echo "<script>window.location.href='dificultades.php'</script>";
 
-         //   die("ERROR en la BD" . $ex->getMessage());
+            //   die("ERROR en la BD" . $ex->getMessage());
         }
     }
 
@@ -50,7 +50,7 @@ class ValoracionController
             $result = $conex->prepare("delete from valoracion where id = ?");
             $result->bindParam(1, $id);
             $result->execute();
-            
+
             if ($result->rowCount()) {
                 $conex->commit();
                 return true;
@@ -60,19 +60,20 @@ class ValoracionController
         } catch (Exception $ex) {
             echo "<script>window.location.href='dificultades.php'</script>";
 
-          //  die("ERROR en la BD" . $ex->getMessage());
+            //  die("ERROR en la BD" . $ex->getMessage());
         }
     }
 
     /*
     Inserta una valoración en la base de datos.
     */
-    public static function insert($valoracion) {
+    public static function insert($valoracion)
+    {
         try {
             $conex = new Conexion();
             $conex->beginTransaction();
             $result = $conex->prepare("insert into valoracion (id, id_producto, id_usuario, fecha, valoracion, titulo, comentario) values (?, ?, ?, ?, ?, ?, ?)");
-            
+
             // Asignamos primero los valores a variables
             $id = $valoracion->getId();
             $id_producto = $valoracion->getIdProducto();
@@ -81,7 +82,7 @@ class ValoracionController
             $puntuacion = $valoracion->getValoracion();
             $titulo = $valoracion->getTitulo();
             $comentario = $valoracion->getComentario();
-            
+
             // Ahora las variables son pasadas por referencia
             $result->bindParam(1, $id);
             $result->bindParam(2, $id_producto);
@@ -90,7 +91,7 @@ class ValoracionController
             $result->bindParam(5, $puntuacion);
             $result->bindParam(6, $titulo);
             $result->bindParam(7, $comentario);
-            
+
             $result->execute();
             if ($result->rowCount()) {
                 $conex->commit();
@@ -101,11 +102,31 @@ class ValoracionController
         } catch (Exception $ex) {
             echo "<script>window.location.href='dificultades.php'</script>";
 
-        //    die("ERROR en la BD" . $ex->getMessage());
+            //    die("ERROR en la BD" . $ex->getMessage());
         }
     }
 
-    public static function findById($id) {
+    public static function getPuntuacionMedia($id_producto)
+    {
+        try {
+            $conex = new Conexion();
+            $result = $conex->query("select avg(valoracion) as media from valoracion where id_producto = '$id_producto'");
+            if ($result->rowCount()) {
+                $fila = $result->fetchObject();
+                $media = $fila->media;
+            } else {
+                $media = false;
+            }
+            return $media;
+        } catch (Exception $ex) {
+            echo "<script>window.location.href='dificultades.php'</script>";
+
+            //  die("ERROR en la BD" . $ex->getMessage());
+        }
+    }
+
+    public static function findById($id)
+    {
         try {
             $conex = new Conexion();
             $result = $conex->query("select * from valoracion where id = '$id'");
@@ -117,9 +138,8 @@ class ValoracionController
             }
             return $valoracion;
         } catch (Exception $ex) {
-          //  die("ERROR en la BD" . $ex->getMessage());
+            //  die("ERROR en la BD" . $ex->getMessage());
             echo "<script>window.location.href='dificultades.php'</script>";
-
         }
     }
 
@@ -143,7 +163,7 @@ class ValoracionController
         } catch (Exception $ex) {
             echo "<script>window.location.href='dificultades.php'</script>";
 
-         //   die("ERROR en la BD" . $ex->getMessage());
+            //   die("ERROR en la BD" . $ex->getMessage());
         }
     }
 
@@ -166,8 +186,7 @@ class ValoracionController
         } catch (Exception $ex) {
             echo "<script>window.location.href='dificultades.php'</script>";
 
-         //   die("ERROR en la BD" . $ex->getMessage());
+            //   die("ERROR en la BD" . $ex->getMessage());
         }
     }
-
 }

@@ -530,7 +530,8 @@ if ($reviews) {
 
             // Tras cargar la páginas, se desplaza hasta el formulario de comentarios.
             document.getElementById("form-review").scrollIntoView({
-                behavior: "smooth"
+                behavior: "smooth",
+                block: "start"
             });
         <?php
         }

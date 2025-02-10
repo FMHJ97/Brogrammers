@@ -8,7 +8,7 @@ $google_data = $_SESSION['google_data'] ?? [];
 
 // Exytraigo los datos de la sesión aquí para poder usarlos en el formulario, no los pongo directamente para confirmar que si alguno está vacío se pone vacío. (el email sdebería estar siempre)
 $name = $google_data['name'] ?? '';  //Si $google_data['name'] no existe o es null, se asigna '' (una cadena vacía) a $name.
-$surname1 = $google_data['family_name'] ?? ''; 
+$surname1 = $google_data['family_name'] ?? '';
 $email = $google_data['email'] ?? '';
 
 
@@ -116,6 +116,14 @@ if (isset($_POST["submit"])) {
         $errores[] = "Las contraseñas no coinciden";
     }
 
+
+    // Validación CAPTCHA
+    if (empty($_POST["captcha"])) {
+        $errores[] = "Debes introducir el CAPTCHA";
+    } else if ($_POST["captcha"] != $_SESSION['captcha_text']) {
+        $errores[] = "CAPTCHA incorrecto";
+    }
+
     // Validación términos
     if (!isset($_POST["terms"])) {
         $errores[] = "Debes aceptar los términos y condiciones";
@@ -181,153 +189,153 @@ if (isset($_POST["submit"])) {
                                 <?php echo $errorMessage; ?>
                             </div>
                         <?php endif; ?>
-                    </div>
-                    <!-- Encabezado -->
-                    <div class="row">
-                        <h1>Crear cuenta</h1>
-                        <div class="mb-3 col d-flex flex-column flex-md-row mb-md-4">
-                            <p class="mb-0">¿Ya tienes una cuenta?&nbsp;</p>
-                            <!-- Enlace a Iniciar Sesión -->
-                            <a href="login.php">Inicia sesión</a>
                         </div>
-                    </div>
-                    <!-- Formulario -->
-                    <form action="" method="post">
-                        <!-- Nombre Input-->
-                        <div class="mt-3 mb-3 row">
-                            <div class="mb-3 col-12 col-md-6 mb-md-0">
-                                <label for="name">Nombre</label><span> *</span>
-                                <input type="text" class="form-control" id="name" placeholder="Introduzca su nombre"
-                                    name="name" required 
-                                    value="<?php echo isset($_POST['name']) ? htmlspecialchars($_POST['name']) : htmlspecialchars($name); ?>">
+                        <!-- Encabezado -->
+                        <div class="row">
+                            <h1>Crear cuenta</h1>
+                            <div class="mb-3 col d-flex flex-column flex-md-row mb-md-4">
+                                <p class="mb-0">¿Ya tienes una cuenta?&nbsp;</p>
+                                <!-- Enlace a Iniciar Sesión -->
+                                <a href="login.php">Inicia sesión</a>
+                            </div>
+                        </div>
+                        <!-- Formulario -->
+                        <form action="" method="post">
+                            <!-- Nombre Input-->
+                            <div class="mt-3 mb-3 row">
+                                <div class="mb-3 col-12 col-md-6 mb-md-0">
+                                    <label for="name">Nombre</label><span> *</span>
+                                    <input type="text" class="form-control" id="name" placeholder="Introduzca su nombre"
+                                        name="name" required
+                                        value="<?php echo isset($_POST['name']) ? htmlspecialchars($_POST['name']) : htmlspecialchars($name); ?>">
 
+                                </div>
                             </div>
-                        </div>
-                        
-                        <!-- Primer y Segundo apellido Input-->
-                        <div class="mt-3 mb-3 row">
-                            <!-- Primer apellido -->
-                            <div class="mb-3 col-12 col-md-6 mb-md-0">
-                                <label for="surname1">Primer Apellido</label><span> *</span>
-                                <input type="text" class="form-control" id="surname1"
-                                    placeholder="Introduzca su primer apellido" name="surname1" required
-                                    value="<?php echo isset($_POST['surname1']) ? htmlspecialchars($_POST['surname1']) : htmlspecialchars($surname1); ?>">
 
+                            <!-- Primer y Segundo apellido Input-->
+                            <div class="mt-3 mb-3 row">
+                                <!-- Primer apellido -->
+                                <div class="mb-3 col-12 col-md-6 mb-md-0">
+                                    <label for="surname1">Primer Apellido</label><span> *</span>
+                                    <input type="text" class="form-control" id="surname1"
+                                        placeholder="Introduzca su primer apellido" name="surname1" required
+                                        value="<?php echo isset($_POST['surname1']) ? htmlspecialchars($_POST['surname1']) : htmlspecialchars($surname1); ?>">
+
+                                </div>
+                                <!-- Segundo apellido -->
+                                <div class="col-12 col-md-6">
+                                    <label for="surname2">Segundo Apellido</label>
+                                    <input type="text" class="form-control" id="surname2"
+                                        placeholder="Introduzca su segundo apellido (opcional)" name="surname2"
+                                        value="<?php echo isset($_POST['surname2']) ? htmlspecialchars($_POST['surname2']) : ''; ?>">
+                                </div>
                             </div>
-                            <!-- Segundo apellido -->
-                            <div class="col-12 col-md-6">
-                                <label for="surname2">Segundo Apellido</label>
-                                <input type="text" class="form-control" id="surname2"
-                                    placeholder="Introduzca su segundo apellido (opcional)" name="surname2"
-                                    value="<?php echo isset($_POST['surname2']) ? htmlspecialchars($_POST['surname2']) : ''; ?>">
+
+                            <!-- Fecha y País Input -->
+                            <div class="mt-3 mb-3 row">
+                                <!-- Fecha nacimiento -->
+                                <div class="mb-3 col-12 col-md-6 mb-md-0">
+                                    <label for="birth">Fecha de Nacimiento</label><span> *</span>
+                                    <input type="date" class="form-control" id="birth"
+                                        placeholder="Introduzca su fecha de nacimiento" name="birth" required
+                                        value="<?php echo isset($_POST['birth']) ? htmlspecialchars($_POST['birth']) : ''; ?>">
+                                </div>
+                                <!-- País -->
+                                <div class="col-12 col-md-6">
+                                    <label for="country">País</label><span> *</span>
+                                    <select class="form-control" id="country" name="country" required>
+                                        <option value="">Seleccione un país</option>
+                                        <?php foreach ($paisesValidos as $pais):
+                                            $selected = (isset($_POST['country']) && $_POST['country'] === $pais) ? 'selected' : '';
+                                        ?>
+                                            <option value="<?php echo htmlspecialchars($pais); ?>" <?php echo $selected; ?>>
+                                                <?php echo htmlspecialchars($pais); ?>
+                                            </option>
+                                        <?php endforeach; ?>
+                                    </select>
+                                </div>
                             </div>
-                        </div>
-                        
-                        <!-- Fecha y País Input -->
-                        <div class="mt-3 mb-3 row">
-                            <!-- Fecha nacimiento -->
-                            <div class="mb-3 col-12 col-md-6 mb-md-0">
-                                <label for="birth">Fecha de Nacimiento</label><span> *</span>
-                                <input type="date" class="form-control" id="birth"
-                                    placeholder="Introduzca su fecha de nacimiento" name="birth" required
-                                    value="<?php echo isset($_POST['birth']) ? htmlspecialchars($_POST['birth']) : ''; ?>">
+
+                            <!-- Código postal y Teléfono Input -->
+                            <div class="mt-3 mb-3 row">
+                                <!-- Código postal -->
+                                <div class="mb-3 col-12 col-md-6 mb-md-0">
+                                    <label for="postal">Código Postal</label><span> *</span>
+                                    <input type="text" class="form-control" id="postal"
+                                        placeholder="Introduzca su código postal" name="postal" required
+                                        value="<?php echo isset($_POST['postal']) ? htmlspecialchars($_POST['postal']) : ''; ?>">
+                                </div>
+                                <!-- Teléfono -->
+                                <div class="col-12 col-md-6">
+                                    <label for="phone">Teléfono</label><span> *</span>
+                                    <input type="text" class="form-control" id="phone"
+                                        placeholder="Introduzca su teléfono" name="phone" required
+                                        value="<?php echo isset($_POST['phone']) ? htmlspecialchars($_POST['phone']) : ''; ?>">
+                                </div>
                             </div>
-                            <!-- País -->
-                            <div class="col-12 col-md-6">
-                                <label for="country">País</label><span> *</span>
-                                <select class="form-control" id="country" name="country" required>
-                                    <option value="">Seleccione un país</option>
-                                    <?php foreach ($paisesValidos as $pais): 
-                                        $selected = (isset($_POST['country']) && $_POST['country'] === $pais) ? 'selected' : '';
-                                    ?>
-                                        <option value="<?php echo htmlspecialchars($pais); ?>" <?php echo $selected; ?>>
-                                            <?php echo htmlspecialchars($pais); ?>
-                                        </option>
-                                    <?php endforeach; ?>
-                                </select>
+
+                            <!-- Email Input -->
+                            <div class="mb-3">
+                                <label for="email">Correo electrónico</label><span> *</span>
+                                <input type="email" class="form-control" id="email"
+                                    placeholder="Introduzca su correo electrónico" name="email" required
+                                    value="<?php echo isset($_POST['email']) ? htmlspecialchars($_POST['email']) : htmlspecialchars($email); ?>">
                             </div>
-                        </div>
-                        
-                        <!-- Código postal y Teléfono Input -->
-                        <div class="mt-3 mb-3 row">
-                            <!-- Código postal -->
-                            <div class="mb-3 col-12 col-md-6 mb-md-0">
-                                <label for="postal">Código Postal</label><span> *</span>
-                                <input type="text" class="form-control" id="postal"
-                                    placeholder="Introduzca su código postal" name="postal" required
-                                    value="<?php echo isset($_POST['postal']) ? htmlspecialchars($_POST['postal']) : ''; ?>">
+
+                            <!-- Password y Confirm Password Input -->
+                            <div class="mt-3 mb-3 row">
+                                <!-- Password -->
+                                <div class="mb-3 col-12 col-md-6 mb-md-0">
+                                    <label for="pwd">Contraseña</label><span> *</span>
+                                    <input type="password" class="form-control" id="pwd"
+                                        placeholder="Introduzca su contraseña" name="pswd" required
+                                        pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*\W).{8,}">
+                                </div>
+                                <!-- Confirm Password -->
+                                <div class="col-12 col-md-6">
+                                    <label for="pwd2">Confirmar contraseña</label><span> *</span>
+                                    <input type="password" class="form-control" id="pwd2"
+                                        placeholder="Confirme su contraseña" name="pswd2" required>
+                                </div>
                             </div>
-                            <!-- Teléfono -->
-                            <div class="col-12 col-md-6">
-                                <label for="phone">Teléfono</label><span> *</span>
-                                <input type="text" class="form-control" id="phone"
-                                    placeholder="Introduzca su teléfono" name="phone" required
-                                    value="<?php echo isset($_POST['phone']) ? htmlspecialchars($_POST['phone']) : ''; ?>">
+
+                            <!-- Password Help -->
+                            <div class="mb-3">
+                                <small id="passwordHelp" class="form-help">La contraseña debe tener al menos 8
+                                    caracteres, una mayúscula, una minúscula y un caracter no alfanumérico.</small>
                             </div>
-                        </div>
-                        
-                        <!-- Email Input -->
-                        <div class="mb-3">
-                            <label for="email">Correo electrónico</label><span> *</span>
-                            <input type="email" class="form-control" id="email"
-                                placeholder="Introduzca su correo electrónico" name="email" required
-                                value="<?php echo isset($_POST['email']) ? htmlspecialchars($_POST['email']) : htmlspecialchars($email); ?>">
-                        </div>
-                        
-                        <!-- Password y Confirm Password Input -->
-                        <div class="mt-3 mb-3 row">
-                            <!-- Password -->
-                            <div class="mb-3 col-12 col-md-6 mb-md-0">
-                                <label for="pwd">Contraseña</label><span> *</span>
-                                <input type="password" class="form-control" id="pwd"
-                                    placeholder="Introduzca su contraseña" name="pswd" required
-                                    pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*\W).{8,}">
+
+                            <!-- Captcha -->
+                            <div class="mb-3">
+                                <label for="captcha">Captcha</label><span> *</span>
+                                <img src="/includes/genCaptchaMath.php" alt="CaptchaImg" class="captcha" id="img-codigo">
+                                <input type="text" class="form-control" id="captcha" placeholder="Introduzca el captcha"
+                                    name="captcha" required>
                             </div>
-                            <!-- Confirm Password -->
-                            <div class="col-12 col-md-6">
-                                <label for="pwd2">Confirmar contraseña</label><span> *</span>
-                                <input type="password" class="form-control" id="pwd2"
-                                    placeholder="Confirme su contraseña" name="pswd2" required>
+
+                            <!-- News checkbox-->
+                            <div class="mb-3 form-check">
+                                <label class="form-check-label">
+                                    <input class="form-check-input" type="checkbox" name="news"
+                                        <?php echo (isset($_POST['news'])) ? 'checked' : ''; ?>>
+                                    Deseo recibir noticias e información sobre GroundSound Festival.c
+                                </label>
                             </div>
-                        </div>
-                        
-                        <!-- Password Help -->
-                        <div class="mb-3">
-                            <small id="passwordHelp" class="form-help">La contraseña debe tener al menos 8
-                                caracteres, una mayúscula, una minúscula y un caracter no alfanumérico.</small>
-                        </div>
-                        
-                        <!-- Captcha -->
-                        <div class="mb-3">
-                            <label for="captcha">Captcha</label><span> *</span>
-                            <img src="/includes/genCaptchaMath.php" alt="CaptchaImg" class="captcha" id="img-codigo">
-                            <input type="text" class="form-control" id="captcha" placeholder="Introduzca el captcha"
-                                name="captcha" required>
-                        </div>
-                        
-                        <!-- News checkbox-->
-                        <div class="mb-3 form-check">
-                            <label class="form-check-label">
-                                <input class="form-check-input" type="checkbox" name="news" 
-                                    <?php echo (isset($_POST['news'])) ? 'checked' : ''; ?>> 
-                                Deseo recibir noticias e información sobre GroundSound Festival.c
-                            </label>
-                        </div>
-                        
-                        <!-- Terms checkbox-->
-                        <div class="mb-5 form-check">
-                            <label class="form-check-label">
-                                <input class="form-check-input" type="checkbox" name="terms" id="termsCheckbox" 
-                                    <?php echo (isset($_POST['terms'])) ? 'checked' : ''; ?>> 
-                                Acepto los <a href="legal.php">Términos de Uso</a>.
-                            </label>
-                        </div>
-                        
-                        <!-- Botón Crear Cuenta -->
-                        <div class="d-flex flex-column ">
-                            <button type="submit" name="submit" class="btn" id="btnCrearCuenta" disabled>Crear cuenta</button>
-                        </div>
-                    </form>
+
+                            <!-- Terms checkbox-->
+                            <div class="mb-5 form-check">
+                                <label class="form-check-label">
+                                    <input class="form-check-input" type="checkbox" name="terms" id="termsCheckbox"
+                                        <?php echo (isset($_POST['terms'])) ? 'checked' : ''; ?>>
+                                    Acepto los <a href="legal.php">Términos de Uso</a>.
+                                </label>
+                            </div>
+
+                            <!-- Botón Crear Cuenta -->
+                            <div class="d-flex flex-column ">
+                                <button type="submit" name="submit" class="btn" id="btnCrearCuenta" disabled>Crear cuenta</button>
+                            </div>
+                        </form>
                 </div>
         </section>
     </main>

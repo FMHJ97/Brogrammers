@@ -9,8 +9,6 @@
   var closeNewsBanner = document.getElementById("closenews"); // Botón para cerrar el banner de novedades
   var blockWeb = document.getElementById("blockWeb"); // Contenedor de bloqueo de la web
 
-
-
   // Buscamos la cookie "groundSoundCookie", si no está en el cliente decidimos mostrar el contenedor de la alerta
   if (!getCookie("groundSoundCookie")) {
     cookieAlert.classList.add("show");
@@ -21,7 +19,8 @@
   else if (getCookie("groundSoundCookie") == "true") {
     if (!getCookie("gsNews") || getCookie("gsNews") === "false") {
       newsBanner.classList.add("show");
-      
+      blockWeb.classList.add("show"); // Bloquea la navegación
+      document.body.classList.add("banner-visible"); // Bloquea el scroll del fondo
       setCookie("gsNews", false, 30); // Establecemos la cookie de novedades con valor false
     }
   }
@@ -31,14 +30,15 @@
   acceptCookies.addEventListener("click", function () {
     setCookie("groundSoundCookie", true, 365);
     setCookie("gsNews", false, 30); // Establecemos la cookie de novedades con valor false
-    
+
     cookieAlert.classList.remove("show");
     blockWeb.classList.remove("show");
     document.body.classList.remove("banner-visible"); // Desbloquear el scroll del fondo
 
-
     // Mostrar el banner de novedades si la cookie gsNews no existe o es false
     if (!getCookie("gsNews") || getCookie("gsNews") === "false") {
+      blockWeb.classList.add("show"); // Bloquea la navegación
+      document.body.classList.add("banner-visible"); // Bloquea el scroll del fondo
       newsBanner.classList.add("show");
     }
   });
@@ -55,8 +55,9 @@
   if (closeNewsBanner) {
     closeNewsBanner.addEventListener("click", function () {
       setCookie("gsNews", true, 30); // Establecemos la cookie de novedades con valor true
-      
       newsBanner.classList.remove("show");
+      blockWeb.classList.remove("show"); // Desbloquea la navegación
+      document.body.classList.remove("banner-visible"); // Desbloquea el scroll
     });
   }
 

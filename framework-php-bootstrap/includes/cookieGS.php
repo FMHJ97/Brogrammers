@@ -35,7 +35,7 @@
             Rechazar
         </button>
     </div>
-    <a class="enlaceCookie" href="./cookies.php" target="_blank" rel="noopener noreferrer">Política de Cookies</a>
+    <a class="enlaceCookie" href="./cookies2.php" target="_blank" rel="noopener noreferrer">Política de Cookies</a>
 </div>
 <div class="blockWeb" id="blockWeb"></div>
 

@@ -1,5 +1,4 @@
-.cookieBanner,
-.newsbanner {
+.cookieBanner {
   display: block;
   position: fixed;
   bottom: 0;
@@ -17,15 +16,30 @@
 }
 
 .newsbanner {
-  height: 60vh; // Ajusta la altura según necesites
-  overflow-y: auto; // Permite el
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 80vw; // Ajusta el tamaño según lo necesites
+  //max-width: 900px; // Evita que sea demasiado grande
+  height: 70vh;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);
+  background: $fondoCookie;
+  overflow: auto;
+  display: none; // Lo ocultamos por defecto
+  z-index: 999;
 }
 
-.cookieBanner.show,
-.newsbanner.show {
+.cookieBanner.show {
   opacity: 1;
   transform: translateY(0%);
   transition-delay: 1000ms;
+}
+
+.newsbanner.show {
+  display: block;
 }
 
 body.banner-visible {

@@ -160,6 +160,10 @@ switch ($_SERVER["SCRIPT_NAME"]) {
 		$PAGE_TITLE = "GroundSound Festival";
 }
 
+
+
+
+
 require_once '../framework-php-bootstrap/controller/productoController.php';
 require_once '../framework-php-bootstrap/model/producto.php';
 require_once '../framework-php-bootstrap/controller/usuarioController.php';
@@ -191,3 +195,16 @@ $google_client->addScope('profile');
 
 //start session on web page
 session_start();
+
+
+
+
+
+
+// Verifico si la página actual NO es index.php y le aplico a las demás el bloqueo de cookies
+if ($_SERVER['PHP_SELF'] != '/index.php') {
+	if (!isset($_COOKIE['groundSoundCookie'])) {
+		header('Location: index.php');
+		exit();
+	}
+}

@@ -1,15 +1,17 @@
 <?php
 
+session_start();
+
 // Genero los números aleatorios.
 $num1 = rand(1, 9);
 $num2 = rand(1, 9);
-$operator = rand(0, 1) ? '+' : '-';
+$operator = rand(0, 1) ? '+' : '-'; //No meto multiplicación ni división para evitar números grandes o problemas de redondeo en la división o cosas así.
 
 //Meto el resultado en el captcha
 $captcha_result = ($operator === '+') ? ($num1 + $num2) : ($num1 - $num2);
 $_SESSION['captcha_text'] = $captcha_result;
 
-// Crear imagen
+// Creo imagen
 $image = imagecreatetruecolor(200, 50);
 imageantialias($image, true);
 

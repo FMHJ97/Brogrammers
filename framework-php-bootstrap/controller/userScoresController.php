@@ -20,8 +20,8 @@ class UserScoresController
             }
             return $scores;
         } catch (Exception $ex) {
-            die("ERROR en la BD" . $ex->getMessage());
-            header("location: dificultades.php");
+            //   die("ERROR en la BD" . $ex->getMessage());
+            echo "<script>window.location.href='dificultades.php'</script>";
         }
     }
 
@@ -39,8 +39,8 @@ class UserScoresController
             }
             return $scores;
         } catch (Exception $ex) {
-            die("ERROR en la BD" . $ex->getMessage());
-            header("location: dificultades.php");
+            //  die("ERROR en la BD" . $ex->getMessage());
+            echo "<script>window.location.href='dificultades.php'</script>";
         }
     }
 
@@ -58,8 +58,8 @@ class UserScoresController
             }
             return $scores;
         } catch (Exception $ex) {
-            die("ERROR en la BD" . $ex->getMessage());
-            header("location: dificultades.php");
+            //  die("ERROR en la BD" . $ex->getMessage());
+            echo "<script>window.location.href='dificultades.php'</script>";
         }
     }
 
@@ -77,9 +77,8 @@ class UserScoresController
             }
             return $scores;
         } catch (Exception $ex) {
-            die("ERROR en la BD" . $ex->getMessage());
-            header("location: dificultades.php");
+            // die("ERROR en la BD" . $ex->getMessage());
+            echo "<script>window.location.href='dificultades.php'</script>";
         }
     }
-    
 }

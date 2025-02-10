@@ -53,7 +53,9 @@ class FotoController
 
             return $foto;
         } catch (Exception $ex) {
-            die("ERROR en la BD" . $ex->getMessage());
+            echo "<script>window.location.href='dificultades.php'</script>";
+
+           // die("ERROR en la BD" . $ex->getMessage());
         }
     }
 
@@ -68,7 +70,9 @@ class FotoController
             } else
                 return false;
         } catch (Exception $ex) {
-            die("ERROR en la BD" . $ex->getLine());
+            echo "<script>window.location.href='dificultades.php'</script>";
+
+         //   die("ERROR en la BD" . $ex->getLine());
         }
     }
 
@@ -98,7 +102,9 @@ class FotoController
 
             return $fotos;
         } catch (Exception $ex) {
-            die("ERROR en la BD: " . $ex->getMessage());
+            echo "<script>window.location.href='dificultades.php'</script>";
+
+          //  die("ERROR en la BD: " . $ex->getMessage());
         }
     }
 
@@ -128,7 +134,9 @@ class FotoController
 
             return $fotos;
         } catch (Exception $ex) {
-            die("ERROR en la BD: " . $ex->getMessage());
+            echo "<script>window.location.href='dificultades.php'</script>";
+
+        //    die("ERROR en la BD: " . $ex->getMessage());
         }
     }
 
@@ -158,7 +166,9 @@ class FotoController
 
             return $fotos;
         } catch (Exception $ex) {
-            die("ERROR en la BD: " . $ex->getMessage());
+            echo "<script>window.location.href='dificultades.php'</script>";
+
+           // die("ERROR en la BD: " . $ex->getMessage());
         }
     }
 
@@ -178,8 +188,10 @@ class FotoController
 
             return true;
         } catch (Exception $ex) {
-            error_log("Database Error: " . $ex->getMessage());
+            //error_log("Database Error: " . $ex->getMessage());
             $conex->rollBack();
+            echo "<script>window.location.href='dificultades.php'</script>";
+
             return false;
         }
     }

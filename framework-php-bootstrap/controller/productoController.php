@@ -25,7 +25,9 @@ class ProductoController
             return false;
         }
     } catch (Exception $ex) {
-        die("ERROR en la BD" . $ex->getMessage());
+        echo "<script>window.location.href='dificultades.php'</script>";
+
+       // die("ERROR en la BD" . $ex->getMessage());
     }
 }
 
@@ -59,7 +61,9 @@ public static function update($producto)
             return false;
         }
     } catch (Exception $ex) {
-        die("ERROR en la BD" . $ex->getMessage());
+        echo "<script>window.location.href='dificultades.php'</script>";
+
+     //   die("ERROR en la BD" . $ex->getMessage());
     }
 }
 
@@ -92,7 +96,9 @@ public static function update($producto)
                 return false;
             }
         } catch (Exception $ex) {
-            die("ERROR en la BD" . $ex->getMessage());
+            echo "<script>window.location.href='dificultades.php'</script>";
+
+        //    die("ERROR en la BD" . $ex->getMessage());
         }
     }  
 
@@ -111,7 +117,9 @@ public static function update($producto)
 
             return $producto;
         } catch (Exception $ex) {
-            die("ERROR en la BD" . $ex->getMessage());
+            echo "<script>window.location.href='dificultades.php'</script>";
+
+          //  die("ERROR en la BD" . $ex->getMessage());
         }
     }
 
@@ -130,7 +138,9 @@ public static function update($producto)
             }
             return $productos;
         } catch (Exception $ex) {
-            die("ERROR en la BD" . $ex->getMessage());
+            echo "<script>window.location.href='dificultades.php'</script>";
+
+         //   die("ERROR en la BD" . $ex->getMessage());
         }
     }
 }

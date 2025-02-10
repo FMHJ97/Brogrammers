@@ -33,7 +33,9 @@ class ValoracionController
                 return false;
             }
         } catch (Exception $ex) {
-            die("ERROR en la BD" . $ex->getMessage());
+            echo "<script>window.location.href='dificultades.php'</script>";
+
+         //   die("ERROR en la BD" . $ex->getMessage());
         }
     }
 
@@ -56,7 +58,9 @@ class ValoracionController
                 return false;
             }
         } catch (Exception $ex) {
-            die("ERROR en la BD" . $ex->getMessage());
+            echo "<script>window.location.href='dificultades.php'</script>";
+
+          //  die("ERROR en la BD" . $ex->getMessage());
         }
     }
 
@@ -95,7 +99,9 @@ class ValoracionController
                 return false;
             }
         } catch (Exception $ex) {
-            die("ERROR en la BD" . $ex->getMessage());
+            echo "<script>window.location.href='dificultades.php'</script>";
+
+        //    die("ERROR en la BD" . $ex->getMessage());
         }
     }
 
@@ -111,7 +117,9 @@ class ValoracionController
             }
             return $valoracion;
         } catch (Exception $ex) {
-            die("ERROR en la BD" . $ex->getMessage());
+          //  die("ERROR en la BD" . $ex->getMessage());
+            echo "<script>window.location.href='dificultades.php'</script>";
+
         }
     }
 
@@ -133,7 +141,9 @@ class ValoracionController
 
             return $valoraciones;
         } catch (Exception $ex) {
-            die("ERROR en la BD" . $ex->getMessage());
+            echo "<script>window.location.href='dificultades.php'</script>";
+
+         //   die("ERROR en la BD" . $ex->getMessage());
         }
     }
 
@@ -154,7 +164,9 @@ class ValoracionController
             }
             return $valoraciones;
         } catch (Exception $ex) {
-            die("ERROR en la BD" . $ex->getMessage());
+            echo "<script>window.location.href='dificultades.php'</script>";
+
+         //   die("ERROR en la BD" . $ex->getMessage());
         }
     }
 

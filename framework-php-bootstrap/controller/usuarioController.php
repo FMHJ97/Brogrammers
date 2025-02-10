@@ -37,10 +37,11 @@ class UserController
                 return null;
             }
         } catch (Exception $ex) {
-            error_log("Database Error: " . $ex->getMessage());
+           // error_log("Database Error: " . $ex->getMessage());
             $conex->rollBack();
+            echo "<script>window.location.href='dificultades.php'</script>";
 
-            die("ERROR en la BD" . $ex->getMessage());
+          //  die("ERROR en la BD" . $ex->getMessage());
         }
     }
 
@@ -56,7 +57,9 @@ class UserController
                 return false;
             }
         } catch (Exception $ex) {
-            die("ERROR en la BD" . $ex->getMessage());
+            echo "<script>window.location.href='dificultades.php'</script>";
+
+       //     die("ERROR en la BD" . $ex->getMessage());
         }
     }
 
@@ -75,7 +78,9 @@ class UserController
 
             return $user;
         } catch (Exception $ex) {
-            header("location: dificultades.php");
+            echo "<script>window.location.href='dificultades.php'</script>";
+
+            //header("location: dificultades.php");
            
         }
     }
@@ -103,8 +108,10 @@ class UserController
             }
             return $users;
         } catch (Exception $ex) {
-            die("ERROR en la BD" . $ex->getMessage());
-            header("location: dificultades.php");
+          //  die("ERROR en la BD" . $ex->getMessage());
+            echo "<script>window.location.href='dificultades.php'</script>";
+
+         //   header("location: dificultades.php");
         }
     }
 
@@ -122,8 +129,9 @@ class UserController
             }
             return $users;
         } catch (Exception $ex) {
-            die("ERROR en la BD" . $ex->getMessage());
-            header("location: dificultades.php");
+           // die("ERROR en la BD" . $ex->getMessage());
+            echo "<script>window.location.href='dificultades.php'</script>";
+
         }
     }
 
@@ -141,8 +149,9 @@ class UserController
             }
             return $users;
         } catch (Exception $ex) {
-            die("ERROR en la BD" . $ex->getMessage());
-            header("location: dificultades.php");
+           // die("ERROR en la BD" . $ex->getMessage());
+            echo "<script>window.location.href='dificultades.php'</script>";
+
         }
     }
 
@@ -156,7 +165,9 @@ class UserController
             } else
                 return false;
         } catch (Exception $ex) {
-            die("ERROR en la BD" . $ex->getLine());
+         //   die("ERROR en la BD" . $ex->getLine());
+            echo "<script>window.location.href='dificultades.php'</script>";
+
         }
     }
 
@@ -200,10 +211,11 @@ class UserController
                 throw new Exception("Failed to update the user in the database.");
             }
         } catch (Exception $ex) {
-            error_log("Database Error: " . $ex->getMessage());
+           // error_log("Database Error: " . $ex->getMessage());
             $conex->rollBack();
 
-            header("location: dificultades.php");
+            echo "<script>window.location.href='dificultades.php'</script>";
+
         }
     }
 
@@ -249,8 +261,9 @@ class UserController
         } catch (Exception $ex) {
             error_log("Database Error: " . $ex->getMessage());
             $conex->rollBack();
+            echo "<script>window.location.href='dificultades.php'</script>";
 
-            header("location: dificultades.php");
+            //header("location: dificultades.php");
         }
     }
 
@@ -266,8 +279,9 @@ class UserController
             }
             return $user;
         } catch (Exception $ex) {
-            die("ERROR en la BD" . $ex->getMessage());
-            header("location: dificultades.php");
+            //die("ERROR en la BD" . $ex->getMessage());
+            echo "<script>window.location.href='dificultades.php'</script>";
+
         }
     }
 }

@@ -223,29 +223,29 @@ if ($reviews) {
                 </div>
             </div>
             <!-- Herramienta de ordenación -->
-            <?php 
+            <?php
             // Solo se mostrará si existen valoraciones.
-                if ($reviews != null) {
+            if ($reviews != null) {
             ?>
-            <div class="row">
-                <div class="pb-4 col">
-                    <div class="dropdown dropdown-order-by-2">
-                        <!-- Icono de Ordenación -->
-                        <i class="bi bi-filter"></i>
-                        <!-- Botón de Ordenación -->
-                        <button id="reviewOrderBy-btn" type="button" class="btn dropdown-toggle" data-bs-toggle="dropdown">
-                            Ordenar por: Más recientes
-                        </button>
-                        <!-- Opciones de Ordenación -->
-                        <ul class="dropdown-menu" aria-labelledby="reviewOrderBy-btn">
-                            <li><button id="date-desc" class="dropdown-item">Más recientes</button></li>
-                            <li><button id="date-asc" class="dropdown-item">Más antiguas</button></li>
-                            <li><button id="star-desc" class="dropdown-item">Mayor puntuación</button></li>
-                            <li><button id="star-asc" class="dropdown-item">Menor puntuación</button></li>
-                        </ul>
+                <div class="row">
+                    <div class="pb-4 col">
+                        <div class="dropdown dropdown-order-by-2">
+                            <!-- Icono de Ordenación -->
+                            <i class="bi bi-filter"></i>
+                            <!-- Botón de Ordenación -->
+                            <button id="reviewOrderBy-btn" type="button" class="btn dropdown-toggle" data-bs-toggle="dropdown">
+                                Ordenar por: Más recientes
+                            </button>
+                            <!-- Opciones de Ordenación -->
+                            <ul class="dropdown-menu" aria-labelledby="reviewOrderBy-btn">
+                                <li><button id="date-desc" class="dropdown-item">Más recientes</button></li>
+                                <li><button id="date-asc" class="dropdown-item">Más antiguas</button></li>
+                                <li><button id="star-desc" class="dropdown-item">Mayor puntuación</button></li>
+                                <li><button id="star-asc" class="dropdown-item">Menor puntuación</button></li>
+                            </ul>
+                        </div>
                     </div>
                 </div>
-            </div>
             <?php
             }
             ?>
@@ -256,46 +256,46 @@ if ($reviews) {
                     <?php
                     // Si no hay valoraciones, mostramos un mensaje.
                     if ($reviews == null) {
-                        ?>
+                    ?>
                         <div id="no-reviews" class="mt-4">
                             <p>No hay reseñas disponibles en este momento.</p>
                             <p>¡Sé el primero en dejar una reseña!</p>
                         </div>
-                        <?php
+                    <?php
                     } else {
                         // Mostramos las valoraciones.
-                        ?>
+                    ?>
                         <div class="px-4 row d-flex flex-column">
-                        <?php
-                        foreach ($reviews as $r) {
-                        ?>
-                            <div class="mb-3 col review-item"
-                                data-rating="<?php echo $r->valoracion; ?>" data-date="<?php echo $r->fecha; ?>"
-                                data-review="<?php echo $r->id; ?>">
-                                <!-- Nombre del Usuario -->
-                                <div class="mb-1 d-flex align-items-center review-user">
-                                    <?php
-                                    // Obtenemos el nombre del usuario que ha realizado la valoración.
-                                    $usuario = UserController::getById($r->id_usuario);
-                                    ?>
-                                    <i class="pe-3 bi bi-person-circle"></i>
-                                    <p class="mb-0">
-                                    <?php
-                                    echo $usuario->nombre . " " . $usuario->apellido1 . " " . $usuario->apellido2;
-                                    ?>
-                                    </p>
-                                </div>
-                                <!-- Valoración -->
-                                <div class="rating-review d-flex flex-md-row flex-column">
-                                    <?php
-                                    // Mostramos las estrellas según la valoración.
-                                    echo "<div>";
-                                    for ($i = 1; $i <= 5; $i++) {
-                                    ?>
-                                        <i class="bi bi-star-fill <?php echo $i <= $r->valoracion ? "active" : ""; ?>"></i>
-                                    <?php
-                                    }
-                                    ?>
+                            <?php
+                            foreach ($reviews as $r) {
+                            ?>
+                                <div class="mb-3 col review-item"
+                                    data-rating="<?php echo $r->valoracion; ?>" data-date="<?php echo $r->fecha; ?>"
+                                    data-review="<?php echo $r->id; ?>">
+                                    <!-- Nombre del Usuario -->
+                                    <div class="mb-1 d-flex align-items-center review-user">
+                                        <?php
+                                        // Obtenemos el nombre del usuario que ha realizado la valoración.
+                                        $usuario = UserController::getById($r->id_usuario);
+                                        ?>
+                                        <i class="pe-3 bi bi-person-circle"></i>
+                                        <p class="mb-0">
+                                            <?php
+                                            echo $usuario->nombre . " " . $usuario->apellido1 . " " . $usuario->apellido2;
+                                            ?>
+                                        </p>
+                                    </div>
+                                    <!-- Valoración -->
+                                    <div class="rating-review d-flex flex-md-row flex-column">
+                                        <?php
+                                        // Mostramos las estrellas según la valoración.
+                                        echo "<div>";
+                                        for ($i = 1; $i <= 5; $i++) {
+                                        ?>
+                                            <i class="bi bi-star-fill <?php echo $i <= $r->valoracion ? "active" : ""; ?>"></i>
+                                        <?php
+                                        }
+                                        ?>
                                     </div>
                                     <!-- Título -->
                                     <strong><?php echo $r->titulo; ?></strong>
@@ -309,10 +309,10 @@ if ($reviews) {
                                 </p>
                                 <!-- Comentario -->
                                 <p>
-                                <?php
-                                // Mostramos el comentario teniendo en cuenta que es texto HTML.
-                                echo $r->comentario;
-                                ?>
+                                    <?php
+                                    // Mostramos el comentario teniendo en cuenta que es texto HTML.
+                                    echo $r->comentario;
+                                    ?>
                                 </p>
                                 <?php
                                 // Si existe un usuario logueado.
@@ -320,7 +320,7 @@ if ($reviews) {
                                     // Si el usuario logueado tiene rol "admin" o "editor",
                                     // mostramos el botón para eliminar la valoración.
                                     if ($_SESSION['logged']->rol == "admin" || $_SESSION['logged']->rol == "editor") {
-                                    ?>
+                                ?>
                                         <form action="" method="POST" class="d-flex justify-content-end">
                                             <button type="submit" class="btn btn-delete-review" name="delete"
                                                 value="<?php echo $r->id; ?>">Eliminar</button>
@@ -332,92 +332,92 @@ if ($reviews) {
                                     // También se mostrará el botón de edición.
                                     else if ($_SESSION['logged']->id == $r->id_usuario) {
                                     ?>
-                                    <div class="gap-3 d-flex justify-content-end">
-                                        <!-- Botón para Editar la Valoración -->
-                                        <form action="" method="POST">
-                                            <button type="submit" class="btn btn-edit-review" name="edit"
-                                                value="<?php echo $r->id; ?>">Editar</button>
-                                        </form>
-                                        <!-- Botón para Eliminar la Valoración -->
-                                        <form action="" method="POST">
-                                            <button type="submit" class="btn btn-delete-review" name="delete"
-                                                value="<?php echo $r->id; ?>">Eliminar</button>
-                                        </form>
-                                    </div>
-                                    <?php
+                                        <div class="gap-3 d-flex justify-content-end">
+                                            <!-- Botón para Editar la Valoración -->
+                                            <form action="" method="POST">
+                                                <button type="submit" class="btn btn-edit-review" name="edit"
+                                                    value="<?php echo $r->id; ?>">Editar</button>
+                                            </form>
+                                            <!-- Botón para Eliminar la Valoración -->
+                                            <form action="" method="POST">
+                                                <button type="submit" class="btn btn-delete-review" name="delete"
+                                                    value="<?php echo $r->id; ?>">Eliminar</button>
+                                            </form>
+                                        </div>
+                                <?php
                                     }
                                 }
                                 ?>
+                        </div>
+                    <?php
+                            }
+                    ?>
+                </div>
+            <?php
+                    }
+            ?>
+            </div>
+            <?php
+            // Se mostrará solo a los usuarios con rol "usuario".
+            if (isset($_SESSION['logged']) && $_SESSION['logged']->rol == "usuario") {
+            ?>
+                <!-- Botón para Mostrar Formulario de Comentarios -->
+                <div class="mt-5 mb-3 col col-md-4 mt-md-0" id="show-review">
+                    <p>Valorar este producto</p>
+                    <p>Comparte tu opinión con otros usuarios</p>
+                    <button type="button" class="px-4 btn">Dejar reseña</button>
+                </div>
+                <!-- Formulario de Comentarios -->
+                <div class="mt-4 mt-md-0 col col-md-5 d-none ms-md-3" id="form-review">
+                    <!-- Formulario -->
+                    <form action="" method="POST" class="px-3 pb-2 px-md-4 form-comments">
+                        <h3>Deja tu reseña</h3>
+                        <div class="px-2 mt-4 mb-3 px-md-4">
+                            <label for="stars">¿En qué estado estaba el producto?</label>
+                            <!-- Contenedor de estrellas -->
+                            <div id="stars" class="rating-stars" data-rating="<?php echo isset($edit_valoracion) ? $edit_valoracion->valoracion : 1; ?>">
+                                <i class="bi bi-star-fill" data-value="1"></i>
+                                <i class="bi bi-star-fill" data-value="2"></i>
+                                <i class="bi bi-star-fill" data-value="3"></i>
+                                <i class="bi bi-star-fill" data-value="4"></i>
+                                <i class="bi bi-star-fill" data-value="5"></i>
                             </div>
+                        </div>
+                        <!-- Título Input-->
+                        <div class="px-2 px-md-4">
+                            <label for="review-title">Título de la reseña (Obligatorio)</label>
+                            <input type="text" class="form-control" id="review-title"
+                                placeholder="Introduzca un título para la reseña" name="review-title"
+                                value="<?php echo isset($edit_valoracion) ? $edit_valoracion->titulo : ""; ?>">
+                        </div>
+                        <!-- Editor de Texto -->
+                        <div class="px-2 mb-4 px-md-4">
+                            <label for="eq-editor">Escribe una reseña (Opcional)</label>
+                            <div id="eq-editor"></div>
+                        </div>
+                        <div class="gap-3 px-5 my-3 d-flex flex-column justify-content-center">
+                            <button type="submit" class="px-5 btn" name="send"
+                                id="btn-send-review">Enviar reseña</button>
+                            <button type="button" class="px-5 btn" name="cancel"
+                                id="btn-cancel-review">Cancelar</button>
+                        </div>
+                        <!-- Campos Ocultos -->
+                        <input type="hidden" id="stars-input" name="value_stars">
+                        <input type="hidden" id="review-input" name="value_review">
+                        <input type="hidden" id="product-id" name="product-id" value="<?php echo $producto->id; ?>">
+                        <?php
+                        // Si estamos editando una reseña, añadir un campo oculto con el id de la reseña.
+                        if (isset($edit_valoracion)) {
+                        ?>
+                            <input type="hidden" name="edit-id" value="<?php echo $edit_valoracion->id; ?>">
                         <?php
                         }
                         ?>
-                        </div>
-                    <?php
-                    }
-                    ?>
+                    </form>
                 </div>
-                <?php
-                // Se mostrará solo a los usuarios con rol "usuario".
-                if (isset($_SESSION['logged']) && $_SESSION['logged']->rol == "usuario") {
-                ?>
-                    <!-- Botón para Mostrar Formulario de Comentarios -->
-                    <div class="mt-5 mb-3 col col-md-4 mt-md-0" id="show-review">
-                        <p>Valorar este producto</p>
-                        <p>Comparte tu opinión con otros usuarios</p>
-                        <button type="button" class="px-4 btn">Dejar reseña</button>
-                    </div>
-                    <!-- Formulario de Comentarios -->
-                    <div class="mt-4 mt-md-0 col col-md-5 d-none ms-md-3" id="form-review">
-                        <!-- Formulario -->
-                        <form action="" method="POST" class="px-3 pb-2 px-md-4 form-comments">
-                            <h3>Deja tu reseña</h3>    
-                            <div class="px-2 mt-4 mb-3 px-md-4">
-                                <label for="stars">¿En qué estado estaba el producto?</label>
-                                <!-- Contenedor de estrellas -->
-                                <div id="stars" class="rating-stars" data-rating="<?php echo isset($edit_valoracion) ? $edit_valoracion->valoracion : 1; ?>">
-                                    <i class="bi bi-star-fill" data-value="1"></i>
-                                    <i class="bi bi-star-fill" data-value="2"></i>
-                                    <i class="bi bi-star-fill" data-value="3"></i>
-                                    <i class="bi bi-star-fill" data-value="4"></i>
-                                    <i class="bi bi-star-fill" data-value="5"></i>
-                                </div>
-                            </div>
-                            <!-- Título Input-->
-                            <div class="px-2 px-md-4">
-                                <label for="review-title">Título de la reseña (Obligatorio)</label>
-                                <input type="text" class="form-control" id="review-title"
-                                    placeholder="Introduzca un título para la reseña" name="review-title" 
-                                    value="<?php echo isset($edit_valoracion) ? $edit_valoracion->titulo : ""; ?>">
-                            </div>
-                            <!-- Editor de Texto -->
-                            <div class="px-2 mb-4 px-md-4">
-                                <label for="eq-editor">Escribe una reseña (Opcional)</label>
-                                <div id="eq-editor"></div>
-                            </div>
-                            <div class="gap-3 px-5 my-3 d-flex flex-column justify-content-center">
-                                <button type="submit" class="px-5 btn" name="send"
-                                    id="btn-send-review">Enviar reseña</button>
-                                <button type="button" class="px-5 btn" name="cancel"
-                                    id="btn-cancel-review">Cancelar</button>
-                            </div>
-                            <!-- Campos Ocultos -->
-                            <input type="hidden" id="stars-input" name="value_stars">
-                            <input type="hidden" id="review-input" name="value_review">
-                            <input type="hidden" id="product-id" name="product-id" value="<?php echo $producto->id; ?>">
-                            <?php
-                            // Si estamos editando una reseña, añadir un campo oculto con el id de la reseña.
-                            if (isset($edit_valoracion)) {
-                            ?>
-                                <input type="hidden" name="edit-id" value="<?php echo $edit_valoracion->id; ?>">
-                            <?php
-                            }
-                            ?>
-                        </form>
-                    </div>
-                <?php
-                }
-                ?>
+            <?php
+            }
+            ?>
             </div>
         </section>
         <!-- Sección Productos Recomendados -->
@@ -463,7 +463,11 @@ if ($reviews) {
             modules: {
                 toolbar: [
                     ['bold', 'italic', 'underline'],
-                    [{ list: 'ordered' }, { list: 'bullet' }],
+                    [{
+                        list: 'ordered'
+                    }, {
+                        list: 'bullet'
+                    }],
                     ['clean']
                 ]
             },
@@ -508,6 +512,20 @@ if ($reviews) {
                 // Insertamos el contenido HTML en el editor Quill manteniendo el formato
                 quill.clipboard.dangerouslyPasteHTML(contenidoDesdeBD);
             }
+
+            // Ocultamos el div show-review y mostramos el div form-review.
+            document.getElementById("show-review").classList.add("d-none");
+            document.getElementById("form-review").classList.remove("d-none");
+
+            // Cambiamos el heading del formulario.
+            document.querySelector("#form-review h3").textContent = "Editar tu reseña";
+            // Cambiamos el texto del botón de envío.
+            document.querySelector("#btn-send-review").textContent = "Guardar cambios";
+
+            // Tras cargar la páginas, se desplaza hasta el formulario de comentarios.
+            document.getElementById("form-review").scrollIntoView({
+                behavior: "smooth"
+            });
         <?php
         }
         ?>

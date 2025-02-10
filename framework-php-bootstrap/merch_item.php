@@ -8,6 +8,14 @@ require_once '../framework-php-bootstrap/model/producto.php';
 require_once '../framework-php-bootstrap/controller/usuarioController.php';
 require_once '../framework-php-bootstrap/model/usuario.php';
 
+// Si se pulsa el botón de editar reseña.
+if (isset($_POST['edit'])) {
+    // Obtenemos el ID de la valoración a editar.
+    $id = $_POST['edit'];
+    // Obtenemos la valoración a editar.
+    $edit_valoracion = ValoracionController::findById($id);
+}
+
 // Si hemos pulsado el botón de eliminar una reseña, la eliminamos de la BD.
 if (isset($_POST['delete'])) {
     // Obtenemos los datos necesarios para eliminar la valoración.
@@ -26,18 +34,31 @@ if (isset($_POST['delete'])) {
 // Si hemos escrito una reseña, la guardamos en la BD.
 if (isset($_POST['send'])) {
     // Obtenemos los datos necesarios para el formulario.
-    $id_producto = $_POST['send'];
+    $id_producto = $_POST['product-id']; // ID del producto.
     $id_usuario = $_SESSION['logged']->id; // ID del usuario logueado.
     $fecha = date("Y-m-d H:i:s");
     $puntuacion = $_POST['value_stars'];
     $titulo = $_POST['review-title'];
     $comentario = $_POST['value_review'];
 
-    // Creamos una nueva valoración.
-    $valoracion = new Valoracion(null, $id_producto, $id_usuario, $fecha, $puntuacion, $titulo, $comentario);
-
-    // Guardamos la valoración en la BD.
-    ValoracionController::insert($valoracion);
+    // Comprobamos si estamos editando una reseña.
+    if (isset($_POST['edit-id'])) {
+        $id_valoracion = $_POST['edit-id'];
+        // Obtenemos la valoración existente.
+        $valoracion = ValoracionController::findById($id_valoracion);
+        // Actualizamos los datos de la valoración.
+        $valoracion->valoracion = $puntuacion;
+        $valoracion->titulo = $titulo;
+        $valoracion->comentario = $comentario;
+        // $valoracion->fecha = $fecha;
+        // Guardamos los cambios en la BD.
+        ValoracionController::update($valoracion);
+    } else {
+        // Creamos una nueva valoración.
+        $valoracion = new Valoracion(null, $id_producto, $id_usuario, $fecha, $puntuacion, $titulo, $comentario);
+        // Guardamos la valoración en la BD.
+        ValoracionController::insert($valoracion);
+    }
 
     // Recargamos la página para mostrar la nueva valoración.
     header("Location: merch_item.php?id=$id_producto");
@@ -249,7 +270,8 @@ if ($reviews) {
                         foreach ($reviews as $r) {
                         ?>
                             <div class="mb-3 col review-item"
-                                data-rating="<?php echo $r->valoracion; ?>" data-date="<?php echo $r->fecha; ?>">
+                                data-rating="<?php echo $r->valoracion; ?>" data-date="<?php echo $r->fecha; ?>"
+                                data-review="<?php echo $r->id; ?>">
                                 <!-- Nombre del Usuario -->
                                 <div class="mb-1 d-flex align-items-center review-user">
                                     <?php
@@ -312,7 +334,11 @@ if ($reviews) {
                                     ?>
                                     <div class="gap-3 d-flex justify-content-end">
                                         <!-- Botón para Editar la Valoración -->
-                                        <button type="button" class="btn btn-edit-review">Editar</button>
+                                        <form action="" method="POST">
+                                            <button type="submit" class="btn btn-edit-review" name="edit"
+                                                value="<?php echo $r->id; ?>">Editar</button>
+                                        </form>
+                                        <!-- Botón para Eliminar la Valoración -->
                                         <form action="" method="POST">
                                             <button type="submit" class="btn btn-delete-review" name="delete"
                                                 value="<?php echo $r->id; ?>">Eliminar</button>
@@ -349,7 +375,7 @@ if ($reviews) {
                             <div class="px-2 mt-4 mb-3 px-md-4">
                                 <label for="stars">¿En qué estado estaba el producto?</label>
                                 <!-- Contenedor de estrellas -->
-                                <div id="stars" class="rating-stars" data-rating="1">
+                                <div id="stars" class="rating-stars" data-rating="<?php echo isset($edit_valoracion) ? $edit_valoracion->valoracion : 1; ?>">
                                     <i class="bi bi-star-fill" data-value="1"></i>
                                     <i class="bi bi-star-fill" data-value="2"></i>
                                     <i class="bi bi-star-fill" data-value="3"></i>
@@ -361,7 +387,8 @@ if ($reviews) {
                             <div class="px-2 px-md-4">
                                 <label for="review-title">Título de la reseña (Obligatorio)</label>
                                 <input type="text" class="form-control" id="review-title"
-                                    placeholder="Introduzca un título para la reseña" name="review-title" required>
+                                    placeholder="Introduzca un título para la reseña" name="review-title" 
+                                    value="<?php echo isset($edit_valoracion) ? $edit_valoracion->titulo : ""; ?>">
                             </div>
                             <!-- Editor de Texto -->
                             <div class="px-2 mb-4 px-md-4">
@@ -370,13 +397,22 @@ if ($reviews) {
                             </div>
                             <div class="gap-3 px-5 my-3 d-flex flex-column justify-content-center">
                                 <button type="submit" class="px-5 btn" name="send"
-                                    id="btn-send-review" value="<?php echo $producto->id; ?>">Enviar reseña</button>
+                                    id="btn-send-review">Enviar reseña</button>
                                 <button type="button" class="px-5 btn" name="cancel"
                                     id="btn-cancel-review">Cancelar</button>
                             </div>
                             <!-- Campos Ocultos -->
                             <input type="hidden" id="stars-input" name="value_stars">
                             <input type="hidden" id="review-input" name="value_review">
+                            <input type="hidden" id="product-id" name="product-id" value="<?php echo $producto->id; ?>">
+                            <?php
+                            // Si estamos editando una reseña, añadir un campo oculto con el id de la reseña.
+                            if (isset($edit_valoracion)) {
+                            ?>
+                                <input type="hidden" name="edit-id" value="<?php echo $edit_valoracion->id; ?>">
+                            <?php
+                            }
+                            ?>
                         </form>
                     </div>
                 <?php
@@ -461,6 +497,20 @@ if ($reviews) {
             document.querySelector("#review-input").value = getCleanQuillContent();
             document.querySelector("#stars-input").value = document.querySelector("#stars").getAttribute("data-rating");
         });
+
+        <?php
+        // Si hemos pulsado sobre el botón de editar reseña.
+        if (isset($edit_valoracion)) {
+        ?>
+            var contenidoDesdeBD = `<?php echo addslashes($edit_valoracion->comentario); ?>`;
+
+            if (typeof contenidoDesdeBD !== "undefined" && contenidoDesdeBD.trim() !== "") {
+                // Insertamos el contenido HTML en el editor Quill manteniendo el formato
+                quill.clipboard.dangerouslyPasteHTML(contenidoDesdeBD);
+            }
+        <?php
+        }
+        ?>
     </script>
 
 

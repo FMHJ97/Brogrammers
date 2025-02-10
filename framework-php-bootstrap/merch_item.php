@@ -54,6 +54,22 @@ if (isset($_POST['send'])) {
     $titulo = $_POST['review-title'];
     $comentario = $_POST['value_review'];
 
+    // Si la puntuación no es válida, mostramos un mensaje de alerta.
+    if ($puntuacion < 1 || $puntuacion > 5) {
+        $alertMessage = "La puntuación debe estar entre 1 y 5.";
+        $alertType = "danger";
+        header("Location: merch_item.php?alertMessage=" . urlencode($alertMessage) . "&alertType=" . urlencode($alertType));
+        exit();
+    }
+
+    // Si el título está vacío, mostramos un mensaje de alerta.
+    if (empty($titulo)) {
+        $alertMessage = "El título de la reseña no puede estar vacío.";
+        $alertType = "danger";
+        header("Location: merch_item.php?alertMessage=" . urlencode($alertMessage) . "&alertType=" . urlencode($alertType));
+        exit();
+    }
+
     // Comprobamos si estamos editando una reseña.
     if (isset($_POST['edit-id'])) {
         $id_valoracion = $_POST['edit-id'];

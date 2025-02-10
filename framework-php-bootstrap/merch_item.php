@@ -140,6 +140,9 @@ if ($reviews) {
     usort($reviews, fn($a, $b) => strtotime($b->fecha) - strtotime($a->fecha));
 }
 
+// Obtenemos la puntación media del producto.
+$valoracionMedia = ValoracionController::getPuntuacionMedia($id);
+
 // Si hay un mensaje de alerta, lo mostramos.
 if (isset($_GET['alertMessage']) && isset($_GET['alertType'])) {
     $alertMessage = urldecode($_GET['alertMessage']);
@@ -229,6 +232,35 @@ if (isset($_GET['alertMessage']) && isset($_GET['alertType'])) {
                         <div class="col item-heading">
                             <h1><?php echo $producto->nombre; ?></h1>
                             <h2>€<?php echo $producto->precio; ?> EUR</h2>
+                            <div class="average-rating">
+                                <?php
+                                // Si hay una valoración media, la mostramos.
+                                if ($valoracionMedia) {
+                                    for ($i = 1; $i <= 5; $i++) {
+                                        if ($i <= floor($valoracionMedia)) {
+                                            echo '<i class="bi bi-star-fill active"></i>';
+                                        } elseif ($i - $valoracionMedia < 1) {
+                                            echo '<i class="bi bi-star-half active"></i>';
+                                        } else {
+                                            echo '<i class="bi bi-star"></i>';
+                                        }
+                                    }
+                                } else {
+                                    // Si no hay valoraciones, mostramos estrellas vacías.
+                                    for ($i = 1; $i <= 5; $i++) {
+                                        echo '<i class="bi bi-star"></i>';
+                                    }
+                                }
+                                // Enlace que muestra el número de reseñas.
+                                echo '<a href="#reviews-container" id="reviews-link">';
+                                if ($reviews) {
+                                    echo "(".count($reviews) . ")";
+                                } else {
+                                    echo "(0)";
+                                }
+                                echo '</a>';
+                                ?>
+                            </div>
                         </div>
                     </div>
                     <?php
@@ -586,18 +618,7 @@ if (isset($_GET['alertMessage']) && isset($_GET['alertType'])) {
 
             // Tras cargar la páginas, se desplaza hasta el formulario de comentarios.
             document.getElementById("form-review").scrollIntoView({
-                behavior: "smooth",
-                block: "start"
-            });
-        <?php
-        }
-
-        // Si hemos pulsado sobre el botón de cancelar.
-        if (isset($_POST['cancel'])) {
-        ?>
-            // Tras cargar la páginas, se desplaza hasta el formulario de comentarios.
-            document.getElementById("form-review").scrollIntoView({
-                behavior: "smooth",
+                behavior: "instant",
                 block: "start"
             });
         <?php

@@ -420,3 +420,91 @@ main {
     }
   }
 }
+
+.average-rating {
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  gap: 5px;
+  font-size: 1.1em;
+
+  a {
+    color: $secundario2;
+    text-decoration: none;
+  }
+
+  .bi-star {
+    color: $resaltar2;
+    text-shadow: 0 0 5px $resaltar1;
+  }
+
+  .bi-star-fill {
+    color: darken($color: $resaltar2, $amount: 75);
+  }
+
+  .bi-star-half {
+    color: darken($color: $resaltar2, $amount: 75);
+  }
+
+  .bi-star-fill.active {
+    color: $resaltar2;
+    text-shadow: 0 0 5px $resaltar1;
+  }
+
+  .bi-star-half.active {
+    color: $resaltar2;
+    text-shadow: 0 0 5px $resaltar1;
+  }
+}
+
+@include media-breakpoint-down(md) {
+
+  .review-item {
+    padding: 10px;
+    font-size: $body-font-phone-1;
+
+    .review-user {
+      i {
+        font-size: 1.5rem;
+      }
+    }
+
+    .rating-review {
+      font-size: $heading-font-phone-1;
+    }
+
+    .review-date {
+      font-size: $body-font-phone-1;
+    }
+
+    .btn-delete-review {
+      font-size: $heading-font-phone-2;
+    }
+
+    .btn-edit-review {
+      font-size: $heading-font-phone-2;
+    }
+
+  }
+
+  #no-reviews {
+    font-size: $body-font-phone-1;
+  }
+
+  #show-review {
+    font-size: $body-font-phone-2;
+
+    p:first-child {
+      font-size: $heading-font-phone-3;
+    }
+
+    button {
+      font-size: $heading-font-phone-3;
+    }
+  }
+
+  .average-rating {
+    font-size: 1em;
+  }
+
+}

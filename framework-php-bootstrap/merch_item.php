@@ -270,7 +270,7 @@ if (isset($_GET['alertMessage']) && isset($_GET['alertType'])) {
                                 // Enlace que muestra el número de reseñas.
                                 echo '<a href="#reviews-container" id="reviews-link">';
                                 if ($reviews) {
-                                    echo "(".count($reviews) . ")";
+                                    echo "(" . count($reviews) . ")";
                                 } else {
                                     echo "(0)";
                                 }
@@ -319,7 +319,10 @@ if (isset($_GET['alertMessage']) && isset($_GET['alertType'])) {
                     <div class="row">
                         <div class="col item-description">
                             <h3>Descripción</h3>
-                            <?php echo $producto->descripcion; ?>
+                            <?php
+                            // Mostramos la descripción del producto.
+                            echo htmlspecialchars($producto->descripcion);
+                            ?>
                         </div>
                     </div>
                 </div>
@@ -422,7 +425,7 @@ if (isset($_GET['alertMessage']) && isset($_GET['alertType'])) {
                                 <p>
                                     <?php
                                     // Mostramos el comentario teniendo en cuenta que es texto HTML.
-                                    echo $r->comentario;
+                                    echo htmlspecialchars($r->comentario);
                                     ?>
                                 </p>
                                 <?php

@@ -321,7 +321,7 @@ if (isset($_GET['alertMessage']) && isset($_GET['alertType'])) {
                             <h3>Descripción</h3>
                             <?php
                             // Mostramos la descripción del producto.
-                            echo htmlspecialchars($producto->descripcion);
+                            echo htmlspecialchars_decode($producto->descripcion);
                             ?>
                         </div>
                     </div>
@@ -424,8 +424,8 @@ if (isset($_GET['alertMessage']) && isset($_GET['alertType'])) {
                                 <!-- Comentario -->
                                 <p>
                                     <?php
-                                    // Mostramos el comentario teniendo en cuenta que es texto HTML.
-                                    echo htmlspecialchars($r->comentario);
+                                    // Mostramos el comentario teniendo en cuenta que es texto HTML y contiene caracteres especiales.
+                                    echo htmlspecialchars_decode($r->comentario);
                                     ?>
                                 </p>
                                 <?php

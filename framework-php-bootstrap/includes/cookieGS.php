@@ -82,7 +82,7 @@
                 </p>
             </div>
             <div class="col-12 col-md-4 card card-merch-item-News all-items">
-                <img class="card-img-top-News" src="./assets/img/lineUp/2pac.jpg" alt="2Pac">
+                <img class="card-img-top-News" src="./assets/img/LineUp/2pac.jpg" alt="2Pac">
                 <div>
                     <h3 class="card-title card-title-News">2Pac</h3>
                 </div>

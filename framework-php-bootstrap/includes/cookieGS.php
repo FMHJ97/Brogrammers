@@ -20,6 +20,18 @@
     -->
 <!--  </div> -->
 
+<?php
+
+require_once '../framework-php-bootstrap/controller/productoController.php';
+require_once '../framework-php-bootstrap/model/producto.php';
+
+// Obtenemos todos los productos disponibles de la BD.
+$productos = ProductoController::findAll();
+// Recogemos el primer producto para mostrarlo en el banner de novedades.
+$p = $productos[0];
+
+?>
+
 
 <div id="cookieBanner" class="text-center alert cookieBanner" role="alert">
     <img class="GSImageLogo" src="../assets/img/Logo.svg" alt="GroundSound">
@@ -62,13 +74,15 @@
                         rel="noopener noreferrer">zona de merchandising</a>.
                 </p>
             </div>
-            <a href="./merch_item.php?id=8" class="col-12 col-md-4 card card-merch-item-News all-items">
-                <img class="card-img-top-News" src="./assets/img/merch/gorra.png" alt="Gorra GroundSound">
-                <div class="card-body-News">
-                    <h3 class="card-title card-title-News">Gorra
-                        GroundSound (Golden Dream)</h3>
+            <form action="./merch_item.php" method="POST" class="col-12 col-md-4 card card-merch-item all-items <?php echo $p->categoria; ?>" data-precio="<?php echo $p->precio; ?>" data-nombre="<?php echo $p->nombre; ?>" onclick="this.submit()">
+                <input type="hidden" name="id" value="<?php echo $p->id; ?>">
+                <img class="card-img-top" src="./<?php echo $p->imagen; ?>" alt="<?php echo $p->nombre; ?>"
+                    height="10px">
+                <div class="card-body">
+                    <h3 class="card-title"><?php echo $p->nombre; ?></h3>
+                    <span>€<?php echo $p->precio; ?> EUR</span>
                 </div>
-            </a>
+            </form>
         </div>
     </div>
     <div class="boxNew" id="boxNew">

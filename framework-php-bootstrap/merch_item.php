@@ -207,6 +207,35 @@ if (isset($_GET['alertMessage']) && isset($_GET['alertType'])) {
                 <div class="col item-heading">
                     <h1><?php echo $producto->nombre; ?></h1>
                     <h2>€<?php echo $producto->precio; ?> EUR</h2>
+                    <div class="average-rating">
+                    <?php
+                    // Si hay una valoración media, la mostramos.
+                    if ($valoracionMedia) {
+                        for ($i = 1; $i <= 5; $i++) {
+                            if ($i <= floor($valoracionMedia)) {
+                                echo '<i class="bi bi-star-fill active"></i>';
+                            } elseif ($i - $valoracionMedia < 1) {
+                                echo '<i class="bi bi-star-half active"></i>';
+                            } else {
+                                echo '<i class="bi bi-star"></i>';
+                            }
+                        }
+                    } else {
+                        // Si no hay valoraciones, mostramos estrellas vacías.
+                        for ($i = 1; $i <= 5; $i++) {
+                            echo '<i class="bi bi-star"></i>';
+                        }
+                    }
+                    // Enlace que muestra el número de reseñas.
+                    echo '<a href="#reviews-container" id="reviews-link">';
+                    if ($reviews) {
+                        echo "(" . count($reviews) . ")";
+                    } else {
+                        echo "(0)";
+                    }
+                    echo '</a>';
+                    ?>
+                </div>
                 </div>
             </div>
             <div class="row">

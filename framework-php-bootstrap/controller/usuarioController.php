@@ -224,10 +224,12 @@ class UserController
         try {
             $conex = new Conexion();
             $conex->beginTransaction();
+            
             $result = $conex->prepare("UPDATE usuario SET nombre = ?, apellido1 = ?, apellido2 = ?, 
                 fecha_nac = ?, pais = ?, codigo_postal = ?, telefono = ?, img_perfil = ?,
                 rol = ? WHERE correo_electronico = ?");
-
+            
+            // Variables
             $nombre = $usuario->nombre;
             $apellido1 = $usuario->apellido1;
             $apellido2 = $usuario->apellido2;
@@ -238,7 +240,8 @@ class UserController
             $img_perfil = $usuario->img_perfil;
             $rol = $usuario->rol;
             $correo = $usuario->correo;
-
+            
+            // Binding de parámetros
             $result->bindParam(1, $nombre);
             $result->bindParam(2, $apellido1);
             $result->bindParam(3, $apellido2);
@@ -249,23 +252,35 @@ class UserController
             $result->bindParam(8, $img_perfil);
             $result->bindParam(9, $rol);
             $result->bindParam(10, $correo);
-
+    
+            // Ejecutar la consulta
             $result->execute();
-            if ($result->rowCount()) {
+    
+            // Comprobar si se afectaron filas
+            if ($result->rowCount() > 0) {
+                // Si se ha hecho un cambio, confirmar la transacción
                 $conex->commit();
                 return true;
             } else {
+                // Si no se afectaron filas, mostrar mensaje informativo sin redirigir
+                // El mensaje y toda la lógica se realiza en la vista perfilusuario.php
                 $conex->rollBack();
-                throw new Exception("Failed to update the user in the database.");
+                return false;
             }
         } catch (Exception $ex) {
+            // Manejo de errores
             error_log("Database Error: " . $ex->getMessage());
-            $conex->rollBack();
+            
+            // Verificar si la transacción está activa antes de hacer rollback
+            if (isset($conex) && $conex->inTransaction()) {
+                $conex->rollBack();
+            }
+            
+            // Redireccionar a la página de dificultades solo si hay un error real
             echo "<script>window.location.href='dificultades.php'</script>";
-
-            //header("location: dificultades.php");
         }
     }
+    
 
     public static function getById($id) {
         try {

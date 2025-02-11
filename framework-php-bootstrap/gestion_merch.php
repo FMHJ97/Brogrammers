@@ -194,7 +194,7 @@ if (!isset($_SESSION["logged"]) || $_SESSION["logged"]->rol != "admin") {
         <!-- Sección de los Productos de Merch -->
         <section class="container px-3 mb-5 page-section px-md-5">
             <div class="row">
-                <div class="col-6 table-responsive-md">
+                <div class="col-12 col-md-6 table-responsive-md">
                     <h3 class="mb-4 text-center">Listado de Productos</h3>
                     <div id="listado-productos" class="pe-2">
                         <table class="table table-productos table-borderless table-striped">
@@ -236,7 +236,7 @@ if (!isset($_SESSION["logged"]) || $_SESSION["logged"]->rol != "admin") {
                         </table>
                     </div>
                 </div>
-                <div class="col-6">
+                <div class="mt-5 mt-md-0 col-12 col-md-6">
                     <h3 class="mb-4 text-center">Guardar producto</h3>
                     <!-- Formulario -->
                     <form action="" id="form-product" method="POST" enctype="multipart/form-data">
@@ -324,7 +324,11 @@ if (!isset($_SESSION["logged"]) || $_SESSION["logged"]->rol != "admin") {
             modules: {
                 toolbar: [
                     ['bold', 'italic', 'underline'],
-                    [{ list: 'ordered' }, { list: 'bullet' }],
+                    [{
+                        list: 'ordered'
+                    }, {
+                        list: 'bullet'
+                    }],
                     ['clean']
                 ]
             },

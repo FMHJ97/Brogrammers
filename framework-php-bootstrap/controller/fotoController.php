@@ -1,4 +1,5 @@
 <?php
+header("Access-Control-Allow-Origin: *");
 if (!defined('PROJECT_ROOT')) {
     define('PROJECT_ROOT', dirname(__FILE__) . '/../');
 }

@@ -318,7 +318,7 @@ if (isset($_POST["submit"])) {
                                 <label class="form-check-label">
                                     <input class="form-check-input" type="checkbox" name="news"
                                         <?php echo (isset($_POST['news'])) ? 'checked' : ''; ?>>
-                                    Deseo recibir noticias e información sobre GroundSound Festival.c
+                                    Deseo recibir noticias e información sobre GroundSound Festival
                                 </label>
                             </div>
 

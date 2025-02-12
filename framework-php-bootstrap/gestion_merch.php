@@ -37,6 +37,30 @@ if (isset($_POST['save'])) {
     $categoria = $_POST['categoria'];
     $imagen = null;
 
+    // Si el nombre está vacío o contiene espacios en blanco, mostramos un mensaje de error.
+    if (empty($nombre) || trim($nombre) == "") {
+        $alertMessage = "El nombre no puede estar vacío ni contener espacios en blanco.";
+        $alertType = "danger";
+        header("Location: gestion_merch.php?alertMessage=" . urlencode($alertMessage) . "&alertType=" . urlencode($alertType));
+        exit();
+    }
+
+    // Si el precio no es un número o es menor que 0, mostramos un mensaje de error.
+    if (!is_numeric($precio) || $precio < 0) {
+        $alertMessage = "El precio debe ser un número mayor o igual a 0.";
+        $alertType = "danger";
+        header("Location: gestion_merch.php?alertMessage=" . urlencode($alertMessage) . "&alertType=" . urlencode($alertType));
+        exit();
+    }
+
+    // Si la descripción está vacía, mostramos un mensaje de error.
+    if (empty($descripcion)) {
+        $alertMessage = "La descripción no puede estar vacía.";
+        $alertType = "danger";
+        header("Location: gestion_merch.php?alertMessage=" . urlencode($alertMessage) . "&alertType=" . urlencode($alertType));
+        exit();
+    }
+
     // Verificamos si estamos editando un producto.
     if (isset($_POST['id_product'])) {
         // Obtenemos el id del producto a editar.
@@ -61,6 +85,14 @@ if (isset($_POST['save'])) {
         move_uploaded_file($_FILES['imagen']['tmp_name'], $ruta);
         // Asignamos la nueva ruta de la imagen.
         $imagen = $ruta;
+    }
+
+    // Si no se ha subido una imagen, mostramos un mensaje de error.
+    if (empty($imagen) && !isset($producto_edit)) {
+        $alertMessage = "Debe subir una imagen para el producto.";
+        $alertType = "danger";
+        header("Location: gestion_merch.php?alertMessage=" . urlencode($alertMessage) . "&alertType=" . urlencode($alertType));
+        exit();
     }
 
     // Si estamos editando un producto, obtenemos su id, de lo contrario, es null.
@@ -162,7 +194,7 @@ if (!isset($_SESSION["logged"]) || $_SESSION["logged"]->rol != "admin") {
         <!-- Sección de los Productos de Merch -->
         <section class="container px-3 mb-5 page-section px-md-5">
             <div class="row">
-                <div class="col-6 table-responsive-md">
+                <div class="col-12 col-md-6 table-responsive-md">
                     <h3 class="mb-4 text-center">Listado de Productos</h3>
                     <div id="listado-productos" class="pe-2">
                         <table class="table table-productos table-borderless table-striped">
@@ -204,7 +236,7 @@ if (!isset($_SESSION["logged"]) || $_SESSION["logged"]->rol != "admin") {
                         </table>
                     </div>
                 </div>
-                <div class="col-6">
+                <div class="mt-5 mt-md-0 col-12 col-md-6">
                     <h3 class="mb-4 text-center">Guardar producto</h3>
                     <!-- Formulario -->
                     <form action="" id="form-product" method="POST" enctype="multipart/form-data">
@@ -292,7 +324,11 @@ if (!isset($_SESSION["logged"]) || $_SESSION["logged"]->rol != "admin") {
             modules: {
                 toolbar: [
                     ['bold', 'italic', 'underline'],
-                    [{ list: 'ordered' }, { list: 'bullet' }],
+                    [{
+                        list: 'ordered'
+                    }, {
+                        list: 'bullet'
+                    }],
                     ['clean']
                 ]
             },

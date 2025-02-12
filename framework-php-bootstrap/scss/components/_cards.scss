@@ -8,6 +8,7 @@
   text-decoration: none;
   padding: 0;
   transition: 0.2s ease; // Añade una transición suave al pasar el mouse.
+  cursor: pointer; // Cambia el cursor al pasar el mouse.
 
   // Añade una sombra suave al pasar el mouse.
   &:hover {
@@ -239,68 +240,68 @@
 
     /* BACKGROUND IMG Bandas PRINCIPALES con degradado $fade */
     &.headB1 {
-      background-image: $fade-lineup, url("/assets/img/lineUp/Eminem.jpg");
+      background-image: $fade-lineup, url("/assets/img/LineUp/Eminem.jpg");
     }
 
     &.headB2 {
-      background-image: $fade-lineup, url("/assets/img/lineUp/LosdelRio.jpg");
+      background-image: $fade-lineup, url("/assets/img/LineUp/LosdelRio.jpg");
     }
 
     &.headB3 {
-      background-image: $fade-lineup, url("/assets/img/lineUp/soundgarden.jpg");
+      background-image: $fade-lineup, url("/assets/img/LineUp/soundgarden.jpg");
     }
 
     /* BACKGROUND IMG Bandas SECUNDARIAS con degradado $fade */
     &.incB1 {
       background-image: $fade-lineup,
-        url("/assets/img/lineUp/AliceInChains.jpg");
+        url("/assets/img/LineUp/AliceInChains.jpg");
     }
 
     &.incB2 {
-      background-image: $fade-lineup, url("/assets/img/lineUp/50-cent-.jpg");
+      background-image: $fade-lineup, url("/assets/img/LineUp/50-cent-.jpg");
     }
 
     &.incB3 {
-      background-image: $fade-lineup, url("/assets/img/lineUp/queen1.jpg");
+      background-image: $fade-lineup, url("/assets/img/LineUp/queen1.jpg");
     }
 
     &.incB4 {
-      background-image: $fade-lineup, url("/assets/img/lineUp/pearlJam.jpg");
+      background-image: $fade-lineup, url("/assets/img/LineUp/pearlJam.jpg");
     }
 
     &.incB5 {
       background-image: $fade-lineup,
-        url("/assets/img/lineUp/FallingInReverse.jpg");
+        url("/assets/img/LineUp/FallingInReverse.jpg");
     }
 
     &.incB6 {
-      background-image: $fade-lineup, url("/assets/img/lineUp/Parchis.jpg");
+      background-image: $fade-lineup, url("/assets/img/LineUp/Parchis.jpg");
     }
 
     &.incB7 {
-      background-image: $fade-lineup, url("/assets/img/lineUp/Loschichos.jpeg");
+      background-image: $fade-lineup, url("/assets/img/LineUp/Loschichos.jpeg");
     }
 
     &.incB8 {
-      background-image: $fade-lineup, url("/assets/img/lineUp/Rush.jpg");
+      background-image: $fade-lineup, url("/assets/img/LineUp/Rush.jpg");
     }
 
     &.incB9 {
-      background-image: $fade-lineup, url("/assets/img/lineUp/2pac.jpg");
+      background-image: $fade-lineup, url("/assets/img/LineUp/2pac.jpg");
     }
 
     &.incB10 {
       background-image: $fade-lineup,
-        url("/assets/img/lineUp/lola-flores-biografia.jpg");
+        url("/assets/img/LineUp/lola-flores-biografia.jpg");
     }
 
     &.incB11 {
       background-image: $fade-lineup,
-        url("/assets/img/lineUp/LambOfGod-Cuadrada.jpeg");
+        url("/assets/img/LineUp/LambOfGod-Cuadrada.jpeg");
     }
 
     &.incB12 {
-      background-image: $fade-lineup, url("/assets/img/lineUp/snoopDog.jpg");
+      background-image: $fade-lineup, url("/assets/img/LineUp/snoopDog.jpg");
     }
   }
 }

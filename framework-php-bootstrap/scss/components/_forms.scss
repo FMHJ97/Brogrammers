@@ -254,3 +254,10 @@ main {
     }
   }
 }
+
+// <================== Register.php ==================>
+// Cambiamos el color del datepicker para que se vea mejor.
+input[type="date"]::-webkit-calendar-picker-indicator {
+  filter: invert(27%) sepia(68%) saturate(900%) hue-rotate(135deg);
+  cursor: pointer;
+}

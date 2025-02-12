@@ -9,6 +9,8 @@
   var closeNewsBanner = document.getElementById("closenews"); // Botón para cerrar el banner de novedades
   var blockWeb = document.getElementById("blockWeb"); // Contenedor de bloqueo de la web
 
+  var closeNewsX = document.getElementById("closeNewsX"); //añado botón x para cerrar las noticias
+
   // Buscamos la cookie "groundSoundCookie", si no está en el cliente decidimos mostrar el contenedor de la alerta
   if (!getCookie("groundSoundCookie")) {
     cookieAlert.classList.add("show");
@@ -58,6 +60,16 @@
       newsBanner.classList.remove("show");
       blockWeb.classList.remove("show"); // Desbloquea la navegación
       document.body.classList.remove("banner-visible"); // Desbloquea el scroll
+    });
+  }
+
+  // Añado este evento al botón de cerrar el banner con la "X"
+  if (closeNewsX) {
+    closeNewsX.addEventListener("click", function () {
+      setCookie("gsNews", false, 30); // Marcar como false para que  vuelva a aparecer
+      newsBanner.classList.remove("show");
+      blockWeb.classList.remove("show");
+      document.body.classList.remove("banner-visible");
     });
   }
 

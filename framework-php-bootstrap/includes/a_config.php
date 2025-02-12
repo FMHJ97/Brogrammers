@@ -213,3 +213,9 @@ if ($_SERVER['PHP_SELF'] != '/index.php') {
 		exit();
 	}
 }
+
+// Si la página actual NO es merch_item.php,
+// eliminamos la sesión de producto.
+if ($_SERVER['PHP_SELF'] != '/merch_item.php') {
+	unset($_SESSION['id_producto_actual']);
+}

@@ -32,6 +32,23 @@
   z-index: 999;
 }
 
+.close-news-btn {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  background: $primario1;
+  border: none;
+  font-size: 2em;
+  font-weight: bold;
+  color: $texto1;
+  cursor: pointer;
+  transition: color 0.3s ease-in-out;
+
+  &:hover {
+    color: $resaltar1;
+  }
+}
+
 .cookieBanner.show {
   opacity: 1;
   transform: translateY(0%);
@@ -223,5 +240,60 @@ body.banner-visible {
     font-size: 0.8em;
     font-weight: lighter;
 
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+//VERSION MOVIL DE NEWSBANNER
+
+@media (max-width: 768px) {
+  .newsbanner {
+    width: 95vw;
+    height: auto;
+    max-height: 90vh;
+    padding: 10px;
+  }
+
+  .boxNew {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  #news {
+    flex-direction: column;
+    width: 90%;
+    margin: 15px 0;
+  }
+
+  .card-merch-item-News {
+    max-width: 90%;
+    width: 100%;
+  }
+
+  .card-img-top-News {
+    height: 200px; // Ajusta la altura de la imagen en móvil
+  }
+
+  #newsText {
+    font-size: 1.5em;
+    margin-right: 0;
+  }
+
+  .GSImageLogoNews {
+    width: 30vw;
+  }
+
+  #newsTextHeader {
+    font-size: 2em;
   }
 }

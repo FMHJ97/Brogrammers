@@ -8,6 +8,10 @@ require_once '../framework-php-bootstrap/model/producto.php';
 require_once '../framework-php-bootstrap/controller/usuarioController.php';
 require_once '../framework-php-bootstrap/model/usuario.php';
 
+// Variables para mostrar mensajes de alerta.
+$alertMessage = "";
+$alertType = "";
+
 // Si se pulsa el botón de editar reseña.
 if (isset($_POST['edit'])) {
     // Obtenemos el ID de la valoración a editar.
@@ -25,10 +29,19 @@ if (isset($_POST['delete'])) {
     $id_producto = ValoracionController::findById($id)->id_producto;
 
     // Borramos la valoración de la BD.
-    ValoracionController::delete($id);
+    if (ValoracionController::delete($id)) {
+        // Mostramos un mensaje de alerta.
+        $alertMessage = "Valoración eliminada correctamente.";
+        $alertType = "success";
+    } else {
+        // Mostramos un mensaje de alerta.
+        $alertMessage = "Error al eliminar la valoración.";
+        $alertType = "danger";
+    }
 
     // Recargamos la página para mostrar la valoración eliminada.
-    header("Location: merch_item.php?id=$id_producto");
+    header("Location: merch_item.php?alertMessage=" . urlencode($alertMessage) . "&alertType=" . urlencode($alertType));
+    exit();
 }
 
 // Si hemos escrito una reseña, la guardamos en la BD.
@@ -41,6 +54,22 @@ if (isset($_POST['send'])) {
     $titulo = $_POST['review-title'];
     $comentario = $_POST['value_review'];
 
+    // Si la puntuación no es válida, mostramos un mensaje de alerta.
+    if ($puntuacion < 1 || $puntuacion > 5) {
+        $alertMessage = "La puntuación debe estar entre 1 y 5.";
+        $alertType = "danger";
+        header("Location: merch_item.php?alertMessage=" . urlencode($alertMessage) . "&alertType=" . urlencode($alertType));
+        exit();
+    }
+
+    // Si el título está vacío, mostramos un mensaje de alerta.
+    if (empty($titulo)) {
+        $alertMessage = "El título de la reseña no puede estar vacío.";
+        $alertType = "danger";
+        header("Location: merch_item.php?alertMessage=" . urlencode($alertMessage) . "&alertType=" . urlencode($alertType));
+        exit();
+    }
+
     // Comprobamos si estamos editando una reseña.
     if (isset($_POST['edit-id'])) {
         $id_valoracion = $_POST['edit-id'];
@@ -52,22 +81,45 @@ if (isset($_POST['send'])) {
         $valoracion->comentario = $comentario;
         // $valoracion->fecha = $fecha;
         // Guardamos los cambios en la BD.
-        ValoracionController::update($valoracion);
+        if (ValoracionController::update($valoracion)) {
+            // Mostramos un mensaje de alerta.
+            $alertMessage = "Valoración actualizada correctamente.";
+            $alertType = "success";
+        } else {
+            // Mostramos un mensaje de alerta.
+            $alertMessage = "Error al actualizar la valoración.";
+            $alertType = "danger";
+        }
     } else {
         // Creamos una nueva valoración.
         $valoracion = new Valoracion(null, $id_producto, $id_usuario, $fecha, $puntuacion, $titulo, $comentario);
         // Guardamos la valoración en la BD.
-        ValoracionController::insert($valoracion);
+        if (ValoracionController::insert($valoracion)) {
+            // Mostramos un mensaje de alerta.
+            $alertMessage = "Valoración enviada correctamente.";
+            $alertType = "success";
+        } else {
+            // Mostramos un mensaje de alerta.
+            $alertMessage = "Error al enviar la valoración.";
+            $alertType = "danger";
+        }
     }
 
     // Recargamos la página para mostrar la nueva valoración.
-    header("Location: merch_item.php?id=$id_producto");
+    header("Location: merch_item.php?alertMessage=" . urlencode($alertMessage) . "&alertType=" . urlencode($alertType));
+    exit();
 }
 
-// Comprobamos si existe un valor id en la variable GET.
-$id = isset($_GET['id']) ? (int) $_GET['id'] : 0;
-// Si el id no es válido, redirigimos a la página de merch.
-if ($id <= 0) {
+// Obtenemos el id del producto seleccionado.
+if (isset($_POST['id'])) {
+    // Si existe, lo guardamos en la variable de sesión.
+    $_SESSION['id_producto_actual'] = $_POST['id'];
+    $id = $_POST['id'];
+} else if (isset($_SESSION['id_producto_actual'])) {
+    // Si no existe, lo obtenemos de la variable de sesión.
+    $id = $_SESSION['id_producto_actual'];
+} else {
+    // Si no existe, redirigimos a la página de merch.
     header("Location: merch.php");
     exit();
 }
@@ -104,6 +156,15 @@ if ($reviews) {
     usort($reviews, fn($a, $b) => strtotime($b->fecha) - strtotime($a->fecha));
 }
 
+// Obtenemos la puntación media del producto.
+$valoracionMedia = ValoracionController::getPuntuacionMedia($id);
+
+// Si hay un mensaje de alerta, lo mostramos.
+if (isset($_GET['alertMessage']) && isset($_GET['alertType'])) {
+    $alertMessage = urldecode($_GET['alertMessage']);
+    $alertType = urldecode($_GET['alertType']);
+}
+
 ?>
 <!DOCTYPE html>
 <html>
@@ -111,11 +172,32 @@ if ($reviews) {
 <head>
     <?php include("includes/head_tags.php"); ?>
     <script src="./js/scripts.js"></script>
+    <script src="./js/gestion.js"></script>
 </head>
 
 <body>
     <!-- Componente NavBar -->
     <?php include("includes/navbar.php"); ?>
+
+    <!-- Alerta -->
+    <?php if (!empty($alertMessage)): ?>
+        <div class="alert alert-<?php echo $alertType; ?> alert-dismissible fade show custom-alert-gestion" role="alert">
+            <?php if ($alertType == "success"): ?>
+                <!-- Ícono de éxito -->
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-check-circle-fill" viewBox="0 0 16 16">
+                    <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0m-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z" />
+                </svg>
+            <?php else: ?>
+                <!-- Ícono de error -->
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-x-circle-fill" viewBox="0 0 16 16">
+                    <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0M5.354 4.646a.5.5 0 1 0-.708.708L7.293 8l-2.647 2.646a.5.5 0 0 0 .708.708L8 8.707l2.646 2.647a.5.5 0 0 0 .708-.708L8.707 8l2.647-2.646a.5.5 0 0 0-.708-.708L8 7.293z" />
+                </svg>
+            <?php endif; ?>
+            <strong><?php echo $alertMessage; ?></strong>
+
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+    <?php endif; ?>
 
     <main>
         <!-- Sección de Producto -->
@@ -125,6 +207,35 @@ if ($reviews) {
                 <div class="col item-heading">
                     <h1><?php echo $producto->nombre; ?></h1>
                     <h2>€<?php echo $producto->precio; ?> EUR</h2>
+                    <div class="average-rating">
+                    <?php
+                    // Si hay una valoración media, la mostramos.
+                    if ($valoracionMedia) {
+                        for ($i = 1; $i <= 5; $i++) {
+                            if ($i <= floor($valoracionMedia)) {
+                                echo '<i class="bi bi-star-fill active"></i>';
+                            } elseif ($i - $valoracionMedia < 1) {
+                                echo '<i class="bi bi-star-half active"></i>';
+                            } else {
+                                echo '<i class="bi bi-star"></i>';
+                            }
+                        }
+                    } else {
+                        // Si no hay valoraciones, mostramos estrellas vacías.
+                        for ($i = 1; $i <= 5; $i++) {
+                            echo '<i class="bi bi-star"></i>';
+                        }
+                    }
+                    // Enlace que muestra el número de reseñas.
+                    echo '<a href="#reviews-container" id="reviews-link">';
+                    if ($reviews) {
+                        echo "(" . count($reviews) . ")";
+                    } else {
+                        echo "(0)";
+                    }
+                    echo '</a>';
+                    ?>
+                </div>
                 </div>
             </div>
             <div class="row">
@@ -166,6 +277,35 @@ if ($reviews) {
                         <div class="col item-heading">
                             <h1><?php echo $producto->nombre; ?></h1>
                             <h2>€<?php echo $producto->precio; ?> EUR</h2>
+                            <div class="average-rating">
+                                <?php
+                                // Si hay una valoración media, la mostramos.
+                                if ($valoracionMedia) {
+                                    for ($i = 1; $i <= 5; $i++) {
+                                        if ($i <= floor($valoracionMedia)) {
+                                            echo '<i class="bi bi-star-fill active"></i>';
+                                        } elseif ($i - $valoracionMedia < 1) {
+                                            echo '<i class="bi bi-star-half active"></i>';
+                                        } else {
+                                            echo '<i class="bi bi-star"></i>';
+                                        }
+                                    }
+                                } else {
+                                    // Si no hay valoraciones, mostramos estrellas vacías.
+                                    for ($i = 1; $i <= 5; $i++) {
+                                        echo '<i class="bi bi-star"></i>';
+                                    }
+                                }
+                                // Enlace que muestra el número de reseñas.
+                                echo '<a href="#reviews-container" id="reviews-link">';
+                                if ($reviews) {
+                                    echo "(" . count($reviews) . ")";
+                                } else {
+                                    echo "(0)";
+                                }
+                                echo '</a>';
+                                ?>
+                            </div>
                         </div>
                     </div>
                     <?php
@@ -208,7 +348,10 @@ if ($reviews) {
                     <div class="row">
                         <div class="col item-description">
                             <h3>Descripción</h3>
-                            <?php echo $producto->descripcion; ?>
+                            <?php
+                            // Mostramos la descripción del producto.
+                            echo htmlspecialchars_decode($producto->descripcion);
+                            ?>
                         </div>
                     </div>
                 </div>
@@ -310,8 +453,8 @@ if ($reviews) {
                                 <!-- Comentario -->
                                 <p>
                                     <?php
-                                    // Mostramos el comentario teniendo en cuenta que es texto HTML.
-                                    echo $r->comentario;
+                                    // Mostramos el comentario teniendo en cuenta que es texto HTML y contiene caracteres especiales.
+                                    echo htmlspecialchars_decode($r->comentario);
                                     ?>
                                 </p>
                                 <?php
@@ -398,7 +541,7 @@ if ($reviews) {
                         <div class="gap-3 px-5 my-3 d-flex flex-column justify-content-center">
                             <button type="submit" class="px-5 btn" name="send"
                                 id="btn-send-review">Enviar reseña</button>
-                            <button type="button" class="px-5 btn" name="cancel"
+                            <button type="submit" class="px-5 btn" name="cancel"
                                 id="btn-cancel-review">Cancelar</button>
                         </div>
                         <!-- Campos Ocultos -->
@@ -435,15 +578,14 @@ if ($reviews) {
                     // Si hay productos en la BD, los mostramos.
                     foreach ($productosRecomendados as $p) {
                 ?>
-                        <a href="./merch_item.php?id=<?php echo $p->id; ?>" class="col-12 col-md-4 card card-merch-item all-items <?php echo $p->categoria; ?>"
-                            data-precio="<?php echo $p->precio; ?>" data-nombre="<?php echo $p->nombre; ?>">
-                            <img class="card-img-top" src="./<?php echo $p->imagen; ?>"
-                                alt="<?php echo $p->nombre; ?>">
+                        <form action="./merch_item.php" method="POST" class="col-12 col-md-4 card card-merch-item all-items <?php echo $p->categoria; ?>" data-precio="<?php echo $p->precio; ?>" data-nombre="<?php echo $p->nombre; ?>" onclick="this.submit()">
+                            <input type="hidden" name="id" value="<?php echo $p->id; ?>">
+                            <img class="card-img-top" src="./<?php echo $p->imagen; ?>" alt="<?php echo $p->nombre; ?>">
                             <div class="card-body">
                                 <h3 class="card-title"><?php echo $p->nombre; ?></h3>
                                 <span>€<?php echo $p->precio; ?> EUR</span>
                             </div>
-                        </a>
+                        </form>
                 <?php
                     }
                 } else {
@@ -524,7 +666,8 @@ if ($reviews) {
 
             // Tras cargar la páginas, se desplaza hasta el formulario de comentarios.
             document.getElementById("form-review").scrollIntoView({
-                behavior: "smooth"
+                behavior: "instant",
+                block: "start"
             });
         <?php
         }

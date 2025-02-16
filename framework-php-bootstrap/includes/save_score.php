@@ -1,4 +1,5 @@
 <?php
+ header("Access-Control-Allow-Origin: *");
 require_once '../../framework-php-bootstrap/model/usuario.php';
 require_once '../../framework-php-bootstrap/controller/conexion.php';
 require_once '../../framework-php-bootstrap/includes/a_config.php';

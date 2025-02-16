@@ -99,7 +99,7 @@ CREATE TABLE `usuario` (
   `telefono` text DEFAULT NULL,
   `img_perfil` blob DEFAULT NULL,
   `newsletter` tinyint(1) NOT NULL DEFAULT 0,
-  `rol` enum('admin','editor','usuario') DEFAULT 'usuario'
+  `rol` enum('admin','usuario') DEFAULT 'usuario'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
@@ -107,7 +107,7 @@ CREATE TABLE `usuario` (
 --
 
 INSERT INTO `usuario` (`id`, `nombre`, `apellido1`, `apellido2`, `correo_electronico`, `clave`, `fecha_nac`, `pais`, `codigo_postal`, `telefono`, `img_perfil`, `newsletter`, `rol`) VALUES
-(10, 'Francisco Manuel', 'Hernández', '', 'francisco-h-j@hotmail.com', '$2y$10$NM8xhOUvxVOZkIb6XZ62bOhhW6T/EKMyF4uWguIilOn2/Inn.8Lna', '1997-01-05', 'España', '14500', '666666666', NULL, 0, 'usuario'),
+(10, 'Francisco Manuel', 'Hernández', '', 'francisco@hotmail.com', '$2y$10$NM8xhOUvxVOZkIb6XZ62bOhhW6T/EKMyF4uWguIilOn2/Inn.8Lna', '1997-01-05', 'España', '14500', '666666666', NULL, 0, 'usuario'),
 (12, 'Admin', 'Admin', '', 'admin@gmail.com', '$2y$10$Sgy9L6ziDqE6Vqc4Ru1Dp.ATFNCApyoYaZahJYhnzTAJzbkyFhbDm', '2000-10-10', 'España', '14500', '666666666', NULL, 0, 'admin');
 
 -- --------------------------------------------------------

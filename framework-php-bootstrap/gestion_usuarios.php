@@ -245,7 +245,7 @@ if (isset($_GET['alertMessage']) && isset($_GET['alertType'])) {
                             <!-- Confirm Password -->
                             <div class="col-12 col-md-6">
                                 <label for="pwd2">Confirmar contraseña</label><span> *</span>
-                                <input type="password" class="form-control" id="pwd2" placeholder="Confirme su contraseña" name="pswd2" required>
+                                <input type="password" class="form-control" id="pwd2" placeholder="Confirme su contraseña" name="pswd2" >
                             </div>
                         </div>
                         <div class="mb-3">

@@ -191,7 +191,17 @@ $google_client->setClientId('975033941456-e68iiht6sbmqkmkjpi70rkf5eorhvbn4.apps.
 $google_client->setClientSecret('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');
 
 //Set the OAuth 2.0 Redirect URI
-$google_client->setRedirectUri('http://localhost:8080/index.php');
+//$google_client->setRedirectUri('http://localhost:8080/index.php');
+
+
+if ($_SERVER['HTTP_HOST'] === 'localhost:8080') {
+	$redirectUri = 'http://localhost:8080/index.php';
+} else {
+	$redirectUri = 'https://brogrammers.comareslab.org/index.php';
+}
+
+// Setear la URI de redirección
+$google_client->setRedirectUri($redirectUri);
 
 
 $google_client->addScope('email');

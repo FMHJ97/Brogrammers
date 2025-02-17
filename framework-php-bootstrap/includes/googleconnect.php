@@ -64,8 +64,7 @@ if (isset($_GET["code"])) {
 
 
 //COMENTO EL "IF" PARA QUE APAREZCA SIEMPRE EL BOTÓN AUNQUE ESTÉ LOGADO PARA LAS PRUEBAS QUE ESTOY HACIENDO.
-$login_button = '<a href="' . $google_client->createAuthUrl() . '"><img src="/assets/img/google-imagotipo.svg" class="googlebtn"/></a>';
+$login_button = '<a href="' . $google_client->createAuthUrl() . '"><img src="/assets/img/google-imagotipo.svg" class="googlebtn" alt="Botón de Google Login"/></a>';
 
 
 // }
-?>

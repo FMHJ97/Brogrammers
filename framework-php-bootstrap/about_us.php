@@ -40,7 +40,7 @@
                     <div class="row">
                         <!-- Imagen del Miembro -->
                         <div class="mb-4 col-md-4 about-us-img">
-                            <img src="assets/img/dummy/dummy_user.png" alt="Miembro del Equipo 1" class="img-fluid">
+                            <img src="assets/img/dummy/dummy_user.png" alt="Foto de Francisco Manuel Hernández" class="img-fluid">
                         </div>
                         <!-- Información del Miembro -->
                         <div class="col-md-8">
@@ -50,9 +50,13 @@
                                     <p>
                                         Estudiante de 2º de CFGS de Desarrollo de Aplicaciones Web.
                                     </p>
+                                    <p>
+                                        <strong>Videojuego:</strong> Tickets, please!
+                                    </p>
                                 </div>
                                 <div class="col-md-12 d-flex justify-content-center">
-                                    <a href="juegoFMHJ.php" target="_blank" class="btn about-us-btn">Iniciar Juego</a>
+                                    <a href="juegoFMHJ.php" target="_blank" class="btn about-us-btn"
+                                        aria-label="Iniciar Juego: Tickets, please!" title="Iniciar Juego: Tickets, please!">Iniciar Juego</a>
                                 </div>
                             </div>
                         </div>
@@ -67,7 +71,7 @@
                     <div class="row">
                         <!-- Imagen del Miembro -->
                         <div class="mb-4 col-md-4 about-us-img">
-                            <img src="assets/img/dummy/dummy_user.png" alt="Miembro del Equipo 1" class="img-fluid">
+                            <img src="assets/img/dummy/dummy_user.png" alt="Foto de Taylor Horne" class="img-fluid">
                         </div>
                         <!-- Información del Miembro -->
                         <div class="col-md-8">
@@ -77,9 +81,13 @@
                                     <p>
                                         Estudiante de 2º de CFGS de Desarrollo de Aplicaciones Web.
                                     </p>
+                                    <p>
+                                        <strong>Videojuego:</strong> Cerveztival
+                                    </p>
                                 </div>
                                 <div class="col-md-12 d-flex justify-content-center">
-                                    <a href="juegoTaylor.php" target="_blank" class="btn about-us-btn">Iniciar Juego</a>
+                                    <a href="juegoTaylor.php" target="_blank" class="btn about-us-btn"
+                                        aria-label="Iniciar Juego: Cerveztival" title="Iniciar Juego: Cerveztival">Iniciar Juego</a>
                                 </div>
                             </div>
                         </div>
@@ -98,7 +106,7 @@
                     <div class="row">
                         <!-- Imagen del Miembro -->
                         <div class="mb-4 col-md-4 about-us-img">
-                            <img src="assets/img/dummy/dummy_user.png" alt="Miembro del Equipo 1" class="img-fluid">
+                            <img src="assets/img/dummy/dummy_user.png" alt="Foto de José Manuel Ponferrada" class="img-fluid">
                         </div>
                         <!-- Información del Miembro -->
                         <div class="col-md-8">
@@ -108,9 +116,13 @@
                                     <p>
                                         Estudiante de 2º de CFGS de Desarrollo de Aplicaciones Web.
                                     </p>
+                                    <p>
+                                        <strong>Videojuego:</strong> Tetris
+                                    </p>
                                 </div>
                                 <div class="col-md-12 d-flex justify-content-center">
-                                    <a href="juegoJMPA.php" target="_blank" class="btn about-us-btn">Iniciar Juego</a>
+                                    <a href="juegoJMPA.php" target="_blank" class="btn about-us-btn"
+                                        aria-label="Iniciar Juego: Tetris" title="Iniciar Juego: Tetris">Iniciar Juego</a>
                                 </div>
                             </div>
                         </div>
@@ -125,7 +137,7 @@
                     <div class="row">
                         <!-- Imagen del Miembro -->
                         <div class="mb-4 col-md-4 about-us-img">
-                            <img src="assets/img/dummy/dummy_user.png" alt="Miembro del Equipo 1" class="img-fluid">
+                            <img src="assets/img/dummy/dummy_user.png" alt="Foto de Francisco Ruiz" class="img-fluid">
                         </div>
                         <!-- Información del Miembro -->
                         <div class="col-md-8">
@@ -135,9 +147,13 @@
                                     <p>
                                         Estudiante de 2º de CFGS de Desarrollo de Aplicaciones Web.
                                     </p>
+                                    <p>
+                                        <strong>Videojuego:</strong> GroundSound Hero
+                                    </p>
                                 </div>
                                 <div class="col-md-12 d-flex justify-content-center">
-                                    <a href="juegoFranRuiz.php" target="_blank" class="btn about-us-btn">Iniciar Juego</a>
+                                    <a href="juegoFranRuiz.php" target="_blank" class="btn about-us-btn"
+                                        aria-label="Iniciar Juego: GroundSound Hero" title="Iniciar Juego: GroundSound Hero">Iniciar Juego</a>
                                 </div>
                             </div>
                         </div>
@@ -163,7 +179,7 @@
                     <!-- Imagen e Información -->
                     <div class="row">
                         <h3>Tickets, please!</h3>
-                        <div class="table-responsive-md mx-auto">
+                        <div class="mx-auto table-responsive-md">
                             <table class="table table-about-us table-borderless table-striped">
                                 <thead>
                                     <tr>
@@ -202,7 +218,7 @@
                     <!-- Imagen e Información -->
                     <div class="row">
                         <h3>Cerveztival</h3>
-                        <div class="table-responsive-md mx-auto">
+                        <div class="mx-auto table-responsive-md">
                             <table class="table table-about-us table-borderless table-striped">
                                 <thead>
                                     <tr>
@@ -249,7 +265,7 @@
 
                         <h3>Videojuego JMPA</h3>
 
-                        <div class="table-responsive-md mx-auto">
+                        <div class="mx-auto table-responsive-md">
                             <table class="table table-about-us table-borderless table-striped">
                                 <thead>
                                     <tr>
@@ -293,7 +309,7 @@
 
                         <h3>GroundSound Hero</h3>
 
-                        <div class="table-responsive-md mx-auto">
+                        <div class="mx-auto table-responsive-md">
                             <table class="table table-about-us table-borderless table-striped">
                                 <thead>
                                     <tr>

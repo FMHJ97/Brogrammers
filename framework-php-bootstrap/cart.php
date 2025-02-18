@@ -11,12 +11,12 @@
     <!-- Barra de navegación -->
     <?php include("includes/navbar.php"); ?>
 
-    <main class="d-block px-3 px-md-0">
+    <main class="px-3 d-block px-md-0">
         <section class="page-section">
 
             <div class="container">
                 <!-- Fila con títulos (Carrito, Dirección, Pago) -->
-                <div class="row d-flex text-center page-section-heading">
+                <div class="text-center row d-flex page-section-heading">
                     <div class="col">
                         <h3 class="step-title active">Carrito</h3>
                     </div>
@@ -30,14 +30,15 @@
 
                 <!-- Fila con artículos y resumen -->
                 <div class="row g-3">
-                    <div class="col-md-8 px-0 px-md-2">
+                    <div class="px-0 col-md-8 px-md-2">
                         <div class="table-responsive-md"> <!-- Hace que la tabla sea responsive -->
                             <!-- Títulos de la tabla -->
                             <table class="table table-cart table-borderless table-striped">
                                 <thead>
                                     <tr>
-                                        <th><!CF2: ¿h5? ¿Dónde estan h2,h3 y h4?-->
-                                            <h5>Artículo</h5>
+                                        <th>
+                                            <!CF2: ¿h5? ¿Dónde estan h2,h3 y h4?-->
+                                                <h5>Artículo</h5>
                                         </th>
                                         <th class="text-center">
                                             <h5>Precio</h5>
@@ -97,9 +98,9 @@
                     </div>
 
                     <!-- Resumen del pedido -->
-                    <div class="col-md-4 container-summary p-3">
-                        <div class="row mb-3">
-                            <div class="col text-center">
+                    <div class="p-3 col-md-4 container-summary">
+                        <div class="mb-3 row">
+                            <div class="text-center col">
                                 <h4>Resumen</h4>
                             </div>
                         </div>
@@ -144,9 +145,10 @@
                         </div>
 
                         <p class="mb-0 discount-text">¿Tienes un código de descuento?</p>
-                        <div class="row mb-3">
-                            <div class="col-md-7 mb-1">
-                                <input type="text" class="form-control-discount" placeholder="Introduzca código">
+                        <div class="mb-3 row">
+                            <div class="mb-1 col-md-7">
+                                <label for="discount" class="visually-hidden">Código de descuento</label>
+                                <input id="discount" type="text" class="form-control-discount" placeholder="Introduzca código">
                             </div>
                             <div class="col-md-5">
                                 <button type="button" class="button-apply-discount">Aplicar</button>

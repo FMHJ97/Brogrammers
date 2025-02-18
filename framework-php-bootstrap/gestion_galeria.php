@@ -1,4 +1,4 @@
-<?php include("includes/a_config.php"); 
+<?php include("includes/a_config.php");
 
 require_once("../framework-php-bootstrap/controller/fotoController.php");
 
@@ -35,11 +35,11 @@ if (isset($_POST["buscaUsuario"]) && !isset($_POST["edit"])) {
     } else {
         $fotos = FotoController::getAllByUsuario($_POST["usuario"]);
     }
-} 
+}
 // Buscar imágenes por fecha
 else if (isset($_POST["buscaFecha"]) && !isset($_POST["edit"])) {
     $fotos = FotoController::getAllByFecha($_POST["date"]);
-} 
+}
 // Obtener todas las imágenes
 else {
     $fotos = FotoController::getAll();
@@ -74,13 +74,17 @@ if (isset($_POST["confirm"])) {
         <div class="alert alert-<?php echo $alertType; ?> alert-dismissible fade show custom-alert-gestion" role="alert">
             <?php if ($alertType == "success"): ?>
                 <!-- Ícono de éxito -->
-                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-check-circle-fill" viewBox="0 0 16 16">
-                    <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0m-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z"/>
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                    class="bi bi-check-circle-fill" viewBox="0 0 16 16">
+                    <path
+                        d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0m-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z" />
                 </svg>
             <?php else: ?>
                 <!-- Ícono de error -->
-                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-x-circle-fill" viewBox="0 0 16 16">
-                    <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0M5.354 4.646a.5.5 0 1 0-.708.708L7.293 8l-2.647 2.646a.5.5 0 0 0 .708.708L8 8.707l2.646 2.647a.5.5 0 0 0 .708-.708L8.707 8l2.647-2.646a.5.5 0 0 0-.708-.708L8 7.293z"/>
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-x-circle-fill"
+                    viewBox="0 0 16 16">
+                    <path
+                        d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0M5.354 4.646a.5.5 0 1 0-.708.708L7.293 8l-2.647 2.646a.5.5 0 0 0 .708.708L8 8.707l2.646 2.647a.5.5 0 0 0 .708-.708L8.707 8l2.647-2.646a.5.5 0 0 0-.708-.708L8 7.293z" />
                 </svg>
             <?php endif; ?>
             <strong><?php echo $alertMessage; ?></strong>
@@ -88,37 +92,38 @@ if (isset($_POST["confirm"])) {
         </div>
     <?php endif; ?>
 
-    <main class="d-block px-3 px-md-0">
+    <main class="px-3 d-block px-md-0">
 
         <section class="page-section">
 
             <div class="container">
                 <!-- Fila con títulos (Carrito, Dirección, Pago) -->
-                <div class="row d-flex text-center page-section-heading mb-3">
+                <div class="mb-3 text-center row d-flex page-section-heading">
                     <div class="col">
                         <h3 class="step-title active">Imagenes</h3>
                     </div>
                 </div>
 
                 <div class="row g-3">
-                    <div class="col-md-10 mx-auto px-0 px-md-2">
+                    <div class="px-0 mx-auto col-md-10 px-md-2">
                         <form class="mb-3" action="" method="post">
                             <div class="row g-2">
                                 <!-- Search bar -->
                                 <div class="col-12 col-md">
                                     <div class="search-bar-media justify-content-center">
-                                        <input type="text" placeholder="<?php
-                                                                        if (isset($_POST["buscaUsuario"]) && $_POST["usuario"] != "") {
-                                                                            echo "Busca otra vez para ver todos →";
-                                                                        } else echo "Buscar por usuario";
-                                                                        ?>
-                                        " class="form-control-search w-100 no-margin"
-                                            name="usuario">
+                                        <label for="search" class="visually-hidden">Buscar</label>
+                                        <input id="search" type="text" placeholder="<?php
+                                                                                    if (isset($_POST["buscaUsuario"]) && $_POST["usuario"] != "") {
+                                                                                        echo "Busca otra vez para ver todos →";
+                                                                                    } else echo "Buscar por usuario";
+                                                                                    ?>
+                                        " class="form-control-search w-100 no-margin" name="usuario">
                                         <button class="btn btn-search" name="buscaUsuario" type="submit">
                                             <i class="bi bi-search"></i>
                                         </button>
-                                        <input type="date" class="form-control-search w-100"
-                                            name="date" placeholder="Buscar por fecha">
+                                        <label for="date" class="visually-hidden">Buscar por fecha</label>
+                                        <input id="date" type="date" class="form-control-search w-100" name="date"
+                                            placeholder="Buscar por fecha">
                                         <button class="btn btn-search" name="buscaFecha" type="submit">
                                             <i class="bi bi-search"></i>
                                         </button>
@@ -154,10 +159,11 @@ if (isset($_POST["confirm"])) {
                                         <?php foreach ($fotos as $f) { ?>
                                             <tr>
                                                 <form method="post">
-                                                    <div class="modal fade" id="imageModal" tabindex="-1" aria-labelledby="imageModalLabel" aria-hidden="true">
+                                                    <div class="modal fade" id="imageModal" tabindex="-1"
+                                                        aria-labelledby="imageModalLabel" aria-hidden="true">
                                                         <div class="modal-dialog modal-dialog-centered">
                                                             <div class="img-model">
-                                                                <div class="modal-body text-center">
+                                                                <div class="text-center modal-body">
                                                                     <img id="modalImage" src="" class="img-fluid" alt="Imagen">
                                                                 </div>
                                                             </div>
@@ -166,8 +172,9 @@ if (isset($_POST["confirm"])) {
                                                     <input type="hidden" name="id" value="<?php echo $f->id ?>">
                                                     <input type="hidden" name="url" value="<?php echo $f->img ?>">
                                                     <td class="text-center align-middle col-2">
-                                                        <img class="img gallery-thumbnail" src="<?php echo $f->img ?>" height="100px" width="100px"
-                                                            alt="<?php echo $f->nombre ?>" data-bs-toggle="modal" data-bs-target="#imageModal"
+                                                        <img class="img gallery-thumbnail" src="<?php echo $f->img ?>"
+                                                            height="100px" width="100px" alt="<?php echo $f->nombre ?>"
+                                                            data-bs-toggle="modal" data-bs-target="#imageModal"
                                                             onclick="showImageModal('<?php echo $f->img ?>')">
                                                     </td>
                                                     <td class="text-center align-middle col-2">
@@ -210,7 +217,7 @@ if (isset($_POST["confirm"])) {
                         <!-- Nombre Input-->
                         <input type="hidden" name="id" value="<?php echo $_POST["id"] ?>">
                         <div class="mt-3 mb-3 row">
-                            <div class="mb-3 col-12 col-md-6 mb-md-0 text-center">
+                            <div class="mb-3 text-center col-12 col-md-6 mb-md-0">
                                 <img class="img img-form-gestion img-fluid" src="<?php echo $f->img ?>"
                                     alt="<?php echo $f->nombre ?>">
                             </div>
@@ -219,7 +226,7 @@ if (isset($_POST["confirm"])) {
                                 <input type="text" class="form-control" id="name" value="<?php echo $f->nombre ?>"
                                     name="text" required>
                             </div>
-                            <div class="d-flex mt-2 flex-column ">
+                            <div class="mt-2 d-flex flex-column ">
                                 <button type="submit" name="confirm" class="btn">Confirmar cambios</button>
                             </div>
                         </div>

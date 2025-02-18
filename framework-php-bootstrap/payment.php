@@ -16,7 +16,7 @@
 
             <div class="container">
                 <!-- Fila con títulos (Carrito, Dirección, Pago) -->
-                <div class="row d-flex text-center page-section-heading">
+                <div class="text-center row d-flex page-section-heading">
                     <div class="col">
                         <h3 class="step-title">Carrito</h3>
                     </div>
@@ -31,27 +31,29 @@
                 </div>
 
                 <!-- Fila con formulario de facturación y resumen -->
-                <div class="row gap-2">
-                    <div class="col-md-7 authentication-form mb-2 p-3">
+                <div class="gap-2 row">
+                    <div class="p-3 mb-2 col-md-7 authentication-form">
 
                         <!-- Formulario de pago -->
                         <div class="row">
-                            <div class="col text-center">
+                            <div class="text-center col">
                                 <h4>Método de pago</h4>
                             </div>
                         </div>
 
                         <!-- Métodos de pago en dos botones que, al hacer clic, mostrarán los campos para tarjeta de crédito o Paypal -->
-                        <div class="row mb-3 g-2">
+                        <div class="mb-3 row g-2">
                             <div class="col-md-6">
-                                <button class="btn btn-payment-method selected p-5">
-                                    <img src="./assets/img/visa.svg" alt="Tarjeta de crédito" class="payment-method-img img-fluid">
+                                <button class="p-5 btn btn-payment-method selected">
+                                    <img src="./assets/img/visa.svg" alt="Tarjeta de crédito"
+                                        class="payment-method-img img-fluid">
                                 </button>
                             </div>
 
                             <div class="col-md-6">
-                                <button class="btn btn-payment-method p-5">
-                                    <img src="./assets/img/paypal.svg" alt="Paypal" class="payment-method-img img-fluid">
+                                <button class="p-5 btn btn-payment-method">
+                                    <img src="./assets/img/paypal.svg" alt="Paypal"
+                                        class="payment-method-img img-fluid">
                                 </button>
                             </div>
                         </div>
@@ -59,36 +61,39 @@
                         <!-- Campos para tarjeta de crédito -->
                         <div class="row">
                             <div class="col">
-                                <label>Número de tarjeta</label><span> *</span>
-                                <input type="text" class="form-control" placeholder="Introduzca su número de tarjeta">
+                                <label for="numCard">Número de tarjeta</label><span> *</span>
+                                <input id="numCard" type="text" class="form-control"
+                                    placeholder="Introduzca su número de tarjeta">
                             </div>
                         </div>
 
                         <div class="row">
                             <div class="col">
-                                <label>Nombre del titular</label><span> *</span>
-                                <input type="text" class="form-control" placeholder="Introduzca el nombre del titular">
+                                <label for="titular">Nombre del titular</label><span> *</span>
+                                <input id="titular" type="text" class="form-control"
+                                    placeholder="Introduzca el nombre del titular">
                             </div>
                         </div>
 
                         <div class="row">
                             <div class="col-md-6">
-                                <label>Fecha de caducidad</label><span> *</span>
-                                <input type="text" class="form-control" placeholder="MM/AA">
+                                <label for="exp">Fecha de caducidad</label><span> *</span>
+                                <input id="exp" type="text" class="form-control" placeholder="MM/AA">
                             </div>
                             <div class="col-md-6">
-                                <label>CVC</label><span> *</span>
-                                <input type="text" class="form-control" placeholder="Introduzca el código de seguridad">
+                                <label for="cvc">CVC</label><span> *</span>
+                                <input id="cvc" type="text" class="form-control"
+                                    placeholder="Introduzca el código de seguridad">
                             </div>
                         </div>
 
                         <!-- Campos para Paypal -->
                         <div class="row d-none">
                             <div class="col">
-                                <label>
+                                <label for="emailPaypal">
                                     <h5>Correo electrónico de Paypal</h5>
                                 </label><span> *</span>
-                                <input type="email" class="form-control"
+                                <input id="emailPaypal" type="email" class="form-control"
                                     placeholder="Introduzca su correo electrónico de Paypal">
                             </div>
                         </div>
@@ -96,9 +101,9 @@
                     </div>
 
                     <!-- Resumen -->
-                    <div class="col-md-4 container-summary p-3">
-                        <div class="row mb-3">
-                            <div class="col text-center">
+                    <div class="p-3 col-md-4 container-summary">
+                        <div class="mb-3 row">
+                            <div class="text-center col">
                                 <h4>Resumen</h4>
                             </div>
                         </div>
@@ -145,9 +150,10 @@
                         </div>
 
                         <p class="mb-0 discount-text">¿Tienes un código de descuento?</p>
-                        <div class="row mb-3">
-                            <div class="col-md-7 mb-1">
-                                <input type="text" class="form-control-discount" placeholder="Introduzca código">
+                        <div class="mb-3 row">
+                            <div class="mb-1 col-md-7">
+                                <label for="discount" class="visually-hidden">Introduce tu código</label>
+                                <input id="discount" type="text" class="form-control-discount" placeholder="Introduzca código">
                             </div>
 
                             <div class="col-md-5">

@@ -203,6 +203,11 @@
   text-decoration: none;
   color: $texto2;
   font-family: $headings-font-family;
+
+}
+
+.button-ticket:hover {
+  text-decoration: underline !important;
 }
 
 //Los botones dentro de index.php
@@ -247,6 +252,10 @@
 
 .button-gallery-wrap {
   position: flex;
+
+  :hover {
+    text-decoration: underline;
+  }
 }
 
 .button-gallery-input {
@@ -434,6 +443,7 @@ button {
   &:hover {
     background-color: darken($color: $resaltar1, $amount: 10);
     color: $texto2;
+    text-decoration: underline;
   }
 }
 

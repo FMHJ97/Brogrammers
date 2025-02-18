@@ -4,8 +4,8 @@
 
 <head>
     <?php include("includes/head_tags.php");
-    require_once '../framework-php-bootstrap/controller/userScoresController.php';
-    require_once '../framework-php-bootstrap/model/userScores.php';
+    require_once '/controller/userScoresController.php';
+    require_once '/model/userScores.php';
 
     $scoresFMHJ = UserScoresController::getAllFMHJ();
     $scoresTH = UserScoresController::getAllTH();

@@ -35,6 +35,7 @@ nav {
     align-items: center;
     &:hover {
       color: $resaltar2;
+      text-decoration: underline !important;
     }
 
     i {

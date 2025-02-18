@@ -14,7 +14,7 @@
     <div class="row d-flex text-center page-section-heading mb-3 mt-4">
         <div class="col-6 align-middle justify-content-center text-center mx-auto">
             <h1>Estamos sufriendo dificultades técnicas. Por favor, inténtelo de nuevo más tarde</h1>
-            <a class="button nav-link" href="index.php">Volver al index</a>
+            <a class="nav-link" href="index.php">Volver al index</a>
         </div>
     </div>
 

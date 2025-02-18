@@ -70,80 +70,80 @@ require_once '../framework-php-bootstrap/model/usuario.php';
         </div>
       </section>
 
-      <section ">
+      <section>
         <div id=" carouselExampleInterval" class="carousel slide carousel-fade" data-bs-interval="5000"
-        data-bs-ride="carousel">
-        <div class="carousel-inner">
-          <div class="carousel-item active">
-            <img class="d-block w-100" src="assets/img/index/2.gif" alt="First slide">
-          </div>
-          <div class="carousel-item">
-            <img class="d-block w-100" src="assets/img/index/1.gif" alt="Second slide">
-          </div>
-          <div class="carousel-item ">
-            <img class="d-block w-100" src="assets/img/index/3.gif" alt="Third slide">
-          </div>
-          <div class="carousel-item ">
-            <img class="d-block w-100" src="assets/img/index/4.gif" alt="Fourth slide">
-          </div>
-          <div class="carousel-item ">
-            <img class="d-block w-100" src="assets/img/index/5.gif" alt="Fifth slide">
-          </div>
-          <div class="carousel-item ">
-            <img class="d-block w-100" src="assets/img/index/6.gif" alt="Sixth slide">
-          </div>
-          <div class="carousel-item ">
-            <img class="d-block w-100" src="assets/img/index/7.gif" alt="Seventh slide">
-          </div>
-        </div>
-    </div>
-    </section>
-
-    <section>
-      <div class="py-3 my-3 row">
-        <a href="lineup.php" class="btn-index-lineup ">LINE UP</a>
-      </div>
-    </section>
-
-    <section>
-      <div class="py-3 my-3 row">
-        <div class="text-center col d-flex flex-column justify-content-center align-items-center">
-          <img class="p-3 img-fluid" src="../assets/img/Logo.svg" alt="Festival Logo">
-          <div class="py-3 festival px-auto">FESTIVAL</div>
-          <div class="festival-date">ABRIL 17-18-19, 2025</div>
-          <div class="festival-location">
-            <div>LUCENA, CÓRDOBA</div>
-            <div>PRUDENCIO UZAR TOWN SQUARE</div>
-          </div>
-        </div>
-      </div>
-    </section>
-    <section>
-      <div class="px-0 py-3 mx-0 my-3 row">
-        <div class="col">
-          <div id="video-container">
-            <video id="video">
-              <source src="assets/videos/festival_1080p.mp4" type="video/mp4">
-              <p>
-                Your browser doesn't support HTML5 video.
-                <a href="assets/videos/festival_1080p.mp4">Download</a> the video instead.
-              </p>
-            </video>
-            <div id="video-controls">
-              <button type="button" id="play-pause" class="play">Play</button>
-              <button type="button" id="mute">Mute</button>
-              <input type="range" id="volume-bar" min="0" max="1" step="0.1" value="1">
-              <button type="button" id="full-screen">Full-Screen</button>
+          data-bs-ride="carousel">
+          <div class="carousel-inner">
+            <div class="carousel-item active">
+              <img class="d-block w-100" src="assets/img/index/2.gif" alt="First slide">
+            </div>
+            <div class="carousel-item">
+              <img class="d-block w-100" src="assets/img/index/1.gif" alt="Second slide">
+            </div>
+            <div class="carousel-item ">
+              <img class="d-block w-100" src="assets/img/index/3.gif" alt="Third slide">
+            </div>
+            <div class="carousel-item ">
+              <img class="d-block w-100" src="assets/img/index/4.gif" alt="Fourth slide">
+            </div>
+            <div class="carousel-item ">
+              <img class="d-block w-100" src="assets/img/index/5.gif" alt="Fifth slide">
+            </div>
+            <div class="carousel-item ">
+              <img class="d-block w-100" src="assets/img/index/6.gif" alt="Sixth slide">
+            </div>
+            <div class="carousel-item ">
+              <img class="d-block w-100" src="assets/img/index/7.gif" alt="Seventh slide">
             </div>
           </div>
         </div>
-      </div>
-    </section>
-    <section>
-      <div class="py-3 my-3 row">
-        <a href="tickets.php" class="btn-index ">COMPRA TUS TICKETS AHORA</a>
-      </div>
-    </section>
+      </section>
+
+      <section>
+        <div class="py-3 my-3 row">
+          <a href="lineup.php" class="btn-index-lineup ">LINE UP</a>
+        </div>
+      </section>
+
+      <section>
+        <div class="py-3 my-3 row">
+          <div class="text-center col d-flex flex-column justify-content-center align-items-center">
+            <img class="p-3 img-fluid" src="../assets/img/Logo.svg" alt="Festival Logo">
+            <div class="py-3 festival px-auto">FESTIVAL</div>
+            <div class="festival-date">ABRIL 17-18-19, 2025</div>
+            <div class="festival-location">
+              <div>LUCENA, CÓRDOBA</div>
+              <div>PRUDENCIO UZAR TOWN SQUARE</div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section>
+        <div class="px-0 py-3 mx-0 my-3 row">
+          <div class="col">
+            <div id="video-container">
+              <video id="video">
+                <source src="assets/videos/festival_1080p.mp4" type="video/mp4">
+                <p>
+                  Your browser doesn't support HTML5 video.
+                  <a href="assets/videos/festival_1080p.mp4">Download</a> the video instead.
+                </p>
+              </video>
+              <div id="video-controls">
+                <button type="button" id="play-pause" class="play">Play</button>
+                <button type="button" id="mute">Mute</button>
+                <input type="range" id="volume-bar" min="0" max="1" step="0.1" value="1" aria-label="Control de volumen">
+                <button type="button" id="full-screen">Full-Screen</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section>
+        <div class="py-3 my-3 row">
+          <a href="tickets.php" class="btn-index ">COMPRA TUS TICKETS AHORA</a>
+        </div>
+      </section>
 
     </div>
     <?php include("includes/patrocinadores.php"); ?>

@@ -40,7 +40,7 @@
                     <div class="row">
                         <!-- Imagen del Miembro -->
                         <div class="mb-4 col-md-4 about-us-img">
-                            <img src="assets/img/dummy/dummy_user.png" alt="Miembro del Equipo 1" class="img-fluid">
+                            <img src="assets/img/dummy/dummy_user.png" alt="Foto de Francisco Manuel Hernández" class="img-fluid">
                         </div>
                         <!-- Información del Miembro -->
                         <div class="col-md-8">
@@ -71,7 +71,7 @@
                     <div class="row">
                         <!-- Imagen del Miembro -->
                         <div class="mb-4 col-md-4 about-us-img">
-                            <img src="assets/img/dummy/dummy_user.png" alt="Miembro del Equipo 1" class="img-fluid">
+                            <img src="assets/img/dummy/dummy_user.png" alt="Foto de Taylor Horne" class="img-fluid">
                         </div>
                         <!-- Información del Miembro -->
                         <div class="col-md-8">
@@ -106,7 +106,7 @@
                     <div class="row">
                         <!-- Imagen del Miembro -->
                         <div class="mb-4 col-md-4 about-us-img">
-                            <img src="assets/img/dummy/dummy_user.png" alt="Miembro del Equipo 1" class="img-fluid">
+                            <img src="assets/img/dummy/dummy_user.png" alt="Foto de José Manuel Ponferrada" class="img-fluid">
                         </div>
                         <!-- Información del Miembro -->
                         <div class="col-md-8">
@@ -137,7 +137,7 @@
                     <div class="row">
                         <!-- Imagen del Miembro -->
                         <div class="mb-4 col-md-4 about-us-img">
-                            <img src="assets/img/dummy/dummy_user.png" alt="Miembro del Equipo 1" class="img-fluid">
+                            <img src="assets/img/dummy/dummy_user.png" alt="Foto de Francisco Ruiz" class="img-fluid">
                         </div>
                         <!-- Información del Miembro -->
                         <div class="col-md-8">

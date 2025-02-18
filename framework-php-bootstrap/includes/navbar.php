@@ -66,7 +66,7 @@ unset($_SESSION['alert']);
         <!-- Right side of the navbar -->
 
         <!-- The icon cart that will be displayed on mobile devices before the hamburger menu -->
-        <a class="nav-link cart-icon d-md-none ms-auto" href="./cart.php"><i class="bi bi-cart2"></i></a>
+        <a class="nav-link cart-icon d-md-none ms-auto" href="./cart.php" aria-label="Info Usuario"><i class="bi bi-cart2"></i></a>
 
         <!-- The hamburguer menu -->
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
@@ -97,7 +97,7 @@ unset($_SESSION['alert']);
 
 
                     if ($_SESSION["logged"]->rol === "admin") {
-                        ?>
+                ?>
 
                         <li class="nav-item">
                             <div class="dropdown dd-user">
@@ -121,17 +121,17 @@ unset($_SESSION['alert']);
                                 </ul>
                             </div>
                         </li>
-                        <?php
+                    <?php
                     }
                 }
 
                 if (isset($_SESSION['logged'])) {
                     if ($_SESSION['logged']->rol !== 'admin') {
-                        ?>
+                    ?>
                         <li class="nav-item">
-                            <a class="nav-link cart-icon d-none d-md-block" href="./cart.php"><i class="bi bi-cart2"></i></a>
+                            <a class="nav-link cart-icon d-none d-md-block" href="./cart.php" aria-label="Info Usuario"><i class="bi bi-cart2"></i></a>
                         </li>
-                        <?php
+                    <?php
                     }
                     ?>
                     <li class="nav-item">
@@ -139,7 +139,7 @@ unset($_SESSION['alert']);
                             <!-- Icono de Ordenación -->
                             <!-- Botón de Ordenación -->
                             <button id="dropdownMenuButton" type="button" class="btn dropdown-toggle"
-                                data-bs-toggle="dropdown">
+                                data-bs-toggle="dropdown" aria-label="Botón de Login">
                                 <i class="bi bi-person-circle"></i>
                                 <?php echo $_SESSION['logged']->nombre; ?>
                             </button>
@@ -156,15 +156,15 @@ unset($_SESSION['alert']);
                             </ul>
                         </div>
                     </li>
-                    <?php
+                <?php
                 } else {
-                    ?>
+                ?>
                     <li class="nav-item">
-                        <a class="nav-link-auth" href="#" data-bs-toggle="modal" data-bs-target="#loginModal">
+                        <a class="nav-link-auth" href="#" data-bs-toggle="modal" data-bs-target="#loginModal" aria-label="Botón de Login">
                             <i class="bi bi-person-circle"></i>
                         </a>
                     </li>
-                    <?php
+                <?php
                 }
                 ?>
             </ul>
@@ -251,7 +251,7 @@ unset($_SESSION['alert']);
 
     <script>
         // Auto-mostrar modal si hay alerta y no estamos en la página de login
-        document.addEventListener('DOMContentLoaded', function () {
+        document.addEventListener('DOMContentLoaded', function() {
             <?php if ($alert && !strpos($_SERVER['REQUEST_URI'], 'login.php')): ?>
                 const loginModal = new bootstrap.Modal(document.getElementById('loginModal'));
                 loginModal.show();

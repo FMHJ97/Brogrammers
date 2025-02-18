@@ -16,95 +16,100 @@
 
             <div class="container ">
                 <!-- Fila con títulos (Carrito, Dirección, Pago) -->
-                <div class="row d-flex text-center page-section-heading">
+                <div class="text-center row d-flex page-section-heading">
                     <div class="col">
-                        <h3 class="step-title">Carrito</h3>
+                        <h2 class="step-title">Carrito</h2>
                     </div>
 
                     <div class="col">
-                        <h3 class="step-title active">Dirección</h3>
+                        <h2 class="step-title active">Dirección</h2>
                     </div>
 
                     <div class="col">
-                        <h3 class="step-title">Pago</h3>
+                        <h2 class="step-title">Pago</h2>
                     </div>
                 </div>
 
                 <!-- Fila con formulario de facturación y resumen -->
-                <div class="row gap-2">
-                    <div class="col-md-7 authentication-form mb-2 p-3">
+                <div class="gap-2 row">
+                    <div class="p-3 mb-2 col-md-7 authentication-form">
 
                         <!-- Título -->
-                        <div class="row mb-2">
+                        <div class="mb-2 row">
                             <div class="col text-start">
-                                <h4>Dirección de envío</h4>
+                                <h3>Dirección de envío</h3>
                             </div>
                         </div>
 
                         <!-- Email -->
                         <div class="row">
                             <div class="col">
-                                <label>Correo electrónico</label><span> *</span>
-                                <input type="email" class="form-control" placeholder="Introduzca su correo electrónico">
+                                <label for="email1">Correo electrónico</label><span> *</span>
+                                <input id="email1" type="email" class="form-control"
+                                    placeholder="Introduzca su correo electrónico">
                             </div>
                         </div>
 
                         <!-- Nombre y Apellidos -->
                         <div class="row">
                             <div class="col-md-6">
-                                <label>Nombre</label><span> *</span>
-                                <input type="text" class="form-control" placeholder="Introduzca su nombre">
+                                <label for="name">Nombre</label><span> *</span>
+                                <input id="name" type="text" class="form-control" placeholder="Introduzca su nombre">
                             </div>
 
                             <div class="col-md-6">
-                                <label>Apellidos</label><span> *</span>
-                                <input type="text" class="form-control" placeholder="Introduzca sus apellidos">
+                                <label for="surname">Apellidos</label><span> *</span>
+                                <input id="surname" type="text" class="form-control"
+                                    placeholder="Introduzca sus apellidos">
                             </div>
                         </div>
 
                         <!-- Dirección -->
                         <div class="row">
                             <div class="col-md-6">
-                                <label>Dirección</label><span> *</span>
-                                <input type="text" class="form-control" placeholder="Introduzca su dirección">
+                                <label for="address">Dirección</label><span> *</span>
+                                <input id="address" type="text" class="form-control"
+                                    placeholder="Introduzca su dirección">
                             </div>
                             <div class="col-md-6">
-                                <label>Bloque, Puerta</label><span> *</span>
-                                <input type="text" class="form-control" placeholder="Introduzca su bloque">
+                                <label for="block">Bloque, Puerta</label><span> *</span>
+                                <input id="block" type="text" class="form-control" placeholder="Introduzca su bloque">
                             </div>
                         </div>
 
                         <!-- País y Código Postal -->
                         <div class="row">
                             <div class="col-md-6">
-                                <label>País</label><span> *</span>
-                                <input type="text" class="form-control" placeholder="Introduzca su país">
+                                <label for="country">País</label><span> *</span>
+                                <input id="country" type="text" class="form-control" placeholder="Introduzca su país">
                             </div>
                             <div class="col-md-6">
-                                <label>Código Postal</label><span> *</span>
-                                <input type="text" class="form-control" placeholder="Introduzca su código postal">
+                                <label for="postal">Código Postal</label><span> *</span>
+                                <input id="postal" type="text" class="form-control"
+                                    placeholder="Introduzca su código postal">
                             </div>
                         </div>
 
                         <!-- Ciudad y Teléfono Móvil -->
                         <div class="row">
                             <div class="col-md-6">
-                                <label>Ciudad</label><span> *</span>
-                                <input type="text" class="form-control" placeholder="Introduzca su ciudad">
+                                <label for="city">Ciudad</label><span> *</span>
+                                <input id="city" type="text" class="form-control" placeholder="Introduzca su ciudad">
                             </div>
                             <div class="col-md-6">
-                                <label>Teléfono móvil</label><span> *</span>
-                                <input type="text" class="form-control" placeholder="Introduzca su teléfono móvil">
+                                <label for="mobile">Teléfono móvil</label><span> *</span>
+                                <input id="mobile" type="text" class="form-control"
+                                    placeholder="Introduzca su teléfono móvil">
                             </div>
                         </div>
 
                     </div>
 
                     <!-- Resumen -->
-                    <div class="col-md-4 container-summary p-3">
-                        <div class="row mb-3">
-                            <div class="col text-center">
-                                <h4>Resumen</h4>
+                    <div class="p-3 col-md-4 container-summary">
+                        <div class="mb-3 row">
+                            <div class="text-center col">
+                                <h3>Resumen</h3>
                             </div>
                         </div>
 
@@ -151,10 +156,12 @@
 
 
                         <p class="mb-0 discount-text">¿Tienes un código de descuento?</p>
-                        <div class="row mb-3">
+                        <div class="mb-3 row">
 
-                            <div class="col-md-7 mb-1">
-                                <input type="text" class="form-control-discount" placeholder="Introduzca código">
+                            <div class="mb-1 col-md-7">
+                                <label for="discount">Código de descuento</label>
+                                <input id="discount" type="text" class="form-control-discount"
+                                    placeholder="Introduzca código">
                             </div>
 
                             <div class="col-md-5">
@@ -166,11 +173,11 @@
                         <div class="row">
 
                             <div class="col-8">
-                                <h5>Total</h5>
+                                <h4>Total</h4>
                             </div>
 
                             <div class="col-4 text-end">
-                                <h5>65€</h5>
+                                <h4>65€</h4>
                             </div>
                         </div>
 

@@ -68,15 +68,15 @@ if (isset($_POST['login'])) {
                 <form action="" method="POST">
                     <!-- Email Input -->
                     <div class="mt-3 mb-3">
-                        <label for="email">Correo electrónico</label><span> *</span>
-                        <input type="email" class="form-control" id="email"
+                        <label for="email2">Correo electrónico</label><span> *</span>
+                        <input type="email" class="form-control" id="email2"
                             placeholder="Introduzca su correo electrónico" name="email" required
                             pattern="[^@]+@[^@]+.[a-zA-Z]{2,6}">
                     </div>
                     <!-- Password Input -->
                     <div class="mb-3">
-                        <label for="pwd">Contraseña</label><span> *</span>
-                        <input type="password" class="form-control" id="pwd" placeholder="Introduzca su contraseña"
+                        <label for="pwd2">Contraseña</label><span> *</span>
+                        <input type="password" class="form-control" id="pwd2" placeholder="Introduzca su contraseña"
                             name="pwd">
                     </div>
                     <!-- Remember me checkbox -->

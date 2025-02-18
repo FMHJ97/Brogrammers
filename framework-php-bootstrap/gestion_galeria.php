@@ -118,13 +118,13 @@ if (isset($_POST["confirm"])) {
                                                                                     } else echo "Buscar por usuario";
                                                                                     ?>
                                         " class="form-control-search w-100 no-margin" name="usuario">
-                                        <button class="btn btn-search" name="buscaUsuario" type="submit">
+                                        <button aria-label="Buscar por Usuario" class="btn btn-search" name="buscaUsuario" type="submit">
                                             <i class="bi bi-search"></i>
                                         </button>
                                         <label for="date" class="visually-hidden">Buscar por fecha</label>
                                         <input id="date" type="date" class="form-control-search w-100" name="date"
                                             placeholder="Buscar por fecha">
-                                        <button class="btn btn-search" name="buscaFecha" type="submit">
+                                        <button aria-label="Buscar por Fecha" class="btn btn-search" name="buscaFecha" type="submit">
                                             <i class="bi bi-search"></i>
                                         </button>
 

@@ -43,8 +43,9 @@ $productos = ProductoController::findAll();
                 <div class="col">
                     <div class="input-group search-bar">
                         <!-- Input de Búsqueda -->
-                        <input type="text" class="form-control-search" placeholder="Buscar productos..."
-                            name="search">
+                        <label for="search" class="visually-hidden">Buscar productos...</label>
+                        <input type="text" class="form-control-search" placeholder="Buscar productos..." name="search"
+                            id="search">
                         <!-- Botón de Búsqueda -->
                         <button class="btn btn-search">
                             <i class="bi bi-search"></i>
@@ -58,7 +59,8 @@ $productos = ProductoController::findAll();
                     <!-- Icono de Ordenación -->
                     <i class="bi bi-filter"></i>
                     <!-- Botón de Ordenación -->
-                    <button id="dropdownOrderButton" type="button" class="btn dropdown-toggle" data-bs-toggle="dropdown">
+                    <button id="dropdownOrderButton" type="button" class="btn dropdown-toggle"
+                        data-bs-toggle="dropdown">
                         Ordenar por: Relevancia
                     </button>
                     <!-- Opciones de Ordenación -->
@@ -81,7 +83,10 @@ $productos = ProductoController::findAll();
                     // Si hay productos en la BD, los mostramos.
                     foreach ($productos as $p) {
                 ?>
-                        <form action="./merch_item.php" method="POST" class="col-12 col-md-4 card card-merch-item all-items <?php echo $p->categoria; ?>" data-precio="<?php echo $p->precio; ?>" data-nombre="<?php echo $p->nombre; ?>" onclick="this.submit()">
+                        <form action="./merch_item.php" method="POST"
+                            class="col-12 col-md-4 card card-merch-item all-items <?php echo $p->categoria; ?>"
+                            data-precio="<?php echo $p->precio; ?>" data-nombre="<?php echo $p->nombre; ?>"
+                            onclick="this.submit()">
                             <input type="hidden" name="id" value="<?php echo $p->id; ?>">
                             <img class="card-img-top" src="./<?php echo $p->imagen; ?>" alt="<?php echo $p->nombre; ?>">
                             <div class="card-body">

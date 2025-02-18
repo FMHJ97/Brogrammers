@@ -79,7 +79,7 @@ require_once '../framework-php-bootstrap/controller/fotoController.php';
             <form id="subirFotos" action="" method="post" enctype="multipart/form-data">
                 <div class="row my-3 py-3">
                     <div class="button-gallery-wrap text-center">
-                        <label class="button-gallery-input" for="upload">Enviar sus fotos</label>
+                        <button class="button-gallery-input" for="upload">Enviar sus fotos</button>
                         <input id="upload" class="no-input" type="file" accept="image/*" name="imagen[]" multiple>
                     </div>
 

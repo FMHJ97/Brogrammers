@@ -276,8 +276,8 @@ if (isset($_POST["submit"])) {
 
                             <!-- Email Input -->
                             <div class="mb-3">
-                                <label for="email">Correo electrónico</label><span> *</span>
-                                <input type="email" class="form-control" id="email"
+                                <label for="email1">Correo electrónico</label><span> *</span>
+                                <input type="email" class="form-control" id="email1"
                                     placeholder="Introduzca su correo electrónico" name="email" required
                                     value="<?php echo isset($_POST['email']) ? htmlspecialchars($_POST['email']) : htmlspecialchars($email); ?>">
                             </div>
@@ -286,8 +286,8 @@ if (isset($_POST["submit"])) {
                             <div class="mt-3 mb-3 row">
                                 <!-- Password -->
                                 <div class="mb-3 col-12 col-md-6 mb-md-0">
-                                    <label for="pwd">Contraseña</label><span> *</span>
-                                    <input type="password" class="form-control" id="pwd"
+                                    <label for="pwd1">Contraseña</label><span> *</span>
+                                    <input type="password" class="form-control" id="pwd1"
                                         placeholder="Introduzca su contraseña" name="pswd" required
                                         pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*\W).{8,}">
                                 </div>

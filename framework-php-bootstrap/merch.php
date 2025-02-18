@@ -33,11 +33,15 @@ $productos = ProductoController::findAll();
             <div class="row">
                 <!-- Botones de Categoría -->
                 <div class="col btn-category-group">
-                    <button type="button" id="all-items" class="btn btn-category-item selected">Todos los
+                    <button type="button" id="all-items" class="btn btn-category-item selected"
+                        aria-label="Todos los productos">Todos los
                         productos</button>
-                    <button type="button" id="ropa" class="btn btn-category-item">Ropa</button>
-                    <button type="button" id="accesorio" class="btn btn-category-item">Accesorios</button>
-                    <button type="button" id="musica" class="btn btn-category-item">Música</button>
+                    <button type="button" id="ropa" class="btn btn-category-item"
+                        aria-label="Productos de ropa">Ropa</button>
+                    <button type="button" id="accesorio" class="btn btn-category-item"
+                        aria-label="Productos de accesorios">Accesorios</button>
+                    <button type="button" id="musica" class="btn btn-category-item"
+                        aria-label="Productos de música">Música</button>
                 </div>
                 <!-- Barra de Búsqueda -->
                 <div class="col">

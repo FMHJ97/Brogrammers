@@ -175,6 +175,8 @@ require_once '../framework-php-bootstrap/controller/usuarioController.php';
 require_once '../framework-php-bootstrap/model/usuario.php';
 require_once '../framework-php-bootstrap/controller/valoracionController.php';
 require_once '../framework-php-bootstrap/model/valoracion.php';
+require_once '../framework-php-bootstrap/controller/userScoresController.php';
+require_once '../framework-php-bootstrap/model/userScores.php';
 
 
 //Include Google Client Library for PHP autoload file

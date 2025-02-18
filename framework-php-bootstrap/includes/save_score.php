@@ -1,14 +1,14 @@
 <?php
  header("Access-Control-Allow-Origin: *");
-require_once '../../framework-php-bootstrap/model/usuario.php';
-require_once '../../framework-php-bootstrap/controller/conexion.php';
-require_once '../../framework-php-bootstrap/includes/a_config.php';
+ require_once '../model/usuario.php';
 
-try {
+ session_start();
+ require_once '../controller/conexion.php';
+ try {
     $conex = new Conexion();
 
     // Check if the session is valid and the logged object is available
-    if (!isset($_SESSION['logged']) || !is_object($_SESSION['logged'])) {
+    if (!isset($_SESSION['logged'])) {
         echo "User not logged in or session is invalid.";
         exit;
     }

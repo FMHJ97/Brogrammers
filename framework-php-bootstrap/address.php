@@ -159,7 +159,7 @@
                         <div class="mb-3 row">
 
                             <div class="mb-1 col-md-7">
-                                <label for="discount">Código de descuento</label>
+                                <label for="discount" class="visually-hidden">Código de descuento</label>
                                 <input id="discount" type="text" class="form-control-discount"
                                     placeholder="Introduzca código">
                             </div>

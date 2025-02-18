@@ -48,7 +48,7 @@ $productos = ProductoController::findAll();
                             id="search">
                         <!-- Botón de Búsqueda -->
                         <button class="btn btn-search">
-                            <i class="bi bi-search"></i>
+                            <i class="bi bi-search"></i><span class="visually-hidden">Buscar</span>
                         </button>
                     </div>
                 </div>

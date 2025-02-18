@@ -110,7 +110,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 if ($usuario->img_perfil && file_exists($usuario->img_perfil) && !str_contains($usuario->img_perfil, 'dummy_user.png')) {
                     unlink($usuario->img_perfil);
                 }
-                
             }
         } else {
             $errores[] = "Formato de imagen no válido. Use JPG, PNG o GIF.";
@@ -143,7 +142,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             unset($_SESSION['logged']);
             $_SESSION['logged'] = UserController::getById($id);
             $usuario = $_SESSION['logged'];
-            
+
             $alertMessage = "Datos actualizados correctamente";
             $alertType = "success";
         } else {
@@ -154,7 +153,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $alertMessage = implode("<br>", $errores);
         $alertType = "danger";
     }
-
 }
 
 ?>
@@ -173,7 +171,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     <main>
         <section class="py-3 py-md-5">
-            
+
             <!-- Mostrar alertas -->
             <?php if (!empty($alertMessage)): ?>
                 <div class="alert alert-<?php echo $alertType; ?> alert-dismissible fade show custom-alert-gestion"
@@ -201,13 +199,14 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             <div class="container p-4 my-5 authentication-form p-md-5">
                 <form action="" method="post" enctype="multipart/form-data">
                     <!-- Imagen e Información -->
-                    <div class="row justify-content-center text-center text-md-start mb-3">
+                    <div class="mb-3 text-center row justify-content-center text-md-start">
                         <!-- Imagen del Usuario -->
                         <div class="mb-4 col-md-4 ">
                             <div class="image-container">
                                 <label for="imagenInput">
-                                    <img src="<?php echo ($usuario->img_perfil != null && file_exists($usuario->img_perfil)) ? $usuario->img_perfil : 'assets/img/dummy/dummy_user.png'; ?>" alt="Foto de perfil"
-                                        class="img-fluid rounded-circle img-usuario" id="imagenPrevisualizacion">
+                                    <img src="<?php echo ($usuario->img_perfil != null && file_exists($usuario->img_perfil)) ? $usuario->img_perfil : 'assets/img/dummy/dummy_user.png'; ?>"
+                                        alt="Foto de perfil" class="img-fluid rounded-circle img-usuario"
+                                        id="imagenPrevisualizacion">
                                     <div class="image-overlay" id="imageOverlay">
                                         <span>Cambiar imagen</span>
                                     </div>
@@ -241,7 +240,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                                 <label for="pais">País</label>
                                 <select class="form-control" id="pais" name="pais">
                                     <?php foreach ($paisesValidos as $pais): ?>
-                                        <option value="<?php echo $pais; ?>" <?php echo ($pais == $usuario->pais) ? 'selected' : ''; ?>>
+                                        <option value="<?php echo $pais; ?>"
+                                            <?php echo ($pais == $usuario->pais) ? 'selected' : ''; ?>>
                                             <?php echo $pais; ?>
                                         </option>
                                     <?php endforeach; ?>
@@ -274,8 +274,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                             <h3>Modificar contraseña</h3>
                             <div class="col-md-6">
                                 <div class="mt-3 mb-3">
-                                    <label for="pwd">Contraseña</label>
-                                    <input type="password" class="form-control" id="pwd"
+                                    <label for="pwd1">Contraseña</label>
+                                    <input type="password" class="form-control" id="pwd1"
                                         placeholder="Introduzca su contraseña" name="pwd">
                                 </div>
                             </div>

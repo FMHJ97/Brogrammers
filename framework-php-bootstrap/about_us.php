@@ -163,7 +163,7 @@
         </section>
         <section class="container page-section">
             <div class="row page-section-heading">
-                <h1>Récords</h1>
+                <h2>Récords</h2>
             </div>
         </section>
 
@@ -183,10 +183,10 @@
                                 <thead>
                                     <tr>
                                         <th class="text-center align-middle">
-                                            <h5>User</h5>
+                                            <h4>User</h4>
                                         </th>
                                         <th class="text-center align-middle">
-                                            <h5>Puntuación</h5>
+                                            <h4>Puntuación</h4>
                                         </th>
                                     </tr>
                                 </thead>
@@ -222,10 +222,10 @@
                                 <thead>
                                     <tr>
                                         <th class="text-center align-middle">
-                                            <h5>User</h5>
+                                            <h4>User</h4>
                                         </th>
                                         <th class="text-center align-middle">
-                                            <h5>Puntuación</h5>
+                                            <h4>Puntuación</h4>
                                         </th>
                                     </tr>
                                 </thead>
@@ -269,10 +269,10 @@
                                 <thead>
                                     <tr>
                                         <th class="text-center align-middle">
-                                            <h5>User</h5>
+                                            <h4>User</h4>
                                         </th>
                                         <th class="text-center align-middle">
-                                            <h5>Puntuación</h5>
+                                            <h4>Puntuación</h4>
                                         </th>
 
                                     </tr>
@@ -313,10 +313,10 @@
                                 <thead>
                                     <tr>
                                         <th class="text-center align-middle">
-                                            <h5>User</h5>
+                                            <h4>User</h4>
                                         </th>
                                         <th class="text-center align-middle">
-                                            <h5>Puntuación</h5>
+                                            <h4>Puntuación</h4>
                                         </th>
 
                                     </tr>

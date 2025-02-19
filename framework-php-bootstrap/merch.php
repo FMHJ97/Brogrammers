@@ -90,7 +90,7 @@ $productos = ProductoController::findAll();
                         <form action="./merch_item.php" method="POST"
                             class="col-12 col-md-4 card card-merch-item all-items <?php echo $p->categoria; ?>"
                             data-precio="<?php echo $p->precio; ?>" data-nombre="<?php echo $p->nombre; ?>"
-                            onclick="this.submit()">
+                            onclick="this.submit()" onkeypress="this.submit()" role="button" tabindex="0">
                             <input type="hidden" name="id" value="<?php echo $p->id; ?>">
                             <img class="card-img-top" src="./<?php echo $p->imagen; ?>" alt="<?php echo $p->nombre; ?>">
                             <div class="card-body">

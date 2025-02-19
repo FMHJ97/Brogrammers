@@ -60,7 +60,7 @@ unset($_SESSION['alert']);
 <nav class="navbar navbar-expand-md">
     <div class="container-fluid">
         <a class="navbar-brand" href="./index.php">
-            <img src="../assets/img/Logo.svg" alt="Festival Logo">
+            <img src="../assets/img/Logo.svg" alt="Festival Logo - Vuelve a la página principal">
         </a>
 
         <!-- Right side of the navbar -->

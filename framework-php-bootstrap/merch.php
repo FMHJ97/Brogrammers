@@ -33,11 +33,15 @@ $productos = ProductoController::findAll();
             <div class="row">
                 <!-- Botones de Categoría -->
                 <div class="col btn-category-group">
-                    <button type="button" id="all-items" class="btn btn-category-item selected">Todos los
+                    <button type="button" id="all-items" class="btn btn-category-item selected"
+                        aria-label="Todos los productos">Todos los
                         productos</button>
-                    <button type="button" id="ropa" class="btn btn-category-item">Ropa</button>
-                    <button type="button" id="accesorio" class="btn btn-category-item">Accesorios</button>
-                    <button type="button" id="musica" class="btn btn-category-item">Música</button>
+                    <button type="button" id="ropa" class="btn btn-category-item"
+                        aria-label="Productos de ropa">Ropa</button>
+                    <button type="button" id="accesorio" class="btn btn-category-item"
+                        aria-label="Productos de accesorios">Accesorios</button>
+                    <button type="button" id="musica" class="btn btn-category-item"
+                        aria-label="Productos de música">Música</button>
                 </div>
                 <!-- Barra de Búsqueda -->
                 <div class="col">
@@ -86,7 +90,7 @@ $productos = ProductoController::findAll();
                         <form action="./merch_item.php" method="POST"
                             class="col-12 col-md-4 card card-merch-item all-items <?php echo $p->categoria; ?>"
                             data-precio="<?php echo $p->precio; ?>" data-nombre="<?php echo $p->nombre; ?>"
-                            onclick="this.submit()">
+                            onclick="this.submit()" onkeypress="this.submit()" role="button" tabindex="0">
                             <input type="hidden" name="id" value="<?php echo $p->id; ?>">
                             <img class="card-img-top" src="./<?php echo $p->imagen; ?>" alt="<?php echo $p->nombre; ?>">
                             <div class="card-body">

@@ -91,7 +91,7 @@
                     <!-- Columna Mapa Localización y Foto Festival -->
                     <div class="col-lg-8">
                         <div class="row text-center pt-3">
-                            <h5 class="my-0">Localización</h5>
+                            <h3 class="my-0">Localización</h3>
                             <iframe
                                 src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1884.310581447972!2d-4.4966540999422735!3d37.41300154474919!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd6d71d07e333ccb%3A0xb8eac06a2792e13!2sParque%20Infantil%20Plaza%20Prudencio%20Uzar4!5e0!3m2!1ses!2ses!4v1734435108208!5m2!1ses!2ses"
                                 width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"

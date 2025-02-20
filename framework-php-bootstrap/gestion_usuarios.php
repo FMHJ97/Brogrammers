@@ -129,7 +129,7 @@ if (isset($_GET['alertMessage']) && isset($_GET['alertType'])) {
                                         <input id="search" type="text" class="form-control-search w-100"
                                             placeholder="Buscar usuarios" name="search"
                                             value="<?php if (isset($_POST["buscaNombre"])) echo $_POST["search"] ?>">
-                                        <button class="btn btn-search" name="buscaNombre" type="submit">
+                                        <button aria-label="Buscar por nombre" class="btn btn-search" name="buscaNombre" type="submit">
                                             <i class="bi bi-search"></i>
                                         </button>
                                     </div>

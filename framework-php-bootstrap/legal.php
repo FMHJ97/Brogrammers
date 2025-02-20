@@ -410,49 +410,7 @@
                                                 target="_blank">Licencia Wikimedia Commons</a>
                                         </td>
                                     </tr>
-                                    <tr>
-                                        <td rowspan="4">Taylor Horne</td>
-                                        <td rowspan="4">Media</td>
-                                        <td>1.jpg</td>
-                                        <td>https://flickr.com/photos/mixtribe/14251730514 de Mixtribe</td>
-                                        <td rowspan="4" class="long-text"> Usted es libre de:
-
-                                            Compartir — copiar y redistribuir el material en cualquier medio o formato
-                                            para cualquier propósito, incluso comercialmente.
-                                            Adaptar — remezclar, transformar y construir a partir del material para
-                                            cualquier propósito, incluso comercialmente.
-                                            La licenciante no puede revocar estas libertades en tanto usted siga los
-                                            términos de la licencia
-
-                                            Bajo los siguientes términos:
-
-                                            Atribución — Usted debe dar crédito de manera adecuada , brindar un enlace a
-                                            la licencia, e indicar si se han realizado cambios . Puede hacerlo en
-                                            cualquier forma razonable, pero no de forma tal que sugiera que usted o su
-                                            uso tienen el apoyo de la licenciante.
-                                            No hay restricciones adicionales — No puede aplicar términos legales ni
-                                            medidas tecnológicas que restrinjan legalmente a otras a hacer cualquier uso
-                                            permitido por la licencia.
-
-                                            <a href="https://creativecommons.org/licenses/by/2.0/deed.en"
-                                                target="_blank">Creative Commons 2.0</a>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>2.jpg</td>
-                                        <td>https://www.flickr.com/photos/infogibraltar/20999218710 de InfoGibraltar
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>3.jpg</td>
-                                        <td>https://www.flickr.com/photos/musicnewsaustralia/7044697055/ de Eva Rinaldi
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>4.jpg</td>
-                                        <td>https://www.flickr.com/photos/149801000@N05/34735177654 de Veld Music
-                                            Festival</td>
-                                    </tr>
+                                   
                                     <!-- Francisco Ruiz -->
                                     <tr>
                                         <td rowspan="21">Francisco Ruiz</td>

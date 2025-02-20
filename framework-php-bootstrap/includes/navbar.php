@@ -59,7 +59,7 @@ unset($_SESSION['alert']);
 <script src="js/gestion.js"></script>
 <nav class="navbar navbar-expand-md">
     <div class="container-fluid">
-        <a class="navbar-brand" href="./index.php">
+        <a  tabindex="1" class="navbar-brand" href="./index.php">
             <img src="../assets/img/Logo.svg" alt="Festival Logo">
         </a>
 
@@ -78,13 +78,13 @@ unset($_SESSION['alert']);
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav ms-auto">
                 <li class="nav-item">
-                    <a class="nav-link" href="./lineup.php">LineUp</a>
+                    <a  tabindex="1" class="nav-link" href="./lineup.php">LineUp</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="./tickets.php">Tickets</a>
+                    <a  tabindex="1" class="nav-link" href="./tickets.php">Tickets</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="./merch.php">Merch</a>
+                    <a tabindex="1" class="nav-link" href="./merch.php">Merch</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="./gallery.php">Galería</a>
@@ -229,7 +229,7 @@ unset($_SESSION['alert']);
                             </div>
                             <!-- Botón Iniciar Sesión y Link a Recuperar Contraseña -->
                             <div>
-                                <button type="submit" class="mb-3 btn" name="login">Iniciar sesión</button>
+                                <button type="submit" class="mb-3 btn-focus" name="login">Iniciar sesión</button>
                             </div>
                         </form>
                         <!-- Saco el botoncito fuera del form, que me la estaba liando. -->

@@ -59,6 +59,7 @@ document.addEventListener('DOMContentLoaded', function () {
             }
 
             foto.className = "img-fluid";
+            foto.alt = item.nombre;
 
             foto.onload = function () {
                 imagesLoaded++;

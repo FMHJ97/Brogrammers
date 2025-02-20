@@ -37,6 +37,9 @@ nav {
       color: $resaltar2;
       text-decoration: underline !important;
     }
+    &:focus {
+      text-decoration: underline !important;
+    }
 
     i {
       color: $resaltar2; // *****
@@ -78,6 +81,14 @@ nav {
         }
       }
     }
+  }
+  .dropdown-item:focus {
+    text-decoration: underline !important;
+    text-decoration-thickness: 2px !important;
+  }
+  .dropdown-toggle:focus {
+    text-decoration: underline !important;
+    text-decoration-thickness: 2px !important;
   }
 }
 

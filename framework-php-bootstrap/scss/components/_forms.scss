@@ -239,6 +239,10 @@ main {
       background: darken($resaltar1, 10%);
       color: $texto2;
     }
+    &:focus {
+      text-decoration: underline !important;
+      text-decoration-thickness: 2px !important;
+    }
   }
 
   #btn-cancel {
@@ -251,6 +255,10 @@ main {
     &:hover {
       background: darken($primario1, 3%);
       color: $texto1;
+    }
+    &:focus {
+      text-decoration: underline !important;
+      text-decoration-thickness: 2px !important;
     }
   }
 }

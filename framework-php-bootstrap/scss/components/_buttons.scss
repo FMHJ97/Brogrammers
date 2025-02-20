@@ -106,7 +106,10 @@
     }
   }
 }
-
+.btn-category-item:focus {
+  text-decoration: underline !important;
+  text-decoration-thickness: 2px !important;
+}
 // Botones de Talla Producto.
 .btn-item-size {
   border: $border-2 solid $resaltar2;
@@ -208,6 +211,15 @@
 
 .button-ticket:hover {
   text-decoration: underline !important;
+  text-decoration-thickness: 2px !important;
+}
+.button-ticket:focus {
+  text-decoration: underline !important;
+  text-decoration-thickness: 2px !important;
+}
+.btn-focus:focus {
+  text-decoration: underline !important;
+  text-decoration-thickness: 2px !important;
 }
 
 //Los botones dentro de index.php
@@ -256,6 +268,10 @@
   :hover {
     text-decoration: underline;
   }
+  :focus {
+    text-decoration: underline;
+    border: $resaltar1;
+  }
 }
 
 .button-gallery-input {
@@ -295,11 +311,15 @@ button {
   align-items: center;
   justify-content: center;
   box-shadow: 0px 4px 4px 0px rgba($fondo, 0.25);
-  text-decoration: none;
   color: $texto2;
   font-family: $headings-font-family;
-}
 
+
+}
+.button-apply-discount:focus {
+  text-decoration: underline !important;
+  text-decoration-thickness: 2px !important;
+}
 /* ======== BUTTONS LINEUP DAYS ==========*/
 .btn-fullLineup {
   //botón principal

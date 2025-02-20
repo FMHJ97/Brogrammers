@@ -290,7 +290,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                         <!-- Botón que aparecerá si se modifica algún campo -->
                         <div class="row">
                             <div class="col-md-12">
-                                <button type="submit" class="btn">Guardar Cambios</button>
+                                <button type="submit" class="btn-focus">Guardar Cambios</button>
                             </div>
                         </div>
                     </div>

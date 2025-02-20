@@ -333,7 +333,7 @@ if (isset($_POST["submit"])) {
 
                             <!-- Botón Crear Cuenta -->
                             <div class="d-flex flex-column ">
-                                <button type="submit" name="submit" class="btn" id="btnCrearCuenta" disabled>Crear cuenta</button>
+                                <button type="submit" name="submit" class="btn-focus" id="btnCrearCuenta" disabled>Crear cuenta</button>
                             </div>
                         </form>
                 </div>

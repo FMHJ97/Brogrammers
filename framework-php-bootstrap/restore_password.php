@@ -28,7 +28,7 @@
                     </div>
                     <!-- Botón Recuperar Contraseña -->
                     <div class="d-flex flex-column ">
-                        <button type="submit" class="btn">Recuperar contraseña</button>
+                        <button type="submit" class="btn-focus">Recuperar contraseña</button>
                     </div>
                 </form>
             </div>

@@ -15,7 +15,7 @@
 
         <section class="container page-section">
             <div class="row page-section-heading">
-                <h1>Términos Legales</h1>
+                <h1 tabindex="1">Términos Legales</h1>
             </div>
         </section>
 
@@ -24,7 +24,7 @@
             <div class="row terms">
                 <div class="col">
                     <div>
-                        <h2>1. Información General</h2>
+                        <h2 tabindex="1">1. Información General</h2>
                         <p>En cumplimiento con el deber de información dispuesto en la Ley 34/2002 de Servicios de la
                             Sociedad de
                             la Información y el Comercio Electrónico (LSSI-CE) de 11 de julio, se facilitan a
@@ -46,7 +46,7 @@
                         <p><strong>Email de contacto:</strong> groundsoundfestival@gmail.com</p>
                     </div>
                     <div>
-                        <h2>2. Términos y Condiciones Generales de Uso</h2>
+                        <h2 tabindex="1">2. Términos y Condiciones Generales de Uso</h2>
                         <h3>2.1. El objeto de las condiciones: El Sitio Web</h3>
                         <p>El objeto de las presentes Condiciones Generales de Uso (en adelante, Condiciones) es
                             regular el acceso y
@@ -150,7 +150,7 @@
                         </p>
                     </div>
                     <div>
-                        <h2>3. Acceso y Navegación en el Sitio Web: Exclusión de Garantías y Responsabilidad</h2>
+                        <h2 tabindex="1">3. Acceso y Navegación en el Sitio Web: Exclusión de Garantías y Responsabilidad</h2>
                         <p>GroundSound Festival no garantiza la continuidad, disponibilidad y utilidad del Sitio Web, ni
                             de
                             los
@@ -184,7 +184,7 @@
                         </p>
                     </div>
                     <div>
-                        <h2>4. Política de Enlaces</h2>
+                        <h2 tabindex="1">4. Política de Enlaces</h2>
                         <p>Se informa que el Sitio Web de GroundSound Festival pone o puede poner a disposición de los
                             Usuarios
                             medios de enlace (como, entre otros, links, banners, botones), directorios y motores de
@@ -260,7 +260,7 @@
                         </ul>
                     </div>
                     <div>
-                        <h2>5. Propiedad Intelectual e Industrial</h2>
+                        <h2 tabindex="1">5. Propiedad Intelectual e Industrial</h2>
                         <!-- Licencia sobre Recursos Multimedia Propios -->
                         <h3>5.1. Licencia sobre Recursos Multimedia Propios</h3>
                         <p><strong>GroundSound Festival</strong>, por sí o como parte cesionaria, es titular de todos
@@ -712,7 +712,7 @@
                         </p>
                     </div>
                     <div>
-                        <h2>6. Acciones Legales, Legislación Aplicable y Jurisdicción</h2>
+                        <h2 tabindex="1">6. Acciones Legales, Legislación Aplicable y Jurisdicción</h2>
                         <p>GroundSound Festival se reserva la facultad de presentar las acciones civiles
                             o penales que
                             considere

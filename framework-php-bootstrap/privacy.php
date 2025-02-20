@@ -16,7 +16,7 @@
         <!-- Encabezado de la página -->
         <section class="container page-section">
             <div class="row page-section-heading">
-                <h1>Política de Privacidad</h1>
+                <h1 tabindex="1">Política de Privacidad</h1>
             </div>
         </section>
 
@@ -25,7 +25,7 @@
             <div class="row terms">
                 <div class="col">
                     <div>
-                        <h2>1. Política de Privacidad y Protección de Datos</h2>
+                        <h2 tabindex="1">1. Política de Privacidad y Protección de Datos</h2>
                         <p>Respetando lo establecido en la legislación vigente, GroundSound Festival (en adelante,
                             también Sitio
                             Web) se compromete a adoptar las medidas técnicas y organizativas necesarias, según el nivel
@@ -402,7 +402,7 @@
                         </p>
                     </div>
                     <div>
-                        <h2>2. Aceptación y Cambios en esta Política de Privacidad</h2>
+                        <h2 tabindex="1">2. Aceptación y Cambios en esta Política de Privacidad</h2>
                         <p>
                             Es necesario que el Usuario haya leído y esté conforme con las condiciones sobre la
                             protección de datos

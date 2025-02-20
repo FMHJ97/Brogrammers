@@ -217,10 +217,7 @@
   text-decoration: underline !important;
   text-decoration-thickness: 2px !important;
 }
-.btn-focus:focus {
-  text-decoration: underline !important;
-  text-decoration-thickness: 2px !important;
-}
+
 
 //Los botones dentro de index.php
 .btn-index {
@@ -426,7 +423,9 @@ button {
     border-radius: 20px;
   }
 }
-
+.btn-payment-method:focus {
+  box-shadow: 5px 5px 5px 5px rgba($resaltar1, 0.6);
+}
 /* Estilos de los botones de método de pago en móviles */
 @include media-breakpoint-down(md) {
 
@@ -476,4 +475,13 @@ button {
 /* ====   Botón para cerrar ventana en gestion media  ==== */
 .button-gestion-close {
   color: $texto1;
+}
+
+.btn-focus:focus {
+  text-decoration: underline !important;
+  text-decoration-thickness: 2px !important;
+}
+.btn-focus:hover {
+  text-decoration: underline !important;
+  text-decoration-thickness: 2px !important;
 }

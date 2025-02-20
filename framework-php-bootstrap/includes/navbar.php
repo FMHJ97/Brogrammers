@@ -87,10 +87,10 @@ unset($_SESSION['alert']);
                     <a tabindex="1" class="nav-link" href="./merch.php">Merch</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="./gallery.php">Galería</a>
+                    <a  tabindex="1" class="nav-link" href="./gallery.php">Galería</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="./infogeneral.php">Info</a>
+                    <a  tabindex="1" class="nav-link" href="./infogeneral.php">Info</a>
                 </li>
                 <?php
                 if (isset($_SESSION["logged"])) {
@@ -103,7 +103,7 @@ unset($_SESSION['alert']);
                             <div class="dropdown dd-user">
                                 <!-- Icono de Ordenación -->
                                 <!-- Botón de Ordenación -->
-                                <button id="dropdownMenuButton" type="button" class="btn dropdown-toggle"
+                                <button  tabindex="1" id="dropdownMenuButton" type="button" class="btn dropdown-toggle"
                                     data-bs-toggle="dropdown">
                                     Administración
                                 </button>
@@ -138,7 +138,7 @@ unset($_SESSION['alert']);
                         <div class="dropdown dd-user">
                             <!-- Icono de Ordenación -->
                             <!-- Botón de Ordenación -->
-                            <button id="dropdownMenuButton" type="button" class="btn dropdown-toggle"
+                            <button  tabindex="1" id="dropdownMenuButton" type="button" class="btn dropdown-toggle"
                                 data-bs-toggle="dropdown" aria-label="Botón de Login">
                                 <i class="bi bi-person-circle"></i>
                                 <?php echo $_SESSION['logged']->nombre; ?>

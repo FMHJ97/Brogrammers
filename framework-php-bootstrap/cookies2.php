@@ -13,7 +13,7 @@
         <section class="container page-section">
 
             <div class="row page-section-heading">
-                <h1>Política de Cookies</h1>
+                <h1 tabindex="1">Política de Cookies</h1>
             </div>
         </section>
 
@@ -54,7 +54,7 @@
                         </p>
                     </div>
                     <div>
-                        <h2>1.1. Cookies propias</h2>
+                        <h2 tabindex="1">1.1. Cookies propias</h2>
                         <p>
                             Son aquellas cookies que son enviadas al ordenador o dispositivo del Usuario y gestionadas
                             exclusivamente por GroundSound Festival para el mejor funcionamiento del Sitio Web. La información que
@@ -64,7 +64,7 @@
                         </p>
                     </div>
                     <div>
-                        <h2>1.2. Deshabilitar, rechazar y eliminar cookies</h5>
+                        <h2 tabindex="1">1.2. Deshabilitar, rechazar y eliminar cookies</h5>
                             <p>
                                 El Usuario puede deshabilitar, rechazar y eliminar las cookies —total o parcialmente— instaladas en su
                                 dispositivo mediante la configuración de su navegador (entre los que se encuentran, por ejemplo, Chrome,

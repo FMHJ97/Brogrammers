@@ -54,7 +54,7 @@
                                     </p>
                                 </div>
                                 <div class="col-md-12 d-flex justify-content-center">
-                                    <a href="juegoFMHJ.php" target="_blank" class="btn about-us-btn"
+                                    <a href="juegoFMHJ.php" target="_blank" class="btn-focus about-us-btn"
                                         aria-label="Iniciar Juego: Tickets, please!" title="Iniciar Juego: Tickets, please!">Iniciar Juego</a>
                                 </div>
                             </div>
@@ -85,7 +85,7 @@
                                     </p>
                                 </div>
                                 <div class="col-md-12 d-flex justify-content-center">
-                                    <a href="juegoTaylor.php" target="_blank" class="btn about-us-btn"
+                                    <a href="juegoTaylor.php" target="_blank" class="btn-focus about-us-btn"
                                         aria-label="Iniciar Juego: Cerveztival" title="Iniciar Juego: Cerveztival">Iniciar Juego</a>
                                 </div>
                             </div>
@@ -120,7 +120,7 @@
                                     </p>
                                 </div>
                                 <div class="col-md-12 d-flex justify-content-center">
-                                    <a href="juegoJMPA.php" target="_blank" class="btn about-us-btn"
+                                    <a href="juegoJMPA.php" target="_blank" class="btn-focus about-us-btn"
                                         aria-label="Iniciar Juego: Tetris" title="Iniciar Juego: Tetris">Iniciar Juego</a>
                                 </div>
                             </div>
@@ -151,7 +151,7 @@
                                     </p>
                                 </div>
                                 <div class="col-md-12 d-flex justify-content-center">
-                                    <a href="juegoFranRuiz.php" target="_blank" class="btn about-us-btn"
+                                    <a href="juegoFranRuiz.php" target="_blank" class="btn-focus about-us-btn"
                                         aria-label="Iniciar Juego: GroundSound Hero" title="Iniciar Juego: GroundSound Hero">Iniciar Juego</a>
                                 </div>
                             </div>

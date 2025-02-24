@@ -61,7 +61,7 @@ require_once '../framework-php-bootstrap/controller/fotoController.php';
         <?php endif; ?>
         <section class="container page-section">
             <div class="row page-section-heading">
-                <h1>GALERÍA</h1>
+                <h1 tabindex="1">GALERÍA</h1>
             </div>
         </section>
 

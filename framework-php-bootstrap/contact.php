@@ -16,7 +16,7 @@
         <section id="privacy" class="container page-section">
             <!-- Título fuera del recuadro --><!-- PRIVACY POLICY -->
             <div class="container page-section-heading  mb-2">
-                <h1 class="text-center">PRIVACY POLICY</h1>
+                <h1 tabindex="1" class="text-center">PRIVACY POLICY</h1>
             </div>
 
             <!-- Recuadro con contenido --><!-- PRIVACY POLICY -->

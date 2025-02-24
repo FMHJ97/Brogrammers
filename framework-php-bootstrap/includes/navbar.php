@@ -59,7 +59,7 @@ unset($_SESSION['alert']);
 <script src="js/gestion.js"></script>
 <nav class="navbar navbar-expand-md">
     <div class="container-fluid">
-        <a  tabindex="1" class="navbar-brand" href="./index.php">
+        <a tabindex="1" class="navbar-brand" href="./index.php">
             <img src="../assets/img/Logo.svg" alt="Festival Logo - Vuelve a la página principal">
         </a>
 
@@ -70,7 +70,7 @@ unset($_SESSION['alert']);
 
         <!-- The hamburguer menu -->
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
-            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Mostrar/ocultar Menú">
             <i class="bi bi-list"></i>
         </button>
 
@@ -78,19 +78,19 @@ unset($_SESSION['alert']);
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav ms-auto">
                 <li class="nav-item">
-                    <a  tabindex="1" class="nav-link" href="./lineup.php">LineUp</a>
+                    <a tabindex="1" class="nav-link" href="./lineup.php">LineUp</a>
                 </li>
                 <li class="nav-item">
-                    <a  tabindex="1" class="nav-link" href="./tickets.php">Tickets</a>
+                    <a tabindex="1" class="nav-link" href="./tickets.php">Tickets</a>
                 </li>
                 <li class="nav-item">
                     <a tabindex="1" class="nav-link" href="./merch.php">Merch</a>
                 </li>
                 <li class="nav-item">
-                    <a  tabindex="1" class="nav-link" href="./gallery.php">Galería</a>
+                    <a tabindex="1" class="nav-link" href="./gallery.php">Galería</a>
                 </li>
                 <li class="nav-item">
-                    <a  tabindex="1" class="nav-link" href="./infogeneral.php">Info</a>
+                    <a tabindex="1" class="nav-link" href="./infogeneral.php">Info</a>
                 </li>
                 <?php
                 if (isset($_SESSION["logged"])) {
@@ -103,7 +103,7 @@ unset($_SESSION['alert']);
                             <div class="dropdown dd-user">
                                 <!-- Icono de Ordenación -->
                                 <!-- Botón de Ordenación -->
-                                <button  tabindex="1" id="dropdownMenuButton" type="button" class="btn dropdown-toggle"
+                                <button tabindex="1" id="dropdownMenuButton" type="button" class="btn dropdown-toggle"
                                     data-bs-toggle="dropdown">
                                     Administración
                                 </button>
@@ -138,7 +138,7 @@ unset($_SESSION['alert']);
                         <div class="dropdown dd-user">
                             <!-- Icono de Ordenación -->
                             <!-- Botón de Ordenación -->
-                            <button  tabindex="1" id="dropdownMenuButton" type="button" class="btn dropdown-toggle"
+                            <button tabindex="1" id="dropdownMenuButton" type="button" class="btn dropdown-toggle"
                                 data-bs-toggle="dropdown" aria-label="Botón de Login">
                                 <i class="bi bi-person-circle"></i>
                                 <?php echo $_SESSION['logged']->nombre; ?>

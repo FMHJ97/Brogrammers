@@ -113,13 +113,13 @@ if (isset($_GET['alertMessage']) && isset($_GET['alertType'])) {
                                     <div
                                         class="flex-wrap btn-category-group d-flex justify-content-center justify-content-md-start">
                                         <button type="input" name="todos"
-                                            class="btn btn-category-item <?php if (isset($_POST["todos"])) echo "selected" ?>">Todos</button>
+                                            class="btn-focus btn-category-item <?php if (isset($_POST["todos"])) echo "selected" ?>">Todos</button>
                                         <button type="input" name="admin"
-                                            class="btn btn-category-item <?php if (isset($_POST["admin"])) echo "selected" ?>">Admin</button>
+                                            class="btn-focus btn-category-item <?php if (isset($_POST["admin"])) echo "selected" ?>">Admin</button>
                                         <button type="input" name="editor"
-                                            class="btn btn-category-item <?php if (isset($_POST["editor"])) echo "selected" ?>">Editor</button>
+                                            class="btn-focus btn-category-item <?php if (isset($_POST["editor"])) echo "selected" ?>">Editor</button>
                                         <button type="input" name="usuario"
-                                            class="btn btn-category-item <?php if (isset($_POST["usuario"])) echo "selected" ?>">Usuario</button>
+                                            class="btn-focus btn-category-item <?php if (isset($_POST["usuario"])) echo "selected" ?>">Usuario</button>
                                     </div>
                                 </div>
                                 <!-- Barra de búsqueda -->

@@ -73,8 +73,12 @@ document.addEventListener('DOMContentLoaded', function () {
     // Evento para cambiar de categoría
     buttons.forEach(button => {
         button.addEventListener('click', function () {
-            buttons.forEach(btn => btn.classList.remove('selected'));
+            buttons.forEach(btn => {
+                btn.classList.remove('selected');
+                btn.ariaPressed = 'false';
+            });
             this.classList.add('selected');
+            this.ariaPressed = 'true';
             currentCategory = this.id; // Actualizamos la categoría seleccionada
             updateProductDisplay();
         });

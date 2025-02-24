@@ -71,7 +71,7 @@ require_once '../framework-php-bootstrap/controller/fotoController.php';
             </div>
             <div class="row my-3 px-4 py-3">
                 <!-- Esto en el paso de funcionalidad es posible que se cambie -->
-                <button href="" id="addImages" class="btn-gallery mx-auto my-3">↓ ver más ↓</button>
+                <button href="" id="addImages" class="btn-gallery mx-auto my-3" aria-label="Botón para ver más">↓ ver más ↓</button>
             </div>
         </section>
 
@@ -79,7 +79,7 @@ require_once '../framework-php-bootstrap/controller/fotoController.php';
             <form id="subirFotos" action="" method="post" enctype="multipart/form-data">
                 <div class="row my-3 py-3">
                     <div class="button-gallery-wrap text-center">
-                        <button class="button-gallery-input" for="upload">Enviar sus fotos</button>
+                        <button class="button-gallery-input" for="upload" aria-label="Botón para enviar fotos">Enviar sus fotos</button>
                         <input id="upload" class="no-input" type="file" accept="image/*" name="imagen[]" multiple>
                     </div>
 

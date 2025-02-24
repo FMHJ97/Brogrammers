@@ -227,7 +227,7 @@ if (isset($_POST["confirm"])) {
                                     name="text" required>
                             </div>
                             <div class="mt-2 d-flex flex-column ">
-                                <button type="submit" name="confirm" class="btn">Confirmar cambios</button>
+                                <button type="submit" name="confirm" class="btn-focus">Confirmar cambios</button>
                             </div>
                         </div>
 

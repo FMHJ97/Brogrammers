@@ -15,15 +15,21 @@
         <section class="page-section">
 
             <div class="container">
+
                 <!-- Fila con títulos (Carrito, Dirección, Pago) -->
                 <div class="text-center row d-flex page-section-heading">
-                    <div class="col">
+                    <h1>Proceso de compra</h1>
+                    <h2>Sigue los siguientes pasos:</h2>
+                </div>
+                <div class="text-center row d-flex page-section-heading">
+
+                    <div class="col mt-1">
                         <h3 class="step-title active">Carrito</h3>
                     </div>
-                    <div class="col">
+                    <div class="col mt-1">
                         <h3 class="step-title">Dirección</h3>
                     </div>
-                    <div class="col">
+                    <div class="col mt-1">
                         <h3 class="step-title">Pago</h3>
                     </div>
                 </div>
@@ -36,18 +42,17 @@
                             <table class="table table-cart table-borderless table-striped">
                                 <thead>
                                     <tr>
-                                        <th>
-                                            <!CF2: ¿h5? ¿Dónde estan h2,h3 y h4?-->
-                                                <h5>Artículo</h5>
+                                        <th scope="col">
+                                            <h4>Artículo</h4>
                                         </th>
-                                        <th class="text-center">
-                                            <h5>Precio</h5>
+                                        <th scope="col" class="text-center">
+                                            <h4>Precio</h4>
                                         </th>
-                                        <th class="text-center">
-                                            <h5>Cantidad</h5>
+                                        <th scope="col" class="text-center">
+                                            <h4>Cantidad</h4>
                                         </th>
-                                        <th>
-                                            <h5>Subtotal</h5>
+                                        <th scope="col">
+                                            <h4>Subtotal</h4>
                                         </th>
                                     </tr>
                                 </thead>
@@ -157,10 +162,10 @@
 
                         <div class="row">
                             <div class="col-8">
-                                <h5>Total</h5>
+                                <h4>Total</h4>
                             </div>
                             <div class="col-4 text-end">
-                                <h5>65€</h5>
+                                <h4>65€</h4>
                             </div>
                         </div>
 

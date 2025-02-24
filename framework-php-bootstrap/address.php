@@ -165,7 +165,7 @@
                             </div>
 
                             <div class="col-md-5">
-                                <button type="button" class="button-apply-discount">Aplicar</button>
+                                <button type="button" class="button-apply-discount" aria-label="Botón de aplicar descuento">Aplicar</button>
                             </div>
 
                         </div>
@@ -181,7 +181,7 @@
                             </div>
                         </div>
 
-                        <a href="payment.php" class="button-ticket">Confirmar</a>
+                        <a href="payment.php" class="button-ticket" aria-label="Botón de confirmar">Confirmar</a>
 
                     </div>
 

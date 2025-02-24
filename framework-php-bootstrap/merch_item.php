@@ -414,7 +414,7 @@ if (isset($_GET['alertMessage']) && isset($_GET['alertType'])) {
                             ?>
                                 <div class="mb-3 col review-item"
                                     data-rating="<?php echo $r->valoracion; ?>" data-date="<?php echo $r->fecha; ?>"
-                                    data-review="<?php echo $r->id; ?>">
+                                    data-review="<?php echo $r->id; ?>" tabindex="0">
                                     <!-- Nombre del Usuario -->
                                     <div class="mb-1 d-flex align-items-center review-user">
                                         <?php

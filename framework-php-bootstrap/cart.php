@@ -151,7 +151,7 @@
                                 <input id="discount" type="text" class="form-control-discount" placeholder="Introduzca código">
                             </div>
                             <div class="col-md-5">
-                                <button type="button" class="button-apply-discount">Aplicar</button>
+                                <button type="button" class="button-apply-discount" aria-label="Botón de aplicar descuento">Aplicar</button>
                             </div>
                         </div>
 
@@ -164,7 +164,7 @@
                             </div>
                         </div>
 
-                        <a href="address.php" class="button-ticket">Continuar</a>
+                        <a href="address.php" class="button-ticket" aria-label="Botón de continuar">Continuar</a>
                     </div>
                 </div>
             </div>

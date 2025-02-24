@@ -34,17 +34,17 @@
             <!-- Apartado Contacto y Condiciones -->
             <div id="linksFooter" class="mt-5 text-center col">
                 <div class="gap-2 mb-4 d-flex flex-column flex-md-row justify-content-center mb-md-2">
-                    <a href="./legal.php">Términos Legales</a>
+                    <a class="btn-focus" href="./legal.php">Términos Legales</a>
                     <span class="footer_dot"><i class="bi bi-dot"></i></span>
-                    <a href="./privacy.php">Privacidad</a>
+                    <a class="btn-focus" href="./privacy.php">Privacidad</a>
                     <span class="footer_dot"><i class="bi bi-dot"></i></span>
-                    <a href="./venta.php">Venta</a>
+                    <a class="btn-focus" href="./venta.php">Venta</a>
                     <span class="footer_dot"><i class="bi bi-dot"></i></span>
-                    <a href="./cookies.php">Cookies</a>
+                    <a class="btn-focus" href="./cookies.php">Cookies</a>
                     <span class="footer_dot"><i class="bi bi-dot"></i></span>
-                    <a href="./infogeneral.php#contact">Contáctanos</a>
+                    <a class="btn-focus" href="./infogeneral.php#contact">Contáctanos</a>
                     <span class="footer_dot"><i class="bi bi-dot"></i></span>
-                    <a href="./about_us.php">Sobre nosotros</a>
+                    <a class="btn-focus" href="./about_us.php">Sobre nosotros</a>
                 </div>
                 <!-- Apartado Derechos de Autor -->
                 <small class="author-rights">

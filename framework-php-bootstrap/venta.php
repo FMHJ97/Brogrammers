@@ -15,7 +15,7 @@
 
         <section class="container page-section">
             <div class="row page-section-heading">
-                <h1>Condiciones Generales de Venta</h1>
+                <h1 tabindex="1">Condiciones Generales de Venta</h1>
             </div>
         </section>
 
@@ -24,7 +24,7 @@
             <div class="row terms">
                 <div class="col">
                     <div>
-                        <h2>1. Información General</h2>
+                        <h2 tabindex="1">1. Información General</h2>
                         <p>En cumplimiento con el deber de información dispuesto en la Ley 34/2002 de Servicios de la
                             Sociedad de
                             la Información y el Comercio Electrónico (LSSI-CE) de 11 de julio, se facilitan a
@@ -85,7 +85,7 @@
                         </p>
                     </div>
                     <div>
-                        <h2>2. El Usuario</h2>
+                        <h2 tabindex="1">2. El Usuario</h2>
                         <p>El acceso, la navegación y uso del Sitio Web, confiere la condición de usuario (en adelante
                             referido,
                             indistintamente, individualmente como Usuario o conjuntamente como Usuarios), por lo que se
@@ -131,7 +131,7 @@
                         </p>
                     </div>
                     <div>
-                        <h2>3. Proceso de compra o adquisición</h2>
+                        <h2 tabindex="1">3. Proceso de compra o adquisición</h2>
                         <p>Los Usuarios debidamente registrados pueden comprar en el Sitio Web por los medios y formas
                             establecidos. Deberán seguir el procedimiento de compra y/o adquisición online de
                             GroundSound, durante
@@ -185,7 +185,7 @@
                         </p>
                     </div>
                     <div>
-                        <h2>4. Disponibilidad</h2>
+                        <h2 tabindex="1">4. Disponibilidad</h2>
                         <p>Todos los pedidos de compra recibidos por GroundSound Festival a través del Sitio Web están
                             sujetos a la
                             disponibilidad de los productos y/o a que ninguna circunstancia o causa de fuerza mayor
@@ -202,7 +202,7 @@
                         </p>
                     </div>
                     <div>
-                        <h2>5. Precios y pago</h2>
+                        <h2 tabindex="1">5. Precios y pago</h2>
                         <p>Los precios exhibidos en el Sitio Web son los finales, en Euros (€) e incluyen los impuestos,
                             salvo que por
                             exigencia legal, especialmente en lo relativo al IVA, se señale y aplique cuestión distinta.
@@ -250,7 +250,7 @@
                         </p>
                     </div>
                     <div>
-                        <h2>6. Entrega</h2>
+                        <h2 tabindex="1">6. Entrega</h2>
                         <p>En los casos en los que proceda realizar la entrega física del bien contratado, las entregas
                             se efectuarán en el ámbito del siguiente territorio: España (Península y Baleares).</p>
 
@@ -307,7 +307,7 @@
 
                     </div>
                     <div>
-                        <h2>7. Medios técnicos para corregir errores</h2>
+                        <h2 tabindex="1">7. Medios técnicos para corregir errores</h2>
                         <p>Se pone en conocimiento del Usuario que en caso de que detecte que se ha producido un error
                             al
                             introducir datos necesarios para procesar su solicitud de compra en el Sitio Web, podrá
@@ -336,7 +336,7 @@
                             diciembre, de Protección de Datos Personales y garantía de los derechos digitales.</p>
                     </div>
                     <div>
-                        <h2>8. Devoluciones</h2>
+                        <h2 tabindex="1">8. Devoluciones</h2>
                         <p>En los casos en los que el Usuario adquiriera productos en o través del Sitio Web del
                             titular, le asisten una
                             serie de derechos, tal y como se enumeran y describen a continuación:</p>
@@ -481,7 +481,7 @@
                             haber conservado toda la información en relación con la garantía de los productos.</p>
                     </div>
                     <div>
-                        <h2>9. Exoneración de responsabilidad</h2>
+                        <h2 tabindex="1">9. Exoneración de responsabilidad</h2>
                         <p>Salvo disposición legal en sentido contrario, GroundSound Festival no aceptará ninguna
                             responsabilidad
                             por las siguientes pérdidas, con independencia de su origen:</p>
@@ -567,7 +567,7 @@
                             fuerza mayor.</p>
                     </div>
                     <div>
-                        <h2>10. Comunicaciones por escrito y notificaciones</h2>
+                        <h2 tabindex="1">10. Comunicaciones por escrito y notificaciones</h2>
                         <p>Mediante el uso de este Sitio Web, el Usuario acepta que la mayor parte de las comunicaciones
                             con
                             GroundSound Festival sean electrónicas (correo electrónico o avisos publicados en el Sitio
@@ -589,7 +589,7 @@
                             Usuario en su correo electrónico o en la dirección postal facilitada.</p>
                     </div>
                     <div>
-                        <h2>11. Renuncia</h2>
+                        <h2 tabindex="1">11. Renuncia</h2>
                         <p>Ninguna renuncia de GroundSound Festival a un derecho o acción legal concreta o la falta de
                             requerimiento por GroundSound Festival del cumplimiento estricto por el Usuario de alguna de
                             sus
@@ -603,7 +603,7 @@
                             renuncia y se formalice y se le comunique al Usuario por escrito.</p>
                     </div>
                     <div>
-                        <h2>12. Nulidad</h2>
+                        <h2 tabindex="1">12. Nulidad</h2>
                         <p>Si alguna de las presentes Condiciones fuesen declaradas nulas y sin efecto por resolución
                             firme dictada
                             por autoridad competente, el resto de las cláusulas permanecerán en vigor, sin que queden
@@ -611,7 +611,7 @@
                             dicha declaración de nulidad.</p>
                     </div>
                     <div>
-                        <h2>13. Acuerdo completo</h2>
+                        <h2 tabindex="1">13. Acuerdo completo</h2>
                         <p>Las presentes Condiciones y todo documento al que se haga referencia expresa en estas
                             constituyen el
                             acuerdo íntegro existente entre el Usuario y GroundSound Festival en relación con el objeto
@@ -625,7 +625,7 @@
                             expresamente mencionado en las presentes Condiciones.</p>
                     </div>
                     <div>
-                        <h2>14. Protección de datos</h2>
+                        <h2 tabindex="1">14. Protección de datos</h2>
                         <p>La información o datos de carácter personal que el Usuario facilite a GroundSound Festival en
                             el curso de
                             una transacción en el Sitio Web, serán tratados con arreglo a lo establecido en la Política
@@ -637,7 +637,7 @@
                             declara que toda la información o datos que facilita son veraces.</p>
                     </div>
                     <div>
-                        <h2>15. Legislación aplicable y jurisdicción</h2>
+                        <h2 tabindex="1">15. Legislación aplicable y jurisdicción</h2>
                         <p>El acceso, navegación y/o uso de este Sitio Web y los contratos de compra de productos a
                             través del
                             mismo se regirán por la legislación española.</p>
@@ -650,7 +650,7 @@
                             tribunales españoles.</p>
                     </div>
                     <div>
-                        <h2>16. Quejas y reclamaciones</h2>
+                        <h2 tabindex="1">16. Quejas y reclamaciones</h2>
                         <p>El Usuario puede hacer llegar a GroundSound Festival sus quejas, reclamaciones o todo otro
                             comentario
                             que desee realizar a través de los datos de contacto que se facilitan al principio de estas

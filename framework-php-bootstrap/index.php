@@ -66,7 +66,7 @@ require_once '../framework-php-bootstrap/model/usuario.php';
       </section>
       <section>
         <div class="py-3 my-3 row"> <!--CF2: Row sin col? para qué? -->
-          <a href="tickets.php" class="btn-index ">COMPRA TUS TICKETS AHORA</a>
+          <a href="tickets.php" class="btn-index " aria-label="Botón compra tus tickets ahora">COMPRA TUS TICKETS AHORA</a>
         </div>
       </section>
 

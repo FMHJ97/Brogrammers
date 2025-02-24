@@ -122,6 +122,11 @@
     color: $texto2;
   }
 
+  &:focus {
+    text-decoration: underline !important;
+    text-decoration-thickness: 2px !important;
+  }
+
   // Botón no seleccionado
   &:not(.selected) {
     background: $fondo;

@@ -160,7 +160,7 @@ if (isset($_POST["confirm"])) {
                                             <tr>
                                                 <form method="post">
                                                     <div class="modal fade" id="imageModal" tabindex="-1"
-                                                        aria-labelledby="imageModalLabel" aria-hidden="true">
+                                                        aria-label="Pulsa para abrir el modal de la imagen" aria-hidden="false">
                                                         <div class="modal-dialog modal-dialog-centered">
                                                             <div class="img-model">
                                                                 <div class="text-center modal-body">
@@ -184,9 +184,9 @@ if (isset($_POST["confirm"])) {
                                                         <?php echo $f->fecha_subida ?>
                                                     </td>
                                                     <td class="text-center align-middle col-4">
-                                                        <button class="btn btn-category-item d-inline-block" type="submit"
+                                                        <button class="btn btn-category-item d-inline-block" type="submit" aria-label="Botón para modificar"
                                                             name="edit">Modificar</button>
-                                                        <button class="btn btn-category-item d-inline-block" type="submit"
+                                                        <button class="btn btn-category-item d-inline-block" type="submit" aria-label="Botón para borrar"
                                                             name="delete">Borrar</button>
                                                     </td>
                                                 </form>

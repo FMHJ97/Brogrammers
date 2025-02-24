@@ -133,6 +133,12 @@
             border-radius: 50%; 
             border: $border-2 solid $resaltar1; 
         }
+        &:focus {
+            background-color: $resaltar2; 
+            color: $texto2; 
+            border-radius: 50%; 
+            border: $border-2 solid $resaltar1; 
+        }
 
         &:active {
             transform: scale(0.9); // Efecto de presionar el botón

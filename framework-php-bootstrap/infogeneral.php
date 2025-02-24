@@ -26,28 +26,28 @@
                 <!-- Botón Festival History -->
                 <!--CF2: La clase col-12 no es necesaria -->
                 <div class="col-12 col-md-6 d-flex justify-content-center align-items-center">
-                    <a href="./info.php#festhistory" class="custom-button infoButton1">
+                    <a href="./info.php#festhistory" class="custom-button infoButton1" aria-label="Ir a historia del festival">
                         <div class="button-text-top">HISTORIA DEL FESTIVAL</div>
                         <div class="button-text-bottom">PULSA AQUÍ</div>
                     </a>
                 </div>
                 <!-- Botón Tickets -->
                 <div class="col-12 col-md-6 d-flex justify-content-center align-items-center">
-                    <a href="./info.php#ticketsinfo" class="custom-button infoButton2">
+                    <a href="./info.php#ticketsinfo" class="custom-button infoButton2" aria-label="Ir a información de tickets">
                         <div class="button-text-top">TICKETS</div>
                         <div class="button-text-bottom">PULSA AQUÍ</div>
                     </a>
                 </div>
                 <!-- Botón Camping -->
                 <div class="col-12 col-md-6 d-flex justify-content-center align-items-center">
-                    <a href="./info.php#campinginfo" class="custom-button infoButton3">
+                    <a href="./info.php#campinginfo" class="custom-button infoButton3" aria-label="Ir a información de camping">
                         <div class="button-text-top">CAMPING</div>
                         <div class="button-text-bottom">PULSA AQUÍ</div>
                     </a>
                 </div>
                 <!-- Botón Accesibilidad -->
                 <div class="col-12 col-md-6 d-flex justify-content-center align-items-center">
-                    <a href="./info.php#festaccess" class="custom-button infoButton4">
+                    <a href="./info.php#festaccess" class="custom-button infoButton4" aria-label="Ir a información de accesibilidad">
                         <div class="button-text-top">ACCESIBILIDAD</div>
                         <div class="button-text-bottom">PULSA AQUÍ</div>
                     </a>

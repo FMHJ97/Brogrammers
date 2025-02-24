@@ -16,7 +16,7 @@
         <section class="container page-section">
 
             <div class="row page-section-heading">
-                <h1>Política de Cookies</h1>
+                <h1 tabindex="1">Política de Cookies</h1>
             </div>
         </section>
 

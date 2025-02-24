@@ -132,6 +132,18 @@ document.addEventListener("DOMContentLoaded", function () {
                 mainImage.classList.add(filterClass);
             }
         });
+        image.addEventListener("keydown", function () {
+            // Eliminamos cualquier clase de filtro previa en la imagen principal
+            mainImage.classList.remove("hue-rotate-0", "hue-rotate-90", "hue-rotate-180", "hue-rotate-270");
+
+            // Obtenemos la clase de la imagen clickeada que contiene el filtro
+            const filterClass = [...this.classList].find(cls => cls.startsWith("hue-rotate-"));
+
+            // Aplicamos la misma clase a la imagen principal
+            if (filterClass) {
+                mainImage.classList.add(filterClass);
+            }
+        });
     });
 });
 

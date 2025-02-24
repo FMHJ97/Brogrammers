@@ -261,7 +261,7 @@ if (isset($_GET['alertMessage']) && isset($_GET['alertType'])) {
                                     <div class="col-3">
                                         <img src="./<?php echo $producto->imagen; ?>"
                                             alt="<?php echo $producto->nombre; ?>" class="img-fluid
-                                            <?php echo $coloresHue[$i]; ?>">
+                                            <?php echo $coloresHue[$i]; ?>" tabindex="0" role="button">
                                     </div>
                                 <?php
                                 }
@@ -340,7 +340,7 @@ if (isset($_GET['alertMessage']) && isset($_GET['alertType'])) {
                     <div class="row">
                         <div class="py-3 col btn-cart">
                             <form action="cart.php" method="POST" novalidate>
-                                <button type="submit" class="btn btn-cart">Añadir al Carrito</button>
+                                <button type="submit" class="btn-focus btn-cart">Añadir al Carrito</button>
                             </form>
                         </div>
                     </div>

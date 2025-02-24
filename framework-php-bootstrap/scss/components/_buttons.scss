@@ -138,6 +138,12 @@
       color: $texto2;
     }
   }
+
+  &:focus {
+    text-decoration: underline !important;
+    text-decoration-thickness: 2px !important;
+    border: $border-2 solid $resaltar2;
+  }
 }
 
 // Botón de Añadir al Carrito.
@@ -163,12 +169,10 @@
       transition: all 0.3s ease;
     }
   }
-
 }
 
 // En dispositivos móviles, se ajustan los estilos de los botones.
 @include media-breakpoint-down(md) {
-
   // Estilos de Grupo de Botones de Categoría.
   .btn-category-group {
     flex-direction: column;
@@ -193,7 +197,6 @@
   }
 }
 
-
 // <================== Estilos - Botones en Tickets ==================>
 
 // Botón de Comprar en cada card de ticket
@@ -211,7 +214,6 @@
   text-decoration: none;
   color: $texto2;
   font-family: $headings-font-family;
-
 }
 
 .button-ticket:hover {
@@ -222,7 +224,6 @@
   text-decoration: underline !important;
   text-decoration-thickness: 2px !important;
 }
-
 
 //Los botones dentro de index.php
 .btn-index {
@@ -296,8 +297,6 @@
   font-family: $headings-font-family;
 }
 
-
-
 // Le quitamos el borde por defecto de los botones
 button {
   border: 0;
@@ -315,8 +314,6 @@ button {
   box-shadow: 0px 4px 4px 0px rgba($fondo, 0.25);
   color: $texto2;
   font-family: $headings-font-family;
-
-
 }
 .button-apply-discount:focus {
   text-decoration: underline !important;
@@ -340,7 +337,6 @@ button {
   }
 }
 
-
 /* ===========  INFO.php BIG BUTTONS ================" */
 //Configuración de los 4 botones grandes de infogeneral.php
 .custom-button {
@@ -361,7 +357,6 @@ button {
   transition: transform 0.3s, box-shadow 0.3s;
   border: $border-4 solid $resaltar1;
   box-shadow: 10px 10px 15px rgba($resaltar1, 0.6);
-
 }
 
 //Background de cada botón.
@@ -399,9 +394,6 @@ button {
   text-shadow: 0px 0px 10px rgba($fondo, 0.923);
 }
 
-
-
-
 /* ====   Botones de método de pago  ==== */
 
 .btn-payment-method {
@@ -433,25 +425,11 @@ button {
 }
 /* Estilos de los botones de método de pago en móviles */
 @include media-breakpoint-down(md) {
-
   .payment-method-img {
     max-width: 50%;
     /* Limita el ancho para evitar desbordamiento */
   }
-
 }
-
-
-
-
-
-
-
-
-
-
-
-
 
 /* ====   Botón para Abrir Videojuego en About Us  ==== */
 .about-us-btn {

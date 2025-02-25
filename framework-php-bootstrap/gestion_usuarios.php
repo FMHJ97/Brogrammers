@@ -100,7 +100,7 @@ if (isset($_GET['alertMessage']) && isset($_GET['alertType'])) {
                 <!-- Fila con títulos -->
                 <div class="text-center row d-flex page-section-heading">
                     <div class="col">
-                        <h3 class="step-title active">Usuarios</h3>
+                        <h1 class="step-title active">Usuarios</h1>
                     </div>
                 </div>
 
@@ -143,16 +143,16 @@ if (isset($_GET['alertMessage']) && isset($_GET['alertType'])) {
                                     <thead>
                                         <tr>
                                             <th class="text-center col-4">
-                                                <h5>Nombre</h5>
+                                                <h2>Nombre</h2>
                                             </th>
                                             <th class="text-center col-4">
-                                                <h5>Correo</h5>
+                                                <h2>Correo</h2>
                                             </th>
                                             <th class="text-center col-2">
-                                                <h5>Rol</h5>
+                                                <h2>Rol</h2>
                                             </th>
                                             <th class="text-center col-2">
-                                                <h5>Acción</h5>
+                                                <h2>Acción</h2>
                                             </th>
                                         </tr>
                                     </thead>

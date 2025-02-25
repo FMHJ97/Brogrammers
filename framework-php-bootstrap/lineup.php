@@ -24,17 +24,17 @@
             <div class="row btn-category-group justify-content-center">
                 <div class="flex-wrap d-flex justify-content-center">
                     <div class="px-2 mb-2 col-12 col-md-3 d-flex justify-content-center">
-                        <button tabindex="1" type="button" id="fullLineUp" class="btn btn-fullLineup selected">Lineup
+                        <button tabindex="1" type="button" id="fullLineUp" aria-label="Botón para mostrar Lineup completa" class="btn btn-fullLineup selected">Lineup
                             Completa</button>
                     </div>
                     <div class="px-2 mb-2 col-4 col-md-3 d-flex justify-content-center">
-                        <button tabindex="1" type="button" id="thursday" class="btn btn-days">Jueves</button>
+                        <button tabindex="1" type="button" id="thursday" aria-label="Botón para mostrar artistas del jueves" class="btn btn-days">Jueves</button>
                     </div>
                     <div class="px-2 mb-2 col-4 col-md-3 d-flex justify-content-center">
-                        <button tabindex="1" type="button" id="friday" class="btn btn-days">Viernes</button>
+                        <button tabindex="1" type="button" id="friday" aria-label="Botón para mostrar artistas del viernes" class="btn btn-days">Viernes</button>
                     </div>
                     <div class="px-2 mb-2 col-4 col-md-3 d-flex justify-content-center">
-                        <button tabindex="1" type="button" id="saturday" class="btn btn-days">Sábado</button>
+                        <button tabindex="1" type="button" id="saturday" aria-label="Botón para mostrar artistas del sábado" class="btn btn-days">Sábado</button>
                     </div>
                 </div>
             </div>

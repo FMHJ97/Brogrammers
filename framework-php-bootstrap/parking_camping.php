@@ -24,8 +24,8 @@
                 <!-- Row Tabs -->
                 <div class="row mb-4">
                     <div class="col btn-category-group">
-                        <button type="button" class="btn btn-category-item selected" id="btnParking">Parking</button>
-                        <button type="button" class="btn btn-category-item" id="btnCamping">Camping</button>
+                        <button type="button" class="btn btn-category-item selected" aria-label="Botón para ver entradas de parking" id="btnParking">Parking</button>
+                        <button type="button" class="btn btn-category-item" aria-label="Botón para ver entradas de camping" id="btnCamping">Camping</button>
                     </div>
                 </div>
 
@@ -39,7 +39,7 @@
                                 <h3 class="ticket-title text-center">General Parking</h3>
                                 <p class="ticket-text">Entrada que te permite disfrutar de un día de festival</p>
                                 <p class="ticket-price text-center">Por <span class="ticket-price-number">75€</span></p>
-                                <a href="cart.php" class="button-ticket">Comprar</a>
+                                <a href="cart.php" aria-label="Botón de comprar entrada general del parking" class="button-ticket">Comprar</a>
                             </div>
                         </div>
                     </div>
@@ -51,7 +51,7 @@
                                 <h3 class="ticket-title text-center">Electric Car Parking</h3>
                                 <p class="ticket-text">Con esta entrada podrás vivir la experiencia del festival 2 días</p>
                                 <p class="ticket-price text-center">Por <span class="ticket-price-number">90€</span></p>
-                                <a href="cart.php" class="button-ticket">Comprar</a>
+                                <a href="cart.php" aria-label="Botón de comprar entrada del parking para coches eléctricos" class="button-ticket">Comprar</a>
                             </div>
                         </div>
                     </div>
@@ -63,7 +63,7 @@
                                 <h3 class="ticket-title text-center">Premium Parking</h3>
                                 <p class="ticket-text">Con esta entrada podrás disfrutar de todo el fin de semana de festival</p>
                                 <p class="ticket-price text-center">Por<span class="ticket-price-number"> 145€</span></p>
-                                <a href="cart.php" class="button-ticket">Comprar</a>
+                                <a href="cart.php" aria-label="Botón de comprar entrada premium del parking" class="button-ticket">Comprar</a>
                             </div>
                         </div>
                     </div>
@@ -80,7 +80,7 @@
                                 <h3 class="ticket-title text-center">Tent Camping</h3>
                                 <p class="ticket-text">Entrada para disfrutar de la experiencia VIP del festival un día</p>
                                 <p class="ticket-price text-center">Por <span class="ticket-price-number">60€</span></p>
-                                <a href="cart.php" class="button-ticket">Comprar</a>
+                                <a href="cart.php" aria-label="Botón de comprar entrada para el camping en la zona de tiendas de campaña" class="button-ticket">Comprar</a>
                             </div>
                         </div>
                     </div>
@@ -92,7 +92,7 @@
                                 <h3 class="ticket-title text-center">RV Camping</h3>
                                 <p class="ticket-text">Para disfrutar el espectáculo desde la zona VIP 2 días</p>
                                 <p class="ticket-price text-center">Por <span class="ticket-price-number">650€</span></p>
-                                <a href="cart.php" class="button-ticket">Comprar</a>
+                                <a href="cart.php" aria-label="Botón de comprar entrada para el camping con autocaravanas" class="button-ticket">Comprar</a>
                             </div>
                         </div>
                     </div>
@@ -104,7 +104,7 @@
                                 <h3 class="ticket-title text-center">Premium RV Camping</h3>
                                 <p class="ticket-text">A disfrutar del festival desde la zona VIP todos los días</p>
                                 <p class="ticket-price text-center">Por <span class="ticket-price-number">800€</span></p>
-                                <a href="cart.php" class="button-ticket">Comprar</a>
+                                <a href="cart.php" aria-label="Botón de comprar entrada para el camping premium con autocaravanas" class="button-ticket">Comprar</a>
                             </div>
                         </div>
                     </div>
@@ -118,7 +118,7 @@
                         <div class="ticket-card">
                             <div class="ticket-body">
                                 <img src="assets/img/mapaFestival.jpg" class="ticket-img" alt="Mapa del festival">
-                                <button class="button-ticket" data-bs-toggle="modal" data-bs-target="#myModal"
+                                <button class="button-ticket" data-bs-toggle="modal" data-bs-target="#myModal" aria-label="Botón para ver el mapa del festival"
                                     id="map">Ver Mapa</button>
                             </div>
                         </div>
@@ -139,7 +139,7 @@
 
                         <!-- Modal footer -->
                         <div class="modal-footer custom-modal-footer justify-content-center">
-                            <button type="button" class="button-ticket" data-bs-dismiss="modal">Cerrar</button>
+                            <button type="button" class="button-ticket" aria-label="Botón para cerrar modal del mapa" data-bs-dismiss="modal">Cerrar</button>
                         </div>
 
                     </div>

@@ -3,7 +3,7 @@
         <div class="ticket-card">
             <div class="ticket-body">
                 <img src="assets/img/mapaFestival.jpg" class="ticket-img" alt="Mapa del festival">
-                <button class="button-ticket" data-bs-toggle="modal" data-bs-target="#myModal"
+                <button class="button-ticket" data-bs-toggle="modal" data-bs-target="#myModal" aria-label="Botón para ver el mapa del festival"
                     id="map">Ver Mapa</button>
             </div>
         </div>

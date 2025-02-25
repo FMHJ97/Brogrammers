@@ -140,7 +140,7 @@
                 </div>
                 <!--CF2: row sin col?-->
                 <div class="row bgroundTicketInfo d-flex justify-content-center align-items-center">
-                    <a href="./tickets.php" class="btn buttonInfo">Haz click aquí</a>
+                    <a href="./tickets.php" class="btn buttonInfo" aria-label="Más información sobre tickets">Haz click aquí</a>
                 </div>
             </div>
         </section>
@@ -178,7 +178,7 @@
                         expreso por escrito del festival.</p>
                 </div>
                 <div class="row bgroundCampingInfo d-flex justify-content-center align-items-center">
-                    <a href="./parking_camping.php" class="btn buttonInfo">Haz click aquí</a>
+                    <a href="./parking_camping.php" class="btn buttonInfo" aria-label="Más información sobre Parking y Camping">Haz click aquí</a>
                 </div>
             </div>
         </section>

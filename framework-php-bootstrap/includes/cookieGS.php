@@ -13,19 +13,19 @@ $p = $productos[0];
 
 <div id="cookieBanner" class="text-center alert cookieBanner" role="alert">
     <img class="GSImageLogo" src="../assets/img/Logo.svg" alt="">
-    <p id="cookieText">
+    <p tabindex="1" id="cookieText">
         Utilizamos cookies propias y de terceros para mejorar la experiencia del usuario en nuestra
         web. ¿Aceptas el uso de cookies?
     </p>
-    <div class="botones-cookies">
-        <button id="acceptcookie" type="button" class="btn" aria-label="Botón Aceptar Cookies">
+    <div  class="botones-cookies">
+        <button tabindex="1" id="acceptcookie" type="button" class="btn btn-focus" aria-label="Botón Aceptar Cookies">
             Aceptar
         </button>
-        <button id="rejectcookie" type="button" class="btn" aria-label="Botón Rechazar Cookies">
+        <button tabindex="1" id="rejectcookie" type="button" class="btn btn-focus" aria-label="Botón Rechazar Cookies">
             Rechazar
         </button>
     </div>
-    <a class="enlaceCookie" href="./cookies2.php" target="_blank" rel="noopener noreferrer">Política de Cookies</a>
+    <a tabindex="1" class="enlaceCookie" href="./cookies2.php" target="_blank" rel="noopener noreferrer">Política de Cookies</a>
 </div>
 <div class="blockWeb" id="blockWeb"></div>
 
@@ -35,19 +35,19 @@ $p = $productos[0];
 <div id="newsBanner" class="container text-center alert newsbanner" role="alert">
     <div class="header">
         <img class="GSImageLogoNews" src="../assets/img/Logo.svg" alt="">
-        <h1 id="newsTextHeader">
+        <h1 tabindex="1" id="newsTextHeader">
             ¡Novedades!
         </h1>
-        <h2> Aquí tienes las últimas actualizaciones.</h2>
-        <button id="closeNewsX" class="close-news-btn" aria-label="Botón X para Cerrar Novedades">✖</button>
+        <h2 tabindex="1"> Aquí tienes las últimas actualizaciones.</h2>
+        <button tabindex="1" id="closeNewsX" class="close-news-btn btn-focus" aria-label="Botón X para Cerrar Novedades">✖</button>
     </div>
     <div class="boxNew" id="boxNew">
         <div class="news " id="news">
             <div>
-                <p id="newsText">
+                <p tabindex="1" id="newsText">
                     No te pierdas las nuevas gorras de Ground Sound. ¡Hazte con la tuya!
                 </p>
-                <p id="newsText">
+                <p tabindex="1" id="newsText">
                     Pincha en la imagen o accede a nuestra <a class="enlaceNews" href="./merch.php" target="_blank"
                         rel="noopener noreferrer">zona de merchandising</a>.
                 </p>
@@ -66,9 +66,9 @@ $p = $productos[0];
     <div class="boxNew" id="boxNew">
         <div class="news " id="news">
             <div>
-                <p id="newsText">
+                <p tabindex="1" id="newsText">
                     Nueva incorporación a GroundSound Festival. 2Pac vuelve del más allá para un concierto único.
-                <p id="newsText">
+                <p tabindex="1" id="newsText">
                     Revisa todos nuestros artistas en nuestro <a class="enlaceNews" href="./lineup.php" target="_blank"
                         rel="noopener noreferrer">cartel del festival</a>.
                 </p>
@@ -81,7 +81,7 @@ $p = $productos[0];
             </div>
         </div>
     </div>
-    <button id="closenews" type="button" class="btn" aria-label="Botón Leido para cerrar">
+    <button tabindex="1" id="closenews" type="button" class="btn btn-focus" aria-label="Botón Leido para cerrar">
         Leido
     </button>
 </div>

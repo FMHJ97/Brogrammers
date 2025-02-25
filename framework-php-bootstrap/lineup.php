@@ -52,7 +52,7 @@
                         if ($artist["type"] == "headliner") { ?>
                             <div class="colB col-md-4" data-headline="1" data-day="<?php echo $artist['day']; ?>">
                                 <div class="titleDays">
-                                    <h3><?php echo $artist['day']; ?></h3>
+                                    <h3 class="lineup-h3"><?php echo $artist['day']; ?></h3>
                                 </div>
                                 <div class="flip-card">
                                     <div class="flip-card-inner">

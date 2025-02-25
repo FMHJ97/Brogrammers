@@ -112,13 +112,13 @@ if (isset($_GET['alertMessage']) && isset($_GET['alertType'])) {
                                 <div class="col-12 col-md-auto">
                                     <div
                                         class="flex-wrap btn-category-group d-flex justify-content-center justify-content-md-start">
-                                        <button type="input" name="todos"
+                                        <button type="input" name="todos" aria-label="Botón filtro de todos los usuarios"
                                             class="btn-focus btn-category-item <?php if (isset($_POST["todos"])) echo "selected" ?>">Todos</button>
-                                        <button type="input" name="admin"
+                                        <button type="input" name="admin" aria-label="Botón filtro de usuarios administradores"
                                             class="btn-focus btn-category-item <?php if (isset($_POST["admin"])) echo "selected" ?>">Admin</button>
-                                        <button type="input" name="editor"
+                                        <button type="input" name="editor" aria-label="Botón filtro de usuarios editores"
                                             class="btn-focus btn-category-item <?php if (isset($_POST["editor"])) echo "selected" ?>">Editor</button>
-                                        <button type="input" name="usuario"
+                                        <button type="input" name="usuario" aria-label="Botón filtro de usuarios normales"
                                             class="btn-focus btn-category-item <?php if (isset($_POST["usuario"])) echo "selected" ?>">Usuario</button>
                                     </div>
                                 </div>
@@ -171,7 +171,7 @@ if (isset($_GET['alertMessage']) && isset($_GET['alertType'])) {
                                                         <?php echo $u->rol ?>
                                                     </td>
                                                     <td class="text-center align-middle col-2">
-                                                        <button class="mx-auto btn btn-category-item" type="submit"
+                                                        <button class="mx-auto btn btn-category-item" type="submit" aria-label="Botón modificar usuario"
                                                             name="edit">Modificar</button>
                                                     </td>
                                                 </form>

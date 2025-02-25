@@ -27,22 +27,22 @@
                 <div class="d-flex flex-wrap justify-content-center">
                     <!-- Botón Filtrar por: Fest History -->
                     <div class="col-md-3 col-6 mb-2 px-2">
-                        <a href="./info.php#festhistory" type="button" id="buttonhistory"
+                        <a href="./info.php#festhistory" type="button" id="buttonhistory" aria-label="Ir a Historia del Festival"
                             class="btn btn-category-item selected w-100">Historia</a>
                     </div>
                     <!-- Botón Filtrar por: Tickets Info -->
                     <div class="col-md-3 col-6 mb-2 px-2">
-                        <a href="./info.php#ticketsinfo" type="button" id="buttontickets"
+                        <a href="./info.php#ticketsinfo" type="button" id="buttontickets" aria-label="Ir a Tickets Info"
                             class="btn btn-category-item w-100">Tickets Info</a>
                     </div>
                     <!-- Botón Filtrar por: Camping -->
                     <div class="col-md-3 col-6 mb-2 px-2">
-                        <a href="./info.php#campinginfo" type="button" id="buttoncamping"
+                        <a href="./info.php#campinginfo" type="button" id="buttoncamping" aria-label="Ir a Camping"
                             class="btn btn-category-item w-100">Camping</a>
                     </div>
                     <!-- Botón Filtrar por: Accesibilidad -->
                     <div class="col-md-3 col-6 mb-2 px-2">
-                        <a href="./info.php#festaccess" type="button" id="buttonaccessibility"
+                        <a href="./info.php#festaccess" type="button" id="buttonaccessibility" aria-label="Ir a Accesibilidad"
                             class="btn btn-category-item w-100">Accesibilidad</a>
                     </div>
                 </div>
@@ -98,7 +98,7 @@
                                 referrerpolicy="no-referrer-when-downgrade" class="py-4"></iframe>
                         </div>
                         <div class="row">
-                            <img src="./assets/img/info/HISTORIAFESTIVAL.JPG" class="imgHistory pw-90 h-90">
+                            <img src="./assets/img/info/HISTORIAFESTIVAL.JPG" alt="Foto con luces en un festival" class="imgHistory pw-90 h-90">
                         </div>
                     </div>
                 </div>

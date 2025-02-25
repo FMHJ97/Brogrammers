@@ -221,9 +221,9 @@ if (!isset($_SESSION["logged"]) || $_SESSION["logged"]->rol != "admin") {
                                             </td>
                                             <td class="align-middle">
                                                 <form action="" method="POST" class="gap-3 d-flex flex-column justify-content-center">
-                                                    <button class="btn btn-category-item" type="submit"
+                                                    <button class="btn btn-category-item" type="submit" aria-label="Botón Modificar"
                                                         name="edit" value="<?php echo $p->id; ?>">Modificar</button>
-                                                    <button class="btn btn-category-item" type="submit"
+                                                    <button class="btn btn-category-item" type="submit" aria-label="Botón Borrar"
                                                         name="delete" value="<?php echo $p->id; ?>">Borrar</button>
                                                 </form>
                                             </td>
@@ -292,11 +292,11 @@ if (!isset($_SESSION["logged"]) || $_SESSION["logged"]->rol != "admin") {
                         </div>
                         <!-- Botón Guardar -->
                         <div class="d-flex flex-column ">
-                            <button type="submit" id="btn-save" name="save" class="btn">Guardar producto</button>
+                            <button type="submit" id="btn-save" name="save" class="btn" aria-label="Botón de Guardar producto">Guardar producto</button>
                         </div>
                         <!-- Botón Cancelar -->
                         <div class="mt-3 d-flex flex-column">
-                            <a href="gestion_merch.php" id="btn-cancel" class="btn">Cancelar</a>
+                            <a href="gestion_merch.php" id="btn-cancel" class="btn" aria-label="Botón de Cancelar">Cancelar</a>
                         </div>
                         <!-- Campo oculto para enviar la descripción de Quill -->
                         <input type="hidden" id="descripcion" name="descripcion">

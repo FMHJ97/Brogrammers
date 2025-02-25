@@ -51,7 +51,7 @@ $productos = ProductoController::findAll();
                         <input type="text" class="form-control-search" placeholder="Buscar productos..." name="search"
                             id="search">
                         <!-- Botón de Búsqueda -->
-                        <button class="btn btn-search">
+                        <button class="btn btn-search" arial-label="Botón de búsqueda">
                             <i class="bi bi-search"></i><span class="visually-hidden">Buscar</span>
                         </button>
                     </div>

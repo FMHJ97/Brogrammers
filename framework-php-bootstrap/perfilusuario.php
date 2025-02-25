@@ -205,7 +205,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                             <div class="image-container">
                                 <label for="imagenInput">
                                     <img src="<?php echo ($usuario->img_perfil != null && file_exists($usuario->img_perfil)) ? $usuario->img_perfil : 'assets/img/dummy/dummy_user.png'; ?>"
-                                        alt="Foto de perfil" class="img-fluid rounded-circle img-usuario"
+                                        alt="Foto de perfil" class="img-fluid rounded-circle img-usuario" aria-label="Imagen de perfil" tabindex="0"
                                         id="imagenPrevisualizacion">
                                     <div class="image-overlay" id="imageOverlay">
                                         <span>Cambiar imagen</span>
@@ -290,7 +290,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                         <!-- Botón que aparecerá si se modifica algún campo -->
                         <div class="row">
                             <div class="col-md-12">
-                                <button type="submit" class="btn-focus">Guardar Cambios</button>
+                                <button type="submit" class="btn-focus" aria-label="Botón de guardar cambios">Guardar Cambios</button>
                             </div>
                         </div>
                     </div>

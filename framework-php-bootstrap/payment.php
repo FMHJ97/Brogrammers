@@ -44,14 +44,14 @@
                         <!-- Métodos de pago en dos botones que, al hacer clic, mostrarán los campos para tarjeta de crédito o Paypal -->
                         <div class="mb-3 row g-2">
                             <div class="col-md-6">
-                                <button class="p-5 btn btn-payment-method selected">
+                                <button class="p-5 btn btn-payment-method selected" aria-label="Botón de tarjeta de crédito">
                                     <img src="./assets/img/visa.svg" alt="Tarjeta de crédito"
                                         class="payment-method-img img-fluid">
                                 </button>
                             </div>
 
                             <div class="col-md-6">
-                                <button class="p-5 btn btn-payment-method">
+                                <button class="p-5 btn btn-payment-method" aria-label="Botón de Paypal">
                                     <img src="./assets/img/paypal.svg" alt="Paypal"
                                         class="payment-method-img img-fluid">
                                 </button>
@@ -157,7 +157,7 @@
                             </div>
 
                             <div class="col-md-5">
-                                <button type="button" class="button-apply-discount">Aplicar</button>
+                                <button type="button" class="button-apply-discount" aria-label="Botón de aplicar descuento">Aplicar</button>
                             </div>
                         </div>
 
@@ -172,7 +172,7 @@
                         </div>
 
                         <!-- Este botón debería mostrar un mensaje de confirmación de compra -->
-                        <a href="#" class="button-ticket">Confirmar pedido</a>
+                        <a href="#" class="button-ticket" aria-label="Botón para confirmar pedido">Confirmar pedido</a>
 
                     </div>
 

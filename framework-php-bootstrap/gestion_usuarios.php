@@ -312,7 +312,7 @@ if (isset($_GET['alertMessage']) && isset($_GET['alertType'])) {
                 history.replaceState(null, null, window.location.pathname);
             }
 
-            // Auto cerrar alertas después de 5 segundos
+            /* // Auto cerrar alertas después de 5 segundos
             const alert = document.querySelector('.custom-alert-gestion');
             if (alert) {
                 setTimeout(() => {
@@ -320,7 +320,7 @@ if (isset($_GET['alertMessage']) && isset($_GET['alertType'])) {
                     alert.classList.add('fade');
                     setTimeout(() => alert.remove(), 150);
                 }, 5000);
-            }
+            } */
 
             // Lógica para el botón de borrar usuario
             const button1 = document.getElementById("button1");

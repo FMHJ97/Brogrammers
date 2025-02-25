@@ -30,7 +30,7 @@
                                 <h3 class="ticket-title text-center">Tickets Festival</h3>
                                 <p class="ticket-text">Encuentra tus entradas para el GroundSound Festival</p>
                                 <p class="ticket-price text-center">Desde<span class="ticket-price-number"> 25€</span></p>
-                                <a href="ticketing.php" class="button-ticket">Comprar</a>
+                                <a href="ticketing.php" class="button-ticket" aria-label="Botón para ir a comprar entradas del festival">Comprar</a>
                             </div>
                         </div>
                     </div>
@@ -43,7 +43,7 @@
                                 <p class="ticket-text">Encuentra tu sitio para guardar tu vehículo mientras disfrutas
                                 </p>
                                 <p class="ticket-price text-center">Desde <span class="ticket-price-number">75€</span></p>
-                                <a href="parking_camping.php?tab=parking" class="button-ticket">Comprar</a>
+                                <a href="parking_camping.php?tab=parking" class="button-ticket" aria-label="Botón para ir a comprar entradas del parking del festival">Comprar</a>
                             </div>
                         </div>
                     </div>
@@ -56,7 +56,7 @@
                                 <p class="ticket-text">Reserva tu parcela de camping para descansar en el mismo festival
                                 </p>
                                 <p class="ticket-price text-center">Desde <span class="ticket-price-number">89€</span></p>
-                                <a href="parking_camping.php?tab=camping" class="button-ticket">Comprar</a>
+                                <a href="parking_camping.php?tab=camping" class="button-ticket" aria-label="Botón para ir a comprar entradas del camping del festival">Comprar</a>
                             </div>
                         </div>
                     </div>
@@ -70,7 +70,7 @@
                         <div class="ticket-card">
                             <div class="ticket-body">
                                 <img src="assets/img/mapaFestival.jpg" class="ticket-img" alt="Mapa del festival">
-                                <button class="button-ticket" data-bs-toggle="modal" data-bs-target="#myModal"
+                                <button class="button-ticket" data-bs-toggle="modal" data-bs-target="#myModal" aria-label="Botón para ver el mapa del festival"
                                     id="map">Ver Mapa</button>
                             </div>
                         </div>
@@ -91,7 +91,7 @@
 
                         <!-- Modal footer -->
                         <div class="modal-footer custom-modal-footer justify-content-center">
-                            <button type="button" class="button-ticket" data-bs-dismiss="modal">Cerrar</button>
+                            <button type="button" class="button-ticket" data-bs-dismiss="modal" aria-label="Botón para cerrar el modal del mapa del festival">Cerrar</button>
                         </div>
 
                     </div>

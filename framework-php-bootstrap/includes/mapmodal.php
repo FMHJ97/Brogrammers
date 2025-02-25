@@ -11,7 +11,7 @@
 
              <!-- Modal footer -->
              <div class="modal-footer custom-modal-footer justify-content-center">
-                 <button type="button" class="button-ticket" data-bs-dismiss="modal">Cerrar</button>
+                 <button type="button" class="button-ticket" data-bs-dismiss="modal" aria-modal="Botón de cerrar modal del mapa">Cerrar</button>
              </div>
 
          </div>

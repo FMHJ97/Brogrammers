@@ -196,7 +196,7 @@ if (isset($_POST["submit"])) {
                             <div class="mb-3 col d-flex flex-column flex-md-row mb-md-4">
                                 <p class="mb-0">¿Ya tienes una cuenta?&nbsp;</p>
                                 <!-- Enlace a Iniciar Sesión -->
-                                <a href="login.php">Inicia sesión</a>
+                                <a href="login.php" aria-label="Botón para ir a iniciar sesión">Inicia sesión</a>
                             </div>
                         </div>
                         <!-- Formulario -->
@@ -333,7 +333,7 @@ if (isset($_POST["submit"])) {
 
                             <!-- Botón Crear Cuenta -->
                             <div class="d-flex flex-column ">
-                                <button type="submit" name="submit" class="btn-focus" id="btnCrearCuenta" disabled>Crear cuenta</button>
+                                <button type="submit" name="submit" class="btn-focus" id="btnCrearCuenta" aria-label="Botón de crear cuenta" disabled>Crear cuenta</button>
                             </div>
                         </form>
                 </div>

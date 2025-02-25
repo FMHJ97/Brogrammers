@@ -61,7 +61,7 @@ if (isset($_POST['login'])) {
                     <div class="mb-3 col d-flex flex-column flex-md-row mb-md-4">
                         <p class="mb-0">¿No tienes una cuenta?&nbsp;</p>
                         <!-- Link a Registro -->
-                        <a href="register.php">Regístrate</a>
+                        <a href="register.php" aria-label="Enlace para ir a registrarse">Regístrate</a>
                     </div>
                 </div>
                 <!-- Formulario -->
@@ -89,9 +89,9 @@ if (isset($_POST['login'])) {
                     <div>
                         <button type="submit" class="mb-3 btn" name="login">Iniciar sesión</button>
                         <div class="d-flex justify-content-between">
-                            <a href="login.php" id="loginGoogle"><img src="../assets/img/google-imagotipo.svg"
+                            <a href="login.php" id="loginGoogle" aria-label="Botón para iniciar sesión con Google"><img src="../assets/img/google-imagotipo.svg"
                                     alt="Login con Google"></a>
-                            <a id="reset_pwd" href="restore_password.php" class="align-content-end">¿Olvidó su
+                            <a id="reset_pwd" href="restore_password.php" class="align-content-end" aria-label="Enlace para ir a recuperar contraseña">¿Olvidó su
                                 contraseña?</a>
                         </div>
                     </div>

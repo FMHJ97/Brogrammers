@@ -317,11 +317,11 @@ if (isset($_GET['alertMessage']) && isset($_GET['alertType'])) {
                         <div class="row">
                             <p>Talla</p>
                             <div class="col btn-size-group">
-                                <button type="button" class="btn btn-item-size selected">S</button>
-                                <button type="button" class="btn btn-item-size">M</button>
-                                <button type="button" class="btn btn-item-size">L</button>
-                                <button type="button" class="btn btn-item-size">XL</button>
-                                <button type="button" class="btn btn-item-size">2XL</button>
+                                <button type="button" aria-label="Botón para seleccionar talla S" class="btn btn-item-size selected">S</button>
+                                <button type="button" aria-label="Botón para seleccionar talla M" class="btn btn-item-size">M</button>
+                                <button type="button" aria-label="Botón para seleccionar talla L" class="btn btn-item-size">L</button>
+                                <button type="button" aria-label="Botón para seleccionar talla XL" class="btn btn-item-size">XL</button>
+                                <button type="button" aria-label="Botón para seleccionar talla 2XL" class="btn btn-item-size">2XL</button>
                             </div>
                         </div>
                     <?php
@@ -331,16 +331,16 @@ if (isset($_GET['alertMessage']) && isset($_GET['alertType'])) {
                     <div class="row">
                         <p>Cantidad</p>
                         <div class="col item-quantity">
-                            <button type="button" id="restar" class="btn btn-quantity">-</button>
+                            <button type="button" id="restar" aria-label="Botón de reducir cantidad del producto" class="btn btn-quantity">-</button>
                             <span id="quantity">1</span>
-                            <button type="button" id="sumar" class="btn btn-quantity">+</button>
+                            <button type="button" id="sumar" aria-label="Botón de aumentar cantidad del producto" class="btn btn-quantity">+</button>
                         </div>
                     </div>
                     <!-- Botón Añadir al Carrito -->
                     <div class="row">
                         <div class="py-3 col btn-cart">
                             <form action="cart.php" method="POST" novalidate>
-                                <button type="submit" class="btn-focus btn-cart">Añadir al Carrito</button>
+                                <button type="submit" aria-label="Botón de añadir al carrito" class="btn-focus btn-cart">Añadir al Carrito</button>
                             </form>
                         </div>
                     </div>

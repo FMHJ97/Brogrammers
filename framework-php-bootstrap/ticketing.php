@@ -24,8 +24,8 @@
                 <!-- Row Tabs -->
                 <div class="row mb-4">
                     <div class="col btn-category-group">
-                        <button type="button" class="btn btn-category-item selected" id="btnGeneralPrices">General Access</button>
-                        <button type="button" class="btn btn-category-item" id="btnVips">VIPs</button>
+                        <button type="button" class="btn btn-category-item selected" id="btnGeneralPrices" aria-label="Botón para filtrar por entradas al acceso general">General Access</button>
+                        <button type="button" class="btn btn-category-item" id="btnVips" aria-label="Botón para filtrar por entradas VIPs">VIPs</button>
                     </div>
                 </div>
 
@@ -39,7 +39,7 @@
                                 <h3 class="ticket-title text-center">1 - Day Pass</h3>
                                 <p class="ticket-text">Entrada que te permite disfrutar de un día de festival</p>
                                 <p class="ticket-price text-center">Por <span class="ticket-price-number">25€</span></p>
-                                <a href="cart.php" class="button-ticket">Comprar</a>
+                                <a href="cart.php" class="button-ticket" aria-label="Botón de comprar entrada para 1 día">Comprar</a>
                             </div>
                         </div>
                     </div>
@@ -51,7 +51,7 @@
                                 <h3 class="ticket-title text-center">2 - Day Pass</h3>
                                 <p class="ticket-text">Con esta entrada podrás vivir la experiencia del festival 2 días</p>
                                 <p class="ticket-price text-center">Por <span class="ticket-price-number">50€</span></p>
-                                <a href="cart.php" class="button-ticket">Comprar</a>
+                                <a href="cart.php" class="button-ticket" aria-label="Botón de comprar entrada para 2 días">Comprar</a>
                             </div>
                         </div>
                     </div>
@@ -63,7 +63,7 @@
                                 <h3 class="ticket-title text-center">Weekend Pass</h3>
                                 <p class="ticket-text">Con esta entrada podrás disfrutar de todo el fin de semana de festival</p>
                                 <p class="ticket-price text-center">Por <span class="ticket-price-number">70€</span></p>
-                                <a href="cart.php" class="button-ticket">Comprar</a>
+                                <a href="cart.php" class="button-ticket" aria-label="Botón de comprar entrada para todo el fin de semana">Comprar</a>
                             </div>
                         </div>
                     </div>
@@ -80,7 +80,7 @@
                                 <h3 class="ticket-title text-center">1 - Day Pass</h3>
                                 <p class="ticket-text">Entrada para disfrutar de la experiencia VIP del festival un día</p>
                                 <p class="ticket-price text-center">Por <span class="ticket-price-number">40€</span></p>
-                                <a href="cart.php" class="button-ticket">Comprar</a>
+                                <a href="cart.php" class="button-ticket" aria-label="Botón de comprar entrada VIP para 1 día">Comprar</a>
                             </div>
                         </div>
                     </div>
@@ -92,7 +92,7 @@
                                 <h3 class="ticket-title text-center">2 - Day Pass</h3>
                                 <p class="ticket-text">Para disfrutar el espectáculo desde la zona VIP 2 días</p>
                                 <p class="ticket-price text-center">Por <span class="ticket-price-number">80€</span></p>
-                                <a href="cart.php" class="button-ticket">Comprar</a>
+                                <a href="cart.php" class="button-ticket" aria-label="Botón de comprar entrada VIP para 2 días">Comprar</a>
                             </div>
                         </div>
                     </div>
@@ -104,7 +104,7 @@
                                 <h3 class="ticket-title text-center">Weekend Pass</h3>
                                 <p class="ticket-text">A disfrutar del festival desde la zona VIP todos los días</p>
                                 <p class="ticket-price text-center">Por <span class="ticket-price-number">110€</span></p>
-                                <a href="cart.php" class="button-ticket">Comprar</a>
+                                <a href="cart.php" class="button-ticket" aria-label="Botón de comprar entrada VIP para el fin de semana completo">Comprar</a>
                             </div>
                         </div>
                     </div>

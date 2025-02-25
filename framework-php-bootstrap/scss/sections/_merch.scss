@@ -18,7 +18,6 @@ main {
 
   // Estilos para la imagen principal del producto.
   .main-image {
-
     // Ajuste de tamaño de la imagen principal.
     img {
       border-radius: 5px;
@@ -28,7 +27,6 @@ main {
 
   // Estilos para las imágenes adicionales del producto.
   .additional-images {
-
     // Ajuste de tamaño de las imágenes adicionales.
     img {
       max-width: 75px;
@@ -62,10 +60,8 @@ main {
 
 // En dispositivos móviles, se ajusta el tamaño de las imágenes.
 @include media-breakpoint-down(md) {
-
   // Sección de imágenes del producto.
   .item-image-section {
-
     // Imagen principal.
     .main-image {
       img {
@@ -84,7 +80,6 @@ main {
 
 // Estilos para el título de la sección de productos recomendados.
 .suggested-items-heading {
-
   // Título de la sección.
   h2 {
     color: $texto1;
@@ -138,6 +133,15 @@ main {
     .btn-quantity {
       border: none;
       color: $resaltar2;
+
+      &:hover {
+        background-color: lighten($color: $fondo, $amount: 10);
+      }
+
+      &:focus {
+        background-color: $resaltar2;
+        color: $texto2;
+      }
     }
 
     // Número en el contador de cantidad.
@@ -163,7 +167,6 @@ main {
 
 // En dispositivos móviles, se ajusta el tamaño de los elementos.
 @include media-breakpoint-down(md) {
-
   // Sección de detalles del producto.
   .merch-item-details {
     margin-top: 3em;
@@ -249,7 +252,6 @@ main {
 
 // En dispositivos móviles, se ajusta el tamaño de los elementos.
 @include media-breakpoint-down(md) {
-
   // Ajuste de columnas para ocupar el espacio disponible de manera uniforme.
   .merch-products {
     justify-content: center;

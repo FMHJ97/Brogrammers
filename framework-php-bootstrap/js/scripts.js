@@ -175,6 +175,14 @@ document.addEventListener("DOMContentLoaded", function () {
                 setStars(newRating, container);
             }
         });
+
+        container.addEventListener("keydown", function (event) {
+            if (event.target.classList.contains("bi-star-fill") && event.code === "Enter") {
+                let newRating = parseInt(event.target.getAttribute("data-value"));
+                container.setAttribute("data-rating", newRating);
+                setStars(newRating, container);
+            }
+        });
     });
 });
 

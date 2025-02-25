@@ -69,11 +69,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     // Validar campos
     if (!preg_match("/^\d{5}$/", $_POST['cp'])) {
-        $errores[] = "Código postal inválido";
+        $errores[] = "Código postal inválido (5 dígitos)";
     }
 
-    if (!preg_match("/^[6789]\d{8}$/", $_POST['tlf'])) {
-        $errores[] = "Teléfono inválido";
+    if (!preg_match("/^\d{8}$/", $_POST['tlf'])) {
+        $errores[] = "Teléfono inválido (9 dígitos, sin prefijo)";
     }
 
     if (!in_array($_POST['pais'], $paisesValidos)) {
@@ -205,8 +205,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                             <div class="image-container">
                                 <label for="imagenInput">
                                     <img src="<?php echo ($usuario->img_perfil != null && file_exists($usuario->img_perfil)) ? $usuario->img_perfil : 'assets/img/dummy/dummy_user.png'; ?>"
-                                        alt="Foto de perfil" class="img-fluid rounded-circle img-usuario" aria-label="Imagen de perfil" tabindex="0"
-                                        id="imagenPrevisualizacion">
+                                        alt="Foto de perfil" class="img-fluid rounded-circle img-usuario"
+                                        aria-label="Imagen de perfil" tabindex="0" id="imagenPrevisualizacion">
                                     <div class="image-overlay" id="imageOverlay">
                                         <span>Cambiar imagen</span>
                                     </div>
@@ -287,10 +287,16 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                                 </div>
                             </div>
                         </div>
+                        <!-- Password Help -->
+                        <div class="mb-4">
+                            <small id="passwordHelp" class="form-help">La contraseña debe tener al menos 8
+                                caracteres, una mayúscula, una minúscula y un caracter no alfanumérico.</small>
+                        </div>
                         <!-- Botón que aparecerá si se modifica algún campo -->
                         <div class="row">
                             <div class="col-md-12">
-                                <button type="submit" class="btn-focus" aria-label="Botón de guardar cambios">Guardar Cambios</button>
+                                <button type="submit" class="btn-focus" aria-label="Botón de guardar cambios">Guardar
+                                    Cambios</button>
                             </div>
                         </div>
                     </div>

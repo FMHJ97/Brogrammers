@@ -97,7 +97,7 @@ if (isset($_POST["submit"])) {
     }
 
     // Validación teléfono español (9 dígitos, sin prefijo)
-    if (empty($_POST["phone"]) || !preg_match("/^[6789]\d{8}$/", $_POST["phone"])) {
+    if (empty($_POST["phone"]) || !preg_match("/^\d{8}$/", $_POST["phone"])) {
         $errores[] = "Teléfono inválido (9 dígitos, sin prefijo)";
     }
 
@@ -268,8 +268,8 @@ if (isset($_POST["submit"])) {
                                 <!-- Teléfono -->
                                 <div class="col-12 col-md-6">
                                     <label for="phone">Teléfono</label><span> *</span>
-                                    <input type="text" class="form-control" id="phone"
-                                        placeholder="Introduzca su teléfono" name="phone" required
+                                    <input type="text" class="form-control" id="phone" placeholder="Introduzca su teléfono"
+                                        name="phone" required
                                         value="<?php echo isset($_POST['phone']) ? htmlspecialchars($_POST['phone']) : ''; ?>">
                                 </div>
                             </div>
@@ -283,7 +283,7 @@ if (isset($_POST["submit"])) {
                             </div>
 
                             <!-- Password y Confirm Password Input -->
-                            <div class="mt-3 mb-3 row">
+                            <div class="mt-3 row">
                                 <!-- Password -->
                                 <div class="mb-3 col-12 col-md-6 mb-md-0">
                                     <label for="pwd1">Contraseña</label><span> *</span>
@@ -300,7 +300,7 @@ if (isset($_POST["submit"])) {
                             </div>
 
                             <!-- Password Help -->
-                            <div class="mb-3">
+                            <div class="mb-4">
                                 <small id="passwordHelp" class="form-help">La contraseña debe tener al menos 8
                                     caracteres, una mayúscula, una minúscula y un caracter no alfanumérico.</small>
                             </div>
@@ -333,7 +333,8 @@ if (isset($_POST["submit"])) {
 
                             <!-- Botón Crear Cuenta -->
                             <div class="d-flex flex-column ">
-                                <button type="submit" name="submit" class="btn-focus" id="btnCrearCuenta" aria-label="Botón de crear cuenta" disabled>Crear cuenta</button>
+                                <button type="submit" name="submit" class="btn-focus" id="btnCrearCuenta"
+                                    aria-label="Botón de crear cuenta" disabled>Crear cuenta</button>
                             </div>
                         </form>
                 </div>

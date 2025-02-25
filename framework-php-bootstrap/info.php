@@ -219,7 +219,7 @@
         <!-- MAP -->
         <section id="festaccess" class="container page-section">
             <!-- Título fuera del recuadro -->
-            <div class="container text-center my-4 mt-md-5 pt-md-4">
+            <div class="container text-center my-4 mt-md-5 pt-md-4 ">
                 <h2>FESTIVAL MAP</h2>
             </div>
             <!-- Mapa y su Modal -->

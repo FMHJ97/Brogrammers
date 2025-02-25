@@ -6,7 +6,7 @@
 
              <!-- Modal body -->
              <div class="modal-body custom-modal-body">
-                 <img src="assets/img/mapaFestival.jpg" class="img-fluid" alt="Mapa del festival">
+                 <img src="assets/img/mapaFestival.jpg" class="img-fluid" alt="Mapa del festival" aria-label="Se muestran marcadas las entradas y salidas al recinto, y los puntos de interés como cuartos de baño, eventos principales, áreas de comida, parking, camping, áreas de seguridad, etc. ">
              </div>
 
              <!-- Modal footer -->

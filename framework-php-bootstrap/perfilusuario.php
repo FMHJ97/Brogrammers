@@ -170,7 +170,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <?php include("includes/navbar.php"); ?>
 
     <main>
-        <section class="py-3 py-md-5">
+        <section class="py-3 py-md-5 page-section">
 
             <!-- Mostrar alertas -->
             <?php if (!empty($alertMessage)): ?>
@@ -196,7 +196,12 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 </div>
             <?php endif; ?>
             <!-- Primera Fila -->
+            <div class="container page-section-heading pt-0">
+                <h1 class="text-center ">Perfil Usuario</h1>
+                <h2 class="text-center">Datos</h2>
+            </div>
             <div class="container p-4 my-5 authentication-form p-md-5">
+                
                 <form action="" method="post" enctype="multipart/form-data">
                     <!-- Imagen e Información -->
                     <div class="mb-3 text-center row justify-content-center text-md-start">
@@ -211,7 +216,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                                         <span>Cambiar imagen</span>
                                     </div>
                                 </label>
-                                <input type="file" id="imagenInput" name="imagen_perfil" accept="image/*"
+                                <input type="file" id="imagenInput" name="imagen_perfil" aria-label="Input de cambiar imagen de perfil" accept="image/*"
                                     style="display: none;">
                             </div>
                         </div>
@@ -238,7 +243,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                         <div class="col-md-6">
                             <div class="mt-3 mb-3">
                                 <label for="pais">País</label>
-                                <select class="form-control" id="pais" name="pais">
+                                <select class="form-control" id="pais" name="pais" aria-label="Input de país">
                                     <?php foreach ($paisesValidos as $pais): ?>
                                         <option value="<?php echo $pais; ?>"
                                             <?php echo ($pais == $usuario->pais) ? 'selected' : ''; ?>>
@@ -252,7 +257,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                             <div class="mt-3 mb-3">
                                 <label for="cp">Código Postal</label>
                                 <input type="text" class="form-control" id="cp"
-                                    placeholder="Introduzca su código postal" name="cp"
+                                    placeholder="Introduzca su código postal" name="cp" aria-label="Input de código postal"
                                     value="<?php echo htmlspecialchars($usuario->codigo_postal); ?>">
                             </div>
                         </div>
@@ -260,13 +265,13 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                             <div class="mt-3 mb-3">
                                 <label for="tlf">Teléfono</label>
                                 <input type="text" class="form-control" id="tlf" placeholder="Introduzca su teléfono"
-                                    name="tlf" value="<?php echo htmlspecialchars($usuario->telefono); ?>">
+                                    name="tlf" aria-label="Input de número de teléfono" value="<?php echo htmlspecialchars($usuario->telefono); ?>">
                             </div>
                         </div>
                         <div class="col-md-6">
                             <div class="mt-3 mb-3">
                                 <label for="fecha_nac">Fecha de Nacimiento</label>
-                                <input type="date" class="form-control" id="fecha_nac" name="fecha_nac"
+                                <input type="date" class="form-control" aria-label="Input de fecha de nacimiento" id="fecha_nac" name="fecha_nac"
                                     value="<?php echo htmlspecialchars($usuario->fecha_nac); ?>">
                             </div>
                         </div>
@@ -276,14 +281,14 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                                 <div class="mt-3 mb-3">
                                     <label for="pwd1">Contraseña</label>
                                     <input type="password" class="form-control" id="pwd1"
-                                        placeholder="Introduzca su contraseña" name="pwd">
+                                        placeholder="Introduzca su contraseña" aria-label="Input de introducir contraseña" name="pwd">
                                 </div>
                             </div>
                             <div class="col-md-6">
                                 <div class="mt-3 mb-3">
                                     <label for="pwd2">Confirmar Contraseña</label>
                                     <input type="password" class="form-control" id="pwd2"
-                                        placeholder="Confirme su contraseña" name="pwd2">
+                                        placeholder="Confirme su contraseña" aria-label="Input de confirmar contraseña" name="pwd2">
                                 </div>
                             </div>
                         </div>

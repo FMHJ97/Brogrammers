@@ -8,7 +8,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
 });
 
-// Cierra la alerta automáticamente después de 5 segundos
+/* // Cierra la alerta automáticamente después de 5 segundos
 document.addEventListener("DOMContentLoaded", function () {
     const alert = document.querySelector('.custom-alert-gestion');
     if (alert) {
@@ -16,4 +16,4 @@ document.addEventListener("DOMContentLoaded", function () {
             alert.remove();
         }, 5000); // El mensaje desaparecerá después de 5 segundos
     }
-});
+}); */

@@ -519,11 +519,11 @@ if (isset($_GET['alertMessage']) && isset($_GET['alertType'])) {
                             <label for="stars">¿En qué estado estaba el producto?</label>
                             <!-- Contenedor de estrellas -->
                             <div id="stars" class="rating-stars" data-rating="<?php echo isset($edit_valoracion) ? $edit_valoracion->valoracion : 1; ?>">
-                                <i class="bi bi-star-fill" data-value="1"></i>
-                                <i class="bi bi-star-fill" data-value="2"></i>
-                                <i class="bi bi-star-fill" data-value="3"></i>
-                                <i class="bi bi-star-fill" data-value="4"></i>
-                                <i class="bi bi-star-fill" data-value="5"></i>
+                                <i class="bi bi-star-fill" data-value="1" role="button" tabindex="0"></i>
+                                <i class="bi bi-star-fill" data-value="2" role="button" tabindex="0"></i>
+                                <i class="bi bi-star-fill" data-value="3" role="button" tabindex="0"></i>
+                                <i class="bi bi-star-fill" data-value="4" role="button" tabindex="0"></i>
+                                <i class="bi bi-star-fill" data-value="5" role="button" tabindex="0"></i>
                             </div>
                         </div>
                         <!-- Título Input-->

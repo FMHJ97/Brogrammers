@@ -360,6 +360,12 @@ main {
         background: $primario2;
         transition: all 0.3s ease;
       }
+
+      &:focus {
+        scale: 1.05;
+        background: $primario2;
+        transition: all 0.3s ease;
+      }
     }
 
     .btn-edit-review {
@@ -371,6 +377,12 @@ main {
       font-size: $heading-font-5;
 
       &:hover {
+        scale: 1.05;
+        background: $secundario2;
+        transition: all 0.3s ease;
+      }
+
+      &:focus {
         scale: 1.05;
         background: $secundario2;
         transition: all 0.3s ease;
@@ -415,6 +427,13 @@ main {
     font-size: $heading-font-5;
 
     &:hover {
+      background: darken($resaltar2, 2);
+      color: $texto2;
+      scale: 1.05;
+      transition: all 0.2s;
+    }
+
+    &:focus {
       background: darken($resaltar2, 2);
       color: $texto2;
       scale: 1.05;

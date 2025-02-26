@@ -140,7 +140,7 @@
                 </div>
                 <!--CF2: row sin col?-->
                 <div class="row bgroundTicketInfo d-flex justify-content-center align-items-center">
-                    <a href="./tickets.php" class="btn buttonInfo">Haz click aquí</a>
+                    <a href="./tickets.php" class="btn buttonInfo" aria-label="Más información sobre tickets">Haz click aquí</a>
                 </div>
             </div>
         </section>
@@ -178,7 +178,7 @@
                         expreso por escrito del festival.</p>
                 </div>
                 <div class="row bgroundCampingInfo d-flex justify-content-center align-items-center">
-                    <a href="./parking_camping.php" class="btn buttonInfo">Haz click aquí</a>
+                    <a href="./parking_camping.php" class="btn buttonInfo" aria-label="Más información sobre Parking y Camping">Haz click aquí</a>
                 </div>
             </div>
         </section>
@@ -219,7 +219,7 @@
         <!-- MAP -->
         <section id="festaccess" class="container page-section">
             <!-- Título fuera del recuadro -->
-            <div class="container text-center my-4 mt-md-5 pt-md-4">
+            <div class="container text-center my-4 mt-md-5 pt-md-4 ">
                 <h2>FESTIVAL MAP</h2>
             </div>
             <!-- Mapa y su Modal -->

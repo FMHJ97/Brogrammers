@@ -81,13 +81,12 @@ main {
 
   // Estilo para la ayuda de la contraseña.
   .form-help {
-    color: $secundario1;
+    color: $secundario2;
   }
 }
 
 // En dispositivos móviles, el tamaño de la fuente del botón se reduce.
 @include media-breakpoint-down(md) {
-
   // Estilo para el botón de acción.
   button {
     font-size: $body-font-phone-1;
@@ -178,6 +177,12 @@ main {
       background: darken($resaltar1, 10%);
       color: $texto2;
     }
+
+    &:focus {
+      background: darken($resaltar1, 10%);
+      color: $texto2;
+      border: $border-3 solid $texto1;
+    }
   }
 
   #btn-cancel-review {
@@ -189,6 +194,12 @@ main {
     &:hover {
       background: darken($primario1, 3%);
       color: $texto1;
+    }
+
+    &:focus {
+      background: darken($primario1, 3%);
+      color: $texto1;
+      border: $border-3 solid $texto1;
     }
   }
 }

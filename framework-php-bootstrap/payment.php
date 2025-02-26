@@ -12,8 +12,14 @@
     <?php include("includes/navbar.php"); ?>
 
     <main class="px-3 px-md-0">
-        <section class="page-section">
-
+        <!-- Sección de Cabecera -->
+        <section class="container page-section mb-0">
+            <div class="row page-section-heading">
+                <h1>Métodos de Pago</h1>
+                <h2>Sigue los siguientes pasos</h2>
+            </div>
+        </section>
+        <section class="page-section mt-0">
             <div class="container">
                 <!-- Fila con títulos (Carrito, Dirección, Pago) -->
                 <div class="text-center row d-flex page-section-heading">
@@ -63,7 +69,7 @@
                             <div class="col">
                                 <label for="numCard">Número de tarjeta</label><span> *</span>
                                 <input id="numCard" type="text" class="form-control"
-                                    placeholder="Introduzca su número de tarjeta">
+                                    placeholder="Introduzca su número de tarjeta" aria-label="Introduce tu número de tarjeta">
                             </div>
                         </div>
 
@@ -71,7 +77,7 @@
                             <div class="col">
                                 <label for="titular">Nombre del titular</label><span> *</span>
                                 <input id="titular" type="text" class="form-control"
-                                    placeholder="Introduzca el nombre del titular">
+                                    placeholder="Introduzca el nombre del titular" aria-label="Introduzca el nombre del titular">
                             </div>
                         </div>
 
@@ -83,7 +89,7 @@
                             <div class="col-md-6">
                                 <label for="cvc">CVC</label><span> *</span>
                                 <input id="cvc" type="text" class="form-control"
-                                    placeholder="Introduzca el código de seguridad">
+                                    placeholder="Introduzca el código de seguridad" aria-label="Introduzca el código de seguridad">
                             </div>
                         </div>
 
@@ -94,10 +100,9 @@
                                     <h5>Correo electrónico de Paypal</h5>
                                 </label><span> *</span>
                                 <input id="emailPaypal" type="email" class="form-control"
-                                    placeholder="Introduzca su correo electrónico de Paypal">
+                                    placeholder="Introduzca su correo electrónico de Paypal" aria-label="Introduzca el correo electrónico de Paypal">
                             </div>
                         </div>
-
                     </div>
 
                     <!-- Resumen -->
@@ -153,7 +158,7 @@
                         <div class="mb-3 row">
                             <div class="mb-1 col-md-7">
                                 <label for="discount" class="visually-hidden">Introduce tu código</label>
-                                <input id="discount" type="text" class="form-control-discount" placeholder="Introduzca código">
+                                <input id="discount" type="text" class="form-control-discount" placeholder="Introduzca código" aria-label="Introduzca su código de descuento">
                             </div>
 
                             <div class="col-md-5">
@@ -177,7 +182,7 @@
                     </div>
 
                 </div>
-            </div>
+
 
         </section>
     </main>

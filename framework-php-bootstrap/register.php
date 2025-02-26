@@ -207,7 +207,8 @@ if (isset($_POST["submit"])) {
                                     <label for="name">Nombre</label><span> *</span>
                                     <input type="text" class="form-control" id="name" placeholder="Introduzca su nombre"
                                         name="name" required
-                                        value="<?php echo isset($_POST['name']) ? htmlspecialchars($_POST['name']) : htmlspecialchars($name); ?>">
+                                        value="<?php echo isset($_POST['name']) ? htmlspecialchars($_POST['name']) : htmlspecialchars($name); ?>"
+                                        aria-label="Campo de nombre">
 
                                 </div>
                             </div>
@@ -218,7 +219,8 @@ if (isset($_POST["submit"])) {
                                 <div class="mb-3 col-12 col-md-6 mb-md-0">
                                     <label for="surname1">Primer Apellido</label><span> *</span>
                                     <input type="text" class="form-control" id="surname1"
-                                        placeholder="Introduzca su primer apellido" name="surname1" required
+                                        aria-label="Campo de primer apellido" placeholder="Introduzca su primer apellido"
+                                        name="surname1" required
                                         value="<?php echo isset($_POST['surname1']) ? htmlspecialchars($_POST['surname1']) : htmlspecialchars($surname1); ?>">
 
                                 </div>
@@ -226,6 +228,7 @@ if (isset($_POST["submit"])) {
                                 <div class="col-12 col-md-6">
                                     <label for="surname2">Segundo Apellido</label>
                                     <input type="text" class="form-control" id="surname2"
+                                        aria-label="Campo de segundo apellido (opcional)"
                                         placeholder="Introduzca su segundo apellido (opcional)" name="surname2"
                                         value="<?php echo isset($_POST['surname2']) ? htmlspecialchars($_POST['surname2']) : ''; ?>">
                                 </div>
@@ -237,13 +240,15 @@ if (isset($_POST["submit"])) {
                                 <div class="mb-3 col-12 col-md-6 mb-md-0">
                                     <label for="birth">Fecha de Nacimiento</label><span> *</span>
                                     <input type="date" class="form-control" id="birth"
+                                        aria-label="Campo de fecha de nacimiento"
                                         placeholder="Introduzca su fecha de nacimiento" name="birth" required
                                         value="<?php echo isset($_POST['birth']) ? htmlspecialchars($_POST['birth']) : ''; ?>">
                                 </div>
                                 <!-- País -->
                                 <div class="col-12 col-md-6">
                                     <label for="country">País</label><span> *</span>
-                                    <select class="form-control" id="country" name="country" required>
+                                    <select class="form-control" id="country" name="country" aria-label="Selección de país"
+                                        required>
                                         <option value="">Seleccione un país</option>
                                         <?php foreach ($paisesValidos as $pais):
                                             $selected = (isset($_POST['country']) && $_POST['country'] === $pais) ? 'selected' : '';
@@ -261,7 +266,7 @@ if (isset($_POST["submit"])) {
                                 <!-- Código postal -->
                                 <div class="mb-3 col-12 col-md-6 mb-md-0">
                                     <label for="postal">Código Postal</label><span> *</span>
-                                    <input type="text" class="form-control" id="postal"
+                                    <input type="text" class="form-control" id="postal" aria-label="Campo de código postal"
                                         placeholder="Introduzca su código postal" name="postal" required
                                         value="<?php echo isset($_POST['postal']) ? htmlspecialchars($_POST['postal']) : ''; ?>">
                                 </div>
@@ -269,7 +274,7 @@ if (isset($_POST["submit"])) {
                                 <div class="col-12 col-md-6">
                                     <label for="phone">Teléfono</label><span> *</span>
                                     <input type="text" class="form-control" id="phone" placeholder="Introduzca su teléfono"
-                                        name="phone" required
+                                        aria-label="Campo de teléfono" name="phone" required
                                         value="<?php echo isset($_POST['phone']) ? htmlspecialchars($_POST['phone']) : ''; ?>">
                                 </div>
                             </div>
@@ -278,7 +283,8 @@ if (isset($_POST["submit"])) {
                             <div class="mb-3">
                                 <label for="email1">Correo electrónico</label><span> *</span>
                                 <input type="email" class="form-control" id="email1"
-                                    placeholder="Introduzca su correo electrónico" name="email" required
+                                    aria-label="Campo de correo electrónico" placeholder="Introduzca su correo electrónico"
+                                    name="email" required
                                     value="<?php echo isset($_POST['email']) ? htmlspecialchars($_POST['email']) : htmlspecialchars($email); ?>">
                             </div>
 
@@ -287,7 +293,7 @@ if (isset($_POST["submit"])) {
                                 <!-- Password -->
                                 <div class="mb-3 col-12 col-md-6 mb-md-0">
                                     <label for="pwd1">Contraseña</label><span> *</span>
-                                    <input type="password" class="form-control" id="pwd1"
+                                    <input type="password" class="form-control" id="pwd1" aria-label="Campo de contraseña"
                                         placeholder="Introduzca su contraseña" name="pswd" required
                                         pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*\W).{8,}">
                                 </div>
@@ -295,13 +301,15 @@ if (isset($_POST["submit"])) {
                                 <div class="col-12 col-md-6">
                                     <label for="pwd2">Confirmar contraseña</label><span> *</span>
                                     <input type="password" class="form-control" id="pwd2"
+                                        aria-label="Campo de confirmación de contraseña"
                                         placeholder="Confirme su contraseña" name="pswd2" required>
                                 </div>
                             </div>
 
                             <!-- Password Help -->
                             <div class="mb-4">
-                                <small id="passwordHelp" class="form-help">La contraseña debe tener al menos 8
+                                <small id="passwordHelp" class="form-help" aria-label="Ayuda de contraseña">La contraseña
+                                    debe tener al menos 8
                                     caracteres, una mayúscula, una minúscula y un caracter no alfanumérico.</small>
                             </div>
 
@@ -310,6 +318,7 @@ if (isset($_POST["submit"])) {
                                 <label for="captcha">Captcha</label><span> *</span>
                                 <img src="/includes/genCaptchaMath.php" alt="CaptchaImg" class="captcha" id="img-codigo">
                                 <input type="text" class="form-control" id="captcha" placeholder="Introduzca el captcha"
+                                    aria-label="Campo de captcha"
                                     name="captcha" required>
                             </div>
 
@@ -317,7 +326,8 @@ if (isset($_POST["submit"])) {
                             <div class="mb-3 form-check">
                                 <label class="form-check-label">
                                     <input class="form-check-input" type="checkbox" name="news"
-                                        <?php echo (isset($_POST['news'])) ? 'checked' : ''; ?>>
+                                        <?php echo (isset($_POST['news'])) ? 'checked' : ''; ?>
+                                        aria-label="Checkbox de recibir noticias e información sobre GroundSound Festival">
                                     Deseo recibir noticias e información sobre GroundSound Festival
                                 </label>
                             </div>
@@ -326,6 +336,7 @@ if (isset($_POST["submit"])) {
                             <div class="mb-5 form-check">
                                 <label class="form-check-label">
                                     <input class="form-check-input" type="checkbox" name="terms" id="termsCheckbox"
+                                        aria-label="Checkbox de aceptar los términos de uso"
                                         <?php echo (isset($_POST['terms'])) ? 'checked' : ''; ?>>
                                     Acepto los <a href="legal.php">Términos de Uso</a>.
                                 </label>

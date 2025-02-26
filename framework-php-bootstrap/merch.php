@@ -49,7 +49,7 @@ $productos = ProductoController::findAll();
                         <!-- Input de Búsqueda -->
                         <label for="search" class="visually-hidden">Buscar productos...</label>
                         <input type="text" class="form-control-search" placeholder="Buscar productos..." name="search"
-                            id="search">
+                            aria-label="Buscar productos" aria-describedby="search" id="search">
                         <!-- Botón de Búsqueda -->
                         <button class="btn btn-search" arial-label="Botón de búsqueda">
                             <i class="bi bi-search"></i><span class="visually-hidden">Buscar</span>
@@ -59,7 +59,8 @@ $productos = ProductoController::findAll();
             </div>
             <!-- Elemento de Ordenación -->
             <div class="mt-3 row">
-                <div class="dropdown dropdown-order-by">
+                <div class="dropdown dropdown-order-by" aria-label="Desplegable de ordenación de productos"
+                    aria-expanded="false">
                     <!-- Icono de Ordenación -->
                     <i class="bi bi-filter"></i>
                     <!-- Botón de Ordenación -->
@@ -69,10 +70,13 @@ $productos = ProductoController::findAll();
                     </button>
                     <!-- Opciones de Ordenación -->
                     <ul class="dropdown-menu" aria-labelledby="dropdownOrderButton">
-                        <li><button class="dropdown-item" onclick="updateDropdownText(this)">Relevancia</button></li>
-                        <li><button id="desc" class="dropdown-item" onclick="updateDropdownText(this)">Precio
+                        <li><button class="dropdown-item" onclick="updateDropdownText(this)"
+                                aria-label="Ordenar por relevancia">Relevancia</button></li>
+                        <li><button id="desc" class="dropdown-item" onclick="updateDropdownText(this)"
+                                aria-label="Ordenar por precio descendente">Precio
                                 (descendente)</button></li>
-                        <li><button id="asc" class="dropdown-item" onclick="updateDropdownText(this)">Precio
+                        <li><button id="asc" class="dropdown-item" onclick="updateDropdownText(this)"
+                                aria-label="Ordenar por precio ascendente">Precio
                                 (ascendente)</button></li>
                     </ul>
                 </div>
@@ -90,7 +94,8 @@ $productos = ProductoController::findAll();
                         <form action="./merch_item.php" method="POST"
                             class="col-12 col-md-4 card card-merch-item all-items <?php echo $p->categoria; ?>"
                             data-precio="<?php echo $p->precio; ?>" data-nombre="<?php echo $p->nombre; ?>"
-                            onclick="this.submit()" onkeypress="this.submit()" role="button" tabindex="0">
+                            onclick="this.submit()" onkeypress="this.submit()" role="button" tabindex="0"
+                            aria-label="Producto <?php echo $p->nombre; ?>" aria-pressed="false">
                             <input type="hidden" name="id" value="<?php echo $p->id; ?>">
                             <img class="card-img-top" src="./<?php echo $p->imagen; ?>" alt="<?php echo $p->nombre; ?>">
                             <div class="card-body">

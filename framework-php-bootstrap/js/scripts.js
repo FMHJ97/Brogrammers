@@ -99,8 +99,8 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 
     // Evento para buscar productos por nombre.
-    searchInput.addEventListener('input', updateProductDisplay);
-    // document.querySelector('.btn-search').addEventListener('click', updateProductDisplay);
+    //  searchInput.addEventListener('input', updateProductDisplay);
+    document.querySelector('.btn-search').addEventListener('click', updateProductDisplay);
 
     // Inicializamos el estado por defecto
     dropdownButton.dataset.order = ''; // Sin orden por defecto

@@ -184,13 +184,17 @@ if (isset($_GET['alertMessage']) && isset($_GET['alertType'])) {
         <div class="alert alert-<?php echo $alertType; ?> alert-dismissible fade show custom-alert-gestion" role="alert">
             <?php if ($alertType == "success"): ?>
                 <!-- Ícono de éxito -->
-                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-check-circle-fill" viewBox="0 0 16 16">
-                    <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0m-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z" />
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                    class="bi bi-check-circle-fill" viewBox="0 0 16 16">
+                    <path
+                        d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0m-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z" />
                 </svg>
             <?php else: ?>
                 <!-- Ícono de error -->
-                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-x-circle-fill" viewBox="0 0 16 16">
-                    <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0M5.354 4.646a.5.5 0 1 0-.708.708L7.293 8l-2.647 2.646a.5.5 0 0 0 .708.708L8 8.707l2.646 2.647a.5.5 0 0 0 .708-.708L8.707 8l2.647-2.646a.5.5 0 0 0-.708-.708L8 7.293z" />
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-x-circle-fill"
+                    viewBox="0 0 16 16">
+                    <path
+                        d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0M5.354 4.646a.5.5 0 1 0-.708.708L7.293 8l-2.647 2.646a.5.5 0 0 0 .708.708L8 8.707l2.646 2.647a.5.5 0 0 0 .708-.708L8.707 8l2.647-2.646a.5.5 0 0 0-.708-.708L8 7.293z" />
                 </svg>
             <?php endif; ?>
             <strong><?php echo $alertMessage; ?></strong>
@@ -227,7 +231,8 @@ if (isset($_GET['alertMessage']) && isset($_GET['alertType'])) {
                             }
                         }
                         // Enlace que muestra el número de reseñas.
-                        echo '<a href="#reviews-container" id="reviews-link">';
+                        echo '<a href="#reviews-container" id="reviews-link"
+                            aria-label="Enlace que muestra el número de reseñas">';
                         if ($reviews) {
                             echo "(" . count($reviews) . ")";
                         } else {
@@ -259,8 +264,8 @@ if (isset($_GET['alertMessage']) && isset($_GET['alertType'])) {
                                 for ($i = 0; $i < 4; $i++) {
                                 ?>
                                     <div class="col-3">
-                                        <img src="./<?php echo $producto->imagen; ?>"
-                                            alt="<?php echo $producto->nombre; ?>" class="img-fluid
+                                        <img src="./<?php echo $producto->imagen; ?>" alt="<?php echo $producto->nombre; ?>"
+                                            class="img-fluid
                                             <?php echo $coloresHue[$i]; ?>" tabindex="0" role="button">
                                     </div>
                                 <?php
@@ -317,11 +322,16 @@ if (isset($_GET['alertMessage']) && isset($_GET['alertType'])) {
                         <div class="row">
                             <p>Talla</p>
                             <div class="col btn-size-group">
-                                <button type="button" aria-label="Botón para seleccionar talla S" class="btn btn-item-size selected">S</button>
-                                <button type="button" aria-label="Botón para seleccionar talla M" class="btn btn-item-size">M</button>
-                                <button type="button" aria-label="Botón para seleccionar talla L" class="btn btn-item-size">L</button>
-                                <button type="button" aria-label="Botón para seleccionar talla XL" class="btn btn-item-size">XL</button>
-                                <button type="button" aria-label="Botón para seleccionar talla 2XL" class="btn btn-item-size">2XL</button>
+                                <button type="button" aria-label="Botón para seleccionar talla S"
+                                    class="btn btn-item-size selected">S</button>
+                                <button type="button" aria-label="Botón para seleccionar talla M"
+                                    class="btn btn-item-size">M</button>
+                                <button type="button" aria-label="Botón para seleccionar talla L"
+                                    class="btn btn-item-size">L</button>
+                                <button type="button" aria-label="Botón para seleccionar talla XL"
+                                    class="btn btn-item-size">XL</button>
+                                <button type="button" aria-label="Botón para seleccionar talla 2XL"
+                                    class="btn btn-item-size">2XL</button>
                             </div>
                         </div>
                     <?php
@@ -331,16 +341,19 @@ if (isset($_GET['alertMessage']) && isset($_GET['alertType'])) {
                     <div class="row">
                         <p>Cantidad</p>
                         <div class="col item-quantity">
-                            <button type="button" id="restar" aria-label="Botón de reducir cantidad del producto" class="btn btn-quantity">-</button>
+                            <button type="button" id="restar" aria-label="Botón de reducir cantidad del producto"
+                                class="btn btn-quantity">-</button>
                             <span id="quantity">1</span>
-                            <button type="button" id="sumar" aria-label="Botón de aumentar cantidad del producto" class="btn btn-quantity">+</button>
+                            <button type="button" id="sumar" aria-label="Botón de aumentar cantidad del producto"
+                                class="btn btn-quantity">+</button>
                         </div>
                     </div>
                     <!-- Botón Añadir al Carrito -->
                     <div class="row">
                         <div class="py-3 col btn-cart">
                             <form action="cart.php" method="POST" novalidate>
-                                <button type="submit" aria-label="Botón de añadir al carrito" class="btn-focus btn-cart">Añadir al Carrito</button>
+                                <button type="submit" aria-label="Botón de añadir al carrito"
+                                    class="btn-focus btn-cart">Añadir al Carrito</button>
                             </form>
                         </div>
                     </div>
@@ -372,19 +385,25 @@ if (isset($_GET['alertMessage']) && isset($_GET['alertType'])) {
             ?>
                 <div class="row">
                     <div class="pb-4 col">
-                        <div class="dropdown dropdown-order-by-2">
+                        <div class="dropdown dropdown-order-by-2" aria-label="Herramienta de ordenación de las reseñas"
+                            aria-expanded="false">
                             <!-- Icono de Ordenación -->
                             <i class="bi bi-filter"></i>
                             <!-- Botón de Ordenación -->
-                            <button id="reviewOrderBy-btn" type="button" class="btn dropdown-toggle" data-bs-toggle="dropdown">
+                            <button id="reviewOrderBy-btn" type="button" class="btn dropdown-toggle"
+                                data-bs-toggle="dropdown">
                                 Ordenar por: Más recientes
                             </button>
                             <!-- Opciones de Ordenación -->
                             <ul class="dropdown-menu" aria-labelledby="reviewOrderBy-btn">
-                                <li><button id="date-desc" class="dropdown-item">Más recientes</button></li>
-                                <li><button id="date-asc" class="dropdown-item">Más antiguas</button></li>
-                                <li><button id="star-desc" class="dropdown-item">Mayor puntuación</button></li>
-                                <li><button id="star-asc" class="dropdown-item">Menor puntuación</button></li>
+                                <li><button id="date-desc" class="dropdown-item" aria-label="Ordenar por más recientes">Más
+                                        recientes</button></li>
+                                <li><button id="date-asc" class="dropdown-item" aria-label="Ordenar por más antiguas">Más
+                                        antiguas</button></li>
+                                <li><button id="star-desc" class="dropdown-item"
+                                        aria-label="Ordenar por más puntuaciones">Mayor puntuación</button></li>
+                                <li><button id="star-asc" class="dropdown-item"
+                                        aria-label="Ordenar por menos puntuaciones">Menor puntuación</button></li>
                             </ul>
                         </div>
                     </div>
@@ -412,9 +431,8 @@ if (isset($_GET['alertMessage']) && isset($_GET['alertType'])) {
                             <?php
                             foreach ($reviews as $r) {
                             ?>
-                                <div class="mb-3 col review-item"
-                                    data-rating="<?php echo $r->valoracion; ?>" data-date="<?php echo $r->fecha; ?>"
-                                    data-review="<?php echo $r->id; ?>" tabindex="0">
+                                <div class="mb-3 col review-item" data-rating="<?php echo $r->valoracion; ?>"
+                                    data-date="<?php echo $r->fecha; ?>" data-review="<?php echo $r->id; ?>" tabindex="0">
                                     <!-- Nombre del Usuario -->
                                     <div class="mb-1 d-flex align-items-center review-user">
                                         <?php
@@ -466,6 +484,7 @@ if (isset($_GET['alertMessage']) && isset($_GET['alertType'])) {
                                 ?>
                                         <form action="" method="POST" class="d-flex justify-content-end">
                                             <button type="submit" class="btn btn-delete-review" name="delete"
+                                                aria-label="Botón para eliminar la valoración"
                                                 value="<?php echo $r->id; ?>">Eliminar</button>
                                         </form>
                                     <?php
@@ -479,11 +498,13 @@ if (isset($_GET['alertMessage']) && isset($_GET['alertType'])) {
                                             <!-- Botón para Editar la Valoración -->
                                             <form action="" method="POST">
                                                 <button type="submit" class="btn btn-edit-review" name="edit"
+                                                    aria-label="Botón para editar la valoración"
                                                     value="<?php echo $r->id; ?>">Editar</button>
                                             </form>
                                             <!-- Botón para Eliminar la Valoración -->
                                             <form action="" method="POST">
                                                 <button type="submit" class="btn btn-delete-review" name="delete"
+                                                    aria-label="Botón para eliminar la valoración"
                                                     value="<?php echo $r->id; ?>">Eliminar</button>
                                             </form>
                                         </div>
@@ -518,12 +539,18 @@ if (isset($_GET['alertMessage']) && isset($_GET['alertType'])) {
                         <div class="px-2 mt-4 mb-3 px-md-4">
                             <label for="stars">¿En qué estado estaba el producto?</label>
                             <!-- Contenedor de estrellas -->
-                            <div id="stars" class="rating-stars" data-rating="<?php echo isset($edit_valoracion) ? $edit_valoracion->valoracion : 1; ?>">
-                                <i class="bi bi-star-fill" data-value="1" role="button" tabindex="0"></i>
-                                <i class="bi bi-star-fill" data-value="2" role="button" tabindex="0"></i>
-                                <i class="bi bi-star-fill" data-value="3" role="button" tabindex="0"></i>
-                                <i class="bi bi-star-fill" data-value="4" role="button" tabindex="0"></i>
-                                <i class="bi bi-star-fill" data-value="5" role="button" tabindex="0"></i>
+                            <div id="stars" class="rating-stars"
+                                data-rating="<?php echo isset($edit_valoracion) ? $edit_valoracion->valoracion : 1; ?>">
+                                <i class="bi bi-star-fill" data-value="1" role="button" tabindex="0"
+                                    aria-label="1 estrella"></i>
+                                <i class="bi bi-star-fill" data-value="2" role="button" tabindex="0"
+                                    aria-label="2 estrellas"></i>
+                                <i class="bi bi-star-fill" data-value="3" role="button" tabindex="0"
+                                    aria-label="3 estrellas"></i>
+                                <i class="bi bi-star-fill" data-value="4" role="button" tabindex="0"
+                                    aria-label="4 estrellas"></i>
+                                <i class="bi bi-star-fill" data-value="5" role="button" tabindex="0"
+                                    aria-label="5 estrellas"></i>
                             </div>
                         </div>
                         <!-- Título Input-->
@@ -531,18 +558,19 @@ if (isset($_GET['alertMessage']) && isset($_GET['alertType'])) {
                             <label for="review-title">Título de la reseña (Obligatorio)</label>
                             <input type="text" class="form-control" id="review-title"
                                 placeholder="Introduzca un título para la reseña" name="review-title"
+                                aria-label="Título de la reseña" aria-required="true"
                                 value="<?php echo isset($edit_valoracion) ? $edit_valoracion->titulo : ""; ?>">
                         </div>
                         <!-- Editor de Texto -->
                         <div class="px-2 mb-4 px-md-4">
                             <label for="eq-editor">Escribe una reseña (Opcional)</label>
-                            <div id="eq-editor"></div>
+                            <div id="eq-editor" aria-label="Editor de Texto"></div>
                         </div>
                         <div class="gap-3 px-5 my-3 d-flex flex-column justify-content-center">
-                            <button type="submit" class="px-5 btn" name="send"
-                                id="btn-send-review">Enviar reseña</button>
-                            <button type="submit" class="px-5 btn" name="cancel"
-                                id="btn-cancel-review">Cancelar</button>
+                            <button type="submit" class="px-5 btn" name="send" id="btn-send-review"
+                                aria-label="Botón de enviar reseña">Enviar reseña</button>
+                            <button type="submit" class="px-5 btn" name="cancel" id="btn-cancel-review"
+                                aria-label="Botón de cancelar reseña">Cancelar</button>
                         </div>
                         <!-- Campos Ocultos -->
                         <input type="hidden" id="stars-input" name="value_stars">
@@ -578,7 +606,11 @@ if (isset($_GET['alertMessage']) && isset($_GET['alertType'])) {
                     // Si hay productos en la BD, los mostramos.
                     foreach ($productosRecomendados as $p) {
                 ?>
-                        <form action="./merch_item.php" method="POST" class="col-12 col-md-4 card card-merch-item all-items <?php echo $p->categoria; ?>" data-precio="<?php echo $p->precio; ?>" data-nombre="<?php echo $p->nombre; ?>" onclick="this.submit()" onkeypress="this.submit()" role="button" tabindex="0">
+                        <form action="./merch_item.php" method="POST"
+                            class="col-12 col-md-4 card card-merch-item all-items <?php echo $p->categoria; ?>"
+                            data-precio="<?php echo $p->precio; ?>" data-nombre="<?php echo $p->nombre; ?>"
+                            onclick="this.submit()" onkeypress="this.submit()" role="button" tabindex="0"
+                            aria-label="Producto <?php echo $p->nombre; ?>" aria-pressed="false">
                             <input type="hidden" name="id" value="<?php echo $p->id; ?>">
                             <img class="card-img-top" src="./<?php echo $p->imagen; ?>" alt="<?php echo $p->nombre; ?>">
                             <div class="card-body">
@@ -641,7 +673,8 @@ if (isset($_GET['alertMessage']) && isset($_GET['alertType'])) {
         // Evento para enviar el contenido limpio del editor de texto y la valoración
         document.getElementById("form-review").addEventListener("submit", function() {
             document.querySelector("#review-input").value = getCleanQuillContent();
-            document.querySelector("#stars-input").value = document.querySelector("#stars").getAttribute("data-rating");
+            document.querySelector("#stars-input").value = document.querySelector("#stars").getAttribute(
+                "data-rating");
         });
 
         <?php

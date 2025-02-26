@@ -100,7 +100,7 @@ if (isset($_POST["confirm"])) {
                 <!-- Fila con títulos (Carrito, Dirección, Pago) -->
                 <div class="mb-3 text-center row d-flex page-section-heading">
                     <div class="col">
-                        <h3 class="step-title active">Imagenes</h3>
+                        <h1 class="step-title active">Imagenes</h1>
                     </div>
                 </div>
 

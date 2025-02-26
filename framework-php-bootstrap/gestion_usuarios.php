@@ -100,7 +100,10 @@ if (isset($_GET['alertMessage']) && isset($_GET['alertType'])) {
                 <!-- Fila con títulos -->
                 <div class="text-center row d-flex page-section-heading">
                     <div class="col">
-                        <h1 class="step-title active">Usuarios</h1>
+
+                        <caption>
+                            <h1 class="step-title active">Usuarios</h1>
+                        </caption>
                     </div>
                 </div>
 
@@ -112,46 +115,56 @@ if (isset($_GET['alertMessage']) && isset($_GET['alertType'])) {
                                 <div class="col-12 col-md-auto">
                                     <div
                                         class="flex-wrap btn-category-group d-flex justify-content-center justify-content-md-start">
-                                        <button type="input" name="todos" aria-label="Botón filtro de todos los usuarios"
-                                            class="btn-focus btn-category-item <?php if (isset($_POST["todos"])) echo "selected" ?>">Todos</button>
-                                        <button type="input" name="admin" aria-label="Botón filtro de usuarios administradores"
-                                            class="btn-focus btn-category-item <?php if (isset($_POST["admin"])) echo "selected" ?>">Admin</button>
-                                        <button type="input" name="editor" aria-label="Botón filtro de usuarios editores"
-                                            class="btn-focus btn-category-item <?php if (isset($_POST["editor"])) echo "selected" ?>">Editor</button>
-                                        <button type="input" name="usuario" aria-label="Botón filtro de usuarios normales"
-                                            class="btn-focus btn-category-item <?php if (isset($_POST["usuario"])) echo "selected" ?>">Usuario</button>
+                                        <button type="input" name="todos"
+                                            aria-label="Botón filtro de todos los usuarios"
+                                            class="btn-focus btn-category-item <?php if (isset($_POST["todos"]))
+                                                echo "selected" ?>">Todos</button>
+                                            <button type="input" name="admin"
+                                                aria-label="Botón filtro de usuarios administradores"
+                                                class="btn-focus btn-category-item <?php if (isset($_POST["admin"]))
+                                                echo "selected" ?>">Admin</button>
+                                            <button type="input" name="editor"
+                                                aria-label="Botón filtro de usuarios editores"
+                                                class="btn-focus btn-category-item <?php if (isset($_POST["editor"]))
+                                                echo "selected" ?>">Editor</button>
+                                            <button type="input" name="usuario"
+                                                aria-label="Botón filtro de usuarios normales"
+                                                class="btn-focus btn-category-item <?php if (isset($_POST["usuario"]))
+                                                echo "selected" ?>">Usuario</button>
+                                        </div>
+                                    </div>
+                                    <!-- Barra de búsqueda -->
+                                    <div class="col-12 col-md">
+                                        <div class="search-bar d-flex justify-content-center justify-content-md-end">
+                                            <label for="search" class="visually-hidden">Buscar usuarios</label>
+                                            <input id="search" type="text" class="form-control-search w-100"
+                                                placeholder="Buscar usuarios" name="search"
+                                                value="<?php if (isset($_POST["buscaNombre"]))
+                                                echo $_POST["search"] ?>">
+                                            <button aria-label="Buscar por nombre" class="btn btn-search" name="buscaNombre"
+                                                type="submit">
+                                                <i class="bi bi-search"></i>
+                                            </button>
+                                        </div>
                                     </div>
                                 </div>
-                                <!-- Barra de búsqueda -->
-                                <div class="col-12 col-md">
-                                    <div class="search-bar d-flex justify-content-center justify-content-md-end">
-                                        <label for="search" class="visually-hidden">Buscar usuarios</label>
-                                        <input id="search" type="text" class="form-control-search w-100"
-                                            placeholder="Buscar usuarios" name="search"
-                                            value="<?php if (isset($_POST["buscaNombre"])) echo $_POST["search"] ?>">
-                                        <button aria-label="Buscar por nombre" class="btn btn-search" name="buscaNombre" type="submit">
-                                            <i class="bi bi-search"></i>
-                                        </button>
-                                    </div>
-                                </div>
-                            </div>
-                        </form>
+                            </form>
 
                         <?php if ($users != null && !isset($_POST["edit"])): ?>
                             <div class="table-responsive-md">
                                 <table class="table table-cart table-borderless table-striped">
                                     <thead>
                                         <tr>
-                                            <th class="text-center col-4">
+                                            <th scope="col" class="text-center col-4">
                                                 <h2>Nombre</h2>
                                             </th>
-                                            <th class="text-center col-4">
+                                            <th scope="col" class="text-center col-4">
                                                 <h2>Correo</h2>
                                             </th>
-                                            <th class="text-center col-2">
+                                            <th scope="col" class="text-center col-2">
                                                 <h2>Rol</h2>
                                             </th>
-                                            <th class="text-center col-2">
+                                            <th scope="col" class="text-center col-2">
                                                 <h2>Acción</h2>
                                             </th>
                                         </tr>
@@ -161,7 +174,7 @@ if (isset($_GET['alertMessage']) && isset($_GET['alertType'])) {
                                             <tr>
                                                 <form method="post">
                                                     <input type="hidden" name="email" value="<?php echo $u->correo ?>">
-                                                    <td class="text-center align-middle col-4">
+                                                    <td scope="row" class="text-center align-middle col-4">
                                                         <?php echo $u->nombre . " " . $u->apellido1 . " " . $u->apellido2 ?>
                                                     </td>
                                                     <td class="text-center align-middle col-4">
@@ -171,8 +184,8 @@ if (isset($_GET['alertMessage']) && isset($_GET['alertType'])) {
                                                         <?php echo $u->rol ?>
                                                     </td>
                                                     <td class="text-center align-middle col-2">
-                                                        <button class="mx-auto btn btn-category-item" type="submit" aria-label="Botón modificar usuario"
-                                                            name="edit">Modificar</button>
+                                                        <button class="mx-auto btn btn-category-item" type="submit"
+                                                            aria-label="Botón modificar usuario" name="edit">Modificar</button>
                                                     </td>
                                                 </form>
                                             </tr>
@@ -207,19 +220,22 @@ if (isset($_GET['alertMessage']) && isset($_GET['alertType'])) {
                             <div class="mb-3 col-12 col-md-6 mb-md-0">
                                 <label for="role">Rol</label><span> *</span>
                                 <select name="role" id="role" class="form-control">
-                                    <option value="usuario" <?php if ($u->rol == "usuario") echo "selected" ?>>Usuario
-                                    </option>
-                                    <option value="editor" <?php if ($u->rol == "editor") echo "selected" ?>>Editor</option>
-                                    <option value="admin" <?php if ($u->rol == "admin") echo "selected" ?>>Admin</option>
-                                </select>
+                                    <option value="usuario" <?php if ($u->rol == "usuario")
+                                        echo "selected" ?>>Usuario
+                                        </option>
+                                        <option value="editor" <?php if ($u->rol == "editor")
+                                        echo "selected" ?>>Editor</option>
+                                        <option value="admin" <?php if ($u->rol == "admin")
+                                        echo "selected" ?>>Admin</option>
+                                    </select>
+                                </div>
                             </div>
-                        </div>
-                        <!-- Primer y Segundo apellido Input -->
-                        <div class="mt-3 mb-3 row">
-                            <!-- Primer apellido -->
-                            <div class="mb-3 col-12 col-md-6 mb-md-0">
-                                <label for="surname1">Primer Apellido</label><span> *</span>
-                                <input type="text" class="form-control" id="surname1" value="<?php echo $u->apellido1 ?>"
+                            <!-- Primer y Segundo apellido Input -->
+                            <div class="mt-3 mb-3 row">
+                                <!-- Primer apellido -->
+                                <div class="mb-3 col-12 col-md-6 mb-md-0">
+                                    <label for="surname1">Primer Apellido</label><span> *</span>
+                                    <input type="text" class="form-control" id="surname1" value="<?php echo $u->apellido1 ?>"
                                     name="surname1" required>
                             </div>
                             <!-- Segundo apellido -->
@@ -306,7 +322,7 @@ if (isset($_GET['alertMessage']) && isset($_GET['alertType'])) {
 
     <!-- Script para alertas -->
     <script>
-        document.addEventListener("DOMContentLoaded", function() {
+        document.addEventListener("DOMContentLoaded", function () {
             // Limpiar parámetros de la URL
             if (window.location.search.includes('alertMessage')) {
                 history.replaceState(null, null, window.location.pathname);
@@ -327,14 +343,14 @@ if (isset($_GET['alertMessage']) && isset($_GET['alertType'])) {
             const button2 = document.getElementById("button2");
 
             if (button1 && button2) {
-                button1.addEventListener("click", function(event) {
+                button1.addEventListener("click", function (event) {
                     button2.style.display = "inline";
                     button1.style.display = "none";
                     event.preventDefault();
                 });
 
                 const form = document.querySelector("form");
-                form.addEventListener("submit", function(event) {
+                form.addEventListener("submit", function (event) {
                     if (button2.style.display === "none") {
                         event.preventDefault();
                     }

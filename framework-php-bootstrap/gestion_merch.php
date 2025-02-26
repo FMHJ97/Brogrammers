@@ -200,9 +200,9 @@ if (!isset($_SESSION["logged"]) || $_SESSION["logged"]->rol != "admin") {
                         <table class="table table-productos table-borderless table-striped">
                             <thead>
                                 <tr>
-                                    <th class="text-center">Imagen</th>
-                                    <th class="text-center">Nombre</th>
-                                    <th class="text-center">Acciones</th>
+                                    <th scope="col" class="text-center">Imagen</th>
+                                    <th scope="col" class="text-center">Nombre</th>
+                                    <th scope="col" class="text-center">Acciones</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -212,7 +212,7 @@ if (!isset($_SESSION["logged"]) || $_SESSION["logged"]->rol != "admin") {
                                     foreach ($productos as $p) {
                                 ?>
                                         <tr>
-                                            <td class="align-middle">
+                                            <td scope="row" class="align-middle">
                                                 <img src="./<?php echo $p->imagen; ?>"
                                                     alt="<?php echo $p->nombre; ?>" height="150px" width="150px">
                                             </td>
